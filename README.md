@@ -1,12 +1,28 @@
 # 余暮｜个人知识网站
 
-这是余暮的个人知识与长期投资主页 V1。
+这是余暮的个人知识与长期投资主页。
 
 内容方向：投资、AI、科学、哲学与阅读。
+
+## 🌐 在线网站
+
+**个人主页：** https://yuweijia1992.github.io/demo/
+
+点击上面的链接即可直接访问网站。
+
+## 主要文章
+
+- [长期投资，不预测明天](articles/investing-timing.html)
+- [Transformer 为什么会产生“智能涌现”？](articles/transformer-emergence.html)
+- [宇宙为什么能够被我们理解？](articles/universe-understanding.html)
 
 ## GitHub Pages
 
 本项目为纯静态网站，无需 Node.js 或构建工具。进入仓库 Settings → Pages，在 Build and deployment 中选择 Deploy from a branch，Branch 选择 `main`、目录选择 `/ (root)` 后保存即可。
+
+## 内容方向
+
+投资｜AI｜科学｜哲学｜阅读
 
 ## 后续计划
 
