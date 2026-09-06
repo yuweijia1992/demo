@@ -11,7 +11,7 @@
 ## 主要入口
 
 - [投资栏目](https://yuweijia1992.github.io/demo/#investment)
-- [400万元全球投资执行表（2026）](https://yuweijia1992.github.io/demo/assets/400万元全球投资执行表_2026.xlsx)
+- [400万元全球投资执行表（2026）](assets/400万元全球投资执行表_2026.xlsx)
 
 ### 投资文章
 - [长期投资需要择时吗？](articles/investing-timing.html)
