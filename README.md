@@ -19,9 +19,6 @@
 - [长期投资需要择时吗？](articles/investing-timing.html)
 - [Transformer 为什么会产生“智能涌现”？](articles/transformer-emergence.html)
 - [宇宙为什么能够被我们理解？](articles/universe-understanding.html)
-
-## 思考
-
 - [人生的意义是什么？](articles/life-meaning.html)
 - [死亡的意义](articles/death-meaning.html)
 - [如何向死而生](articles/how-to-live.html)
