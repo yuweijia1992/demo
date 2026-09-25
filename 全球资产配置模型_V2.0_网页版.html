@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>全球美元体系 × 美债 × 美股 × 黄金 × 中国资产配置模型 V2.0</title>
+<style>
+:root{
+  --navy:#17365D;--blue:#5B9BD5;--lightblue:#D9EAF7;--green:#70AD47;--lightgreen:#E2F0D9;
+  --orange:#ED7D31;--lightorange:#FCE4D6;--red:#C00000;--lightred:#F4CCCC;
+  --gray:#666666;--lightgray:#F2F2F2;--border:#D9D9D9;--ink:#1F2937;--inputbg:#FFF2CC;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;background:#EEF2F7;color:var(--ink);
+  font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB","Segoe UI",Arial,sans-serif;
+  font-size:14px;line-height:1.55;
+}
+h1,h2,h3{margin:0;font-weight:700;}
+.container{max-width:1400px;margin:0 auto;padding:18px 20px 60px;}
+.topbar{background:linear-gradient(100deg,#17365D 0%,#2C5C93 55%,#3D7AB8 100%);color:#fff;padding:22px 20px;}
+.topbar .inner{max-width:1400px;margin:0 auto;}
+.topbar h1{font-size:21px;letter-spacing:.3px;}
+.topbar p{margin:6px 0 0;font-size:13px;color:#CFE2F5;}
+.card{background:#fff;border-radius:10px;padding:16px 18px;margin-bottom:16px;box-shadow:0 1px 3px rgba(23,54,93,.10);}
+.card>h2{font-size:15px;color:var(--navy);margin-bottom:4px;padding-left:10px;border-left:4px solid var(--blue);}
+.hint{color:var(--gray);font-size:12.5px;margin:6px 0 12px;}
+.toolbar{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;}
+.field{display:flex;flex-direction:column;gap:4px;}
+.field label{font-size:12.5px;color:var(--navy);font-weight:700;}
+.field .unit{font-size:11.5px;color:var(--gray);font-weight:400;}
+input[type=number],input[type=text]{
+  width:100%;padding:7px 9px;border:1px solid var(--border);border-radius:6px;font-size:13.5px;
+  font-family:inherit;color:var(--navy);background:#fff;outline:none;
+}
+input[type=number]:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(91,155,213,.18);}
+.capital-input input{background:var(--inputbg);font-weight:700;}
+.btns{display:flex;gap:9px;flex-wrap:wrap;}
+button{
+  cursor:pointer;border:1px solid var(--blue);background:#fff;color:var(--navy);font-family:inherit;
+  font-size:13px;font-weight:700;padding:8px 14px;border-radius:6px;transition:.15s;
+}
+button:hover{background:var(--lightblue);}
+button.primary{background:var(--navy);border-color:var(--navy);color:#fff;}
+button.primary:hover{background:#2C5C93;}
+.stamp{font-size:12px;color:var(--gray);}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:16px;}
+.kpi{background:#fff;border-radius:10px;padding:13px 15px;box-shadow:0 1px 3px rgba(23,54,93,.10);border-top:3px solid var(--blue);}
+.kpi .k{font-size:12.5px;color:var(--gray);}
+.kpi .v{font-size:19px;font-weight:700;color:var(--navy);margin-top:3px;word-break:break-all;}
+.kpi .u{font-size:11.5px;color:var(--gray);margin-left:4px;font-weight:400;}
+.kpi.state{border-top-color:var(--orange);}
+.kpi.state .v{font-size:16px;}
+.kpi.gold{border-top-color:var(--green);}
+.inputs{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;}
+.input-item{background:var(--lightgray);border:1px solid #E6E9ED;border-radius:8px;padding:10px 12px;}
+.input-item .name{font-size:13px;font-weight:700;color:var(--navy);display:flex;justify-content:space-between;gap:6px;}
+.input-item .name em{font-style:normal;font-weight:400;font-size:11.5px;color:var(--gray);}
+.input-item input{margin-top:6px;background:var(--inputbg);font-weight:700;font-size:14px;}
+.input-item .desc{font-size:11.5px;color:var(--gray);margin-top:5px;}
+.input-item .w{font-size:11.5px;color:var(--orange);font-weight:700;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.chart svg{width:100%;height:auto;display:block;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead th{
+  background:var(--navy);color:#fff;font-weight:700;text-align:center;padding:8px 6px;
+  border-bottom:1px solid var(--border);white-space:nowrap;
+}
+tbody td{padding:7px 6px;border-bottom:1px solid #EDF0F3;text-align:center;white-space:nowrap;}
+tbody tr:nth-child(even){background:#FAFBFC;}
+tbody td.name{text-align:left;font-weight:700;color:var(--navy);}
+tbody tr.total{background:var(--lightblue);font-weight:700;}
+tbody tr.total td{color:var(--navy);}
+.tag{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;font-weight:700;}
+.tag.ok{background:var(--lightgreen);color:#3E6B25;}
+.tag.watch{background:var(--lightorange);color:#A8551A;}
+.tag.act{background:var(--lightred);color:var(--red);}
+.bar-cell{display:flex;align-items:center;gap:7px;}
+.bar-track{flex:1;height:8px;background:#EDF0F3;border-radius:4px;overflow:hidden;min-width:52px;}
+.bar-fill{height:100%;background:var(--blue);}
+.notes{font-size:12.5px;color:var(--gray);}
+.notes b{color:var(--navy);}
+.notes ul{margin:6px 0 0;padding-left:20px;}
+.notes li{margin-bottom:4px;}
+.warn{background:var(--lightorange);border-left:4px solid var(--orange);padding:9px 12px;border-radius:6px;color:#8A4A12;font-size:12.5px;margin-top:10px;}
+.toast{
+  position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);opacity:0;pointer-events:none;
+  background:var(--navy);color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;transition:.25s;z-index:99;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+@media (max-width:980px){.grid2{grid-template-columns:1fr;}}
+.cw-box{background:var(--lightblue);border-radius:8px;padding:11px 13px;margin-bottom:12px;}
+.cw-title{font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.cw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;}
+.cw-item{background:#fff;border:1px solid #DCE6F1;border-radius:7px;padding:7px 9px;}
+.cw-item label{display:flex;justify-content:space-between;gap:6px;font-size:12.5px;font-weight:700;color:var(--navy);align-items:baseline;}
+.cw-item .base{font-size:11px;font-weight:400;color:var(--gray);}
+.cw-row{display:flex;align-items:center;gap:4px;margin-top:5px;}
+.cw-row input{background:var(--inputbg);font-weight:700;}
+.cw-row .unit{font-size:12px;color:var(--gray);}
+@media print{.toolbar button{display:none;}body{background:#fff;}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="inner">
+    <h1>《全球美元体系 × 美债 × 美股 × 黄金 × 中国资产配置模型》V2.0 · 网页版</h1>
+    <p>输入当天市场数据 → 自动识别宏观状态 → 计算资产评分 → 输出 400 万元目标仓位 → 偏离度/再平衡提示 → 四情景压力测试</p>
+  </div>
+</div>
+
+<main class="container">
+
+  <section class="card toolbar">
+    <div class="field capital-input" style="max-width:240px;">
+      <label>组合总资金（元） <span class="unit">对应 Excel 中 README!B6</span></label>
+      <input id="capital" type="number" step="10000" min="0" value="4000000">
+    </div>
+    <div class="btns">
+      <button id="btn-reset">恢复默认数据</button>
+      <button id="btn-sample" class="primary">载入示例持仓（有偏离）</button>
+      <button id="btn-export">导出结果 CSV</button>
+      <button id="btn-print">打印 / 存 PDF</button>
+    </div>
+    <div class="stamp">最后更新：<span id="stamp">-</span>　·　输入自动保存在本机浏览器</div>
+  </section>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="card">
+    <h2>① Macro Inputs — 当天宏观市场输入</h2>
+    <p class="hint">只需修改以下黄色输入框（共 11 项）；宏观状态、资产评分、目标仓位、情景测试与图表会全部实时重算。</p>
+    <div class="inputs" id="macro-inputs"></div>
+  </section>
+
+  <section class="grid2">
+    <div class="card">
+      <h2>四情景组合金额</h2>
+      <p class="hint">对应 Excel Dashboard 折线图</p>
+      <div class="chart" id="chart-scenario"></div>
+    </div>
+    <div class="card">
+      <h2>资产目标权重</h2>
+      <p class="hint">基准权重 + 评分倾斜后的目标权重</p>
+      <div class="chart" id="chart-weights"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>再平衡偏离度（当前权重 − 目标权重）</h2>
+    <p class="hint">红色虚线为 ±5 个百分点执行阈值；蓝色为正向偏离（超配），橙色为负向偏离（低配）</p>
+    <div class="chart" id="chart-deviation"></div>
+  </section>
+
+  <section class="card">
+    <h2>② Regime Engine — 全球宏观状态引擎</h2>
+    <p class="hint">标准化得分 = 将各项指标映射到 0—100 的「金融条件紧张度」；加权分 = 标准化得分 × 权重 ÷ 100；综合压力分数为八项加权分之和。</p>
+    <div id="tbl-regime"></div>
+  </section>
+
+  <section class="card">
+    <h2>③ Asset Score — 资产评分引擎（0—100）</h2>
+    <p class="hint">综合评分 = 五个维度得分的算术平均，仅用于目标仓位倾斜，不代表预期收益率。</p>
+    <div id="tbl-score"></div>
+  </section>
+
+  <section class="card">
+    <h2>④ Allocation — 目标仓位引擎</h2>
+    <p class="hint">「当前权重」列为你的实际持仓，可直接修改（假设各资产内部无二次偏离）。目标权重 = 基准权重 + 评分倾斜（倾斜幅度限制在 ±5%）。</p>
+    <div class="cw-box">
+      <div class="cw-title">当前持仓权重输入（单位 %，合计应为 100；标签中的「基准」为该资产的基准权重）</div>
+      <div class="cw-grid" id="current-inputs"></div>
+    </div>
+    <div class="warn" id="alloc-note" style="display:none;"></div>
+    <div id="tbl-alloc"></div>
+    <div class="warn">再平衡规则：单项偏离 ≥ 5 个百分点 → 建议再平衡；2—5 个百分点 → 关注；&lt; 2 个百分点 → 无需操作。</div>
+  </section>
+
+  <section class="card">
+    <h2>⑤ Scenario — 四种宏观情景压力测试</h2>
+    <p class="hint">情景收益率为压力测试参数假设（不是预测），可在页面源码顶部的 SCEN 对象中修改。</p>
+    <div id="tbl-scenario"></div>
+  </section>
+
+  <section class="card">
+    <h2>⑥ Portfolio — 目标组合与当前组合对照</h2>
+    <div id="tbl-portfolio"></div>
+  </section>
+
+  <section class="card">
+    <h2>⑦ Rebalance — 再平衡执行清单</h2>
+    <div id="tbl-rebalance"></div>
+  </section>
+
+  <section class="card notes">
+    <h2>使用顺序与模型边界</h2>
+    <ul>
+      <li><b>使用顺序</b>：①更新 Macro Inputs → ②查看 Regime Engine → ③查看 Asset Score → ④查看 Allocation（填写当前权重）→ ⑤查看 Scenario → ⑥执行 Rebalance</li>
+      <li><b>重要说明</b>：本模型是规则化资产配置工具，不是收益预测器；情景收益为参数假设，可自行修改。黄色单元格/输入框为用户输入，其余均为公式实时计算结果。</li>
+      <li><b>默认组合</b>：全球股票 30% / 中国股票 15% / 美债 15% / 中国债 10% / 黄金 10% / 现金 10% / REITs 5% / 机会仓 5%。</li>
+      <li><b>执行纪律</b>：不要因单日市场波动频繁交易；优先用新增资金、现金流和到期资金完成再平衡。</li>
+      <li><b>模型边界</b>：本页为离线单文件规则引擎，不会自动联网抓取行情；如需自动更新，可接入数据 API 并增加历史分位数、滚动均线与数据校验。</li>
+    </ul>
+  </section>
+
+</main>
+<div class="toast" id="toast"></div>
+<script>
+"use strict";
+/* =========================================================
+   全球美元体系 × 美债 × 美股 × 黄金 × 中国资产配置模型 V2.0
+   单文件离线规则引擎 —— 计算逻辑与 Excel V2.0 完全一致
+   ========================================================= */
+
+/* ---------- 常量（对应 Excel 工作表内容） ---------- */
+var ASSETS = ["全球股票","中国股票","美债","中国债","黄金","现金","REITs","机会仓"];
+var BASE   = [0.30,0.15,0.15,0.10,0.10,0.10,0.05,0.05];
+var SCEN_NAMES = ["软着陆","滞胀","衰退","财政危机"];
+
+// 四情景收益率假设（对应 Excel Scenario!C4:F11）
+var SCEN = {
+  "全球股票":[ 0.12,-0.15,-0.20,-0.35],
+  "中国股票":[ 0.10,-0.12,-0.18,-0.30],
+  "美债":    [ 0.02,-0.08, 0.12,-0.15],
+  "中国债":  [ 0.03,-0.02, 0.05,-0.05],
+  "黄金":    [ 0.08, 0.18, 0.15, 0.25],
+  "现金":    [ 0.02, 0.03, 0.03, 0.03],
+  "REITs":   [ 0.10,-0.18,-0.15,-0.30],
+  "机会仓":  [ 0.12,-0.15,-0.15,-0.30]
+};
+
+// 对应 Macro Inputs!A4:H14
+var MACRO_DEFS = [
+  {key:"dxy",    name:"DXY",                  unit:"指数",       w:10, def:100,  fmt:"n2", desc:"美元指数（↑偏紧、↓偏松）"},
+  {key:"us10y",  name:"US 10Y",               unit:"%",          w:15, def:4.20, fmt:"n2", desc:"美国 10 年期国债收益率（↑金融条件收紧）"},
+  {key:"real10y",name:"US 10Y Real Yield",    unit:"%",          w:10, def:1.70, fmt:"n2", desc:"美国 10 年实际利率（↑压制黄金/估值）"},
+  {key:"peSP",   name:"S&P 500 Forward PE",   unit:"倍",         w:10, def:22,   fmt:"n1", desc:"标普 500 远期 PE（↑估值贵）"},
+  {key:"vix",    name:"VIX",                  unit:"指数",       w:10, def:18,   fmt:"n1", desc:"波动率指数（↑风险厌恶）"},
+  {key:"gold",   name:"Gold",                 unit:"USD/oz",     w:10, def:3800, fmt:"n2", desc:"黄金现货/期货价格（↑避险/通胀）"},
+  {key:"brent",  name:"Brent",                unit:"USD/bbl",    w:5,  def:75,   fmt:"n2", desc:"布伦特原油（↑通胀/增长）"},
+  {key:"usdcny", name:"USD/CNY",              unit:"人民币/美元", w:10, def:7.05, fmt:"n3", desc:"美元兑人民币（↑人民币贬值）"},
+  {key:"peCSI",  name:"CSI300 PE",            unit:"倍",         w:10, def:13,   fmt:"n1", desc:"沪深 300 估值（↓估值吸引力↑）"},
+  {key:"cn10y",  name:"China 10Y",            unit:"%",          w:5,  def:1.80, fmt:"n2", desc:"中国 10 年国债收益率（↑国内利率）"},
+  {key:"fed",    name:"Fed Funds",            unit:"%",          w:5,  def:3.88, fmt:"n2", desc:"联邦基金有效利率（↑金融条件收紧）"}
+];
+
+// 对应 Regime Engine!A4:F11 的标准化区间
+var REGIME_DEFS = [
+  {key:"us10y",  name:"10Y利率",   w:15, lo:3.0, hi:6.0,   rule:"10Y 越高 → 金融条件越紧"},
+  {key:"real10y",name:"实际利率",  w:10, lo:0.0, hi:3.0,   rule:"实际利率越高 → 估值/黄金承压"},
+  {key:"dxy",    name:"DXY",       w:10, lo:90,  hi:115,   rule:"美元越强 → 全球金融条件越紧"},
+  {key:"vix",    name:"VIX",       w:10, lo:12,  hi:40,    rule:"VIX 高 → 风险厌恶"},
+  {key:"brent",  name:"Brent",     w:5,  lo:55,  hi:110,   rule:"油价高 → 通胀压力"},
+  {key:"peSP",   name:"S&P PE",    w:10, lo:15,  hi:30,    rule:"估值越高 → 风险越高"},
+  {key:"peCSI",  name:"CSI300 PE", w:10, lo:9,   hi:20, invert:true, rule:"估值越低 → 中国权益吸引力改善"},
+  {key:"fed",    name:"Fed Funds", w:5,  lo:2.0, hi:6.0,   rule:"政策利率水位"}
+];
+
+var SCORE_DIMS = ["增长环境","利率环境","风险环境","估值/收益","宏观对冲"];
+
+/* ---------- 工具函数 ---------- */
+function clamp(v,a,b){ return Math.min(b, Math.max(a, v)); }
+function num(v,d){ var x = parseFloat(v); return isNaN(x) ? d : x; }
+function pct1(v){ return (v*100).toFixed(1)+"%"; }
+function pctSigned(v){ return (v>0?"+":"")+(v*100).toFixed(2)+"%"; }
+function money(v){ return v.toLocaleString("zh-CN",{maximumFractionDigits:0}); }
+function wan(v){ return (v/10000).toFixed(1)+"万"; }
+function n1(v){ return v.toFixed(1); }
+function n2(v){ return v.toFixed(2); }
+
+/* ---------- 计算内核 ---------- */
+function calcRegime(m){
+  var rows = REGIME_DEFS.map(function(d){
+    var v = m[d.key], s;
+    if (d.invert) { s = (d.hi - v) / (d.hi - d.lo) * 100; }
+    else          { s = (v - d.lo) / (d.hi - d.lo) * 100; }
+    s = clamp(s, 0, 100);
+    return {name:d.name, input:v, score:s, w:d.w, weighted:s*d.w/100, rule:d.rule};
+  });
+  var stress = rows.reduce(function(a,r){ return a + r.weighted; }, 0);
+  var state;
+  if (stress < 30)      state = "宽松/风险偏好";
+  else if (stress < 50) state = "复苏/中性";
+  else if (stress < 70) state = "通胀/紧缩";
+  else if (stress < 85) state = "衰退/风险厌恶";
+  else                  state = "财政危机/系统性压力";
+  return {rows:rows, stress:stress, state:state};
+}
+
+function calcScores(m, stress){
+  var A = function(x){ return Math.max(0, x); };
+  var rows = [
+    {name:"全球股票", s:[A(100-stress*0.9), A(100-m.us10y*12), A(100-m.vix*1.5), A(100-(m.peSP-15)*5), 50]},
+    {name:"中国股票", s:[A(100-stress*0.5), A(100-m.cn10y*20), A(100-m.vix*1.0), A(100-(m.peCSI-9)*7), 60]},
+    {name:"美债",     s:[60, clamp((m.us10y-3)*33,0,100), A(100-m.dxy*0.5), clamp((m.us10y-3)*33,0,100), 70]},
+    {name:"中国债",   s:[55, A(100-m.cn10y*20), 70, 65, 55]},
+    {name:"黄金",     s:[clamp(m.brent-40,0,100), A(100-m.real10y*25), clamp(m.vix*2,0,100), 65, 90]},
+    {name:"现金",     s:[55, A(100-m.us10y*10), 90, 60, 70]},
+    {name:"REITs",    s:[A(100-stress*0.8), A(100-m.us10y*15), A(100-m.vix*1.2), 60, 55]},
+    {name:"机会仓",   s:[60, 60, A(100-m.vix*1.5), 55, 60]}
+  ];
+  rows.forEach(function(r){ r.avg = r.s.reduce(function(a,b){ return a+b; },0) / r.s.length; });
+  return rows;
+}
+
+function calcAllocation(scores, current, capital){
+  var avg = scores.reduce(function(a,r){ return a+r.avg; },0) / scores.length;
+  var rows = scores.map(function(r,i){
+    var tilt = clamp((r.avg - avg)/100*0.10, -0.05, 0.05);
+    var tw   = BASE[i] + tilt;
+    var ta   = tw * capital;
+    var cw   = current[i];
+    var ca   = cw * capital;
+    var dev  = cw - tw;
+    var hint = Math.abs(dev) >= 0.05 ? "建议再平衡" : (Math.abs(dev) >= 0.02 ? "关注" : "无需操作");
+    return {name:r.name, base:BASE[i], score:r.avg, tilt:tilt, tw:tw, ta:ta, cw:cw, ca:ca, dev:dev, hint:hint};
+  });
+  var twSum = rows.reduce(function(a,r){ return a+r.tw; },0);
+  var taSum = rows.reduce(function(a,r){ return a+r.ta; },0);
+  var cwSum = rows.reduce(function(a,r){ return a+r.cw; },0);
+  var caSum = rows.reduce(function(a,r){ return a+r.ca; },0);
+  return {rows:rows, avgScore:avg, twSum:twSum, taSum:taSum, cwSum:cwSum, caSum:caSum};
+}
+
+function calcScenario(allocRows){
+  var total = allocRows.reduce(function(a,r){ return a + r.ta; },0);
+  var detail = ASSETS.map(function(name,i){
+    var amt = allocRows[i].ta;
+    var rets = SCEN[name];
+    return {name:name, amount:amt, rets:rets,
+            after: rets.map(function(x){ return amt*(1+x); })};
+  });
+  var portRet = SCEN_NAMES.map(function(_,k){
+    return total > 0 ? detail.reduce(function(a,d){ return a + d.amount*d.rets[k]; },0)/total : 0;
+  });
+  return {total:total, detail:detail, portRet:portRet,
+          portAfter: portRet.map(function(r){ return total*(1+r); })};
+}
+
+function calcPortfolio(allocRows){
+  return allocRows.map(function(r){
+    var diff = r.ta - r.ca;
+    var op = Math.abs(diff) >= 200000 ? (diff > 0 ? "增加" : "减少")
+           : (Math.abs(diff) >= 80000 ? "微调" : "维持");
+    return {name:r.name, tw:r.tw, ta:r.ta, cw:r.cw, ca:r.ca, diff:diff, op:op};
+  });
+}
+
+function computeAll(st){
+  var reg = calcRegime(st.macro);
+  var scores = calcScores(st.macro, reg.stress);
+  var alloc = calcAllocation(scores, st.current, st.capital);
+  var scen = calcScenario(alloc.rows);
+  var port = calcPortfolio(alloc.rows);
+  return {macro:st.macro, capital:st.capital, current:st.current,
+          regime:reg, scores:scores, alloc:alloc, scen:scen, port:port};
+}
+/* =========================================================
+   渲染层
+   ========================================================= */
+function tagClass(hint){
+  if (hint === "建议再平衡") return "act";
+  if (hint === "关注") return "watch";
+  return "ok";
+}
+function fmtMacro(d, v){
+  if (d.fmt === "n1") return n1(v);
+  if (d.fmt === "n3") return v.toFixed(3);
+  return n2(v);
+}
+
+function renderKpis(r){
+  var items = [
+    {k:"资金规模", v:money(r.capital), u:"元", cls:""},
+    {k:"宏观压力分数", v:n1(r.regime.stress), u:"/ 100", cls:""},
+    {k:"宏观状态", v:r.regime.state, u:"", cls:"state"},
+    {k:"目标组合总额", v:money(r.alloc.taSum), u:"元", cls:"gold"}
+  ];
+  SCEN_NAMES.forEach(function(nm,k){
+    items.push({k:nm+"情景组合", v:money(r.scen.portAfter[k]), u:"元", cls:""});
+  });
+  document.getElementById("kpis").innerHTML = items.map(function(it){
+    return '<div class="kpi '+it.cls+'"><div class="k">'+it.k+'</div>'
+      + '<div class="v">'+it.v+'<span class="u">'+it.u+'</span></div></div>';
+  }).join("");
+}
+
+function renderCharts(r){
+  document.getElementById("chart-scenario").innerHTML =
+    lineChartSvg(SCEN_NAMES.map(function(nm,k){ return {label:nm, value:r.scen.portAfter[k]}; }));
+  document.getElementById("chart-weights").innerHTML =
+    barChartSvg(r.alloc.rows.map(function(x){ return {label:x.name, value:x.tw}; }));
+  document.getElementById("chart-deviation").innerHTML =
+    devBarSvg(r.alloc.rows.map(function(x){ return {label:x.name, value:x.dev}; }));
+}
+
+function renderRegime(r){
+  var h = '<table><thead><tr><th>指标</th><th>输入</th><th>标准化得分</th><th>权重</th><th>加权分</th><th style="text-align:left">规则</th></tr></thead><tbody>';
+  r.regime.rows.forEach(function(x){
+    h += '<tr><td class="name">'+x.name+'</td><td>'+n2(x.input)+'</td><td>'+n1(x.score)+'</td><td>'+x.w+'</td><td>'+n2(x.weighted)+'</td>'
+       + '<td style="text-align:left;color:#666">'+x.rule+'</td></tr>';
+  });
+  h += '<tr class="total"><td class="name">综合金融压力分数</td><td colspan="4">'+n2(r.regime.stress)+'</td><td style="text-align:left">越高代表美元、利率、波动率、估值等组合信号越偏紧</td></tr>';
+  h += '<tr class="total"><td class="name">宏观状态</td><td colspan="5" style="text-align:left">'+r.regime.state
+     + '　（&lt;30 宽松/风险偏好；30—50 复苏/中性；50—70 通胀/紧缩；70—85 衰退/风险厌恶；≥85 财政危机/系统性压力）</td></tr>';
+  h += '</tbody></table>';
+  document.getElementById("tbl-regime").innerHTML = h;
+}
+
+function renderScore(r){
+  var h = '<table><thead><tr><th>资产</th>';
+  SCORE_DIMS.forEach(function(d){ h += '<th>'+d+'</th>'; });
+  h += '<th>综合评分</th></tr></thead><tbody>';
+  r.scores.forEach(function(x){
+    h += '<tr><td class="name">'+x.name+'</td>';
+    x.s.forEach(function(v){ h += '<td>'+n1(v)+'</td>'; });
+    h += '<td style="font-weight:700;color:#17365D">'+n1(x.avg)+'</td></tr>';
+  });
+  h += '<tr class="total"><td class="name">全资产平均分</td><td colspan="5">评分倾斜基准</td><td>'+n1(r.alloc.avgScore)+'</td></tr>';
+  h += '</tbody></table>';
+  document.getElementById("tbl-score").innerHTML = h;
+}
+
+function renderAlloc(r){
+  var h = '<table><thead><tr><th>资产</th><th>基准权重</th><th>评分</th><th>评分倾斜</th><th>目标权重</th><th>目标金额</th>'
+        + '<th>当前权重</th><th>当前金额</th><th>偏离度</th><th>再平衡提示</th></tr></thead><tbody>';
+  r.alloc.rows.forEach(function(x){
+    h += '<tr><td class="name">'+x.name+'</td><td>'+pct1(x.base)+'</td><td>'+n1(x.score)+'</td><td>'+pctSigned(x.tilt)+'</td>'
+       + '<td style="font-weight:700">'+pct1(x.tw)+'</td><td>'+money(x.ta)+'</td><td>'+pct1(x.cw)+'</td><td>'+money(x.ca)+'</td>'
+       + '<td style="font-weight:700;color:'+(Math.abs(x.dev)>=0.05?"#C00000":"#444")+'">'+pctSigned(x.dev)+'</td>'
+       + '<td><span class="tag '+tagClass(x.hint)+'">'+x.hint+'</span></td></tr>';
+  });
+  h += '<tr class="total"><td class="name">合计</td><td>100.0%</td><td>—</td><td>—</td><td>'+pct1(r.alloc.twSum)+'</td><td>'+money(r.alloc.taSum)+'</td>'
+     + '<td>'+pct1(r.alloc.cwSum)+'</td><td>'+money(r.alloc.caSum)+'</td><td colspan="2"></td></tr>';
+  h += '</tbody></table>';
+  document.getElementById("tbl-alloc").innerHTML = h;
+
+  var note = document.getElementById("alloc-note");
+  if (Math.abs(r.alloc.cwSum - 1) > 0.0005) {
+    note.innerHTML = '提示：当前权重合计为 ' + pct1(r.alloc.cwSum) + '，不等于 100%，请检查持仓输入（偏离度按权重差计算，不受合计影响）。';
+    note.style.display = "block";
+  } else {
+    note.style.display = "none";
+  }
+}
+
+function renderScenario(r){
+  var h = '<table><thead><tr><th>资产</th><th>基准金额</th>';
+  SCEN_NAMES.forEach(function(nm){ h += '<th>'+nm+'收益</th>'; });
+  SCEN_NAMES.forEach(function(nm){ h += '<th>'+nm+'后金额</th>'; });
+  h += '</tr></thead><tbody>';
+  r.scen.detail.forEach(function(d){
+    h += '<tr><td class="name">'+d.name+'</td><td>'+money(d.amount)+'</td>';
+    d.rets.forEach(function(v){ h += '<td style="color:'+(v<0?"#C00000":"#3E6B25")+'">'+pct1(v)+'</td>'; });
+    d.after.forEach(function(v){ h += '<td>'+money(v)+'</td>'; });
+    h += '</tr>';
+  });
+  h += '<tr class="total"><td class="name">组合总收益</td><td>'+money(r.scen.total)+'</td>';
+  r.scen.portRet.forEach(function(v){ h += '<td>'+pct1(v)+'</td>'; });
+  r.scen.portAfter.forEach(function(v){ h += '<td>'+money(v)+'</td>'; });
+  h += '</tr>';
+  h += '<tr class="total"><td class="name">情景后组合金额</td><td colspan="4">相对 '+money(r.scen.total)+' 元基准</td>';
+  r.scen.portAfter.forEach(function(v){ h += '<td>'+money(v)+'</td>'; });
+  h += '</tr></tbody></table>';
+  document.getElementById("tbl-scenario").innerHTML = h;
+}
+
+function renderPortfolio(r){
+  var h = '<table><thead><tr><th>资产</th><th>目标权重</th><th>目标金额</th><th>当前权重</th><th>当前金额</th><th>金额差</th><th>操作</th><th style="text-align:left">备注</th></tr></thead><tbody>';
+  r.port.forEach(function(x){
+    h += '<tr><td class="name">'+x.name+'</td><td>'+pct1(x.tw)+'</td><td>'+money(x.ta)+'</td><td>'+pct1(x.cw)+'</td><td>'+money(x.ca)+'</td>'
+       + '<td style="color:'+(x.diff>0?"#3E6B25":(x.diff<0?"#C00000":"#444"))+'">'+(x.diff>=0?"+":"")+money(x.diff)+'</td>'
+       + '<td><span class="tag '+(x.op==="维持"?"ok":(x.op==="微调"?"watch":"act"))+'">'+x.op+'</span></td>'
+       + '<td style="text-align:left;color:#8A94A6">金额差 = 目标金额 − 当前金额</td></tr>';
+  });
+  var taSum = r.port.reduce(function(a,x){ return a+x.ta; },0);
+  var caSum = r.port.reduce(function(a,x){ return a+x.ca; },0);
+  h += '<tr class="total"><td class="name">合计</td><td>100.0%</td><td>'+money(taSum)+'</td><td>'+pct1(r.alloc.cwSum)+'</td><td>'+money(caSum)+'</td>'
+     + '<td>'+(taSum-caSum>=0?"+":"")+money(taSum-caSum)+'</td><td colspan="2"></td></tr>';
+  h += '</tbody></table>';
+  document.getElementById("tbl-portfolio").innerHTML = h;
+}
+
+function renderRebalance(r){
+  var h = '<table><thead><tr><th>资产</th><th>目标权重</th><th>当前权重</th><th>偏离</th><th>目标金额</th><th>当前金额</th><th>执行建议</th></tr></thead><tbody>';
+  r.alloc.rows.forEach(function(x){
+    h += '<tr><td class="name">'+x.name+'</td><td>'+pct1(x.tw)+'</td><td>'+pct1(x.cw)+'</td>'
+       + '<td style="font-weight:700;color:'+(Math.abs(x.dev)>=0.05?"#C00000":"#444")+'">'+pctSigned(x.dev)+'</td>'
+       + '<td>'+money(x.ta)+'</td><td>'+money(x.ca)+'</td>'
+       + '<td><span class="tag '+tagClass(x.hint)+'">'+x.hint+'</span></td></tr>';
+  });
+  h += '<tr class="total"><td class="name">合计</td><td>'+pct1(r.alloc.twSum)+'</td><td>'+pct1(r.alloc.cwSum)+'</td><td>—</td>'
+     + '<td>'+money(r.alloc.taSum)+'</td><td>'+money(r.alloc.caSum)+'</td><td></td></tr></tbody></table>';
+  document.getElementById("tbl-rebalance").innerHTML = h;
+}
+
+/* ---------- SVG 图表 ---------- */
+function lineChartSvg(items){
+  var W = 620, H = 300, pad = {l:84, r:26, t:30, b:52};
+  var vals = items.map(function(d){ return d.value; });
+  var mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals);
+  if (mn === mx) { mn -= 1; mx += 1; }
+  var sp = mx - mn; mn -= sp*0.14; mx += sp*0.14;
+  var iw = W - pad.l - pad.r, ih = H - pad.t - pad.b;
+  var X = function(i){ return pad.l + (items.length < 2 ? iw/2 : i*iw/(items.length-1)); };
+  var Y = function(v){ return pad.t + ih - (v-mn)/(mx-mn)*ih; };
+  var g = "";
+  for (var k = 0; k <= 4; k++){
+    var v = mn + (mx-mn)*k/4, y = Y(v);
+    g += '<line x1="'+pad.l+'" y1="'+y.toFixed(1)+'" x2="'+(W-pad.r)+'" y2="'+y.toFixed(1)+'" stroke="#EDF0F3"/>';
+    g += '<text x="'+(pad.l-8)+'" y="'+(y+4).toFixed(1)+'" text-anchor="end" font-size="11" fill="#8A94A6">'+wan(v)+'</text>';
+  }
+  var pts = items.map(function(d,i){ return X(i).toFixed(1)+","+Y(d.value).toFixed(1); }).join(" ");
+  g += '<polyline points="'+pts+'" fill="none" stroke="#5B9BD5" stroke-width="2.5" stroke-linejoin="round"/>';
+  items.forEach(function(d,i){
+    var x = X(i), y = Y(d.value);
+    g += '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="4.5" fill="#17365D"/>';
+    g += '<text x="'+x.toFixed(1)+'" y="'+(y-13).toFixed(1)+'" text-anchor="middle" font-size="11" font-weight="700" fill="#17365D">'+wan(d.value)+'</text>';
+    g += '<text x="'+x.toFixed(1)+'" y="'+(H-pad.b+22)+'" text-anchor="middle" font-size="12" fill="#333">'+d.label+'</text>';
+  });
+  return '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet">'+g+'</svg>';
+}
+
+function barChartSvg(items){
+  var W = 620, H = 300, pad = {l:56, r:20, t:30, b:60};
+  var mx = Math.max.apply(null, items.map(function(d){ return d.value; })) || 0.01;
+  mx = mx * 1.2;
+  var iw = W - pad.l - pad.r, ih = H - pad.t - pad.b;
+  var slot = iw / items.length, bw = slot * 0.52;
+  var g = "";
+  for (var k = 0; k <= 4; k++){
+    var v = mx*k/4, y = pad.t + ih - v/mx*ih;
+    g += '<line x1="'+pad.l+'" y1="'+y.toFixed(1)+'" x2="'+(W-pad.r)+'" y2="'+y.toFixed(1)+'" stroke="#EDF0F3"/>';
+    g += '<text x="'+(pad.l-8)+'" y="'+(y+4).toFixed(1)+'" text-anchor="end" font-size="11" fill="#8A94A6">'+(v*100).toFixed(0)+'%</text>';
+  }
+  items.forEach(function(d,i){
+    var cx = pad.l + (i+0.5)*slot;
+    var h = d.value/mx*ih, y = pad.t + ih - h;
+    g += '<rect x="'+(cx-bw/2).toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+Math.max(h,1).toFixed(1)+'" rx="3" fill="#5B9BD5"/>';
+    g += '<text x="'+cx.toFixed(1)+'" y="'+(y-7).toFixed(1)+'" text-anchor="middle" font-size="11" font-weight="700" fill="#17365D">'+pct1(d.value)+'</text>';
+    g += '<text x="'+cx.toFixed(1)+'" y="'+(H-pad.b+20)+'" text-anchor="middle" font-size="11" fill="#333">'+d.label+'</text>';
+  });
+  return '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet">'+g+'</svg>';
+}
+
+function devBarSvg(items){
+  var pad = {l:104, r:70, t:48, b:34};
+  var W = 900, H = pad.t + items.length*36 + pad.b;
+  var mxAbs = Math.max.apply(null, items.map(function(d){ return Math.abs(d.value); }));
+  var mx = Math.max(0.06, mxAbs*1.35);
+  var iw = W - pad.l - pad.r, half = iw/2, x0 = pad.l + half;
+  var g = "";
+  [0.05,-0.05].forEach(function(t){
+    var x = x0 + t/mx*half;
+    g += '<line x1="'+x.toFixed(1)+'" y1="'+(pad.t-18)+'" x2="'+x.toFixed(1)+'" y2="'+(H-pad.b)+'" stroke="#C00000" stroke-width="1.4" stroke-dasharray="5 4"/>';
+    g += '<text x="'+x.toFixed(1)+'" y="'+(pad.t-24)+'" text-anchor="middle" font-size="11" fill="#C00000">'+(t>0?"+5%":"-5%")+'</text>';
+  });
+  g += '<line x1="'+x0+'" y1="'+(pad.t-18)+'" x2="'+x0+'" y2="'+(H-pad.b)+'" stroke="#B9C2CF"/>';
+  g += '<text x="'+x0+'" y="'+(H-pad.b+22)+'" text-anchor="middle" font-size="11" fill="#8A94A6">0（当前权重 = 目标权重）</text>';
+  items.forEach(function(d,i){
+    var y = pad.t + i*36, h = 20;
+    var w = Math.abs(d.value)/mx*half;
+    var x = d.value >= 0 ? x0 : x0 - w;
+    var color = d.value >= 0 ? "#5B9BD5" : "#ED7D31";
+    g += '<rect x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+Math.max(w,0.6).toFixed(1)+'" height="'+h+'" rx="3" fill="'+color+'"/>';
+    g += '<text x="'+(pad.l-10)+'" y="'+(y+14)+'" text-anchor="end" font-size="12" font-weight="700" fill="#17365D">'+d.label+'</text>';
+    var tx = d.value >= 0 ? x0 + w + 8 : x0 - w - 8;
+    g += '<text x="'+tx.toFixed(1)+'" y="'+(y+14)+'" text-anchor="'+(d.value>=0?"start":"end")+'" font-size="11" font-weight="700" fill="#444">'+pctSigned(d.value)+'</text>';
+  });
+  g += '<text x="'+(W-pad.r)+'" y="'+(pad.t-24)+'" text-anchor="end" font-size="11" fill="#8A94A6">蓝色=超配，橙色=低配，单位：百分点</text>';
+  return '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet">'+g+'</svg>';
+}
+/* =========================================================
+   输入区构建 / 状态读写 / 存储 / 导出 / 初始化
+   ========================================================= */
+var LS_KEY = "gmc_asset_model_v2_state";
+
+function defaultState(){
+  var macro = {};
+  MACRO_DEFS.forEach(function(d){ macro[d.key] = d.def; });
+  return {capital:4000000, macro:macro, current:BASE.slice()};
+}
+
+function buildMacroInputs(){
+  var box = document.getElementById("macro-inputs");
+  box.innerHTML = MACRO_DEFS.map(function(d){
+    return '<div class="input-item">'
+      + '<div class="name"><span>'+d.name+'</span><span class="w">权重 '+d.w+'</span></div>'
+      + '<input id="in-'+d.key+'" type="number" step="0.01" value="'+d.def.toFixed(decimals(d))+'">'
+      + '<div class="desc">'+d.unit+'　·　'+d.desc+'</div>'
+      + '</div>';
+  }).join("");
+}
+
+function decimals(d){ return d.fmt === "n1" ? 1 : (d.fmt === "n3" ? 3 : 2); }
+
+function buildCurrentInputs(){
+  var box = document.getElementById("current-inputs");
+  box.innerHTML = ASSETS.map(function(a,i){
+    return '<div class="cw-item">'
+      + '<label for="cw-'+i+'">'+a+'<span class="base">基准 '+pct1(BASE[i])+'</span></label>'
+      + '<div class="cw-row"><input id="cw-'+i+'" type="number" step="0.5" value="'+(BASE[i]*100).toFixed(1)+'"><span class="unit">%</span></div>'
+      + '</div>';
+  }).join("");
+}
+
+function readState(){
+  var macro = {};
+  MACRO_DEFS.forEach(function(d){
+    macro[d.key] = num(document.getElementById("in-"+d.key).value, d.def);
+  });
+  var current = ASSETS.map(function(a,i){
+    return num(document.getElementById("cw-"+i).value, BASE[i]*100) / 100;
+  });
+  return {
+    capital: num(document.getElementById("capital").value, 4000000),
+    macro: macro,
+    current: current
+  };
+}
+
+function applyState(st){
+  document.getElementById("capital").value = st.capital;
+  MACRO_DEFS.forEach(function(d){
+    var v = st.macro && typeof st.macro[d.key] === "number" ? st.macro[d.key] : d.def;
+    document.getElementById("in-"+d.key).value = v.toFixed(decimals(d));
+  });
+  ASSETS.forEach(function(a,i){
+    var v = st.current && typeof st.current[i] === "number" ? st.current[i] : BASE[i];
+    document.getElementById("cw-"+i).value = (v*100).toFixed(1);
+  });
+}
+
+function saveLocal(st){
+  try { localStorage.setItem(LS_KEY, JSON.stringify(st)); } catch(e){}
+}
+function loadLocal(){
+  try {
+    var s = localStorage.getItem(LS_KEY);
+    return s ? JSON.parse(s) : null;
+  } catch(e){ return null; }
+}
+
+/* ---------- 渲染调度 ---------- */
+var rafId = null;
+function scheduleRender(){
+  if (rafId) return;
+  rafId = requestAnimationFrame(function(){ rafId = null; renderAll(); });
+}
+function renderAll(){
+  var st = readState();
+  var r = computeAll(st);
+  renderKpis(r);
+  renderCharts(r);
+  renderRegime(r);
+  renderScore(r);
+  renderAlloc(r);
+  renderScenario(r);
+  renderPortfolio(r);
+  renderRebalance(r);
+  document.getElementById("stamp").textContent = "最后计算：" + nowStr();
+  saveLocal(st);
+}
+
+function nowStr(){
+  var d = new Date(), p = function(n){ return (n < 10 ? "0" : "") + n; };
+  return d.getFullYear() + "-" + p(d.getMonth()+1) + "-" + p(d.getDate()) + " "
+       + p(d.getHours()) + ":" + p(d.getMinutes()) + ":" + p(d.getSeconds());
+}
+
+/* ---------- CSV 导出 ---------- */
+function csvCell(v){
+  v = (v === undefined || v === null) ? "" : String(v);
+  return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+}
+function csvText(rows){
+  return rows.map(function(r){ return r.map(csvCell).join(","); }).join("\r\n");
+}
+function exportCsv(){
+  var st = readState(), r = computeAll(st), L = [];
+  L.push(["全球美元体系×美债×美股×黄金×中国资产配置模型 V2.0", "导出时间", nowStr()]);
+  L.push([]);
+  L.push(["【资金规模(元)】", Math.round(r.capital)]);
+  L.push([]);
+  L.push(["【宏观输入】", "当天值", "单位", "权重"]);
+  MACRO_DEFS.forEach(function(d){ L.push([d.name, r.macro[d.key], d.unit, d.w]); });
+  L.push([]);
+  L.push(["【宏观状态引擎】", "输入", "标准化得分", "权重", "加权分", "规则"]);
+  r.regime.rows.forEach(function(x){ L.push([x.name, x.input, x.score.toFixed(2), x.w, x.weighted.toFixed(2), x.rule]); });
+  L.push(["综合金融压力分数", r.regime.stress.toFixed(2)]);
+  L.push(["宏观状态", r.regime.state]);
+  L.push([]);
+  L.push(["【资产评分】", SCORE_DIMS.join(" / "), "综合评分"]);
+  r.scores.forEach(function(x){ L.push([x.name].concat(x.s.map(function(v){ return v.toFixed(1); })).concat([x.avg.toFixed(1)])); });
+  L.push([]);
+  L.push(["【目标仓位与偏离】", "基准权重", "评分", "评分倾斜", "目标权重", "目标金额", "当前权重", "当前金额", "偏离度", "再平衡提示"]);
+  r.alloc.rows.forEach(function(x){
+    L.push([x.name, pct1(x.base), x.score.toFixed(1), pctSigned(x.tilt), pct1(x.tw), Math.round(x.ta),
+            pct1(x.cw), Math.round(x.ca), pctSigned(x.dev), x.hint]);
+  });
+  L.push(["合计", "100.0%", "", "", pct1(r.alloc.twSum), Math.round(r.alloc.taSum), pct1(r.alloc.cwSum), Math.round(r.alloc.caSum), "", ""]);
+  L.push([]);
+  L.push(["【四情景压力测试】", "基准金额"].concat(SCEN_NAMES.map(function(n){ return n+"收益"; })).concat(SCEN_NAMES.map(function(n){ return n+"后金额"; })));
+  r.scen.detail.forEach(function(d){
+    L.push([d.name, Math.round(d.amount)].concat(d.rets.map(pct1)).concat(d.after.map(function(v){ return Math.round(v); })));
+  });
+  L.push(["组合总收益", Math.round(r.scen.total)].concat(r.scen.portRet.map(pct1)).concat(r.scen.portAfter.map(function(v){ return Math.round(v); })));
+  L.push([]);
+  L.push(["【再平衡清单】", "目标权重", "当前权重", "偏离", "目标金额", "当前金额", "执行建议"]);
+  r.alloc.rows.forEach(function(x){
+    L.push([x.name, pct1(x.tw), pct1(x.cw), pctSigned(x.dev), Math.round(x.ta), Math.round(x.ca), x.hint]);
+  });
+  var name = "资产配置模型导出_" + nowStr().replace(/[-: ]/g, "").slice(0, 14) + ".csv";
+  var blob = new Blob(["\ufeff" + csvText(L)], {type:"text/csv;charset=utf-8"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(a.href); }, 0);
+  toast("已导出 CSV：" + name);
+}
+
+/* ---------- 轻提示 ---------- */
+var toastTimer = null;
+function toast(msg){
+  var t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ t.classList.remove("show"); }, 2400);
+}
+
+/* ---------- 事件绑定 ---------- */
+function bindEvents(){
+  document.addEventListener("input", function(e){
+    if (e.target && e.target.tagName === "INPUT") scheduleRender();
+  });
+  document.getElementById("btn-reset").addEventListener("click", function(){
+    var st = defaultState();
+    applyState(st);
+    try { localStorage.removeItem(LS_KEY); } catch(e){}
+    renderAll();
+    toast("已恢复默认参数");
+  });
+  document.getElementById("btn-sample").addEventListener("click", function(){
+    var st = readState();
+    st.current = [0.34, 0.13, 0.14, 0.09, 0.13, 0.09, 0.04, 0.04];
+    applyState(st);
+    renderAll();
+    toast("已载入示例持仓（含超配/低配）");
+  });
+  document.getElementById("btn-export").addEventListener("click", exportCsv);
+  document.getElementById("btn-print").addEventListener("click", function(){ window.print(); });
+}
+
+/* ---------- 初始化 ---------- */
+(function init(){
+  buildMacroInputs();
+  buildCurrentInputs();
+  bindEvents();
+  applyState(loadLocal() || defaultState());
+  renderAll();
+})();
+</script>
+</body>
+</html>
