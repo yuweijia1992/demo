@@ -16,7 +16,7 @@
 .lab-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
 .lab-nav a{border:1px solid var(--line);padding:9px 16px;border-radius:999px;font-size:12px;color:var(--muted)}
 .lab-nav a:hover{color:var(--text);border-color:var(--text)}
-.lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.cockpit{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-top:34px}.cockpit-main,.cockpit-side,.action-card,.belief-card{background:var(--surface);border:1px solid var(--line);padding:28px;box-shadow:var(--shadow)}.cockpit-title{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.cockpit-title h2{font-family:Georgia,"Songti SC",serif;font-size:32px;font-weight:500;margin:0 0 8px}.status-badge{border:1px solid var(--line);padding:7px 11px;border-radius:999px;font-size:11px;white-space:nowrap}.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}.metric{border-top:1px solid var(--line);padding-top:12px}.metric small,.alloc-note{display:block;color:var(--muted);font-size:11px}.metric strong{display:block;font-size:22px;margin-top:5px}.action-card{margin-top:16px}.action-card h3,.belief-card h3{margin:0 0 8px;font-size:18px}.action-card p,.belief-card p{margin:0;color:var(--muted);font-size:13px}.action-row{display:grid;grid-template-columns:1fr 90px 90px 1.4fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13px}.action-row:last-child{border-bottom:0}.action-row span:not(:first-child){text-align:right}.decision-pill{font-size:11px;border:1px solid var(--line);border-radius:999px;padding:4px 8px}.state-list{margin-top:18px}.state-row{display:grid;grid-template-columns:1fr auto;gap:15px;padding:13px 0;border-bottom:1px solid var(--line);font-size:13px}.state-row:last-child{border-bottom:0}.state-row span:last-child{color:var(--muted);text-align:right}.belief-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.belief-card{min-height:145px}.belief-card .tag{font-size:10px;color:var(--muted);letter-spacing:.12em}.belief-card h3{font-family:Georgia,"Songti SC",serif;font-weight:500;margin-top:12px}.hub-note{margin-top:14px;color:var(--muted);font-size:12px}@media(max-width:900px){.lab-grid,.alloc{grid-template-columns:1fr 1fr}.cockpit{grid-template-columns:1fr}.metric-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:680px){.lab-grid,.alloc,.belief-grid{grid-template-columns:1fr}.lab-hero{padding-top:58px}.decision-item{grid-template-columns:48px 1fr}.principle{padding:32px}.principle h2{font-size:32px}.action-row{grid-template-columns:1fr 70px 70px}.action-row span:last-child{grid-column:1/-1;text-align:left}.cockpit-title{display:block}.status-badge{display:inline-block;margin-top:12px}}
 .lab-card{background:var(--surface);border:1px solid var(--line);padding:30px;min-height:230px;box-shadow:var(--shadow)}
 .lab-card .num{font-family:Georgia,serif;color:var(--muted);font-size:14px}
 .lab-card h3{font-family:Georgia,"Songti SC",serif;font-size:27px;font-weight:500;margin:18px 0 10px}
@@ -54,12 +54,25 @@
 
 <main>
 <section class="lab-hero container">
-<p class="eyebrow">Y.M. INVESTMENT LAB · 2026</p>
-<h1>余暮投资实验室<br><em>把投资变成一套系统。</em></h1>
-<p class="lead">这里不是财经资讯，也不是预测市场的观点集合。核心任务是：明确目标 → 战略配置 → 估值研究 → 风险管理 → 执行 → 回测 → 复盘，让长期投资成为一个可以持续迭代的个人决策系统。</p>
-<div class="lab-nav">
-<a href="investment-system.html">投资总纲</a><a href="investment-dashboard.html">400万实时仪表盘</a><a href="global-macro-model.html">全球宏观模型</a><a href="asset-research.html">资产研究库</a><a href="historical-backtest.html">历史回测</a><a href="dcf-valuation.html">DCF估值</a><a href="investment-log.html">投资日志</a><a href="risk-monitor.html">风险监控</a><a href="annual-review.html">年度复盘</a>
+<p class="eyebrow">Y.M. INVESTMENT LAB · 2026 · DECISION CENTER</p>
+<h1>余暮投资实验室<br><em>400万元投资决策中枢。</em></h1>
+<p class="lead">这里不是财经资讯，也不是观点收藏夹。它把你的400万元资产配置、宏观状态、估值、回测、风险和执行规则连接起来，让每天打开网站时，先知道组合处于什么状态，再决定是否行动。</p>
+<div class="cockpit" id="cockpit">
+<div>
+<div class="cockpit-main">
+<div class="cockpit-title"><div><h2>400万元投资驾驶舱</h2><p class="hub-note">目标组合：全球股票 38% · 中国核心+红利 18% · 卫星资产 8% · 债券/现金 18% · 黄金 10% · 其他/预留 8%</p></div><span class="status-badge" id="macroBadge">读取当前宏观状态…</span></div>
+<div class="metric-grid">
+<div class="metric"><small>组合规模</small><strong>¥400万</strong></div>
+<div class="metric"><small>核心权益</small><strong>56%</strong></div>
+<div class="metric"><small>防守资产</small><strong>28%</strong></div>
+<div class="metric"><small>黄金</small><strong>10%</strong></div>
 </div>
+<div class="action-card"><h3>本月投资行动</h3><div class="action-row"><span>全球股票</span><span>38%</span><span class="decision-pill">HOLD</span><span>估值与宏观信号共同决定新增资金速度。</span></div><div class="action-row"><span>中国核心+红利</span><span>18%</span><span class="decision-pill">REBALANCE</span><span>围绕目标权重补足，不因短期行情追涨杀跌。</span></div><div class="action-row"><span>黄金</span><span>10%</span><span class="decision-pill">HOLD</span><span>作为组合对冲资产，避免因短期上涨而追高。</span></div><div class="action-row"><span>债券/现金</span><span>18%</span><span class="decision-pill">HOLD</span><span>保留再平衡弹药，优先服务于极端回撤时的行动能力。</span></div></div>
+</div>
+</div>
+<div class="cockpit-side"><div class="eyebrow">CURRENT MARKET STATE</div><h3 style="font-family:Georgia,'Songti SC',serif;font-size:27px;font-weight:500;margin:16px 0 8px" id="macroState">等待驾驶舱数据</h3><p id="macroText" class="hub-note">页面会读取投资驾驶舱保存的宏观输入；如果尚未录入，则以“待更新”显示，不虚构实时数据。</p><div class="state-list"><div class="state-row"><span>美元 / 流动性</span><span>查看驾驶舱</span></div><div class="state-row"><span>长端利率 / 实际利率</span><span>查看驾驶舱</span></div><div class="state-row"><span>股票估值</span><span>查看驾驶舱</span></div><div class="state-row"><span>波动率 / 风险偏好</span><span>查看驾驶舱</span></div></div><a href="investment-dashboard.html" style="display:inline-block;margin-top:18px;font-size:12px;border-bottom:1px solid var(--text)">打开400万元投资驾驶舱 →</a></div>
+</div>
+<div class="lab-nav"><a href="investment-dashboard.html">400万元投资驾驶舱</a><a href="investment-system.html">投资总纲</a><a href="global-macro-model.html">全球宏观模型</a><a href="asset-research.html">资产研究库</a><a href="historical-backtest.html">历史回测</a><a href="dcf-valuation.html">DCF估值</a><a href="investment-log.html">投资日志</a><a href="risk-monitor.html">风险监控</a><a href="annual-review.html">年度复盘</a></div>
 </section>
 
 <section class="section container" id="system">
@@ -82,26 +95,10 @@
 </section>
 
 <section class="section container" id="allocation">
-<div class="section-head"><span>02</span><div><h2>400万元配置框架</h2><p>战略配置优先于择时。</p></div></div>
-<div class="alloc">
-<div class="alloc-box">
-<div class="eyebrow">CORE FRAMEWORK</div>
-<div class="alloc-row"><span>全球股票 / 核心增长</span><strong>35–40%</strong></div>
-<div class="alloc-row"><span>中国核心 + 红利资产</span><strong>15–20%</strong></div>
-<div class="alloc-row"><span>优质个股 / 卫星资产</span><strong>5–10%</strong></div>
-<div class="alloc-row"><span>债券 / 现金类</span><strong>15–20%</strong></div>
-<div class="alloc-row"><span>黄金</span><strong>5–10%</strong></div>
-</div>
-<div class="alloc-box">
-<div class="eyebrow">DECISION RULES</div>
-<div class="alloc-row"><span>核心资产</span><strong>长期持有</strong></div>
-<div class="alloc-row"><span>估值过高</span><strong>降低新增资金</strong></div>
-<div class="alloc-row"><span>大幅回撤</span><strong>分层加仓</strong></div>
-<div class="alloc-row"><span>权重偏离</span><strong>再平衡</strong></div>
-<div class="alloc-row"><span>逻辑破坏</span><strong>重新估值 / 减仓</strong></div>
-</div>
-</div>
-<p style="color:var(--muted);font-size:12px;margin-top:16px">注：这里展示的是投资系统的框架，而不是实时持仓清单。具体比例应结合资产估值、现金流需求、风险承受能力和市场环境动态复核。</p>
+<div class="section-head"><span>02</span><div><h2>400万元战略配置</h2><p>统一母组合，所有研究与交易都围绕这一基准展开。</p></div></div>
+<div class="alloc"><div class="alloc-box"><div class="eyebrow">CORE PORTFOLIO · ¥4,000,000</div>
+<div class="alloc-row"><span>全球股票 / 核心增长</span><strong>38% · ¥152万</strong></div><div class="alloc-row"><span>中国核心 + 红利</span><strong>18% · ¥72万</strong></div><div class="alloc-row"><span>卫星资产</span><strong>8% · ¥32万</strong></div><div class="alloc-row"><span>债券 / 现金</span><strong>18% · ¥72万</strong></div><div class="alloc-row"><span>黄金</span><strong>10% · ¥40万</strong></div><div class="alloc-row"><span>其他 / 预留</span><strong>8% · ¥32万</strong></div></div><div class="alloc-box"><div class="eyebrow">DECISION RULES</div><div class="alloc-row"><span>核心资产</span><strong>长期持有</strong></div><div class="alloc-row"><span>估值过高</span><strong>降低新增</strong></div><div class="alloc-row"><span>回撤达到阈值</span><strong>分层加仓</strong></div><div class="alloc-row"><span>权重偏离</span><strong>再平衡</strong></div><div class="alloc-row"><span>逻辑破坏</span><strong>重新估值 / 减仓</strong></div><div class="alloc-row"><span>现金用途</span><strong>等待高赔率机会</strong></div></div></div>
+<p style="color:var(--muted);font-size:12px;margin-top:16px">注：这是当前母组合基准，不等于实时持仓。驾驶舱中的“当前权重”优先于这里的目标权重；偏离达到阈值后才触发再平衡。</p>
 </section>
 
 <section class="section container" id="research">
@@ -116,22 +113,11 @@
 </div>
 </section>
 
-<section class="section container" id="risk">
-<div class="section-head"><span>04</span><div><h2>风险与反方</h2><p>投资系统最重要的部分之一，是主动寻找自己可能错在哪里。</p></div></div>
-<div class="decision">
-<div class="decision-item"><span class="label">RISK 01</span><div><h3>估值风险</h3><p>好资产也可能买贵。长期收益率最终仍会受到起始估值约束。</p></div></div>
-<div class="decision-item"><span class="label">RISK 02</span><div><h3>集中风险</h3><p>单一国家、行业、公司、货币或因子暴露过高，都可能让组合在极端情景下失去韧性。</p></div></div>
-<div class="decision-item"><span class="label">RISK 03</span><div><h3>宏观 regime 风险</h3><p>通胀、实际利率、美元、财政、经济衰退和地缘冲突会改变不同资产之间的相关性。</p></div></div>
-<div class="decision-item"><span class="label">RISK 04</span><div><h3>行为风险</h3><p>真正危险的往往不是波动，而是在上涨时追高、下跌时失去纪律、在连续亏损后改变长期规则。</p></div></div>
-<div class="decision-item"><span class="label">RISK 05</span><div><h3>反方机制</h3><p>每个重要投资判断都建立 Bull / Base / Bear 三种情景，并单独写出“为什么这个判断可能错误”。</p></div></div>
-</div>
-</section>
-
-<section class="section container" id="tools">
+<section class="section container" id="risk"><div class="section-head"><span>04</span><div><h2>风险与反方</h2><p>不仅问“为什么会涨”，更问“什么情况会证明我错了”。</p></div></div><div class="belief-grid"><article class="belief-card"><span class="tag">THESIS 01</span><h3>全球股票长期值得持有</h3><p>反方：盈利增速下降、估值长期压缩或全球资本回报率结构性下降。</p></article><article class="belief-card"><span class="tag">THESIS 02</span><h3>黄金具有组合价值</h3><p>反方：实际利率长期上升、风险溢价显著收缩，黄金机会成本持续抬升。</p></article><article class="belief-card"><span class="tag">THESIS 03</span><h3>中国红利适合防守</h3><p>反方：股息持续下降、盈利恶化、监管或资本开支改变长期现金回报。</p></article><article class="belief-card"><span class="tag">THESIS 04</span><h3>长江电力适合长期研究</h3><p>反方：ROE、自由现金流或电价机制发生结构性恶化，估值无法覆盖增长下降。</p></article><article class="belief-card"><span class="tag">THESIS 05</span><h3>中美不会轻易全面战争</h3><p>反方：台海、南海或其他区域出现持续军事冲突。组合必须预先具备应对尾部风险的能力。</p></article><article class="belief-card"><span class="tag">RISK 06</span><h3>真正的最大风险</h3><p>集中于单一国家、公司、货币或因子；以及在极端波动中临时改变长期规则。</p></article></div><p class="hub-note">完整风险清单与自动提示：<a href="risk-monitor.html">进入风险监控 →</a></p></section><section class="section container" id="tools">
 <div class="section-head"><span>05</span><div><h2>研究工具</h2><p>让观点逐渐变成可以计算、比较和验证的东西。</p></div></div>
 <div class="lab-grid">
 <article class="lab-card"><span class="num">MODEL / 01</span><h3>宏观状态模型</h3><p>DXY、美国10年期国债收益率、实际利率、VIX、黄金、Brent、USD/CNY、CSI300估值、中国10年期国债、Fed Funds → 宏观状态识别。</p></article>
-<article class="lab-card"><span class="num">MODEL / 02</span><h3>资产配置模型</h3><p>把宏观状态、估值、风险与相关性转化为目标权重，并监控组合偏离和再平衡信号。</p></article>
+<article class="lab-card"><span class="num">MODEL / 02</span><h3>投资决策引擎</h3><p>把宏观状态、估值、风险与相关性连接到目标权重、当前权重和最终动作：BUY / HOLD / REDUCE / REBALANCE / WAIT。</p></article>
 <article class="lab-card"><span class="num">MODEL / 03</span><h3>历史回测</h3><p>比较全球组合、沪深300、标普500、60/40、中国红利等策略的年化收益、最大回撤、夏普和恢复时间。</p></article>
 <article class="lab-card"><span class="num">MODEL / 04</span><h3>DCF / SOTP</h3><p>用现金流、增长率、利润率、WACC 和终值估值公司；对复杂企业使用分部估值。</p></article>
 <article class="lab-card"><span class="num">MODEL / 05</span><h3>压力测试</h3><p>测试衰退、通胀、利率冲击、汇率变化、股市大跌与地缘冲突等极端情景下的组合损失。</p></article>
@@ -152,6 +138,15 @@
 <span>© 2026 余暮 · Investment Lab</span>
 <span><a href="../index.html">← 返回个人知识宇宙</a></span>
 </footer>
-<script src="../script.js"></script>
+<script src="../script.js"></script><script>
+(function(){
+  const s=localStorage;
+  const regime=s.getItem('ym_macro_regime')||'待更新';
+  const signal=s.getItem('ym_macro_signal')||'待更新';
+  const badge=document.getElementById('macroBadge'), state=document.getElementById('macroState'), text=document.getElementById('macroText');
+  if(regime!=='待更新'){badge.textContent=regime+' · '+signal;state.textContent=regime;text.textContent='投资驾驶舱已保存宏观状态。具体变量、评分和历史数据请进入驾驶舱核验。';}
+  else {badge.textContent='数据待更新';state.textContent='尚未录入当前宏观数据';}
+})();
+</script>
 </body>
 </html>
