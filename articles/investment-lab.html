@@ -45,15 +45,13 @@
 <header class="site-header">
 <div class="container nav-wrap">
 <a class="brand" href="../index.html">余暮<span> / Y.M.</span></a>
-<nav>
-<a href="#system">投资系统</a><a href="#allocation">配置</a><a href="#research">研究</a><a href="#risk">风险</a><a href="#tools">工具</a>
-</nav>
+<nav><a href="#today">今天</a><a href="#system">系统</a><a href="#allocation">配置</a><a href="#research">研究</a><a href="#history">回测</a><a href="#lifecycle">50年</a><a href="#risk">风险</a><a href="#review">复盘</a></nav>
 <button id="themeToggle" class="theme-btn" aria-label="切换深色模式">◐</button>
 </div>
 </header>
 
 <main>
-<section class="lab-hero container">
+<section class="lab-hero container" id="today">
 <p class="eyebrow">Y.M. INVESTMENT LAB · 2026 · DECISION CENTER</p>
 <h1>余暮投资实验室<br><em>400万元投资决策中枢。</em></h1>
 <p class="lead">这里不是财经资讯，也不是观点收藏夹。它把你的400万元资产配置、宏观状态、估值、回测、风险和执行规则连接起来，让每天打开网站时，先知道组合处于什么状态，再决定是否行动。</p>
@@ -85,7 +83,7 @@
 <article class="lab-card"><span class="num">04 / PROCESS</span><h3>研究流程</h3><p>提出问题 → 找数据 → 建模型 → 做历史回测 → 做压力测试 → 写下反方观点 → 形成执行规则 → 定期复盘。</p></article>
 <article class="lab-card"><span class="num">05 / REBALANCE</span><h3>再平衡</h3><p>不依赖情绪决定买卖。设置目标权重和偏离阈值，用再平衡把市场波动转化为纪律化的低买高卖机制。</p></article>
 <article class="lab-card"><span class="num">06 / REVIEW</span><h3>投资复盘</h3><p>记录当时为什么买、当时的估值、主要风险、什么情况会证明自己错了，并区分“判断错误”和“结果不好”。</p><a href="investment-log.html">进入投资日志 →</a></article>
-<article class="lab-card"><span class="num">07 / DASHBOARD</span><h3>400万实时仪表盘</h3><p>目标权重、当前权重、金额、偏离和宏观输入集中查看。</p><a href="investment-dashboard.html">打开仪表盘 →</a></article>
+<article class="lab-card"><span class="num">07 / DASHBOARD</span><h3>400万元投资驾驶舱</h3><p>目标权重、当前权重、金额、偏离和宏观输入集中查看。</p><a href="investment-dashboard.html">打开仪表盘 →</a></article>
 <article class="lab-card"><span class="num">08 / MACRO</span><h3>全球宏观模型</h3><p>增长、通胀、利率、美元、估值与风险偏好统一进入宏观状态框架。</p><a href="global-macro-model.html">打开宏观模型 →</a></article>
 <article class="lab-card"><span class="num">09 / BACKTEST</span><h3>历史回测</h3><p>比较收益、回撤、夏普、最差年份与恢复时间。</p><a href="historical-backtest.html">打开回测 →</a></article>
 <article class="lab-card"><span class="num">10 / VALUATION</span><h3>DCF估值</h3><p>把增长、WACC、终值和净债务显性化，观察估值敏感度。</p><a href="dcf-valuation.html">打开DCF →</a></article>
@@ -101,6 +99,8 @@
 <p style="color:var(--muted);font-size:12px;margin-top:16px">注：这是当前母组合基准，不等于实时持仓。驾驶舱中的“当前权重”优先于这里的目标权重；偏离达到阈值后才触发再平衡。</p>
 </section>
 
+<section class="section container" id="history"><div class="section-head"><span>03A</span><div><h2>历史相似环境</h2><p>不要只问“现在是什么”，还要问“过去什么时候最像现在”。</p></div></div><div class="alloc"><div class="alloc-box"><div class="eyebrow">20 YEARS · REGIME MATCHING</div><div class="alloc-row"><span>当前宏观状态</span><strong id="labRegime">待更新</strong></div><div class="alloc-row"><span>历史样本</span><strong>2006—2026</strong></div><div class="alloc-row"><span>核心比较</span><strong>收益 / 回撤 / 恢复</strong></div><div class="alloc-row"><span>使用原则</span><strong>辅助决策，不预测未来</strong></div></div><div class="alloc-box"><div class="eyebrow">BACKTEST ENGINE</div><p class="hub-note">历史回测页面继续负责完整计算：CAGR、最大回撤、Sharpe、滚动相关性、宏观状态与历史相似环境。首页只展示结论入口，避免重复制造两套数据。</p><a href="historical-backtest.html" style="display:inline-block;margin-top:18px;border-bottom:1px solid var(--text);font-size:12px">打开历史回测引擎 →</a></div></div></section>
+
 <section class="section container" id="research">
 <div class="section-head"><span>03</span><div><h2>资产研究库</h2><p>每一种资产都必须回答：为什么值得拥有？什么价格值得买？什么情况证明我错了？</p></div></div>
 <div class="research-grid">
@@ -113,7 +113,11 @@
 </div>
 </section>
 
-<section class="section container" id="risk"><div class="section-head"><span>04</span><div><h2>风险与反方</h2><p>不仅问“为什么会涨”，更问“什么情况会证明我错了”。</p></div></div><div class="belief-grid"><article class="belief-card"><span class="tag">THESIS 01</span><h3>全球股票长期值得持有</h3><p>反方：盈利增速下降、估值长期压缩或全球资本回报率结构性下降。</p></article><article class="belief-card"><span class="tag">THESIS 02</span><h3>黄金具有组合价值</h3><p>反方：实际利率长期上升、风险溢价显著收缩，黄金机会成本持续抬升。</p></article><article class="belief-card"><span class="tag">THESIS 03</span><h3>中国红利适合防守</h3><p>反方：股息持续下降、盈利恶化、监管或资本开支改变长期现金回报。</p></article><article class="belief-card"><span class="tag">THESIS 04</span><h3>长江电力适合长期研究</h3><p>反方：ROE、自由现金流或电价机制发生结构性恶化，估值无法覆盖增长下降。</p></article><article class="belief-card"><span class="tag">THESIS 05</span><h3>中美不会轻易全面战争</h3><p>反方：台海、南海或其他区域出现持续军事冲突。组合必须预先具备应对尾部风险的能力。</p></article><article class="belief-card"><span class="tag">RISK 06</span><h3>真正的最大风险</h3><p>集中于单一国家、公司、货币或因子；以及在极端波动中临时改变长期规则。</p></article></div><p class="hub-note">完整风险清单与自动提示：<a href="risk-monitor.html">进入风险监控 →</a></p></section><section class="section container" id="tools">
+<section class="section container" id="lifecycle"><div class="section-head"><span>06</span><div><h2>400万元 × 50年</h2><p>投资最终服务于生活，而不是反过来让生活服务于投资。</p></div></div><div class="alloc"><div class="alloc-box"><div class="eyebrow">LIFECYCLE SIMULATOR</div><div class="alloc-row"><span>初始资产</span><strong>¥400万</strong></div><div class="alloc-row"><span>投资年限</span><strong>50年</strong></div><div class="alloc-row"><span>默认长期收益</span><strong>5%</strong></div><div class="alloc-row"><span>默认年支出</span><strong>¥10万</strong></div><div class="alloc-row"><span>默认支出增长</span><strong>2%</strong></div><p class="hub-note">这不是收益承诺，而是用不同收益率、通胀和支出假设测试“财富能否支持一生”。</p><a href="investment-system.html" style="display:inline-block;margin-top:18px;border-bottom:1px solid var(--text);font-size:12px">查看财富生命周期框架 →</a></div><div class="alloc-box"><div class="eyebrow">关键问题</div><div class="alloc-row"><span>40岁</span><strong>现在有多少安全垫？</strong></div><div class="alloc-row"><span>60岁</span><strong>组合是否仍能增长？</strong></div><div class="alloc-row"><span>80岁</span><strong>现金流是否仍可持续？</strong></div><div class="alloc-row"><span>90岁+</span><strong>是否需要遗产/安全边界？</strong></div></div></div></section>
+
+<section class="section container" id="risk"><div class="section-head"><span>04</span><div><h2>风险与反方</h2><p>不仅问“为什么会涨”，更问“什么情况会证明我错了”。</p></div></div><div class="belief-grid"><article class="belief-card"><span class="tag">THESIS 01</span><h3>全球股票长期值得持有</h3><p>反方：盈利增速下降、估值长期压缩或全球资本回报率结构性下降。</p></article><article class="belief-card"><span class="tag">THESIS 02</span><h3>黄金具有组合价值</h3><p>反方：实际利率长期上升、风险溢价显著收缩，黄金机会成本持续抬升。</p></article><article class="belief-card"><span class="tag">THESIS 03</span><h3>中国红利适合防守</h3><p>反方：股息持续下降、盈利恶化、监管或资本开支改变长期现金回报。</p></article><article class="belief-card"><span class="tag">THESIS 04</span><h3>长江电力适合长期研究</h3><p>反方：ROE、自由现金流或电价机制发生结构性恶化，估值无法覆盖增长下降。</p></article><article class="belief-card"><span class="tag">THESIS 05</span><h3>中美不会轻易全面战争</h3><p>反方：台海、南海或其他区域出现持续军事冲突。组合必须预先具备应对尾部风险的能力。</p></article><article class="belief-card"><span class="tag">RISK 06</span><h3>真正的最大风险</h3><p>集中于单一国家、公司、货币或因子；以及在极端波动中临时改变长期规则。</p></article></div><p class="hub-note">完整风险清单与自动提示：<a href="risk-monitor.html">进入风险监控 →</a></p></section><section class="section container" id="review"><div class="section-head"><span>07</span><div><h2>投资成绩单与复盘</h2><p>不只评价赚了多少钱，还评价是否遵守了自己的系统。</p></div></div><div class="lab-grid"><article class="lab-card"><span class="num">REVIEW / 01</span><h3>年度成绩单</h3><p>CAGR、最大回撤、Sharpe、实际收益、股息/利息、配置贡献与纪律评分。</p><a href="annual-review.html">进入年度复盘 →</a></article><article class="lab-card"><span class="num">REVIEW / 02</span><h3>投资日志</h3><p>记录每次买入的价格、估值、逻辑、风险、持有期限和什么情况证明自己错了。</p><a href="investment-log.html">进入投资日志 →</a></article><article class="lab-card"><span class="num">REVIEW / 03</span><h3>投资禁区</h3><p>不因单日涨跌、新闻、KOL、FOMO、恐慌或追回亏损而改变战略配置；只有基本面、估值、宏观、风险预算和人生现金流变化才能触发重大调整。</p></article></div></section>
+
+<section class="section container" id="tools">
 <div class="section-head"><span>05</span><div><h2>研究工具</h2><p>让观点逐渐变成可以计算、比较和验证的东西。</p></div></div>
 <div class="lab-grid">
 <article class="lab-card"><span class="num">MODEL / 01</span><h3>宏观状态模型</h3><p>DXY、美国10年期国债收益率、实际利率、VIX、黄金、Brent、USD/CNY、CSI300估值、中国10年期国债、Fed Funds → 宏观状态识别。</p></article>
@@ -125,6 +129,7 @@
 </div>
 </section>
 
+<section class="section container"><div class="principle"><p class="eyebrow">THE DECISION LOOP</p><h2>数据 → 判断 → 配置 → 行动 → 结果 → 复盘 → 修正。</h2><p>每一项研究都必须最终回到组合；每一次交易都必须留下理由；每一次复盘都必须能够改变下一次决策。</p></div></section>
 <section class="section container">
 <div class="principle">
 <p class="eyebrow">THE CORE IDEA</p>
@@ -141,9 +146,9 @@
 <script src="../script.js"></script><script>
 (function(){
   const s=localStorage;
-  const regime=s.getItem('ym_macro_regime')||'待更新';
-  const signal=s.getItem('ym_macro_signal')||'待更新';
-  const badge=document.getElementById('macroBadge'), state=document.getElementById('macroState'), text=document.getElementById('macroText');
+  const regime=s.getItem('ym_macro_regime')||s.getItem('ym_regime')||'待更新';
+  const signal=s.getItem('ym_macro_signal')||s.getItem('ym_signal')||'待更新';
+  const badge=document.getElementById('macroBadge'), state=document.getElementById('macroState'), text=document.getElementById('macroText'), labRegime=document.getElementById('labRegime');
   if(regime!=='待更新'){badge.textContent=regime+' · '+signal;state.textContent=regime;text.textContent='投资驾驶舱已保存宏观状态。具体变量、评分和历史数据请进入驾驶舱核验。';}
   else {badge.textContent='数据待更新';state.textContent='尚未录入当前宏观数据';}
 })();
