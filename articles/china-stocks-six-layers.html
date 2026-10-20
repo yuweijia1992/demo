@@ -108,6 +108,10 @@
  <div class="lab-results" id="vResults"><div class="lab-result"><h3>悲观情景</h3><p>录入股价、EPS 和当前 PE 后计算。</p></div><div class="lab-result"><h3>基准情景</h3><p>录入股价、EPS 和当前 PE 后计算。</p></div><div class="lab-result"><h3>乐观情景</h3><p>录入股价、EPS 和当前 PE 后计算。</p></div></div>
  <div id="vSummary" style="font-size:13px;line-height:1.8;color:var(--muted);margin-top:14px">合理买入价采用目标回报率折现十年后期末价值；总回报近似计入股息再投资，未计税费、汇率和稀释。请将模型结果与 DCF、自由现金流和资产负债表交叉验证。</div>
  <div class="note-box" style="margin:18px 0 8px"><h3>估值方法按商业模式区分</h3><ul><li><b>银行：</b>PB—ROE、资产质量与股息；低 PB 必须结合可持续 ROE、不良生成、拨备与资本约束。</li><li><b>保险：</b>内含价值（EV）、新业务价值（NBV）及偿付能力；对长期投资收益率和风险贴现率做压力测试。</li><li><b>周期行业：</b>跨周期正常化利润、EV/EBITDA、单位成本与资产负债表；不使用景气峰值利润简单算 PE。</li><li><b>成熟现金流企业：</b>自由现金流 DCF、股息折现和净债务；区分维持性资本开支与扩张性资本开支。</li><li><b>成长科技：</b>多阶段情景 DCF、利润率/再投资/稀释假设，必要时分部估值；亏损企业不强行套 PE。</li><li><b>成熟消费与制造：</b>正常化 EPS 与自由现金流收益率交叉验证，并检查 ROIC、竞争优势和资本配置。</li></ul><p>数据库文件：<a href="../data/china-stocks-financial-valuation.json" target="_blank" rel="noopener">查看 49 家公司财务与估值数据库（JSON）↗</a>。该文件目前已建立字段、公司代码、行业分类、适用估值方法和核验来源，但财务数字仍为空值；只有逐项核验公司披露与行情后才会填入，避免把估算或旧数据伪装成最新实际值。</p></div>
+ <div class="lab-divider"></div>
+ <div class="lab-head"><div><p class="eyebrow">VERIFIED FINANCIAL SNAPSHOT</p><h2>财务数据库：已核验数据与待补字段</h2><p>下表从同仓库 JSON 数据库读取。金额单位为百万元（报告记账币种），每股收益按报告币种；报告期不等于 TTM。未核验字段留空，不以估算值代替。</p></div><span class="stock-type" id="dbStatusBadge">正在读取数据库…</span></div>
+ <div class="data-table-wrap"><table class="data-table" style="min-width:1080px"><thead><tr><th>公司</th><th>报告期</th><th>营业收入</th><th>营收同比%</th><th>归母净利润</th><th>EPS</th><th>ROE%</th><th>经营现金流</th><th>PE/PB/PS</th><th>数据状态</th><th>来源</th></tr></thead><tbody id="verifiedFinancialRows"><tr><td colspan="11">正在读取数据库…</td></tr></tbody></table></div>
+ <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:10px">说明：目前先完成第一批 5 家公司的部分 2026 年中期数据；其他 44 家尚未填入经核验数值。价格、PE/PB/PS、5 年与 10 年历史分位仍待单独核验，因此此表不代表完整的买入评级。</p>
  <div class="lab-links"><a id="vValuationLink" href="https://baifenwei.com/stocks/" target="_blank" rel="noopener">查询 PE/PB/历史分位 ↗</a><a id="vReportLink" href="https://www.cninfo.com.cn/" target="_blank" rel="noopener">查询上市公司财报 ↗</a><a href="https://www.hkexnews.hk/index_c.htm" target="_blank" rel="noopener">港股披露易 ↗</a></div>
  <div class="data-table-wrap"><table class="data-table"><thead><tr><th>层次</th><th>公司</th><th>代码</th><th>财报/估值数据状态</th><th>操作</th></tr></thead><tbody id="vStockTable"></tbody></table></div>
  <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:12px">数据状态说明：当前页面未接入授权行情/财报 API；数据库已建立 49 家公司字段与估值方法，但尚未完成数值填充，因此不伪造最新股价、EPS、PE 或历史分位。点击“选择并分析”后，请从交易所公告、公司年报/季报和估值历史服务核验数据并录入。保存本机输入只保存在当前浏览器，清除浏览器数据后可能丢失。</p>
@@ -231,5 +235,21 @@ function calculateValuation(){
  document.getElementById('vSummary').textContent='估值分位：'+(Number.isFinite(p)&&p>=0&&p<=100?p+'%（请核实采用 5 年或 10 年口径）':'尚未录入')+'。模型假设 EPS 按固定增速复合增长，期末 PE 回归至设定值，股息率保持不变且可再投资；未计税费、汇率、股本稀释、周期波动和中途现金流。合理买入价=期末理论股价/(1+目标回报率)^年数，仅是简化反推值，不是精确内在价值。';
 }
 initValuation();
+(async function loadVerifiedFinancialData(){
+ const status=document.getElementById('dbStatusBadge');
+ const body=document.getElementById('verifiedFinancialRows');
+ const fmt=(v,d=2)=>v===null||v===undefined||v===''?'—':Number(v).toLocaleString('zh-CN',{maximumFractionDigits:d});
+ try{
+  const res=await fetch('../data/china-stocks-financial-valuation.json',{cache:'no-store'});
+  if(!res.ok)throw new Error('HTTP '+res.status);
+  const db=await res.json();
+  const ready=db.stocks.filter(s=>s.dataStatus&&s.dataStatus.startsWith('半年度')).length;
+  status.textContent=ready+' / '+db.stocks.length+' 家已录入部分财务数据';
+  body.innerHTML=db.stocks.map(s=>'<tr><td>'+esc(s.name)+'</td><td>'+esc(s.financialPeriod||'—')+'</td><td>'+fmt(s.revenue)+'</td><td>'+fmt(s.revenueGrowth)+'</td><td>'+fmt(s.netProfit)+'</td><td>'+fmt(s.eps,4)+'</td><td>'+fmt(s.roe)+'</td><td>'+fmt(s.operatingCashFlow)+'</td><td>'+((s.peTtm!==null&&s.peTtm!==undefined)?fmt(s.peTtm)+' / ':'— / ')+((s.pb!==null&&s.pb!==undefined)?fmt(s.pb):'—')+' / '+((s.psTtm!==null&&s.psTtm!==undefined)?fmt(s.psTtm):'—')+'</td><td>'+esc(s.dataStatus||'待核验')+'</td><td>'+(s.sourceUrl?'<a href="'+esc(s.sourceUrl)+'" target="_blank" rel="noopener">查看来源 ↗</a>':'—')+'</td></tr>').join('');
+ }catch(err){
+  status.textContent='数据库读取失败';
+  body.innerHTML='<tr><td colspan="11">暂时无法加载 JSON 数据库。可直接打开 <a href="../data/china-stocks-financial-valuation.json">数据库文件</a> 查看。</td></tr>';
+ }
+})();
 </script>
 </body></html>
