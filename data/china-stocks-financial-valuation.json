@@ -273,17 +273,17 @@
         "分红与回购"
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
       "priceDate": null,
       "price": null,
-      "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
-      "eps": null,
-      "roe": null,
+      "currency": "CNY",
+      "revenue": 152115.0502,
+      "revenueGrowth": -2.8,
+      "netProfit": 10316.2549,
+      "eps": 1.12,
+      "roe": 8.36,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 9752.034,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -293,9 +293,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563094&stockid=600690",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
+      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本EPS，ROE为报告披露加权平均净资产收益率。营收同比下降2.80%，归母净利润同比下降14.27%，扣非归母净利润同比下降20.54%，经营现金流同比下降12.45%。"
     },
     {
       "layer": 1,
@@ -356,17 +357,17 @@
         "分红与回购"
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告）",
       "priceDate": null,
       "price": null,
-      "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
-      "eps": null,
+      "currency": "CNY",
+      "revenue": 89397.5225,
+      "revenueGrowth": -8.15,
+      "netProfit": 13278,
+      "eps": 2.38,
       "roe": null,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 18808.8324,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -376,9 +377,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
+      "dataNotes": "金额单位：百万元人民币；归母净利润约132.78亿元，基本EPS为半年度口径。营收同比下降8.15%、归母净利润同比下降7.87%、经营现金流同比下降33.60%。归母净利润为公告摘要中四舍五入值；如需高精度应回查完整利润表。"
     },
     {
       "layer": 1,
@@ -2080,6 +2082,12 @@
       "batch": "第三批：工商银行、中国平安、美的集团",
       "status": "新增3家公司已核验的2026年中期财务数据；保险公司补充新业务价值与营运利润说明。",
       "caveat": "金额单位为百万元人民币；未核验的价格、PE/PB/PS、5年/10年历史估值分位保持空值。银行和保险采用专属估值指标，不套用普通企业自由现金流框架。"
+    },
+    {
+      "date": "2026-10-20",
+      "batch": "第四批：海尔智家、格力电器、海康威视",
+      "status": "新增3家公司已核验的2026年半年度财务数据，涵盖营收、同比、归母净利润及可查的EPS、ROE、经营现金流。",
+      "caveat": "格力电器归母净利润采用公告摘要四舍五入值；股价、估值倍数与历史分位仍为空，等待独立核验。"
     }
   ]
 }
