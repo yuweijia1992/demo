@@ -85,7 +85,7 @@
 <section class="valuation-lab" id="valuationLab">
  <div class="lab-head"><div><p class="eyebrow">VALUATION WORKBENCH · 10-YEAR SCENARIOS</p><h2>估值工作台：从好公司到好价格</h2><p>选择任一候选公司，录入最新收盘价、最近财年/TTM每股收益、当前估值与历史分位，生成悲观/基准/乐观十年情景。为避免伪精确，未核实的财报和估值字段不预填；模型结果完全取决于你输入的数字。</p></div><span class="stock-type">模型演算 · 非实时行情</span></div>
  <div class="lab-grid">
-  <div class="lab-field"><label for="vStock">研究公司</label><select id="vStock"></select><small>共 49 家候选公司，按六大层次归类。</small></div>
+  <div class="lab-field"><label for="vStock">研究公司</label><select id="vStock"></select><small>共 49 家候选公司，按六大层次归类；财务数据需逐项核验。</small></div>
   <div class="lab-field"><label for="vPrice">当前股价（当地货币）</label><input id="vPrice" type="number" min="0" step="0.01" placeholder="录入最新收盘价"><small>请注明币种；港股与 A 股不可直接混算。</small></div>
   <div class="lab-field"><label for="vEPS">每股收益 EPS（TTM/正常化）</label><input id="vEPS" type="number" step="0.01" placeholder="录入最新 EPS"><small>亏损企业不适用常规 PE 模型。</small></div>
   <div class="lab-field"><label for="vPE">当前估值倍数（PE）</label><input id="vPE" type="number" min="0" step="0.1" placeholder="录入 PE-TTM/正常化 PE"><small>周期股优先使用中周期盈利。</small></div>
@@ -107,9 +107,10 @@
  <div class="lab-actions"><button class="lab-btn" id="vCalculate">计算估值情景</button><button class="lab-btn secondary" id="vSave">保存本机输入</button><button class="lab-btn secondary" id="vReset">重置模型</button></div>
  <div class="lab-results" id="vResults"><div class="lab-result"><h3>悲观情景</h3><p>录入股价、EPS 和当前 PE 后计算。</p></div><div class="lab-result"><h3>基准情景</h3><p>录入股价、EPS 和当前 PE 后计算。</p></div><div class="lab-result"><h3>乐观情景</h3><p>录入股价、EPS 和当前 PE 后计算。</p></div></div>
  <div id="vSummary" style="font-size:13px;line-height:1.8;color:var(--muted);margin-top:14px">合理买入价采用目标回报率折现十年后期末价值；总回报近似计入股息再投资，未计税费、汇率和稀释。请将模型结果与 DCF、自由现金流和资产负债表交叉验证。</div>
+ <div class="note-box" style="margin:18px 0 8px"><h3>估值方法按商业模式区分</h3><ul><li><b>银行：</b>PB—ROE、资产质量与股息；低 PB 必须结合可持续 ROE、不良生成、拨备与资本约束。</li><li><b>保险：</b>内含价值（EV）、新业务价值（NBV）及偿付能力；对长期投资收益率和风险贴现率做压力测试。</li><li><b>周期行业：</b>跨周期正常化利润、EV/EBITDA、单位成本与资产负债表；不使用景气峰值利润简单算 PE。</li><li><b>成熟现金流企业：</b>自由现金流 DCF、股息折现和净债务；区分维持性资本开支与扩张性资本开支。</li><li><b>成长科技：</b>多阶段情景 DCF、利润率/再投资/稀释假设，必要时分部估值；亏损企业不强行套 PE。</li><li><b>成熟消费与制造：</b>正常化 EPS 与自由现金流收益率交叉验证，并检查 ROIC、竞争优势和资本配置。</li></ul><p>数据库文件：<a href="../data/china-stocks-financial-valuation.json" target="_blank" rel="noopener">查看 49 家公司财务与估值数据库（JSON）↗</a>。该文件目前已建立字段、公司代码、行业分类、适用估值方法和核验来源，但财务数字仍为空值；只有逐项核验公司披露与行情后才会填入，避免把估算或旧数据伪装成最新实际值。</p></div>
  <div class="lab-links"><a id="vValuationLink" href="https://baifenwei.com/stocks/" target="_blank" rel="noopener">查询 PE/PB/历史分位 ↗</a><a id="vReportLink" href="https://www.cninfo.com.cn/" target="_blank" rel="noopener">查询上市公司财报 ↗</a><a href="https://www.hkexnews.hk/index_c.htm" target="_blank" rel="noopener">港股披露易 ↗</a></div>
  <div class="data-table-wrap"><table class="data-table"><thead><tr><th>层次</th><th>公司</th><th>代码</th><th>财报/估值数据状态</th><th>操作</th></tr></thead><tbody id="vStockTable"></tbody></table></div>
- <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:12px">数据状态说明：当前页面未接入授权行情/财报 API，因此不伪造最新股价、EPS、PE 或历史分位。点击“选择并分析”后，请从交易所公告、公司年报/季报和估值历史服务核验数据并录入。保存本机输入只保存在当前浏览器，清除浏览器数据后可能丢失。</p>
+ <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:12px">数据状态说明：当前页面未接入授权行情/财报 API；数据库已建立 49 家公司字段与估值方法，但尚未完成数值填充，因此不伪造最新股价、EPS、PE 或历史分位。点击“选择并分析”后，请从交易所公告、公司年报/季报和估值历史服务核验数据并录入。保存本机输入只保存在当前浏览器，清除浏览器数据后可能丢失。</p>
 </section>
 <div id="stockSections"></div>
 </section>
