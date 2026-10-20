@@ -109,17 +109,17 @@
         "周期价格/运价/利差指标"
       ],
       "formula": "以跨周期正常化利润而非景气高点利润估值；辅以EV/EBITDA、重置成本或分部估值，设置低/中/高周期盈利。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
       "priceDate": null,
       "price": null,
-      "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
-      "eps": null,
-      "roe": null,
+      "currency": "CNY",
+      "revenue": 59410.3064,
+      "revenueGrowth": -22.3,
+      "netProfit": -6077.6533,
+      "eps": -1.1,
+      "roe": -7.48,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": -2223.6684,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -129,9 +129,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12510732&stockid=002714",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年半年度财务数据已核验；周期估值与价格待核验",
+      "dataNotes": "金额单位：百万元人民币。归母净利润同比转亏，经营现金流为负，主要受生猪销售价格下降影响。猪周期公司不宜按当期亏损PE估值，应建立跨周期猪价、完全成本、出栏量和负债压力情景；当期ROE为报告披露加权平均净资产收益率。"
     },
     {
       "layer": 1,
@@ -150,17 +151,17 @@
         "分红与回购"
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
       "priceDate": null,
       "price": null,
-      "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
-      "eps": null,
+      "currency": "CNY",
+      "revenue": 16146.2738,
+      "revenueGrowth": 6.01,
+      "netProfit": 4190.1563,
+      "eps": 0.72,
       "roe": null,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 1224.2266,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -170,9 +171,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863&stockid=603288",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
+      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本每股收益。归母净利润同比增长7.13%，扣非归母净利润同比增长3.77%，经营现金流同比下降18.52%；估值时需留意利润增长与现金流变动不一致。"
     },
     {
       "layer": 1,
@@ -522,14 +524,14 @@
         "分红与回购"
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告）",
       "priceDate": null,
       "price": null,
-      "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
-      "eps": null,
+      "currency": "CNY",
+      "revenue": 155506.421,
+      "revenueGrowth": 5.89,
+      "netProfit": 5501.905,
+      "eps": 1.1,
       "roe": null,
       "roic": null,
       "operatingCashFlow": null,
@@ -542,9 +544,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570675&stockid=002352",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年半年度主要财务数据已核验；现金流、价格及估值待核验",
+      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本EPS。归母净利润同比下降4.11%，扣非归母净利润约49.7亿元、同比增长9.3%，两者差异显著，需拆解非经常性损益；经营现金流暂不填，避免将报告中子公司数据误作集团合并口径。"
     },
     {
       "layer": 1,
@@ -2088,6 +2091,12 @@
       "batch": "第四批：海尔智家、格力电器",
       "status": "新增2家已在49家公司名单中的公司之2026年半年度财务数据，涵盖营收、同比、归母净利润及可查的EPS、经营现金流。海康威视不在当前49家公司名单中，因此本批未写入。",
       "caveat": "格力电器归母净利润采用公告摘要四舍五入值；股价、估值倍数与历史分位仍为空，等待独立核验。"
+    },
+    {
+      "date": "2026-10-20",
+      "batch": "第五批：海天味业、牧原股份、顺丰控股",
+      "status": "新增3家公司2026年半年度主要财务数据；对牧原股份标注周期亏损，对顺丰控股区分归母净利润与扣非归母净利润。",
+      "caveat": "海天味业及牧原股份的经营现金流按报告原文录入；顺丰控股集团经营现金流仍待单独核对。股价、PE/PB/PS及历史估值分位保持空值。"
     }
   ]
 }
