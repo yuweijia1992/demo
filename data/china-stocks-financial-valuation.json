@@ -2,7 +2,7 @@
   "title": "中国相关上市公司财务与估值数据库",
   "version": "0.1.0",
   "asOf": "2026-10-20",
-  "coverage": "截至 2026-10-20，已完成六批共 17 家公司的部分 2026 年中期数据；其余 32 家尚未填入经核验数值。股价、PE/PB/PS、5 年与 10 年历史分位仍待单独核验，因此此表不代表完整的买入评级。",
+  "coverage": "截至 2026-10-20，已完成第七批共 22 家公司的部分 2026 年中期数据；其余 27 家尚未填入经核验数值。股价、PE/PB/PS、5 年与 10 年历史分位仍待单独核验，因此此表不代表完整的买入评级。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
   "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.",
   "sources": [
@@ -606,13 +606,13 @@
         "可服务市场与竞争假设"
       ],
       "formula": "建立收入、利润率、再投资与稀释的多阶段情景DCF；平台型公司补充分部估值，亏损企业不使用常规PE硬套。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告）",
       "priceDate": null,
       "price": null,
       "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
+      "revenue": 17746.9696,
+      "revenueGrowth": 6,
+      "netProfit": 4796.7918,
       "eps": null,
       "roe": null,
       "roic": null,
@@ -626,9 +626,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年半年度主要财务数据已核验；其他财务指标、价格及估值待核验",
+      "dataNotes": "营业收入177.47亿元，同比增长6.00%；归母净利润47.97亿元，同比下降5.37%；扣非归母净利润50.28亿元，同比下降1.52%。汇率中性口径收入增长8.16%。注意净利润与扣非利润差异。金额单位百万元人民币。"
     },
     {
       "layer": 2,
@@ -647,17 +648,17 @@
         "可服务市场与竞争假设"
       ],
       "formula": "建立收入、利润率、再投资与稀释的多阶段情景DCF；平台型公司补充分部估值，亏损企业不使用常规PE硬套。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
       "priceDate": null,
       "price": null,
       "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
+      "revenue": 15455.583728,
+      "revenueGrowth": -1.94,
+      "netProfit": 4465.28242,
       "eps": null,
       "roe": null,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 1987.003873,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -667,9 +668,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年半年度主要财务数据已核验；价格及估值待核验",
+      "dataNotes": "营业收入154.56亿元，同比下降1.94%；归母净利润44.65亿元，同比增长0.34%；经营现金流19.87亿元，同比下降53.80%。创新药收入88.09亿元，同比增长16.38%；研发投入46.05亿元，同比增长18.96%。需区分授权收入、药品销售、研发投入及经营现金流波动。金额单位百万元人民币。"
     },
     {
       "layer": 2,
@@ -688,17 +690,17 @@
         "可服务市场与竞争假设"
       ],
       "formula": "建立收入、利润率、再投资与稀释的多阶段情景DCF；平台型公司补充分部估值，亏损企业不使用常规PE硬套。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
       "priceDate": null,
       "price": null,
       "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
-      "eps": null,
-      "roe": null,
+      "revenue": 28897.478718,
+      "revenueGrowth": 38.93,
+      "netProfit": 11080.173661,
+      "eps": 3.8,
+      "roe": 13.19,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 9699.142388,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -708,9 +710,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12475210&stockid=603259",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年半年度主要财务数据已核验；价格及估值待核验",
+      "dataNotes": "营业收入288.97亿元，同比增长38.93%；归母净利润110.80亿元，同比增长29.43%；扣非归母净利润105.72亿元，同比增长89.39%；经营现金流96.99亿元，同比增长30.52%；加权平均ROE 13.19%，基本每股收益3.80元。公司提高2026年收入指引并上调资本开支指引；分析时需区分持续经营业务、资产处置/一次性收益及调整后利润。金额单位百万元人民币。"
     },
     {
       "layer": 2,
@@ -977,13 +980,13 @@
         "分红与回购"
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
       "priceDate": null,
       "price": null,
       "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
+      "revenue": 27767.19053,
+      "revenueGrowth": 14.54,
+      "netProfit": 3073,
       "eps": null,
       "roe": null,
       "roic": null,
@@ -997,9 +1000,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://paper.cnstock.com/html/2026-08/27/content_2260635.htm",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年半年度主要财务数据已核验；其他财务指标、价格及估值待核验",
+      "dataNotes": "营业收入277.67亿元，同比增长14.54%；归母净利润30.73亿元，同比增长4.08%。半年度报告未经审计。重点跟踪订单交付、应收账款/合同资产、经营现金流与利润匹配、研发投入。"
     },
     {
       "layer": 3,
@@ -1060,17 +1064,17 @@
         "资本开支计划"
       ],
       "formula": "用企业自由现金流DCF或股息折现估值，区分维持性与扩张性资本开支；用股息率、净债务和项目回报交叉核验。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告）",
       "priceDate": null,
       "price": null,
       "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
+      "revenue": 259010,
+      "revenueGrowth": -3.9,
       "netProfit": null,
       "eps": null,
       "roe": null,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 60380,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -1080,9 +1084,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://paper.cnstock.com/html/2026-08/21/content_2257150.htm",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年半年度部分财务数据已核验；归母净利润、EPS、价格及估值待补充",
+      "dataNotes": "营业收入2590.1亿元，同比下降3.9%；经营活动现金净流入603.8亿元，同比增长28.4%。营收变化受行业新旧动能转换及增值税税目调整影响。金额单位百万元人民币。"
     },
     {
       "layer": 3,
@@ -2105,6 +2110,12 @@
       "batch": "第六批：中国核电、中国神华",
       "status": "新增2家公司2026年半年度主要财务数据，包含营收、同比、归母净利润、EPS及经营现金流；中国神华同时录入报告披露ROE。",
       "caveat": "金额单位为百万元人民币；中国神华报告涉及资产收购及比较期重述，需注意同比口径；中国核电利润受大修、电价与弃电等因素影响。股价、估值倍数及历史估值分位继续保持空值。"
+    },
+    {
+      "date": "2026-10-20",
+      "batch": "第七批：国电南瑞、中国电信、迈瑞医疗、恒瑞医药、药明康德",
+      "status": "新增5家公司2026年半年度部分财务数据；国电南瑞、中国电信优先记录已从报告摘要核验的营收/现金流，医疗公司补充已核验营收、利润及部分现金流/ROE/EPS。",
+      "caveat": "金额单位为百万元人民币。国电南瑞和中国电信仍有利润或指标待补；药明康德需区分持续经营业务、一次性收益及调整后利润；所有公司股价、估值倍数和历史分位仍为空值。"
     }
   ]
 }
