@@ -69,8 +69,8 @@
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
+      "priceDate": "2026-10-20",
+      "price": 27.92,
       "currency": "CNY",
       "revenue": 64330.9365,
       "revenueGrowth": 4.13,
@@ -83,15 +83,17 @@
       "freeCashFlow": null,
       "netDebt": null,
       "dividendYield": null,
-      "peTtm": null,
-      "pb": null,
+      "peTtm": 17.54,
+      "pb": 3.1,
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
       "verifiedAt": "2026-10-20",
       "dataStatus": "半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币。2026年上半年归母净利润同比下降20.02%，经营现金流同比增长229.23%；EPS为半年度基本EPS，ROE为报告披露的加权平均净资产收益率。"
+      "dataNotes": "金额单位：百万元人民币。2026年上半年归母净利润同比下降20.02%，经营现金流同比增长229.23%；EPS为半年度基本EPS，ROE为报告披露的加权平均净资产收益率。",
+      "marketDataSourceUrl": "https://quote.cfi.cn/quote1587_600887.html",
+      "marketDataNotes": "中财网页面列示2026-10-20 15:00价格27.92元、PE 17.54、PB 3.10。需注意估值PE的计算口径与扣非PE不同。"
     },
     {
       "layer": 1,
@@ -280,8 +282,8 @@
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
       "financialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
-      "priceDate": null,
-      "price": null,
+      "priceDate": "2026-10-20",
+      "price": 20.1,
       "currency": "CNY",
       "revenue": 152115.0502,
       "revenueGrowth": -2.8,
@@ -302,7 +304,9 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563094&stockid=600690",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本EPS，ROE为报告披露加权平均净资产收益率。营收同比下降2.80%，归母净利润同比下降14.27%，扣非归母净利润同比下降20.54%，经营现金流同比下降12.45%。"
+      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本EPS，ROE为报告披露加权平均净资产收益率。营收同比下降2.80%，归母净利润同比下降14.27%，扣非归母净利润同比下降20.54%，经营现金流同比下降12.45%。",
+      "marketDataSourceUrl": "https://cn.investing.com/equities/qingdao-haier-historical-data",
+      "marketDataNotes": "Investing.com列示2026-10-20收盘20.10元；PE/PB未在该行情页同步核验。"
     },
     {
       "layer": 1,
@@ -1605,8 +1609,8 @@
       ],
       "formula": "合理PB≈(可持续ROE−长期增长率)/(股权资本成本−长期增长率)；再以每股净资产×合理PB估值，并用股息折现交叉验证。",
       "financialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
-      "priceDate": null,
-      "price": null,
+      "priceDate": "2026-10-20",
+      "price": 8.56,
       "currency": "CNY",
       "revenue": 465859,
       "revenueGrowth": 9.1,
@@ -1627,7 +1631,9 @@
       "sourceUrl": "https://paper.cnstock.com/html/2026-08/29/content_2262614.htm",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币。营业收入4,658.59亿元，同比增长9.1%；归母净利润1,736.82亿元；年化加权平均ROE 8.63%。银行业不使用普通企业自由现金流/净债务估值框架；另需跟踪净息差、资产质量、拨备覆盖率与资本充足率。"
+      "dataNotes": "金额单位：百万元人民币。营业收入4,658.59亿元，同比增长9.1%；归母净利润1,736.82亿元；年化加权平均ROE 8.63%。银行业不使用普通企业自由现金流/净债务估值框架；另需跟踪净息差、资产质量、拨备覆盖率与资本充足率。",
+      "marketDataSourceUrl": "https://cn.investing.com/equities/icbc-ss-historical-data",
+      "marketDataNotes": "Investing.com列示2026-10-20收盘8.56元；PE/PB需用银行专属估值口径补核。"
     },
     {
       "layer": 5,
