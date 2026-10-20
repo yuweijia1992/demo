@@ -2,7 +2,7 @@
   "title": "中国相关上市公司财务与估值数据库",
   "version": "0.1.0",
   "asOf": "2026-10-20",
-  "coverage": 49,
+  "coverage": "截至 2026-10-20，已完成六批共 17 家公司的部分 2026 年中期数据；其余 32 家尚未填入经核验数值。股价、PE/PB/PS、5 年与 10 年历史分位仍待单独核验，因此此表不代表完整的买入评级。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
   "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.",
   "sources": [
@@ -894,17 +894,17 @@
         "资本开支计划"
       ],
       "formula": "用企业自由现金流DCF或股息折现估值，区分维持性与扩张性资本开支；用股息率、净债务和项目回报交叉核验。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告）",
       "priceDate": null,
       "price": null,
       "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
-      "eps": null,
+      "revenue": 38397.89247,
+      "revenueGrowth": -6.28,
+      "netProfit": 3641.153735,
+      "eps": 0.177,
       "roe": null,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 19177.441758,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -914,9 +914,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572215&stockid=601985",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年半年度主要财务数据已核验；价格、估值与历史分位待核验",
+      "dataNotes": "金额单位百万元人民币；收入同比-6.28%，归母净利润同比-35.74%，基本每股收益0.177元，经营现金流同比+2.42%。公司披露利润下降主要与核电大修增加、新能源弃电率上升、电价下降及成本增加有关。核电运营需重点核验资本开支、净债务与分红覆盖，不能把经营现金流直接视为股东自由现金流。"
     },
     {
       "layer": 3,
@@ -934,17 +935,17 @@
         "周期价格/运价/利差指标"
       ],
       "formula": "以跨周期正常化利润而非景气高点利润估值；辅以EV/EBITDA、重置成本或分部估值，设置低/中/高周期盈利。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告）",
       "priceDate": null,
       "price": null,
       "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
-      "eps": null,
-      "roe": null,
+      "revenue": 189338,
+      "revenueGrowth": 7.9,
+      "netProfit": 28715,
+      "eps": 1.339,
+      "roe": 5.83,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 54664,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -954,9 +955,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572344&stockid=601088",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年半年度主要财务数据已核验；价格、估值与历史分位待核验",
+      "dataNotes": "金额单位百万元人民币；报告列示2026年上半年营收189,338百万元、归母净利润28,715百万元、基本每股收益1.339元、加权平均ROE 5.83%、经营现金流54,664百万元。公司同期完成收购控股股东旗下12家标的公司，收入和资产同比口径受重述/并购影响；估值需结合煤炭价格周期、煤电运一体化、资本开支与分红。"
     },
     {
       "layer": 3,
@@ -2097,6 +2099,12 @@
       "batch": "第五批：海天味业、牧原股份、顺丰控股",
       "status": "新增3家公司2026年半年度主要财务数据；对牧原股份标注周期亏损，对顺丰控股区分归母净利润与扣非归母净利润。",
       "caveat": "海天味业及牧原股份的经营现金流按报告原文录入；顺丰控股集团经营现金流仍待单独核对。股价、PE/PB/PS及历史估值分位保持空值。"
+    },
+    {
+      "date": "2026-10-20",
+      "batch": "第六批：中国核电、中国神华",
+      "status": "新增2家公司2026年半年度主要财务数据，包含营收、同比、归母净利润、EPS及经营现金流；中国神华同时录入报告披露ROE。",
+      "caveat": "金额单位为百万元人民币；中国神华报告涉及资产收购及比较期重述，需注意同比口径；中国核电利润受大修、电价与弃电等因素影响。股价、估值倍数及历史估值分位继续保持空值。"
     }
   ]
 }
