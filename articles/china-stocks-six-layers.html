@@ -49,6 +49,25 @@
 .empty-state{padding:40px;text-align:center;color:var(--muted);grid-column:1/-1}
 .backtop{display:inline-block;margin-top:16px;font-size:12px;color:var(--muted)}
 @media(max-width:760px){.article-hero{grid-template-columns:1fr;padding-top:46px}.hero-stat{border-left:0;border-top:1px solid var(--line);padding:16px 0 0;display:flex;align-items:baseline;gap:12px}.hero-stat strong{font-size:36px}.stock-grid{grid-template-columns:1fr}.layer-heading h2{font-size:21px}.stock-card{padding:18px}.research-toolbar input{width:100%;flex:auto}}
+
+.valuation-lab{margin:34px 0;padding:24px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+.lab-head{display:flex;justify-content:space-between;gap:20px;align-items:start;flex-wrap:wrap;margin-bottom:18px}
+.lab-head h2{font-size:25px;margin:0 0 7px}.lab-head p{font-size:13px;line-height:1.8;color:var(--muted);margin:0;max-width:780px}
+.lab-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.lab-field{display:flex;flex-direction:column;gap:6px}.lab-field label{font-size:11px;color:var(--muted)}
+.lab-field input,.lab-field select{width:100%;min-width:0;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:11px;font:inherit;font-size:13px}
+.lab-field small{font-size:10px;color:var(--muted);line-height:1.5}
+.lab-divider{height:1px;background:var(--line);margin:20px 0}
+.lab-results{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.lab-result{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg)}
+.lab-result h3{font-size:14px;margin:0 0 10px}.lab-result strong{display:block;font-size:24px;font-weight:600;margin-bottom:5px}.lab-result p{font-size:12px;color:var(--muted);line-height:1.7;margin:0}
+.lab-result .mini{font-size:11px;color:var(--muted);margin-top:8px}
+.lab-actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.lab-btn{background:var(--text);color:var(--bg);border:1px solid var(--text);padding:9px 14px;border-radius:999px;font:inherit;font-size:12px;cursor:pointer}
+.lab-btn.secondary{background:transparent;color:var(--text);border-color:var(--line)}
+.lab-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.lab-links a{font-size:12px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:3px}
+.data-table-wrap{overflow-x:auto;margin-top:20px}.data-table{width:100%;border-collapse:collapse;font-size:12px;min-width:680px}.data-table th,.data-table td{text-align:left;padding:11px 9px;border-bottom:1px solid var(--line);white-space:nowrap}.data-table th{color:var(--muted);font-weight:500}.data-table button{background:none;border:0;color:var(--text);text-decoration:underline;cursor:pointer;font:inherit;padding:0}
+@media(max-width:760px){.lab-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lab-results{grid-template-columns:1fr}.valuation-lab{padding:16px}.lab-head h2{font-size:21px}}
 </style>
 </head>
 <body>
@@ -62,6 +81,36 @@
 <div class="note-box"><h3>先读结论：需求重要，不等于股票便宜</h3><p>本页判断的是企业的长期商业价值与研究优先级，不是实时买入评级。估值结论必须结合最新股价、财报、自由现金流、资本开支、负债和未来盈利预期。对银行看资产质量与净息差；对周期股看中周期利润；对成长股看长期现金流而非单年增速。文中不展示未经核实的实时股价、PE 或目标价。</p></div>
 <div class="layer-nav"><a href="#layer1">01 衣食住行</a><a href="#layer2">02 医疗健康</a><a href="#layer3">03 能源与基础设施</a><a href="#layer4">04 科技进步</a><a href="#layer5">05 金融稳定</a><a href="#layer6">06 社会运行与消费服务</a></div>
 <div class="research-toolbar"><input id="stockSearch" type="search" placeholder="搜索公司、代码、行业、风险关键词…" aria-label="搜索股票"><select id="layerFilter" aria-label="筛选层次"><option value="all">全部六大层次</option><option value="1">衣食住行</option><option value="2">医疗健康</option><option value="3">能源与基础设施</option><option value="4">科技进步</option><option value="5">金融稳定</option><option value="6">社会运行与消费服务</option></select><span class="result-count" id="resultCount">共 49 家候选公司</span></div>
+
+<section class="valuation-lab" id="valuationLab">
+ <div class="lab-head"><div><p class="eyebrow">VALUATION WORKBENCH · 10-YEAR SCENARIOS</p><h2>估值工作台：从好公司到好价格</h2><p>选择任一候选公司，录入最新收盘价、最近财年/TTM每股收益、当前估值与历史分位，生成悲观/基准/乐观十年情景。为避免伪精确，未核实的财报和估值字段不预填；模型结果完全取决于你输入的数字。</p></div><span class="stock-type">模型演算 · 非实时行情</span></div>
+ <div class="lab-grid">
+  <div class="lab-field"><label for="vStock">研究公司</label><select id="vStock"></select><small>共 49 家候选公司，按六大层次归类。</small></div>
+  <div class="lab-field"><label for="vPrice">当前股价（当地货币）</label><input id="vPrice" type="number" min="0" step="0.01" placeholder="录入最新收盘价"><small>请注明币种；港股与 A 股不可直接混算。</small></div>
+  <div class="lab-field"><label for="vEPS">每股收益 EPS（TTM/正常化）</label><input id="vEPS" type="number" step="0.01" placeholder="录入最新 EPS"><small>亏损企业不适用常规 PE 模型。</small></div>
+  <div class="lab-field"><label for="vPE">当前估值倍数（PE）</label><input id="vPE" type="number" min="0" step="0.1" placeholder="录入 PE-TTM/正常化 PE"><small>周期股优先使用中周期盈利。</small></div>
+  <div class="lab-field"><label for="vPercentile">10 年历史 PE 分位（%）</label><input id="vPercentile" type="number" min="0" max="100" step="1" placeholder="0–100"><small>低分位不自动等于低估。</small></div>
+  <div class="lab-field"><label for="vYield">股息率（%）</label><input id="vYield" type="number" min="0" step="0.1" placeholder="例如 3.5"><small>填年化股息率；模型假设分红收益可持续。</small></div>
+  <div class="lab-field"><label for="vHurdle">目标年化回报率（%）</label><input id="vHurdle" type="number" min="0" max="50" step="0.5" value="10"><small>用于反推合理买入价，不是收益保证。</small></div>
+  <div class="lab-field"><label for="vYears">预测年限</label><input id="vYears" type="number" min="1" max="30" step="1" value="10"><small>默认 10 年；预测越远不确定性越高。</small></div>
+ </div>
+ <div class="lab-divider"></div>
+ <p style="font-size:13px;font-weight:650;margin:0 0 12px">三种情景假设（均可修改）</p>
+ <div class="lab-grid">
+  <div class="lab-field"><label for="gBear">悲观：EPS 年增长率（%）</label><input id="gBear" type="number" step="1" value="-2"></div>
+  <div class="lab-field"><label for="peBear">悲观：期末 PE</label><input id="peBear" type="number" min="0" step="1" value="10"></div>
+  <div class="lab-field"><label for="gBase">基准：EPS 年增长率（%）</label><input id="gBase" type="number" step="1" value="5"></div>
+  <div class="lab-field"><label for="peBase">基准：期末 PE</label><input id="peBase" type="number" min="0" step="1" value="15"></div>
+  <div class="lab-field"><label for="gBull">乐观：EPS 年增长率（%）</label><input id="gBull" type="number" step="1" value="10"></div>
+  <div class="lab-field"><label for="peBull">乐观：期末 PE</label><input id="peBull" type="number" min="0" step="1" value="20"></div>
+ </div>
+ <div class="lab-actions"><button class="lab-btn" id="vCalculate">计算估值情景</button><button class="lab-btn secondary" id="vSave">保存本机输入</button><button class="lab-btn secondary" id="vReset">重置模型</button></div>
+ <div class="lab-results" id="vResults"><div class="lab-result"><h3>悲观情景</h3><p>录入股价、EPS 和当前 PE 后计算。</p></div><div class="lab-result"><h3>基准情景</h3><p>录入股价、EPS 和当前 PE 后计算。</p></div><div class="lab-result"><h3>乐观情景</h3><p>录入股价、EPS 和当前 PE 后计算。</p></div></div>
+ <div id="vSummary" style="font-size:13px;line-height:1.8;color:var(--muted);margin-top:14px">合理买入价采用目标回报率折现十年后期末价值；总回报近似计入股息再投资，未计税费、汇率和稀释。请将模型结果与 DCF、自由现金流和资产负债表交叉验证。</div>
+ <div class="lab-links"><a id="vValuationLink" href="https://baifenwei.com/stocks/" target="_blank" rel="noopener">查询 PE/PB/历史分位 ↗</a><a id="vReportLink" href="https://www.cninfo.com.cn/" target="_blank" rel="noopener">查询上市公司财报 ↗</a><a href="https://www.hkexnews.hk/index_c.htm" target="_blank" rel="noopener">港股披露易 ↗</a></div>
+ <div class="data-table-wrap"><table class="data-table"><thead><tr><th>层次</th><th>公司</th><th>代码</th><th>财报/估值数据状态</th><th>操作</th></tr></thead><tbody id="vStockTable"></tbody></table></div>
+ <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:12px">数据状态说明：当前页面未接入授权行情/财报 API，因此不伪造最新股价、EPS、PE 或历史分位。点击“选择并分析”后，请从交易所公告、公司年报/季报和估值历史服务核验数据并录入。保存本机输入只保存在当前浏览器，清除浏览器数据后可能丢失。</p>
+</section>
 <div id="stockSections"></div>
 </section>
 <section class="container section">
@@ -148,7 +197,38 @@ function render(){
  if(!count)container.innerHTML='<div class="empty-state">没有匹配的公司。试试更短的关键词，或切换层次。</div>';
 }
 document.getElementById('stockSearch').addEventListener('input',render);
+
 document.getElementById('layerFilter').addEventListener('change',render);
 render();
+
+const vStock=document.getElementById('vStock');
+const fieldIds=['vPrice','vEPS','vPE','vPercentile','vYield','vHurdle','vYears','gBear','peBear','gBase','peBase','gBull','peBull'];
+function initValuation(){
+ vStock.innerHTML=stocks.map((s,i)=>'<option value="'+i+'">'+esc(s.n)+' · '+esc(s.c)+' · '+layers[s.l-1].title+'</option>').join('');
+ document.getElementById('vStockTable').innerHTML=stocks.map((s,i)=>'<tr><td>'+String(s.l).padStart(2,'0')+'</td><td>'+esc(s.n)+'</td><td>'+esc(s.c)+'</td><td>待核验最新数据</td><td><button type="button" data-stock-index="'+i+'">选择并分析</button></td></tr>').join('');
+ document.querySelectorAll('[data-stock-index]').forEach(b=>b.addEventListener('click',()=>{vStock.value=b.dataset.stockIndex;vStock.dispatchEvent(new Event('change'));document.getElementById('valuationLab').scrollIntoView({behavior:'smooth',block:'start'});}));
+ vStock.addEventListener('change',()=>{const s=stocks[Number(vStock.value)];const code=s.c.split('/')[0].trim().replace('.SH','').replace('.SZ','').replace('.HK','');document.getElementById('vValuationLink').href='https://baifenwei.com/stocks/';document.getElementById('vReportLink').href='https://www.cninfo.com.cn/new/fulltextSearch?keyWord='+encodeURIComponent(s.n);document.getElementById('vResults').innerHTML='<div class="lab-result"><h3>悲观情景</h3><p>为 '+esc(s.n)+' 录入最新数据后计算。</p></div><div class="lab-result"><h3>基准情景</h3><p>为 '+esc(s.n)+' 录入最新数据后计算。</p></div><div class="lab-result"><h3>乐观情景</h3><p>为 '+esc(s.n)+' 录入最新数据后计算。</p></div>';});
+ document.getElementById('vCalculate').addEventListener('click',calculateValuation);
+ document.getElementById('vReset').addEventListener('click',()=>{fieldIds.forEach(id=>{const e=document.getElementById(id);e.value=({'vHurdle':'10','vYears':'10','gBear':'-2','peBear':'10','gBase':'5','peBase':'15','gBull':'10','peBull':'20'})[id]||'';});calculateValuation();});
+ document.getElementById('vSave').addEventListener('click',()=>{try{const data={stock:vStock.value};fieldIds.forEach(id=>data[id]=document.getElementById(id).value);localStorage.setItem('chinaStockValuationLab',JSON.stringify(data));document.getElementById('vSummary').textContent='已保存到当前浏览器。模型仍需核验输入数据；保存不代表估值结论正确。';}catch(e){document.getElementById('vSummary').textContent='当前浏览器不允许本地保存，请将输入另行记录。';}});
+ try{const data=JSON.parse(localStorage.getItem('chinaStockValuationLab')||'null');if(data){vStock.value=data.stock;fieldIds.forEach(id=>{if(data[id]!==undefined)document.getElementById(id).value=data[id];});}}catch(e){}
+}
+function calculateValuation(){
+ const val=id=>Number(document.getElementById(id).value);
+ const price=val('vPrice'),eps=val('vEPS'),pe=val('vPE'),yieldPct=val('vYield')/100,hurdle=val('vHurdle')/100,years=val('vYears');
+ if(!(price>0&&eps>0&&pe>0&&years>0)){document.getElementById('vSummary').textContent='请录入正数的当前股价、EPS、当前 PE 和预测年限。若公司亏损，请改用自由现金流/销售额等适配模型。';return;}
+ const scenarios=[['悲观',val('gBear')/100,val('peBear')],['基准',val('gBase')/100,val('peBase')],['乐观',val('gBull')/100,val('peBull')]];
+ const fmt=x=>Number.isFinite(x)?x.toLocaleString('zh-CN',{maximumFractionDigits:2,minimumFractionDigits:2}):'—';
+ document.getElementById('vResults').innerHTML=scenarios.map(([name,g,terminalPE])=>{
+  const terminalEPS=eps*Math.pow(1+g,years),target=terminalEPS*terminalPE;
+  const buy=target/Math.pow(1+hurdle,years);
+  const cagr=(Math.pow(Math.max(0.000001,target/price),1/years)*(1+Math.max(0,yieldPct))-1)*100;
+  const upside=(target/price-1)*100;
+  return '<div class="lab-result"><h3>'+name+'情景 · '+years+' 年</h3><strong>'+fmt(target)+'</strong><p>期末理论股价（与当前股价同币种）</p><p class="mini">对应年化总回报近似：'+fmt(cagr)+'% · 股价空间：'+fmt(upside)+'%</p><div class="lab-divider"></div><p><b>对应合理买入价：</b>'+fmt(buy)+'</p><p class="mini">EPS 年增 '+fmt(g*100)+'% · 期末 PE '+fmt(terminalPE)+' 倍</p></div>';
+ }).join('');
+ const p=val('vPercentile');
+ document.getElementById('vSummary').textContent='估值分位：'+(Number.isFinite(p)&&p>=0&&p<=100?p+'%（请核实采用 5 年或 10 年口径）':'尚未录入')+'。模型假设 EPS 按固定增速复合增长，期末 PE 回归至设定值，股息率保持不变且可再投资；未计税费、汇率、股本稀释、周期波动和中途现金流。合理买入价=期末理论股价/(1+目标回报率)^年数，仅是简化反推值，不是精确内在价值。';
+}
+initValuation();
 </script>
 </body></html>
