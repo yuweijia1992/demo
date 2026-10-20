@@ -1,0 +1,2130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>三千年 · 三十三人 | 中国历代百年代表</title>
+<meta name="description" content="从公元前13世纪到20世纪，每一个世纪选一位代表人物：武丁、周文王、孔子、秦始皇、李白、苏轼、郑和、孙中山……讲述他们去了哪里、做了什么、留下了什么。">
+<meta name="theme-color" content="#f5f1e7">
+<style>
+  :root{
+    --paper:#f5f1e7;
+    --paper2:#fffdf7;
+    --ink:#211d18;
+    --ink2:#4b443a;
+    --ink3:#837a6c;
+    --line:#e0d7c6;
+    --red:#a8342a;
+    --gold:#a9823f;
+    --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC","SimSun",serif;
+    --sans:"PingFang SC","HarmonyOS Sans SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background-color:var(--paper);
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(168,52,42,.045), transparent 42%),
+      radial-gradient(circle at 88% 82%, rgba(47,74,94,.05), transparent 45%),
+      repeating-linear-gradient(0deg, rgba(120,100,70,.022) 0 1px, transparent 1px 4px);
+    color:var(--ink);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.7;
+  }
+  ::selection{background:rgba(168,52,42,.16)}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:clamp(64px,10vw,120px) 24px clamp(36px,5vw,56px);
+    text-align:center;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:2}
+  .kicker{
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    color:var(--ink3);
+    margin-bottom:26px;
+  }
+  h1{
+    font-family:var(--serif);
+    font-size:clamp(40px,8.2vw,86px);
+    font-weight:600;
+    letter-spacing:.08em;
+    line-height:1.12;
+    text-indent:.08em;
+  }
+  h1 .sep{color:var(--red);opacity:.75;margin:0 .12em}
+  .hero-sub{
+    margin-top:26px;
+    font-family:var(--serif);
+    font-size:clamp(14px,1.7vw,17px);
+    color:var(--ink2);
+    letter-spacing:.06em;
+  }
+  .hero-note{
+    margin:18px auto 0;
+    max-width:620px;
+    font-size:12.5px;
+    color:var(--ink3);
+    line-height:1.9;
+  }
+  .seal{
+    position:absolute;
+    right:clamp(18px,6vw,88px);
+    top:clamp(56px,9vw,104px);
+    width:74px;
+    height:74px;
+    border:2.5px solid rgba(168,52,42,.62);
+    border-radius:5px;
+    color:rgba(168,52,42,.78);
+    font-family:var(--serif);
+    font-size:17px;
+    line-height:1.12;
+    display:grid;
+    place-content:center;
+    letter-spacing:.06em;
+    transform:rotate(-5deg);
+    z-index:3;
+    padding:6px;
+  }
+  .seal span{display:block;text-align:center}
+  .hero-vline{
+    position:absolute;left:clamp(14px,4vw,60px);top:0;bottom:0;width:1px;
+    background:linear-gradient(to bottom,transparent,rgba(168,52,42,.22),transparent);
+  }
+  .hero-vline::before{
+    content:"史";position:absolute;top:22%;left:-13px;
+    font-family:var(--serif);font-size:22px;color:rgba(131,122,108,.35);
+  }
+
+  /* ---------- AXIS ---------- */
+  .axis-wrap{
+    position:relative;
+    background:rgba(255,253,247,.55);
+    border-bottom:1px solid var(--line);
+    padding:0 0 4px;
+  }
+  .axis{
+    display:flex;
+    align-items:flex-end;
+    gap:0;
+    overflow-x:auto;
+    padding:22px clamp(16px,4vw,40px) 14px;
+    scrollbar-width:thin;
+    scrollbar-color:#cfc4ae transparent;
+  }
+  .axis::-webkit-scrollbar{height:3px}
+  .axis::-webkit-scrollbar-thumb{background:#d5cab5;border-radius:2px}
+  .tick{
+    flex:1 1 0;
+    min-width:37px;
+    text-align:center;
+    cursor:pointer;
+    border:0;background:none;
+    font-family:var(--sans);
+    color:var(--ink3);
+    padding:0 0 2px;
+    transition:color .25s;
+    position:relative;
+  }
+  .tick::before{
+    content:"";display:block;width:1px;height:9px;margin:0 auto 8px;
+    background:#cfc4ae;transition:.25s;
+  }
+  .tick .cn{
+    display:block;font-size:10.5px;letter-spacing:0;
+    white-space:nowrap;opacity:.9;
+  }
+  .tick:hover{color:var(--red)}
+  .tick:hover::before{background:var(--red);height:15px}
+  .tick.active{color:var(--red)}
+  .tick.active .cn{font-weight:600}
+  .tick.active::before{background:var(--red);height:15px;width:2px}
+
+  /* ---------- TOOLBAR ---------- */
+  .toolbar{
+    position:sticky;top:0;z-index:40;
+    background:rgba(245,241,231,.9);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+    padding:12px clamp(16px,4vw,40px);
+  }
+  .toolbar-in{
+    max-width:1240px;margin:0 auto;
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  }
+  .chips{display:flex;gap:6px;flex-wrap:wrap;flex:1}
+  .chip{
+    border:1px solid var(--line);
+    background:transparent;
+    color:var(--ink2);
+    font-family:var(--sans);
+    font-size:12.5px;
+    padding:5px 13px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:.2s;
+    white-space:nowrap;
+  }
+  .chip:hover{border-color:var(--ink3);color:var(--ink)}
+  .chip.on{background:var(--ink);border-color:var(--ink);color:#f7f3ea}
+  .search{
+    display:flex;align-items:center;gap:8px;
+    border-bottom:1px solid var(--line);
+    padding:4px 2px;
+  }
+  .search input{
+    border:0;background:none;outline:none;
+    font-family:var(--sans);font-size:13px;color:var(--ink);
+    width:120px;
+  }
+  .search input::placeholder{color:#a89e8d}
+  .search svg{opacity:.4}
+
+  /* ---------- GRID ---------- */
+  main{max-width:1240px;margin:0 auto;padding:clamp(34px,5vw,60px) clamp(16px,4vw,40px) 40px}
+  .sec-head{
+    display:flex;align-items:baseline;gap:16px;
+    margin-bottom:30px;padding-bottom:14px;border-bottom:1px solid var(--line);
+  }
+  .sec-head h2{
+    font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:.1em;
+  }
+  .sec-head .cnt{font-size:12px;color:var(--ink3);letter-spacing:.08em;margin-left:auto}
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(268px,1fr));
+    gap:0;
+  }
+  .card{
+    position:relative;
+    background:var(--paper2);
+    padding:24px 22px 20px;
+    cursor:pointer;
+    transition:background .3s, transform .3s, box-shadow .3s;
+    overflow:hidden;
+    box-shadow:0 0 0 1px var(--line);
+    opacity:0;transform:translateY(14px);
+  }
+  .card.in{opacity:1;transform:none}
+  .card::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+    background:var(--era,#a8342a);
+    transform:scaleY(0);transform-origin:top;
+    transition:transform .35s ease;
+  }
+  .card:hover{
+    background:#fff;z-index:2;
+    box-shadow:0 0 0 1px var(--era,#a8342a), 0 14px 34px -18px rgba(60,45,30,.45);
+  }
+  .card:hover::before{transform:scaleY(1)}
+  .card-top{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .cnum{
+    font-family:var(--serif);
+    font-size:12px;letter-spacing:.14em;color:var(--era,#a8342a);
+    border:1px solid currentColor;border-radius:2px;
+    padding:1px 7px;opacity:.85;
+  }
+  .cdyn{font-size:11.5px;color:var(--ink3);letter-spacing:.1em}
+  .cname{
+    font-family:var(--serif);
+    font-size:27px;font-weight:600;letter-spacing:.1em;
+    line-height:1.25;margin-bottom:8px;
+  }
+  .cname small{
+    font-family:var(--sans);font-size:12px;font-weight:400;
+    color:var(--ink3);letter-spacing:.02em;margin-left:8px;
+  }
+  .cone{
+    font-family:var(--serif);
+    font-size:13.5px;color:var(--ink2);line-height:1.85;
+    letter-spacing:.02em;
+    min-height:50px;
+  }
+  .cfoot{
+    display:flex;align-items:center;justify-content:space-between;
+    margin-top:16px;padding-top:12px;border-top:1px dashed var(--line);
+    font-size:11.5px;color:var(--ink3);letter-spacing:.04em;
+  }
+  .cfoot .go{color:var(--era,#a8342a);opacity:0;transform:translateX(-4px);transition:.3s}
+  .card:hover .cfoot .go{opacity:1;transform:none}
+  .empty{
+    grid-column:1/-1;background:var(--paper2);
+    padding:60px 20px;text-align:center;color:var(--ink3);font-size:13px;
+  }
+
+  /* ---------- MODAL ---------- */
+  .mask{
+    position:fixed;inset:0;z-index:100;
+    background:rgba(28,24,18,.5);
+    backdrop-filter:blur(3px);
+    display:none;align-items:center;justify-content:center;
+    padding:clamp(0px,3vw,40px);
+  }
+  .mask.open{display:flex}
+  .sheet{
+    background:var(--paper2);
+    width:min(760px,100%);
+    max-height:min(88vh,900px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    border-top:4px solid var(--era,#a8342a);
+    box-shadow:0 40px 90px -30px rgba(0,0,0,.5);
+    position:relative;
+    animation:pop .32s cubic-bezier(.22,1,.36,1);
+  }
+  @keyframes pop{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+  .sheet::-webkit-scrollbar{width:6px}
+  .sheet::-webkit-scrollbar-thumb{background:#d8cdb8;border-radius:3px}
+  .s-close{
+    position:sticky;top:0;float:right;
+    margin:14px 14px 0 0;
+    width:32px;height:32px;border-radius:50%;
+    border:1px solid var(--line);background:rgba(255,253,247,.94);
+    color:var(--ink2);font-size:16px;line-height:1;cursor:pointer;
+    display:grid;place-items:center;z-index:5;transition:.2s;
+  }
+  .s-close:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .s-body{padding:34px clamp(22px,4.4vw,48px) 44px}
+  .s-eyebrow{
+    font-size:11.5px;letter-spacing:.2em;color:var(--era,#a8342a);
+    display:flex;align-items:center;gap:10px;margin-bottom:14px;
+  }
+  .s-eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+  .s-name{
+    font-family:var(--serif);
+    font-size:clamp(30px,5vw,44px);font-weight:600;letter-spacing:.08em;
+    line-height:1.2;
+  }
+  .s-life{font-size:12.5px;color:var(--ink3);letter-spacing:.1em;margin-top:8px}
+  .s-quote{
+    margin:26px 0 4px;
+    padding:18px 22px;
+    background:linear-gradient(90deg,rgba(168,52,42,.06),rgba(168,52,42,0));
+    border-left:2px solid var(--era,#a8342a);
+    font-family:var(--serif);
+    font-size:16px;line-height:1.95;color:var(--ink);
+    letter-spacing:.04em;
+  }
+  .s-quote cite{
+    display:block;margin-top:8px;font-family:var(--sans);font-style:normal;
+    font-size:11px;color:var(--ink3);letter-spacing:.08em;
+  }
+  .blk{margin-top:34px}
+  .blk h4{
+    font-family:var(--sans);
+    font-size:11.5px;font-weight:600;letter-spacing:.24em;color:var(--ink3);
+    margin-bottom:14px;display:flex;align-items:center;gap:10px;
+  }
+  .blk h4::before{
+    content:"";width:5px;height:5px;background:var(--era,#a8342a);
+    transform:rotate(45deg);flex:0 0 auto;
+  }
+  .blk p{
+    font-family:var(--serif);font-size:14.5px;line-height:2.05;color:#3b352c;
+    letter-spacing:.02em;text-align:justify;
+  }
+  .steps{list-style:none;position:relative;padding-left:32px;counter-reset:st}
+  .steps::before{
+    content:"";position:absolute;left:9px;top:10px;bottom:14px;width:1px;
+    background:linear-gradient(to bottom,var(--line),rgba(224,215,198,.2));
+  }
+  .steps li{counter-increment:st;position:relative;padding:0 0 20px 2px}
+  .steps li:last-child{padding-bottom:0}
+  .steps li::before{
+    content:counter(st);
+    position:absolute;left:-32px;top:0;
+    width:19px;height:19px;border-radius:50%;
+    background:var(--era,#a8342a);color:#fff;
+    font-family:var(--sans);font-size:10.5px;font-weight:600;
+    display:flex;align-items:center;justify-content:center;
+    letter-spacing:0;
+  }
+  .steps li.nomap::before{
+    background:transparent;color:var(--era,#a8342a);
+    border:1px solid var(--era,#a8342a);
+  }
+  .steps .place{
+    font-family:var(--serif);font-size:14px;font-weight:600;color:var(--ink);
+    letter-spacing:.04em;
+  }
+  .steps .evt{
+    display:block;font-size:13px;color:var(--ink2);line-height:1.9;margin-top:2px;
+    font-family:var(--sans);
+  }
+  .deeds{list-style:none;counter-reset:d}
+  .deeds li{
+    counter-increment:d;position:relative;
+    padding-left:34px;margin-bottom:11px;
+    font-size:13.5px;line-height:1.95;color:var(--ink2);
+  }
+  .deeds li::before{
+    content:counter(d,decimal-leading-zero);
+    position:absolute;left:0;top:2px;
+    font-family:var(--serif);font-size:11px;color:var(--era,#a8342a);
+    letter-spacing:.06em;opacity:.9;
+  }
+  .tags{display:flex;flex-wrap:wrap;gap:7px}
+  .tag{
+    font-size:12px;letter-spacing:.04em;
+    padding:4px 11px;border-radius:2px;
+    background:rgba(168,52,42,.055);
+    border:1px solid rgba(168,52,42,.16);
+    color:#7d3229;
+  }
+  .verdict{
+    margin-top:34px;
+    padding:22px 24px;
+    background:#f3ede0;
+    border:1px solid #e6dcc8;
+    position:relative;
+  }
+  .verdict .vt{
+    font-size:11px;letter-spacing:.24em;color:var(--ink3);margin-bottom:10px;
+  }
+  .verdict p{
+    font-family:var(--serif);font-size:15px;line-height:2.05;color:var(--ink);
+    letter-spacing:.03em;
+  }
+  .also{
+    margin-top:26px;padding-top:16px;border-top:1px dashed var(--line);
+    font-size:12px;color:var(--ink3);line-height:1.9;
+  }
+  .also b{font-weight:600;color:var(--ink2);letter-spacing:.1em;margin-right:6px}
+
+  .mapwrap{
+    position:relative;height:340px;
+    border:1px solid var(--line);background:#efeade;overflow:hidden;
+  }
+  .tmap{width:100%;height:100%}
+  .maplegend{margin-top:9px;font-size:11px;color:var(--ink3);letter-spacing:.04em}
+
+  .static-route{height:100%;min-height:320px;overflow:auto;background:linear-gradient(180deg,#f8f4ea,#f0e8d8);padding:10px}
+  .static-route svg{display:block;width:100%;height:auto;max-height:300px}
+  .static-route-note{font-size:10.5px;color:var(--ink3);text-align:center;margin:2px 0 10px}
+  .route-labels{display:flex;flex-wrap:wrap;gap:6px}
+  .route-label{font-size:11px;line-height:1.5;color:var(--ink2);border:1px solid rgba(160,145,119,.35);background:rgba(255,253,248,.72);padding:3px 8px;border-radius:99px}
+  .route-label b{color:var(--era,var(--red));margin-right:3px}
+  .route-labels .route-label b{color:var(--red)}
+
+  .mapfallback{
+    display:flex;height:100%;align-items:center;justify-content:center;
+    font-size:12.5px;color:var(--ink3);text-align:center;padding:24px;line-height:2;
+  }
+
+  .tl{border-top:1px solid var(--line)}
+  .tl-row{
+    display:grid;grid-template-columns:94px 1fr;gap:16px;
+    padding:10px 0;border-bottom:1px dashed var(--line);
+  }
+  .tl-row:last-child{border-bottom:0}
+  .tl-y{
+    font-family:var(--serif);font-size:13px;color:var(--era,#a8342a);
+    text-align:right;letter-spacing:.02em;white-space:nowrap;padding-top:1px;
+  }
+  .tl-e{font-size:13px;color:var(--ink2);line-height:1.85}
+
+  .pager{
+    display:flex;gap:1px;margin-top:30px;
+    border-top:1px solid var(--line);padding-top:22px;
+  }
+  .pager button{
+    flex:1;border:1px solid var(--line);background:transparent;
+    font-family:var(--sans);font-size:12.5px;color:var(--ink2);
+    padding:12px 10px;cursor:pointer;transition:.2s;text-align:left;
+    line-height:1.5;
+  }
+  .pager button:last-child{text-align:right}
+  .pager button:hover:not(:disabled){
+    background:var(--ink);border-color:var(--ink);color:#f7f3ea;
+  }
+  .pager button:disabled{opacity:.32;cursor:default}
+  .pager small{
+    display:block;font-size:10px;letter-spacing:.2em;opacity:.65;margin-bottom:3px;
+  }
+  .pager em{font-family:var(--serif);font-style:normal;font-size:14.5px;letter-spacing:.06em}
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:40px clamp(16px,4vw,40px) 56px;
+    text-align:center;
+    font-size:12px;color:var(--ink3);line-height:2;
+    letter-spacing:.04em;
+  }
+  footer .fmark{
+    font-family:var(--serif);font-size:15px;color:var(--ink2);
+    letter-spacing:.3em;margin-bottom:12px;
+  }
+
+  @media (max-width:720px){
+    .seal{width:52px;height:52px;font-size:12px;right:12px;top:30px;border-width:2px}
+    .hero-vline{display:none}
+    .hero-note{text-align:left}
+    .cname{font-size:24px}
+    .card{padding:20px 18px 16px}
+    .search input{width:88px}
+    .grid{grid-template-columns:1fr}
+    .sec-head{flex-wrap:wrap;gap:8px}
+    .axis{
+      -webkit-mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 30px),transparent 100%);
+      mask-image:linear-gradient(to right,#000 0,#000 calc(100% - 30px),transparent 100%);
+    }
+  }
+
+  /* ---------- EXPERIENCE UPGRADE ---------- */
+  :root{--paper:#f4f0e6;--paper2:#fffdf8;--ink:#201d19;--ink2:#51483d;--ink3:#82796b;--line:#ddd3c1;--red:#9e3028;--gold:#a9823f;--shadow:0 18px 50px rgba(61,46,25,.08)}
+  body{background-image:radial-gradient(ellipse at 50% -12%,rgba(169,130,63,.12),transparent 42%),radial-gradient(circle at 8% 38%,rgba(158,48,40,.035),transparent 28%),repeating-linear-gradient(0deg,rgba(120,100,70,.018) 0 1px,transparent 1px 5px)}
+  .skip-link{position:fixed;top:10px;left:10px;z-index:300;background:var(--ink);color:#fff;padding:10px 14px;transform:translateY(-160%);border-radius:3px;text-decoration:none}
+  .skip-link:focus{transform:translateY(0)}
+  .reading-progress{position:fixed;z-index:250;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--red),var(--gold));box-shadow:0 0 12px rgba(158,48,40,.25);pointer-events:none}
+  :focus-visible{outline:2px solid var(--red)!important;outline-offset:3px}
+  button,input{font:inherit}
+  button{-webkit-tap-highlight-color:transparent}
+  .hero{background:linear-gradient(180deg,rgba(255,253,248,.38),transparent 78%)}
+  .hero-inner{animation:heroIn .8s cubic-bezier(.2,.8,.2,1) both}
+  .kicker{display:inline-flex;align-items:center;gap:10px;padding:7px 12px;border:1px solid rgba(169,130,63,.28);border-radius:99px;background:rgba(255,253,248,.55);letter-spacing:.25em}
+  .kicker::before,.kicker::after{content:"";width:15px;height:1px;background:var(--gold);opacity:.7}
+  h1{letter-spacing:.11em;text-shadow:0 2px 0 rgba(255,255,255,.65)}
+  .hero-sub{max-width:760px;margin-left:auto;margin-right:auto}
+  .hero-note{max-width:700px}
+  .axis-wrap{box-shadow:0 6px 18px rgba(61,46,25,.025)}
+  .tick{border-radius:5px}
+  .tick:focus-visible{outline-offset:-3px!important}
+  .toolbar{box-shadow:0 8px 24px rgba(61,46,25,.045);border-bottom-color:rgba(221,211,193,.85)}
+  .chip{padding:7px 14px;transition:transform .2s,border-color .2s,background .2s,color .2s}
+  .chip:active{transform:scale(.97)}
+  .chip.on{box-shadow:0 4px 12px rgba(32,29,25,.13)}
+  .search{min-width:210px;border:1px solid var(--line);border-radius:99px;padding:8px 12px;background:rgba(255,253,248,.78);transition:border-color .2s,box-shadow .2s}
+  .search:focus-within{border-color:rgba(158,48,40,.55);box-shadow:0 0 0 3px rgba(158,48,40,.07)}
+  .search input{width:150px;min-width:0}
+  .search-clear{border:0;background:transparent;color:var(--ink3);font-size:20px;line-height:1;cursor:pointer;padding:0 2px}
+  .search-clear:hover{color:var(--red)}
+  .sec-head{align-items:center}
+  .sec-head h2{font-size:clamp(20px,2.4vw,26px)}
+  .sec-head .cnt{padding:5px 10px;border:1px solid var(--line);border-radius:99px;background:rgba(255,253,248,.6);white-space:nowrap}
+  .grid{gap:16px}
+  .card{border:1px solid var(--line);box-shadow:0 1px 0 rgba(70,50,25,.025);border-radius:4px;padding:25px 23px 20px;min-height:220px;display:flex;flex-direction:column;isolation:isolate}
+  .card::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.55),transparent 55%);z-index:-1;pointer-events:none}
+  .card::before{width:3px;transition:transform .38s cubic-bezier(.2,.8,.2,1)}
+  .card:hover{background:#fffefa;transform:translateY(-4px)!important;box-shadow:var(--shadow);border-color:#d3c5ad}
+  .card:hover::before{transform:scaleY(1)}
+  .card:focus-visible{box-shadow:0 0 0 3px rgba(158,48,40,.15),var(--shadow)}
+  .cname{margin-top:15px}
+  .cone{flex:1}
+  .cfoot{margin-top:20px}
+  .cfoot .go{opacity:1;transform:none;font-weight:600}
+  .empty{border:1px dashed var(--line);border-radius:4px;background:rgba(255,253,248,.65)}
+  .mask{background:rgba(24,21,17,.62);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+  .sheet{border-top-width:5px;border-radius:5px;box-shadow:0 32px 100px rgba(0,0,0,.28)}
+  .s-close{width:38px;height:38px;box-shadow:0 3px 12px rgba(40,30,15,.08)}
+  .s-body{padding-top:38px}
+  .s-quote{border-radius:0 4px 4px 0}
+  .blk{scroll-margin-top:20px}
+  .steps li{padding-bottom:23px}
+  .verdict{border-radius:4px;background:linear-gradient(135deg,#f3ede0,#faf6ed)}
+  .tag{border-radius:99px;background:rgba(158,48,40,.055)}
+  .pager button{border-radius:3px}
+  .footer-note{margin-top:7px;opacity:.8}
+  @keyframes heroIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @keyframes cardIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .card.in{animation:cardIn .48s}
+  @media(max-width:720px){
+    .hero{padding-top:82px}
+    .kicker{font-size:9px;letter-spacing:.16em}
+    .hero-sub{max-width:32em;line-height:1.8}
+    .toolbar{padding-top:10px;padding-bottom:10px}
+    .toolbar-in{gap:10px}
+    .chips{flex-basis:100%;flex-wrap:nowrap;overflow-x:auto;padding:2px 1px 5px;scrollbar-width:none}
+    .chips::-webkit-scrollbar{display:none}
+    .chip{flex:0 0 auto}
+    .search{width:100%;min-width:0}
+    .search input{width:100%;flex:1}
+    .grid{gap:12px}
+    .card{min-height:0;padding:21px 18px 17px}
+    .cname{font-size:25px}
+    .cfoot{align-items:flex-start;gap:12px}
+    .cfoot span:first-child{max-width:65%}
+    .mask{padding:0;align-items:flex-end}
+    .sheet{width:100%;max-height:94dvh;border-radius:12px 12px 0 0;border-top-width:4px;animation:sheetUp .28s cubic-bezier(.2,.8,.2,1)}
+    .s-body{padding:25px 20px 32px}
+    .mapwrap{height:260px}
+    .tl-row{grid-template-columns:78px 1fr;gap:12px}
+  }
+  @keyframes sheetUp{from{opacity:.7;transform:translateY(24px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  }
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">跳到人物列表</a>
+<div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="hero-vline"></div>
+  <div class="seal"><span>三十</span><span>三人</span></div>
+  <div class="hero-inner">
+    <div class="kicker">33 Centuries &nbsp;·&nbsp; 33 Lives</div>
+    <h1>三千年<span class="sep">·</span>三十三人</h1>
+    <p class="hero-sub">从甲骨文到辛亥 —— 每一个世纪，选一个人，讲他的一生</p>
+    <p class="hero-note">
+      起点定在公元前 13 世纪：晚商甲骨卜辞为我们提供了目前所知最早、最成体系的汉字材料之一，也让这一时期的政治与日常生活有了更直接的文字证据。
+      此后每过一百年，取一位最具代表性的人物。入选不只看名气，更看他在那个百年里
+      是否真正改变过什么 —— 制度、思想、疆域，或者一个民族看待世界的方式。
+    </p>
+  </div>
+</header>
+
+<div class="axis-wrap">
+  <div class="axis" id="axis"></div>
+</div>
+
+<div class="toolbar">
+  <div class="toolbar-in">
+    <div class="chips" id="chips"></div>
+    <label class="search">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path>
+      </svg>
+      <input id="q" type="search" placeholder="搜人物 / 朝代 / 地名" autocomplete="off" aria-label="搜索人物、朝代、地名">
+      <button class="search-clear" id="clearSearch" type="button" aria-label="清空搜索" title="清空搜索" hidden>×</button>
+    </label>
+  </div>
+</div>
+
+<main id="main-content">
+  <div class="sec-head">
+    <h2>三十三个百年</h2>
+    <span class="cnt" id="cnt"></span>
+  </div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>
+  <div class="fmark">以史为镜</div>
+  <div>生卒年、在位年多依通行说法；上古年代、部分引语与事件细节存在异说。</div>
+  <div>人物选择与点评属于编者视角；传说、后世归名和可由同时代材料证实的事实并非同一证据等级。</div>
+  <div class="footer-note">建议将本页视为可持续修订的历史读本，而非无争议的标准答案。</div>
+</footer>
+
+<div class="mask" id="mask">
+  <article class="sheet" id="sheet" role="dialog" aria-modal="true"></article>
+</div>
+
+<script>
+const ERAS = {
+  "先秦": "#8c6239",
+  "秦汉": "#a8342a",
+  "魏晋": "#4a6b5a",
+  "隋唐": "#a97c2c",
+  "宋元": "#2f5f6e",
+  "明清": "#6b4a7a",
+  "近现代": "#33566e"
+};
+
+const DATA = [
+{
+  c:"前13世纪", cn:"前13", dyn:"商", era:"先秦", n:"武丁", role:"商朝第二十二任君主",
+  life:"在位约前1250—前1192",
+  one:"让晚商王权与日常生活大量进入文字记录的商王。",
+  quote:"若作和羹，尔惟盐梅。", qsrc:"《尚书·说命》，武丁命傅说之辞",
+  bg:"商朝已历二十余王，青铜与文字俱已成熟，但王权时盛时衰。武丁少年时被父亲下放民间，与平民一同劳作，深知稼穑之难。",
+  steps:[
+    ["殷（今河南安阳）","少年时被父王小乙派往民间，与版筑工匠同劳作，认识了一个叫傅说的人；即位后三年不言政事，静观国中积弊。",114.39,36.10],
+    ["傅险（今山西平陆）","在刑徒中发现傅说，举以为相，君臣合力整顿内政，修明祭祀、整饬吏治。",111.20,34.83],
+    ["西北 · 鬼方、土方","连年征伐，妇好多次受命为将，领兵万人以上，最远追击至河套以北。",109.73,38.29],
+    ["西境 · 羌方","与羌方长期拉锯，战后大量羌俘用于祭祀与劳作，商势力西抵陇山。",106.66,35.54],
+    ["殷墟","占卜刻辞大量留存，内容涉及战争、农事、疾病、生育、天象，成为汉字与信史的实物起点。",114.39,36.10]
+  ],
+  deeds:[
+    "复兴商朝，史称“武丁中兴”，在位五十九年，国力达于极盛。",
+    "其配偶妇好是商代甲骨文中有明确记载的女性军事统帅；个别出征规模与具体战事的复原仍有讨论。",
+    "以傅说为相，开创“任人唯贤不论出身”的早期范例。",
+    "甲骨卜辞在这一时期大量成熟，占卜、历法、疾病、战争皆有记录。"
+  ],
+  ach:["武丁中兴","妇好征伐","甲骨文成熟","邦畿千里"],
+  tl:[
+    ["约前1250","即位。三年不言，政事决于冢宰，以观察国情"],
+    ["约前1245","举傅说为相，整顿内政，商势复兴"],
+    ["约前1240","甲骨文记载妇好参与军事行动；有关兵力规模的具体数字，需结合释读与研究谨慎理解"],
+    ["约前1230","伐鬼方，三年乃克，西北边境安定"],
+    ["约前1200","国力极盛，“邦畿千里，维民所止”"],
+    ["前1192","崩，子祖庚即位"]
+  ],
+  verdict:"他是中国信史的第一张面孔。在此之前，我们只有神话与遗址；从他开始，有名字、有对话、有牢骚、有战争记录。一个文明要证明自己活着，靠的不是青铜器，是有人开口说了话并把它刻了下来。",
+  also:"妇好、傅说、甘盘"
+},
+{
+  c:"前12世纪", cn:"前12", dyn:"商末周初", era:"先秦", n:"周文王 姬昌", role:"周族首领，周朝奠基者",
+  life:"约前1152—前1056",
+  one:"在牢里推演出一部中国思想的源代码。",
+  quote:"天行健，君子以自强不息。", qsrc:"《周易·乾卦·象传》；属后世传承文本，非可确证的文王原话",
+  bg:"商纣失道，诸侯离心。周只是渭水流域一个“方百里”的小邦，夹在戎狄与殷商之间，靠农耕与联姻慢慢积蓄。",
+  steps:[
+    ["岐周（今陕西岐山）","继承父业，修德行善，礼贤下士，伯夷、叔齐、太颠、散宜生皆来归。",107.62,34.44],
+    ["羑里（今河南汤阴）","被纣王囚禁七年，狱中推演八卦为六十四卦，成《周易》雏形。",114.36,35.92],
+    ["虞、芮之境","两国争田不决，入周求断，见周人耕者让畔、行者让路，惭愧而返，史称“虞芮质成”。",111.20,34.83],
+    ["渭水之滨（今陕西宝鸡）","遇姜尚（太公望），载与俱归，尊为师。“三分天下有其二”，仍服事殷商。",107.14,34.37],
+    ["丰京（今陕西西安西南）","迁都于丰，把力量中心推进到商的门户；次年去世，子发（武王）继位。",108.75,34.20]
+  ],
+  deeds:[
+    "传统叙事称其被囚羑里期间演《周易》；《周易》的形成与编纂历程复杂，不能简单视为一人一时之作。",
+    "以德聚人，四十余国来附，为灭商完成政治准备。",
+    "迁都丰京，把周人的力量中心推进到商的门户。",
+    "确立“以德配天”的政治伦理，成为后世改朝换代的理论依据。"
+  ],
+  ach:["《周易》六十四卦","三分天下有其二","虞芮质成","以德配天"],
+  tl:[
+    ["约前1152","生于岐周"],
+    ["约前1100","继位为周侯，修德行善，诸侯归附"],
+    ["约前1099","被纣囚于羑里，七年中演《周易》"],
+    ["约前1092","获释，献洛西之地，请除炮烙之刑"],
+    ["约前1090","虞芮质成，四十余国来附"],
+    ["约前1056","迁都丰京，同年卒；子发继位，四年后灭商"]
+  ],
+  verdict:"他没有灭商，但他把“为什么可以灭商”这件事想清楚了。中国人的世界观里那套阴阳消长、物极必反的思维，源头就在他坐牢的那七年。一个囚徒在暗室里推算天地，这件事本身就很有中国味。",
+  also:"姜子牙、散宜生、伯夷、叔齐"
+},
+{
+  c:"前11世纪", cn:"前11", dyn:"西周", era:"先秦", n:"周公旦", role:"周武王之弟，摄政王",
+  life:"生卒不详，活动于前11世纪",
+  one:"中国礼乐制度的总设计师，孔子一生的偶像。",
+  quote:"一沐三握发，一饭三吐哺。", qsrc:"《史记·鲁周公世家》",
+  bg:"武王克商后两年即病逝，成王年幼，殷遗民与管叔、蔡叔、武庚联合叛乱，新生的周王朝摇摇欲坠。",
+  steps:[
+    ["镐京（今陕西西安）","武王崩，周公摄政当国，管叔、蔡叔流言其将不利于孺子。",108.94,34.34],
+    ["朝歌（今河南淇县）","东征首战平武庚与三监之乱，杀武庚、管叔，放蔡叔。",114.20,35.61],
+    ["奄（今山东曲阜）","继续东征，灭奄、薄姑等五十余国，三年而定东方。",116.99,35.58],
+    ["洛邑（今河南洛阳）","营建东都成周，迁殷商顽民于此就近监控，形成“两京”格局；在此制礼作乐。",112.45,34.62],
+    ["成周","七年之后还政成王，北面就臣位，后世传为美谈。",112.45,34.62]
+  ],
+  deeds:[
+    "平定三监之乱，保住周朝立国根基。",
+    "大行分封，以“封建亲戚，以藩屏周”，七十一国中姬姓五十三。",
+    "制礼作乐，把祭祀、婚丧、朝聘、军旅全部纳入等级规范。",
+    "营建洛邑，奠定此后三千年“天下之中”的政治地理观。",
+    "相传作《周礼》《仪礼》，整理《诗经》雅颂部分。"
+  ],
+  ach:["宗法制","分封制","礼乐制度","营建洛邑"],
+  tl:[
+    ["约前1046","武王克商，周公佐之，封于鲁而留相王室"],
+    ["约前1043","武王崩，成王年幼，周公摄政"],
+    ["约前1042","三监与武庚叛，周公东征"],
+    ["约前1040","东征三年而定，灭国五十余"],
+    ["约前1038","营建洛邑，迁殷顽民"],
+    ["约前1036","制礼作乐，大行分封"],
+    ["约前1035","还政成王，北面就臣位"]
+  ],
+  verdict:"孔子说“郁郁乎文哉，吾从周”，从的其实就是他。中国人讲“礼”，讲名分，讲长幼尊卑那一整套秩序感，源代码是周公写的。他摄政七年而还政，也给后世权臣立了一道极难跨过的道德门槛。",
+  also:"召公奭、姜子牙、伯禽、康叔"
+},
+{
+  c:"前10世纪", cn:"前10", dyn:"西周", era:"先秦", n:"周穆王 姬满", role:"西周第五任天子",
+  life:"在位约前976—前922",
+  one:"留下西行传说的西周天子。",
+  quote:"天子觞西王母于瑶池之上。", qsrc:"《穆天子传》",
+  bg:"成康之后，周室渐衰，西北犬戎日盛，诸侯开始不按时朝贡。周穆王即位时，面对的是一个需要重新立威的王朝。",
+  steps:[
+    ["镐京（今陕西西安）","即位后作《臩命》，命伯臩为太仆，整顿吏治。",108.94,34.34],
+    ["犬戎之地（今宁夏固原一带）","两度西征犬戎，获其五王，迁戎于太原，一时“王道复宁”。",106.24,36.02],
+    ["昆仑（传说，今甘肃敦煌）","《穆天子传》记其驾八骏西行，涉流沙，登昆仑，会见西王母。",94.66,40.14],
+    ["瑶池（传说，今天山天池）","饮于瑶池，赋诗唱和，西王母为之歌。",88.13,43.88],
+    ["甫田","命吕侯作《吕刑》，定五刑三千条，是中国现存最早的成文刑法文献之一。",108.94,34.34]
+  ],
+  deeds:[
+    "西征犬戎，开拓西北，西周疆域达于极盛。",
+    "作《吕刑》（甫刑），确立“明德慎罚”的司法原则与赎刑制度。",
+    "《穆天子传》记其行程万里，是中国人最早的“远方叙事”。",
+    "命祭公谋父作《祈招》之诗，谏止过度征伐。"
+  ],
+  ach:["《吕刑》","西征犬戎","《穆天子传》","八骏西行"],
+  tl:[
+    ["约前976","即位"],
+    ["约前965","西征犬戎，获其五王，迁戎于太原"],
+    ["约前960","命吕侯作《吕刑》，定五刑三千条"],
+    ["约前950","传说西行至西王母之邦，见《穆天子传》"],
+    ["约前922","崩，子共王繄扈立"]
+  ],
+  verdict:"一半是史，一半是传奇。中国人对“西域”“昆仑”“瑶池”那些模糊而浪漫的想象，最早就是从他这里出发的。史书说他征伐过度、荒服不至，但两千年后我们记住的，是那八匹骏马和一场没写完的远行。",
+  also:"祭公谋父、吕侯"
+},
+{
+  c:"前9世纪", cn:"前9", dyn:"西周", era:"先秦", n:"周厉王 姬胡", role:"西周第十任天子",
+  life:"在位前877—前841，前828年卒于彘",
+  one:"一个把言论当敌人的王，逼出了中国纪年的第一年。",
+  quote:"防民之口，甚于防川。", qsrc:"邵穆公谏厉王语，《国语·周语上》",
+  bg:"西周中晚期，王室财政枯竭，共王以后土地私有渐起，旧有的井田与贡赋体系松动，天子与贵族争利。",
+  steps:[
+    ["镐京（今陕西西安）","任用荣夷公，推行“专利”：山林川泽之利尽归王室，断绝平民渔猎采樵之路。",108.94,34.34],
+    ["镐京 · 朝堂","国人谤王，王怒，得卫巫使监谤者，告则杀之，国人莫敢言，道路以目。",108.94,34.34],
+    ["镐京","前841年国人暴动，袭击王宫，厉王出奔。",108.94,34.34],
+    ["彘（今山西霍州）","流亡十四年，前828年死于此地。",111.72,36.57]
+  ],
+  deeds:[
+    "推行“专利”政策，与民争利，激化社会矛盾。",
+    "以卫巫监谤、杀戮止言，造成“道路以目”的窒息局面。",
+    "引发国人暴动，西周王权自此一蹶不振。",
+    "其出奔导致的“共和行政”，使前841年成为中国有确切纪年的第一年。"
+  ],
+  ach:["共和元年（前841）","中国确切纪年之始","反面教材"],
+  tl:[
+    ["前877","即位"],
+    ["前875","用荣夷公，行“专利”，芮良夫谏而不听"],
+    ["前845","以卫巫监谤，国人道路以目"],
+    ["前841","国人暴动，厉王奔彘；召穆公、周定公共和行政，中国确切纪年自此始"],
+    ["前828","卒于彘，共和行政结束，宣王即位"]
+  ],
+  verdict:"他是这份名单里唯一以失败入选的人。但正是他的失败，给中国留下了第一个确切年份——从公元前841年起，中国的每一年都可以被数出来了。一个反面典型，意外成了文明的时间原点。",
+  also:"召穆公、周定公、共伯和、芮良夫"
+},
+{
+  c:"前8世纪", cn:"前8", dyn:"春秋·郑", era:"先秦", n:"郑庄公 姬寤生", role:"郑国第三任国君",
+  life:"前757—前701",
+  one:"繻葛之战中，郑军击败周王师，周王权威进一步受挫。",
+  quote:"多行不义，必自毙。", qsrc:"《左传·隐公元年》",
+  bg:"平王东迁后，王室衰微，天子之地不及百里。诸侯开始以实力说话，但还没有人敢公开撕破“尊王”的脸皮。",
+  steps:[
+    ["郑（今河南新郑）","出生时难产，母武姜恶之，偏爱其弟共叔段，埋下家庭裂痕。",113.74,34.40],
+    ["京邑（今河南荥阳）","共叔段据京邑扩张，庄公纵容二十二年。",113.38,34.79],
+    ["鄢（今河南鄢陵）","一击而克，段奔共；母被迁于城颍，誓“不及黄泉无相见”，后掘地见泉而母子如初。",114.18,34.10],
+    ["洛邑（今河南洛阳）","与周平王“交质”：周王子狐为质于郑，郑公子忽为质于周，天子与诸侯互换人质，礼制大坏。",112.45,34.62],
+    ["繻葛（今河南长葛）","前707年，周桓王率陈、蔡、卫联军伐郑，郑军大败王师，祝聃射中桓王肩。",113.77,34.22],
+    ["新郑","战后夜遣祭仲慰问王疾，既打了天子，又留着面子。前701年卒。",113.74,34.40]
+  ],
+  deeds:[
+    "平定共叔段之乱，“克段于鄢”，被《左传》评为“讥失教也”。",
+    "与周天子互换人质，公开挑战王权神圣性。",
+    "繻葛之战大败王师、射王中肩，周天子威信扫地。",
+    "联合齐、鲁，伐宋、侵陈，被称为“春秋小霸”。"
+  ],
+  ach:["繻葛之战","周郑交质","春秋小霸","克段于鄢"],
+  tl:[
+    ["前757","生，名寤生（难产）"],
+    ["前743","即位，母武姜请封共叔段于京"],
+    ["前722","克段于鄢，段奔共"],
+    ["前720","周郑交质；同年周平王崩"],
+    ["前707","繻葛之战，祝聃射周桓王肩"],
+    ["前701","卒，郑国四子争位，国势渐衰"]
+  ],
+  verdict:"他是一个极其冷静的人：纵容弟弟二十二年再一击致命，打了天子当夜又去慰问。郑庄公证明了一件事——周天子不再是不可触碰的。礼崩乐坏不是从他开始的，但是从他这里变得不可逆的。",
+  also:"祭仲、齐僖公、公子忽、共叔段"
+},
+{
+  c:"前7世纪", cn:"前7", dyn:"春秋·齐", era:"先秦", n:"管仲", role:"齐国相国",
+  life:"约前723—前645",
+  one:"以制度与经济政策增强齐国实力的改革者。",
+  quote:"仓廪实而知礼节，衣食足而知荣辱。", qsrc:"《管子·牧民》",
+  bg:"齐国内乱，公子小白与公子纠争位，管仲曾一箭射中小白带钩。齐桓公即位后，鲍叔牙力荐管仲，齐遂变法。",
+  steps:[
+    ["颍上（今安徽颍上）","出身没落贵族，早年经商，与鲍叔牙分财多取，鲍叔不以为贪。",116.26,32.63],
+    ["临淄（今山东淄博）","射钩之仇未报，被囚槛车送齐，鲍叔牙让相位而荐之，桓公拜为相，相齐四十年。",118.31,36.83],
+    ["北杏（今山东东阿）","前681年会宋、陈、蔡、邾于北杏，始以诸侯之长相会，霸业开端。",116.25,36.33],
+    ["葵丘（今河南兰考）","前651年会诸侯，周天子使宰孔赐胙，齐桓公“九合诸侯，一匡天下”。",114.82,34.82]
+  ],
+  deeds:[
+    "四民分业：士农工商各居其所，职业世袭，专业化生产。",
+    "“相地而衰征”：按土地肥瘠分等征税，承认土地私有。",
+    "“官山海”：主张通过国家管理盐铁等资源调节财政与市场。",
+    "以“尊王攘夷”为旗号，救燕、存邢、封卫，北御戎狄，南拒强楚。",
+    "《管子》一书托其名，保存了中国最早的经济与行政思想。"
+  ],
+  ach:["四民分业","相地而衰征","盐铁官营","九合诸侯","《管子》"],
+  tl:[
+    ["约前723","生"],
+    ["前685","齐桓公即位，鲍叔牙让贤，管仲拜相"],
+    ["前684","长勺之战败于鲁，曹刿论战即此役"],
+    ["前681","北杏之会，始霸"],
+    ["前664","救燕北伐山戎，至于孤竹"],
+    ["前656","召陵之盟，率八国诸侯拒楚"],
+    ["前651","葵丘之会，霸业极盛"],
+    ["前645","卒；死后齐五子争位，桓公尸床六十七日"]
+  ],
+  verdict:"孔子说：“微管仲，吾其被发左衽矣。”他救的不只是齐国，是中原文明的一整套生活方式。更难得的是，他是中国历史上少见的、真正懂经济的政治家——他知道礼义廉耻要建立在吃饱饭之上。",
+  also:"鲍叔牙、齐桓公、晋文公、隰朋"
+},
+{
+  c:"前6世纪", cn:"前6", dyn:"春秋·鲁", era:"先秦", n:"孔子", role:"思想家、教育家，儒家创始人",
+  life:"前551—前479",
+  one:"一个失败的政客，成了东亚两千年的老师。",
+  quote:"知其不可而为之。", qsrc:"《论语·宪问》，石门晨门语",
+  bg:"礼崩乐坏，诸侯争霸，鲁国三桓专权。旧秩序在崩塌，新秩序尚未成形，所有读书人都在问同一个问题：怎么办？",
+  steps:[
+    ["陬邑（今山东曲阜）","父叔梁纥早卒，少时“贫且贱”，做过管仓库的委吏、管牛羊的乘田。",116.99,35.58],
+    ["洛邑（今河南洛阳）","适周问礼于老子，感叹“吾今日见老子，其犹龙邪”。",112.45,34.62],
+    ["中都（今山东汶上）","前501年任中都宰，一年四方则之，后升司空、大司寇。",116.49,35.73],
+    ["夹谷（今山东莱芜）","前500年夹谷之会，以礼折齐，取回汶阳之田。",117.68,36.21],
+    ["卫、陈、蔡、宋、郑、楚","前497年因“堕三都”失败去鲁，周游列国十四年：匡人被围、陈蔡绝粮、郑人讥为“丧家之狗”。",114.88,33.73],
+    ["鲁 · 洙泗","前484年归鲁，不再求仕，删《诗》《书》，订礼乐，作《春秋》，弟子三千，贤者七十二。",116.99,35.58]
+  ],
+  deeds:[
+    "首创大规模私人讲学，“有教无类”，打破贵族对知识的垄断。",
+    "提出“仁”为核心、“礼”为形式的伦理政治体系。",
+    "整理六经，保存三代文化典籍。",
+    "《论语》记其言行，成为东亚社会两千年的行为准则。",
+    "“己所不欲，勿施于人”被后世视为人类道德的黄金法则。"
+  ],
+  ach:["儒家学派","有教无类","仁与礼","六经整理","《论语》"],
+  tl:[
+    ["前551","生于鲁国陬邑"],
+    ["前533","约此年适周问礼于老子"],
+    ["前501","任中都宰，一年四方则之"],
+    ["前500","夹谷之会，以礼折齐，取汶阳之田"],
+    ["前498","堕三都失败，与三桓决裂"],
+    ["前497","去鲁适卫，开始十四年周游列国"],
+    ["前484","归鲁，删诗书、订礼乐、作春秋"],
+    ["前479","卒，年七十三"]
+  ],
+  verdict:"他一生想做的官没做成，周游十四年没有一个君主真正用他。但他在颠沛中顺手做的事——教书、整理典籍、讲一套关于“人应该怎样活”的道理——塑造了整个东亚。失败者的胜利，往往比成功者的胜利更持久。",
+  also:"老子、左丘明、颜回、子路、子贡"
+},
+{
+  c:"前5世纪", cn:"前5", dyn:"春秋·吴", era:"先秦", n:"孙武", role:"军事家，《孙子兵法》的传统归属者",
+  life:"约前545—约前470",
+  one:"把战争写成十三篇逻辑的人。",
+  quote:"兵者，国之大事，死生之地，存亡之道，不可不察也。", qsrc:"《孙子兵法·计篇》",
+  bg:"春秋晚期，战争规模从“车战千乘”转向数万人的长期征伐，楚国崛起，吴国在东南骤然兴起，急需一套新的战争理论。",
+  steps:[
+    ["齐（今山东临淄）","齐国内乱，奔吴，隐居姑苏城外，著兵法十三篇。",118.31,36.83],
+    ["吴宫（今江苏苏州）","以兵法见吴王阖闾，吴王令其以宫女试兵。三令五申而笑不止，遂斩队长二人（吴王宠姬），众皆肃然。",120.62,31.30],
+    ["柏举（今湖北麻城）","前506年，与伍子胥佐吴王伐楚，五战五胜，直入郢都。",115.03,31.18],
+    ["郢（今湖北荆州）","破楚入郢，楚昭王出逃；吴国自此“西破强楚，北威齐晋”。",112.24,30.33],
+    ["姑苏","晚年退隐，修订兵法，约前470年前后卒。",120.62,31.30]
+  ],
+  deeds:[
+    "《孙子兵法》传统上归于孙武，是中国现存重要的早期兵学经典；其文本形成与作者问题仍有学术讨论。",
+    "提出“不战而屈人之兵”“上兵伐谋”“知彼知己”等战略原则。",
+    "佐吴破楚入郢，创造春秋时期最远程的战略突袭。",
+    "其思想被译为数十种文字，成为世界军事理论的共同源头。"
+  ],
+  ach:["《孙子兵法》","柏举之战","上兵伐谋","知彼知己"],
+  tl:[
+    ["约前545","生（一说生于齐国）"],
+    ["约前512","以兵法十三篇见吴王阖闾，吴宫教战斩宠姬"],
+    ["前506","柏举之战，五战入郢"],
+    ["约前484","吴亡前夕，退隐修订兵法"],
+    ["约前470","卒（年代不详）"]
+  ],
+  verdict:"西方要到 19 世纪克劳塞维茨才有可与之对话的兵学体系，他早了两千三百年。更厉害的是他谈的不是怎么打，而是怎么不打——“百战百胜，非善之善者也”。这是把暴力放进理性笼子的第一次尝试。",
+  also:"伍子胥、范蠡、阖闾、老子（晚年）"
+},
+{
+  c:"前4世纪", cn:"前4", dyn:"战国·秦", era:"先秦", n:"商鞅", role:"秦国大良造，变法主持者",
+  life:"约前390—前338",
+  one:"用二十年，把秦国改造成一台战争机器。",
+  quote:"治世不一道，便国不法古。", qsrc:"《商君书·更法》",
+  bg:"战国中期，魏国李悝、楚国吴起已先行变法。秦僻处西陲，被中原诸侯视为“夷翟”，国内旧贵族强大，国力疲弱。",
+  steps:[
+    ["卫（今河南濮阳）","卫国宗室之后，事魏相公叔痤。痤死前荐之于魏惠王，王不用；痤嘱“不用则杀之”，王亦不听。",115.03,35.76],
+    ["魏 · 安邑（今山西夏县）","在魏相公叔痤门下任中庶子，习李悝之法，深谙魏国变法之利。",111.22,35.14],
+    ["栎阳（今陕西西安阎良）","前361年入秦，四见孝公：说帝道、王道皆不入，说霸道、强国之术，孝公大悦，“语数日不厌”。",109.23,34.66],
+    ["咸阳","前356年第一次变法；前350年第二次变法，迁都咸阳，废井田、开阡陌、行县制。",108.71,34.33],
+    ["彤（今陕西华县）","前338年孝公卒，惠文王立，公子虔告其谋反，战败被杀，尸车裂，族灭。",109.77,34.51]
+  ],
+  deeds:[
+    "编制什伍、连坐告奸，建立基层社会控制。",
+    "奖励军功，行二十等爵，宗室无军功不得为属籍。",
+    "废井田、开阡陌，承认土地私有与买卖。",
+    "普遍推行县制，集权于中央。",
+    "统一度量衡，重农抑商，鼓励耕战。"
+  ],
+  ach:["商鞅变法","二十等爵","废井田开阡陌","县制","徙木立信"],
+  tl:[
+    ["约前390","生（卫国宗室之后）"],
+    ["约前365","入魏，为公叔痤家臣"],
+    ["前361","入秦，四见秦孝公，终以强国之术得用"],
+    ["前356","第一次变法：徙木立信，定什伍连坐、军功爵"],
+    ["前350","第二次变法：迁都咸阳，废井田、开阡陌、行县制"],
+    ["前340","伐魏，虏公子卬，魏割河西之地"],
+    ["前338","孝公卒，被诬谋反，战死彤地，车裂灭族"]
+  ],
+  verdict:"他成功了，也被自己造的制度杀死。逃亡时客舍主人说“商君之法，舍人无验者坐之”，他叹“为法之敝，一至此哉”。秦国的强大由他奠基，秦国的严酷也由他奠基。历史对改革者的报答，常常是这样的。",
+  also:"孟子、庄子、苏秦、张仪、屈原、秦孝公"
+},
+{
+  c:"前3世纪", cn:"前3", dyn:"秦", era:"秦汉", n:"秦始皇 嬴政", role:"秦朝开国皇帝",
+  life:"前259—前210",
+  one:"以皇帝制度和郡县制重塑统一帝国。",
+  quote:"朕为始皇帝，后世以计数，二世三世至于万世。", qsrc:"《史记·秦始皇本纪》",
+  bg:"战国二百五十年，七雄并立，战争规模动辄数十万。统一已是人心所向，缺的只是一个能执行的人。",
+  steps:[
+    ["邯郸","生于赵国都城，父异人为质，幼年颠沛，九岁归秦。",114.49,36.61],
+    ["咸阳","前247年十三岁即位，吕不韦为相，嫪毐乱政；前238年平嫪毐、免吕不韦，亲政。",108.71,34.33],
+    ["大梁（今河南开封）","前225年引黄河、鸿沟之水灌城三月，魏王假降，魏亡。",114.31,34.80],
+    ["蓟（今北京）","前222年王贲破辽东，燕亡；前221年自燕南下灭齐，天下归一。",116.40,39.90],
+    ["泰山、琅琊、碣石、会稽","五次巡游天下，刻石纪功，封禅泰山，立“书同文”之制于四方。",117.10,36.25],
+    ["沙丘（今河北广宗）","前210年东巡途中病逝，赵高、李斯矫诏立胡亥，赐死扶苏。三年后秦亡。",115.14,37.07]
+  ],
+  deeds:[
+    "统一六国，建立中国第一个中央集权的统一王朝。",
+    "称“皇帝”，废谥法，行郡县，分天下为三十六郡。",
+    "书同文（小篆）、车同轨、统一度量衡与货币。",
+    "修驰道、直道，筑长城，连接燕赵秦旧城为万里长城。",
+    "焚书坑儒，禁私学，以吏为师。"
+  ],
+  ach:["统一六国","皇帝制度","郡县制","书同文","统一度量衡","长城"],
+  tl:[
+    ["前259","生于赵国邯郸"],
+    ["前247","即位，年十三，吕不韦为相"],
+    ["前238","平嫪毐之乱，免吕不韦，亲政"],
+    ["前230","灭韩，统一战争开始"],
+    ["前228","灭赵；前225灭魏；前223灭楚；前222灭燕"],
+    ["前221","灭齐，天下一统；称皇帝，行郡县，书同文"],
+    ["前215","遣蒙恬北击匈奴，筑长城"],
+    ["前213","焚书；次年坑儒"],
+    ["前210","东巡途中崩于沙丘"]
+  ],
+  verdict:"秦始皇在短时间内推进郡县制、文字与度量衡等统一措施，深刻影响后世帝制国家的制度想象。后世王朝既继承也改造了这些制度，不能说两千年间始终只有同一套框架。",
+  also:"李斯、蒙恬、王翦、陈胜、刘邦、项羽"
+},
+{
+  c:"前2世纪", cn:"前2", dyn:"西汉", era:"秦汉", n:"汉武帝 刘彻", role:"西汉第七位皇帝",
+  life:"前156—前87",
+  one:"把“汉”变成一个民族的名字。",
+  quote:"秋风起兮白云飞，草木黄落兮雁南归。", qsrc:"《秋风辞》",
+  bg:"文景之治后国力充盈，“京师之钱累巨万，贯朽而不可校”。但诸侯王坐大、匈奴年年入寇，黄老无为已难以为继。",
+  steps:[
+    ["长安","十六岁即位，初受窦太后掣肘，建元元年（前140）即诏举贤良方正。",108.94,34.34],
+    ["西域 · 大月氏","前138年遣张骞出使月氏，十三年后归，带回西域三十六国信息，丝绸之路由此开。",94.66,40.14],
+    ["漠北","前119年卫青、霍去病各率五万骑出塞，霍去病封狼居胥，匈奴远遁，“漠南无王庭”。",106.90,47.90],
+    ["泰山","前110年封禅泰山，此后二十余年屡巡海上，求仙不已。",117.10,36.25],
+    ["轮台（今新疆轮台）","前89年下《轮台诏》，悔征伐之事，改行富民，两年后崩。",84.25,41.78]
+  ],
+  deeds:[    "颁“推恩令”，令诸侯王分封子弟，瓦解王国势力。",
+    "盐铁官营、均输平准、算缗告缗，国家全面介入经济。",
+    "北击匈奴、通西域、平南越、定朝鲜，疆域扩大近一倍。",
+    "独尊儒术、立太学，确立此后两千年的官方意识形态。",
+    "晚年巫蛊之祸，太子刘据自杀，下轮台诏罪己。"
+  ],
+  ach:["推恩令","独尊儒术","丝绸之路","北击匈奴","太学","轮台罪己"],
+  tl:[
+    ["前156","生"],
+    ["前141","即位，年十六"],
+    ["前138","遣张骞出使月氏，凿空西域"],
+    ["前134","董仲舒对策，罢黜百家、表章六经"],
+    ["前127","颁推恩令，诸侯王国自析"],
+    ["前119","漠北之战，霍去病封狼居胥；盐铁官营"],
+    ["前110","封禅泰山；设十三州刺史"],
+    ["前91","巫蛊之祸，太子刘据自杀"],
+    ["前89","下轮台诏，悔征伐、议富民"],
+    ["前87","崩，年七十"]
+  ],
+  verdict:"功过都极大。他通过对外扩张扩大了汉帝国的影响，也使战争、徭役与财政压力加重。晚年轮台诏常被视为政策反思的重要信号；至于人口变化及其原因，不能简单归结为单一政策。",
+  also:"张骞、卫青、霍去病、司马迁、董仲舒、苏武"
+},
+{
+  c:"前1世纪", cn:"前1", dyn:"西汉", era:"秦汉", n:"苏武", role:"汉朝使节，典属国",
+  life:"前140—前60",
+  one:"在贝加尔湖边放了十九年羊的汉使。",
+  quote:"屈节辱命，虽生，何面目以归汉！", qsrc:"《汉书·李广苏建传》",
+  bg:"汉匈战争数十年，互遣使者又互扣使者。前100年且鞮侯单于新立，示好于汉，汉武帝遣苏武持节送还匈奴使。",
+  steps:[
+    ["长安","以父荫为郎，迁栘中厩监。前100年以中郎将持节出使匈奴。",108.94,34.34],
+    ["匈奴王庭（今蒙古国境内）","副使张胜卷入缑王谋反，事泄，苏武引佩刀自刺，气绝半日复苏。",106.90,47.90],
+    ["北海（今贝加尔湖）","单于欲降之，置大窖中绝其饮食，啮雪吞旃；徙牧北海上，使牧羝，“羝乳乃得归”。杖汉节牧羊，卧起操持，节旄尽落。",108.00,53.50],
+    ["李陵帐中","李陵降匈奴后来劝降，设宴陈说，苏武答“自分已死久矣，王必欲降武，请毕今日之欢，效死于前”。",108.00,53.50],
+    ["长安","前81年昭帝与匈奴和亲，始得归，前后十九年，须发尽白。拜典属国，前60年卒，图像麒麟阁。",108.94,34.34]
+  ],
+  deeds:[
+    "出使被扣十九年，历尽胁迫、断食、流放，始终不降。",
+    "持汉节牧羊北海，节旄尽落而不去，成为气节的象征。",
+    "拒绝李陵劝降，以死自誓。",
+    "归汉后拜典属国，宣帝时列麒麟阁十一功臣。"
+  ],
+  ach:["持节十九年","麒麟阁功臣","民族气节符号","《苏武牧羊》"],
+  tl:[
+    ["前140","生"],
+    ["前100","以中郎将持节出使匈奴，送还匈奴使"],
+    ["前99","缑王谋反事泄，苏武自刺不死，被扣"],
+    ["前97","徙牧北海，杖汉节牧羊"],
+    ["前81","昭帝时汉匈和亲，归汉，前后十九年"],
+    ["前80","拜典属国"],
+    ["前60","卒，图像麒麟阁"]
+  ],
+  verdict:"他什么也没做成——没说服单于，没带回使团，没打赢一仗。除了没有投降。可正是这“除了”，让后世两千年反复书写他。一个文明总要有些事是“做不成也要做”的，苏武就是那个证明。",
+  also:"霍光、王昭君、扬雄、李陵"
+},
+{
+  c:"1世纪", cn:"1", dyn:"东汉", era:"秦汉", n:"班超", role:"西域都护，定远侯",
+  life:"32—102",
+  one:"三十一年，把西域重新写回中国地图。",
+  quote:"不入虎穴，焉得虎子。", qsrc:"《后汉书·班超传》",
+  bg:"王莽之后西域断绝六十余年，匈奴重新控制商道。东汉初立，无力西顾，敦煌以西一片空白。",
+  steps:[
+    ["洛阳","父班彪为史学家，兄班固著《汉书》。家贫，常为官府抄书养母，久劳苦，投笔叹曰：“大丈夫当效傅介子、张骞立功异域。”",112.45,34.62],
+    ["鄯善（今新疆若羌）","73年随窦固出击匈奴，使鄯善。匈奴使至，王礼意忽怠，超夜率三十六人火攻匈奴营，斩三十余级，烧死百余人。",88.17,39.02],
+    ["于阗、疏勒（今新疆和田、喀什）","废匈奴所立疏勒王，另立故王侄，西域南道复通。",79.92,37.11],
+    ["龟兹（今新疆库车）","91年拜西域都护，居龟兹它乾城，调兵平焉耆、危须、尉犁。",82.96,41.72],
+    ["条支（今波斯湾）","97年遣甘英西使大秦（罗马），至条支临西海而返，中国使者西行最远的一次。",48.50,29.50],
+    ["洛阳","102年，年七十，上书“臣不敢望到酒泉郡，但愿生入玉门关”，妹班昭亦上书求归，八月至洛阳，九月卒。",112.45,34.62]
+  ],
+  deeds:[
+    "以三十六人起家，三十一年间收服西域五十余国。",
+    "重建西域都护府，东汉势力重返中亚。",
+    "遣甘英西使大秦（罗马），至条支临西海（波斯湾）而返。",
+    "经营西域以“以夷狄攻夷狄”之策，极少动用内地兵力。"
+  ],
+  ach:["西域都护","三十六人定鄯善","甘英西使","定远侯"],
+  tl:[
+    ["32","生（扶风安陵人）"],
+    ["62","兄班固召至洛阳，为官府抄书"],
+    ["73","投笔从戎，随窦固击匈奴；使鄯善，夜袭匈奴使团"],
+    ["74","定于阗、疏勒，西域南道复通"],
+    ["91","拜西域都护，居龟兹"],
+    ["97","遣甘英西使大秦，至波斯湾而返"],
+    ["100","妹班昭上书请归"],
+    ["102","归洛阳，拜射声校尉，同年卒，年七十一"]
+  ],
+  verdict:"三十六个人开局，赢了整个中亚。他最了不起的不是勇，是算——他知道什么时候该杀，什么时候该立，什么时候该等。三十一年不回中原，把异域活成了故乡。中国人的“经营”二字，他做出了最好注脚。",
+  also:"班固、班昭、甘英、王充、张衡"
+},
+{
+  c:"2世纪", cn:"2", dyn:"东汉", era:"秦汉", n:"蔡伦", role:"宦官，尚方令，造纸术改良者",
+  life:"约63—121",
+  one:"让知识变得便宜的人。",
+  quote:"缣贵而简重，并不便于人。", qsrc:"《后汉书·蔡伦传》",
+  bg:"东汉和帝时，文化下移，太学生达三万，但书写材料仍是笨重的竹简与昂贵的缣帛，“一部经书，需车一乘”。",
+  steps:[
+    ["桂阳（今湖南耒阳）","出身铁匠世家，永平末年（约75年）入宫为宦官。",112.86,26.42],
+    ["洛阳 · 宫廷","章帝时为小黄门，和帝时迁中常侍，后任尚方令，掌宫廷器物制造。",112.45,34.62],
+    ["洛阳 · 尚方","105年，用树肤、麻头、敝布、鱼网造纸，奏上和帝，“帝善其能，自是莫不从用焉”，天下称“蔡侯纸”。",112.45,34.62],
+    ["龙亭（今陕西洋县）","114年封龙亭侯，食邑三百户。",107.55,33.22],
+    ["洛阳","后卷入宫廷斗争，安帝时被命自投廷尉，121年沐浴整衣，服毒而死。",112.45,34.62]
+  ],
+  deeds:[
+    "以树皮、麻头、破布、旧渔网为原料造纸，成本极低。",
+    "改进造纸工艺，使纸张平整、易于书写、可大批量生产。",
+    "造纸术经阿拉伯传入欧洲，改变世界知识传播方式。",
+    "监制尚方宝剑及各类器械，“莫不精工坚密，为后世法”。"
+  ],
+  ach:["蔡侯纸","造纸术","四大发明之一","文明传播革命"],
+  tl:[
+    ["约63","生（桂阳人）"],
+    ["约75","入宫为宦官"],
+    ["92","迁中常侍，参与机要"],
+    ["97","任尚方令，掌宫廷器物制造"],
+    ["105","造纸成，奏上和帝，天下称“蔡侯纸”"],
+    ["114","封龙亭侯"],
+    ["121","安帝命其自投廷尉，沐浴整衣，服毒死"]
+  ],
+  verdict:"四大发明里，只有他留下了明确的姓名和年份。在此之前，知识是贵族的奢侈品；在此之后，一张纸的价钱等于几文钱。文明的普及从来不是靠谁喊口号，是靠有人把成本降下来。",
+  also:"张衡、华佗、张仲景、许慎、曹操（生）"
+},
+{
+  c:"3世纪", cn:"3", dyn:"三国·蜀汉", era:"魏晋", n:"诸葛亮", role:"蜀汉丞相",
+  life:"181—234",
+  one:"明知不可为而为之的丞相。",
+  quote:"鞠躬尽瘁，死而后已。", qsrc:"传统归于诸葛亮的《后出师表》；文本真伪有争议",
+  bg:"东汉末年，黄巾之后群雄割据。曹操已定北方，孙权据江东，刘备寄居荆州，无寸土之地。",
+  steps:[
+    ["琅琊阳都（今山东沂南）","幼年丧父，随叔父流寓荆州；叔父卒后，躬耕隆中十年，“苟全性命于乱世，不求闻达于诸侯”。",118.47,35.55],
+    ["隆中（今湖北襄阳）","207年，刘备三顾，作《隆中对》：跨有荆益、西和诸戎、南抚夷越、外结孙权，待天下有变。",112.14,32.04],
+    ["赤壁（今湖北赤壁）","208年使吴，促成孙刘联盟，大破曹操于赤壁。",113.90,29.72],
+    ["成都","214年入蜀取益州；221年刘备称帝，拜丞相，治蜀十年，“科教严明，赏罚必信”。",104.07,30.57],
+    ["南中（今云南曲靖）","225年南征，七擒孟获，“攻心为上”，不留兵、不运粮，以夷治夷。",103.80,25.49],
+    ["五丈原（今陕西岐山）","228—234年六次北伐，皆因粮尽退军；234年八月病卒军中，年五十四。",107.60,34.30]
+  ],
+  deeds:[
+    "《隆中对》为刘备定下三分天下的战略蓝图。",
+    "治蜀十年，“科教严明，赏罚必信”，路不拾遗，强不侵弱。",
+    "平定南中，改善民族关系，取其赋税以充军资。",
+    "作木牛流马、改良连弩，改进蜀锦生产。",
+    "《出师表》《诫子书》成为后世忠臣与家教的范本。"
+  ],
+  ach:["《隆中对》","治蜀","七擒孟获","木牛流马","《出师表》"],
+  tl:[
+    ["181","生于琅琊阳都"],
+    ["197","叔父诸葛玄卒，躬耕隆中"],
+    ["207","刘备三顾草庐，作《隆中对》"],
+    ["208","出使东吴，赤壁之战"],
+    ["214","取益州，任军师将军"],
+    ["221","刘备称帝，拜丞相"],
+    ["223","受遗诏辅刘禅，开府治事"],
+    ["225","南征，七擒孟获"],
+    ["228","首次北伐，失街亭，挥泪斩马谡"],
+    ["234","卒于五丈原，年五十四"]
+  ],
+  verdict:"中国人心目中“忠”与“智”的最大公约数。他治国的本事其实强于打仗，但后世偏偏把神机妙算都记在他名下——因为人们需要一个既能干又忠诚的化身。他六出祁山都失败了，可两千年过去，失败者的祠堂香火比成功者更盛。",
+  also:"曹操、刘备、孙权、司马懿、周瑜"
+},
+{
+  c:"4世纪", cn:"4", dyn:"东晋", era:"魏晋", n:"王羲之", role:"书法家，右军将军",
+  life:"303—361",
+  one:"一次微醺，写下了中国书法的天花板。",
+  quote:"仰观宇宙之大，俯察品类之盛。", qsrc:"《兰亭集序》",
+  bg:"永嘉之乱后衣冠南渡，士族在江南重建生活。玄学清谈盛行，书法从实用工具上升为士人自我表达的艺术。",
+  steps:[
+    ["琅琊（今山东临沂）","出身琅琊王氏，王导之侄。幼时学书于卫夫人，“临池学书，池水尽墨”。",118.35,35.05],
+    ["建康（今江苏南京）","东晋立国，王氏“王与马，共天下”。起家秘书郎，后为庾亮参军、江州刺史。",118.80,32.06],
+    ["会稽（今浙江绍兴）","为会稽内史，见老妪卖六角扇，书其扇各五字，妪初愠，后扇价倍增。",120.58,30.00],
+    ["兰亭（今浙江绍兴西南）","353年三月三，与谢安、孙绰等四十一人修禊，曲水流觞，微醉中作《兰亭集序》。",120.50,29.95],
+    ["剡县（今浙江嵊州）","晚年称病去官，与道士许迈游山水，采药服食，361年卒。",120.82,29.59]
+  ],
+  deeds:[
+    "《兰亭集序》被誉为“天下第一行书”，二十八行、三百二十四字。",
+    "创“新体”，变汉魏质朴书风为妍美流便，确立行书典范。",
+    "与子献之并称“二王”，影响中国书法一千七百年。",
+    "其书迹东传日本，成为日本书道之源。"
+  ],
+  ach:["《兰亭集序》","书圣","行书典范","二王"],
+  tl:[
+    ["303","生于琅琊临沂"],
+    ["约330","起家秘书郎，为庾亮参军"],
+    ["351","为右军将军、会稽内史"],
+    ["353","兰亭修禊，作《兰亭集序》"],
+    ["355","称病去官，誓墓不仕"],
+    ["361","卒，年五十九"]
+  ],
+  verdict:"他把写字从技术变成了艺术。有意思的是，那篇被后世奉为神品的序，是他喝醉后写的——醒后再写数十遍，都赶不上那一稿。最好的东西往往是不可复制的，这一点他自己最清楚。",
+  also:"谢安、陶渊明（生）、顾恺之、支遁"
+},
+{
+  c:"5世纪", cn:"5", dyn:"南朝·宋齐", era:"魏晋", n:"祖冲之", role:"数学家、天文学家",
+  life:"429—500",
+  one:"把圆周率算到小数点后七位的南北朝公务员。",
+  quote:"迟疾之率，非出神怪，有形可检，有数可推。", qsrc:"《大明历》上表",
+  bg:"南北朝对峙，江南相对安定，宋文帝设“四学”，算学、天文、历法皆有专门研究，是中国古代科学的一个小高峰。",
+  steps:[
+    ["建康（今江苏南京）","出身官宦世家，祖父祖昌任大匠卿，家学渊源，少年时“专功数术，搜炼古今”，入华林学省研究。",118.80,32.06],
+    ["娄县（今江苏昆山）","任县令，公务之余推演历法与圆周率，以割圆术算至正一万二千二百八十八边形。",120.98,31.39],
+    ["建康 · 总明观","464年后任谒者仆射，掌朝廷礼仪，兼掌钦天监事务，462年上《大明历》。",118.80,32.06],
+    ["建康","500年卒，年七十二。所著《缀术》唐初列为算学十经之一，后失传。",118.80,32.06]
+  ],
+  deeds:[
+    "算出 3.1415926 < π < 3.1415927，并提出密率 355/113、约率 22/7。",
+    "编制《大明历》，首次将“岁差”引入历法，定一回归年 365.24281481 日。",
+    "造指南车、千里船（日行百余里）、水碓磨。",
+    "与其子祖暅之共同提出“祖暅原理”（等高处截面积相等则体积相等）。"
+  ],
+  ach:["圆周率七位小数","密率 355/113","《大明历》","祖暅原理","《缀术》"],
+  tl:[
+    ["429","生（范阳遒人，生于建康）"],
+    ["461","任南徐州从事，始研历法"],
+    ["462","上《大明历》，遭戴法兴反对，未行"],
+    ["464","任谒者仆射，入总明观"],
+    ["约470","任娄县令"],
+    ["480","造指南车，献于齐高帝"],
+    ["500","卒，年七十二；《大明历》十年后颁行"]
+  ],
+  verdict:"在没有计算器的时代，他用“割圆术”把正多边形切到一万二千二百八十八边，手算出七位小数。这个纪录保持了近一千年，直到 15 世纪才被阿拉伯数学家打破。科学的浪漫，就在这种笨拙的精确里。",
+  also:"陶渊明、谢灵运、郦道元、祖暅之"
+},
+{
+  c:"6世纪", cn:"6", dyn:"隋", era:"隋唐", n:"隋文帝 杨坚", role:"隋朝开国皇帝",
+  life:"541—604",
+  one:"结束三百年分裂，重装了中国。",
+  quote:"中外仓库，无不盈积。", qsrc:"《隋书·食货志》",
+  bg:"南北朝分裂近三百年，北周灭北齐，杨坚以外戚受禅。此时北方胡汉融合已深，南方门阀衰落，统一的条件终于成熟。",
+  steps:[
+    ["弘农华阴（今陕西华阴）","出身关陇贵族，父杨忠为北周柱国。女为北周宣帝皇后。",110.09,34.57],
+    ["长安 · 大兴城","581年受禅建隋，改元开皇；同年营建大兴城（今西安），规模为当时世界之最。",108.94,34.34],
+    ["建康（今江苏南京）","589年，子杨广率五十万军渡江，灭陈，俘陈后主，南北重归一统。",118.80,32.06],
+    ["仁寿宫（今陕西麟游）","604年病逝（一说为杨广所弑），年六十四。",107.79,34.68]
+  ],
+  deeds:[
+    "589年统一南北，结束自西晋末年以来近三百年的分裂。",
+    "创三省六部制，成为此后一千三百年中央官制的基本框架。",
+    "废九品中正，以考试选官，开科举制度之先。",
+    "推行均田制与“输籍定样”，整顿户籍，国库充盈。",
+    "制定《开皇律》，删除死罪八十一条，为唐律所本。"
+  ],
+  ach:["统一南北","三省六部制","科举制","《开皇律》","开皇之治","大兴城"],
+  tl:[
+    ["541","生（弘农华阴人）"],
+    ["581","受禅建隋，改元开皇；营建大兴城"],
+    ["583","废郡，行州县两级；颁《开皇律》"],
+    ["587","灭后梁"],
+    ["589","灭陈，南北统一"],
+    ["596","诏废九品中正，以考试选官"],
+    ["604","崩于仁寿宫，年六十四"]
+  ],
+  verdict:"他被儿子和后世严重低估了。秦的统一只维持了十五年，隋的制度却活了一千三百年——三省六部、科举、律法，唐朝几乎全盘接收。中国能“再统一”，靠的不是某个英雄，是他在制度上做的这些枯燥工作。",
+  also:"独孤伽罗、宇文恺、李春、杨广、颜之推"
+},
+{
+  c:"7世纪", cn:"7", dyn:"唐", era:"隋唐", n:"唐太宗 李世民", role:"唐朝第二位皇帝",
+  life:"598—649",
+  one:"用一面镜子照出一个盛世。",
+  quote:"以铜为镜，可以正衣冠；以古为镜，可以知兴替；以人为镜，可以明得失。", qsrc:"《旧唐书·魏徵传》",
+  bg:"隋炀帝三征高丽、开运河，民力耗尽，天下大乱。李渊父子晋阳起兵，四年定天下，但突厥压境、经济凋敝。",
+  steps:[
+    ["武功（今陕西武功）","生于武功别馆，少年从军，18岁随父起兵晋阳。",108.20,34.26],
+    ["晋阳（今山西太原）","617年起兵，南下渡河，十一月入长安。",112.55,37.87],
+    ["虎牢关（今河南荥阳）","621年，以三千五百骑大破窦建德十万众，一战擒窦建德、降王世充，中原遂定。",113.38,34.79],
+    ["长安 · 玄武门","626年，与兄建成、弟元吉争位，伏兵玄武门，杀二兄，八月受禅即位。",108.94,34.34],
+    ["定襄（今内蒙古和林格尔）","630年李靖夜袭定襄，灭东突厥，四夷君长尊太宗为“天可汗”。",111.82,40.38],
+    ["辽东（今辽宁辽阳）","645年亲征高丽，无功而返，叹“魏徵若在，不使我有是行也”。",123.17,41.27],
+    ["翠微宫（今陕西西安）","649年服丹药中毒崩，年五十二。",108.90,34.05]
+  ],
+  deeds:[
+    "开创“贞观之治”，史称“路不拾遗，夜不闭户”，死刑犯年不过二十九人。",
+    "完善三省六部与科举，扩大取士范围，寒门得以入仕。",
+    "灭东突厥、平吐谷浑、置安西都护府，被西北诸族尊为“天可汗”。",
+    "命修《隋书》《晋书》等八史，整理典籍。",
+    "《贞观政要》记录其君臣问答，成为后世帝王教科书。"
+  ],
+  ach:["贞观之治","天可汗","安西都护府","《贞观政要》","纳谏"],
+  tl:[
+    ["598","生于武功别馆"],
+    ["617","随父晋阳起兵，年十八"],
+    ["621","虎牢关之战，一战定中原"],
+    ["626","玄武门之变，八月即位"],
+    ["627","改元贞观"],
+    ["630","灭东突厥，被尊为天可汗"],
+    ["640","设安西都护府"],
+    ["643","图形凌烟阁二十四功臣"],
+    ["649","崩于翠微宫，年五十二"]
+  ],
+  verdict:"他的污点在起点，他的光辉在终点。玄武门那一箭洗不掉，但贞观二十三年的治理也抹不去。历史对他的评价本身就是一堂政治课：人们愿意原谅一个把国家治好的人，只要他后来真的把国家治好了。",
+  also:"玄奘、魏徵、武则天、房玄龄、阎立本"
+},
+{
+  c:"8世纪", cn:"8", dyn:"唐", era:"隋唐", n:"李白", role:"诗人，翰林供奉",
+  life:"701—762",
+  one:"把整个盛唐装进行囊的人。",
+  quote:"天生我材必有用，千金散尽还复来。", qsrc:"《将进酒》",
+  bg:"开元盛世，国力鼎盛，长安是当时世界最大的城市。科举之外，荐举、征辟、入幕皆是仕途，士人漫游成风。",
+  steps:[
+    ["绵州昌隆（今四川江油）","出生地有西域碎叶与蜀中两说。五岁诵六甲，十岁观百家，十五好剑术。",104.75,31.78],
+    ["江陵、金陵、扬州","二十五岁“仗剑去国，辞亲远游”，东下三峡，散金三十余万，遍交名士。",119.42,32.39],
+    ["安陆（今湖北安陆）","娶故相许圉师孙女，隐居寿山十年，屡干诸侯不遇。",113.69,31.26],
+    ["长安","742年奉诏入京，玄宗“降辇步迎”，供奉翰林。贺知章读《蜀道难》，呼为“谪仙人”。",108.94,34.34],
+    ["洛阳","744年赐金放还，洛阳遇杜甫，同游梁宋，成中国文学史上最著名的一次相遇。",112.45,34.62],
+    ["夜郎、当涂","755年安史之乱，入永王李璘幕，兵败获罪，流夜郎；759年途中遇赦，作“轻舟已过万重山”；762年病卒于当涂。",118.50,31.57]
+  ],
+  deeds:[
+    "存诗约千首，《蜀道难》《将进酒》《梦游天姥吟留别》《静夜思》皆千古绝唱。",
+    "将乐府、歌行推向自由奔放的极致，确立浪漫主义高峰。",
+    "与杜甫并称“李杜”，构成唐诗的两极。",
+    "其诗唐时即传入日本、朝鲜，成为东亚汉文学的共同遗产。"
+  ],
+  ach:["诗仙","《蜀道难》","《将进酒》","浪漫主义巅峰","李杜"],
+  tl:[
+    ["701","生（一说生于西域碎叶）"],
+    ["715","好剑术，遍干诸侯"],
+    ["725","出蜀远游，东下扬州"],
+    ["727","安陆成婚，隐居十年"],
+    ["742","奉诏入京，供奉翰林，贺知章呼为“谪仙人”"],
+    ["744","赐金放还；洛阳遇杜甫"],
+    ["755","安史之乱起，避地剡中"],
+    ["757","入永王幕获罪，流夜郎"],
+    ["759","途中遇赦，返舟东下"],
+    ["762","卒于当涂，年六十二"]
+  ],
+  verdict:"他一辈子没做成官，却把“中国人怎么表达自由”这件事做成了。他的诗里有酒、有月、有剑、有不服气，就是没有规矩。一个社会总要留几个不肯排队的人，否则这个社会会闷死。",
+  also:"杜甫、王维、孟浩然、颜真卿、吴道子"
+},
+{
+  c:"9世纪", cn:"9", dyn:"唐", era:"隋唐", n:"白居易", role:"诗人，太子少傅",
+  life:"772—846",
+  one:"让诗变得老太太都听得懂。",
+  quote:"同是天涯沦落人，相逢何必曾相识。", qsrc:"《琵琶行》",
+  bg:"安史之乱后，藩镇割据、宦官专权、牛李党争。元和年间一度有“元和中兴”的气象，士人重提“文章合为时而著”。",
+  steps:[
+    ["新郑（今河南新郑）","生于河南，祖籍太原。少经战乱，十六岁携诗谒顾况，顾见“野火烧不尽”句，改口称“居亦易矣”。",113.74,34.40],
+    ["长安","800年进士，历任校书郎、盩厔县尉、翰林学士、左拾遗。",108.94,34.34],
+    ["盩厔（今陕西周至）","806年任县尉，与友游仙游寺，作《长恨歌》，“童子解吟长恨曲”。",108.22,34.16],
+    ["江州（今江西九江）","815年因上疏请捕刺宰相之贼，贬江州司马，秋夜浔阳江头送客，作《琵琶行》。",116.00,29.71],
+    ["杭州、苏州","822年刺杭州，筑堤蓄水、疏浚六井，人称“白公堤”；825年刺苏州，开山塘河。",120.16,30.27],
+    ["洛阳 · 香山","晚年居洛阳履道里，自号香山居士，与刘禹锡唱和，846年卒，年七十五。",112.45,34.62]
+  ],
+  deeds:[
+    "倡导新乐府运动，“文章合为时而著，歌诗合为事而作”。",
+    "作《秦中吟》十首、《新乐府》五十首，直刺时弊，《卖炭翁》最著。",
+    "《长恨歌》《琵琶行》为唐代叙事诗双璧，传诵千年。",
+    "刺杭州时筑堤治湖、疏井便民，政绩与诗名并传。",
+    "诗风平易，相传“老妪能解”，作品在生前已流布日本、朝鲜。"
+  ],
+  ach:["新乐府运动","《长恨歌》","《琵琶行》","白堤","《白氏长庆集》"],
+  tl:[
+    ["772","生于新郑"],
+    ["800","进士及第"],
+    ["806","任盩厔尉，作《长恨歌》"],
+    ["808","任左拾遗，作《新乐府》五十首"],
+    ["815","贬江州司马，作《琵琶行》"],
+    ["822","刺杭州，筑堤疏井"],
+    ["825","刺苏州，开山塘河"],
+    ["829","以太子宾客分司东都，居洛阳"],
+    ["846","卒，年七十五"]
+  ],
+  verdict:"他相信诗应该有用——能讽喻、能补察时政。这个信念让他的诗写得直白甚至笨拙，却也让它们流传到了日本，被嵯峨天皇抄进屏风。最有力量的诗，往往不是最精巧的那首。",
+  also:"韩愈、柳宗元、刘禹锡、元稹、杜牧（生）"
+},
+{
+  c:"10世纪", cn:"10", dyn:"北宋", era:"宋元", n:"赵匡胤", role:"宋朝开国皇帝",
+  life:"927—976",
+  one:"用一杯酒解决了武将篡位的老问题。",
+  quote:"卧榻之侧，岂容他人鼾睡。", qsrc:"《续资治通鉴长编》",
+  bg:"五代五十三年，八姓十四帝，全是武将兵变夺位。谁兵强马壮谁做天子，已成惯例。",
+  steps:[
+    ["洛阳夹马营","生于洛阳军营，父赵弘殷为后唐禁军将领。少年游历，投郭威帐下。",112.45,34.62],
+    ["开封 · 殿前司","后周世宗柴荣时屡立战功，任殿前都点检，掌禁军。",114.31,34.80],
+    ["陈桥驿（今河南封丘）","960年正月初三，北征途中被部下黄袍加身，回师开封，周恭帝禅位，建宋。",114.42,34.95],
+    ["成都（后蜀）","965年王全斌灭后蜀，得蜀地财富，宋室府库为之一充。",104.07,30.57],
+    ["广州（南汉）、金陵（南唐）","971年灭南汉，975年灭南唐，李煜被俘，南方遂定。",113.26,23.13],
+    ["开封","976年暴卒，年五十，“烛影斧声”成千古疑案。",114.31,34.80]
+  ],
+  deeds:[
+    "结束五代十国分裂，基本统一中原与南方。",
+    "“杯酒释兵权”，以赎买方式解除功臣兵权，避免流血。",
+    "分军权为枢密院（调兵）、三衙（统兵）、率臣（用兵），使之互相牵制。",
+    "重文抑武，扩大科举取士，一次取士多至数百人。",
+    "定“不杀士大夫及上书言事者”之誓，宋代文治由此奠定。"
+  ],
+  ach:["结束五代十国","杯酒释兵权","重文抑武","科举扩招","宋朝建立"],
+  tl:[
+    ["927","生于洛阳夹马营"],
+    ["948","投郭威帐下，从军"],
+    ["960","陈桥兵变，黄袍加身，建宋"],
+    ["961","杯酒释兵权，罢石守信等兵柄"],
+    ["963","平荆南、湖南"],
+    ["965","灭后蜀"],
+    ["971","灭南汉"],
+    ["975","灭南唐，李煜被俘"],
+    ["976","暴卒，年五十"]
+  ],
+  verdict:"他以分割军权、强化中央控制来降低武人割据的风险，但这也增加了军事指挥与边防体系的成本。宋代并非从此没有内乱或胜仗；更值得讨论的是，制度如何在政权安全与军事效率之间取舍。",
+  also:"赵普、李煜、范仲淹（生）、赵光义"
+},
+{
+  c:"11世纪", cn:"11", dyn:"北宋", era:"宋元", n:"苏轼", role:"文学家、政治家、书画家",
+  life:"1037—1101",
+  one:"一生被贬八州，把每一处都活成了故乡。",
+  quote:"回首向来萧瑟处，归去，也无风雨也无晴。", qsrc:"《定风波》",
+  bg:"北宋中期，士大夫政治达到高峰，王安石变法引发党争，新旧两派反复倾轧，文人命运随政局起伏。",
+  steps:[
+    ["眉山（今四川眉山）","生于书香之家，父苏洵、弟苏辙，合称“三苏”。1057年进士，主考欧阳修叹“老夫当避路”。",103.85,30.05],
+    ["汴京（今河南开封）","1069年王安石变法，上书反对，自请外任。",114.31,34.80],
+    ["凤翔（今陕西凤翔）","1061年任凤翔府判官，始入仕途。",107.24,34.52],
+    ["杭州","1071年通判杭州；1089年再知杭州，疏浚西湖，以葑泥筑长堤，即“苏堤”。",120.16,30.27],
+    ["徐州","1077年知徐州，黄河决口，亲率军民筑堤守城，七十日不返家。",117.18,34.26],
+    ["黄州（今湖北黄冈）","1079年“乌台诗案”下狱一百三十日，贬黄州团练副使。躬耕东坡，作《赤壁赋》《念奴娇·赤壁怀古》《寒食帖》。",114.87,30.45],
+    ["惠州、儋州","1094年贬惠州，“日啖荔枝三百颗”；1097年贬儋州（今海南），办学讲课，海南自此有进士。",114.41,23.11],
+    ["常州","1100年徽宗即位大赦北归，1101年卒于常州，年六十五。",119.97,31.81]
+  ],
+  deeds:[
+    "诗、词、文、书、画皆达一流，为“唐宋八大家”之一。",
+    "开豪放词派，《念奴娇·赤壁怀古》《水调歌头》千古传唱。",
+    "《黄州寒食帖》为“天下第三行书”。",
+    "知杭州筑苏堤、疏六井，知徐州抗洪，知扬州罢花会，政绩卓著。",
+    "谪居儋州三年，讲学授徒，开海南文教之先。"
+  ],
+  ach:["豪放词派","《赤壁赋》","《寒食帖》","苏堤","唐宋八大家"],
+  tl:[
+    ["1037","生于眉山"],
+    ["1057","进士及第，欧阳修叹其才"],
+    ["1061","任凤翔府判官"],
+    ["1071","通判杭州"],
+    ["1079","乌台诗案，下狱一百三十日"],
+    ["1080","贬黄州团练副使，躬耕东坡"],
+    ["1084","量移汝州，作《赤壁赋》"],
+    ["1089","再知杭州，筑苏堤"],
+    ["1094","贬惠州"],
+    ["1097","贬儋州（海南）"],
+    ["1101","北归途中卒于常州，年六十五"]
+  ],
+  verdict:"中国文人被贬的很多，能把贬谪活成风景的，只有他一个。黄州有东坡肉，惠州有荔枝，儋州有学堂。他不是没痛苦，是把痛苦处理得体面。一个人真正的强大，是走到哪里都能把日子过成自己的。",
+  also:"王安石、司马光、沈括、黄庭坚、苏辙"
+},
+{
+  c:"12世纪", cn:"12", dyn:"南宋", era:"宋元", n:"岳飞", role:"抗金名将，枢密副使",
+  life:"1103—1142",
+  one:"一个把“还我河山”刻进民族记忆的军人。",
+  quote:"三十功名尘与土，八千里路云和月。", qsrc:"《满江红》；作者归属存在学术争议",
+  bg:"1127年靖康之变，徽钦二帝被掳，宋室南渡。金军屡次南下，江淮之间成为主战场，和战之争贯穿整个南宋。",
+  steps:[
+    ["汤阴（今河南汤阴）","生于农家，少负气节，家贫力学，尤好《左氏春秋》，能挽三百斤弓。",114.36,35.92],
+    ["相州（今河南安阳）","1122年应募从军，后投张所、王彦，转战太行，曾单骑刺敌。",114.39,36.10],
+    ["建康（今江苏南京）","1130年收复建康，为南宋立国后首次大捷。",118.80,32.06],
+    ["襄阳（今湖北襄阳）","1134年收复襄阳六郡，为南宋首次大规模收复失地，32岁建节。",112.14,32.04],
+    ["郾城（今河南漯河）","1140年北伐，大破金兀术“拐子马”“铁浮图”，进军朱仙镇，距开封仅四十五里。",114.03,33.58],
+    ["临安（今浙江杭州）","1141年一日连收十二道金牌，被迫班师，叹“十年之力，废于一旦”；1142年以“莫须有”罪名遇害于风波亭。",120.16,30.27]
+  ],
+  deeds:[
+    "四次北伐，收复襄阳六郡、郑州、洛阳等地，为南宋战功第一。",
+    "岳家军纪律严明，“冻死不拆屋，饿死不掳掠”，金人叹“撼山易，撼岳家军难”。",
+    "郾城之战以步兵破重甲骑兵，为中国军事史经典战例。",
+    "《满江红·怒发冲冠》成为民族精神的象征文本。",
+    "孝宗时平反，追谥武穆，宁宗时追封鄂王。"
+  ],
+  ach:["收复襄阳六郡","郾城大捷","岳家军","《满江红》","武穆"],
+  tl:[
+    ["1103","生于相州汤阴"],
+    ["1122","应募从军，年二十"],
+    ["1130","收复建康"],
+    ["1134","收复襄阳六郡，授清远军节度使"],
+    ["1140","郾城、颍昌大捷，进军朱仙镇"],
+    ["1141","十二道金牌召还，兵权被夺"],
+    ["1142","以“莫须有”罪遇害于临安风波亭，年三十九"],
+    ["1162","孝宗即位，平反昭雪，谥武穆"]
+  ],
+  verdict:"他败给了自己的朝廷。十二道金牌召回的不只是一个将军，是一个王朝最后一点血性。但八百年过去，跪在西湖边的还是那四个人。历史的天平有时候很慢，慢到要几百年才肯落下来，但它终究会落。",
+  also:"朱熹、辛弃疾、陆游、李清照、韩世忠"
+},
+{
+  c:"13世纪", cn:"13", dyn:"元", era:"宋元", n:"忽必烈", role:"元朝开国皇帝",
+  life:"1215—1294",
+  one:"建立元朝、完成大一统的重要统治者。",
+  quote:"舆图之广，历古所无。", qsrc:"《元史·地理志》",
+  bg:"蒙古铁骑三次西征，欧亚大陆被打通。1260年蒙古分裂为四大汗国，忽必烈转向东方，决心做中国的皇帝。",
+  steps:[
+    ["漠北 · 哈拉和林","成吉思汗之孙，拖雷第四子。青年时延请刘秉忠、姚枢等汉儒，学习中原制度。",102.83,47.20],
+    ["大理（今云南大理）","1253年率军革囊渡金沙江，灭大理国，云南自此纳入中央版图。",100.23,25.60],
+    ["鄂州（今湖北武汉）","1259年攻鄂州，闻蒙哥死讯，北返争位。",114.30,30.59],
+    ["开平（今内蒙古正蓝旗）","1260年即大汗位，与弟阿里不哥争位四年。",116.00,42.25],
+    ["大都（今北京）","1267年营建大都，1271年取《易经》“大哉乾元”建国号“大元”，1272年定都。",116.40,39.90],
+    ["崖山（今广东新会）","1279年，张弘范破宋军，陆秀夫负幼帝投海，南宋亡，中国重归一统。",113.03,22.46],
+    ["博多（今日本福冈）","1274、1281年两次征日，皆遇台风失败，日本称“神风”。",130.40,33.59]
+  ],
+  deeds:[
+    "建立元朝，首次由少数民族完成全国统一。",
+    "行省制度确立，为中国省制之始，沿用至今。",
+    "定都大都（今北京），奠定此后七百年的首都格局。",
+    "修凿通惠河，打通京杭大运河全线，设驿站体系。",
+    "兼容多元：用八思巴文、波斯文、汉文并行，宗教宽容。"
+  ],
+  ach:["元朝建立","行省制度","定都大都","统一全国","京杭运河全线"],
+  tl:[
+    ["1215","生（成吉思汗之孙）"],
+    ["1253","革囊渡江，灭大理"],
+    ["1259","攻鄂州，蒙哥死，北返争位"],
+    ["1260","即大汗位，建元中统"],
+    ["1271","建国号“大元”"],
+    ["1272","定都大都"],
+    ["1274","首次征日，遇台风失败"],
+    ["1279","崖山灭宋，统一全国"],
+    ["1281","二次征日，再遇台风"],
+    ["1294","崩，年八十"]
+  ],
+  verdict:"忽必烈建立元朝并完成对南宋的征服，推动草原政治传统与中原治理制度的结合。行省制度对后世地方行政影响深远；但‘世界体系’、马可·波罗的记述与制度遗产，都应放在更复杂的欧亚交流背景中理解。",
+  also:"文天祥、关汉卿、郭守敬、马可·波罗、刘秉忠"
+},
+{
+  c:"14世纪", cn:"14", dyn:"明", era:"明清", n:"朱元璋", role:"明朝开国皇帝",
+  life:"1328—1398",
+  one:"从极其贫寒的出身走向皇位的开国皇帝。",
+  quote:"我本淮右布衣，天下于我何加焉。", qsrc:"《明太祖实录》",
+  bg:"元末黄河泛滥、赋役沉重，红巾军起。南方群雄并立，陈友谅、张士诚、方国珍各据一方。",
+  steps:[
+    ["濠州钟离（今安徽凤阳）","生于贫农之家，排行第八，原名重八。1344年旱蝗大作，父、母、长兄半月内相继饿死，无地可葬。",117.56,32.87],
+    ["皇觉寺（今安徽凤阳）","入寺为僧，五十日后寺中绝粮，托钵流浪淮西三年，熟知山川与民情。",117.56,32.87],
+    ["应天（今江苏南京）","1352年投郭子兴红巾军，娶马氏；1356年克集庆，改名应天府。",118.80,32.06],
+    ["鄱阳湖（今江西鄱阳）","1363年与陈友谅决战，火攻其巨舰，陈友谅中箭死，六十万军溃。",116.70,29.10],
+    ["大都（今北京）","1368年正月称帝，国号大明；徐达、常遇春北伐，八月入大都，元顺帝北逃。",116.40,39.90],
+    ["云南（今昆明）","1382年傅友德、蓝玉平云南，元梁王自杀，西南归入版图。",102.71,25.05]
+  ],
+  deeds:[
+    "推翻元朝，建立明朝，恢复汉人政权。",
+    "废丞相、罢中书省，设锦衣卫，皇权空前集中。",
+    "编鱼鳞图册、黄册，清查田亩人口，赋役有据。",
+    "兴修水利、移民屯田、减轻赋税，史称“洪武之治”。",
+    "大兴文字狱，诛杀功臣，胡蓝之狱死者数万。"
+  ],
+  ach:["建立明朝","废丞相","黄册鱼鳞图册","洪武之治","锦衣卫"],
+  tl:[
+    ["1328","生于濠州钟离，名重八"],
+    ["1344","旱蝗大作，父母长兄相继死，入皇觉寺"],
+    ["1352","投郭子兴红巾军"],
+    ["1356","克集庆，改应天府"],
+    ["1363","鄱阳湖之战，破陈友谅"],
+    ["1367","灭张士诚，南平方国珍"],
+    ["1368","称帝，国号大明；北伐入大都"],
+    ["1380","胡惟庸案，废丞相"],
+    ["1382","平云南"],
+    ["1398","崩，年七十一"]
+  ],
+  verdict:"他最懂底层的苦，也最懂权力的狠。因为当过乞丐，他知道官吏怎么盘剥百姓；也因为当过乞丐，他对读书人有一种深到骨子里的不信任。他用最残酷的手段追求一个最朴素的理想：让农民有饭吃。",
+  also:"刘伯温、徐达、姚广孝、罗贯中、施耐庵"
+},
+{
+  c:"15世纪", cn:"15", dyn:"明", era:"明清", n:"郑和", role:"航海家，太监，三宝太监",
+  life:"1371—1433",
+  one:"七次出海，把中国带到非洲东岸。",
+  quote:"涉彼狂澜，若履通衢。", qsrc:"《长乐南山寺天妃之神灵应记》碑",
+  bg:"永乐年间国力鼎盛，成祖朱棣夺位后急需“耀兵异域，示中国富强”，并寻找建文帝下落，遂有下西洋之举。",
+  steps:[
+    ["云南昆阳（今昆明晋宁）","本姓马，回族，祖父与父皆曾朝觐麦加。1381年明军平云南，被俘入宫为宦。",102.75,24.68],
+    ["太仓刘家港（今江苏太仓）","1405年首航，将士二万七千八百余人，宝船六十二艘，最大者长四十四丈。",121.10,31.45],
+    ["长乐（今福建福州）","船队候风开洋之地，立《天妃灵应之记》碑，记七下西洋始末。",119.52,25.96],
+    ["满剌加（今马六甲）","设官厂，为船队中转与补给总站，控制马六甲海峡。",102.25,2.19],
+    ["锡兰、古里（今斯里兰卡、印度卡利卡特）","1411年擒锡兰王；古里为西行终点，立碑纪功。",79.86,6.93],
+    ["忽鲁谟斯（今霍尔木兹）","第四、五次抵达波斯湾口，为东西方商路枢纽。",56.46,27.10],
+    ["麻林（今肯尼亚马林迪）","最远抵达非洲东岸，麻林遣使随船队回访，献麒麟（长颈鹿）。",40.12,-3.22],
+    ["古里","1433年第七次航行归途中病卒于古里，船队由王景弘率领返国。",75.78,11.25]
+  ],
+  deeds:[
+    "二十八年间七下西洋，规模与航程均远超同期欧洲。",
+    "最远抵达非洲东海岸，早于达·伽马绕过好望角八十余年。",
+    "以“厚往薄来”的朝贡贸易建立南洋—印度洋秩序，未占一寸殖民地。",
+    "《郑和航海图》记录五百余个地名与航向、水深，为古代最详海图。",
+    "推动华人移居南洋，形成早期华人社会。"
+  ],
+  ach:["七下西洋","宝船舰队","《郑和航海图》","非洲东岸","朝贡贸易"],
+  tl:[
+    ["1371","生于云南昆阳"],
+    ["1381","明军平云南，被俘入宫，后侍燕王朱棣"],
+    ["1404","靖难之功，赐姓郑，擢内官监太监"],
+    ["1405","首次下西洋，船六十二艘、人二万七千余"],
+    ["1407","第二次；1409第三次"],
+    ["1411","第三次归，擒锡兰王"],
+    ["1413","第四次，抵忽鲁谟斯"],
+    ["1417","第五次；1421第六次"],
+    ["1431","第七次启航"],
+    ["1433","归途中卒于古里"]
+  ],
+  verdict:"郑和船队展示了明初国家组织远洋航行的能力。此后朝廷没有持续维持同等规模的远洋船队，相关活动逐渐停止；但把这一变化简单归结为‘烧掉船图’或单一的海禁政策，会遮蔽财政、政治与海上贸易结构等多重因素。",
+  also:"解缙、于谦、唐寅、李时珍（生）、王景弘"
+},
+{
+  c:"16世纪", cn:"16", dyn:"明", era:"明清", n:"王阳明", role:"哲学家、军事家，心学集大成者",
+  life:"1472—1529",
+  one:"在贵州山洞里想通了“心”。",
+  quote:"知是行之始，行是知之成。", qsrc:"《传习录》",
+  bg:"明中期程朱理学僵化为科举教条，“格物”变成背诵。商品经济发展，士人开始追问：道理到底在外面，还是在心里？",
+  steps:[
+    ["余姚（今浙江余姚）","生于书香门第，父王华为状元。少年即问塾师“何为第一等事”，答“读书登第”，阳明曰“或读书学圣贤耳”。",121.15,30.04],
+    ["北京","1499年进士。早年格竹七日致病，转习辞章、兵法、养生。",116.40,39.90],
+    ["龙场（今贵州修文）","1506年因上疏救戴铣，忤刘瑾，廷杖四十，贬贵州龙场驿丞。1508年一夜大悟“圣人之道，吾性自足”，史称“龙场悟道”。",106.59,26.84],
+    ["南赣（今江西赣州）","1517年巡抚南赣，行十家牌法，剿漳南、横水、桶冈、大帽、浰头诸寇，一年半平数十年之乱。",114.94,25.83],
+    ["南昌","1519年宁王朱宸濠反，阳明仓促起兵，用围魏救赵之计，三十五日擒宸濠。",115.86,28.68],
+    ["绍兴、南安","1521年起讲学绍兴，倡“致良知”；1527年出征思恩、田州；1529年归途卒于江西南安舟中。",120.58,30.00]
+  ],
+  deeds:[
+    "创立阳明心学，主张“心即理”“知行合一”“致良知”。",
+    "平定南赣匪患、宁王之乱，以文臣领兵，战功卓著。",
+    "《传习录》成为东亚近世最重要的哲学文本之一。",
+    "讲学遍及东南，门人形成浙中、江右、泰州等七派。",
+    "其学传入日本，深刻影响明治维新志士。"
+  ],
+  ach:["阳明心学","知行合一","致良知","平定宁王","《传习录》"],
+  tl:[
+    ["1472","生于余姚"],
+    ["1499","进士及第"],
+    ["1506","忤刘瑾，廷杖四十，贬龙场驿丞"],
+    ["1508","龙场悟道，始倡“知行合一”"],
+    ["1510","升庐陵知县，后入京讲学"],
+    ["1517","巡抚南赣，平漳南、横水诸寇"],
+    ["1519","三十五日记擒宁王朱宸濠"],
+    ["1521","丁父忧归绍兴，专事讲学"],
+    ["1527","出征思恩、田州"],
+    ["1529","卒于南安舟中，年五十七"]
+  ],
+  verdict:"他说“心外无物”，然后带兵打了半辈子胜仗。这才是最狠的反驳——空谈的人很多，能把哲学变成战功的，中国历史上只有他一个。他临终那句“此心光明”，是一个想了一辈子的人能给自己的最好结论。",
+  also:"李时珍、唐寅、文徵明、海瑞（生）、湛若水"
+},
+{
+  c:"17世纪", cn:"17", dyn:"明", era:"明清", n:"徐霞客", role:"地理学家、旅行家",
+  life:"1587—1641",
+  one:"用三十四年走遍中国的人。",
+  quote:"丈夫当朝碧海而暮苍梧。", qsrc:"《徐霞客游记》",
+  bg:"晚明商品经济繁荣，士人中出现“弃举业而游天下”的新风气。舆图粗疏，西南边地几乎无人实地考察。",
+  steps:[
+    ["江阴（今江苏江阴）","生于富庶之家，家道中落但藏书甚富。少年应试不第，遂绝意仕途。",120.28,31.92],
+    ["太湖、泰山、黄山","1607年游太湖，此后二十余年间游历华北、华东名山：泰山、嵩山、华山、武当、庐山、武夷、黄山（1616、1618两登）。",118.17,30.13],
+    ["福建、广东","1620年代南下，考察九鲤湖、罗浮山，开始关注水系源流。",118.18,27.76],
+    ["广西、贵州","1636年起“西南万里行”，四年间四进四出，考察石灰岩地貌（喀斯特），记溶洞、峰林、地下河。",110.29,25.27],
+    ["云南 · 丽江、大理","1640年至云南，足疾恶化，“两足俱废”，由丽江土司木增派人护送回江阴，1641年卒。",100.23,26.87]
+  ],
+  deeds:[
+    "三十余年间游历二十一省，三次遇盗、四次绝粮而不改其志。",
+    "实地考证金沙江为长江正源，纠正《禹贡》“岷山导江”千年之误。",
+    "系统记录喀斯特地貌的分布、类型与成因，早于西方同类研究约两百年。",
+    "《徐霞客游记》六十余万字，既是地理学著作，也是晚明社会实录。",
+    "考察火山、温泉、植物分布，记录各地物价、民俗、少数民族生活。"
+  ],
+  ach:["《徐霞客游记》","长江正源考","喀斯特地貌研究","游历二十一省"],
+  tl:[
+    ["1587","生于江阴梧塍里"],
+    ["1607","游太湖，始有游记"],
+    ["1613","游天台山、雁荡山"],
+    ["1616","两登黄山；游武夷山"],
+    ["1623","游嵩山、华山、武当山"],
+    ["1636","开始西南万里行，年五十"],
+    ["1637","入广西，四进四出考察喀斯特"],
+    ["1639","至云南腾越，足疾加剧"],
+    ["1640","病归江阴"],
+    ["1641","卒，年五十五"]
+  ],
+  verdict:"他没有功名，没有官职，没有学生，只有一双走烂的鞋。在那个所有人都往考场里挤的年代，他往山里走。四百年后我们才明白：他走的每一步，都比一顶乌纱帽更接近永恒。",
+  also:"宋应星、徐光启、汤显祖、李自成、木增"
+},
+{
+  c:"18世纪", cn:"18", dyn:"清", era:"明清", n:"曹雪芹", role:"小说家",
+  life:"约1715—约1763",
+  one:"用十年写尽一个家族的黄昏。",
+  quote:"满纸荒唐言，一把辛酸泪。", qsrc:"《红楼梦》第一回",
+  bg:"康雍乾盛世，表面上人口翻倍、国库充盈；内里文字狱酷烈、官僚腐化。江南织造世家由盛转衰，正是时代缩影。",
+  steps:[
+    ["江宁（今江苏南京）","曾祖曹玺、祖曹寅、父曹頫三代任江宁织造，康熙六次南巡四次住曹家，极尽繁华。",118.80,32.06],
+    ["北京","1727年曹頫获罪抄家，全家北迁，时雪芹约十三岁，由锦衣玉食跌入困顿。",116.40,39.90],
+    ["北京 · 右翼宗学","曾任文书类差事，结识敦敏、敦诚兄弟，能诗善画，嗜酒。",116.40,39.90],
+    ["北京西郊 · 香山","晚年移居西郊，“茅椽蓬牖，瓦灶绳床”，“举家食粥酒常赊”。",116.19,39.99],
+    ["北京","“披阅十载，增删五次”，成《石头记》八十回，后四十回散佚。约1763年除夕病卒，年未及五十。",116.40,39.90]
+  ],
+  deeds:[
+    "创作《红楼梦》（《石头记》）前八十回，中国古典小说的巅峰。",
+    "以贾府兴衰写尽贵族社会的结构、礼仪、经济与精神世界。",
+    "塑造贾宝玉、林黛玉、薛宝钗等数百个立体人物。",
+    "诗词、园林、饮食、医药、戏曲无所不包，被誉为“中国封建社会的百科全书”。",
+    "身后形成“红学”，为世界文学史上罕见的专门学问。"
+  ],
+  ach:["《红楼梦》","中国小说巅峰","红学","百科全书式写作"],
+  tl:[
+    ["约1715","生于江宁织造府"],
+    ["1727","曹頫获罪抄家，全家北迁北京"],
+    ["约1736","任职右翼宗学，结识敦敏、敦诚"],
+    ["约1745","移居西郊，始作《石头记》"],
+    ["1754","脂砚斋甲戌本问世，书已“披阅十载，增删五次”"],
+    ["约1763","除夕病卒，书未成，年未及五十"],
+    ["1791","程伟元、高鹗一百二十回本刊行"]
+  ],
+  verdict:"他写完了一个时代怎么倒下去，然后自己也倒了。最残酷的是，他写的是自己家的事——那些宴席、那些诗社、那些精致的器物，他都亲手摸过。一个人把失去的东西写得那么美，是最难的一种悼念。",
+  also:"康熙、雍正、郑板桥、纪晓岚、袁枚"
+},
+{
+  c:"19世纪", cn:"19", dyn:"清", era:"近现代", n:"林则徐", role:"政治家，钦差大臣",
+  life:"1785—1850",
+  one:"近代中国推动了解西方的重要先行者之一。",
+  quote:"苟利国家生死以，岂因祸福避趋之。", qsrc:"《赴戍登程口占示家人》",
+  bg:"19世纪初，英国为扭转贸易逆差大量输入鸦片，每年白银外流数千万两。朝中“弛禁”与“严禁”两派争论不休。",
+  steps:[
+    ["侯官（今福建福州）","生于贫寒塾师之家，1811年进士，历翰林、江苏按察使、江苏巡抚、湖广总督，以干练清廉著称。",119.30,26.08],
+    ["北京","1838年上书道光帝，痛陈“若犹泄泄视之，是使数十年后，中原几无可以御敌之兵”，被命为钦差大臣。",116.40,39.90],
+    ["虎门（今广东东莞）","1839年6月3日至25日，于虎门海滩当众销毁鸦片19,187箱又2,119袋，共2,376,254斤。",113.68,22.81],
+    ["广州","组织翻译《四洲志》《各国律例》，购置西洋炮船，提出“师敌之长技以制敌”。",113.26,23.13],
+    ["开封","1841年遣戍伊犁途中，奉命治理黄河开封段决口，工毕仍西行。",114.31,34.80],
+    ["伊犁（今新疆霍城）","1842年至戍所，开垦惠远城周边荒地，勘南疆八城，兴修水利。",80.87,44.05],
+    ["潮州（今广东普宁）","1850年奉旨赴广西，途中病卒于普宁，年六十六。",116.17,23.30]
+  ],
+  deeds:[
+    "虎门销烟，中国近代反侵略的第一声。",
+    "主持编译《四洲志》，为魏源《海国图志》之基础。",
+    "提出“师夷长技以制夷”的思想雏形，开启洋务思潮。",
+    "戍边伊犁期间兴修水利、勘垦南疆，巩固西北边防。",
+    "为官清廉，历官十四省，“所至之处，必究其利弊”。"
+  ],
+  ach:["虎门销烟","《四洲志》","师夷长技","伊犁屯垦"],
+  tl:[
+    ["1785","生于福建侯官"],
+    ["1811","进士及第，入翰林"],
+    ["1837","任湖广总督，力主严禁鸦片"],
+    ["1838","上书道光帝，被命为钦差大臣赴粤"],
+    ["1839","虎门销烟，二万余箱"],
+    ["1840","鸦片战争爆发，被革职"],
+    ["1842","遣戍伊犁，途中治黄河决口"],
+    ["1845","释还，历陕甘、云贵总督"],
+    ["1850","赴广西途中卒于普宁，年六十六"]
+  ],
+  verdict:"他没能救清朝，但他给中国换了一双眼睛。鸦片战争后他被当作替罪羊发配伊犁，路上还在修黄河。这个民族最了不起的地方，就是在最坏的时刻，总有人还在做具体的事。",
+  also:"曾国藩、左宗棠、李鸿章、龚自珍、魏源"
+},
+{
+  c:"20世纪", cn:"20", dyn:"清末民初", era:"近现代", n:"孙中山", role:"革命家，中华民国临时大总统",
+  life:"1866—1925",
+  one:"推动辛亥革命、终结中国两千余年君主帝制的重要领袖。",
+  quote:"革命尚未成功，同志仍须努力。", qsrc:"《总理遗嘱》",
+  bg:"甲午战败后，洋务运动破产，维新变法百日而终。亡国灭种的危机下，革命与改良两条道路激烈竞争。",
+  steps:[
+    ["香山翠亨村（今广东中山）","生于香山（今中山）翠亨村；1879年赴檀香山求学，接触西方教育与社会制度。",113.39,22.52],
+    ["香港","1887年入香港西医书院，1892年毕业；后行医并联络革命志士。",114.17,22.32],
+    ["檀香山","1894年上书李鸿章未果；同年11月在檀香山创立兴中会，提出“驱除鞑虏，恢复中国，创立合众政府”。",-157.86,21.31],
+    ["广州","1895年广州起义计划失败；1911年黄花岗起义由黄兴等人具体组织，孙中山是革命运动的重要领导者之一。",113.26,23.13],
+    ["东京","1905年联合华兴会、光复会成立中国同盟会，提出民族、民权、民生三大主义。",139.69,35.69],
+    ["南京","1911年10月武昌起义，各省响应；1912年1月1日就任临时大总统，2月清帝退位。",118.80,32.06],
+    ["北京","1924年国民党一大，确立联俄、联共、扶助农工三大政策；1925年3月12日病逝，年五十九。",116.40,39.90]
+  ],
+  deeds:[
+    "推动辛亥革命；清帝退位终结了中国延续两千余年的君主帝制，这一历史进程由多方力量共同推动。",
+    "发起创建兴中会，推动组建同盟会，并参与国民党组织发展与改组。",
+    "提出三民主义，为革命运动提供了纲领性主张。",
+    "《建国方略》提出铁路、港口等现代化建设构想；其部分愿景后来以不同形式推进，不能笼统说成今日均已实现。",
+    "推动国共合作，创办黄埔军校。"
+  ],
+  ach:["辛亥革命","终结帝制","三民主义","同盟会","《建国方略》","黄埔军校"],
+  tl:[
+    ["1866","生于广东香山翠亨村"],
+    ["1879","赴檀香山求学，始见西方制度"],
+    ["1892","香港西医书院毕业，行医澳门、广州"],
+    ["1894","上书李鸿章；创兴中会于檀香山"],
+    ["1895","广州起义失败，流亡海外十六年"],
+    ["1905","东京成立同盟会，提三民主义"],
+    ["1911","武昌起义，各省响应"],
+    ["1912","就任临时大总统；清帝退位；让位袁世凯"],
+    ["1913","二次革命失败，再流亡"],
+    ["1924","国民党一大，三大政策；创办黄埔军校"],
+    ["1925","病逝于北京，年五十九"]
+  ],
+  verdict:"他长期组织革命、筹款与流亡，经历多次起义失败。武昌起义爆发时，他仍在海外，获悉消息后辗转回国，并于1912年就任临时大总统。对他的评价，既要看到其组织与思想贡献，也应看到辛亥革命是多方力量共同推动的结果。",
+  also:"康有为、梁启超、黄兴、鲁迅、袁世凯"
+}
+];
+
+const COLORS = ERAS;
+const gridEl = document.getElementById("grid");
+const axisEl = document.getElementById("axis");
+const chipsEl = document.getElementById("chips");
+const cntEl = document.getElementById("cnt");
+const mask = document.getElementById("mask");
+const sheet = document.getElementById("sheet");
+let filterEra = "全部";
+let keyword = "";
+let curIdx = -1;
+let returnFocusEl = null;
+
+/* ---- axis ---- */
+axisEl.innerHTML = DATA.map((p, i) =>
+  `<button class="tick" data-i="${i}" title="${p.c} · ${p.n}">
+     <span class="cn">${p.cn}</span>
+   </button>`
+).join("");
+
+/* ---- chips ---- */
+const eras = ["全部", ...Object.keys(ERAS)];
+chipsEl.innerHTML = eras.map(e =>
+  `<button class="chip${e === "全部" ? " on" : ""}" data-era="${e}">${e}</button>`
+).join("");
+
+/* ---- cards ---- */
+function matches(p) {
+  if (filterEra !== "全部" && p.era !== filterEra) return false;
+  if (!keyword) return true;
+  const hay = [p.c, p.dyn, p.era, p.n, p.role, p.one, p.also,
+    p.steps.map(s => s[0]).join(" "), p.ach.join(" ")].join(" ").toLowerCase();
+  return hay.includes(keyword);
+}
+
+let io = null;
+function render() {
+  const list = DATA.filter(matches);
+  cntEl.textContent = `共 ${list.length} 位 · 公元前 13 世纪 — 20 世纪`;
+  if (!list.length) {
+    gridEl.innerHTML = `<div class="empty">没有匹配的人物，换个关键词试试。</div>`;
+    return;
+  }
+  gridEl.innerHTML = list.map(p => {
+    const i = DATA.indexOf(p);
+    return `<article class="card" data-i="${i}" tabindex="0" role="button" aria-label="查看${p.n}生平" style="--era:${COLORS[p.era]}">
+      <div class="card-top">
+        <span class="cnum">${p.c}</span>
+        <span class="cdyn">${p.dyn}</span>
+      </div>
+      <h3 class="cname">${p.n}</h3>
+      <p class="cone">${p.one}</p>
+      <div class="cfoot">
+        <span>${p.life}</span>
+        <span class="go">展开一生 →</span>
+      </div>
+    </article>`;
+  }).join("");
+
+  if (io) io.disconnect();
+  io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { rootMargin: "120px 0px", threshold: 0 });
+  gridEl.querySelectorAll(".card").forEach(c => io.observe(c));
+  setTimeout(() => {
+    gridEl.querySelectorAll(".card:not(.in)").forEach(c => {
+      if (c.getBoundingClientRect().top < window.innerHeight * 1.6) c.classList.add("in");
+    });
+  }, 800);
+}
+
+/* ---- map (Tencent GL JS, key-proxy mode) ---- */
+let tmap = null;
+let tmapState = "idle"; // idle | loading | ready | failed
+let tmapQueue = [];
+
+function loadTMap(cb) {
+  if (window.TMap) { tmapState = "ready"; return cb(true); }
+  if (tmapState === "failed") return cb(false);
+  // GitHub Pages cannot use the original local-development proxy; fall back to an offline route diagram.
+  const mapServiceHost = "http://127.0.0.1:__WB_HTTP_PORT__/_TMapService/_wbt/__WB_TMAP_SECRET__";
+  if (mapServiceHost.includes("__WB_TMAP_SECRET__") || mapServiceHost.includes("__WB_HTTP_PORT__")) {
+    tmapState = "failed"; return cb(false);
+  }
+  tmapQueue.push(cb);
+  if (tmapState === "loading") return;
+  tmapState = "loading";
+  window._TMapSecurityConfig = { serviceHost: mapServiceHost };
+  const s = document.createElement("script");
+  s.src = "https://map.qq.com/api/gljs?v=1.exp";
+  s.onload = () => {
+    tmapState = "ready";
+    const q = tmapQueue; tmapQueue = [];
+    q.forEach(f => f(true));
+  };
+  s.onerror = () => {
+    tmapState = "failed";
+    const q = tmapQueue; tmapQueue = [];
+    q.forEach(f => f(false));
+  };
+  document.head.appendChild(s);
+}
+
+function pinSVG(n, color) {
+  return '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="32" viewBox="0 0 26 32">' +
+    '<path d="M13 1.5C7.2 1.5 2.5 6.2 2.5 12c0 7.6 10.5 18.5 10.5 18.5S23.5 19.6 23.5 12c0-5.8-4.7-10.5-10.5-10.5z" ' +
+    'fill="' + color + '" stroke="#fffdf7" stroke-width="1.6"/>' +
+    '<text x="13" y="16" text-anchor="middle" font-size="11.5" font-family="Arial,sans-serif" ' +
+    'font-weight="700" fill="#fff">' + n + '</text></svg>';
+}
+
+function destroyMap() {
+  if (tmap) { try { tmap.destroy(); } catch (e) {} tmap = null; }
+}
+
+function drawStaticRoute(el, pts, color) {
+  const W = 720, H = 320, pad = 48;
+  const lngs = pts.map(o => o.lng), lats = pts.map(o => o.lat);
+  let minLng = Math.min(...lngs), maxLng = Math.max(...lngs);
+  let minLat = Math.min(...lats), maxLat = Math.max(...lats);
+  if (maxLng - minLng < 0.5) { minLng -= 0.5; maxLng += 0.5; }
+  if (maxLat - minLat < 0.5) { minLat -= 0.5; maxLat += 0.5; }
+  const xy = o => ({x:pad+(o.lng-minLng)/(maxLng-minLng)*(W-pad*2), y:H-pad-(o.lat-minLat)/(maxLat-minLat)*(H-pad*2)});
+  const points = pts.map(xy);
+  const path = points.map((q,i)=>(i?'L':'M')+q.x.toFixed(1)+','+q.y.toFixed(1)).join(' ');
+  const grid = Array.from({length:5},(_,i)=>{
+    const x=pad+i*(W-pad*2)/4, y=pad+i*(H-pad*2)/4;
+    return `<path d="M${x},${pad} V${H-pad} M${pad},${y} H${W-pad}" stroke="#cfc4ae" stroke-width="1" stroke-dasharray="2 7" opacity=".65"/>`;
+  }).join('');
+  const markers = points.map((q,i)=>`<g><circle cx="${q.x}" cy="${q.y}" r="12" fill="${color}" stroke="#fffdf8" stroke-width="2.5"/><text x="${q.x}" y="${q.y+4}" text-anchor="middle" font-size="11" font-family="Arial,sans-serif" font-weight="700" fill="#fff">${pts[i].n}</text></g>`).join('');
+  const labels = pts.map((o,i)=>`<span class="route-label"><b>${o.n}</b> ${o.name}</span>`).join('');
+  el.innerHTML = `<div class="static-route"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="人物行迹地点连线示意图">${grid}<path d="${path}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 6" opacity=".9"/>${markers}</svg><div class="static-route-note">离线行迹示意 · 按地点坐标连线，不代表真实行程路线或行政区边界</div><div class="route-labels">${labels}</div></div>`;
+}
+
+function drawMap(p) {
+  const box = document.getElementById("tmap");
+  if (!box) return;
+  const pts = [];
+  p.steps.forEach((s, idx) => {
+    if (typeof s[2] === "number" && typeof s[3] === "number") {
+      pts.push({ n: idx + 1, name: s[0], lng: s[2], lat: s[3] });
+    }
+  });
+  if (pts.length < 2) {
+    box.innerHTML = '<div class="mapfallback">此人的行迹集中在少数地点，未绘线路。</div>';
+    return;
+  }
+  loadTMap(ok => {
+    const el = document.getElementById("tmap");
+    if (!el) return;
+    if (!ok) {
+      drawStaticRoute(el, pts, COLORS[p.era]);
+      return;
+    }
+    el.innerHTML = "";
+    const lngs = pts.map(o => o.lng), lats = pts.map(o => o.lat);
+    const minLng = Math.min.apply(null, lngs), maxLng = Math.max.apply(null, lngs);
+    const minLat = Math.min.apply(null, lats), maxLat = Math.max.apply(null, lats);
+    const W = el.clientWidth || 640, H = el.clientHeight || 340;
+    const merc = lat => Math.log(Math.tan(Math.PI / 4 + lat * Math.PI / 360));
+    const yMin = merc(minLat), yMax = merc(maxLat);
+    const latMid = (2 * Math.atan(Math.exp((yMin + yMax) / 2)) - Math.PI / 2) * 180 / Math.PI;
+    const lngSpan = Math.max(1.6, (maxLng - minLng) * 1.45);
+    const ySpan = Math.max(0.02, (yMax - yMin) * 1.75);
+    let z = Math.min(
+      Math.log2(360 * W / (256 * lngSpan)),
+      Math.log2(2 * Math.PI * H / (256 * ySpan))
+    );
+    z = Math.max(2.1, Math.min(9.6, z));
+    const color = COLORS[p.era];
+
+    tmap = new TMap.Map(el, {
+      center: new TMap.LatLng(latMid, (minLng + maxLng) / 2),
+      zoom: z,
+      viewMode: "2D"
+    });
+
+    new TMap.MultiPolyline({
+      map: tmap,
+      styles: {
+        route: new TMap.PolylineStyle({
+          color: color, width: 2, borderWidth: 0, lineCap: "round", dashArray: [7, 6]
+        })
+      },
+      geometries: [{
+        styleId: "route",
+        paths: pts.map(o => new TMap.LatLng(o.lat, o.lng))
+      }]
+    });
+
+    const styles = {}, geoms = [];
+    pts.forEach(o => {
+      const key = "p" + o.n;
+      styles[key] = new TMap.MarkerStyle({
+        width: 26, height: 32, anchor: { x: 13, y: 32 },
+        src: "data:image/svg+xml;charset=utf-8," + encodeURIComponent(pinSVG(o.n, color))
+      });
+      geoms.push({ id: key, styleId: key, position: new TMap.LatLng(o.lat, o.lng) });
+    });
+    new TMap.MultiMarker({ map: tmap, styles: styles, geometries: geoms });
+  });
+}
+
+/* ---- modal ---- */
+function open(i) {
+  const p = DATA[i];
+  const c = COLORS[p.era];
+  destroyMap();
+  sheet.style.setProperty("--era", c);
+  sheet.innerHTML = `
+    <button class="s-close" aria-label="关闭">✕</button>
+    <div class="s-body" style="--era:${c}">
+      <div class="s-eyebrow">${p.c} &nbsp;·&nbsp; ${p.dyn} &nbsp;·&nbsp; ${p.role}</div>
+      <h2 class="s-name">${p.n}</h2>
+      <div class="s-life">${p.life}</div>
+      <blockquote class="s-quote">“${p.quote}”<cite>${p.qsrc}</cite></blockquote>
+
+      <div class="blk">
+        <h4>时代</h4>
+        <p>${p.bg}</p>
+      </div>
+
+      <div class="blk">
+        <h4>行迹图</h4>
+        <div class="mapwrap"><div class="tmap" id="tmap"></div></div>
+        <div class="maplegend">编号对应下方「足迹」顺序；空心编号为图上未标出的地点 · 地图服务需配置有效密钥与安全域名</div>
+      </div>
+
+      <div class="blk">
+        <h4>足迹 · 去了哪里，干了什么</h4>
+        <ul class="steps">
+          ${p.steps.map(s => `<li class="${typeof s[2] === "number" ? "" : "nomap"}"><span class="place">${s[0]}</span><span class="evt">${s[1]}</span></li>`).join("")}        </ul>
+      </div>
+
+      <div class="blk">
+        <h4>年表</h4>
+        <div class="tl">
+          ${p.tl.map(t => `<div class="tl-row"><span class="tl-y">${t[0]}</span><span class="tl-e">${t[1]}</span></div>`).join("")}
+        </div>
+      </div>
+
+      <div class="blk">
+        <h4>关键事迹</h4>
+        <ol class="deeds">${p.deeds.map(d => `<li>${d}</li>`).join("")}</ol>
+      </div>
+
+      <div class="blk">
+        <h4>主要成就</h4>
+        <div class="tags">${p.ach.map(a => `<span class="tag">${a}</span>`).join("")}</div>
+      </div>
+
+      <div class="verdict">
+        <div class="vt">人物点评</div>
+        <p>${p.verdict}</p>
+      </div>
+
+      <div class="also"><b>同世纪</b>${p.also}</div>
+
+      <div class="pager">
+        <button data-nav="-1" ${i === 0 ? "disabled" : ""}>
+          <small>上一位</small>
+          <em>${i > 0 ? DATA[i - 1].c + " · " + DATA[i - 1].n : "——"}</em>
+        </button>
+        <button data-nav="1" ${i === DATA.length - 1 ? "disabled" : ""}>
+          <small>下一位</small>
+          <em>${i < DATA.length - 1 ? DATA[i + 1].c + " · " + DATA[i + 1].n : "——"}</em>
+        </button>
+      </div>
+    </div>`;
+  if (!mask.classList.contains("open")) returnFocusEl = document.activeElement;
+  mask.classList.add("open");
+  document.body.style.overflow = "hidden";
+  sheet.setAttribute("tabindex", "-1");
+  requestAnimationFrame(() => sheet.querySelector(".s-close")?.focus());
+  sheet.scrollTop = 0;
+  try { history.replaceState(null, "", "#p" + i); } catch (e) {}
+  sheet.querySelector(".s-close").addEventListener("click", close);
+  sheet.querySelectorAll(".pager button").forEach(b => {
+    b.addEventListener("click", () => {
+      const j = i + Number(b.dataset.nav);
+      if (j >= 0 && j < DATA.length) open(j);
+    });
+  });
+  curIdx = i;
+  axisEl.querySelectorAll(".tick").forEach(t => t.classList.toggle("active", +t.dataset.i === i));
+  setTimeout(() => { if (curIdx === i) drawMap(p); }, 60);
+}
+
+function close() {
+  destroyMap();
+  mask.classList.remove("open");
+  document.body.style.overflow = "";
+  curIdx = -1;
+  axisEl.querySelectorAll(".tick").forEach(t => t.classList.remove("active"));
+  if (returnFocusEl && typeof returnFocusEl.focus === "function") returnFocusEl.focus();
+  returnFocusEl = null;
+  try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {}
+}
+
+/* ---- events ---- */
+gridEl.addEventListener("click", e => {
+  const card = e.target.closest(".card");
+  if (card) open(+card.dataset.i);
+});
+gridEl.addEventListener("keydown", e => {
+  const card = e.target.closest(".card");
+  if (card && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); open(+card.dataset.i); }
+});
+axisEl.addEventListener("click", e => {
+  const t = e.target.closest(".tick");
+  if (!t) return;
+  open(+t.dataset.i);
+});
+chipsEl.addEventListener("click", e => {
+  const b = e.target.closest(".chip");
+  if (!b) return;
+  filterEra = b.dataset.era;
+  chipsEl.querySelectorAll(".chip").forEach(x => x.classList.toggle("on", x === b));
+  render();
+});
+const searchInput = document.getElementById("q");
+const clearSearch = document.getElementById("clearSearch");
+searchInput.addEventListener("input", e => {
+  keyword = e.target.value.trim().toLowerCase();
+  clearSearch.hidden = !e.target.value;
+  render();
+});
+clearSearch.addEventListener("click", () => {
+  searchInput.value = ""; keyword = ""; clearSearch.hidden = true; render(); searchInput.focus();
+});
+mask.addEventListener("click", e => { if (e.target === mask) close(); });
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && curIdx >= 0) close();
+  if (curIdx < 0) return;
+  if (e.key === "ArrowLeft" && curIdx > 0) open(curIdx - 1);
+  if (e.key === "ArrowRight" && curIdx < DATA.length - 1) open(curIdx + 1);
+  if (e.key === "Tab" && mask.classList.contains("open")) {
+    const nodes = [...sheet.querySelectorAll('button:not(:disabled),a[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')].filter(n => !n.hidden);
+    if (!nodes.length) return;
+    const first = nodes[0], last = nodes[nodes.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+});
+
+const readingProgress = document.getElementById("readingProgress");
+function updateReadingProgress(){
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const ratio = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+  readingProgress.style.width = (ratio * 100) + "%";
+}
+window.addEventListener("scroll", updateReadingProgress, {passive:true});
+window.addEventListener("resize", updateReadingProgress);
+updateReadingProgress();
+render();
+
+(function () {
+  const m = (location.hash || "").match(/^#p(\d+)$/);
+  if (m && DATA[+m[1]]) setTimeout(() => open(+m[1]), 80);
+})();
+</script>
+</body>
+</html>
