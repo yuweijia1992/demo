@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="从衣食住行、医疗健康、能源基础设施、科技进步、金融稳定与社会消费服务六大层次，研究中国相关上市公司的商业价值、护城河、估值要点与风险。">
+<title>中国经济与人类需求：六大层次选股研究｜余暮</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+:root{--research-accent:#8b6d45}
+.article-hero{padding:76px 0 48px;display:grid;grid-template-columns:1.4fr .6fr;gap:36px;align-items:end}
+.article-hero h1{font-family:Georgia,"Songti SC",serif;font-weight:500;font-size:clamp(38px,5.5vw,66px);line-height:1.15;letter-spacing:-.04em;margin:12px 0 22px}
+.article-hero .lead{font-size:17px;max-width:760px}
+.hero-stat{border-left:1px solid var(--line);padding:12px 0 12px 24px}
+.hero-stat strong{font-family:Georgia,serif;font-size:48px;font-weight:500;display:block;line-height:1.2}
+.hero-stat span{font-size:12px;color:var(--muted)}
+.layer-nav{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 24px}
+.layer-nav a{border:1px solid var(--line);padding:7px 12px;border-radius:999px;font-size:12px;color:var(--muted);transition:.2s}
+.layer-nav a:hover{background:var(--text);color:var(--bg)}
+.research-toolbar{display:flex;gap:12px;align-items:center;margin:24px 0 18px;flex-wrap:wrap}
+.research-toolbar input,.research-toolbar select{background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:999px;padding:12px 16px;font:inherit;font-size:13px;outline:none}
+.research-toolbar input{flex:1;min-width:220px}
+.result-count{font-size:12px;color:var(--muted);white-space:nowrap}
+.layer-section{padding:34px 0 18px;scroll-margin-top:90px}
+.layer-heading{display:flex;align-items:start;gap:18px;margin-bottom:22px}
+.layer-number{font-family:Georgia,serif;font-size:38px;line-height:1;color:var(--muted);min-width:46px}
+.layer-heading h2{font-size:25px;margin:0 0 4px;font-weight:600}
+.layer-heading p{margin:0;color:var(--muted);font-size:13px}
+.stock-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.stock-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:transform .2s,border-color .2s}
+.stock-card:hover{transform:translateY(-2px);border-color:#aaa18f}
+.stock-top{display:flex;justify-content:space-between;gap:12px;align-items:start}
+.stock-name{font-size:19px;font-weight:650;line-height:1.35}
+.stock-code{font-size:11px;color:var(--muted);margin-top:4px}
+.stock-type{font-size:10px;letter-spacing:.06em;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted);white-space:nowrap}
+.stock-card p{font-size:13px;line-height:1.8;margin:0;color:var(--muted)}
+.stock-card .thesis{color:var(--text);font-size:14px}
+.stock-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;border-top:1px solid var(--line);padding-top:12px}
+.stock-meta div{font-size:12px;line-height:1.7;color:var(--muted)}
+.stock-meta b{display:block;color:var(--text);font-size:11px;margin-bottom:3px}
+.tagline{font-size:11px;color:var(--research-accent);font-weight:650}
+.score-row{display:flex;flex-wrap:wrap;gap:6px}
+.score-pill{font-size:10px;padding:4px 7px;background:var(--bg);border-radius:5px;color:var(--muted)}
+.note-box{border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:24px 0;background:var(--surface)}
+.note-box h3{margin:0 0 8px;font-size:16px}
+.note-box p,.note-box li{font-size:13px;color:var(--muted);line-height:1.85}
+.note-box ul{padding-left:20px;margin:8px 0}
+.source-list{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.source-list a{font-size:12px;border-bottom:1px solid var(--line);padding-bottom:3px;color:var(--muted)}
+.empty-state{padding:40px;text-align:center;color:var(--muted);grid-column:1/-1}
+.backtop{display:inline-block;margin-top:16px;font-size:12px;color:var(--muted)}
+@media(max-width:760px){.article-hero{grid-template-columns:1fr;padding-top:46px}.hero-stat{border-left:0;border-top:1px solid var(--line);padding:16px 0 0;display:flex;align-items:baseline;gap:12px}.hero-stat strong{font-size:36px}.stock-grid{grid-template-columns:1fr}.layer-heading h2{font-size:21px}.stock-card{padding:18px}.research-toolbar input{width:100%;flex:auto}}
+</style>
+</head>
+<body>
+<header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html">余暮<span> / RESEARCH</span></a><nav><a href="../index.html#investment">投资</a><a href="../index.html#research">研究</a><a href="#layers">六大层次</a></nav><button id="themeToggle" class="theme-btn" aria-label="切换深色模式">◐</button></div></header>
+<main>
+<section class="container article-hero">
+<div><p class="eyebrow">CHINA EQUITY RESEARCH · 2026.10</p><h1>从人类需求出发，<br><em>理解中国上市公司。</em></h1><p class="lead">衣食住行是生活底座，医疗健康保障生命，能源与基础设施支撑社会，科技推动生产率，金融配置风险与资本，消费服务承载现代生活。本页按六大层次梳理候选股票，并逐家公司分析商业价值、潜在护城河、估值重点与主要风险。</p></div>
+<div class="hero-stat"><strong>6 × 36</strong><span>六大经济层次 · 36 家候选公司<br>研究清单，不是买入指令</span></div>
+</section>
+<section class="container" id="layers">
+<div class="note-box"><h3>先读结论：需求重要，不等于股票便宜</h3><p>本页判断的是企业的长期商业价值与研究优先级，不是实时买入评级。估值结论必须结合最新股价、财报、自由现金流、资本开支、负债和未来盈利预期。对银行看资产质量与净息差；对周期股看中周期利润；对成长股看长期现金流而非单年增速。文中不展示未经核实的实时股价、PE 或目标价。</p></div>
+<div class="layer-nav"><a href="#layer1">01 衣食住行</a><a href="#layer2">02 医疗健康</a><a href="#layer3">03 能源与基础设施</a><a href="#layer4">04 科技进步</a><a href="#layer5">05 金融稳定</a><a href="#layer6">06 社会运行与消费服务</a></div>
+<div class="research-toolbar"><input id="stockSearch" type="search" placeholder="搜索公司、代码、行业、风险关键词…" aria-label="搜索股票"><select id="layerFilter" aria-label="筛选层次"><option value="all">全部六大层次</option><option value="1">衣食住行</option><option value="2">医疗健康</option><option value="3">能源与基础设施</option><option value="4">科技进步</option><option value="5">金融稳定</option><option value="6">社会运行与消费服务</option></select><span class="result-count" id="resultCount">共 36 家候选公司</span></div>
+<div id="stockSections"></div>
+</section>
+<section class="container section">
+<div class="note-box"><h3>如何判断“股票价值”——统一分析框架</h3><ul><li><b>商业价值：</b>需求持续性、客户付费意愿、行业竞争结构。</li><li><b>护城河：</b>品牌、规模成本、网络效应、牌照、技术、渠道或稀缺资产。</li><li><b>财务质量：</b>自由现金流、ROIC/ROE、资产负债表、资本开支与分红可持续性。</li><li><b>估值方法：</b>成熟现金流公司用正常化现金流/股息折现；银行看 PB、ROE 和不良生成；周期股看中周期利润；成长股用情景 DCF 并检验估值对增长假设的敏感度。</li><li><b>买入纪律：</b>先写出悲观、基准、乐观三种情景，再设置安全边际和组合上限。即使公司优秀，也不要让单一公司或单一国家风险支配整个资产组合。</li></ul></div>
+<div class="note-box"><h3>资料与核验入口</h3><p>正式投资前请优先阅读公司年报、半年报、交易所公告和投资者关系资料。本页面是定性研究底稿，不替代最新财报核验。</p><div class="source-list"><a href="https://www.sse.com.cn/disclosure/listedinfo/listedcompanies/" target="_blank" rel="noopener">上交所上市公司信息披露 ↗</a><a href="https://www.szse.cn/disclosure/listed/notice/" target="_blank" rel="noopener">深交所上市公司公告 ↗</a><a href="https://www.hkexnews.hk/index_c.htm" target="_blank" rel="noopener">港交所披露易 ↗</a><a href="https://www.tencent.com/zh-cn/investors/financial-reports/" target="_blank" rel="noopener">腾讯财报 ↗</a><a href="https://www.catl.com/en/investors/" target="_blank" rel="noopener">宁德时代投资者资料 ↗</a></div></div>
+<p style="font-size:12px;color:var(--muted)">说明：本页为一般性研究与教育内容，不构成个性化投资建议。行业、政策、上市状态及财务数据可能变化；代码与上市地以交易所最新信息为准。分析日期：2026 年 10 月 20 日。</p><a class="backtop" href="#top">↑ 返回顶部</a>
+</section>
+</main>
+<footer class="footer container"><span>© 2026 余暮</span><a href="../index.html">回到个人知识宇宙 →</a></footer>
+<script src="../script.js"></script>
+<script>
+const layers=[
+{id:1,title:"衣食住行",desc:"基本生活资料、家庭耐用品、交通与物流：需求稳定，但利润率和周期差异很大。"},
+{id:2,title:"医疗健康",desc:"诊断、治疗、创新药和医疗服务：需求长期存在，政策支付、研发成功率和采购周期决定回报。"},
+{id:3,title:"能源与基础设施",desc:"电力、能源供应、通信网络和公共工程：社会不可或缺，但资本开支、监管定价与负债不可忽略。"},
+{id:4,title:"科技进步",desc:"互联网、芯片、AI 算力、电池与自动化：长期增长空间较大，估值和技术路线风险也更高。"},
+{id:5,title:"金融稳定",desc:"银行、保险、证券和金融平台：连接储蓄、融资与风险管理，重点是资产质量、资本约束和周期。"},
+{id:6,title:"社会运行与消费服务",desc:"电商、旅游、内容、教育与环保服务：受益于消费和数字化，竞争强度与可选消费周期尤为关键。"}
+];
+const stocks=[
+{l:1,n:"伊利股份",c:"600887.SH",s:"乳制品与营养",t:"防御消费",v:"基础乳制品拥有广泛、重复的消费场景；品牌、冷链和渠道覆盖构成优势。",m:"重点看常温奶与低温奶结构、市场份额、费用率、原奶成本传导和经营现金流。",r:"人口与消费结构变化、行业竞争、原奶周期、促销加剧。",p:"以正常化利润、自由现金流和股息率估值；不要把短期原奶成本红利外推为永久利润。"},
+{l:1,n:"牧原股份",c:"002714.SZ",s:"生猪养殖",t:"强周期",v:"规模化养殖、成本控制和一体化能力是核心竞争力；食品需求持续，但盈利并不稳定。",m:"跟踪完全成本、出栏量、资产负债率、现金成本、猪价盈亏平衡点。",r:"猪周期反转、疫病、饲料涨价、扩产和高杠杆。",p:"使用跨周期平均利润估值，不宜用猪价高点的 PE 判断便宜。"},
+{l:1,n:"海天味业",c:"603288.SH",s:"调味品",t:"品牌消费",v:"调味品购买频率高，渠道和品牌认知有价值；但品类成熟，增长更多取决于份额与产品升级。",m:"观察收入量价拆分、渠道库存、经销商数量、毛利率和新品贡献。",r:"消费疲弱、竞争加剧、渠道库存、食品安全与品牌信任。",p:"关注长期增长能否支撑估值溢价；品牌强不代表可以忽略增速下行。"},
+{l:1,n:"海澜之家",c:"600398.SH",s:"大众服装",t:"品牌零售",v:"大众服饰拥有规模化渠道和品牌运营价值，商业模式比纯制造更接近消费品牌。",m:"重点看同店销售、库存周转、加盟商健康度、折扣率和经营现金流。",r:"服装库存贬值、审美变化、渠道转型与消费周期。",p:"用库存质量与现金流验证利润；低 PE 可能反映增长与存货风险。"},
+{l:1,n:"申洲国际",c:"02313.HK",s:"纺织制造与运动服装供应链",t:"全球制造",v:"大型客户认证、规模、质量和交付能力形成供应链壁垒，受益于全球运动服饰需求。",m:"观察客户集中度、产能利用率、海外工厂效率、毛利率和资本回报。",r:"客户议价、订单波动、劳动力成本、贸易与地缘风险。",p:"按中周期利润和 ROIC 估值，避免将单一客户订单高增长永久化。"},
+{l:1,n:"海尔智家",c:"600690.SH",s:"家电与全球品牌",t:"全球消费",v:"家电更新需求持续，全球品牌、渠道、售后服务与供应链构成较扎实的竞争优势。",m:"重点看海外收入质量、经营现金流、产品结构、库存和并购整合回报。",r:"地产周期、海外关税、汇率、行业价格竞争。",p:"适合以正常化现金流和股东回报衡量；把海外增长与贸易成本一起建模。"},
+{l:1,n:"美的集团",c:"000333.SZ",s:"家电、工业技术与自动化",t:"复合业务",v:"成熟家电业务提供现金流，工业技术和机器人业务提供增长选项；规模采购与全球渠道是优势。",m:"区分家电、楼宇科技、工业技术等业务的利润和资本回报，关注现金流和收购回报。",r:"业务复杂度、全球竞争、并购整合、耐用品周期。",p:"分部估值时避免给成熟家电与高成长业务同一估值倍数。"},
+{l:1,n:"格力电器",c:"000651.SZ",s:"空调与家电",t:"现金流型",v:"空调品牌、渠道与制造效率带来竞争力，现金分红可能是投资回报的重要组成。",m:"观察空调份额、渠道库存、应收款、分红比例、现金与投资资产。",r:"地产与更新周期、渠道模式变化、产品集中、行业价格战。",p:"区分主营业务价值与非经营资产；股息率要结合利润和现金流可持续性。"},
+{l:1,n:"比亚迪",c:"002594.SZ",s:"新能源汽车与汽车产业链",t:"成长制造",v:"垂直整合、规模制造和多技术路线能力有竞争力，汽车电动化和出口提供空间。",m:"关注单车利润、价格战后的盈利、海外销量、资本开支和自由现金流。",r:"行业价格战、海外关税、技术路线、品牌高端化不及预期。",p:"以中周期销量与单车利润做情景 DCF；销量增长不能替代利润和现金流分析。"},
+{l:1,n:"宇通客车",c:"600066.SH",s:"客车与商用交通",t:"细分龙头",v:"商用客车具有较高产品与服务要求，出口和电动化替换可带来结构性机会。",m:"看出口占比、订单交付、应收账款、毛利率和售后服务收入。",r:"政府与企业采购周期、海外贸易壁垒、商用车周期。",p:"用跨周期盈利估值，检查订单是否真正转化为回款。"},
+{l:1,n:"京沪高铁",c:"601816.SH",s:"铁路客运基础设施",t:"基础设施",v:"核心线路稀缺性强，客运需求与网络地位提供长期基础；收益受票价和成本机制影响。",m:"看客流恢复、票价结构、折旧、维修资本开支及关联线路结算。",r:"票价调整有限、维护成本、客流波动和政策定价。",p:"关注企业自由现金流而不只是客流；高资产价值不等于股东回报率高。"},
+{l:1,n:"顺丰控股",c:"002352.SZ",s:"快递与综合物流",t:"物流网络",v:"时效件、供应链和物流网络有规模效应，服务质量可能支撑差异化。",m:"看单票收入与成本、资本开支、自由现金流、国际业务盈利和市场份额。",r:"快递价格战、重资产投入、需求放缓、国际业务整合。",p:"按分部利润和正常化自由现金流估值，警惕收入增长但资本回报下降。"},
+{l:1,n:"中远海控",c:"601919.SH",s:"集装箱航运",t:"强周期",v:"全球贸易和航运网络构成行业基础，但盈利受运价周期支配，不能视作稳定复利股。",m:"跟踪集装箱运价、运力供需、合同运价、现金、资本开支和分红政策。",r:"运价暴跌、新船交付、贸易摩擦、地缘航线中断。",p:"按中周期盈利与净现金估值，不要将运价高点利润资本化。"},
+{l:2,n:"迈瑞医疗",c:"300760.SZ",s:"医疗器械",t:"高质量成长",v:"监护、超声、体外诊断设备依赖研发、注册、渠道和服务体系，国产替代与国际化提供空间。",m:"关注海外增长质量、研发效率、医院采购、毛利率和现金转化率。",r:"医院预算与采购延迟、集采、国际竞争、汇率与监管。",p:"用长期自由现金流折现，测试增长放缓和利润率下降对估值的影响。"},
+{l:2,n:"恒瑞医药",c:"600276.SH",s:"创新药与制药",t:"研发驱动",v:"研发平台、临床开发和商业化能力是长期资产；创新药价值取决于成功率与市场空间。",m:"追踪研发管线分期、临床成功概率、授权收入、销售费用和专利到期。",r:"临床失败、医保谈判降价、研发效率下降、竞争药物上市。",p:"采用风险调整净现值（rNPV）评估管线，不能把全部临床项目按成功计价。"},
+{l:2,n:"药明康德",c:"603259.SH",s:"医药研发与生产服务",t:"平台服务",v:"研发外包平台可通过规模、技术与客户关系形成效率优势，全球药物研发提供需求。",m:"看订单与收入转化、客户集中度、产能利用率、海外收入和资本回报。",r:"地缘政治与监管限制、客户去库存、行业周期、合规风险。",p:"把政策情景、客户流失和产能利用率纳入估值折扣。"},
+{l:2,n:"爱尔眼科",c:"300015.SZ",s:"眼科医疗服务",t:"医疗服务网络",v:"眼科需求与专科医疗网络存在长期空间，品牌、医生资源和标准化运营重要。",m:"关注同店增长、医生人才、并购商誉、单院盈利和经营现金流。",r:"医疗质量与合规、医生供给、并购整合、消费医疗需求波动。",p:"区分内生增长与并购增长；用单院成熟利润和商誉减值情景检验估值。"},
+{l:2,n:"国药股份",c:"600511.SH",s:"医药流通",t:"渠道基础设施",v:"药品分销网络对医疗供应链重要，但流通业务通常利润率较薄，规模不等于高回报。",m:"看周转效率、应收账款、现金流、毛利率和政策影响。",r:"集采压价、医院回款慢、低毛利竞争、信用风险。",p:"重点看现金流和资本占用，不能只看营收规模与 PE。"},
+{l:3,n:"长江电力",c:"600900.SH",s:"大型水电运营",t:"核心现金流",v:"大型水电站寿命长、运行成本相对可控，资产稀缺性和发电现金流具有防御属性。",m:"看来水、发电量、电价、财务费用、资本开支、分红率和净负债。",r:"枯水期、估值过高、利率上行、重大投资与政策变化。",p:"适合以长期现金流/股息折现；优质资产若估值过高，未来收益率仍会下降。"},
+{l:3,n:"川投能源",c:"600674.SH",s:"水电投资与电力资产",t:"防御现金流",v:"水电资产与投资组合提供长期分红潜力，但需拆分控股资产和参股投资价值。",m:"关注参控股电站盈利、分红上缴、资本配置和资产负债表。",r:"来水、电价政策、被投资企业波动、估值折价。",p:"适合分部估值，避免重复计算持股价值与未来分红。"},
+{l:3,n:"中国核电",c:"601985.SH",s:"核电运营",t:"能源转型",v:"核电提供稳定基荷电力，项目寿命长、进入门槛高，可支撑低碳电力系统。",m:"看新机组投产节奏、利用小时、上网电价、建设资本开支和负债。",r:"建设延期、成本超支、核安全、利率与电价机制。",p:"把在建项目现金流与融资成本逐项建模，不以远期装机目标直接估值。"},
+{l:3,n:"中国神华",c:"601088.SH",s:"煤炭、电力、铁路与港口",t:"综合能源现金流",v:"煤电运一体化可缓冲部分单环节波动，能源安全与现金分红是主要价值来源。",m:"看中周期煤价、产量、长协比例、资本开支、现金净额和分红。",r:"煤价下行、能源转型、政策调控、环境成本。",p:"以中周期煤价和正常化分红估值，避免用景气高点利润外推。"},
+{l:3,n:"国电南瑞",c:"600406.SH",s:"电网自动化与电力设备",t:"电网数字化",v:"电网安全、调度和自动化是电力系统关键环节，技术认证与客户关系构成壁垒。",m:"看电网投资周期、订单转收入、应收账款、研发效率和现金流。",r:"电网投资节奏、招标价格、项目回款、技术迭代。",p:"以订单兑现和正常化利润为基础，估值应反映稳定性而非无限成长。"},
+{l:3,n:"中国移动",c:"600941.SH / 00941.HK",s:"通信网络、云与算力",t:"基础设施现金流",v:"庞大网络、客户基础和频谱资源形成进入壁垒；云、数据中心和算力是新增业务方向。",m:"看移动ARPU、用户结构、资本开支、自由现金流、分红和云业务利润质量。",r:"通信价格竞争、重资产投资、算力回报低于预期、监管变化。",p:"把传统通信与新业务分开估值，避免将算力投入直接当作利润。"},
+{l:3,n:"中国电信",c:"601728.SH / 00728.HK",s:"通信、云与政企数字化",t:"基础设施",v:"通信服务提供现金流，政企云和数字化业务提供增长选项。",m:"跟踪云收入质量、应收账款、资本开支、现金流和股东回报。",r:"行业竞争、政企客户回款、云业务价格战、资本回报不确定。",p:"看云业务利润与现金流，而非只看收入增速；用股息和正常化盈利交叉验证。"},
+{l:3,n:"中国建筑",c:"601668.SH",s:"建筑工程与基础设施",t:"低利润率规模业务",v:"大型工程承包能力覆盖城市建设和公共设施，但价值实现取决于项目回款与资本占用。",m:"看应收账款、合同资产、经营现金流、地产敞口、净负债和新签订单质量。",r:"地方财政压力、地产链、垫资施工、回款与减值。",p:"低 PE 可能是低回报和高负债的反映；先看现金流和资产质量。"},
+{l:4,n:"腾讯控股",c:"00700.HK",s:"社交、游戏、广告与云",t:"网络效应",v:"微信生态、用户关系、游戏内容与广告平台形成强网络效应，现金创造能力可支持回购和新业务投资。",m:"看核心业务增速、游戏流水转收入、广告效率、资本开支、回购价格和 AI 投资回报。",r:"监管、竞争、游戏周期、AI改变流量入口、投资资产波动。",p:"分部估值并折价处理非核心投资；关注自由现金流与回购是否在合理价格执行。"},
+{l:4,n:"阿里巴巴",c:"09988.HK / BABA",s:"电商、云与数字平台",t:"平台与云",v:"电商生态、商家网络和云计算提供规模优势；AI与云有望成为增长引擎。",m:"拆分电商现金流、客户管理收入、云业务利润、补贴强度、回购与资本开支。",r:"电商竞争、监管、云价格竞争、海外业务执行、AI投入回报。",p:"分部估值时给云业务以盈利质量为前提的成长溢价，不能只看收入增长。"},
+{l:4,n:"中芯国际",c:"688981.SH / 00981.HK",s:"晶圆代工",t:"战略科技资产",v:"芯片制造是数字经济基础能力，国内客户需求和工艺迭代提供长期机会。",m:"看产能利用率、制程结构、毛利率、资本开支、折旧与自由现金流。",r:"先进制程限制、设备供应约束、资本密集、周期性供需和地缘风险。",p:"高资本开支企业需重视 EV/EBIT、正常化现金流和稀释风险，不能仅按战略地位定价。"},
+{l:4,n:"北方华创",c:"002371.SZ",s:"半导体设备",t:"国产设备成长",v:"设备国产化、工艺积累和客户验证形成潜在壁垒，行业扩产带来订单机会。",m:"看订单到收入转化、研发费用、客户验证、存货和应收款。",r:"半导体资本开支周期、技术差距、订单波动、估值过高。",p:"以中长期利润率和研发投入回报估值，不能把设备国产化率提升全部视为公司利润。"},
+{l:4,n:"海光信息",c:"688041.SH",s:"CPU与加速计算芯片",t:"AI与国产算力",v:"国产服务器处理器与加速计算有战略需求，软件生态和产品性能决定商业化上限。",m:"看产品迭代、客户集中度、毛利率、研发资本化、供应链与现金流。",r:"技术竞争、供应限制、客户采购周期、估值包含过高增长预期。",p:"使用多情景 DCF；必须验证可服务市场、产品竞争力和盈利兑现速度。"},
+{l:4,n:"中际旭创",c:"300308.SZ",s:"光通信与高速光模块",t:"AI基础设施成长",v:"数据中心带宽升级和AI集群互联提升高速光模块需求，技术迭代与客户认证重要。",m:"看高端产品占比、客户集中度、毛利率、研发和产能扩张效率。",r:"AI资本开支周期、技术路线变化、客户自研、价格竞争。",p:"采用周期情景和客户资本开支敏感性分析；高增长年份不宜直接永久化。"},
+{l:4,n:"宁德时代",c:"300750.SZ / 03750.HK",s:"动力电池与储能",t:"规模技术壁垒",v:"电池规模制造、研发、供应链与客户协同具有竞争优势，储能与全球化扩大潜在市场。",m:"看单位成本、毛利率、全球份额、资本开支、海外项目回报和自由现金流。",r:"电池价格战、产能过剩、技术路线变化、贸易限制与原材料波动。",p:"以正常化单位利润和自由现金流估值；销量领先不能保证长期高利润率。"},
+{l:4,n:"阳光电源",c:"300274.SZ",s:"逆变器与储能系统",t:"能源转型成长",v:"光伏逆变器与储能系统受益于新能源接入和电力灵活性需求，全球渠道和技术迭代重要。",m:"看储能毛利率、订单质量、海外回款、保修准备、现金流与客户集中度。",r:"光伏周期、海外贸易壁垒、储能竞争、项目风险与价格下降。",p:"分拆逆变器与储能业务估值，避免用高增速替代风险调整后的现金流。"},
+{l:4,n:"汇川技术",c:"300124.SZ",s:"工业自动化与电驱",t:"制造升级",v:"工业自动化、电驱和控制技术可帮助客户提高效率，产品平台与工程服务形成客户黏性。",m:"看伺服/变频器份额、产品毛利率、研发效率、应收款和下游行业结构。",r:"制造业资本开支周期、国内外竞争、客户集中和价格战。",p:"关注跨周期 ROIC 和研发转化；高估值需要更长时间的持续增长来兑现。"},
+{l:5,n:"招商银行",c:"600036.SH / 03968.HK",s:"零售银行与财富管理",t:"银行质量",v:"零售客户基础、财富管理和风险管理能力是潜在差异化优势，但银行盈利高度依赖信用周期与利差。",m:"看净息差、不良生成、拨备覆盖、存款成本、资本充足率和零售贷款质量。",r:"息差收窄、房地产信用、消费信贷风险、监管与经济周期。",p:"以可持续 ROE、PB 与股息综合估值；不能只因历史高 ROE 就假定未来不变。"},
+{l:5,n:"工商银行",c:"601398.SH",s:"大型商业银行",t:"系统重要性",v:"存款与支付网络、客户规模和系统地位提供稳定经营基础，分红可能是回报的重要组成。",m:"看净息差、不良贷款、拨备、资本充足率、政策性信贷和分红覆盖。",r:"息差长期下降、房地产与地方融资平台风险、宏观信贷需求。",p:"银行股要结合 PB、ROE 与资产质量估值；低 PB 不必然代表低风险。"},
+{l:5,n:"中国平安",c:"601318.SH / 02318.HK",s:"保险与综合金融",t:"风险保障",v:"寿险、财险和资产管理可覆盖养老、健康与财产风险；代理人改革和投资能力影响长期价值。",m:"看新业务价值、保单利润率、退保、综合成本率、偿付能力和投资资产质量。",r:"利率变化、权益市场波动、地产敞口、销售渠道转型。",p:"保险应看内含价值与新业务价值假设的可信度，并对投资收益率做压力测试。"},
+{l:5,n:"中国太保",c:"601601.SH / 02601.HK",s:"寿险与财险",t:"保险保障",v:"保险保障需求长期存在，寿险产品结构优化和财险承保纪律是价值驱动因素。",m:"跟踪新业务价值、代理渠道、综合成本率、投资收益和偿付能力。",r:"利率下行、市场波动、灾害赔付、寿险转型执行。",p:"同时看承保利润与投资收益，不能将牛市投资收益视为常态。"},
+{l:5,n:"中信证券",c:"600030.SH / 06030.HK",s:"证券与资本市场",t:"市场周期",v:"投行、经纪、资管和交易业务构成综合平台，资本市场发展提供长期机会。",m:"看净资本、投行业务质量、机构客户、资管费率和周期调整后 ROE。",r:"成交量和融资周期、监管变化、自营投资波动。",p:"用中周期盈利和 PB 估值；牛市利润往往不适合直接年化。"},
+{l:5,n:"东方财富",c:"300059.SZ",s:"互联网证券与金融信息",t:"平台弹性",v:"线上流量、金融信息与基金销售生态具规模效应，对个人投资者活跃度敏感。",m:"看基金销售保有量、证券业务份额、客户活跃度、资本消耗和利润结构。",r:"市场成交量下滑、基金销售周期、监管、佣金率下降。",p:"按市场中性情景估值，不能把牛市交易收入当作长期稳定盈利。"},
+{l:6,n:"京东集团",c:"09618.HK / JD",s:"电商、零售与物流",t:"供应链效率",v:"自营零售、物流和履约体系可形成服务差异，消费者重视可靠配送与正品。",m:"看零售毛利、履约成本、用户复购、物流外部收入与自由现金流。",r:"平台竞争、补贴、低毛利、消费疲弱与物流资本开支。",p:"分拆零售和物流价值，关注现金流而非单纯 GMV。"},
+{l:6,n:"中国中免",c:"601888.SH",s:"免税零售与旅游消费",t:"政策型消费",v:"旅游零售、免税牌照和渠道位置提供竞争优势，但业绩依赖旅游流量与消费意愿。",m:"看客流、客单价、折扣率、库存、毛利率和租金成本。",r:"出境游恢复、消费降级、免税政策变化、渠道竞争。",p:"用正常化利润估值，谨慎看待高峰期毛利与旅游客流。"},
+{l:6,n:"锦江酒店",c:"600754.SH",s:"酒店运营与管理",t:"轻资产扩张",v:"品牌组合、会员体系和管理输出可扩大规模，酒店行业长期受益于出行与商务需求。",m:"看 RevPAR、入住率、房价、加盟收入、债务和资本开支。",r:"旅游周期、价格竞争、加盟商经营压力、并购商誉。",p:"分开直营与加盟业务估值，重视债务和资产回报率。"},
+{l:6,n:"分众传媒",c:"002027.SZ",s:"楼宇广告",t:"媒介网络",v:"城市楼宇媒体覆盖具有一定网络和位置优势，广告预算恢复时利润弹性较大。",m:"看刊挂率、单屏收入、客户行业结构、现金流和分红。",r:"广告周期、互联网广告替代、点位成本与竞争。",p:"按中周期广告收入估值，避免用景气复苏峰值外推。"},
+{l:6,n:"哔哩哔哩",c:"09626.HK / BILI",s:"视频社区与内容",t:"用户社区成长",v:"年轻用户社区、内容创作者和兴趣文化有网络效应潜力，商业化能力决定价值兑现。",m:"看广告效率、游戏业务、用户时长、毛利率、经营现金流和股权激励。",r:"内容成本、用户增长放缓、商业化不及预期、持续亏损风险。",p:"先验证稳定正自由现金流的路径，再讨论长期成长估值；高用户黏性不等于高利润。"},
+{l:6,n:"中公教育",c:"002607.SZ",s:"职业培训与考试服务",t:"就业需求敏感",v:"就业与职业资格考试形成培训需求，但行业竞争和监管使盈利模式具有较高不确定性。",m:"看现金收款、退费负债、教师成本、获客成本和经营现金流。",r:"招录政策变化、退费风险、低价竞争、就业环境与品牌信任。",p:"重点核查资产负债表与现金流，不宜只按历史规模或品牌认知估值。"},
+{l:6,n:"兴蓉环境",c:"000598.SZ",s:"水务与环保运营",t:"公用事业",v:"供水、污水处理等服务属于城市基础需求，特许经营与区域网络提供一定稳定性。",m:"看水价机制、应收账款、资本开支、负债、项目回报和分红。",r:"调价受限、地方财政回款、环保标准升级、资本密集。",p:"以项目现金流和债务偿还能力估值，避免将政策性投资当作高回报增长。"},
+{l:6,n:"瀚蓝环境",c:"600323.SH",s:"固废处理与环保运营",t:"环境基础设施",v:"垃圾处理、固废资源化等业务具有公共服务属性，项目运营效率与长期合同重要。",m:"看项目利用率、垃圾处理费回款、资本开支、负债和自由现金流。",r:"项目回款、环保政策、原料/电价变化、项目扩张导致负债上升。",p:"关注存量项目现金回报，审慎评估新增项目收益率和融资成本。"}
+];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const container=document.getElementById('stockSections');
+function render(){
+ const q=document.getElementById('stockSearch').value.trim().toLowerCase();
+ const lf=document.getElementById('layerFilter').value;
+ let count=0;
+ container.innerHTML=layers.map(layer=>{
+  const list=stocks.filter(s=>s.l===layer.id&&(lf==='all'||lf===String(s.l))&&(!q||[s.n,s.c,s.s,s.t,s.v,s.m,s.r,s.p].join(' ').toLowerCase().includes(q)));
+  if(!list.length)return '';
+  count+=list.length;
+  return '<section class="layer-section" id="layer'+layer.id+'"><div class="layer-heading"><span class="layer-number">0'+layer.id+'</span><div><h2>'+layer.title+'</h2><p>'+layer.desc+'</p></div></div><div class="stock-grid">'+list.map(s=>'<article class="stock-card"><div class="stock-top"><div><div class="stock-name">'+esc(s.n)+'</div><div class="stock-code">'+esc(s.c)+' · '+esc(s.s)+'</div></div><span class="stock-type">'+esc(s.t)+'</span></div><p class="thesis">'+esc(s.v)+'</p><div class="stock-meta"><div><b>关键观察指标</b>'+esc(s.m)+'</div><div><b>主要风险</b>'+esc(s.r)+'</div></div><p><span class="tagline">估值与判断 · </span>'+esc(s.p)+'</p></article>').join('')+'</div></section>';
+ }).join('');
+ document.getElementById('resultCount').textContent='显示 '+count+' / '+stocks.length+' 家公司';
+ if(!count)container.innerHTML='<div class="empty-state">没有匹配的公司。试试更短的关键词，或切换层次。</div>';
+}
+document.getElementById('stockSearch').addEventListener('input',render);
+document.getElementById('layerFilter').addEventListener('change',render);
+render();
+</script>
+</body></html>
