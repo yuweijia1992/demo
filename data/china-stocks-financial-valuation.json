@@ -314,17 +314,17 @@
         "分红与回购"
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告）",
       "priceDate": null,
       "price": null,
-      "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
-      "eps": null,
-      "roe": null,
+      "currency": "CNY",
+      "revenue": 260042.49,
+      "revenueGrowth": 3.55,
+      "netProfit": 26446.037,
+      "eps": 3.52,
+      "roe": 11.33,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 37552.09,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -334,9 +334,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572219&stockid=000333",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
+      "dataNotes": "金额单位：百万元人民币（原报告单位千元，已换算）；EPS为半年度基本每股收益，ROE为报告披露加权平均净资产收益率。扣非归母净利润为19,595.179百万元，同比下降25.31%，主要受到汇率及衍生金融工具损益列报影响；归母净利润同比增长1.66%，估值时应区分经常性盈利与非经常性/汇兑影响。"
     },
     {
       "layer": 1,
@@ -1547,15 +1548,15 @@
         "核心一级资本充足率"
       ],
       "formula": "合理PB≈(可持续ROE−长期增长率)/(股权资本成本−长期增长率)；再以每股净资产×合理PB估值，并用股息折现交叉验证。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
       "priceDate": null,
       "price": null,
-      "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
+      "currency": "CNY",
+      "revenue": 465859,
+      "revenueGrowth": 9.1,
+      "netProfit": 173682,
       "eps": null,
-      "roe": null,
+      "roe": 8.63,
       "roic": null,
       "operatingCashFlow": null,
       "capex": null,
@@ -1567,9 +1568,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://paper.cnstock.com/html/2026-08/29/content_2262614.htm",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
+      "dataNotes": "金额单位：百万元人民币。营业收入4,658.59亿元，同比增长9.1%；归母净利润1,736.82亿元；年化加权平均ROE 8.63%。银行业不使用普通企业自由现金流/净债务估值框架；另需跟踪净息差、资产质量、拨备覆盖率与资本充足率。"
     },
     {
       "layer": 5,
@@ -1588,13 +1590,13 @@
         "寿险/财险承保指标"
       ],
       "formula": "以调整后内含价值为锚，对EV及未来NBV贡献分别估值；对投资回报、风险贴现率与长期假设做压力测试。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年中期业绩）",
       "priceDate": null,
       "price": null,
-      "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
+      "currency": "CNY",
+      "revenue": 575138,
+      "revenueGrowth": 15,
+      "netProfit": 92585,
       "eps": null,
       "roe": null,
       "roic": null,
@@ -1608,9 +1610,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://paper.cnstock.com/html/2026-08/21/content_2257372.htm",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "2026年中期财务数据已核验；保险估值指标与价格待核验",
+      "dataNotes": "金额单位：百万元人民币。营业收入5,751.38亿元，同比增长15.0%；归母净利润925.85亿元，同比增长36.1%；归母营运利润841.96亿元，同比增长8.3%；寿险及健康险新业务价值248.47亿元，同比增长11.2%。保险估值需另补EV、NBV、内含价值增长、偿付能力与投资收益等指标；不要把营运利润与归母净利润混用。"
     },
     {
       "layer": 5,
@@ -2071,6 +2074,12 @@
       "batch": "第二批：伊利股份、比亚迪",
       "status": "新增2家公司2026年半年度营收、同比、归母净利润、EPS、ROE及经营现金流等已核验字段。",
       "caveat": "股价、PE/PB/PS与历史估值分位尚未填充；需按证券上市地分别核验。"
+    },
+    {
+      "date": "2026-10-20",
+      "batch": "第三批：工商银行、中国平安、美的集团",
+      "status": "新增3家公司已核验的2026年中期财务数据；保险公司补充新业务价值与营运利润说明。",
+      "caveat": "金额单位为百万元人民币；未核验的价格、PE/PB/PS、5年/10年历史估值分位保持空值。银行和保险采用专属估值指标，不套用普通企业自由现金流框架。"
     }
   ]
 }
