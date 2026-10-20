@@ -68,17 +68,17 @@
         "分红与回购"
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告）",
       "priceDate": null,
       "price": null,
-      "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
-      "eps": null,
-      "roe": null,
+      "currency": "CNY",
+      "revenue": 64330.9365,
+      "revenueGrowth": 4.13,
+      "netProfit": 5758.6281,
+      "eps": 0.91,
+      "roe": 10.09,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 9759.1475,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -88,9 +88,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "半年度财务数据已核验；价格及估值待核验",
+      "dataNotes": "金额单位：百万元人民币。2026年上半年归母净利润同比下降20.02%，经营现金流同比增长229.23%；EPS为半年度基本EPS，ROE为报告披露的加权平均净资产收益率。"
     },
     {
       "layer": 1,
@@ -394,17 +395,17 @@
         "周期价格/运价/利差指标"
       ],
       "formula": "以跨周期正常化利润而非景气高点利润估值；辅以EV/EBITDA、重置成本或分部估值，设置低/中/高周期盈利。",
-      "financialPeriod": null,
+      "financialPeriod": "2026-06-30（2026年半年度报告）",
       "priceDate": null,
       "price": null,
-      "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": null,
-      "eps": null,
-      "roe": null,
+      "currency": "CNY（A股；港股另用HKD行情）",
+      "revenue": 344815.421,
+      "revenueGrowth": -7.13,
+      "netProfit": 12325.408,
+      "eps": 1.35,
+      "roe": 4.86,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 37334.744,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -414,9 +415,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": null,
-      "verifiedAt": null,
-      "dataStatus": "待逐项核验"
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572822&stockid=002594",
+      "verifiedAt": "2026-10-20",
+      "dataStatus": "半年度财务数据已核验；价格及估值待核验",
+      "dataNotes": "金额单位：百万元人民币。2026年上半年营收同比下降7.13%、归母净利润同比下降20.54%；EPS为半年度基本EPS，ROE为报告披露的加权平均净资产收益率。"
     },
     {
       "layer": 1,
@@ -2063,6 +2065,12 @@
       "batch": "第一批：长江电力、腾讯控股、宁德时代、招商银行、中国移动",
       "status": "5家公司已填入部分可核验的2026年中期财务数据；价格、PE/PB/PS、历史估值分位及个别缺失财务字段继续待核验。",
       "caveat": "所有金额统一存为百万元；EPS单位为当地报告每股货币单位。财务期字段区分中期数据与TTM数据。"
+    },
+    {
+      "date": "2026-10-20",
+      "batch": "第二批：伊利股份、比亚迪",
+      "status": "新增2家公司2026年半年度营收、同比、归母净利润、EPS、ROE及经营现金流等已核验字段。",
+      "caveat": "股价、PE/PB/PS与历史估值分位尚未填充；需按证券上市地分别核验。"
     }
   ]
 }
