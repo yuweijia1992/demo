@@ -48,7 +48,8 @@
     "valuationPercentile5Y": "5年估值分位%",
     "valuationPercentile10Y": "10年估值分位%",
     "sourceUrl": "对应报告/行情原始来源URL",
-    "verifiedAt": "数据核验日期"
+    "verifiedAt": "数据核验日期",
+    "interimDividendPerShare": "仅在公司明确披露中期每股股息时录入；不是股息率，也不等于全年股息"
   },
   "stocks": [
     {
@@ -1649,14 +1650,14 @@
       "financialPeriod": "2026-06-30（2026年半年度报告）",
       "priceDate": null,
       "price": null,
-      "currency": null,
-      "revenue": 259010,
+      "currency": "CNY（A股；港股交易价格为HKD）",
+      "revenue": 259010.338291,
       "revenueGrowth": -3.9,
-      "netProfit": null,
-      "eps": null,
-      "roe": null,
+      "netProfit": 19587.741668,
+      "eps": 0.21,
+      "roe": 4.2,
       "roic": null,
-      "operatingCashFlow": 60380,
+      "operatingCashFlow": 60375.156021,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -1666,17 +1667,22 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": "https://paper.cnstock.com/html/2026-08/21/content_2257150.htm",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "2026年半年度部分财务数据已核验；归母净利润、EPS、价格及估值待补充",
-      "dataNotes": "营收2590.1亿元，同比-3.9%；经营活动现金净流入603.8亿元，同比+28.4%。归母净利润、EPS仍待核对。金额单位百万元人民币。",
+      "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "2026年半年度报告核心财务数据已核验（未经审计）；行情估值与历史分位待补",
+      "dataNotes": "营收2590.1亿元，同比-3.9%；经营活动现金净流入603.8亿元，同比+28.4%。归母净利润、EPS仍待核对。金额单位百万元人民币。 补充核验：2026年半年度营业收入、归母净利润、基本EPS、加权平均ROE、经营现金流来自2026年半年度报告；财务报表未经审计。",
       "derivedMetrics": {
-        "revenueTrend": "营收同比下降"
+        "revenueTrend": "营收同比下降",
+        "netProfitMarginPct": 7.56,
+        "operatingCashFlowToNetProfit": 3.082,
+        "cashFlowProfitGap": 40787.414,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利"
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 40,
-        "valuationCorePresent": 2,
+        "valuationCorePct": 60,
+        "valuationCorePresent": 3,
         "valuationCoreRequired": 5,
         "requiredFields": [
           "revenue",
@@ -1686,7 +1692,10 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "interimDividendPerShare": 0.1606,
+      "interimDividendCurrency": "CNY",
+      "interimDividendPeriod": "2026年中期拟派发股息（含税），每股人民币0.1606元；并非年度股息率"
     },
     {
       "layer": 3,
@@ -2660,13 +2669,13 @@
       "priceDate": null,
       "price": null,
       "currency": null,
-      "revenue": null,
-      "revenueGrowth": null,
-      "netProfit": 8064,
-      "eps": null,
-      "roe": null,
+      "revenue": 10505.339284,
+      "revenueGrowth": 53.22,
+      "netProfit": 8064.281453,
+      "eps": 0.5102,
+      "roe": 8.46,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 30313.788394,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -2676,17 +2685,22 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": "https://www.lanjinger.com/d/1787571308079742205",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "搜索到的半年报报道确认上半年净利润80.64亿元并创历史新高；本次未能从当前来源完整核验营业收入具体数值及同比，故收入字段暂空。券商与财富管理业务利润高度受市场成交和基金销售景气影响。",
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518817&stockid=300059",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "2026年半年度报告核心财务数据已核验；行情估值与历史分位待补",
+      "dataNotes": "搜索到的半年报报道确认上半年净利润80.64亿元并创历史新高；本次未能从当前来源完整核验营业收入具体数值及同比，故收入字段暂空。券商与财富管理业务利润高度受市场成交和基金销售景气影响。 补充核验：2026年半年度营业总收入、归母净利润、基本EPS、ROE、经营现金流采用报告原始数值换算为百万元；营业总收入口径不包括证券业务投资收益及公允价值变动损益。",
       "derivedMetrics": {
-        "profitability": "盈利"
+        "profitability": "盈利",
+        "netProfitMarginPct": 76.76,
+        "operatingCashFlowToNetProfit": 3.759,
+        "cashFlowProfitGap": 22249.507,
+        "epsAndProfitBothPresent": true,
+        "revenueTrend": "营收同比增长"
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 20,
-        "valuationCorePresent": 1,
+        "valuationCorePct": 60,
+        "valuationCorePresent": 3,
         "valuationCoreRequired": 5,
         "requiredFields": [
           "revenue",
@@ -3382,14 +3396,14 @@
       "duplicatePrimaryCodes": [],
       "historicalPercentileWithoutCurrentMetric": []
     },
-    "note": "原始财务字段沿用既有来源与报告期；新增 derivedMetrics 仅为公式派生指标，不是公司披露值。数据覆盖率仅衡量字段是否存在，不等同于独立核验。历史分位未填造。",
-    "withRevenue": 48,
-    "withNetProfit": 48,
-    "withEPS": 25,
-    "withOperatingCashFlow": 29,
+    "note": "本轮补齐东方财富与中国电信的2026年半年度核心财务字段，均按报告原值换算为百万元，来源为公司半年度报告页面。新增派生指标仅由已有数据按公式计算；行情估值和历史分位仍未填造。",
+    "withRevenue": 49,
+    "withNetProfit": 49,
+    "withEPS": 27,
+    "withOperatingCashFlow": 30,
     "withFreeCashFlow": 3,
-    "derivedNetProfitMargin": 47,
-    "derivedCashFlowConversion": 28,
+    "derivedNetProfitMargin": 49,
+    "derivedCashFlowConversion": 30,
     "companiesWithQualityAlerts": 5
   },
   "marketDataSourceMap": {
