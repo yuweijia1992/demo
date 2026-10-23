@@ -2,7 +2,7 @@
   "title": "中国相关上市公司财务与估值数据库",
   "version": "0.1.0",
   "asOf": "2026-10-23",
-  "coverage": "截至 2026-10-20，49 家公司均已建立记录，已为 49/49 家录入至少一项经来源核验的财务数据；但仍有若干公司只核验了部分字段，港股/ADR与A股交易价格、PE/PB/PS、5年/10年估值分位及合理买入区间尚未全部核验，数据库不构成完整买入评级。",
+  "coverage": "截至 2026-10-23，49 家公司均已建立记录并录入至少一项来源核验财务数据；本轮补入顺丰控股经营现金流与ROE、中远海控ROE、工商银行经营现金流与每股净资产。价格/估值、每股净资产及历史估值分位仍有大量缺口，缺失值保留为空；历史分位仅依据真实历史序列计算。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
   "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.\n历史估值分位：必须来自有来源和日期的历史序列或授权API。网页CSV计算器结果仅为用户本地临时结果，须经口径审查后才可写入正式字段。价格超过最近交易日未更新时标记为过期，不得当作实时行情。\n新增派生指标规则：净利率=归母净利润/营业收入；经营现金流/净利润用于观察现金转化；利润与现金流差额=经营现金流-归母净利润。派生字段与公司披露原始字段分开保存，不反推ROIC、净债务、股息率或历史估值分位。模型字段覆盖率仅作缺项提醒，不代表估值结论。",
   "sources": [
@@ -816,9 +816,9 @@
       "revenueGrowth": 5.89,
       "netProfit": 5501.905,
       "eps": 1.1,
-      "roe": null,
+      "roe": 5.49,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 11171.404,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -829,19 +829,21 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570675&stockid=002352",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "2026年半年度主要财务数据已核验；现金流、价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本EPS。归母净利润同比下降4.11%，扣非归母净利润约49.7亿元、同比增长9.3%，两者差异显著，需拆解非经常性损益；经营现金流暂不填，避免将报告中子公司数据误作集团合并口径。",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "2026年半年度主要财务数据已核验；价格与估值待核验",
+      "dataNotes": "金额单位：百万元人民币；2026年上半年营收155,506.421百万元、归母净利润5,501.905百万元、基本EPS 1.10元；经营现金流净额11,171.404百万元；加权平均ROE 5.49%（均为半年报披露口径，未自行年化）。归母净利润同比下降4.11%，扣非归母净利润约49.7亿元、同比增长9.3%，两者差异显著，需拆解非经常性损益。",
       "derivedMetrics": {
         "netProfitMarginPct": 3.54,
         "epsAndProfitBothPresent": true,
         "profitability": "盈利",
-        "revenueTrend": "营收同比增长"
+        "revenueTrend": "营收同比增长",
+        "operatingCashFlowToNetProfit": 2.03,
+        "cashFlowProfitGap": 5669.499
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 50,
-        "valuationCorePresent": 4,
+        "valuationCorePct": 63,
+        "valuationCorePresent": 5,
         "valuationCoreRequired": 8,
         "requiredFields": [
           "revenue",
@@ -880,7 +882,7 @@
       "revenueGrowth": 2.59,
       "netProfit": 13418.920777,
       "eps": 0.88,
-      "roe": null,
+      "roe": 5.7,
       "roic": null,
       "operatingCashFlow": 23330.225727,
       "capex": null,
@@ -893,9 +895,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571262&stockid=601919",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收1119.22亿元，同比+2.59%；归母净利润134.19亿元，同比-23.48%；经营现金流233.30亿元，同比-9.49%；EPS 0.88元。航运强周期，估值应使用中周期利润。",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "2026年半年度主要财务数据已核验；价格、估值与历史分位待核验",
+      "dataNotes": "金额单位：百万元人民币。营收1119.22亿元，同比+2.59%；归母净利润134.19亿元，同比-23.48%；经营现金流233.30亿元，同比-9.49%；EPS 0.88元；报告披露加权平均ROE 5.70%。航运强周期，估值应使用中周期利润。",
       "derivedMetrics": {
         "netProfitMarginPct": 11.99,
         "operatingCashFlowToNetProfit": 1.739,
@@ -2464,7 +2466,7 @@
       "eps": 0.47,
       "roe": 8.63,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 1369013,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -2477,13 +2479,15 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
       "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
-      "dataNotes": "金额单位：百万元人民币。营业收入4,658.59亿元，同比增长9.1%；归母净利润1,736.82亿元；年化加权平均ROE 8.63%。银行业不使用普通企业自由现金流/净债务估值框架；另需跟踪净息差、资产质量、拨备覆盖率与资本充足率。 2026年半年度报告摘要：基本EPS 0.47元/股；期末每股净资产11.12元。银行的净债务、自由现金流不套用普通工商企业口径。",
+      "dataNotes": "金额单位：百万元人民币。营业收入4,658.59亿元，同比增长9.1%；归母净利润1,736.82亿元；年化加权平均ROE 8.63%；经营活动现金流量净额1,369,013百万元；期末每股净资产11.12元。银行业经营现金流受存贷款等金融业务现金流影响，不应按普通工商企业口径解释自由现金流；估值重点看PB—ROE、资产质量与资本充足率。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/icbc-ss-historical-data",
       "marketDataNotes": "Investing.com列示2026-10-20收盘8.56元；PE/PB需用银行专属估值口径补核。",
       "derivedMetrics": {
         "netProfitMarginPct": 37.28,
         "profitability": "盈利",
-        "revenueTrend": "营收同比增长"
+        "revenueTrend": "营收同比增长",
+        "operatingCashFlowToNetProfit": 7.882,
+        "cashFlowProfitGap": 1195331
       },
       "qualityAlerts": [],
       "dataCompleteness": {
@@ -2497,7 +2501,8 @@
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
-      "bookValuePerShare": 11.12
+      "bookValuePerShare": 11.12,
+      "bookValueSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398"
     },
     {
       "layer": 5,
@@ -3401,6 +3406,15 @@
         "中国建筑",
         "招商银行"
       ]
+    },
+    {
+      "date": "2026-10-23",
+      "changes": [
+        "顺丰控股：补入2026年上半年经营现金流11171.404百万元、加权平均ROE 5.49%，依据2026年半年度报告。",
+        "中远海控：补入2026年上半年加权平均ROE 5.70%，依据2026年半年度报告。",
+        "工商银行：补入2026年上半年经营现金流1369013百万元、期末每股净资产11.12元，依据2026年半年度报告摘要及财务报表。"
+      ],
+      "policy": "仅写入来源可追溯的数据；报告期ROE保留公司披露口径，不自行年化，历史估值分位不以当前估值推算。"
     }
   ],
   "valuationModels": {
