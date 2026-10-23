@@ -2,7 +2,7 @@
   "title": "中国相关上市公司财务与估值数据库",
   "version": "0.1.0",
   "asOf": "2026-10-23",
-  "coverage": "截至2026-10-23，49家公司基础收入和净利润均已录入；行情已补至37家，仍有12家缺少价格。行情来自公开第三方历史数据，存在个别来源差异和日期滞后，已单独标注。估值倍数、每股净资产、资本开支、净债务、ROIC、股息率和历史分位仍有明显缺口；缺失数据继续留空，待来源核验。",
+  "coverage": "截至2026-10-23，49家公司基础收入和净利润均已录入；新增国药股份、东方财富、分众传媒、阿里巴巴港股收盘价及东方财富PE/PB。估值倍数、每股净资产、ROIC、资本开支、净债务、股息率和历史分位仍有缺口，缺失数据保留为空。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
   "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.\n历史估值分位：必须来自有来源和日期的历史序列或授权API。网页CSV计算器结果仅为用户本地临时结果，须经口径审查后才可写入正式字段。价格超过最近交易日未更新时标记为过期，不得当作实时行情。\n新增派生指标规则：净利率=归母净利润/营业收入；经营现金流/净利润用于观察现金转化；利润与现金流差额=经营现金流-归母净利润。派生字段与公司披露原始字段分开保存，不反推ROIC、净债务、股息率或历史估值分位。模型字段覆盖率仅作缺项提醒，不代表估值结论。",
   "sources": [
@@ -1219,9 +1219,9 @@
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 27.34,
+      "currency": "CNY",
       "revenue": 26728.336668,
       "revenueGrowth": 4.27,
       "netProfit": 879.76948,
@@ -1268,7 +1268,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://www.laocaifu.com/stock/600511/",
+      "marketDataNotes": "老财富历史行情显示2026-10-22收盘价27.340元；第三方来源，需交叉核验。"
     },
     {
       "layer": 3,
@@ -1891,9 +1893,9 @@
       ],
       "formula": "建立收入、利润率、再投资与稀释的多阶段情景DCF；平台型公司补充分部估值，亏损企业不使用常规PE硬套。",
       "financialPeriod": "2026-06-30（截至2026-06-30季度业绩，非自然年半年累计）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 97.35,
+      "currency": "HKD",
       "revenue": 268953,
       "revenueGrowth": 9,
       "netProfit": 10444,
@@ -1935,7 +1937,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://hk.investing.com/equities/alibaba-group-holding-hk-historical-data",
+      "marketDataNotes": "阿里巴巴-SW港股（9988.HK）2026-10-22收盘价97.35港元；该价对应港股，非美股BABA ADR价格。"
     },
     {
       "layer": 4,
@@ -2737,9 +2741,9 @@
       ],
       "formula": "以跨周期正常化利润而非景气高点利润估值；辅以EV/EBITDA、重置成本或分部估值，设置低/中/高周期盈利。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 17.78,
+      "currency": "CNY",
       "revenue": 10505.339284,
       "revenueGrowth": 53.22,
       "netProfit": 8064.281453,
@@ -2751,8 +2755,8 @@
       "freeCashFlow": null,
       "netDebt": null,
       "dividendYield": null,
-      "peTtm": null,
-      "pb": null,
+      "peTtm": 19.29,
+      "pb": 2.86,
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
@@ -2781,7 +2785,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://quote.cfi.cn/300059.html",
+      "marketDataNotes": "中财网列示2026-10-22收盘17.78元、PE-TTM 19.29倍、PB 2.86倍；第三方估值口径需交叉核验。"
     },
     {
       "layer": 6,
@@ -2989,9 +2995,9 @@
       ],
       "formula": "以跨周期正常化利润而非景气高点利润估值；辅以EV/EBITDA、重置成本或分部估值，设置低/中/高周期盈利。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 4.97,
+      "currency": "CNY",
       "revenue": 5991,
       "revenueGrowth": null,
       "netProfit": 3128,
@@ -3033,7 +3039,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/hedy-holding-a-historical-data",
+      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价4.97元。"
     },
     {
       "layer": 6,
@@ -3471,6 +3479,13 @@
         "新增顺丰控股、川投能源、阳光电源、中公教育可查历史收盘价；对存在来源差异或行情滞后的项目添加说明。"
       ],
       "policy": "记录明确交易日期，不把较旧收盘价伪装成最新行情。"
+    },
+    {
+      "date": "2026-10-23",
+      "changes": [
+        "新增国药股份、东方财富、分众传媒、阿里巴巴港股收盘价；东方财富补入同一行情页的PE/PB。"
+      ],
+      "policy": "双重上市证券区分市场与币种；第三方估值倍数保留来源说明。"
     }
   ],
   "valuationModels": {
@@ -3567,9 +3582,9 @@
   "auditSnapshot": {
     "auditedAt": "2026-10-23",
     "listedCompanies": 49,
-    "withPrice": 37,
-    "withPE": 13,
-    "withPB": 10,
+    "withPrice": 41,
+    "withPE": 14,
+    "withPB": 11,
     "withPS": 1,
     "with5YPercentile": 0,
     "with10YPercentile": 0,
@@ -3671,15 +3686,11 @@
     "missingFieldLists": {
       "price": [
         "申洲国际",
-        "国药股份",
         "中国建筑",
-        "阿里巴巴",
         "汇川技术",
         "中信证券",
-        "东方财富",
         "京东集团",
         "锦江酒店",
-        "分众传媒",
         "哔哩哔哩",
         "兴蓉环境"
       ],
@@ -3711,7 +3722,6 @@
         "工商银行",
         "中国太保",
         "中信证券",
-        "东方财富",
         "京东集团",
         "中国中免",
         "锦江酒店",
@@ -3752,7 +3762,6 @@
         "中国平安",
         "中国太保",
         "中信证券",
-        "东方财富",
         "京东集团",
         "中国中免",
         "锦江酒店",
