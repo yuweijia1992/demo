@@ -2,7 +2,7 @@
   "title": "中国相关上市公司财务与估值数据库",
   "version": "0.1.0",
   "asOf": "2026-10-23",
-  "coverage": "截至2026-10-23，共49家公司。已补入2026年上半年资本开支及简化FCF的公司包括美的集团、海天味业、伊利股份、宁德时代、长江电力、海尔智家、比亚迪、格力电器、牧原股份、恒瑞医药、迈瑞医疗、中国移动、中国电信、中国神华。中国移动同时保留公司披露FCF与本库统一简化FCF的口径差异说明。伊利股份期末每股净资产按归母净资产/股本计算；美的集团2026年度中期每股分红方案已记录。净债务已按明确窄口径补录海尔智家、中国电信两家公司；每股净资产新增海尔智家、中国电信计算值及中国神华报告披露值；其余公司、股息率、ROIC与历史估值分位仍需逐家公司原始报告或历史时间序列核验。 本轮补录美的集团2026年半年度现金及现金等价物、短期借款和非流动借款；净债务因借款附注分类与资产负债表列示口径不一致而保留空值。 格力电器新增2026年半年度货币资金、短期借款、长期借款及计算型每股净资产；净债务未以货币资金直接替代现金及现金等价物计算。",
+  "coverage": "截至2026-10-23，共49家公司。已补入2026年上半年资本开支及简化FCF的公司包括美的集团、海天味业、伊利股份、宁德时代、长江电力、海尔智家、比亚迪、格力电器、牧原股份、恒瑞医药、迈瑞医疗、中国移动、中国电信、中国神华。中国移动同时保留公司披露FCF与本库统一简化FCF的口径差异说明。伊利股份期末每股净资产按归母净资产/股本计算；美的集团2026年度中期每股分红方案已记录。净债务已按明确窄口径补录海尔智家、中国电信两家公司；每股净资产新增海尔智家、中国电信计算值及中国神华报告披露值；其余公司、股息率、ROIC与历史估值分位仍需逐家公司原始报告或历史时间序列核验。 本轮补录美的集团2026年半年度现金及现金等价物、短期借款和非流动借款；净债务因借款附注分类与资产负债表列示口径不一致而保留空值。 格力电器新增2026年半年度货币资金、短期借款、长期借款及计算型每股净资产；净债务未以货币资金直接替代现金及现金等价物计算。 新增长江电力、恒瑞医药、迈瑞医疗2026年半年度资产负债表核验字段及计算型每股净资产；对借款分类与现金口径单独备注。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
   "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.\n历史估值分位：必须来自有来源和日期的历史序列或授权API。网页CSV计算器结果仅为用户本地临时结果，须经口径审查后才可写入正式字段。价格超过最近交易日未更新时标记为过期，不得当作实时行情。\n新增派生指标规则：净利率=归母净利润/营业收入；经营现金流/净利润用于观察现金转化；利润与现金流差额=经营现金流-归母净利润。派生字段与公司披露原始字段分开保存，不反推ROIC、净债务、股息率或历史估值分位。模型字段覆盖率仅作缺项提醒，不代表估值结论。",
   "sources": [
@@ -1030,7 +1030,7 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
       "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
-      "dataNotes": "营业收入177.47亿元，同比增长6.00%；归母净利润47.97亿元，同比下降5.37%；扣非归母净利润50.28亿元，同比下降1.52%。汇率中性口径收入增长8.16%。注意净利润与扣非利润差异。金额单位百万元人民币。 2026年半年度报告：基本EPS 3.9584元/股、加权平均ROE 12.01%、经营现金流净额4,876.99百万元。 2026年上半年经营现金流4,876.987百万元；资本开支1,063.902百万元；简化FCF=3,813.085百万元。金额单位百万元人民币，半年不年化，未扣除其他投资现金流。",
+      "dataNotes": "营业收入177.47亿元，同比增长6.00%；归母净利润47.97亿元，同比下降5.37%；扣非归母净利润50.28亿元，同比下降1.52%。汇率中性口径收入增长8.16%。注意净利润与扣非利润差异。金额单位百万元人民币。 2026年半年度报告：基本EPS 3.9584元/股、加权平均ROE 12.01%、经营现金流净额4,876.99百万元。 2026年上半年经营现金流4,876.987百万元；资本开支1,063.902百万元；简化FCF=3,813.085百万元。金额单位百万元人民币，半年不年化，未扣除其他投资现金流。 2026年半年度资产负债表核验补录：合并货币资金18,699.273百万元；现金及现金等价物18,645.297百万元；短期借款0.000231百万元；长期借款0.000249百万元；归母股东权益40,556.240百万元；股本1,212.441百万股。另有一年内到期非流动负债126.196百万元和租赁负债184.404百万元，未并入借款字段。 每股净资产按归母股东权益/股本计算。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/shenzhen-mindray-bio-medical-historical-data",
       "marketDataNotes": "Investing.com列示2026-10-20收盘169.73元；PE/PB待同口径核验。",
       "derivedMetrics": {
@@ -1056,7 +1056,24 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
-      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "monetaryFunds": 18699.272786,
+      "monetaryFundsDate": "2026-06-30",
+      "monetaryFundsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+      "cashAndCashEquivalents": 18645.296725,
+      "cashAndCashEquivalentsDate": "2026-06-30",
+      "cashAndCashEquivalentsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+      "shortTermBorrowings": 0.000231201,
+      "shortTermBorrowingsDate": "2026-06-30",
+      "shortTermBorrowingsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+      "longTermBorrowings": 0.000248664,
+      "longTermBorrowingsDate": "2026-06-30",
+      "longTermBorrowingsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+      "bookValuePerShare": 33.45006233678624,
+      "bookValuePerShareMethod": "计算值：2026-06-30归母股东权益40556.240百万元÷股本1212.441百万股，约33.450元/股。",
+      "bookValuePerShareSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+      "balanceSheetSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+      "balanceSheetDebtNotes": "合并货币资金18,699.273百万元；现金及现金等价物18,645.297百万元；短期借款0.000231百万元；长期借款0.000249百万元；归母股东权益40,556.240百万元；股本1,212.441百万股。另有一年内到期非流动负债126.196百万元和租赁负债184.404百万元，未并入借款字段。"
     },
     {
       "layer": 2,
@@ -1098,7 +1115,7 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
       "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
-      "dataNotes": "营业收入154.56亿元，同比下降1.94%；归母净利润44.65亿元，同比增长0.34%；经营现金流19.87亿元，同比下降53.80%。创新药收入88.09亿元，同比增长16.38%；研发投入46.05亿元，同比增长18.96%。需区分授权收入、药品销售、研发投入及经营现金流波动。金额单位百万元人民币。 2026年半年度报告：基本EPS 0.68元/股、加权平均ROE 8.04%；经营现金流字段此前已按报告录入。 2026年上半年经营现金流1,987.004百万元；资本开支1,577.505百万元；简化FCF=409.499百万元。金额单位百万元人民币，半年不年化；资本开支包括研发开发支出，不能单独据此判断研发投入回报。",
+      "dataNotes": "营业收入154.56亿元，同比下降1.94%；归母净利润44.65亿元，同比增长0.34%；经营现金流19.87亿元，同比下降53.80%。创新药收入88.09亿元，同比增长16.38%；研发投入46.05亿元，同比增长18.96%。需区分授权收入、药品销售、研发投入及经营现金流波动。金额单位百万元人民币。 2026年半年度报告：基本EPS 0.68元/股、加权平均ROE 8.04%；经营现金流字段此前已按报告录入。 2026年上半年经营现金流1,987.004百万元；资本开支1,577.505百万元；简化FCF=409.499百万元。金额单位百万元人民币，半年不年化；资本开支包括研发开发支出，不能单独据此判断研发投入回报。 2026年半年度资产负债表核验补录：合并货币资金38,734.324百万元；现金及现金等价物38,031.525百万元；报告资产负债表未列示短期借款和长期借款，按报告口径记0。一年内到期非流动负债29.754百万元全部为租赁负债，另有租赁负债38.229百万元；归母股东权益64,466.430百万元；股本6,637.200百万股。 每股净资产按归母股东权益/股本计算。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/hengrui-medi-historical-data",
       "marketDataNotes": "Investing.com列示2026-10-20收盘47.37元；PE/PB待同口径核验。",
       "derivedMetrics": {
@@ -1124,7 +1141,24 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
-      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "monetaryFunds": 38734.32427837,
+      "monetaryFundsDate": "2026-06-30",
+      "monetaryFundsSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+      "cashAndCashEquivalents": 38031.52493381,
+      "cashAndCashEquivalentsDate": "2026-06-30",
+      "cashAndCashEquivalentsSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+      "shortTermBorrowings": 0,
+      "shortTermBorrowingsDate": "2026-06-30",
+      "shortTermBorrowingsSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+      "longTermBorrowings": 0,
+      "longTermBorrowingsDate": "2026-06-30",
+      "longTermBorrowingsSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+      "bookValuePerShare": 9.712895713483828,
+      "bookValuePerShareMethod": "计算值：2026-06-30归母股东权益64466.430百万元÷股本6637.200百万股，约9.713元/股。",
+      "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+      "balanceSheetSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+      "balanceSheetDebtNotes": "合并货币资金38,734.324百万元；现金及现金等价物38,031.525百万元；报告资产负债表未列示短期借款和长期借款，按报告口径记0。一年内到期非流动负债29.754百万元全部为租赁负债，另有租赁负债38.229百万元；归母股东权益64,466.430百万元；股本6,637.200百万股。"
     },
     {
       "layer": 2,
@@ -1371,7 +1405,7 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
       "verifiedAt": "2026-10-23",
       "dataStatus": "半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币。2026年上半年经营现金流24,128.314百万元；资本开支取合并现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’1,597.422百万元；简化FCF=24,128.314-1,597.422=22,530.892百万元。半年数据，不年化，未扣除其他投资现金流；水电运营企业还需区分维持性与扩张性资本开支，故该FCF仅为统一口径比较值，不直接等同可分配现金。 2026年上半年经营现金流24,128.314百万元；资本开支4,434.616百万元；简化FCF=19,693.698百万元。注意此值取自合并现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’，半年不年化；水电项目资本开支可能含扩建，不能直接等同可分配现金。",
+      "dataNotes": "金额单位：百万元人民币。2026年上半年经营现金流24,128.314百万元；资本开支取合并现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’1,597.422百万元；简化FCF=24,128.314-1,597.422=22,530.892百万元。半年数据，不年化，未扣除其他投资现金流；水电运营企业还需区分维持性与扩张性资本开支，故该FCF仅为统一口径比较值，不直接等同可分配现金。 2026年上半年经营现金流24,128.314百万元；资本开支4,434.616百万元；简化FCF=19,693.698百万元。注意此值取自合并现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’，半年不年化；水电项目资本开支可能含扩建，不能直接等同可分配现金。 2026年半年度资产负债表核验补录：合并货币资金9,372.873百万元；现金及现金等价物9,326.501百万元；短期借款6,703.352百万元；长期借款175,447.933百万元；归母股东权益216,131.354百万元；股本24,468.218百万股。另有一年内到期非流动负债65,737.865百万元、应付债券34,971.889百万元、租赁负债505.088百万元，故不将短借+长借-现金视为完整净债务。 每股净资产按归母股东权益/股本计算。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/yangtze-power-historical-data",
       "marketDataNotes": "Investing.com列示2026-10-20收盘29.69元；PE/PB参考中财网页面显示值，日期页面盘中快照需复核。",
       "derivedMetrics": {
@@ -1397,7 +1431,24 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
-      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "monetaryFunds": 9372.87340916,
+      "monetaryFundsDate": "2026-06-30",
+      "monetaryFundsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+      "cashAndCashEquivalents": 9326.50084764,
+      "cashAndCashEquivalentsDate": "2026-06-30",
+      "cashAndCashEquivalentsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+      "shortTermBorrowings": 6703.35184107,
+      "shortTermBorrowingsDate": "2026-06-30",
+      "shortTermBorrowingsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+      "longTermBorrowings": 175447.93304771,
+      "longTermBorrowingsDate": "2026-06-30",
+      "longTermBorrowingsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+      "bookValuePerShare": 8.833146581319639,
+      "bookValuePerShareMethod": "计算值：2026-06-30归母股东权益216131.354百万元÷股本24468.218百万股，约8.833元/股。",
+      "bookValuePerShareSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+      "balanceSheetSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+      "balanceSheetDebtNotes": "合并货币资金9,372.873百万元；现金及现金等价物9,326.501百万元；短期借款6,703.352百万元；长期借款175,447.933百万元；归母股东权益216,131.354百万元；股本24,468.218百万股。另有一年内到期非流动负债65,737.865百万元、应付债券34,971.889百万元、租赁负债505.088百万元，故不将短借+长借-现金视为完整净债务。"
     },
     {
       "layer": 3,
@@ -3650,6 +3701,11 @@
       "date": "2026-10-23",
       "scope": "格力电器2026年半年度现金/借款与每股净资产核验",
       "policy": "依据2026年半年度报告合并资产负债表录入货币资金、短期借款、长期借款；BVPS按归母股东权益/股本计算并明确标注计算口径。货币资金不等同现金及现金等价物，未据此强行计算净债务。"
+    },
+    {
+      "date": "2026-10-23",
+      "scope": "长江电力、恒瑞医药、迈瑞医疗2026年半年度资产负债表现金/借款/BVPS核验",
+      "policy": "依据公开半年度报告提取合并货币资金、现金及现金等价物、短期借款、长期借款、归母权益和股本；金额换算为百万元人民币；BVPS按归母权益/股本计算。长江电力另有大量一年内到期债务及应付债券，未用简化公式冒充完整净债务。"
     }
   ],
   "valuationModels": {
@@ -3835,7 +3891,7 @@
         }
       ]
     },
-    "note": "资本开支取现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’，金额统一为百万元；简化FCF=经营现金流-该项资本开支，不含其他投资现金流，半年值不年化。银行、保险等金融机构不套用普通企业FCF/净债务口径。历史估值分位必须使用同一证券、同一估值倍数定义、日期连续且经复权/口径检查的真实历史序列。 本轮净债务仅对海尔智家、中国电信按半年度报告披露现金与借款计算；统一采用窄口径（短期借款+长期借款-现金），不含租赁负债及其他融资性负债，不能直接与采用广义净债务口径的数据库比较。 本轮复核修正海尔智家现金及现金等价物、以及中国电信长期借款数据；两家公司均按短期借款+长期借款-现金及现金等价物的窄口径计算，未纳入债券、租赁负债及一年内到期非流动负债。 本轮补录海尔智家、中国电信的计算型每股净资产及中国神华报告披露每股净资产；计算型BVPS采用归母股东权益/股本，报告披露值与计算值在字段方法中区分。 本轮新增美的集团2026-06-30现金及现金等价物、短期借款和非流动借款余额，均从半年度报告提取并统一为百万元人民币；因借款分类口径存在差异，净债务暂不计算，避免混算。 本轮补录格力电器2026年半年度货币资金、短期借款、长期借款及按归母权益/股本计算的每股净资产；货币资金与现金及现金等价物口径不同，故净债务保留空值。",
+    "note": "资本开支取现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’，金额统一为百万元；简化FCF=经营现金流-该项资本开支，不含其他投资现金流，半年值不年化。银行、保险等金融机构不套用普通企业FCF/净债务口径。历史估值分位必须使用同一证券、同一估值倍数定义、日期连续且经复权/口径检查的真实历史序列。 本轮净债务仅对海尔智家、中国电信按半年度报告披露现金与借款计算；统一采用窄口径（短期借款+长期借款-现金），不含租赁负债及其他融资性负债，不能直接与采用广义净债务口径的数据库比较。 本轮复核修正海尔智家现金及现金等价物、以及中国电信长期借款数据；两家公司均按短期借款+长期借款-现金及现金等价物的窄口径计算，未纳入债券、租赁负债及一年内到期非流动负债。 本轮补录海尔智家、中国电信的计算型每股净资产及中国神华报告披露每股净资产；计算型BVPS采用归母股东权益/股本，报告披露值与计算值在字段方法中区分。 本轮新增美的集团2026-06-30现金及现金等价物、短期借款和非流动借款余额，均从半年度报告提取并统一为百万元人民币；因借款分类口径存在差异，净债务暂不计算，避免混算。 本轮补录格力电器2026年半年度货币资金、短期借款、长期借款及按归母权益/股本计算的每股净资产；货币资金与现金及现金等价物口径不同，故净债务保留空值。 本轮核验长江电力、恒瑞医药、迈瑞医疗2026-06-30货币资金/现金及现金等价物、短期借款、长期借款及计算型每股净资产。长江电力存在大量一年内到期非流动负债及应付债券，不以简化公式冒充完整净债务。",
     "withRevenue": 49,
     "withNetProfit": 49,
     "withEPS": 48,
@@ -4829,13 +4885,13 @@
         "瀚蓝环境"
       ]
     },
-    "withBookValuePerShare": 11,
+    "withBookValuePerShare": 14,
     "withROIC": 0,
     "withCapex": 15,
     "withNetDebt": 2,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
-    "withBVPS": 11
+    "withBVPS": 14
   },
   "marketDataSourceMap": {
     "A股": {
