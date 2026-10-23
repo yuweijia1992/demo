@@ -4,7 +4,7 @@
   "asOf": "2026-10-23",
   "coverage": "截至 2026-10-20，49 家公司均已建立记录，已为 49/49 家录入至少一项经来源核验的财务数据；但仍有若干公司只核验了部分字段，港股/ADR与A股交易价格、PE/PB/PS、5年/10年估值分位及合理买入区间尚未全部核验，数据库不构成完整买入评级。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
-  "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.",
+  "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.\n历史估值分位：必须来自有来源和日期的历史序列或授权API。网页CSV计算器结果仅为用户本地临时结果，须经口径审查后才可写入正式字段。价格超过最近交易日未更新时标记为过期，不得当作实时行情。",
   "sources": [
     {
       "name": "巨潮资讯网",
@@ -2297,7 +2297,28 @@
     "withPS": 1,
     "with5YPercentile": 0,
     "with10YPercentile": 0,
-    "note": "字段覆盖统计，不代表已统一交易日或独立复核。历史分位需要授权API或逐证券历史序列；不以当前截面值推算。"
+    "qualityChecks": {
+      "priceWithoutDate": [],
+      "priceWithoutCurrency": [],
+      "priceOlderThan2026_10_20": [
+        {
+          "name": "海澜之家",
+          "priceDate": "2026-10-16"
+        },
+        {
+          "name": "中芯国际",
+          "priceDate": "2026-10-19"
+        },
+        {
+          "name": "中际旭创",
+          "priceDate": "2026-10-16"
+        }
+      ],
+      "pricedStocksWithoutSource": [],
+      "duplicatePrimaryCodes": [],
+      "historicalPercentileWithoutCurrentMetric": []
+    },
+    "note": "字段覆盖统计，不代表所有行情处于同一交易日或已独立复核。价格日期早于2026-10-20的记录已列为待更新；历史分位尚无正式数据库值。网页新增CSV导入计算器可对外部历史序列进行本地样本分位计算，但结果不会自动写回本数据库。"
   },
   "marketDataSourceMap": {
     "A股": {
