@@ -347,9 +347,9 @@
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
       "financialPeriod": "2026-06-30（2026年中期业绩）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 35.6,
+      "currency": "HKD",
       "revenue": 14179.177,
       "revenueGrowth": -5.26,
       "netProfit": 1904.563,
@@ -368,8 +368,8 @@
       "valuationPercentile10Y": null,
       "sourceUrl": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2313",
       "verifiedAt": "2026-10-23",
-      "dataStatus": "补录2026年中期每股净资产；经营现金流、ROE、资本开支等仍待核验",
-      "dataNotes": "中期营业额141.79亿元人民币，同比-5.26%；股东应占溢利19.05亿元人民币，同比-40.05%；每股盈利人民币1.27元。原始页面单位人民币千元，已换算为百万元人民币；港股股价另以港币记录。 截至2026-06-30每股净资产24.84元人民币，来自同花顺公开财务指标页；该值是人民币计价每股净资产，不是港元。",
+      "dataStatus": "补录2026-10-22港股历史收盘价；财务字段仍待原始报告核验",
+      "dataNotes": "中期营业额141.79亿元人民币，同比-5.26%；股东应占溢利19.05亿元人民币，同比-40.05%；每股盈利人民币1.27元。原始页面单位人民币千元，已换算为百万元人民币；港股股价另以港币记录。 截至2026-06-30每股净资产24.84元人民币，来自同花顺公开财务指标页；该值是人民币计价每股净资产，不是港元。 2026-10-22港股收盘价35.60港元，来源StockAnalysis历史行情页；不同第三方页面报价存在差异，需交叉复核。",
       "derivedMetrics": {
         "netProfitMarginPct": 13.43,
         "epsAndProfitBothPresent": true,
@@ -395,7 +395,9 @@
       },
       "bvps": 24.84,
       "bvpsPeriod": "2026-06-30",
-      "bvpsSourceUrl": "https://stockpage.10jqka.com.cn/basicweb/176/HK2313/"
+      "bvpsSourceUrl": "https://stockpage.10jqka.com.cn/basicweb/176/HK2313/",
+      "marketDataSourceUrl": "https://stockanalysis.com/quote/hkg/2313/history/",
+      "marketDataNotes": "StockAnalysis历史行情页列示2026-10-22收盘35.60港元；与部分第三方行情源存在报价差异，暂按该页明确标注Close的数据录入，建议后续用港交所/第二来源复核。该证券为港股2313.HK。"
     },
     {
       "layer": 1,
@@ -3516,6 +3518,11 @@
       "date": "2026-10-23",
       "scope": "补录申洲国际每股净资产、哔哩哔哩港股收盘价与半年度ROE，并重算缺失字段审计",
       "policy": "来源URL随字段保存；未核验的资本开支、净债务、FCF、ROIC及历史估值分位继续保留空值。"
+    },
+    {
+      "date": "2026-10-23",
+      "scope": "补录申洲国际2026-10-22港股收盘价",
+      "policy": "使用公开历史行情页明确列示的Close；第三方行情有差异，保留复核提示。"
     }
   ],
   "valuationModels": {
@@ -3612,7 +3619,7 @@
   "auditSnapshot": {
     "auditedAt": "2026-10-23",
     "listedCompanies": 49,
-    "withPrice": 48,
+    "withPrice": 49,
     "withPE": 14,
     "withPB": 11,
     "withPS": 1,
@@ -3714,9 +3721,7 @@
     "withRevenueGrowth": 48,
     "withROE": 43,
     "missingFieldLists": {
-      "price": [
-        "申洲国际"
-      ],
+      "price": [],
       "PE": [
         "牧原股份",
         "申洲国际",
