@@ -218,8 +218,8 @@
       "roe": 10.07,
       "roic": null,
       "operatingCashFlow": 1224.2266,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 535.93094839,
+      "freeCashFlow": 688.295652,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": 26.74,
@@ -229,8 +229,8 @@
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863",
       "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年半年度财务字段已按公开报告补核；估值字段另行核验",
-      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本每股收益。归母净利润同比增长7.13%，扣非归母净利润同比增长3.77%，经营现金流同比下降18.52%；估值时需留意利润增长与现金流变动不一致。 2026年半年度报告：加权平均ROE 10.07%、经营现金流净额1,224.227百万元；基本EPS 0.72元/股。 截至2026-06-30每股净资产6.68元，来自公开财务指标页，需以半年报原文口径为最终依据。",
+      "dataStatus": "2026年半年度经营现金流、资本开支与简化FCF已录入；净债务、股息率和历史估值分位仍待核验",
+      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本每股收益。归母净利润同比增长7.13%，扣非归母净利润同比增长3.77%，经营现金流同比下降18.52%；估值时需留意利润增长与现金流变动不一致。 2026年半年度报告：加权平均ROE 10.07%、经营现金流净额1,224.227百万元；基本EPS 0.72元/股。 截至2026-06-30每股净资产6.68元，来自公开财务指标页，需以半年报原文口径为最终依据。 2026年上半年购建固定资产、无形资产和其他长期资产支付的现金为535.931百万元；按简化口径FCF=经营现金流-该项资本开支，得到688.296百万元。该口径不含其他投资现金流，且为半年数据，不年化。",
       "derivedMetrics": {
         "netProfitMarginPct": 25.95,
         "operatingCashFlowToNetProfit": 0.292,
@@ -259,7 +259,9 @@
       "marketDataSourceUrl": "https://quote.cfi.cn/quote_603288.html",
       "marketDataNotes": "中财网行情页显示2026-10-22 15:00价格33.47元、PE 26.74、PB 4.94；页面说明行情可能延时，估值口径需交叉核验。",
       "bookValuePerShare": 6.68,
-      "bookValueSourceUrl": "https://stock.quote.stockstar.com/finance/summary_603288.shtml"
+      "bookValueSourceUrl": "https://stock.quote.stockstar.com/finance/summary_603288.shtml",
+      "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863&stockid=603288",
+      "fcfSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863&stockid=603288"
     },
     {
       "layer": 1,
@@ -496,8 +498,8 @@
       "roe": 11.33,
       "roic": null,
       "operatingCashFlow": 37552.09,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 2634.21,
+      "freeCashFlow": 34917.88,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -507,8 +509,8 @@
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572219&stockid=000333",
       "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币（原报告单位千元，已换算）；EPS为半年度基本每股收益，ROE为报告披露加权平均净资产收益率。扣非归母净利润为19,595.179百万元，同比下降25.31%，主要受到汇率及衍生金融工具损益列报影响；归母净利润同比增长1.66%，估值时应区分经常性盈利与非经常性/汇兑影响。 期末每股净资产27.8168元，来源为证券时报公开财务指标页，报告期2026-06-30。",
+      "dataStatus": "2026年半年度经营现金流、资本开支、简化FCF及中期分红方案已录入；净债务、TTM股息率和历史估值分位仍待核验",
+      "dataNotes": "金额单位：百万元人民币（原报告单位千元，已换算）；EPS为半年度基本每股收益，ROE为报告披露加权平均净资产收益率。扣非归母净利润为19,595.179百万元，同比下降25.31%，主要受到汇率及衍生金融工具损益列报影响；归母净利润同比增长1.66%，估值时应区分经常性盈利与非经常性/汇兑影响。 期末每股净资产27.8168元，来源为证券时报公开财务指标页，报告期2026-06-30。 2026年上半年购建固定资产、无形资产和其他长期资产支付的现金为2,634.210百万元；按简化口径FCF=经营现金流-该项资本开支，得到34,917.880百万元，半年口径未年化。公司2026年中期分红方案为每10股派5元，即每股0.50元（方案待实施）；该值不是TTM股息率，未据此直接填写dividendYield。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/midea-group-a-historical-data",
       "marketDataNotes": "Investing.com列示2026-10-20收盘85.30元；PE/PB尚未在同一来源核验。",
       "derivedMetrics": {
@@ -537,7 +539,12 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "bookValuePerShare": 27.8168,
-      "bookValueSourceUrl": "https://www.stcn.com/quotes/index.html?stock_code=sz000333"
+      "bookValueSourceUrl": "https://www.stcn.com/quotes/index.html?stock_code=sz000333",
+      "capexSourceUrl": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-29/df25443f-d67a-4cc5-8bd6-6c3e681a9575.PDF",
+      "fcfSourceUrl": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-29/df25443f-d67a-4cc5-8bd6-6c3e681a9575.PDF",
+      "interimDividendPerShare": 0.5,
+      "interimDividendCurrency": "CNY",
+      "interimDividendPeriod": "2026年度中期分红方案（每10股派5元，方案待实施）"
     },
     {
       "layer": 1,
@@ -3523,6 +3530,11 @@
       "date": "2026-10-23",
       "scope": "补录申洲国际2026-10-22港股收盘价",
       "policy": "使用公开历史行情页明确列示的Close；第三方行情有差异，保留复核提示。"
+    },
+    {
+      "date": "2026-10-23",
+      "scope": "根据2026年半年度报告补录海天味业、美的集团资本开支和简化自由现金流；记录美的中期分红方案",
+      "policy": "现金流口径为报告期半年数，金额统一为百万元人民币；不把中期股息误记为TTM股息率。"
     }
   ],
   "valuationModels": {
@@ -3708,12 +3720,12 @@
         }
       ]
     },
-    "note": "截至2026-10-23覆盖审计。每股净资产兼容bvps/bookValuePerShare两种字段名；价格及部分财务指标来自第三方公开资料，需交叉核验；字段非空不等于完全验证。估值分位只允许使用真实历史时间序列。",
+    "note": "资本开支取现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’，单位统一为百万元；简化FCF=经营现金流-该项资本开支，不含其他投资现金流，半年值不年化。银行业不套用普通企业FCF/净债务口径。历史估值分位只允许用真实历史序列计算。",
     "withRevenue": 49,
     "withNetProfit": 49,
     "withEPS": 48,
     "withOperatingCashFlow": 46,
-    "withFreeCashFlow": 3,
+    "withFreeCashFlow": 5,
     "derivedNetProfitMargin": 49,
     "derivedCashFlowConversion": 37,
     "companiesWithQualityAlerts": 5,
@@ -4368,9 +4380,10 @@
     },
     "withBookValuePerShare": 7,
     "withROIC": 0,
-    "withCapex": 1,
+    "withCapex": 3,
     "withNetDebt": 0,
-    "withDividendYield": 0
+    "withDividendYield": 0,
+    "withInterimDividendPerShare": 2
   },
   "marketDataSourceMap": {
     "A股": {
