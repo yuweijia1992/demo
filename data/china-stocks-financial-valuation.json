@@ -71,8 +71,8 @@
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": "2026-10-20",
-      "price": 27.92,
+      "priceDate": "2026-10-22",
+      "price": 27.8,
       "currency": "CNY",
       "revenue": 64330.9365,
       "revenueGrowth": 4.13,
@@ -85,17 +85,17 @@
       "freeCashFlow": null,
       "netDebt": null,
       "dividendYield": null,
-      "peTtm": 17.54,
-      "pb": 3.1,
+      "peTtm": 17.37,
+      "pb": 3.07,
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "半年度财务数据已核验；价格及估值待核验",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "财报部分字段已核验；行情为2026-10-22公开快照，仍需交叉核验",
       "dataNotes": "金额单位：百万元人民币。2026年上半年归母净利润同比下降20.02%，经营现金流同比增长229.23%；EPS为半年度基本EPS，ROE为报告披露的加权平均净资产收益率。",
       "marketDataSourceUrl": "https://quote.cfi.cn/quote1587_600887.html",
-      "marketDataNotes": "中财网页面列示2026-10-20 15:00价格27.92元、PE 17.54、PB 3.10。需注意估值PE的计算口径与扣非PE不同。",
+      "marketDataNotes": "中财网公开行情页显示2026-10-22收盘价27.80元、PE 17.37、PB 3.07；页面注明行情可能延时，作为公开行情快照而非实时交易报价。",
       "derivedMetrics": {
         "netProfitMarginPct": 8.95,
         "operatingCashFlowToNetProfit": 1.695,
@@ -1788,9 +1788,9 @@
       ],
       "formula": "建立收入、利润率、再投资与稀释的多阶段情景DCF；平台型公司补充分部估值，亏损企业不使用常规PE硬套。",
       "financialPeriod": "2026-06-30（2026年中期）",
-      "priceDate": null,
-      "price": null,
-      "currency": "CNY（报告记账币种；港股交易价格为HKD）",
+      "priceDate": "2026-10-22",
+      "price": 381.8,
+      "currency": "HKD",
       "revenue": 401243,
       "revenueGrowth": 10.1,
       "netProfit": 114115,
@@ -1802,14 +1802,14 @@
       "freeCashFlow": 69341,
       "netDebt": null,
       "dividendYield": null,
-      "peTtm": null,
-      "pb": null,
+      "peTtm": 13.43,
+      "pb": 2.62,
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://www.tencent.com/zh-cn/investors/financial-reports/",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "半年度财务数据已核验；价格及估值待核验",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "财报部分字段已核验；行情为2026-10-22公开快照，仍需交叉核验",
       "dataNotes": "金额单位：百万元人民币。EPS为中期基本每股盈利人民币元；简单FCF=经营现金流−资本开支，未必等于公司披露的非国际准则自由现金流，需以完整现金流量表核对。归母净利润采用IFRS口径；另有非IFRS口径，估值时不得混用。",
       "derivedMetrics": {
         "netProfitMarginPct": 28.44,
@@ -1833,7 +1833,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://www.gurufocus.com/stock/HKSE%3A00700/data/summary",
+      "marketDataNotes": "GuruFocus公开行情/估值页显示2026-10-22港股价格381.8港元、PE-TTM 13.43、PB 2.62；非交易所原始数据，后续需用港交所/主流行情源交叉核验。"
     },
     {
       "layer": 4,
@@ -2182,8 +2184,8 @@
       ],
       "formula": "建立收入、利润率、再投资与稀释的多阶段情景DCF；平台型公司补充分部估值，亏损企业不使用常规PE硬套。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": "2026-10-20",
-      "price": 259.08,
+      "priceDate": "2026-10-22",
+      "price": 220.41,
       "currency": "CNY",
       "revenue": 276916.58,
       "revenueGrowth": 54.8,
@@ -2196,17 +2198,17 @@
       "freeCashFlow": null,
       "netDebt": null,
       "dividendYield": null,
-      "peTtm": 13.85,
-      "pb": 2.91,
+      "peTtm": 11.63,
+      "pb": 2.41,
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12462542&stockid=300750",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "半年度财务数据已核验；价格及估值待核验",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "财报部分字段已核验；行情为2026-10-22公开快照，仍需交叉核验",
       "dataNotes": "金额单位：百万元人民币；原报告单位为千元。EPS为2026年上半年基本EPS，ROE为报告披露的加权平均净资产收益率。未以半年数据简单年化推断全年。",
-      "marketDataSourceUrl": "https://summary.jrj.com.cn/stock/sz/300750",
-      "marketDataNotes": "2026-10-20页面显示价格259.08元及PE 13.85；PB 2.91来自中财网同日行情页面。不同供应商PE口径存在差异，后续需统一供应商复核。",
+      "marketDataSourceUrl": "https://data.cfi.cn/300750.html",
+      "marketDataNotes": "中财网公开行情页显示2026-10-22 15:00收盘价220.41元、PE 11.63、PB 2.41；估值页EPS标记为2026-09-30口径，财务主记录仍为2026年半年报，需在后续更新三季报后统一财务期。",
       "derivedMetrics": {
         "netProfitMarginPct": 15.63,
         "operatingCashFlowToNetProfit": 1.391,
@@ -2501,8 +2503,8 @@
       ],
       "formula": "以调整后内含价值为锚，对EV及未来NBV贡献分别估值；对投资回报、风险贴现率与长期假设做压力测试。",
       "financialPeriod": "2026-06-30（2026年中期业绩）",
-      "priceDate": null,
-      "price": null,
+      "priceDate": "2026-10-22",
+      "price": 50.94,
       "currency": "CNY",
       "revenue": 575138,
       "revenueGrowth": 15,
@@ -2515,14 +2517,14 @@
       "freeCashFlow": null,
       "netDebt": null,
       "dividendYield": null,
-      "peTtm": null,
+      "peTtm": 5.79,
       "pb": null,
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12512669",
       "verifiedAt": "2026-10-23",
-      "dataStatus": "公开披露财务数据已补核；行情估值字段仍待核验",
+      "dataStatus": "财报部分字段已核验；行情为2026-10-22公开快照，仍需交叉核验",
       "dataNotes": "金额单位：百万元人民币。营业收入5,751.38亿元，同比增长15.0%；归母净利润925.85亿元，同比增长36.1%；归母营运利润841.96亿元，同比增长8.3%；寿险及健康险新业务价值248.47亿元，同比增长11.2%。保险估值需另补EV、NBV、内含价值增长、偿付能力与投资收益等指标；不要把营运利润与归母净利润混用。 2026年中期报告：基本EPS 5.30元/股（非年化）、加权平均ROE 9.0%（非年化）、经营现金流368,037百万元、每股净资产56.78元；另披露中期股息0.98元/股，非全年股息率。",
       "derivedMetrics": {
         "netProfitMarginPct": 16.1,
@@ -2541,7 +2543,9 @@
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
-      "bookValuePerShare": 56.78
+      "bookValuePerShare": 56.78,
+      "marketDataSourceUrl": "https://quote.cfi.cn/quote.aspx?client=pc&lm=gsda&stockid=7143",
+      "marketDataNotes": "中财网公开行情页显示2026-10-22 15:00收盘价50.94元、PE 5.79；该来源PB与已核实每股净资产存在口径不一致，因此PB暂不录入。"
     },
     {
       "layer": 5,
@@ -3325,6 +3329,16 @@
         "中国平安",
         "哔哩哔哩"
       ]
+    },
+    {
+      "date": "2026-10-23",
+      "description": "录入伊利股份、宁德时代、中国平安、腾讯控股2026-10-22公开行情快照；保留行情来源和口径差异说明，未补造历史分位。",
+      "companies": [
+        "伊利股份",
+        "腾讯控股",
+        "宁德时代",
+        "中国平安"
+      ]
     }
   ],
   "valuationModels": {
@@ -3421,9 +3435,9 @@
   "auditSnapshot": {
     "auditedAt": "2026-10-23",
     "listedCompanies": 49,
-    "withPrice": 17,
-    "withPE": 9,
-    "withPB": 7,
+    "withPrice": 19,
+    "withPE": 11,
+    "withPB": 8,
     "withPS": 1,
     "with5YPercentile": 0,
     "with10YPercentile": 0,
@@ -3446,9 +3460,71 @@
       ],
       "pricedStocksWithoutSource": [],
       "duplicatePrimaryCodes": [],
-      "historicalPercentileWithoutCurrentMetric": []
+      "historicalPercentileWithoutCurrentMetric": [],
+      "priceOlderThan2026_10_22": [
+        {
+          "name": "海澜之家",
+          "priceDate": "2026-10-16"
+        },
+        {
+          "name": "海尔智家",
+          "priceDate": "2026-10-20"
+        },
+        {
+          "name": "美的集团",
+          "priceDate": "2026-10-20"
+        },
+        {
+          "name": "格力电器",
+          "priceDate": "2026-10-20"
+        },
+        {
+          "name": "迈瑞医疗",
+          "priceDate": "2026-10-20"
+        },
+        {
+          "name": "恒瑞医药",
+          "priceDate": "2026-10-20"
+        },
+        {
+          "name": "长江电力",
+          "priceDate": "2026-10-20"
+        },
+        {
+          "name": "中国核电",
+          "priceDate": "2026-10-20"
+        },
+        {
+          "name": "中国神华",
+          "priceDate": "2026-10-20"
+        },
+        {
+          "name": "中国移动",
+          "priceDate": "2026-10-20"
+        },
+        {
+          "name": "中芯国际",
+          "priceDate": "2026-10-19"
+        },
+        {
+          "name": "北方华创",
+          "priceDate": "2026-10-20"
+        },
+        {
+          "name": "中际旭创",
+          "priceDate": "2026-10-16"
+        },
+        {
+          "name": "招商银行",
+          "priceDate": "2026-10-20"
+        },
+        {
+          "name": "工商银行",
+          "priceDate": "2026-10-20"
+        }
+      ]
     },
-    "note": "截至2026-10-23，持续依据公开可查财报补录可核实字段；对单季度、半年度累计、非年化ROE及不同市场币种分别注明，不强行混比。金额字段按百万元人民币记录。未核实的净债务、资本开支、估值倍数及历史分位保留空值；银行/保险现金流口径需行业适配。",
+    "note": "截至2026-10-23，财务字段与行情字段分开维护。本轮新增4家公司的公开行情快照（日期2026-10-22），其中腾讯数据来自第三方估值页，需交叉核验；宁德时代行情页的EPS日期为2026-09-30，主财务记录仍为半年报。未核实的估值倍数、净债务、资本开支及历史分位保持空值。历史分位必须来自真实历史序列，不由当前倍数推算。",
     "withRevenue": 49,
     "withNetProfit": 49,
     "withEPS": 43,
@@ -3477,12 +3553,10 @@
         "国电南瑞",
         "中国电信",
         "中国建筑",
-        "腾讯控股",
         "阿里巴巴",
         "海光信息",
         "阳光电源",
         "汇川技术",
-        "中国平安",
         "中国太保",
         "中信证券",
         "东方财富",
@@ -3518,13 +3592,11 @@
         "国电南瑞",
         "中国电信",
         "中国建筑",
-        "腾讯控股",
         "阿里巴巴",
         "海光信息",
         "阳光电源",
         "汇川技术",
         "工商银行",
-        "中国平安",
         "中国太保",
         "中信证券",
         "东方财富",
@@ -3561,7 +3633,6 @@
         "国电南瑞",
         "中国电信",
         "中国建筑",
-        "腾讯控股",
         "阿里巴巴",
         "海光信息",
         "中际旭创",
