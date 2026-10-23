@@ -2,7 +2,7 @@
   "title": "中国相关上市公司财务与估值数据库",
   "version": "0.1.0",
   "asOf": "2026-10-23",
-  "coverage": "截至2026-10-23，49家公司基础收入和净利润均已录入；新增国药股份、东方财富、分众传媒、阿里巴巴港股收盘价及东方财富PE/PB。估值倍数、每股净资产、ROIC、资本开支、净债务、股息率和历史分位仍有缺口，缺失数据保留为空。",
+  "coverage": "截至2026-10-23，49家公司基础收入和净利润均已录入；本轮补入中国建筑、汇川技术、中信证券A股、兴蓉环境、京东集团港股、锦江酒店2026-10-22历史收盘价。仍有少数证券行情及大量估值/每股净资产/ROIC/资本开支/净债务/股息率/历史分位待核验，缺失值保留为空。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
   "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.\n历史估值分位：必须来自有来源和日期的历史序列或授权API。网页CSV计算器结果仅为用户本地临时结果，须经口径审查后才可写入正式字段。价格超过最近交易日未更新时标记为过期，不得当作实时行情。\n新增派生指标规则：净利率=归母净利润/营业收入；经营现金流/净利润用于观察现金转化；利润与现金流差额=经营现金流-归母净利润。派生字段与公司披露原始字段分开保存，不反推ROIC、净债务、股息率或历史估值分位。模型字段覆盖率仅作缺项提醒，不代表估值结论。",
   "sources": [
@@ -1758,9 +1758,9 @@
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
       "financialPeriod": "2026-06-30（2026年半年度报告，已审阅）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 4.52,
+      "currency": "CNY",
       "revenue": 975837.283,
       "revenueGrowth": -12,
       "netProfit": 23000.277,
@@ -1806,7 +1806,9 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "bookValuePerShare": 11.98,
-      "bookValueSourceUrl": "https://stock.stockstar.com/notice/SN2026082800049566.shtml"
+      "bookValueSourceUrl": "https://stock.stockstar.com/notice/SN2026082800049566.shtml",
+      "marketDataSourceUrl": "https://cn.investing.com/equities/china-state-co-ss-historical-data",
+      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价4.52元。"
     },
     {
       "layer": 4,
@@ -2357,9 +2359,9 @@
       ],
       "formula": "建立收入、利润率、再投资与稀释的多阶段情景DCF；平台型公司补充分部估值，亏损企业不使用常规PE硬套。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 50.45,
+      "currency": "CNY",
       "revenue": 24675.250998,
       "revenueGrowth": 20.31,
       "netProfit": 2809.924122,
@@ -2401,7 +2403,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/shenzhen-inovance-tech-historical-data",
+      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价50.45元。"
     },
     {
       "layer": 5,
@@ -2679,9 +2683,9 @@
       ],
       "formula": "以跨周期正常化利润而非景气高点利润估值；辅以EV/EBITDA、重置成本或分部估值，设置低/中/高周期盈利。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 25.32,
+      "currency": "CNY",
       "revenue": 49692,
       "revenueGrowth": 50,
       "netProfit": 23343,
@@ -2722,7 +2726,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/citic-historical-data",
+      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价25.32元，对应A股600030.SH；未与H股价格混用。"
     },
     {
       "layer": 5,
@@ -2807,9 +2813,9 @@
       ],
       "formula": "建立收入、利润率、再投资与稀释的多阶段情景DCF；平台型公司补充分部估值，亏损企业不使用常规PE硬套。",
       "financialPeriod": "2026-06-30（2026年第二季度业绩，非半年累计）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 97.9,
+      "currency": "HKD",
       "revenue": 346400,
       "revenueGrowth": -2.9,
       "netProfit": 7100,
@@ -2827,7 +2833,7 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://ir.jd.com/news-releases/news-release-details/jdcom-announces-second-quarter-and-interim-2026-results",
-      "verifiedAt": "2026-10-20",
+      "verifiedAt": "2026-10-23",
       "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
       "dataNotes": "2026年第二季度收入3464亿元人民币，同比-2.9%；归属于普通股股东净利润约71亿元人民币，上年同期62亿元；非GAAP净利润约89亿元。记录为单季度，非半年累计；港股价格以港币、ADR价格以美元分别处理。",
       "derivedMetrics": {
@@ -2849,7 +2855,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://hk.finance.yahoo.com/quote/9618.HK/history/",
+      "marketDataNotes": "Yahoo Finance列示2026-10-22京东集团-SW（9618.HK）收盘97.90港元；对应港股，不是美股JD ADR。"
     },
     {
       "layer": 6,
@@ -2932,9 +2940,9 @@
       ],
       "formula": "以跨周期正常化利润而非景气高点利润估值；辅以EV/EBITDA、重置成本或分部估值，设置低/中/高周期盈利。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 17.69,
+      "currency": "CNY",
       "revenue": 6801.169594,
       "revenueGrowth": 4.21,
       "netProfit": 545.090554,
@@ -2952,7 +2960,7 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571973&stockid=600754",
-      "verifiedAt": "2026-10-20",
+      "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
       "dataNotes": "营收68.01亿元，同比+4.21%；归母净利润5.45亿元，同比+47.05%；扣非净利润5.93亿元，同比+45.16%；经营现金流21.03亿元，同比+57.95%；EPS 0.51元。",
       "derivedMetrics": {
@@ -2976,7 +2984,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://kr.investing.com/equities/jinjiang-hotel-historical-data",
+      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价17.69元。"
     },
     {
       "layer": 6,
@@ -3191,9 +3201,9 @@
       ],
       "formula": "用企业自由现金流DCF或股息折现估值，区分维持性与扩张性资本开支；用股息率、净债务和项目回报交叉核验。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 6.95,
+      "currency": "CNY",
       "revenue": 4387.757285,
       "revenueGrowth": 4.67,
       "netProfit": 1020.85275,
@@ -3211,7 +3221,7 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12539476&stockid=000598",
-      "verifiedAt": "2026-10-20",
+      "verifiedAt": "2026-10-23",
       "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
       "dataNotes": "营收43.88亿元，同比+4.67%；归母净利润10.21亿元，同比+4.74%；经营现金流7.28亿元，同比-22.05%；EPS 0.3426元，ROE 5.07%。公用事业估值需进一步补充净债务、资本开支、分红和项目回报。",
       "derivedMetrics": {
@@ -3235,7 +3245,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://hk.investing.com/equities/xingrong-invest-a-historical-data",
+      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价6.95元。"
     },
     {
       "layer": 6,
@@ -3486,6 +3498,13 @@
         "新增国药股份、东方财富、分众传媒、阿里巴巴港股收盘价；东方财富补入同一行情页的PE/PB。"
       ],
       "policy": "双重上市证券区分市场与币种；第三方估值倍数保留来源说明。"
+    },
+    {
+      "date": "2026-10-23",
+      "changes": [
+        "新增中国建筑、汇川技术、中信证券A股、兴蓉环境、京东集团港股、锦江酒店2026-10-22历史收盘价。"
+      ],
+      "policy": "港股与ADR区分证券代码和交易币种；行情采用明确日期的历史收盘价。"
     }
   ],
   "valuationModels": {
@@ -3582,7 +3601,7 @@
   "auditSnapshot": {
     "auditedAt": "2026-10-23",
     "listedCompanies": 49,
-    "withPrice": 41,
+    "withPrice": 47,
     "withPE": 14,
     "withPB": 11,
     "withPS": 1,
@@ -3686,13 +3705,7 @@
     "missingFieldLists": {
       "price": [
         "申洲国际",
-        "中国建筑",
-        "汇川技术",
-        "中信证券",
-        "京东集团",
-        "锦江酒店",
-        "哔哩哔哩",
-        "兴蓉环境"
+        "哔哩哔哩"
       ],
       "PE": [
         "牧原股份",
