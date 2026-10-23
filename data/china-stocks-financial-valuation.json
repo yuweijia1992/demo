@@ -772,7 +772,9 @@
       "derivedMetrics": {
         "netProfitMarginPct": 31,
         "profitability": "盈利",
-        "revenueTrend": "营收同比增长"
+        "revenueTrend": "营收同比增长",
+        "operatingCashFlowToNetProfit": 1.578,
+        "cashFlowProfitGap": 3914.135
       },
       "qualityAlerts": [],
       "dataCompleteness": {
@@ -1739,7 +1741,7 @@
       "eps": 0.55,
       "roe": 4.61,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": -28461.271,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -1752,16 +1754,18 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12569505&stockid=601668",
       "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
-      "dataNotes": "营收9758.37亿元，同比-12.0%；归母净利润230.00亿元，同比-24.3%。原报告金额单位为千元人民币，已换算为百万元人民币。建筑施工需关注新签合同、现金回款、应收与地产相关风险。 2026年半年度报告摘要：基本EPS 0.55元/股、加权平均ROE 4.61%。经营现金流原始摘要单位口径需进一步核对，暂不填入。 2026年半年度报告披露归属普通股股东的每股净资产11.98元。",
+      "dataNotes": "营收9758.37亿元，同比-12.0%；归母净利润230.00亿元，同比-24.3%。原报告金额单位为千元人民币，已换算为百万元人民币。建筑施工需关注新签合同、现金回款、应收与地产相关风险。 2026年半年度报告摘要：基本EPS 0.55元/股、加权平均ROE 4.61%。经营现金流原始摘要单位口径需进一步核对，暂不填入。 2026年半年度报告披露归属普通股股东的每股净资产11.98元。 2026年半年度报告披露经营活动现金流量净额-28,461.271百万元。建筑企业现金流受项目结算、应收款与合同负债变化影响。",
       "derivedMetrics": {
         "netProfitMarginPct": 2.36,
         "profitability": "盈利",
-        "revenueTrend": "营收同比下降"
+        "revenueTrend": "营收同比下降",
+        "operatingCashFlowToNetProfit": -1.237,
+        "cashFlowProfitGap": -51461.548
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 50,
-        "valuationCorePresent": 4,
+        "valuationCorePct": 63,
+        "valuationCorePresent": 5,
         "valuationCoreRequired": 8,
         "requiredFields": [
           "revenue",
@@ -2395,7 +2399,7 @@
       "eps": 2.98,
       "roe": 13.42,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 304611,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -2408,13 +2412,15 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570089&stockid=600036",
       "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
-      "dataNotes": "金额单位：百万元人民币。ROE为年化后归属于本行普通股股东的平均净资产收益率；不良贷款率0.94%、拨备覆盖率385.10%（报告期末）。银行自由现金流/净债务不按普通企业口径套用；EPS待从完整报告核验。 2026年半年度报告：基本EPS 2.98元/股；期末归属于普通股股东的每股净资产45.40元。银行的净债务、自由现金流不套用普通工商企业口径。",
+      "dataNotes": "金额单位：百万元人民币。ROE为年化后归属于本行普通股股东的平均净资产收益率；不良贷款率0.94%、拨备覆盖率385.10%（报告期末）。银行自由现金流/净债务不按普通企业口径套用；EPS待从完整报告核验。 2026年半年度报告：基本EPS 2.98元/股；期末归属于普通股股东的每股净资产45.40元。银行的净债务、自由现金流不套用普通工商企业口径。 2026年半年度报告披露经营活动现金流量净额304,611百万元；银行经营现金流主要受存贷款、同业业务及金融负债变化影响，不直接作为普通企业FCF。",
       "marketDataSourceUrl": "https://quote.cfi.cn/quote.aspx?stockcode=600036&zqlb=0",
       "marketDataNotes": "中财网列示2026-10-20 15:00价格42.52元、PE 7.07、PB 0.79；银行估值还需结合ROE、不良率、拨备覆盖率及资本充足率。",
       "derivedMetrics": {
         "netProfitMarginPct": 42.9,
         "profitability": "盈利",
-        "revenueTrend": "营收同比增长"
+        "revenueTrend": "营收同比增长",
+        "operatingCashFlowToNetProfit": 3.985,
+        "cashFlowProfitGap": 228166
       },
       "qualityAlerts": [],
       "dataCompleteness": {
@@ -2537,7 +2543,9 @@
       "derivedMetrics": {
         "netProfitMarginPct": 16.1,
         "profitability": "盈利",
-        "revenueTrend": "营收同比增长"
+        "revenueTrend": "营收同比增长",
+        "operatingCashFlowToNetProfit": 3.975,
+        "cashFlowProfitGap": 275452
       },
       "qualityAlerts": [],
       "dataCompleteness": {
@@ -2660,7 +2668,9 @@
       "derivedMetrics": {
         "netProfitMarginPct": 46.98,
         "profitability": "盈利",
-        "revenueTrend": "营收同比增长"
+        "revenueTrend": "营收同比增长",
+        "operatingCashFlowToNetProfit": 4.525,
+        "cashFlowProfitGap": 82276.809
       },
       "qualityAlerts": [],
       "dataCompleteness": {
@@ -2971,7 +2981,9 @@
       "dataNotes": "2026年上半年营收约59.91亿元，同比减少约1.21亿元；归母净利润31.28亿元，同比+17.39%，扣非净利润同比-7.06%。营收同比百分比未直接录入，避免根据新闻摘要倒算。 2026年半年度报告摘要：基本EPS 0.2166元、加权平均ROE 20.44%、经营现金流净额4,453.428百万元。",
       "derivedMetrics": {
         "netProfitMarginPct": 52.21,
-        "profitability": "盈利"
+        "profitability": "盈利",
+        "operatingCashFlowToNetProfit": 1.424,
+        "cashFlowProfitGap": 1325.428
       },
       "qualityAlerts": [
         "净利率超过50%：建议复核行业口径/非经常性损益"
@@ -3096,7 +3108,9 @@
       "derivedMetrics": {
         "netProfitMarginPct": 6.26,
         "profitability": "盈利",
-        "revenueTrend": "营收同比增长"
+        "revenueTrend": "营收同比增长",
+        "operatingCashFlowToNetProfit": 3.932,
+        "cashFlowProfitGap": 214.658
       },
       "qualityAlerts": [],
       "dataCompleteness": {
@@ -3379,6 +3393,14 @@
         "海天味业",
         "中国建筑"
       ]
+    },
+    {
+      "date": "2026-10-23",
+      "description": "补录中国建筑和招商银行公开半年报经营现金流，并刷新现金流派生指标及覆盖审计；银行现金流按行业口径说明。",
+      "companies": [
+        "中国建筑",
+        "招商银行"
+      ]
     }
   ],
   "valuationModels": {
@@ -3568,7 +3590,7 @@
     "withRevenue": 49,
     "withNetProfit": 49,
     "withEPS": 48,
-    "withOperatingCashFlow": 42,
+    "withOperatingCashFlow": 44,
     "withFreeCashFlow": 3,
     "derivedNetProfitMargin": 49,
     "derivedCashFlowConversion": 37,
@@ -3754,8 +3776,6 @@
       "operatingCashFlow": [
         "申洲国际",
         "顺丰控股",
-        "中国建筑",
-        "招商银行",
         "工商银行",
         "京东集团",
         "哔哩哔哩"
