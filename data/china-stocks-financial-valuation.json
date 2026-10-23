@@ -4,7 +4,7 @@
   "asOf": "2026-10-23",
   "coverage": "截至 2026-10-20，49 家公司均已建立记录，已为 49/49 家录入至少一项经来源核验的财务数据；但仍有若干公司只核验了部分字段，港股/ADR与A股交易价格、PE/PB/PS、5年/10年估值分位及合理买入区间尚未全部核验，数据库不构成完整买入评级。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
-  "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.\n历史估值分位：必须来自有来源和日期的历史序列或授权API。网页CSV计算器结果仅为用户本地临时结果，须经口径审查后才可写入正式字段。价格超过最近交易日未更新时标记为过期，不得当作实时行情。",
+  "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.\n历史估值分位：必须来自有来源和日期的历史序列或授权API。网页CSV计算器结果仅为用户本地临时结果，须经口径审查后才可写入正式字段。价格超过最近交易日未更新时标记为过期，不得当作实时行情。\n新增派生指标规则：净利率=归母净利润/营业收入；经营现金流/净利润用于观察现金转化；利润与现金流差额=经营现金流-归母净利润。派生字段与公司披露原始字段分开保存，不反推ROIC、净债务、股息率或历史估值分位。模型字段覆盖率仅作缺项提醒，不代表估值结论。",
   "sources": [
     {
       "name": "巨潮资讯网",
@@ -93,7 +93,32 @@
       "dataStatus": "半年度财务数据已核验；价格及估值待核验",
       "dataNotes": "金额单位：百万元人民币。2026年上半年归母净利润同比下降20.02%，经营现金流同比增长229.23%；EPS为半年度基本EPS，ROE为报告披露的加权平均净资产收益率。",
       "marketDataSourceUrl": "https://quote.cfi.cn/quote1587_600887.html",
-      "marketDataNotes": "中财网页面列示2026-10-20 15:00价格27.92元、PE 17.54、PB 3.10。需注意估值PE的计算口径与扣非PE不同。"
+      "marketDataNotes": "中财网页面列示2026-10-20 15:00价格27.92元、PE 17.54、PB 3.10。需注意估值PE的计算口径与扣非PE不同。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 8.95,
+        "operatingCashFlowToNetProfit": 1.695,
+        "cashFlowProfitGap": 4000.519,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 88,
+        "valuationCorePresent": 7,
+        "valuationCoreRequired": 8,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 1,
@@ -134,7 +159,32 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12510732&stockid=002714",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度财务数据已核验；周期估值与价格待核验",
-      "dataNotes": "金额单位：百万元人民币。归母净利润同比转亏，经营现金流为负，主要受生猪销售价格下降影响。猪周期公司不宜按当期亏损PE估值，应建立跨周期猪价、完全成本、出栏量和负债压力情景；当期ROE为报告披露加权平均净资产收益率。"
+      "dataNotes": "金额单位：百万元人民币。归母净利润同比转亏，经营现金流为负，主要受生猪销售价格下降影响。猪周期公司不宜按当期亏损PE估值，应建立跨周期猪价、完全成本、出栏量和负债压力情景；当期ROE为报告披露加权平均净资产收益率。",
+      "derivedMetrics": {
+        "netProfitMarginPct": -10.23,
+        "operatingCashFlowToNetProfit": 0.366,
+        "cashFlowProfitGap": 3853.985,
+        "epsAndProfitBothPresent": true,
+        "profitability": "亏损",
+        "revenueTrend": "营收同比下降"
+      },
+      "qualityAlerts": [
+        "净利润为负：不可直接使用正向PE估值",
+        "经营现金流为负：需核查营运资本及回款"
+      ],
+      "dataCompleteness": {
+        "valuationCorePct": 60,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "eps",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 1,
@@ -176,7 +226,32 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863&stockid=603288",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本每股收益。归母净利润同比增长7.13%，扣非归母净利润同比增长3.77%，经营现金流同比下降18.52%；估值时需留意利润增长与现金流变动不一致。"
+      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本每股收益。归母净利润同比增长7.13%，扣非归母净利润同比增长3.77%，经营现金流同比下降18.52%；估值时需留意利润增长与现金流变动不一致。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 25.95,
+        "operatingCashFlowToNetProfit": 0.292,
+        "cashFlowProfitGap": -2965.93,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 63,
+        "valuationCorePresent": 5,
+        "valuationCoreRequired": 8,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 1,
@@ -220,7 +295,29 @@
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
       "dataNotes": "营收124.20亿元，同比+7.38%；归母净利润14.88亿元，同比-5.86%；扣非净利润14.37亿元，同比-8.24%。金额单位百万元人民币。",
       "marketDataSourceUrl": "https://www.lixinger.com/equity/company/detail/sh/600398/600398/fundamental/valuation/pe-ttm",
-      "marketDataNotes": "理杏仁页面2026-10-16股价6.02元、PE-TTM 13.94；页面显示分位点49.45%，但历史区间选择口径未确认，故不写入5年/10年分位字段。"
+      "marketDataNotes": "理杏仁页面2026-10-16股价6.02元、PE-TTM 13.94；页面显示分位点49.45%，但历史区间选择口径未确认，故不写入5年/10年分位字段。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 11.98,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 63,
+        "valuationCorePresent": 5,
+        "valuationCoreRequired": 8,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 1,
@@ -262,7 +359,30 @@
       "sourceUrl": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2313",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "中期营业额141.79亿元人民币，同比-5.26%；股东应占溢利19.05亿元人民币，同比-40.05%；每股盈利人民币1.27元。原始页面单位人民币千元，已换算为百万元人民币；港股股价另以港币记录。"
+      "dataNotes": "中期营业额141.79亿元人民币，同比-5.26%；股东应占溢利19.05亿元人民币，同比-40.05%；每股盈利人民币1.27元。原始页面单位人民币千元，已换算为百万元人民币；港股股价另以港币记录。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 13.43,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比下降"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 50,
+        "valuationCorePresent": 4,
+        "valuationCoreRequired": 8,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 1,
@@ -306,7 +426,32 @@
       "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
       "dataNotes": "金额单位：百万元人民币；EPS为半年度基本EPS，ROE为报告披露加权平均净资产收益率。营收同比下降2.80%，归母净利润同比下降14.27%，扣非归母净利润同比下降20.54%，经营现金流同比下降12.45%。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/qingdao-haier-historical-data",
-      "marketDataNotes": "Investing.com列示2026-10-20收盘20.10元；PE/PB未在该行情页同步核验。"
+      "marketDataNotes": "Investing.com列示2026-10-20收盘20.10元；PE/PB未在该行情页同步核验。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 6.78,
+        "operatingCashFlowToNetProfit": 0.945,
+        "cashFlowProfitGap": -564.221,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比下降"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 75,
+        "valuationCorePresent": 6,
+        "valuationCoreRequired": 8,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 1,
@@ -350,7 +495,32 @@
       "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
       "dataNotes": "金额单位：百万元人民币（原报告单位千元，已换算）；EPS为半年度基本每股收益，ROE为报告披露加权平均净资产收益率。扣非归母净利润为19,595.179百万元，同比下降25.31%，主要受到汇率及衍生金融工具损益列报影响；归母净利润同比增长1.66%，估值时应区分经常性盈利与非经常性/汇兑影响。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/midea-group-a-historical-data",
-      "marketDataNotes": "Investing.com列示2026-10-20收盘85.30元；PE/PB尚未在同一来源核验。"
+      "marketDataNotes": "Investing.com列示2026-10-20收盘85.30元；PE/PB尚未在同一来源核验。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 10.17,
+        "operatingCashFlowToNetProfit": 1.42,
+        "cashFlowProfitGap": 11106.053,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 75,
+        "valuationCorePresent": 6,
+        "valuationCoreRequired": 8,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 1,
@@ -394,7 +564,32 @@
       "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
       "dataNotes": "金额单位：百万元人民币；归母净利润约132.78亿元，基本EPS为半年度口径。营收同比下降8.15%、归母净利润同比下降7.87%、经营现金流同比下降33.60%。归母净利润为公告摘要中四舍五入值；如需高精度应回查完整利润表。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/gree-electric-a-historical-data",
-      "marketDataNotes": "Investing.com列示2026-10-20收盘38.65元；PE/PB尚未在同一来源核验。"
+      "marketDataNotes": "Investing.com列示2026-10-20收盘38.65元；PE/PB尚未在同一来源核验。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 14.85,
+        "operatingCashFlowToNetProfit": 1.417,
+        "cashFlowProfitGap": 5530.832,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比下降"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 75,
+        "valuationCorePresent": 6,
+        "valuationCoreRequired": 8,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 1,
@@ -435,7 +630,29 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572822&stockid=002594",
       "verifiedAt": "2026-10-20",
       "dataStatus": "半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币。2026年上半年营收同比下降7.13%、归母净利润同比下降20.54%；EPS为半年度基本EPS，ROE为报告披露的加权平均净资产收益率。"
+      "dataNotes": "金额单位：百万元人民币。2026年上半年营收同比下降7.13%、归母净利润同比下降20.54%；EPS为半年度基本EPS，ROE为报告披露的加权平均净资产收益率。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 3.57,
+        "operatingCashFlowToNetProfit": 3.029,
+        "cashFlowProfitGap": 25009.336,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比下降"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 60,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "eps",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 1,
@@ -477,7 +694,29 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12485740&stockid=600066",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收167.19亿元，同比+3.65%；归母净利润18.67亿元，同比-3.52%；扣非净利润17.96亿元，同比+15.83%。"
+      "dataNotes": "营收167.19亿元，同比+3.65%；归母净利润18.67亿元，同比-3.52%；扣非净利润17.96亿元，同比+15.83%。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 11.17,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 38,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 8,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 1,
@@ -519,7 +758,26 @@
       "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534682.PDF",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收218.42亿元，同比+3.94%；归母净利润约67.71亿元，同比+7.21%。金额单位百万元人民币。"
+      "dataNotes": "营收218.42亿元，同比+3.94%；归母净利润约67.71亿元，同比+7.21%。金额单位百万元人民币。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 31,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 40,
+        "valuationCorePresent": 2,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 1,
@@ -561,7 +819,30 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570675&stockid=002352",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度主要财务数据已核验；现金流、价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本EPS。归母净利润同比下降4.11%，扣非归母净利润约49.7亿元、同比增长9.3%，两者差异显著，需拆解非经常性损益；经营现金流暂不填，避免将报告中子公司数据误作集团合并口径。"
+      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本EPS。归母净利润同比下降4.11%，扣非归母净利润约49.7亿元、同比增长9.3%，两者差异显著，需拆解非经常性损益；经营现金流暂不填，避免将报告中子公司数据误作集团合并口径。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 3.54,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 50,
+        "valuationCorePresent": 4,
+        "valuationCoreRequired": 8,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 1,
@@ -602,7 +883,29 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571262&stockid=601919",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收1119.22亿元，同比+2.59%；归母净利润134.19亿元，同比-23.48%；经营现金流233.30亿元，同比-9.49%；EPS 0.88元。航运强周期，估值应使用中周期利润。"
+      "dataNotes": "营收1119.22亿元，同比+2.59%；归母净利润134.19亿元，同比-23.48%；经营现金流233.30亿元，同比-9.49%；EPS 0.88元。航运强周期，估值应使用中周期利润。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 11.99,
+        "operatingCashFlowToNetProfit": 1.739,
+        "cashFlowProfitGap": 9911.305,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 60,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "eps",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 2,
@@ -646,7 +949,27 @@
       "dataStatus": "2026年半年度主要财务数据已核验；其他财务指标、价格及估值待核验",
       "dataNotes": "营业收入177.47亿元，同比增长6.00%；归母净利润47.97亿元，同比下降5.37%；扣非归母净利润50.28亿元，同比下降1.52%。汇率中性口径收入增长8.16%。注意净利润与扣非利润差异。金额单位百万元人民币。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/shenzhen-mindray-bio-medical-historical-data",
-      "marketDataNotes": "Investing.com列示2026-10-20收盘169.73元；PE/PB待同口径核验。"
+      "marketDataNotes": "Investing.com列示2026-10-20收盘169.73元；PE/PB待同口径核验。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 27.03,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 67,
+        "valuationCorePresent": 4,
+        "valuationCoreRequired": 6,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 2,
@@ -690,7 +1013,29 @@
       "dataStatus": "2026年半年度主要财务数据已核验；价格及估值待核验",
       "dataNotes": "营业收入154.56亿元，同比下降1.94%；归母净利润44.65亿元，同比增长0.34%；经营现金流19.87亿元，同比下降53.80%。创新药收入88.09亿元，同比增长16.38%；研发投入46.05亿元，同比增长18.96%。需区分授权收入、药品销售、研发投入及经营现金流波动。金额单位百万元人民币。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/hengrui-medi-historical-data",
-      "marketDataNotes": "Investing.com列示2026-10-20收盘47.37元；PE/PB待同口径核验。"
+      "marketDataNotes": "Investing.com列示2026-10-20收盘47.37元；PE/PB待同口径核验。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 28.89,
+        "operatingCashFlowToNetProfit": 0.445,
+        "cashFlowProfitGap": -2478.279,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比下降"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 83,
+        "valuationCorePresent": 5,
+        "valuationCoreRequired": 6,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 2,
@@ -732,7 +1077,30 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12475210&stockid=603259",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度主要财务数据已核验；价格及估值待核验",
-      "dataNotes": "营业收入288.97亿元，同比增长38.93%；归母净利润110.80亿元，同比增长29.43%；扣非归母净利润105.72亿元，同比增长89.39%；经营现金流96.99亿元，同比增长30.52%；加权平均ROE 13.19%，基本每股收益3.80元。公司提高2026年收入指引并上调资本开支指引；分析时需区分持续经营业务、资产处置/一次性收益及调整后利润。金额单位百万元人民币。"
+      "dataNotes": "营业收入288.97亿元，同比增长38.93%；归母净利润110.80亿元，同比增长29.43%；扣非归母净利润105.72亿元，同比增长89.39%；经营现金流96.99亿元，同比增长30.52%；加权平均ROE 13.19%，基本每股收益3.80元。公司提高2026年收入指引并上调资本开支指引；分析时需区分持续经营业务、资产处置/一次性收益及调整后利润。金额单位百万元人民币。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 38.34,
+        "operatingCashFlowToNetProfit": 0.875,
+        "cashFlowProfitGap": -1381.031,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 83,
+        "valuationCorePresent": 5,
+        "valuationCoreRequired": 6,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 2,
@@ -774,7 +1142,30 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12561169&stockid=300015",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收119.46亿元，同比+3.81%；归母净利润13.57亿元，同比-33.83%；经营现金流29.23亿元，同比-14.10%；EPS 0.1464元，ROE 6.04%。"
+      "dataNotes": "营收119.46亿元，同比+3.81%；归母净利润13.57亿元，同比-33.83%；经营现金流29.23亿元，同比-14.10%；EPS 0.1464元，ROE 6.04%。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 11.36,
+        "operatingCashFlowToNetProfit": 2.154,
+        "cashFlowProfitGap": 1565.517,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 83,
+        "valuationCorePresent": 5,
+        "valuationCoreRequired": 6,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 2,
@@ -816,7 +1207,34 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12504832&stockid=600511",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "营收267.28亿元，同比+4.27%；归母净利润8.80亿元，同比-7.25%；经营现金流-26.34亿元；ROE 4.69%。现金流为负且营收增、利润降，需关注药品流通营运资金与回款。"
+      "dataNotes": "营收267.28亿元，同比+4.27%；归母净利润8.80亿元，同比-7.25%；经营现金流-26.34亿元；ROE 4.69%。现金流为负且营收增、利润降，需关注药品流通营运资金与回款。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 3.29,
+        "operatingCashFlowToNetProfit": -2.994,
+        "cashFlowProfitGap": -3514.113,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [
+        "经营现金流为负：需核查营运资本及回款",
+        "利润为正但经营现金流为负：现金转化需重点复核"
+      ],
+      "dataCompleteness": {
+        "valuationCorePct": 50,
+        "valuationCorePresent": 4,
+        "valuationCoreRequired": 8,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 3,
@@ -860,7 +1278,29 @@
       "dataStatus": "半年度财务数据已核验；价格及估值待核验",
       "dataNotes": "金额单位：百万元人民币。EPS为2026年上半年基本EPS；ROE为报告披露的加权平均净资产收益率，未年化。自由现金流未填，待核对完整资本开支口径。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/yangtze-power-historical-data",
-      "marketDataNotes": "Investing.com列示2026-10-20收盘29.69元；PE/PB参考中财网页面显示值，日期页面盘中快照需复核。"
+      "marketDataNotes": "Investing.com列示2026-10-20收盘29.69元；PE/PB参考中财网页面显示值，日期页面盘中快照需复核。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 38.9,
+        "operatingCashFlowToNetProfit": 1.635,
+        "cashFlowProfitGap": 9372.619,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 80,
+        "valuationCorePresent": 4,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 3,
@@ -902,7 +1342,31 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12495897&stockid=600674",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收6.80亿元，同比-4.53%；归母净利润23.30亿元，同比-5.34%；经营现金流4.42亿元，同比+36.71%；EPS 0.4779元，ROE 5.06%。收入主要为电力及投资收益结构。"
+      "dataNotes": "营收6.80亿元，同比-4.53%；归母净利润23.30亿元，同比-5.34%；经营现金流4.42亿元，同比+36.71%；EPS 0.4779元，ROE 5.06%。收入主要为电力及投资收益结构。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 342.84,
+        "operatingCashFlowToNetProfit": 0.19,
+        "cashFlowProfitGap": -1887.944,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比下降"
+      },
+      "qualityAlerts": [
+        "净利率超过50%：建议复核行业口径/非经常性损益"
+      ],
+      "dataCompleteness": {
+        "valuationCorePct": 60,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 3,
@@ -946,7 +1410,29 @@
       "dataStatus": "2026年半年度主要财务数据已核验；价格、估值与历史分位待核验",
       "dataNotes": "金额单位百万元人民币；收入同比-6.28%，归母净利润同比-35.74%，基本每股收益0.177元，经营现金流同比+2.42%。公司披露利润下降主要与核电大修增加、新能源弃电率上升、电价下降及成本增加有关。核电运营需重点核验资本开支、净债务与分红覆盖，不能把经营现金流直接视为股东自由现金流。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/china-national-nuclear-power-co-ltd-historical-data",
-      "marketDataNotes": "Investing.com列示2026-10-20收盘9.52元；PE/PB待同口径核验。"
+      "marketDataNotes": "Investing.com列示2026-10-20收盘9.52元；PE/PB待同口径核验。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 9.48,
+        "operatingCashFlowToNetProfit": 5.267,
+        "cashFlowProfitGap": 15536.288,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比下降"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 80,
+        "valuationCorePresent": 4,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 3,
@@ -989,7 +1475,29 @@
       "dataStatus": "2026年半年度主要财务数据已核验；价格、估值与历史分位待核验",
       "dataNotes": "金额单位百万元人民币；报告列示2026年上半年营收189,338百万元、归母净利润28,715百万元、基本每股收益1.339元、加权平均ROE 5.83%、经营现金流54,664百万元。公司同期完成收购控股股东旗下12家标的公司，收入和资产同比口径受重述/并购影响；估值需结合煤炭价格周期、煤电运一体化、资本开支与分红。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/china-shenhua",
-      "marketDataNotes": "行情页面列示2026-10-20价格50.99元；页面使用当前行情措辞，尚需收盘记录复核。"
+      "marketDataNotes": "行情页面列示2026-10-20价格50.99元；页面使用当前行情措辞，尚需收盘记录复核。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 15.17,
+        "operatingCashFlowToNetProfit": 1.904,
+        "cashFlowProfitGap": 25949,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 80,
+        "valuationCorePresent": 4,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "eps",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 3,
@@ -1031,7 +1539,29 @@
       "sourceUrl": "https://paper.cnstock.com/html/2026-08/27/content_2260635.htm",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度主要财务数据已核验；其他财务指标、价格及估值待核验",
-      "dataNotes": "营业收入277.67亿元，同比增长14.54%；归母净利润30.73亿元，同比增长4.08%。半年度报告未经审计。重点跟踪订单交付、应收账款/合同资产、经营现金流与利润匹配、研发投入。"
+      "dataNotes": "营业收入277.67亿元，同比增长14.54%；归母净利润30.73亿元，同比增长4.08%。半年度报告未经审计。重点跟踪订单交付、应收账款/合同资产、经营现金流与利润匹配、研发投入。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 11.07,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 38,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 8,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 3,
@@ -1075,7 +1605,29 @@
       "dataStatus": "半年度财务数据已核验；价格及估值待核验",
       "dataNotes": "金额单位：百万元人民币。报告披露自由现金流为538.69亿元；EPS为上半年基本EPS，ROE为报告披露的加权平均净资产收益率，未年化。营业收入同比下降1.1%，主营业务收入同比下降3.1%。",
       "marketDataSourceUrl": "https://data.cfi.cn/600941.html",
-      "marketDataNotes": "A股600941行情，2026-10-20；PE/PB采用中财网显示值。H股00941.HK必须另行录入港币价格与估值，不得共用。"
+      "marketDataNotes": "A股600941行情，2026-10-20；PE/PB采用中财网显示值。H股00941.HK必须另行录入港币价格与估值，不得共用。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 14.67,
+        "operatingCashFlowToNetProfit": 1.455,
+        "cashFlowProfitGap": 35920,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比下降"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 100,
+        "valuationCorePresent": 5,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 3,
@@ -1117,7 +1669,24 @@
       "sourceUrl": "https://paper.cnstock.com/html/2026-08/21/content_2257150.htm",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度部分财务数据已核验；归母净利润、EPS、价格及估值待补充",
-      "dataNotes": "营收2590.1亿元，同比-3.9%；经营活动现金净流入603.8亿元，同比+28.4%。归母净利润、EPS仍待核对。金额单位百万元人民币。"
+      "dataNotes": "营收2590.1亿元，同比-3.9%；经营活动现金净流入603.8亿元，同比+28.4%。归母净利润、EPS仍待核对。金额单位百万元人民币。",
+      "derivedMetrics": {
+        "revenueTrend": "营收同比下降"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 40,
+        "valuationCorePresent": 2,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 3,
@@ -1159,7 +1728,29 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12569505&stockid=601668",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "营收9758.37亿元，同比-12.0%；归母净利润230.00亿元，同比-24.3%。原报告金额单位为千元人民币，已换算为百万元人民币。建筑施工需关注新签合同、现金回款、应收与地产相关风险。"
+      "dataNotes": "营收9758.37亿元，同比-12.0%；归母净利润230.00亿元，同比-24.3%。原报告金额单位为千元人民币，已换算为百万元人民币。建筑施工需关注新签合同、现金回款、应收与地产相关风险。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 2.36,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比下降"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 38,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 8,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 4,
@@ -1201,7 +1792,30 @@
       "sourceUrl": "https://www.tencent.com/zh-cn/investors/financial-reports/",
       "verifiedAt": "2026-10-20",
       "dataStatus": "半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币。EPS为中期基本每股盈利人民币元；简单FCF=经营现金流−资本开支，未必等于公司披露的非国际准则自由现金流，需以完整现金流量表核对。归母净利润采用IFRS口径；另有非IFRS口径，估值时不得混用。"
+      "dataNotes": "金额单位：百万元人民币。EPS为中期基本每股盈利人民币元；简单FCF=经营现金流−资本开支，未必等于公司披露的非国际准则自由现金流，需以完整现金流量表核对。归母净利润采用IFRS口径；另有非IFRS口径，估值时不得混用。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 28.44,
+        "operatingCashFlowToNetProfit": 1.35,
+        "cashFlowProfitGap": 39946,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 83,
+        "valuationCorePresent": 5,
+        "valuationCoreRequired": 6,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 4,
@@ -1243,7 +1857,29 @@
       "sourceUrl": "https://ali-home.alibaba.com/document-2026456290057781248",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "截至2026-06-30季度收入2689.53亿元人民币，同比+9%；归母普通股股东净利润105.37亿元、净利润104.44亿元，同比-75%；经营现金流229.45亿元，同比+11%；自由现金流净流出446.70亿元。该字段记录单季度而非半年累计，不能与A股半年数据直接同比比较。"
+      "dataNotes": "截至2026-06-30季度收入2689.53亿元人民币，同比+9%；归母普通股股东净利润105.37亿元、净利润104.44亿元，同比-75%；经营现金流229.45亿元，同比+11%；自由现金流净流出446.70亿元。该字段记录单季度而非半年累计，不能与A股半年数据直接同比比较。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 3.88,
+        "operatingCashFlowToNetProfit": 2.197,
+        "cashFlowProfitGap": 12501,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 67,
+        "valuationCorePresent": 4,
+        "valuationCoreRequired": 6,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 4,
@@ -1286,7 +1922,28 @@
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
       "dataNotes": "营收386.35亿元，同比+19.4%；归母净利润44.67亿元，同比+94.2%；扣非净利润29.94亿元，同比+57.2%；经营现金流207.60亿元，同比+252%。需关注资本开支、产能利用率与折旧。",
       "marketDataSourceUrl": "https://www.yyqyx.com/s/688981.SH",
-      "marketDataNotes": "最新可核验行情页为2026-10-19收盘；PE-TTM 118.45、PB 4.98、PS-TTM 11.60。非2026-10-20当日收盘，故保留真实行情日期。A/H股分别估值。"
+      "marketDataNotes": "最新可核验行情页为2026-10-19收盘；PE-TTM 118.45、PB 4.98、PS-TTM 11.60。非2026-10-20当日收盘，故保留真实行情日期。A/H股分别估值。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 11.56,
+        "operatingCashFlowToNetProfit": 4.647,
+        "cashFlowProfitGap": 16292.08,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 80,
+        "valuationCorePresent": 4,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "eps",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 4,
@@ -1330,7 +1987,30 @@
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
       "dataNotes": "营收201.61亿元，同比+24.90%；归母净利润33.70亿元，同比+5.05%；经营现金流37.74亿元；EPS 4.6486元，ROE 8.58%。",
       "marketDataSourceUrl": "https://quote.cfi.cn/quote.aspx?client=pc&stockid=10802",
-      "marketDataNotes": "中财网列示2026-10-20 15:00价格566.49元、PE 72.54、PB 8.83；设备公司需结合订单、利润率、研发与周期判断估值。"
+      "marketDataNotes": "中财网列示2026-10-20 15:00价格566.49元、PE 72.54、PB 8.83；设备公司需结合订单、利润率、研发与周期判断估值。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 16.72,
+        "operatingCashFlowToNetProfit": 1.12,
+        "cashFlowProfitGap": 403.678,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 100,
+        "valuationCorePresent": 6,
+        "valuationCoreRequired": 6,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 4,
@@ -1372,7 +2052,32 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492765&stockid=688041",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收90.99亿元，同比+66.52%；归母净利润17.98亿元，同比+49.69%；扣非净利润16.31亿元，同比+49.67%；经营现金流-4.28亿元。增长较快但现金流转弱。"
+      "dataNotes": "营收90.99亿元，同比+66.52%；归母净利润17.98亿元，同比+49.69%；扣非净利润16.31亿元，同比+49.67%；经营现金流-4.28亿元。增长较快但现金流转弱。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 19.77,
+        "operatingCashFlowToNetProfit": -0.238,
+        "cashFlowProfitGap": -2226.009,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [
+        "经营现金流为负：需核查营运资本及回款",
+        "利润为正但经营现金流为负：现金转化需重点复核"
+      ],
+      "dataCompleteness": {
+        "valuationCorePct": 67,
+        "valuationCorePresent": 4,
+        "valuationCoreRequired": 6,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 4,
@@ -1416,7 +2121,30 @@
       "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
       "dataNotes": "营收417.78亿元，同比+182.49%；归母净利润136.51亿元，同比+241.70%；扣非净利润130.92亿元，同比+229.32%；经营现金流17.997亿元，同比-44.08%；EPS 12.31元，ROE 37.62%。增长极强但现金流落后利润，需关注AI光模块周期、客户集中与资本开支。",
       "marketDataSourceUrl": "https://www.lixinger.com/equity/company/detail/sz/300308/300308/fundamental/valuation/pe-ttm",
-      "marketDataNotes": "理杏仁页面最后更新2026-10-16：股价670元、PE-TTM 38.59。页面显示估值分位点29.06%，但分位周期选择器口径未确认，因此不写入5年/10年分位字段。"
+      "marketDataNotes": "理杏仁页面最后更新2026-10-16：股价670元、PE-TTM 38.59。页面显示估值分位点29.06%，但分位周期选择器口径未确认，因此不写入5年/10年分位字段。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 32.68,
+        "operatingCashFlowToNetProfit": 0.132,
+        "cashFlowProfitGap": -11851.475,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 100,
+        "valuationCorePresent": 6,
+        "valuationCoreRequired": 6,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 4,
@@ -1460,7 +2188,30 @@
       "dataStatus": "半年度财务数据已核验；价格及估值待核验",
       "dataNotes": "金额单位：百万元人民币；原报告单位为千元。EPS为2026年上半年基本EPS，ROE为报告披露的加权平均净资产收益率。未以半年数据简单年化推断全年。",
       "marketDataSourceUrl": "https://summary.jrj.com.cn/stock/sz/300750",
-      "marketDataNotes": "2026-10-20页面显示价格259.08元及PE 13.85；PB 2.91来自中财网同日行情页面。不同供应商PE口径存在差异，后续需统一供应商复核。"
+      "marketDataNotes": "2026-10-20页面显示价格259.08元及PE 13.85；PB 2.91来自中财网同日行情页面。不同供应商PE口径存在差异，后续需统一供应商复核。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 15.63,
+        "operatingCashFlowToNetProfit": 1.391,
+        "cashFlowProfitGap": 16932.849,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 100,
+        "valuationCorePresent": 6,
+        "valuationCoreRequired": 6,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 4,
@@ -1501,7 +2252,26 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570245&stockid=300274",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收309.12亿元，同比-28.99%；归母净利润52.59亿元，同比-32.01%。需结合逆变器/储能出货、毛利率、海外需求及营运资金。"
+      "dataNotes": "营收309.12亿元，同比-28.99%；归母净利润52.59亿元，同比-32.01%。需结合逆变器/储能出货、毛利率、海外需求及营运资金。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 17.01,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比下降"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 40,
+        "valuationCorePresent": 2,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "eps",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 4,
@@ -1543,7 +2313,27 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12566550&stockid=300124",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收246.75亿元，同比+20.31%；归母净利润28.10亿元，同比-5.35%。比较期按报告会计政策变更追溯调整后口径。"
+      "dataNotes": "营收246.75亿元，同比+20.31%；归母净利润28.10亿元，同比-5.35%。比较期按报告会计政策变更追溯调整后口径。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 11.39,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 50,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 6,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 5,
@@ -1588,7 +2378,24 @@
       "dataStatus": "半年度财务数据已核验；价格及估值待核验",
       "dataNotes": "金额单位：百万元人民币。ROE为年化后归属于本行普通股股东的平均净资产收益率；不良贷款率0.94%、拨备覆盖率385.10%（报告期末）。银行自由现金流/净债务不按普通企业口径套用；EPS待从完整报告核验。",
       "marketDataSourceUrl": "https://quote.cfi.cn/quote.aspx?stockcode=600036&zqlb=0",
-      "marketDataNotes": "中财网列示2026-10-20 15:00价格42.52元、PE 7.07、PB 0.79；银行估值还需结合ROE、不良率、拨备覆盖率及资本充足率。"
+      "marketDataNotes": "中财网列示2026-10-20 15:00价格42.52元、PE 7.07、PB 0.79；银行估值还需结合ROE、不良率、拨备覆盖率及资本充足率。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 42.9,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 100,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 3,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 5,
@@ -1633,7 +2440,24 @@
       "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
       "dataNotes": "金额单位：百万元人民币。营业收入4,658.59亿元，同比增长9.1%；归母净利润1,736.82亿元；年化加权平均ROE 8.63%。银行业不使用普通企业自由现金流/净债务估值框架；另需跟踪净息差、资产质量、拨备覆盖率与资本充足率。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/icbc-ss-historical-data",
-      "marketDataNotes": "Investing.com列示2026-10-20收盘8.56元；PE/PB需用银行专属估值口径补核。"
+      "marketDataNotes": "Investing.com列示2026-10-20收盘8.56元；PE/PB需用银行专属估值口径补核。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 37.28,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 100,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 3,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 5,
@@ -1675,7 +2499,24 @@
       "sourceUrl": "https://paper.cnstock.com/html/2026-08/21/content_2257372.htm",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年中期财务数据已核验；保险估值指标与价格待核验",
-      "dataNotes": "金额单位：百万元人民币。营业收入5,751.38亿元，同比增长15.0%；归母净利润925.85亿元，同比增长36.1%；归母营运利润841.96亿元，同比增长8.3%；寿险及健康险新业务价值248.47亿元，同比增长11.2%。保险估值需另补EV、NBV、内含价值增长、偿付能力与投资收益等指标；不要把营运利润与归母净利润混用。"
+      "dataNotes": "金额单位：百万元人民币。营业收入5,751.38亿元，同比增长15.0%；归母净利润925.85亿元，同比增长36.1%；归母营运利润841.96亿元，同比增长8.3%；寿险及健康险新业务价值248.47亿元，同比增长11.2%。保险估值需另补EV、NBV、内含价值增长、偿付能力与投资收益等指标；不要把营运利润与归母净利润混用。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 16.1,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 67,
+        "valuationCorePresent": 2,
+        "valuationCoreRequired": 3,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 5,
@@ -1717,7 +2558,27 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12558328&stockid=601601",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收2121.36亿元，同比+5.8%；归母净利润307.75亿元，同比+10.4%；经营现金流1150.80亿元，同比-4.5%；EPS 3.20元，ROE 9.7%。保险应结合EV/NBV与偿付能力估值。"
+      "dataNotes": "营收2121.36亿元，同比+5.8%；归母净利润307.75亿元，同比+10.4%；经营现金流1150.80亿元，同比-4.5%；EPS 3.20元，ROE 9.7%。保险应结合EV/NBV与偿付能力估值。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 14.51,
+        "operatingCashFlowToNetProfit": 3.739,
+        "cashFlowProfitGap": 84305,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 67,
+        "valuationCorePresent": 2,
+        "valuationCoreRequired": 3,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 5,
@@ -1758,7 +2619,26 @@
       "sourceUrl": "https://finance.sina.com.cn/roll/2026-08-21/doc-ininzayz6539720.shtml",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收496.92亿元，同比+50.00%；归母净利润233.43亿元，同比+69.60%；ROE 7.81%。券商盈利受市场成交及自营投资波动影响。"
+      "dataNotes": "营收496.92亿元，同比+50.00%；归母净利润233.43亿元，同比+69.60%；ROE 7.81%。券商盈利受市场成交及自营投资波动影响。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 46.98,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 40,
+        "valuationCorePresent": 2,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "eps",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 5,
@@ -1799,7 +2679,24 @@
       "sourceUrl": "https://www.lanjinger.com/d/1787571308079742205",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "搜索到的半年报报道确认上半年净利润80.64亿元并创历史新高；本次未能从当前来源完整核验营业收入具体数值及同比，故收入字段暂空。券商与财富管理业务利润高度受市场成交和基金销售景气影响。"
+      "dataNotes": "搜索到的半年报报道确认上半年净利润80.64亿元并创历史新高；本次未能从当前来源完整核验营业收入具体数值及同比，故收入字段暂空。券商与财富管理业务利润高度受市场成交和基金销售景气影响。",
+      "derivedMetrics": {
+        "profitability": "盈利"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 20,
+        "valuationCorePresent": 1,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "eps",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 6,
@@ -1841,7 +2738,27 @@
       "sourceUrl": "https://ir.jd.com/news-releases/news-release-details/jdcom-announces-second-quarter-and-interim-2026-results",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "2026年第二季度收入3464亿元人民币，同比-2.9%；归属于普通股股东净利润约71亿元人民币，上年同期62亿元；非GAAP净利润约89亿元。记录为单季度，非半年累计；港股价格以港币、ADR价格以美元分别处理。"
+      "dataNotes": "2026年第二季度收入3464亿元人民币，同比-2.9%；归属于普通股股东净利润约71亿元人民币，上年同期62亿元；非GAAP净利润约89亿元。记录为单季度，非半年累计；港股价格以港币、ADR价格以美元分别处理。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 2.05,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比下降"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 50,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 6,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 6,
@@ -1882,7 +2799,26 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12511942",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收276.55亿元，同比-1.76%；归母净利润31.06亿元，同比+19.49%；扣非净利润30.78亿元，同比+18.61%。估值需结合客流、客单价、渠道政策、库存和毛利率。"
+      "dataNotes": "营收276.55亿元，同比-1.76%；归母净利润31.06亿元，同比+19.49%；扣非净利润30.78亿元，同比+18.61%。估值需结合客流、客单价、渠道政策、库存和毛利率。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 11.23,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比下降"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 40,
+        "valuationCorePresent": 2,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "eps",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 6,
@@ -1923,7 +2859,29 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571973&stockid=600754",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收68.01亿元，同比+4.21%；归母净利润5.45亿元，同比+47.05%；扣非净利润5.93亿元，同比+45.16%；经营现金流21.03亿元，同比+57.95%；EPS 0.51元。"
+      "dataNotes": "营收68.01亿元，同比+4.21%；归母净利润5.45亿元，同比+47.05%；扣非净利润5.93亿元，同比+45.16%；经营现金流21.03亿元，同比+57.95%；EPS 0.51元。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 8.01,
+        "operatingCashFlowToNetProfit": 3.857,
+        "cashFlowProfitGap": 1557.554,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 60,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "eps",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 6,
@@ -1964,7 +2922,27 @@
       "sourceUrl": "https://wap.eastmoney.com/a/202608193845434625.html",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "2026年上半年营收约59.91亿元，同比减少约1.21亿元；归母净利润31.28亿元，同比+17.39%，扣非净利润同比-7.06%。营收同比百分比未直接录入，避免根据新闻摘要倒算。"
+      "dataNotes": "2026年上半年营收约59.91亿元，同比减少约1.21亿元；归母净利润31.28亿元，同比+17.39%，扣非净利润同比-7.06%。营收同比百分比未直接录入，避免根据新闻摘要倒算。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 52.21,
+        "profitability": "盈利"
+      },
+      "qualityAlerts": [
+        "净利率超过50%：建议复核行业口径/非经常性损益"
+      ],
+      "dataCompleteness": {
+        "valuationCorePct": 40,
+        "valuationCorePresent": 2,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "eps",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 6,
@@ -2006,7 +2984,27 @@
       "sourceUrl": "https://www.globenewswire.com/news-release/2026/08/27/3351838/0/en/bilibili-inc-announces-second-quarter-2026-financial-results.html",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "2026年第二季度收入79.4亿元人民币，同比+8%；净利润3.391亿元，同比+55%；调整后净利润7.036亿元，同比+25%。此处为单季度数据，不是半年累计；港股以港币、ADR以美元分别估值。"
+      "dataNotes": "2026年第二季度收入79.4亿元人民币，同比+8%；净利润3.391亿元，同比+55%；调整后净利润7.036亿元，同比+25%。此处为单季度数据，不是半年累计；港股以港币、ADR以美元分别估值。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 4.27,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 50,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 6,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 6,
@@ -2048,7 +3046,29 @@
       "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225515479.PDF",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "营收11.69亿元，同比+1.22%；归母净利润0.732亿元，同比+18.52%；扣非净利润0.805亿元，同比+30.15%。教育培训业务需关注退费、合同负债、现金回款与招录政策变化。"
+      "dataNotes": "营收11.69亿元，同比+1.22%；归母净利润0.732亿元，同比+18.52%；扣非净利润0.805亿元，同比+30.15%。教育培训业务需关注退费、合同负债、现金回款与招录政策变化。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 6.26,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 38,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 8,
+        "requiredFields": [
+          "revenue",
+          "revenueGrowth",
+          "netProfit",
+          "eps",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price",
+          "peTtm"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 6,
@@ -2090,7 +3110,29 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12539476&stockid=000598",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "营收43.88亿元，同比+4.67%；归母净利润10.21亿元，同比+4.74%；经营现金流7.28亿元，同比-22.05%；EPS 0.3426元，ROE 5.07%。公用事业估值需进一步补充净债务、资本开支、分红和项目回报。"
+      "dataNotes": "营收43.88亿元，同比+4.67%；归母净利润10.21亿元，同比+4.74%；经营现金流7.28亿元，同比-22.05%；EPS 0.3426元，ROE 5.07%。公用事业估值需进一步补充净债务、资本开支、分红和项目回报。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 23.27,
+        "operatingCashFlowToNetProfit": 0.713,
+        "cashFlowProfitGap": -292.558,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 60,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     },
     {
       "layer": 6,
@@ -2132,7 +3174,29 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546824&stockid=600323",
       "verifiedAt": "2026-10-20",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收77.37亿元，同比+34.25%；归母净利润12.06亿元，同比+24.76%；经营现金流16.32亿元，同比+33.65%；EPS 1.48元，ROE 7.93%。需留意并购/业务结构变化。"
+      "dataNotes": "营收77.37亿元，同比+34.25%；归母净利润12.06亿元，同比+24.76%；经营现金流16.32亿元，同比+33.65%；EPS 1.48元，ROE 7.93%。需留意并购/业务结构变化。",
+      "derivedMetrics": {
+        "netProfitMarginPct": 15.59,
+        "operatingCashFlowToNetProfit": 1.353,
+        "cashFlowProfitGap": 425.797,
+        "epsAndProfitBothPresent": true,
+        "profitability": "盈利",
+        "revenueTrend": "营收同比增长"
+      },
+      "qualityAlerts": [],
+      "dataCompleteness": {
+        "valuationCorePct": 60,
+        "valuationCorePresent": 3,
+        "valuationCoreRequired": 5,
+        "requiredFields": [
+          "revenue",
+          "netProfit",
+          "operatingCashFlow",
+          "freeCashFlow",
+          "price"
+        ],
+        "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
+      }
     }
   ],
   "batchUpdateLog": [
@@ -2318,7 +3382,15 @@
       "duplicatePrimaryCodes": [],
       "historicalPercentileWithoutCurrentMetric": []
     },
-    "note": "字段覆盖统计，不代表所有行情处于同一交易日或已独立复核。价格日期早于2026-10-20的记录已列为待更新；历史分位尚无正式数据库值。网页新增CSV导入计算器可对外部历史序列进行本地样本分位计算，但结果不会自动写回本数据库。"
+    "note": "原始财务字段沿用既有来源与报告期；新增 derivedMetrics 仅为公式派生指标，不是公司披露值。数据覆盖率仅衡量字段是否存在，不等同于独立核验。历史分位未填造。",
+    "withRevenue": 48,
+    "withNetProfit": 48,
+    "withEPS": 25,
+    "withOperatingCashFlow": 29,
+    "withFreeCashFlow": 3,
+    "derivedNetProfitMargin": 47,
+    "derivedCashFlowConversion": 28,
+    "companiesWithQualityAlerts": 5
   },
   "marketDataSourceMap": {
     "A股": {
