@@ -2,7 +2,7 @@
   "title": "中国相关上市公司财务与估值数据库",
   "version": "0.1.0",
   "asOf": "2026-10-23",
-  "coverage": "截至2026-10-23，共49家公司。已补入2026年上半年资本开支及简化FCF的公司包括美的集团、海天味业、伊利股份、宁德时代、长江电力、海尔智家、比亚迪、格力电器、牧原股份、恒瑞医药、迈瑞医疗、中国移动、中国电信、中国神华。中国移动同时保留公司披露FCF与本库统一简化FCF的口径差异说明。伊利股份期末每股净资产按归母净资产/股本计算；美的集团2026年度中期每股分红方案已记录。净债务已按明确窄口径补录海尔智家、中国电信两家公司；每股净资产新增海尔智家、中国电信计算值及中国神华报告披露值；其余公司、股息率、ROIC与历史估值分位仍需逐家公司原始报告或历史时间序列核验。 本轮补录美的集团2026年半年度现金及现金等价物、短期借款和非流动借款；净债务因借款附注分类与资产负债表列示口径不一致而保留空值。 格力电器新增2026年半年度货币资金、短期借款、长期借款及计算型每股净资产；净债务未以货币资金直接替代现金及现金等价物计算。 新增长江电力、恒瑞医药、迈瑞医疗2026年半年度资产负债表核验字段及计算型每股净资产；对借款分类与现金口径单独备注。 中国移动新增2026年半年度现金、借款及计算型每股净资产字段。 本批次继续按49家公司全量审计口径推进：新增宁德时代、比亚迪2026-06-30货币资金、现金及现金等价物、短期借款、长期借款与计算型BVPS；对一年内到期债务、债券、租赁负债等另列说明，不将狭义借款差额冒充完整净债务。",
+  "coverage": "截至2026-10-23，共49家公司。已补入2026年上半年资本开支及简化FCF的公司包括美的集团、海天味业、伊利股份、宁德时代、长江电力、海尔智家、比亚迪、格力电器、牧原股份、恒瑞医药、迈瑞医疗、中国移动、中国电信、中国神华。中国移动同时保留公司披露FCF与本库统一简化FCF的口径差异说明。伊利股份期末每股净资产按归母净资产/股本计算；美的集团2026年度中期每股分红方案已记录。净债务已按明确窄口径补录海尔智家、中国电信两家公司；每股净资产新增海尔智家、中国电信计算值及中国神华报告披露值；其余公司、股息率、ROIC与历史估值分位仍需逐家公司原始报告或历史时间序列核验。 本轮补录美的集团2026年半年度现金及现金等价物、短期借款和非流动借款；净债务因借款附注分类与资产负债表列示口径不一致而保留空值。 格力电器新增2026年半年度货币资金、短期借款、长期借款及计算型每股净资产；净债务未以货币资金直接替代现金及现金等价物计算。 新增长江电力、恒瑞医药、迈瑞医疗2026年半年度资产负债表核验字段及计算型每股净资产；对借款分类与现金口径单独备注。 中国移动新增2026年半年度现金、借款及计算型每股净资产字段。 本批次继续按49家公司全量审计口径推进：新增宁德时代、比亚迪2026-06-30货币资金、现金及现金等价物、短期借款、长期借款与计算型BVPS；对一年内到期债务、债券、租赁负债等另列说明，不将狭义借款差额冒充完整净债务。 金融企业专项字段开始按行业分模型维护；本批次录入招商银行、工商银行、中国平安、中国太保、中信证券、东方财富的金融分析类型、报告来源及可核验指标；东方财富每股净资产更新为2026年中报披露值6.22元。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
   "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.\n历史估值分位：必须来自有来源和日期的历史序列或授权API。网页CSV计算器结果仅为用户本地临时结果，须经口径审查后才可写入正式字段。价格超过最近交易日未更新时标记为过期，不得当作实时行情。\n新增派生指标规则：净利率=归母净利润/营业收入；经营现金流/净利润用于观察现金转化；利润与现金流差额=经营现金流-归母净利润。派生字段与公司披露原始字段分开保存，不反推ROIC、净债务、股息率或历史估值分位。模型字段覆盖率仅作缺项提醒，不代表估值结论。",
   "sources": [
@@ -2664,7 +2664,22 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "bookValuePerShare": 45.4,
-      "bookValuePerShareDate": "2026-06-30"
+      "bookValuePerShareDate": "2026-06-30",
+      "financialAnalysisModel": "bank",
+      "financialAnalysisDate": "2026-06-30",
+      "financialAnalysisSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570089&stockid=600036",
+      "financialAnalysisMetrics": {
+        "loans": 7453033,
+        "deposits": 10162498,
+        "nplPct": 0.94,
+        "coreTier1CapitalAdequacyPct": 11.82
+      },
+      "financialAnalysisNotes": "银行不适用普通企业净债务、FCF或工业企业ROIC；核心看净息差、存贷款规模、资产质量、拨备覆盖率、核心一级资本充足率、ROE与PB。2026-06-30归属于本行股东权益1,345,033百万元；报告披露普通股每股净资产45.40元。",
+      "parentEquityDate": "2026-06-30",
+      "parentEquity": 1345033,
+      "parentEquitySourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570089&stockid=600036",
+      "bookValuePerShareMethod": "2026年半年度报告披露的普通股每股净资产",
+      "bookValuePerShareSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570089&stockid=600036"
     },
     {
       "layer": 5,
@@ -2731,7 +2746,23 @@
       },
       "bookValuePerShare": 11.12,
       "bookValueSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
-      "bookValuePerShareDate": "2026-06-30"
+      "bookValuePerShareDate": "2026-06-30",
+      "financialAnalysisModel": "bank",
+      "financialAnalysisDate": "2026-06-30",
+      "financialAnalysisSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
+      "financialAnalysisMetrics": {
+        "deposits": 39173265,
+        "coreTier1CapitalAdequacyPct": 13.21,
+        "capitalAdequacyPct": 18.57,
+        "nplPct": 1.29,
+        "provisionCoveragePct": 217.58
+      },
+      "financialAnalysisNotes": "银行不适用普通企业净债务、FCF或工业企业ROIC；核心看净息差、存贷款规模、资产质量、拨备覆盖率、资本充足率、ROE与PB。2026-06-30归母权益4,326,994百万元；报告披露每股净资产11.12元。",
+      "parentEquityDate": "2026-06-30",
+      "parentEquity": 4326994,
+      "parentEquitySourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
+      "bookValuePerShareMethod": "2026年半年度报告披露的普通股每股净资产",
+      "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398"
     },
     {
       "layer": 5,
@@ -2796,7 +2827,20 @@
       "bookValuePerShare": 56.78,
       "marketDataSourceUrl": "https://quote.cfi.cn/quote.aspx?client=pc&lm=gsda&stockid=7143",
       "marketDataNotes": "中财网公开行情页显示2026-10-22 15:00收盘价50.94元、PE 5.79；该来源PB与已核实每股净资产存在口径不一致，因此PB暂不录入。",
-      "bookValuePerShareDate": "2026-06-30"
+      "bookValuePerShareDate": "2026-06-30",
+      "financialAnalysisModel": "insurance_conglomerate",
+      "financialAnalysisDate": "2026-06-30",
+      "financialAnalysisSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12512667&stockid=601318",
+      "financialAnalysisMetrics": {
+        "assets": 14300954,
+        "liabilities": 12846874,
+        "netProfit": 92585,
+        "operatingCashFlow": 368037
+      },
+      "financialAnalysisNotes": "综合金融/保险集团不适用普通制造业净债务和FCF；应分寿险新业务价值、内含价值、保险服务业绩、投资收益与风险、偿付能力充足率、归母净资产及分部估值。2026-06-30归母权益1,028,084百万元。",
+      "parentEquityDate": "2026-06-30",
+      "parentEquity": 1028084,
+      "parentEquitySourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12512667&stockid=601318"
     },
     {
       "layer": 5,
@@ -2860,7 +2904,12 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "marketDataSourceUrl": "https://cn.investing.com/equities/china-pacific-historical-data",
-      "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。"
+      "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。",
+      "financialAnalysisModel": "insurance_conglomerate",
+      "financialAnalysisDate": "2026-06-30",
+      "financialAnalysisSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12558328&stockid=601601",
+      "financialAnalysisMetrics": {},
+      "financialAnalysisNotes": "保险公司不套用普通制造业净债务、FCF和ROIC；优先补齐寿险新业务价值、内含价值、保险服务业绩、投资收益、偿付能力充足率、归母净资产、每股净资产及分部估值。待本批次继续核验原始半年报对应数值。"
     },
     {
       "layer": 5,
@@ -2924,7 +2973,23 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "marketDataSourceUrl": "https://cn.investing.com/equities/citic-historical-data",
-      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价25.32元，对应A股600030.SH；未与H股价格混用。"
+      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价25.32元，对应A股600030.SH；未与H股价格混用。",
+      "financialAnalysisModel": "securities_broker",
+      "financialAnalysisDate": "2026-06-30",
+      "financialAnalysisSourceUrl": "https://statics.citics.com/website/report/2026/web/e-book/web/index.html",
+      "financialAnalysisMetrics": {
+        "assets": 2469928.839,
+        "liabilities": 2112916.45,
+        "netCapital": 181039.229,
+        "capitalCoveragePct": 225.31,
+        "capitalLeveragePct": 12.7,
+        "liquidityCoveragePct": 144.06,
+        "netStableFundingPct": 136.87
+      },
+      "financialAnalysisNotes": "证券公司不套用普通制造业净债务、FCF和ROIC；重点使用净资本、风险覆盖率、资本杠杆率、流动性覆盖率、净稳定资金率、经纪/投行/资管/自营分部收入及ROE。2026-06-30归母权益351,036百万元。",
+      "parentEquityDate": "2026-06-30",
+      "parentEquity": 351036,
+      "parentEquitySourceUrl": "https://statics.citics.com/website/report/2026/web/e-book/web/index.html"
     },
     {
       "layer": 5,
@@ -2989,7 +3054,20 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "marketDataSourceUrl": "https://quote.cfi.cn/300059.html",
-      "marketDataNotes": "中财网列示2026-10-22收盘17.78元、PE-TTM 19.29倍、PB 2.86倍；第三方估值口径需交叉核验。"
+      "marketDataNotes": "中财网列示2026-10-22收盘17.78元、PE-TTM 19.29倍、PB 2.86倍；第三方估值口径需交叉核验。",
+      "financialAnalysisModel": "online_brokerage",
+      "financialAnalysisDate": "2026-06-30",
+      "financialAnalysisSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518811",
+      "financialAnalysisMetrics": {
+        "revenue": 10505.339284,
+        "netProfit": 8064.281453,
+        "operatingCashFlow": 30313.788394
+      },
+      "financialAnalysisNotes": "互联网券商/金融信息服务公司需区分证券业务客户资金、金融资产负债与自有经营现金；不将客户资金或交易性金融资产简单视为可自由分配现金，也不机械套用制造业净债务。2026H1报告披露每股净资产6.22元。",
+      "bookValuePerShare": 6.22,
+      "bookValuePerShareDate": "2026-06-30",
+      "bookValuePerShareMethod": "2026年半年度报告披露的普通股每股净资产",
+      "bookValuePerShareSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518811"
     },
     {
       "layer": 6,
@@ -3784,6 +3862,11 @@
       "date": "2026-10-23",
       "scope": "批量补录宁德时代、比亚迪2026H1现金/借款/BVPS并更新覆盖统计",
       "policy": "依据两家公司2026年半年度报告合并资产负债表与现金流量表；金额统一为百万元人民币，BVPS按归母股东权益/总股本计算。货币资金与现金及现金等价物分别保存；另有一年内到期非流动负债、债券、租赁负债等时，不用狭义公式冒充完整净债务。"
+    },
+    {
+      "date": "2026-10-23",
+      "scope": "金融企业专项模型批量建档：招商银行、工商银行、中国平安、中国太保、中信证券、东方财富",
+      "policy": "按业务分别采用银行资产质量/资本充足率、保险内含价值/偿付能力、券商净资本/流动性与互联网券商业务指标；不使用普通制造业净债务、FCF及ROIC口径。只录入原始报告或可追溯报告摘要中已核验的指标，未核验字段继续留空。"
     }
   ],
   "valuationModels": {
@@ -3969,7 +4052,7 @@
         }
       ]
     },
-    "note": "资本开支取现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’，金额统一为百万元；简化FCF=经营现金流-该项资本开支，不含其他投资现金流，半年值不年化。银行、保险等金融机构不套用普通企业FCF/净债务口径。历史估值分位必须使用同一证券、同一估值倍数定义、日期连续且经复权/口径检查的真实历史序列。 本轮净债务仅对海尔智家、中国电信按半年度报告披露现金与借款计算；统一采用窄口径（短期借款+长期借款-现金），不含租赁负债及其他融资性负债，不能直接与采用广义净债务口径的数据库比较。 本轮复核修正海尔智家现金及现金等价物、以及中国电信长期借款数据；两家公司均按短期借款+长期借款-现金及现金等价物的窄口径计算，未纳入债券、租赁负债及一年内到期非流动负债。 本轮补录海尔智家、中国电信的计算型每股净资产及中国神华报告披露每股净资产；计算型BVPS采用归母股东权益/股本，报告披露值与计算值在字段方法中区分。 本轮新增美的集团2026-06-30现金及现金等价物、短期借款和非流动借款余额，均从半年度报告提取并统一为百万元人民币；因借款分类口径存在差异，净债务暂不计算，避免混算。 本轮补录格力电器2026年半年度货币资金、短期借款、长期借款及按归母权益/股本计算的每股净资产；货币资金与现金及现金等价物口径不同，故净债务保留空值。 本轮核验长江电力、恒瑞医药、迈瑞医疗2026-06-30货币资金/现金及现金等价物、短期借款、长期借款及计算型每股净资产。长江电力存在大量一年内到期非流动负债及应付债券，不以简化公式冒充完整净债务。 本轮新增中国移动2026-06-30货币资金、现金及现金等价物、长期借款及计算型每股净资产；考虑财务公司吸收存款、租赁负债及一年内到期负债，不将其视为普通企业简化净债务。 本批次新增宁德时代、比亚迪2026-06-30资产负债表字段及BVPS。货币资金与现金及现金等价物分开记录；净债务不在存在重要债券、一年内到期非流动负债或租赁负债时简单计算。",
+    "note": "资本开支取现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’，金额统一为百万元；简化FCF=经营现金流-该项资本开支，不含其他投资现金流，半年值不年化。银行、保险等金融机构不套用普通企业FCF/净债务口径。历史估值分位必须使用同一证券、同一估值倍数定义、日期连续且经复权/口径检查的真实历史序列。 本轮净债务仅对海尔智家、中国电信按半年度报告披露现金与借款计算；统一采用窄口径（短期借款+长期借款-现金），不含租赁负债及其他融资性负债，不能直接与采用广义净债务口径的数据库比较。 本轮复核修正海尔智家现金及现金等价物、以及中国电信长期借款数据；两家公司均按短期借款+长期借款-现金及现金等价物的窄口径计算，未纳入债券、租赁负债及一年内到期非流动负债。 本轮补录海尔智家、中国电信的计算型每股净资产及中国神华报告披露每股净资产；计算型BVPS采用归母股东权益/股本，报告披露值与计算值在字段方法中区分。 本轮新增美的集团2026-06-30现金及现金等价物、短期借款和非流动借款余额，均从半年度报告提取并统一为百万元人民币；因借款分类口径存在差异，净债务暂不计算，避免混算。 本轮补录格力电器2026年半年度货币资金、短期借款、长期借款及按归母权益/股本计算的每股净资产；货币资金与现金及现金等价物口径不同，故净债务保留空值。 本轮核验长江电力、恒瑞医药、迈瑞医疗2026-06-30货币资金/现金及现金等价物、短期借款、长期借款及计算型每股净资产。长江电力存在大量一年内到期非流动负债及应付债券，不以简化公式冒充完整净债务。 本轮新增中国移动2026-06-30货币资金、现金及现金等价物、长期借款及计算型每股净资产；考虑财务公司吸收存款、租赁负债及一年内到期负债，不将其视为普通企业简化净债务。 本批次新增宁德时代、比亚迪2026-06-30资产负债表字段及BVPS。货币资金与现金及现金等价物分开记录；净债务不在存在重要债券、一年内到期非流动负债或租赁负债时简单计算。 本批次为招商银行、工商银行、中国平安、中国太保、中信证券、东方财富建立独立金融业分析口径：银行看存贷款、资产质量、拨备及资本充足率；保险看内含价值/新业务价值/偿付能力及分部表现；券商看净资本与流动性风险指标；不把普通企业净债务或FCF机械套用到金融企业。",
     "withRevenue": 49,
     "withNetProfit": 49,
     "withEPS": 48,
@@ -4963,13 +5046,13 @@
         "瀚蓝环境"
       ]
     },
-    "withBookValuePerShare": 17,
+    "withBookValuePerShare": 18,
     "withROIC": 0,
     "withCapex": 15,
     "withNetDebt": 2,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
-    "withBVPS": 17,
+    "withBVPS": 18,
     "withMonetaryFunds": 7,
     "withCashAndCashEquivalents": 7,
     "withShortTermBorrowings": 8,
