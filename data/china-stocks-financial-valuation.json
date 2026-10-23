@@ -1,7 +1,7 @@
 {
   "title": "中国相关上市公司财务与估值数据库",
   "version": "0.1.0",
-  "asOf": "2026-10-20",
+  "asOf": "2026-10-23",
   "coverage": "截至 2026-10-20，49 家公司均已建立记录，已为 49/49 家录入至少一项经来源核验的财务数据；但仍有若干公司只核验了部分字段，港股/ADR与A股交易价格、PE/PB/PS、5年/10年估值分位及合理买入区间尚未全部核验，数据库不构成完整买入评级。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
   "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.",
@@ -2289,7 +2289,7 @@
     "合理买入区间必须保存模型、输入假设、悲观/基准/乐观结果、安全边际与失效条件；禁止将模型演示值伪装成市场事实。"
   ],
   "auditSnapshot": {
-    "auditedAt": "2026-10-20",
+    "auditedAt": "2026-10-23",
     "listedCompanies": 49,
     "withPrice": 17,
     "withPE": 9,
@@ -2297,6 +2297,69 @@
     "withPS": 1,
     "with5YPercentile": 0,
     "with10YPercentile": 0,
-    "note": "审计快照只统计字段是否有值，不代表字段已在同一交易日或同一来源口径完成横向校准。"
+    "note": "字段覆盖统计，不代表已统一交易日或独立复核。历史分位需要授权API或逐证券历史序列；不以当前截面值推算。"
+  },
+  "marketDataSourceMap": {
+    "A股": {
+      "quoteAndSnapshot": {
+        "name": "东方财富估值分析",
+        "url": "https://data.eastmoney.com/gzfx/",
+        "fields": [
+          "price",
+          "priceDate",
+          "peTtm",
+          "pb",
+          "psTtm"
+        ],
+        "notes": "页面公开展示最新估值快照；写入数据库时应保存实际数据日期、证券代码与抓取时间。"
+      },
+      "historicalPercentiles": {
+        "name": "理杏仁基本面数据 API",
+        "url": "https://www.lixinger.com/api/open-api/html-doc/cn/company/fundamental/security",
+        "fields": [
+          "valuationPercentile5Y",
+          "valuationPercentile10Y"
+        ],
+        "notes": "支持 PE-TTM/PB/PS-TTM 及5年/10年统计分位；API需要用户专属Token，未连接授权前不伪造历史分位。"
+      },
+      "secondaryCrossCheck": {
+        "name": "百分位个股历史估值",
+        "url": "https://baifenwei.com/stocks/",
+        "fields": [
+          "peTtm",
+          "pb",
+          "psTtm",
+          "valuationPercentile5Y",
+          "valuationPercentile10Y"
+        ],
+        "notes": "作为交叉核验来源；需记录其数据日和统计口径，不应与其他来源混作同日数据。"
+      }
+    },
+    "港股及ADR": {
+      "notes": "A股行情/估值接口不能直接用于港股或ADR。必须按交易所证券代码和交易币种分别获取价格、每股指标、财报币种及换算日期；跨市场同公司证券分别记录。",
+      "quoteReference": "https://www.etnet.com.hk/www/tc/stocks/index.php",
+      "financialStatements": "https://www.hkexnews.hk/"
+    },
+    "dataCaptureContract": {
+      "requiredFields": [
+        "code",
+        "exchange",
+        "priceDate",
+        "price",
+        "currency",
+        "peTtm",
+        "pb",
+        "psTtm",
+        "sourceUrl",
+        "verifiedAt",
+        "dataStatus",
+        "dataNotes"
+      ],
+      "percentileFields": [
+        "valuationPercentile5Y",
+        "valuationPercentile10Y"
+      ],
+      "rule": "只有来源能支持精确证券、数据日期和指标口径时才写入；否则保持null，并标记待核验。"
+    }
   }
 }
