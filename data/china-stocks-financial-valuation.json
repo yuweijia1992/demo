@@ -2,7 +2,7 @@
   "title": "中国相关上市公司财务与估值数据库",
   "version": "0.1.0",
   "asOf": "2026-10-23",
-  "coverage": "截至 2026-10-23，49 家公司均已建立记录并录入至少一项来源核验财务数据；本轮补入顺丰控股经营现金流与ROE、中远海控ROE、工商银行经营现金流与每股净资产。价格/估值、每股净资产及历史估值分位仍有大量缺口，缺失值保留为空；历史分位仅依据真实历史序列计算。",
+  "coverage": "截至2026-10-23，49家公司的基础收入与净利润字段均已录入；本轮新增7家公司2026-10-22历史收盘价及美的集团每股净资产。行情来源仍需交叉验证，估值倍数、每股净资产及现金流等字段仍有缺口；缺失数据保留为空，不以估算值伪装成披露值。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
   "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.\n历史估值分位：必须来自有来源和日期的历史序列或授权API。网页CSV计算器结果仅为用户本地临时结果，须经口径审查后才可写入正式字段。价格超过最近交易日未更新时标记为过期，不得当作实时行情。\n新增派生指标规则：净利率=归母净利润/营业收入；经营现金流/净利润用于观察现金转化；利润与现金流差额=经营现金流-归母净利润。派生字段与公司披露原始字段分开保存，不反推ROIC、净债务、股息率或历史估值分位。模型字段覆盖率仅作缺项提醒，不代表估值结论。",
   "sources": [
@@ -139,8 +139,8 @@
       ],
       "formula": "以跨周期正常化利润而非景气高点利润估值；辅以EV/EBITDA、重置成本或分部估值，设置低/中/高周期盈利。",
       "financialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
-      "priceDate": null,
-      "price": null,
+      "priceDate": "2026-10-22",
+      "price": 42.08,
       "currency": "CNY",
       "revenue": 59410.3064,
       "revenueGrowth": -22.3,
@@ -159,7 +159,7 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12510732&stockid=002714",
-      "verifiedAt": "2026-10-20",
+      "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度财务数据已核验；周期估值与价格待核验",
       "dataNotes": "金额单位：百万元人民币。归母净利润同比转亏，经营现金流为负，主要受生猪销售价格下降影响。猪周期公司不宜按当期亏损PE估值，应建立跨周期猪价、完全成本、出栏量和负债压力情景；当期ROE为报告披露加权平均净资产收益率。",
       "derivedMetrics": {
@@ -186,7 +186,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/muyuan-foodstuff-a-historical-data",
+      "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。"
     },
     {
       "layer": 1,
@@ -499,9 +501,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572219&stockid=000333",
-      "verifiedAt": "2026-10-20",
+      "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币（原报告单位千元，已换算）；EPS为半年度基本每股收益，ROE为报告披露加权平均净资产收益率。扣非归母净利润为19,595.179百万元，同比下降25.31%，主要受到汇率及衍生金融工具损益列报影响；归母净利润同比增长1.66%，估值时应区分经常性盈利与非经常性/汇兑影响。",
+      "dataNotes": "金额单位：百万元人民币（原报告单位千元，已换算）；EPS为半年度基本每股收益，ROE为报告披露加权平均净资产收益率。扣非归母净利润为19,595.179百万元，同比下降25.31%，主要受到汇率及衍生金融工具损益列报影响；归母净利润同比增长1.66%，估值时应区分经常性盈利与非经常性/汇兑影响。 期末每股净资产27.8168元，来源为证券时报公开财务指标页，报告期2026-06-30。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/midea-group-a-historical-data",
       "marketDataNotes": "Investing.com列示2026-10-20收盘85.30元；PE/PB尚未在同一来源核验。",
       "derivedMetrics": {
@@ -528,7 +530,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "bookValuePerShare": 27.8168,
+      "bookValueSourceUrl": "https://www.stcn.com/quotes/index.html?stock_code=sz000333"
     },
     {
       "layer": 1,
@@ -616,9 +620,9 @@
       ],
       "formula": "以跨周期正常化利润而非景气高点利润估值；辅以EV/EBITDA、重置成本或分部估值，设置低/中/高周期盈利。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": "CNY（A股；港股另用HKD行情）",
+      "priceDate": "2026-10-22",
+      "price": 80.74,
+      "currency": "CNY",
       "revenue": 344815.421,
       "revenueGrowth": -7.13,
       "netProfit": 12325.408,
@@ -636,7 +640,7 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572822&stockid=002594",
-      "verifiedAt": "2026-10-20",
+      "verifiedAt": "2026-10-23",
       "dataStatus": "半年度财务数据已核验；价格及估值待核验",
       "dataNotes": "金额单位：百万元人民币。2026年上半年营收同比下降7.13%、归母净利润同比下降20.54%；EPS为半年度基本EPS，ROE为报告披露的加权平均净资产收益率。",
       "derivedMetrics": {
@@ -660,7 +664,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/byd-a-historical-data",
+      "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。"
     },
     {
       "layer": 1,
@@ -680,9 +686,9 @@
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 27.49,
+      "currency": "CNY",
       "revenue": 16718.5255,
       "revenueGrowth": 3.65,
       "netProfit": 1867.4134,
@@ -726,7 +732,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/yutong-bus-historical-data",
+      "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。"
     },
     {
       "layer": 1,
@@ -875,9 +883,9 @@
       ],
       "formula": "以跨周期正常化利润而非景气高点利润估值；辅以EV/EBITDA、重置成本或分部估值，设置低/中/高周期盈利。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 16.36,
+      "currency": "CNY",
       "revenue": 111921.747569,
       "revenueGrowth": 2.59,
       "netProfit": 13418.920777,
@@ -919,7 +927,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/china-cosco-historical-data",
+      "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。"
     },
     {
       "layer": 2,
@@ -1071,9 +1081,9 @@
       ],
       "formula": "建立收入、利润率、再投资与稀释的多阶段情景DCF；平台型公司补充分部估值，亏损企业不使用常规PE硬套。",
       "financialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 142.1,
+      "currency": "CNY",
       "revenue": 28897.478718,
       "revenueGrowth": 38.93,
       "netProfit": 11080.173661,
@@ -1091,7 +1101,7 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12475210&stockid=603259",
-      "verifiedAt": "2026-10-20",
+      "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度主要财务数据已核验；价格及估值待核验",
       "dataNotes": "营业收入288.97亿元，同比增长38.93%；归母净利润110.80亿元，同比增长29.43%；扣非归母净利润105.72亿元，同比增长89.39%；经营现金流96.99亿元，同比增长30.52%；加权平均ROE 13.19%，基本每股收益3.80元。公司提高2026年收入指引并上调资本开支指引；分析时需区分持续经营业务、资产处置/一次性收益及调整后利润。金额单位百万元人民币。",
       "derivedMetrics": {
@@ -1116,7 +1126,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/wuxi-apptec-historical-data",
+      "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。"
     },
     {
       "layer": 2,
@@ -2064,9 +2076,9 @@
       ],
       "formula": "建立收入、利润率、再投资与稀释的多阶段情景DCF；平台型公司补充分部估值，亏损企业不使用常规PE硬套。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 190.48,
+      "currency": "CNY",
       "revenue": 9099.020775,
       "revenueGrowth": 66.52,
       "netProfit": 1798.467918,
@@ -2111,7 +2123,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/hygon-information-tech-historical-data",
+      "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。"
     },
     {
       "layer": 4,
@@ -2586,9 +2600,9 @@
       ],
       "formula": "以调整后内含价值为锚，对EV及未来NBV贡献分别估值；对投资回报、风险贴现率与长期假设做压力测试。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 28.45,
+      "currency": "CNY",
       "revenue": 212136,
       "revenueGrowth": 5.8,
       "netProfit": 30775,
@@ -2606,7 +2620,7 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12558328&stockid=601601",
-      "verifiedAt": "2026-10-20",
+      "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
       "dataNotes": "营收2121.36亿元，同比+5.8%；归母净利润307.75亿元，同比+10.4%；经营现金流1150.80亿元，同比-4.5%；EPS 3.20元，ROE 9.7%。保险应结合EV/NBV与偿付能力估值。",
       "derivedMetrics": {
@@ -2628,7 +2642,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/china-pacific-historical-data",
+      "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。"
     },
     {
       "layer": 5,
@@ -3415,6 +3431,14 @@
         "工商银行：补入2026年上半年经营现金流1369013百万元、期末每股净资产11.12元，依据2026年半年度报告摘要及财务报表。"
       ],
       "policy": "仅写入来源可追溯的数据；报告期ROE保留公司披露口径，不自行年化，历史估值分位不以当前估值推算。"
+    },
+    {
+      "date": "2026-10-23",
+      "changes": [
+        "新增7家公司2026-10-22历史收盘价：牧原股份、比亚迪、宇通客车、药明康德、海光信息、中国太保、中远海控；均注明第三方行情来源。",
+        "美的集团新增2026-06-30每股净资产27.8168元，来源证券时报公开财务指标页。"
+      ],
+      "policy": "股价统一记录历史收盘价日期；不将盘中延迟报价混同为收盘价。估值倍数未核验时继续留空。"
     }
   ],
   "valuationModels": {
@@ -3511,7 +3535,7 @@
   "auditSnapshot": {
     "auditedAt": "2026-10-23",
     "listedCompanies": 49,
-    "withPrice": 22,
+    "withPrice": 29,
     "withPE": 12,
     "withPB": 9,
     "withPS": 1,
@@ -3600,7 +3624,7 @@
         }
       ]
     },
-    "note": "截至2026-10-23复核。字段非空覆盖不代表所有数值均已独立交叉验证；缺失值保留为空。ROE与EPS保留公司报告口径，银行业经营现金流不按普通工商企业FCF解释；历史估值分位必须使用真实历史时间序列。",
+    "note": "截至2026-10-23覆盖审计。价格来源为第三方公开行情，尚需交叉核验；字段非空不等于完全验证。估值分位只允许使用真实历史时间序列。",
     "withRevenue": 49,
     "withNetProfit": 49,
     "withEPS": 48,
@@ -3614,24 +3638,17 @@
     "withROE": 42,
     "missingFieldLists": {
       "price": [
-        "牧原股份",
         "申洲国际",
-        "比亚迪",
-        "宇通客车",
         "京沪高铁",
         "顺丰控股",
-        "中远海控",
-        "药明康德",
         "爱尔眼科",
         "国药股份",
         "川投能源",
         "国电南瑞",
         "中国建筑",
         "阿里巴巴",
-        "海光信息",
         "阳光电源",
         "汇川技术",
-        "中国太保",
         "中信证券",
         "东方财富",
         "京东集团",
@@ -3844,7 +3861,6 @@
         "海澜之家",
         "申洲国际",
         "海尔智家",
-        "美的集团",
         "格力电器",
         "比亚迪",
         "宇通客车",
@@ -3885,7 +3901,7 @@
         "瀚蓝环境"
       ]
     },
-    "withBookValuePerShare": 5
+    "withBookValuePerShare": 6
   },
   "marketDataSourceMap": {
     "A股": {
