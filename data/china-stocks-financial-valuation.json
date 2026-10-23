@@ -754,9 +754,9 @@
       ],
       "formula": "用企业自由现金流DCF或股息折现估值，区分维持性与扩张性资本开支；用股息率、净债务和项目回报交叉核验。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 5.15,
+      "currency": "CNY",
       "revenue": 21842,
       "revenueGrowth": 3.94,
       "netProfit": 6771,
@@ -797,7 +797,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/shanghai-high-speed-railway-co-ltd-historical-data",
+      "marketDataNotes": "2026-10-22历史收盘价5.15元，Investing.com公开历史行情。"
     },
     {
       "layer": 1,
@@ -1148,9 +1150,9 @@
       ],
       "formula": "建立收入、利润率、再投资与稀释的多阶段情景DCF；平台型公司补充分部估值，亏损企业不使用常规PE硬套。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 7.99,
+      "currency": "CNY",
       "revenue": 11945.70458,
       "revenueGrowth": 3.81,
       "netProfit": 1357.026449,
@@ -1168,7 +1170,7 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12561169&stockid=300015",
-      "verifiedAt": "2026-10-20",
+      "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
       "dataNotes": "营收119.46亿元，同比+3.81%；归母净利润13.57亿元，同比-33.83%；经营现金流29.23亿元，同比-14.10%；EPS 0.1464元，ROE 6.04%。",
       "derivedMetrics": {
@@ -1193,7 +1195,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/aier-eye-hospital-group-historical-data",
+      "marketDataNotes": "2026-10-22历史收盘价7.99元，Investing.com公开历史行情。"
     },
     {
       "layer": 2,
@@ -1545,9 +1549,9 @@
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
       "financialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 23.28,
+      "currency": "CNY",
       "revenue": 27767.19053,
       "revenueGrowth": 14.54,
       "netProfit": 3073,
@@ -1559,8 +1563,8 @@
       "freeCashFlow": null,
       "netDebt": null,
       "dividendYield": null,
-      "peTtm": null,
-      "pb": null,
+      "peTtm": 22.26,
+      "pb": 3.36,
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
@@ -1591,7 +1595,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://data.cfi.cn/quote1752_600406.html",
+      "marketDataNotes": "中财网列示2026-10-22收盘价23.28元，PE-TTM 22.26倍、PB 3.36倍。该页面为第三方行情源，估值口径需后续交叉核验。"
     },
     {
       "layer": 3,
@@ -3233,9 +3239,9 @@
       ],
       "formula": "用企业自由现金流DCF或股息折现估值，区分维持性与扩张性资本开支；用股息率、净债务和项目回报交叉核验。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-20",
+      "price": 30.82,
+      "currency": "CNY",
       "revenue": 7736.749257,
       "revenueGrowth": 34.25,
       "netProfit": 1206.223906,
@@ -3253,7 +3259,7 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546824&stockid=600323",
-      "verifiedAt": "2026-10-20",
+      "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
       "dataNotes": "营收77.37亿元，同比+34.25%；归母净利润12.06亿元，同比+24.76%；经营现金流16.32亿元，同比+33.65%；EPS 1.48元，ROE 7.93%。需留意并购/业务结构变化。",
       "derivedMetrics": {
@@ -3277,7 +3283,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://hk.finance.yahoo.com/quote/600323.SS/history/",
+      "marketDataNotes": "Yahoo Finance历史行情列示2026-10-20收盘30.82元；当前未采用10月22日价格，后续需补最新交易日。"
     }
   ],
   "batchUpdateLog": [
@@ -3439,6 +3447,15 @@
         "美的集团新增2026-06-30每股净资产27.8168元，来源证券时报公开财务指标页。"
       ],
       "policy": "股价统一记录历史收盘价日期；不将盘中延迟报价混同为收盘价。估值倍数未核验时继续留空。"
+    },
+    {
+      "date": "2026-10-23",
+      "changes": [
+        "新增京沪高铁、爱尔眼科2026-10-22收盘价。",
+        "新增国电南瑞2026-10-22收盘价及第三方来源PE/PB快照。",
+        "新增瀚蓝环境2026-10-20收盘价，标注该行情日期尚非最新交易日。"
+      ],
+      "policy": "每项行情保留日期与来源；来源口径有差异时不混用价格与估值倍数。"
     }
   ],
   "valuationModels": {
@@ -3535,9 +3552,9 @@
   "auditSnapshot": {
     "auditedAt": "2026-10-23",
     "listedCompanies": 49,
-    "withPrice": 29,
-    "withPE": 12,
-    "withPB": 9,
+    "withPrice": 33,
+    "withPE": 13,
+    "withPB": 10,
     "withPS": 1,
     "with5YPercentile": 0,
     "with10YPercentile": 0,
@@ -3639,12 +3656,9 @@
     "missingFieldLists": {
       "price": [
         "申洲国际",
-        "京沪高铁",
         "顺丰控股",
-        "爱尔眼科",
         "国药股份",
         "川投能源",
-        "国电南瑞",
         "中国建筑",
         "阿里巴巴",
         "阳光电源",
@@ -3656,8 +3670,7 @@
         "分众传媒",
         "哔哩哔哩",
         "中公教育",
-        "兴蓉环境",
-        "瀚蓝环境"
+        "兴蓉环境"
       ],
       "PE": [
         "牧原股份",
@@ -3678,7 +3691,6 @@
         "川投能源",
         "中国核电",
         "中国神华",
-        "国电南瑞",
         "中国电信",
         "中国建筑",
         "阿里巴巴",
@@ -3718,7 +3730,6 @@
         "川投能源",
         "中国核电",
         "中国神华",
-        "国电南瑞",
         "中国电信",
         "中国建筑",
         "阿里巴巴",
