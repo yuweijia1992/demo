@@ -2,7 +2,7 @@
   "title": "中国相关上市公司财务与估值数据库",
   "version": "0.1.0",
   "asOf": "2026-10-23",
-  "coverage": "截至2026-10-23，共49家公司。已补入申洲国际港股收盘价；美的集团、海天味业、伊利股份、宁德时代、长江电力2026年上半年资本开支及简化自由现金流；伊利股份期末每股净资产按归母净资产/股本计算；美的集团2026年度中期每股分红方案。简化FCF仅为经营现金流减购建长期资产现金支出，不含其他投资现金流，半年数不年化。净债务、股息率、ROIC与历史估值分位仍需逐家公司原始报告或历史时间序列核验。",
+  "coverage": "截至2026-10-23，共49家公司。已补入申洲国际港股收盘价；美的集团、海天味业、伊利股份、宁德时代、长江电力、海尔智家、比亚迪2026年上半年资本开支及简化自由现金流；伊利股份期末每股净资产按归母净资产/股本计算；美的集团2026年度中期每股分红方案。简化FCF仅为经营现金流减购建长期资产现金支出，不含其他投资现金流，半年数不年化。净债务、股息率、ROIC与历史估值分位仍需逐家公司原始报告或历史时间序列核验。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
   "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.\n历史估值分位：必须来自有来源和日期的历史序列或授权API。网页CSV计算器结果仅为用户本地临时结果，须经口径审查后才可写入正式字段。价格超过最近交易日未更新时标记为过期，不得当作实时行情。\n新增派生指标规则：净利率=归母净利润/营业收入；经营现金流/净利润用于观察现金转化；利润与现金流差额=经营现金流-归母净利润。派生字段与公司披露原始字段分开保存，不反推ROIC、净债务、股息率或历史估值分位。模型字段覆盖率仅作缺项提醒，不代表估值结论。",
   "sources": [
@@ -434,8 +434,8 @@
       "roe": 8.36,
       "roic": null,
       "operatingCashFlow": 9752.034,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 4366.78921892,
+      "freeCashFlow": 5385.24475879,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -444,9 +444,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563094&stockid=600690",
-      "verifiedAt": "2026-10-20",
+      "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本EPS，ROE为报告披露加权平均净资产收益率。营收同比下降2.80%，归母净利润同比下降14.27%，扣非归母净利润同比下降20.54%，经营现金流同比下降12.45%。",
+      "dataNotes": "金额单位：百万元人民币。2026年上半年经营现金流9,752.034百万元；资本开支4,366.789百万元，取合并现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’；简化FCF=5,385.245百万元。半年数据，不年化，未扣除其他投资现金流。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/qingdao-haier-historical-data",
       "marketDataNotes": "Investing.com列示2026-10-20收盘20.10元；PE/PB未在该行情页同步核验。",
       "derivedMetrics": {
@@ -459,8 +459,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 75,
-        "valuationCorePresent": 6,
+        "valuationCorePct": 88,
+        "valuationCorePresent": 7,
         "valuationCoreRequired": 8,
         "requiredFields": [
           "revenue",
@@ -473,7 +473,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "capexSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563095&stockid=600690",
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 1,
@@ -647,8 +649,8 @@
       "roe": 4.86,
       "roic": null,
       "operatingCashFlow": 37334.744,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 44703.066,
+      "freeCashFlow": -7368.322,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -659,7 +661,7 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572822&stockid=002594",
       "verifiedAt": "2026-10-23",
       "dataStatus": "半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币。2026年上半年营收同比下降7.13%、归母净利润同比下降20.54%；EPS为半年度基本EPS，ROE为报告披露的加权平均净资产收益率。",
+      "dataNotes": "金额单位：百万元人民币；原报告单位为人民币千元。2026年上半年经营现金流37,334.744百万元；资本开支44,703.066百万元；简化FCF=-7,368.322百万元。半年数据，不年化，未扣除其他投资现金流。由于资本开支大且报告期存在较大投资活动现金流，需结合产能建设节奏和完整投资现金流分析，不应仅凭该简化FCF判断长期现金创造能力。",
       "derivedMetrics": {
         "netProfitMarginPct": 3.57,
         "operatingCashFlowToNetProfit": 3.029,
@@ -670,8 +672,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 60,
-        "valuationCorePresent": 3,
+        "valuationCorePct": 80,
+        "valuationCorePresent": 4,
         "valuationCoreRequired": 5,
         "requiredFields": [
           "revenue",
@@ -683,7 +685,9 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "marketDataSourceUrl": "https://cn.investing.com/equities/byd-a-historical-data",
-      "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。"
+      "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。",
+      "capexSourceUrl": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-29/56e933c9-717e-42bd-8c21-3a0a11b8d2d0.PDF",
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 1,
@@ -3554,6 +3558,11 @@
       "date": "2026-10-23",
       "scope": "补录长江电力2026H1资本开支及简化FCF；计算伊利股份期末每股净资产",
       "policy": "长江电力FCF为经营现金流减购建长期资产现金支出，不年化且不等于可分配现金；伊利BVPS按归母净资产除以期末股本计算并标记为计算值。"
+    },
+    {
+      "date": "2026-10-23",
+      "scope": "补录海尔智家与比亚迪2026年半年度资本开支及简化自由现金流",
+      "policy": "按各自半年度报告合并现金流量表录入；金额统一为百万元人民币。比亚迪简化FCF为负，需结合大额资本投入周期理解，不将单期简化FCF直接等同长期现金创造能力。"
     }
   ],
   "valuationModels": {
@@ -3744,7 +3753,7 @@
     "withNetProfit": 49,
     "withEPS": 48,
     "withOperatingCashFlow": 46,
-    "withFreeCashFlow": 8,
+    "withFreeCashFlow": 10,
     "derivedNetProfitMargin": 49,
     "derivedCashFlowConversion": 37,
     "companiesWithQualityAlerts": 5,
@@ -3900,9 +3909,7 @@
         "牧原股份",
         "海澜之家",
         "申洲国际",
-        "海尔智家",
         "格力电器",
-        "比亚迪",
         "宇通客车",
         "京沪高铁",
         "顺丰控股",
@@ -4042,9 +4049,7 @@
         "牧原股份",
         "海澜之家",
         "申洲国际",
-        "海尔智家",
         "格力电器",
-        "比亚迪",
         "宇通客车",
         "京沪高铁",
         "顺丰控股",
@@ -4087,9 +4092,7 @@
         "牧原股份",
         "海澜之家",
         "申洲国际",
-        "海尔智家",
         "格力电器",
-        "比亚迪",
         "宇通客车",
         "京沪高铁",
         "顺丰控股",
@@ -4389,9 +4392,7 @@
         "牧原股份",
         "海澜之家",
         "申洲国际",
-        "海尔智家",
         "格力电器",
-        "比亚迪",
         "宇通客车",
         "京沪高铁",
         "顺丰控股",
@@ -4776,7 +4777,7 @@
     },
     "withBookValuePerShare": 7,
     "withROIC": 0,
-    "withCapex": 6,
+    "withCapex": 8,
     "withNetDebt": 0,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
