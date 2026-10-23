@@ -2,7 +2,7 @@
   "title": "中国相关上市公司财务与估值数据库",
   "version": "0.1.0",
   "asOf": "2026-10-23",
-  "coverage": "截至2026-10-23，共49家公司。已补入申洲国际港股收盘价；美的集团、海天味业、伊利股份、宁德时代、长江电力、海尔智家、比亚迪2026年上半年资本开支及简化自由现金流；伊利股份期末每股净资产按归母净资产/股本计算；美的集团2026年度中期每股分红方案。简化FCF仅为经营现金流减购建长期资产现金支出，不含其他投资现金流，半年数不年化。净债务、股息率、ROIC与历史估值分位仍需逐家公司原始报告或历史时间序列核验。",
+  "coverage": "截至2026-10-23，共49家公司。已补入2026年上半年资本开支及简化FCF的公司包括美的集团、海天味业、伊利股份、宁德时代、长江电力、海尔智家、比亚迪、格力电器、牧原股份、恒瑞医药、迈瑞医疗；伊利股份期末每股净资产按归母净资产/股本计算；美的集团2026年度中期每股分红方案已记录。简化FCF不含其他投资现金流，半年数不年化；净债务、股息率、ROIC与历史估值分位仍需逐家公司原始报告或历史时间序列核验。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
   "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.\n历史估值分位：必须来自有来源和日期的历史序列或授权API。网页CSV计算器结果仅为用户本地临时结果，须经口径审查后才可写入正式字段。价格超过最近交易日未更新时标记为过期，不得当作实时行情。\n新增派生指标规则：净利率=归母净利润/营业收入；经营现金流/净利润用于观察现金转化；利润与现金流差额=经营现金流-归母净利润。派生字段与公司披露原始字段分开保存，不反推ROIC、净债务、股息率或历史估值分位。模型字段覆盖率仅作缺项提醒，不代表估值结论。",
   "sources": [
@@ -154,8 +154,8 @@
       "roe": -7.48,
       "roic": null,
       "operatingCashFlow": -2223.6684,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 6520.96651539,
+      "freeCashFlow": -8744.634898069999,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -166,7 +166,7 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12510732&stockid=002714",
       "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度财务数据已核验；周期估值与价格待核验",
-      "dataNotes": "金额单位：百万元人民币。归母净利润同比转亏，经营现金流为负，主要受生猪销售价格下降影响。猪周期公司不宜按当期亏损PE估值，应建立跨周期猪价、完全成本、出栏量和负债压力情景；当期ROE为报告披露加权平均净资产收益率。",
+      "dataNotes": "金额单位：百万元人民币。归母净利润同比转亏，经营现金流为负，主要受生猪销售价格下降影响。猪周期公司不宜按当期亏损PE估值，应建立跨周期猪价、完全成本、出栏量和负债压力情景；当期ROE为报告披露加权平均净资产收益率。 2026年上半年经营现金流-2,223.668百万元；资本开支6,520.967百万元；简化FCF=-8,744.635百万元。金额单位百万元人民币，半年不年化。牧业周期和扩产投资影响较大，应结合猪价周期与生物资产变化解释。",
       "derivedMetrics": {
         "netProfitMarginPct": -10.23,
         "operatingCashFlowToNetProfit": 0.366,
@@ -180,8 +180,8 @@
         "经营现金流为负：需核查营运资本及回款"
       ],
       "dataCompleteness": {
-        "valuationCorePct": 60,
-        "valuationCorePresent": 3,
+        "valuationCorePct": 80,
+        "valuationCorePresent": 4,
         "valuationCoreRequired": 5,
         "requiredFields": [
           "revenue",
@@ -193,7 +193,9 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "marketDataSourceUrl": "https://cn.investing.com/equities/muyuan-foodstuff-a-historical-data",
-      "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。"
+      "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。",
+      "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12510732&stockid=002714",
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 1,
@@ -581,8 +583,8 @@
       "roe": 8.68,
       "roic": null,
       "operatingCashFlow": 18808.8324,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 729.88813795,
+      "freeCashFlow": 18078.94425451,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -593,7 +595,7 @@
       "sourceUrl": "https://4g.stockstar.com/detail/SN2026082700006450",
       "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度财务字段已按公开报告补核；估值字段另行核验",
-      "dataNotes": "金额单位：百万元人民币；归母净利润约132.78亿元，基本EPS为半年度口径。营收同比下降8.15%、归母净利润同比下降7.87%、经营现金流同比下降33.60%。归母净利润为公告摘要中四舍五入值；如需高精度应回查完整利润表。 2026年半年度报告公开摘要：基本/稀释EPS 2.38元、加权平均ROE 8.68%。该来源摘要未在本轮核对经营现金流，故未补录该字段。",
+      "dataNotes": "金额单位：百万元人民币；归母净利润约132.78亿元，基本EPS为半年度口径。营收同比下降8.15%、归母净利润同比下降7.87%、经营现金流同比下降33.60%。归母净利润为公告摘要中四舍五入值；如需高精度应回查完整利润表。 2026年半年度报告公开摘要：基本/稀释EPS 2.38元、加权平均ROE 8.68%。该来源摘要未在本轮核对经营现金流，故未补录该字段。 2026年上半年经营现金流18,808.832百万元；资本开支729.888百万元；简化FCF=18,078.944百万元。金额单位百万元人民币，半年不年化，未扣除其他投资现金流。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/gree-electric-a-historical-data",
       "marketDataNotes": "Investing.com列示2026-10-20收盘38.65元；PE/PB尚未在同一来源核验。",
       "derivedMetrics": {
@@ -606,8 +608,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 75,
-        "valuationCorePresent": 6,
+        "valuationCorePct": 88,
+        "valuationCorePresent": 7,
         "valuationCoreRequired": 8,
         "requiredFields": [
           "revenue",
@@ -620,7 +622,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 1,
@@ -984,8 +988,8 @@
       "roe": 12.01,
       "roic": null,
       "operatingCashFlow": 4876.986709,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 1063.901948,
+      "freeCashFlow": 3813.084761,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -996,7 +1000,7 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
       "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
-      "dataNotes": "营业收入177.47亿元，同比增长6.00%；归母净利润47.97亿元，同比下降5.37%；扣非归母净利润50.28亿元，同比下降1.52%。汇率中性口径收入增长8.16%。注意净利润与扣非利润差异。金额单位百万元人民币。 2026年半年度报告：基本EPS 3.9584元/股、加权平均ROE 12.01%、经营现金流净额4,876.99百万元。",
+      "dataNotes": "营业收入177.47亿元，同比增长6.00%；归母净利润47.97亿元，同比下降5.37%；扣非归母净利润50.28亿元，同比下降1.52%。汇率中性口径收入增长8.16%。注意净利润与扣非利润差异。金额单位百万元人民币。 2026年半年度报告：基本EPS 3.9584元/股、加权平均ROE 12.01%、经营现金流净额4,876.99百万元。 2026年上半年经营现金流4,876.987百万元；资本开支1,063.902百万元；简化FCF=3,813.085百万元。金额单位百万元人民币，半年不年化，未扣除其他投资现金流。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/shenzhen-mindray-bio-medical-historical-data",
       "marketDataNotes": "Investing.com列示2026-10-20收盘169.73元；PE/PB待同口径核验。",
       "derivedMetrics": {
@@ -1020,7 +1024,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 2,
@@ -1050,8 +1056,8 @@
       "roe": 8.04,
       "roic": null,
       "operatingCashFlow": 1987.003873,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 1577.50532286,
+      "freeCashFlow": 409.49854948000007,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -1062,7 +1068,7 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
       "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
-      "dataNotes": "营业收入154.56亿元，同比下降1.94%；归母净利润44.65亿元，同比增长0.34%；经营现金流19.87亿元，同比下降53.80%。创新药收入88.09亿元，同比增长16.38%；研发投入46.05亿元，同比增长18.96%。需区分授权收入、药品销售、研发投入及经营现金流波动。金额单位百万元人民币。 2026年半年度报告：基本EPS 0.68元/股、加权平均ROE 8.04%；经营现金流字段此前已按报告录入。",
+      "dataNotes": "营业收入154.56亿元，同比下降1.94%；归母净利润44.65亿元，同比增长0.34%；经营现金流19.87亿元，同比下降53.80%。创新药收入88.09亿元，同比增长16.38%；研发投入46.05亿元，同比增长18.96%。需区分授权收入、药品销售、研发投入及经营现金流波动。金额单位百万元人民币。 2026年半年度报告：基本EPS 0.68元/股、加权平均ROE 8.04%；经营现金流字段此前已按报告录入。 2026年上半年经营现金流1,987.004百万元；资本开支1,577.505百万元；简化FCF=409.499百万元。金额单位百万元人民币，半年不年化；资本开支包括研发开发支出，不能单独据此判断研发投入回报。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/hengrui-medi-historical-data",
       "marketDataNotes": "Investing.com列示2026-10-20收盘47.37元；PE/PB待同口径核验。",
       "derivedMetrics": {
@@ -1086,7 +1092,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 2,
@@ -1321,8 +1329,8 @@
       "roe": 6.55,
       "roic": null,
       "operatingCashFlow": 24128.3138,
-      "capex": 1597.42199313,
-      "freeCashFlow": 22530.89178124,
+      "capex": 4434.61615391,
+      "freeCashFlow": 19693.69764609,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": 19.87,
@@ -1333,7 +1341,7 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
       "verifiedAt": "2026-10-23",
       "dataStatus": "半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币。2026年上半年经营现金流24,128.314百万元；资本开支取合并现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’1,597.422百万元；简化FCF=24,128.314-1,597.422=22,530.892百万元。半年数据，不年化，未扣除其他投资现金流；水电运营企业还需区分维持性与扩张性资本开支，故该FCF仅为统一口径比较值，不直接等同可分配现金。",
+      "dataNotes": "金额单位：百万元人民币。2026年上半年经营现金流24,128.314百万元；资本开支取合并现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’1,597.422百万元；简化FCF=24,128.314-1,597.422=22,530.892百万元。半年数据，不年化，未扣除其他投资现金流；水电运营企业还需区分维持性与扩张性资本开支，故该FCF仅为统一口径比较值，不直接等同可分配现金。 2026年上半年经营现金流24,128.314百万元；资本开支4,434.616百万元；简化FCF=19,693.698百万元。注意此值取自合并现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’，半年不年化；水电项目资本开支可能含扩建，不能直接等同可分配现金。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/yangtze-power-historical-data",
       "marketDataNotes": "Investing.com列示2026-10-20收盘29.69元；PE/PB参考中财网页面显示值，日期页面盘中快照需复核。",
       "derivedMetrics": {
@@ -1358,7 +1366,7 @@
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
-      "capexSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+      "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
       "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
@@ -3563,6 +3571,11 @@
       "date": "2026-10-23",
       "scope": "补录海尔智家与比亚迪2026年半年度资本开支及简化自由现金流",
       "policy": "按各自半年度报告合并现金流量表录入；金额统一为百万元人民币。比亚迪简化FCF为负，需结合大额资本投入周期理解，不将单期简化FCF直接等同长期现金创造能力。"
+    },
+    {
+      "date": "2026-10-23",
+      "scope": "补录格力电器、牧原股份、恒瑞医药、迈瑞医疗2026H1资本开支及简化FCF，并复核更正长江电力资本开支",
+      "policy": "使用公司2026年半年度报告合并现金流量表；金额统一为百万元人民币。长江电力资本开支按该报告合并现金流量表更正为4,434.616百万元，避免误取报告中其他表格数值。"
     }
   ],
   "valuationModels": {
@@ -3753,7 +3766,7 @@
     "withNetProfit": 49,
     "withEPS": 48,
     "withOperatingCashFlow": 46,
-    "withFreeCashFlow": 10,
+    "withFreeCashFlow": 14,
     "derivedNetProfitMargin": 49,
     "derivedCashFlowConversion": 37,
     "companiesWithQualityAlerts": 5,
@@ -3906,16 +3919,12 @@
         "哔哩哔哩"
       ],
       "freeCashFlow": [
-        "牧原股份",
         "海澜之家",
         "申洲国际",
-        "格力电器",
         "宇通客车",
         "京沪高铁",
         "顺丰控股",
         "中远海控",
-        "迈瑞医疗",
-        "恒瑞医药",
         "药明康德",
         "爱尔眼科",
         "国药股份",
@@ -4046,16 +4055,12 @@
         "哔哩哔哩"
       ],
       "资本开支": [
-        "牧原股份",
         "海澜之家",
         "申洲国际",
-        "格力电器",
         "宇通客车",
         "京沪高铁",
         "顺丰控股",
         "中远海控",
-        "迈瑞医疗",
-        "恒瑞医药",
         "药明康德",
         "爱尔眼科",
         "国药股份",
@@ -4089,16 +4094,12 @@
         "瀚蓝环境"
       ],
       "自由现金流": [
-        "牧原股份",
         "海澜之家",
         "申洲国际",
-        "格力电器",
         "宇通客车",
         "京沪高铁",
         "顺丰控股",
         "中远海控",
-        "迈瑞医疗",
-        "恒瑞医药",
         "药明康德",
         "爱尔眼科",
         "国药股份",
@@ -4389,16 +4390,12 @@
         "哔哩哔哩"
       ],
       "capex": [
-        "牧原股份",
         "海澜之家",
         "申洲国际",
-        "格力电器",
         "宇通客车",
         "京沪高铁",
         "顺丰控股",
         "中远海控",
-        "迈瑞医疗",
-        "恒瑞医药",
         "药明康德",
         "爱尔眼科",
         "国药股份",
@@ -4777,7 +4774,7 @@
     },
     "withBookValuePerShare": 7,
     "withROIC": 0,
-    "withCapex": 8,
+    "withCapex": 12,
     "withNetDebt": 0,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
