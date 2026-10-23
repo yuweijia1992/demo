@@ -2,7 +2,7 @@
   "title": "中国相关上市公司财务与估值数据库",
   "version": "0.1.0",
   "asOf": "2026-10-23",
-  "coverage": "截至2026-10-23，共49家公司。已补入2026年上半年资本开支及简化FCF的公司包括美的集团、海天味业、伊利股份、宁德时代、长江电力、海尔智家、比亚迪、格力电器、牧原股份、恒瑞医药、迈瑞医疗、中国移动、中国电信、中国神华。中国移动同时保留公司披露FCF与本库统一简化FCF的口径差异说明。伊利股份期末每股净资产按归母净资产/股本计算；美的集团2026年度中期每股分红方案已记录。净债务已按明确窄口径补录海尔智家、中国电信两家公司；每股净资产新增海尔智家、中国电信计算值及中国神华报告披露值；其余公司、股息率、ROIC与历史估值分位仍需逐家公司原始报告或历史时间序列核验。 本轮补录美的集团2026年半年度现金及现金等价物、短期借款和非流动借款；净债务因借款附注分类与资产负债表列示口径不一致而保留空值。 格力电器新增2026年半年度货币资金、短期借款、长期借款及计算型每股净资产；净债务未以货币资金直接替代现金及现金等价物计算。 新增长江电力、恒瑞医药、迈瑞医疗2026年半年度资产负债表核验字段及计算型每股净资产；对借款分类与现金口径单独备注。 中国移动新增2026年半年度现金、借款及计算型每股净资产字段。",
+  "coverage": "截至2026-10-23，共49家公司。已补入2026年上半年资本开支及简化FCF的公司包括美的集团、海天味业、伊利股份、宁德时代、长江电力、海尔智家、比亚迪、格力电器、牧原股份、恒瑞医药、迈瑞医疗、中国移动、中国电信、中国神华。中国移动同时保留公司披露FCF与本库统一简化FCF的口径差异说明。伊利股份期末每股净资产按归母净资产/股本计算；美的集团2026年度中期每股分红方案已记录。净债务已按明确窄口径补录海尔智家、中国电信两家公司；每股净资产新增海尔智家、中国电信计算值及中国神华报告披露值；其余公司、股息率、ROIC与历史估值分位仍需逐家公司原始报告或历史时间序列核验。 本轮补录美的集团2026年半年度现金及现金等价物、短期借款和非流动借款；净债务因借款附注分类与资产负债表列示口径不一致而保留空值。 格力电器新增2026年半年度货币资金、短期借款、长期借款及计算型每股净资产；净债务未以货币资金直接替代现金及现金等价物计算。 新增长江电力、恒瑞医药、迈瑞医疗2026年半年度资产负债表核验字段及计算型每股净资产；对借款分类与现金口径单独备注。 中国移动新增2026年半年度现金、借款及计算型每股净资产字段。 本批次继续按49家公司全量审计口径推进：新增宁德时代、比亚迪2026-06-30货币资金、现金及现金等价物、短期借款、长期借款与计算型BVPS；对一年内到期债务、债券、租赁负债等另列说明，不将狭义借款差额冒充完整净债务。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
   "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.\n历史估值分位：必须来自有来源和日期的历史序列或授权API。网页CSV计算器结果仅为用户本地临时结果，须经口径审查后才可写入正式字段。价格超过最近交易日未更新时标记为过期，不得当作实时行情。\n新增派生指标规则：净利率=归母净利润/营业收入；经营现金流/净利润用于观察现金转化；利润与现金流差额=经营现金流-归母净利润。派生字段与公司披露原始字段分开保存，不反推ROIC、净债务、股息率或历史估值分位。模型字段覆盖率仅作缺项提醒，不代表估值结论。",
   "sources": [
@@ -125,7 +125,8 @@
       "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
       "bookValuePerShare": 8.4914312099557,
       "bookValuePerShareMethod": "计算值：2026-06-30归母净资产53,711.365百万元÷期末股本6,325.361百万股；非报告直接列示值",
-      "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887"
+      "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 1,
@@ -268,7 +269,8 @@
       "bookValuePerShare": 6.68,
       "bookValueSourceUrl": "https://stock.quote.stockstar.com/finance/summary_603288.shtml",
       "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863&stockid=603288",
-      "fcfSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863&stockid=603288"
+      "fcfSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863&stockid=603288",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 1,
@@ -482,7 +484,8 @@
       "netDebtSourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522691.PDF",
       "bookValuePerShare": 12.762111483282984,
       "bookValuePerShareMethod": "计算值=2026-06-30归属于母公司股东权益119,678.355百万元÷股本9,377.630百万股；人民币/股。不是报告直接披露值，未按A/H股分别计算。",
-      "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563095&stockid=600690"
+      "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563095&stockid=600690",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 1,
@@ -569,7 +572,8 @@
       "longTermBorrowingsDate": "2026-06-30",
       "longTermBorrowingsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572219&stockid=000333",
       "balanceSheetDebtNotes": "2026-06-30合并资产负债表，金额单位百万元人民币（原报表千元换算）。现金及现金等价物74,614.244；短期借款47,305.038；非流动负债中的借款22,083.057。报告借款附注显示当期借款总额含银行借款及债券，且流动借款总额58,244.206与资产负债表短期借款列示47,305.038并非同一口径；一年内到期的债券/其他借款分类需逐项拆分，故本轮不以简单短借+长借-现金强行填入netDebt。",
-      "balanceSheetSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572219&stockid=000333"
+      "balanceSheetSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572219&stockid=000333",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 1,
@@ -654,7 +658,8 @@
       "bookValuePerShareSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
       "monetaryFunds": 128248.277441,
       "monetaryFundsDate": "2026-06-30",
-      "monetaryFundsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651"
+      "monetaryFundsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 1,
@@ -695,7 +700,7 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572822&stockid=002594",
       "verifiedAt": "2026-10-23",
       "dataStatus": "半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币；原报告单位为人民币千元。2026年上半年经营现金流37,334.744百万元；资本开支44,703.066百万元；简化FCF=-7,368.322百万元。半年数据，不年化，未扣除其他投资现金流。由于资本开支大且报告期存在较大投资活动现金流，需结合产能建设节奏和完整投资现金流分析，不应仅凭该简化FCF判断长期现金创造能力。",
+      "dataNotes": "金额单位：百万元人民币；原报告单位为人民币千元。2026年上半年经营现金流37,334.744百万元；资本开支44,703.066百万元；简化FCF=-7,368.322百万元。半年数据，不年化，未扣除其他投资现金流。由于资本开支大且报告期存在较大投资活动现金流，需结合产能建设节奏和完整投资现金流分析，不应仅凭该简化FCF判断长期现金创造能力。 2026-06-30资产负债表补充：货币资金58,737.867百万元；现金及现金等价物55,619.085百万元；短期借款37,645.979百万元；长期借款61,201.246百万元。归母权益260,818.431百万元/总股本9,117.197565百万股，计算BVPS约28.6073元。另有一年内到期非流动负债、应付债券、租赁负债及超短期融资券，未计算简化净债务。",
       "derivedMetrics": {
         "netProfitMarginPct": 3.57,
         "operatingCashFlowToNetProfit": 3.029,
@@ -721,7 +726,25 @@
       "marketDataSourceUrl": "https://cn.investing.com/equities/byd-a-historical-data",
       "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。",
       "capexSourceUrl": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-29/56e933c9-717e-42bd-8c21-3a0a11b8d2d0.PDF",
-      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "monetaryFunds": 58737.867,
+      "monetaryFundsDate": "2026-06-30",
+      "monetaryFundsSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572791&stockid=002594",
+      "cashAndCashEquivalents": 55619.085,
+      "cashAndCashEquivalentsDate": "2026-06-30",
+      "cashAndCashEquivalentsSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572791&stockid=002594",
+      "shortTermBorrowings": 37645.979,
+      "shortTermBorrowingsDate": "2026-06-30",
+      "shortTermBorrowingsSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572791&stockid=002594",
+      "longTermBorrowings": 61201.246,
+      "longTermBorrowingsDate": "2026-06-30",
+      "longTermBorrowingsSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572791&stockid=002594",
+      "bookValuePerShare": 28.60730275290464,
+      "bookValuePerShareMethod": "计算值=2026-06-30归属于母公司股东权益260,818.431百万元÷总股本9,117.197565百万股；金额单位百万元人民币，股数单位百万股",
+      "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572791&stockid=002594",
+      "balanceSheetSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572791&stockid=002594",
+      "balanceSheetDebtNotes": "2026-06-30合并报表：货币资金58,737.867百万元，现金及现金等价物55,619.085百万元；短期借款37,645.979百万元；长期借款61,201.246百万元。另有一年内到期非流动负债3,452.964百万元、应付债券14,993.800百万元、租赁负债8,610.454百万元及超短期融资券等，未将短长借款与现金简单相减后称为完整净债务。",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 1,
@@ -1073,7 +1096,8 @@
       "bookValuePerShareMethod": "计算值：2026-06-30归母股东权益40556.240百万元÷股本1212.441百万股，约33.450元/股。",
       "bookValuePerShareSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
       "balanceSheetSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
-      "balanceSheetDebtNotes": "合并货币资金18,699.273百万元；现金及现金等价物18,645.297百万元；短期借款0.000231百万元；长期借款0.000249百万元；归母股东权益40,556.240百万元；股本1,212.441百万股。另有一年内到期非流动负债126.196百万元和租赁负债184.404百万元，未并入借款字段。"
+      "balanceSheetDebtNotes": "合并货币资金18,699.273百万元；现金及现金等价物18,645.297百万元；短期借款0.000231百万元；长期借款0.000249百万元；归母股东权益40,556.240百万元；股本1,212.441百万股。另有一年内到期非流动负债126.196百万元和租赁负债184.404百万元，未并入借款字段。",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 2,
@@ -1158,7 +1182,8 @@
       "bookValuePerShareMethod": "计算值：2026-06-30归母股东权益64466.430百万元÷股本6637.200百万股，约9.713元/股。",
       "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
       "balanceSheetSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
-      "balanceSheetDebtNotes": "合并货币资金38,734.324百万元；现金及现金等价物38,031.525百万元；报告资产负债表未列示短期借款和长期借款，按报告口径记0。一年内到期非流动负债29.754百万元全部为租赁负债，另有租赁负债38.229百万元；归母股东权益64,466.430百万元；股本6,637.200百万股。"
+      "balanceSheetDebtNotes": "合并货币资金38,734.324百万元；现金及现金等价物38,031.525百万元；报告资产负债表未列示短期借款和长期借款，按报告口径记0。一年内到期非流动负债29.754百万元全部为租赁负债，另有租赁负债38.229百万元；归母股东权益64,466.430百万元；股本6,637.200百万股。",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 2,
@@ -1448,7 +1473,8 @@
       "bookValuePerShareMethod": "计算值：2026-06-30归母股东权益216131.354百万元÷股本24468.218百万股，约8.833元/股。",
       "bookValuePerShareSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
       "balanceSheetSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
-      "balanceSheetDebtNotes": "合并货币资金9,372.873百万元；现金及现金等价物9,326.501百万元；短期借款6,703.352百万元；长期借款175,447.933百万元；归母股东权益216,131.354百万元；股本24,468.218百万股。另有一年内到期非流动负债65,737.865百万元、应付债券34,971.889百万元、租赁负债505.088百万元，故不将短借+长借-现金视为完整净债务。"
+      "balanceSheetDebtNotes": "合并货币资金9,372.873百万元；现金及现金等价物9,326.501百万元；短期借款6,703.352百万元；长期借款175,447.933百万元；归母股东权益216,131.354百万元；股本24,468.218百万股。另有一年内到期非流动负债65,737.865百万元、应付债券34,971.889百万元、租赁负债505.088百万元，故不将短借+长借-现金视为完整净债务。",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 3,
@@ -1652,7 +1678,8 @@
       "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，不年化；金额单位百万元人民币",
       "bookValuePerShare": 20.79,
       "bookValuePerShareMethod": "公司2026年半年度报告披露的期末每股净资产，人民币/股；注意公司报告期内完成同一控制下企业合并并重述比较期。",
-      "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572344&stockid=601088"
+      "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572344&stockid=601088",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 3,
@@ -1805,7 +1832,8 @@
       "bookValuePerShareMethod": "计算值：2026-06-30归母股东权益1,421,543百万元÷股本470,359百万股，约3.022元/股。",
       "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492474&stockid=600941",
       "balanceSheetSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492474&stockid=600941",
-      "balanceSheetDebtNotes": "单位百万元人民币。合并货币资金187,857；现金及现金等价物102,438；短期借款项目未列示，按报告口径记0；长期借款9,374。另有一年内到期非流动负债46,186、租赁负债43,268，以及财务公司吸收存款55,797等项目；不能用普通制造业的短借+长借-现金公式代表完整净债务。"
+      "balanceSheetDebtNotes": "单位百万元人民币。合并货币资金187,857；现金及现金等价物102,438；短期借款项目未列示，按报告口径记0；长期借款9,374。另有一年内到期非流动负债46,186、租赁负债43,268，以及财务公司吸收存款55,797等项目；不能用普通制造业的短借+长借-现金公式代表完整净债务。",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 3,
@@ -1881,7 +1909,8 @@
       "netDebtSourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225484689.PDF",
       "bookValuePerShare": 5.156784152825519,
       "bookValuePerShareMethod": "计算值=2026-06-30归属于母公司股东权益471,882.563百万元÷股本91,507.139百万股；人民币/股。A/H股共同对应公司股权，未换算港币。",
-      "bookValuePerShareSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910&stockid=601728"
+      "bookValuePerShareSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910&stockid=601728",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 3,
@@ -1951,7 +1980,8 @@
       "bookValuePerShare": 11.98,
       "bookValueSourceUrl": "https://stock.stockstar.com/notice/SN2026082800049566.shtml",
       "marketDataSourceUrl": "https://cn.investing.com/equities/china-state-co-ss-historical-data",
-      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价4.52元。"
+      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价4.52元。",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 4,
@@ -2393,7 +2423,7 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12462542&stockid=300750",
       "verifiedAt": "2026-10-23",
       "dataStatus": "财报部分字段已核验；行情为2026-10-22公开快照，仍需交叉核验",
-      "dataNotes": "金额单位：百万元人民币；原报告单位为千元。2026年上半年收入276,916.580百万元、归母净利润43,284.002百万元、经营现金流60,216.851百万元。资本开支取合并现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’25,072.772百万元；简化FCF=60,216.851-25,072.772=35,144.079百万元。半年数据，不年化，未扣除其他投资现金流；本口径与公司其他投资支付等现金流项目不同。",
+      "dataNotes": "金额单位：百万元人民币；原报告单位为千元。2026年上半年收入276,916.580百万元、归母净利润43,284.002百万元、经营现金流60,216.851百万元。资本开支取合并现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’25,072.772百万元；简化FCF=60,216.851-25,072.772=35,144.079百万元。半年数据，不年化，未扣除其他投资现金流；本口径与公司其他投资支付等现金流项目不同。 2026-06-30资产负债表补充：货币资金372,053.275百万元；短期借款20,885.906百万元；长期借款74,262.746百万元；现金及现金等价物340,586百万元（需注意其与货币资金口径不同）。归母权益379,353.710百万元/总股本4,626.654919百万股，计算BVPS约81.9931元。另有一年内到期非流动负债、应付债券及租赁负债，未计算简化净债务。",
       "marketDataSourceUrl": "https://data.cfi.cn/300750.html",
       "marketDataNotes": "中财网公开行情页显示2026-10-22 15:00收盘价220.41元、PE 11.63、PB 2.41；估值页EPS标记为2026-09-30口径，财务主记录仍为2026年半年报，需在后续更新三季报后统一财务期。",
       "derivedMetrics": {
@@ -2420,7 +2450,25 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "capexSourceUrl": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-07-25/8e6750da-b178-4be9-a74a-4b1d8fc42c58.PDF",
-      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "monetaryFunds": 372053.275366,
+      "monetaryFundsDate": "2026-06-30",
+      "monetaryFundsSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12462543&stockid=300750",
+      "cashAndCashEquivalents": 340586,
+      "cashAndCashEquivalentsDate": "2026-06-30",
+      "cashAndCashEquivalentsSourceUrl": "https://reportify.cn/financials/1278824363629613056",
+      "shortTermBorrowings": 20885.906,
+      "shortTermBorrowingsDate": "2026-06-30",
+      "shortTermBorrowingsSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12462543&stockid=300750",
+      "longTermBorrowings": 74262.746,
+      "longTermBorrowingsDate": "2026-06-30",
+      "longTermBorrowingsSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12462543&stockid=300750",
+      "bookValuePerShare": 81.99308499151978,
+      "bookValuePerShareMethod": "计算值=2026-06-30归属于母公司股东权益379,353.710百万元÷总股本4,626.654919百万股；金额单位百万元人民币，股数单位百万股",
+      "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12462543&stockid=300750",
+      "balanceSheetSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12462543&stockid=300750",
+      "balanceSheetDebtNotes": "2026-06-30：货币资金372,053.275百万元；现金及现金等价物340,586百万元（公司报告/二次报告摘要口径）；短期借款20,885.906百万元；长期借款74,262.746百万元。另有一年内到期非流动负债22,010.724百万元、应付债券28,512.039百万元、租赁负债3,357.630百万元及长期应付款，故不以短借+长借-现金计算完整净债务。金额单位百万元人民币。",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 4,
@@ -2615,7 +2663,8 @@
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
-      "bookValuePerShare": 45.4
+      "bookValuePerShare": 45.4,
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 5,
@@ -2681,7 +2730,8 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "bookValuePerShare": 11.12,
-      "bookValueSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398"
+      "bookValueSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 5,
@@ -2745,7 +2795,8 @@
       },
       "bookValuePerShare": 56.78,
       "marketDataSourceUrl": "https://quote.cfi.cn/quote.aspx?client=pc&lm=gsda&stockid=7143",
-      "marketDataNotes": "中财网公开行情页显示2026-10-22 15:00收盘价50.94元、PE 5.79；该来源PB与已核实每股净资产存在口径不一致，因此PB暂不录入。"
+      "marketDataNotes": "中财网公开行情页显示2026-10-22 15:00收盘价50.94元、PE 5.79；该来源PB与已核实每股净资产存在口径不一致，因此PB暂不录入。",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 5,
@@ -3728,6 +3779,11 @@
       "date": "2026-10-23",
       "scope": "中国移动2026年半年度现金/借款/BVPS核验",
       "policy": "依据2026年半年度报告，货币资金与现金及现金等价物分开录入；短期借款未列示记0，长期借款按报告列示录入；BVPS按归母权益/股本计算。考虑财务公司吸收存款及租赁/一年内到期负债，不以简单公式计算完整净债务。"
+    },
+    {
+      "date": "2026-10-23",
+      "scope": "批量补录宁德时代、比亚迪2026H1现金/借款/BVPS并更新覆盖统计",
+      "policy": "依据两家公司2026年半年度报告合并资产负债表与现金流量表；金额统一为百万元人民币，BVPS按归母股东权益/总股本计算。货币资金与现金及现金等价物分别保存；另有一年内到期非流动负债、债券、租赁负债等时，不用狭义公式冒充完整净债务。"
     }
   ],
   "valuationModels": {
@@ -3913,7 +3969,7 @@
         }
       ]
     },
-    "note": "资本开支取现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’，金额统一为百万元；简化FCF=经营现金流-该项资本开支，不含其他投资现金流，半年值不年化。银行、保险等金融机构不套用普通企业FCF/净债务口径。历史估值分位必须使用同一证券、同一估值倍数定义、日期连续且经复权/口径检查的真实历史序列。 本轮净债务仅对海尔智家、中国电信按半年度报告披露现金与借款计算；统一采用窄口径（短期借款+长期借款-现金），不含租赁负债及其他融资性负债，不能直接与采用广义净债务口径的数据库比较。 本轮复核修正海尔智家现金及现金等价物、以及中国电信长期借款数据；两家公司均按短期借款+长期借款-现金及现金等价物的窄口径计算，未纳入债券、租赁负债及一年内到期非流动负债。 本轮补录海尔智家、中国电信的计算型每股净资产及中国神华报告披露每股净资产；计算型BVPS采用归母股东权益/股本，报告披露值与计算值在字段方法中区分。 本轮新增美的集团2026-06-30现金及现金等价物、短期借款和非流动借款余额，均从半年度报告提取并统一为百万元人民币；因借款分类口径存在差异，净债务暂不计算，避免混算。 本轮补录格力电器2026年半年度货币资金、短期借款、长期借款及按归母权益/股本计算的每股净资产；货币资金与现金及现金等价物口径不同，故净债务保留空值。 本轮核验长江电力、恒瑞医药、迈瑞医疗2026-06-30货币资金/现金及现金等价物、短期借款、长期借款及计算型每股净资产。长江电力存在大量一年内到期非流动负债及应付债券，不以简化公式冒充完整净债务。 本轮新增中国移动2026-06-30货币资金、现金及现金等价物、长期借款及计算型每股净资产；考虑财务公司吸收存款、租赁负债及一年内到期负债，不将其视为普通企业简化净债务。",
+    "note": "资本开支取现金流量表‘购建固定资产、无形资产和其他长期资产支付的现金’，金额统一为百万元；简化FCF=经营现金流-该项资本开支，不含其他投资现金流，半年值不年化。银行、保险等金融机构不套用普通企业FCF/净债务口径。历史估值分位必须使用同一证券、同一估值倍数定义、日期连续且经复权/口径检查的真实历史序列。 本轮净债务仅对海尔智家、中国电信按半年度报告披露现金与借款计算；统一采用窄口径（短期借款+长期借款-现金），不含租赁负债及其他融资性负债，不能直接与采用广义净债务口径的数据库比较。 本轮复核修正海尔智家现金及现金等价物、以及中国电信长期借款数据；两家公司均按短期借款+长期借款-现金及现金等价物的窄口径计算，未纳入债券、租赁负债及一年内到期非流动负债。 本轮补录海尔智家、中国电信的计算型每股净资产及中国神华报告披露每股净资产；计算型BVPS采用归母股东权益/股本，报告披露值与计算值在字段方法中区分。 本轮新增美的集团2026-06-30现金及现金等价物、短期借款和非流动借款余额，均从半年度报告提取并统一为百万元人民币；因借款分类口径存在差异，净债务暂不计算，避免混算。 本轮补录格力电器2026年半年度货币资金、短期借款、长期借款及按归母权益/股本计算的每股净资产；货币资金与现金及现金等价物口径不同，故净债务保留空值。 本轮核验长江电力、恒瑞医药、迈瑞医疗2026-06-30货币资金/现金及现金等价物、短期借款、长期借款及计算型每股净资产。长江电力存在大量一年内到期非流动负债及应付债券，不以简化公式冒充完整净债务。 本轮新增中国移动2026-06-30货币资金、现金及现金等价物、长期借款及计算型每股净资产；考虑财务公司吸收存款、租赁负债及一年内到期负债，不将其视为普通企业简化净债务。 本批次新增宁德时代、比亚迪2026-06-30资产负债表字段及BVPS。货币资金与现金及现金等价物分开记录；净债务不在存在重要债券、一年内到期非流动负债或租赁负债时简单计算。",
     "withRevenue": 49,
     "withNetProfit": 49,
     "withEPS": 48,
@@ -4907,13 +4963,17 @@
         "瀚蓝环境"
       ]
     },
-    "withBookValuePerShare": 15,
+    "withBookValuePerShare": 17,
     "withROIC": 0,
     "withCapex": 15,
     "withNetDebt": 2,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
-    "withBVPS": 15
+    "withBVPS": 17,
+    "withMonetaryFunds": 7,
+    "withCashAndCashEquivalents": 7,
+    "withShortTermBorrowings": 8,
+    "withLongTermBorrowings": 8
   },
   "marketDataSourceMap": {
     "A股": {
