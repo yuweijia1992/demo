@@ -228,7 +228,7 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863",
       "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度财务字段已按公开报告补核；估值字段另行核验",
-      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本每股收益。归母净利润同比增长7.13%，扣非归母净利润同比增长3.77%，经营现金流同比下降18.52%；估值时需留意利润增长与现金流变动不一致。 2026年半年度报告：加权平均ROE 10.07%、经营现金流净额1,224.227百万元；基本EPS 0.72元/股。",
+      "dataNotes": "金额单位：百万元人民币；EPS为半年度基本每股收益。归母净利润同比增长7.13%，扣非归母净利润同比增长3.77%，经营现金流同比下降18.52%；估值时需留意利润增长与现金流变动不一致。 2026年半年度报告：加权平均ROE 10.07%、经营现金流净额1,224.227百万元；基本EPS 0.72元/股。 截至2026-06-30每股净资产6.68元，来自公开财务指标页，需以半年报原文口径为最终依据。",
       "derivedMetrics": {
         "netProfitMarginPct": 25.95,
         "operatingCashFlowToNetProfit": 0.292,
@@ -239,8 +239,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 63,
-        "valuationCorePresent": 5,
+        "valuationCorePct": 88,
+        "valuationCorePresent": 7,
         "valuationCoreRequired": 8,
         "requiredFields": [
           "revenue",
@@ -255,7 +255,9 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "marketDataSourceUrl": "https://quote.cfi.cn/quote_603288.html",
-      "marketDataNotes": "中财网行情页显示2026-10-22 15:00价格33.47元、PE 26.74、PB 4.94；页面说明行情可能延时，估值口径需交叉核验。"
+      "marketDataNotes": "中财网行情页显示2026-10-22 15:00价格33.47元、PE 26.74、PB 4.94；页面说明行情可能延时，估值口径需交叉核验。",
+      "bookValuePerShare": 6.68,
+      "bookValueSourceUrl": "https://stock.quote.stockstar.com/finance/summary_603288.shtml"
     },
     {
       "layer": 1,
@@ -774,8 +776,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 40,
-        "valuationCorePresent": 2,
+        "valuationCorePct": 60,
+        "valuationCorePresent": 3,
         "valuationCoreRequired": 5,
         "requiredFields": [
           "revenue",
@@ -1033,8 +1035,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 83,
-        "valuationCorePresent": 5,
+        "valuationCorePct": 100,
+        "valuationCorePresent": 6,
         "valuationCoreRequired": 6,
         "requiredFields": [
           "revenue",
@@ -1230,8 +1232,8 @@
         "利润为正但经营现金流为负：现金转化需重点复核"
       ],
       "dataCompleteness": {
-        "valuationCorePct": 50,
-        "valuationCorePresent": 4,
+        "valuationCorePct": 63,
+        "valuationCorePresent": 5,
         "valuationCoreRequired": 8,
         "requiredFields": [
           "revenue",
@@ -1692,8 +1694,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 60,
-        "valuationCorePresent": 3,
+        "valuationCorePct": 80,
+        "valuationCorePresent": 4,
         "valuationCoreRequired": 5,
         "requiredFields": [
           "revenue",
@@ -1750,7 +1752,7 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12569505&stockid=601668",
       "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
-      "dataNotes": "营收9758.37亿元，同比-12.0%；归母净利润230.00亿元，同比-24.3%。原报告金额单位为千元人民币，已换算为百万元人民币。建筑施工需关注新签合同、现金回款、应收与地产相关风险。 2026年半年度报告摘要：基本EPS 0.55元/股、加权平均ROE 4.61%。经营现金流原始摘要单位口径需进一步核对，暂不填入。",
+      "dataNotes": "营收9758.37亿元，同比-12.0%；归母净利润230.00亿元，同比-24.3%。原报告金额单位为千元人民币，已换算为百万元人民币。建筑施工需关注新签合同、现金回款、应收与地产相关风险。 2026年半年度报告摘要：基本EPS 0.55元/股、加权平均ROE 4.61%。经营现金流原始摘要单位口径需进一步核对，暂不填入。 2026年半年度报告披露归属普通股股东的每股净资产11.98元。",
       "derivedMetrics": {
         "netProfitMarginPct": 2.36,
         "profitability": "盈利",
@@ -1772,7 +1774,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "bookValuePerShare": 11.98,
+      "bookValueSourceUrl": "https://stock.stockstar.com/notice/SN2026082800049566.shtml"
     },
     {
       "layer": 4,
@@ -1825,8 +1829,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 83,
-        "valuationCorePresent": 5,
+        "valuationCorePct": 100,
+        "valuationCorePresent": 6,
         "valuationCoreRequired": 6,
         "requiredFields": [
           "revenue",
@@ -1891,8 +1895,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 67,
-        "valuationCorePresent": 4,
+        "valuationCorePct": 83,
+        "valuationCorePresent": 5,
         "valuationCoreRequired": 6,
         "requiredFields": [
           "revenue",
@@ -1956,8 +1960,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 80,
-        "valuationCorePresent": 4,
+        "valuationCorePct": 100,
+        "valuationCorePresent": 5,
         "valuationCoreRequired": 5,
         "requiredFields": [
           "revenue",
@@ -2089,8 +2093,8 @@
         "利润为正但经营现金流为负：现金转化需重点复核"
       ],
       "dataCompleteness": {
-        "valuationCorePct": 67,
-        "valuationCorePresent": 4,
+        "valuationCorePct": 83,
+        "valuationCorePresent": 5,
         "valuationCoreRequired": 6,
         "requiredFields": [
           "revenue",
@@ -2537,8 +2541,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 67,
-        "valuationCorePresent": 2,
+        "valuationCorePct": 100,
+        "valuationCorePresent": 3,
         "valuationCoreRequired": 3,
         "requiredFields": [
           "revenue",
@@ -2660,8 +2664,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 40,
-        "valuationCorePresent": 2,
+        "valuationCorePct": 60,
+        "valuationCorePresent": 3,
         "valuationCoreRequired": 5,
         "requiredFields": [
           "revenue",
@@ -2847,8 +2851,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 60,
-        "valuationCorePresent": 3,
+        "valuationCorePct": 80,
+        "valuationCorePresent": 4,
         "valuationCoreRequired": 5,
         "requiredFields": [
           "revenue",
@@ -2973,8 +2977,8 @@
         "净利率超过50%：建议复核行业口径/非经常性损益"
       ],
       "dataCompleteness": {
-        "valuationCorePct": 40,
-        "valuationCorePresent": 2,
+        "valuationCorePct": 60,
+        "valuationCorePresent": 3,
         "valuationCoreRequired": 5,
         "requiredFields": [
           "revenue",
@@ -3034,8 +3038,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 50,
-        "valuationCorePresent": 3,
+        "valuationCorePct": 67,
+        "valuationCorePresent": 4,
         "valuationCoreRequired": 6,
         "requiredFields": [
           "revenue",
@@ -3096,8 +3100,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 38,
-        "valuationCorePresent": 3,
+        "valuationCorePct": 63,
+        "valuationCorePresent": 5,
         "valuationCoreRequired": 8,
         "requiredFields": [
           "revenue",
@@ -3366,6 +3370,14 @@
         "中信证券",
         "分众传媒",
         "中公教育"
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "description": "补录海天味业与中国建筑公开披露的期末每股净资产；刷新49家公司字段覆盖率、缺项清单及行情日期检查。",
+      "companies": [
+        "海天味业",
+        "中国建筑"
       ]
     }
   ],
@@ -3799,7 +3811,6 @@
       "bookValuePerShare": [
         "伊利股份",
         "牧原股份",
-        "海天味业",
         "海澜之家",
         "申洲国际",
         "海尔智家",
@@ -3822,7 +3833,6 @@
         "国电南瑞",
         "中国移动",
         "中国电信",
-        "中国建筑",
         "腾讯控股",
         "阿里巴巴",
         "中芯国际",
@@ -3845,7 +3855,7 @@
         "瀚蓝环境"
       ]
     },
-    "withBookValuePerShare": 3
+    "withBookValuePerShare": 5
   },
   "marketDataSourceMap": {
     "A股": {
