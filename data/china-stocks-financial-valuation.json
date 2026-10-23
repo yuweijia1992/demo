@@ -49,7 +49,8 @@
     "valuationPercentile10Y": "10年估值分位%",
     "sourceUrl": "对应报告/行情原始来源URL",
     "verifiedAt": "数据核验日期",
-    "interimDividendPerShare": "仅在公司明确披露中期每股股息时录入；不是股息率，也不等于全年股息"
+    "interimDividendPerShare": "仅在公司明确披露中期每股股息时录入；不是股息率，也不等于全年股息",
+    "bookValuePerShare": "期末每股净资产，按公司报告披露；币种须与证券市场口径一致"
   },
   "stocks": [
     {
@@ -747,10 +748,10 @@
       "revenue": 21842,
       "revenueGrowth": 3.94,
       "netProfit": 6771,
-      "eps": null,
-      "roe": null,
+      "eps": 0.1384,
+      "roe": 3.21,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 10685.134627,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -760,10 +761,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534682.PDF",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收218.42亿元，同比+3.94%；归母净利润约67.71亿元，同比+7.21%。金额单位百万元人民币。",
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574755&stockid=601816",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
+      "dataNotes": "营收218.42亿元，同比+3.94%；归母净利润约67.71亿元，同比+7.21%。金额单位百万元人民币。 2026年半年度报告：基本EPS 0.1384元/股、加权平均ROE 3.21%、经营现金流净额10,685.13百万元。",
       "derivedMetrics": {
         "netProfitMarginPct": 31,
         "profitability": "盈利",
@@ -1002,8 +1003,8 @@
       "revenue": 15455.583728,
       "revenueGrowth": -1.94,
       "netProfit": 4465.28242,
-      "eps": null,
-      "roe": null,
+      "eps": 0.68,
+      "roe": 8.04,
       "roic": null,
       "operatingCashFlow": 1987.003873,
       "capex": null,
@@ -1015,10 +1016,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "2026年半年度主要财务数据已核验；价格及估值待核验",
-      "dataNotes": "营业收入154.56亿元，同比下降1.94%；归母净利润44.65亿元，同比增长0.34%；经营现金流19.87亿元，同比下降53.80%。创新药收入88.09亿元，同比增长16.38%；研发投入46.05亿元，同比增长18.96%。需区分授权收入、药品销售、研发投入及经营现金流波动。金额单位百万元人民币。",
+      "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
+      "dataNotes": "营业收入154.56亿元，同比下降1.94%；归母净利润44.65亿元，同比增长0.34%；经营现金流19.87亿元，同比下降53.80%。创新药收入88.09亿元，同比增长16.38%；研发投入46.05亿元，同比增长18.96%。需区分授权收入、药品销售、研发投入及经营现金流波动。金额单位百万元人民币。 2026年半年度报告：基本EPS 0.68元/股、加权平均ROE 8.04%；经营现金流字段此前已按报告录入。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/hengrui-medi-historical-data",
       "marketDataNotes": "Investing.com列示2026-10-20收盘47.37元；PE/PB待同口径核验。",
       "derivedMetrics": {
@@ -1198,7 +1199,7 @@
       "revenue": 26728.336668,
       "revenueGrowth": 4.27,
       "netProfit": 879.76948,
-      "eps": null,
+      "eps": 1.166,
       "roe": 4.69,
       "roic": null,
       "operatingCashFlow": -2634.343549,
@@ -1211,10 +1212,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12504832&stockid=600511",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "营收267.28亿元，同比+4.27%；归母净利润8.80亿元，同比-7.25%；经营现金流-26.34亿元；ROE 4.69%。现金流为负且营收增、利润降，需关注药品流通营运资金与回款。",
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12504833&stockid=600511",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
+      "dataNotes": "营收267.28亿元，同比+4.27%；归母净利润8.80亿元，同比-7.25%；经营现金流-26.34亿元；ROE 4.69%。现金流为负且营收增、利润降，需关注药品流通营运资金与回款。 2026年半年度报告：基本EPS 1.1660元/股；经营现金流为-2,634.34百万元，需结合流通企业营运资金变化解读。",
       "derivedMetrics": {
         "netProfitMarginPct": 3.29,
         "operatingCashFlowToNetProfit": -2.994,
@@ -2381,7 +2382,7 @@
       "revenue": 178181,
       "revenueGrowth": 4.83,
       "netProfit": 76445,
-      "eps": null,
+      "eps": 2.98,
       "roe": 13.42,
       "roic": null,
       "operatingCashFlow": null,
@@ -2394,10 +2395,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": "https://paper.cnstock.com/html/2026-08/29/content_2262443.htm",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币。ROE为年化后归属于本行普通股股东的平均净资产收益率；不良贷款率0.94%、拨备覆盖率385.10%（报告期末）。银行自由现金流/净债务不按普通企业口径套用；EPS待从完整报告核验。",
+      "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570089&stockid=600036",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
+      "dataNotes": "金额单位：百万元人民币。ROE为年化后归属于本行普通股股东的平均净资产收益率；不良贷款率0.94%、拨备覆盖率385.10%（报告期末）。银行自由现金流/净债务不按普通企业口径套用；EPS待从完整报告核验。 2026年半年度报告：基本EPS 2.98元/股；期末归属于普通股股东的每股净资产45.40元。银行的净债务、自由现金流不套用普通工商企业口径。",
       "marketDataSourceUrl": "https://quote.cfi.cn/quote.aspx?stockcode=600036&zqlb=0",
       "marketDataNotes": "中财网列示2026-10-20 15:00价格42.52元、PE 7.07、PB 0.79；银行估值还需结合ROE、不良率、拨备覆盖率及资本充足率。",
       "derivedMetrics": {
@@ -2416,7 +2417,8 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "bookValuePerShare": 45.4
     },
     {
       "layer": 5,
@@ -2443,7 +2445,7 @@
       "revenue": 465859,
       "revenueGrowth": 9.1,
       "netProfit": 173682,
-      "eps": null,
+      "eps": 0.47,
       "roe": 8.63,
       "roic": null,
       "operatingCashFlow": null,
@@ -2456,10 +2458,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": "https://paper.cnstock.com/html/2026-08/29/content_2262614.htm",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币。营业收入4,658.59亿元，同比增长9.1%；归母净利润1,736.82亿元；年化加权平均ROE 8.63%。银行业不使用普通企业自由现金流/净债务估值框架；另需跟踪净息差、资产质量、拨备覆盖率与资本充足率。",
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
+      "dataNotes": "金额单位：百万元人民币。营业收入4,658.59亿元，同比增长9.1%；归母净利润1,736.82亿元；年化加权平均ROE 8.63%。银行业不使用普通企业自由现金流/净债务估值框架；另需跟踪净息差、资产质量、拨备覆盖率与资本充足率。 2026年半年度报告摘要：基本EPS 0.47元/股；期末每股净资产11.12元。银行的净债务、自由现金流不套用普通工商企业口径。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/icbc-ss-historical-data",
       "marketDataNotes": "Investing.com列示2026-10-20收盘8.56元；PE/PB需用银行专属估值口径补核。",
       "derivedMetrics": {
@@ -2478,7 +2480,8 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "bookValuePerShare": 11.12
     },
     {
       "layer": 5,
@@ -3301,6 +3304,17 @@
         "汇川技术",
         "中国中免"
       ]
+    },
+    {
+      "date": "2026-10-23",
+      "description": "补录京沪高铁、恒瑞医药、国药股份、招商银行、工商银行公开半年报中的EPS/ROE/现金流/每股净资产可核实项；更新审计清单。",
+      "companies": [
+        "京沪高铁",
+        "恒瑞医药",
+        "国药股份",
+        "招商银行",
+        "工商银行"
+      ]
     }
   ],
   "valuationModels": {
@@ -3424,18 +3438,18 @@
       "duplicatePrimaryCodes": [],
       "historicalPercentileWithoutCurrentMetric": []
     },
-    "note": "本轮根据公开可查的2026年半年度报告补录海澜之家、宇通客车、迈瑞医疗、国电南瑞、阳光电源、汇川技术、中国中免、中国建筑缺失的EPS/ROE/经营现金流字段（仅录入报告可核实项）。金额统一为百万元人民币；未核实的净债务、每股净资产、资本开支、估值倍数及历史分位保留空值。覆盖率不代表数据准确性。",
+    "note": "截至2026-10-23，本轮根据公开可查的2026年半年度报告补录财务字段，并单独记录银行每股净资产。金额字段统一为百万元人民币；港股等非人民币数据须保留原币种。净债务、资本开支、估值倍数及历史分位未核实则保留空值。覆盖率不代表数据准确性；银行不适用普通工商企业FCF/净债务分析框架。",
     "withRevenue": 49,
     "withNetProfit": 49,
-    "withEPS": 35,
-    "withOperatingCashFlow": 37,
+    "withEPS": 40,
+    "withOperatingCashFlow": 38,
     "withFreeCashFlow": 3,
     "derivedNetProfitMargin": 49,
     "derivedCashFlowConversion": 37,
     "companiesWithQualityAlerts": 5,
     "withCurrency": 24,
     "withRevenueGrowth": 48,
-    "withROE": 31,
+    "withROE": 33,
     "missingFieldLists": {
       "price": [
         "牧原股份",
@@ -3608,14 +3622,9 @@
         "瀚蓝环境"
       ],
       "EPS": [
-        "京沪高铁",
-        "恒瑞医药",
-        "国药股份",
         "阿里巴巴",
         "中芯国际",
         "海光信息",
-        "招商银行",
-        "工商银行",
         "中国平安",
         "中信证券",
         "京东集团",
@@ -3627,10 +3636,8 @@
         "海天味业",
         "申洲国际",
         "格力电器",
-        "京沪高铁",
         "顺丰控股",
         "中远海控",
-        "恒瑞医药",
         "中国核电",
         "腾讯控股",
         "阿里巴巴",
@@ -3645,7 +3652,6 @@
       ],
       "operatingCashFlow": [
         "申洲国际",
-        "京沪高铁",
         "顺丰控股",
         "中国建筑",
         "招商银行",
@@ -3704,8 +3710,58 @@
         "中公教育",
         "兴蓉环境",
         "瀚蓝环境"
+      ],
+      "bookValuePerShare": [
+        "伊利股份",
+        "牧原股份",
+        "海天味业",
+        "海澜之家",
+        "申洲国际",
+        "海尔智家",
+        "美的集团",
+        "格力电器",
+        "比亚迪",
+        "宇通客车",
+        "京沪高铁",
+        "顺丰控股",
+        "中远海控",
+        "迈瑞医疗",
+        "恒瑞医药",
+        "药明康德",
+        "爱尔眼科",
+        "国药股份",
+        "长江电力",
+        "川投能源",
+        "中国核电",
+        "中国神华",
+        "国电南瑞",
+        "中国移动",
+        "中国电信",
+        "中国建筑",
+        "腾讯控股",
+        "阿里巴巴",
+        "中芯国际",
+        "北方华创",
+        "海光信息",
+        "中际旭创",
+        "宁德时代",
+        "阳光电源",
+        "汇川技术",
+        "中国平安",
+        "中国太保",
+        "中信证券",
+        "东方财富",
+        "京东集团",
+        "中国中免",
+        "锦江酒店",
+        "分众传媒",
+        "哔哩哔哩",
+        "中公教育",
+        "兴蓉环境",
+        "瀚蓝环境"
       ]
-    }
+    },
+    "withBookValuePerShare": 2
   },
   "marketDataSourceMap": {
     "A股": {
