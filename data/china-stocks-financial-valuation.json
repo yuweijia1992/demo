@@ -2,7 +2,7 @@
   "title": "中国相关上市公司财务与估值数据库",
   "version": "0.1.0",
   "asOf": "2026-10-23",
-  "coverage": "截至2026-10-23，共49家公司。已补入2026年上半年资本开支及简化FCF的公司包括美的集团、海天味业、伊利股份、宁德时代、长江电力、海尔智家、比亚迪、格力电器、牧原股份、恒瑞医药、迈瑞医疗；伊利股份期末每股净资产按归母净资产/股本计算；美的集团2026年度中期每股分红方案已记录。简化FCF不含其他投资现金流，半年数不年化；净债务、股息率、ROIC与历史估值分位仍需逐家公司原始报告或历史时间序列核验。",
+  "coverage": "截至2026-10-23，共49家公司。已补入2026年上半年资本开支及简化FCF的公司包括美的集团、海天味业、伊利股份、宁德时代、长江电力、海尔智家、比亚迪、格力电器、牧原股份、恒瑞医药、迈瑞医疗、中国移动、中国电信、中国神华。中国移动同时保留公司披露FCF与本库统一简化FCF的口径差异说明。伊利股份期末每股净资产按归母净资产/股本计算；美的集团2026年度中期每股分红方案已记录。净债务、股息率、ROIC与历史估值分位仍需逐家公司原始报告或历史时间序列核验。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
   "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.\n历史估值分位：必须来自有来源和日期的历史序列或授权API。网页CSV计算器结果仅为用户本地临时结果，须经口径审查后才可写入正式字段。价格超过最近交易日未更新时标记为过期，不得当作实时行情。\n新增派生指标规则：净利率=归母净利润/营业收入；经营现金流/净利润用于观察现金转化；利润与现金流差额=经营现金流-归母净利润。派生字段与公司披露原始字段分开保存，不反推ROIC、净债务、股息率或历史估值分位。模型字段覆盖率仅作缺项提醒，不代表估值结论。",
   "sources": [
@@ -1530,8 +1530,8 @@
       "roe": 5.83,
       "roic": null,
       "operatingCashFlow": 54664,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 29579,
+      "freeCashFlow": 25085,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -1540,9 +1540,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572344&stockid=601088",
-      "verifiedAt": "2026-10-20",
+      "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度主要财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "金额单位百万元人民币；报告列示2026年上半年营收189,338百万元、归母净利润28,715百万元、基本每股收益1.339元、加权平均ROE 5.83%、经营现金流54,664百万元。公司同期完成收购控股股东旗下12家标的公司，收入和资产同比口径受重述/并购影响；估值需结合煤炭价格周期、煤电运一体化、资本开支与分红。",
+      "dataNotes": "金额单位百万元人民币；报告列示2026年上半年营收189,338百万元、归母净利润28,715百万元、基本每股收益1.339元、加权平均ROE 5.83%、经营现金流54,664百万元。公司同期完成收购控股股东旗下12家标的公司，收入和资产同比口径受重述/并购影响；估值需结合煤炭价格周期、煤电运一体化、资本开支与分红。 2026年上半年报告按百万元披露经营现金流54,664百万元，购建固定资产、无形资产和其他长期资产支付现金29,579百万元；简化FCF=25,085百万元。半年不年化。投资活动还包含大量金融产品及联营投资，简化FCF不等于完整投资活动净现金流。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/china-shenhua",
       "marketDataNotes": "行情页面列示2026-10-20价格50.99元；页面使用当前行情措辞，尚需收盘记录复核。",
       "derivedMetrics": {
@@ -1566,7 +1566,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572344&stockid=601088",
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，不年化；金额单位百万元人民币"
     },
     {
       "layer": 3,
@@ -1664,8 +1666,8 @@
       "roe": 5.6,
       "roic": null,
       "operatingCashFlow": 114854,
-      "capex": null,
-      "freeCashFlow": 53869,
+      "capex": 66290,
+      "freeCashFlow": 48564,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": 16.75,
@@ -1674,9 +1676,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492473&stockid=",
-      "verifiedAt": "2026-10-20",
+      "verifiedAt": "2026-10-23",
       "dataStatus": "半年度财务数据已核验；价格及估值待核验",
-      "dataNotes": "金额单位：百万元人民币。报告披露自由现金流为538.69亿元；EPS为上半年基本EPS，ROE为报告披露的加权平均净资产收益率，未年化。营业收入同比下降1.1%，主营业务收入同比下降3.1%。",
+      "dataNotes": "金额单位：百万元人民币。报告披露自由现金流为538.69亿元；EPS为上半年基本EPS，ROE为报告披露的加权平均净资产收益率，未年化。营业收入同比下降1.1%，主营业务收入同比下降3.1%。 2026年上半年经营现金流114,854百万元，购建固定资产等长期资产现金支出66,290百万元；本数据库统一口径简化FCF=48,564百万元。公司报告另披露自由现金流53,869百万元，因公司自定义口径与本库简化口径不一致，保留差异说明，不混用两种指标。金额单位百万元人民币，半年数。",
       "marketDataSourceUrl": "https://data.cfi.cn/600941.html",
       "marketDataNotes": "A股600941行情，2026-10-20；PE/PB采用中财网显示值。H股00941.HK必须另行录入港币价格与估值，不得共用。",
       "derivedMetrics": {
@@ -1700,7 +1702,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492474&stockid=600941",
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，不年化；金额单位百万元人民币"
     },
     {
       "layer": 3,
@@ -1730,8 +1734,8 @@
       "roe": 4.2,
       "roic": null,
       "operatingCashFlow": 60375.156021,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 26358.85506306,
+      "freeCashFlow": 34016.30095819,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -1742,7 +1746,7 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910",
       "verifiedAt": "2026-10-23",
       "dataStatus": "财报部分字段已核验；行情为2026-10-22公开历史收盘价",
-      "dataNotes": "营收2590.1亿元，同比-3.9%；经营活动现金净流入603.8亿元，同比+28.4%。归母净利润、EPS仍待核对。金额单位百万元人民币。 补充核验：2026年半年度营业收入、归母净利润、基本EPS、加权平均ROE、经营现金流来自2026年半年度报告；财务报表未经审计。",
+      "dataNotes": "营收2590.1亿元，同比-3.9%；经营活动现金净流入603.8亿元，同比+28.4%。归母净利润、EPS仍待核对。金额单位百万元人民币。 补充核验：2026年半年度营业收入、归母净利润、基本EPS、加权平均ROE、经营现金流来自2026年半年度报告；财务报表未经审计。 2026年上半年经营现金流60,375.156百万元；资本开支26,358.855百万元；简化FCF=34,016.301百万元。金额单位百万元人民币，半年不年化，未扣除其他投资现金流。",
       "derivedMetrics": {
         "revenueTrend": "营收同比下降",
         "netProfitMarginPct": 7.56,
@@ -1753,8 +1757,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 80,
-        "valuationCorePresent": 4,
+        "valuationCorePct": 100,
+        "valuationCorePresent": 5,
         "valuationCoreRequired": 5,
         "requiredFields": [
           "revenue",
@@ -1769,7 +1773,9 @@
       "interimDividendCurrency": "CNY",
       "interimDividendPeriod": "2026年中期拟派发股息（含税），每股人民币0.1606元；并非年度股息率",
       "marketDataSourceUrl": "https://cn.investing.com/equities/china-telecom-corp-historical-data",
-      "marketDataNotes": "Investing.com历史行情表显示A股601728于2026-10-22收盘6.66元；本轮仅核价，PE/PB/PS未从同一页面核实，继续留空。"
+      "marketDataNotes": "Investing.com历史行情表显示A股601728于2026-10-22收盘6.66元；本轮仅核价，PE/PB/PS未从同一页面核实，继续留空。",
+      "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910&stockid=601728",
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，不年化；金额单位百万元人民币"
     },
     {
       "layer": 3,
@@ -3576,6 +3582,11 @@
       "date": "2026-10-23",
       "scope": "补录格力电器、牧原股份、恒瑞医药、迈瑞医疗2026H1资本开支及简化FCF，并复核更正长江电力资本开支",
       "policy": "使用公司2026年半年度报告合并现金流量表；金额统一为百万元人民币。长江电力资本开支按该报告合并现金流量表更正为4,434.616百万元，避免误取报告中其他表格数值。"
+    },
+    {
+      "date": "2026-10-23",
+      "scope": "补录中国移动、中国电信、中国神华2026H1资本开支及统一口径简化FCF",
+      "policy": "从半年度报告合并现金流量表录入；中国移动公司披露FCF与本库简化FCF定义不同，数据库统一口径值按经营现金流减资本开支计算，并在备注中保留差异。"
     }
   ],
   "valuationModels": {
@@ -3766,7 +3777,7 @@
     "withNetProfit": 49,
     "withEPS": 48,
     "withOperatingCashFlow": 46,
-    "withFreeCashFlow": 14,
+    "withFreeCashFlow": 16,
     "derivedNetProfitMargin": 49,
     "derivedCashFlowConversion": 37,
     "companiesWithQualityAlerts": 5,
@@ -3930,9 +3941,7 @@
         "国药股份",
         "川投能源",
         "中国核电",
-        "中国神华",
         "国电南瑞",
-        "中国电信",
         "中国建筑",
         "中芯国际",
         "北方华创",
@@ -4066,10 +4075,7 @@
         "国药股份",
         "川投能源",
         "中国核电",
-        "中国神华",
         "国电南瑞",
-        "中国移动",
-        "中国电信",
         "中国建筑",
         "阿里巴巴",
         "中芯国际",
@@ -4105,9 +4111,7 @@
         "国药股份",
         "川投能源",
         "中国核电",
-        "中国神华",
         "国电南瑞",
-        "中国电信",
         "中国建筑",
         "中芯国际",
         "北方华创",
@@ -4401,10 +4405,7 @@
         "国药股份",
         "川投能源",
         "中国核电",
-        "中国神华",
         "国电南瑞",
-        "中国移动",
-        "中国电信",
         "中国建筑",
         "阿里巴巴",
         "中芯国际",
@@ -4774,7 +4775,7 @@
     },
     "withBookValuePerShare": 7,
     "withROIC": 0,
-    "withCapex": 12,
+    "withCapex": 15,
     "withNetDebt": 0,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
