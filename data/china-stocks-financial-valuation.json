@@ -2,7 +2,7 @@
   "title": "中国相关上市公司财务与估值数据库",
   "version": "0.1.0",
   "asOf": "2026-10-23",
-  "coverage": "截至2026-10-23，49家公司的基础收入与净利润字段均已录入；本轮新增7家公司2026-10-22历史收盘价及美的集团每股净资产。行情来源仍需交叉验证，估值倍数、每股净资产及现金流等字段仍有缺口；缺失数据保留为空，不以估算值伪装成披露值。",
+  "coverage": "截至2026-10-23，49家公司基础收入和净利润均已录入；行情已补至37家，仍有12家缺少价格。行情来自公开第三方历史数据，存在个别来源差异和日期滞后，已单独标注。估值倍数、每股净资产、资本开支、净债务、ROIC、股息率和历史分位仍有明显缺口；缺失数据继续留空，待来源核验。",
   "currencyNote": "A股与港股价格、每股数据分别以交易币种记录；同一公司多地上市证券不可混用价格与每股指标。",
   "dataPolicy": "不填入未能从原始披露核验的数据。numeric fields are null until verified from the company's latest available official report and market close. As of 2026-10-20, do not assume every company has published 2026 Q3 reports; use latest actually disclosed report and label its period.\n历史估值分位：必须来自有来源和日期的历史序列或授权API。网页CSV计算器结果仅为用户本地临时结果，须经口径审查后才可写入正式字段。价格超过最近交易日未更新时标记为过期，不得当作实时行情。\n新增派生指标规则：净利率=归母净利润/营业收入；经营现金流/净利润用于观察现金转化；利润与现金流差额=经营现金流-归母净利润。派生字段与公司披露原始字段分开保存，不反推ROIC、净债务、股息率或历史估值分位。模型字段覆盖率仅作缺项提醒，不代表估值结论。",
   "sources": [
@@ -819,8 +819,8 @@
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
+      "priceDate": "2026-10-22",
+      "price": 30.47,
       "currency": "CNY",
       "revenue": 155506.421,
       "revenueGrowth": 5.89,
@@ -866,7 +866,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://www.hstong.com/quotes/30000-002352-SZ",
+      "marketDataNotes": "华盛通显示2026-10-22收盘价30.47元；第三方行情快照。"
     },
     {
       "layer": 1,
@@ -1352,9 +1354,9 @@
       ],
       "formula": "用企业自由现金流DCF或股息折现估值，区分维持性与扩张性资本开支；用股息率、净债务和项目回报交叉核验。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 17.29,
+      "currency": "CNY",
       "revenue": 679.525407,
       "revenueGrowth": -4.53,
       "netProfit": 2329.685397,
@@ -1372,7 +1374,7 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12495897&stockid=600674",
-      "verifiedAt": "2026-10-20",
+      "verifiedAt": "2026-10-23",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
       "dataNotes": "营收6.80亿元，同比-4.53%；归母净利润23.30亿元，同比-5.34%；经营现金流4.42亿元，同比+36.71%；EPS 0.4779元，ROE 5.06%。收入主要为电力及投资收益结构。",
       "derivedMetrics": {
@@ -1398,7 +1400,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/chuantou-ener-historical-data",
+      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价17.29元；另有其他第三方行情源显示17.37元，存在报价口径差异，暂采用历史行情页面并标记需交叉核验。"
     },
     {
       "layer": 3,
@@ -2284,9 +2288,9 @@
       ],
       "formula": "以跨周期正常化利润而非景气高点利润估值；辅以EV/EBITDA、重置成本或分部估值，设置低/中/高周期盈利。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-21",
+      "price": 72.3,
+      "currency": "CNY",
       "revenue": 30912.265605,
       "revenueGrowth": -28.99,
       "netProfit": 5258.509295,
@@ -2327,7 +2331,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://www.yyqyx.com/s/300274.SZ",
+      "marketDataNotes": "公开历史行情页列示2026-10-21收盘价72.30元；尚未核验10月22日收盘价，因此明确保留价格日期。"
     },
     {
       "layer": 4,
@@ -3109,9 +3115,9 @@
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-21",
+      "price": 1.79,
+      "currency": "CNY",
       "revenue": 1169,
       "revenueGrowth": 1.22,
       "netProfit": 73.2244,
@@ -3155,7 +3161,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/yaxia-automobile-a-historical-data",
+      "marketDataNotes": "Investing.com历史行情截至2026-10-21显示收盘价1.79元；数据较最新交易日滞后，需补核10月22日收盘价。"
     },
     {
       "layer": 6,
@@ -3456,6 +3464,13 @@
         "新增瀚蓝环境2026-10-20收盘价，标注该行情日期尚非最新交易日。"
       ],
       "policy": "每项行情保留日期与来源；来源口径有差异时不混用价格与估值倍数。"
+    },
+    {
+      "date": "2026-10-23",
+      "changes": [
+        "新增顺丰控股、川投能源、阳光电源、中公教育可查历史收盘价；对存在来源差异或行情滞后的项目添加说明。"
+      ],
+      "policy": "记录明确交易日期，不把较旧收盘价伪装成最新行情。"
     }
   ],
   "valuationModels": {
@@ -3552,7 +3567,7 @@
   "auditSnapshot": {
     "auditedAt": "2026-10-23",
     "listedCompanies": 49,
-    "withPrice": 33,
+    "withPrice": 37,
     "withPE": 13,
     "withPB": 10,
     "withPS": 1,
@@ -3656,12 +3671,9 @@
     "missingFieldLists": {
       "price": [
         "申洲国际",
-        "顺丰控股",
         "国药股份",
-        "川投能源",
         "中国建筑",
         "阿里巴巴",
-        "阳光电源",
         "汇川技术",
         "中信证券",
         "东方财富",
@@ -3669,7 +3681,6 @@
         "锦江酒店",
         "分众传媒",
         "哔哩哔哩",
-        "中公教育",
         "兴蓉环境"
       ],
       "PE": [
