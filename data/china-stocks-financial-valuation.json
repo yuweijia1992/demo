@@ -1859,7 +1859,7 @@
       "revenue": 268953,
       "revenueGrowth": 9,
       "netProfit": 10444,
-      "eps": null,
+      "eps": 0.46,
       "roe": null,
       "roic": null,
       "operatingCashFlow": 22945,
@@ -1873,9 +1873,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://ali-home.alibaba.com/document-2026456290057781248",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "截至2026-06-30季度收入2689.53亿元人民币，同比+9%；归母普通股股东净利润105.37亿元、净利润104.44亿元，同比-75%；经营现金流229.45亿元，同比+11%；自由现金流净流出446.70亿元。该字段记录单季度而非半年累计，不能与A股半年数据直接同比比较。",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "公开披露财务数据已补核；行情估值字段仍待核验",
+      "dataNotes": "截至2026-06-30季度收入2689.53亿元人民币，同比+9%；归母普通股股东净利润105.37亿元、净利润104.44亿元，同比-75%；经营现金流229.45亿元，同比+11%；自由现金流净流出446.70亿元。该字段记录单季度而非半年累计，不能与A股半年数据直接同比比较。 截至2026-06-30止季度业绩：摊薄每股收益0.46元人民币/普通股；这是单季度数据，不可直接与自然年半年累计EPS混比。经营现金流22,945百万元、自由现金流-44,670百万元均按该季度业绩公告录入。",
       "derivedMetrics": {
         "netProfitMarginPct": 3.88,
         "operatingCashFlowToNetProfit": 2.197,
@@ -2507,10 +2507,10 @@
       "revenue": 575138,
       "revenueGrowth": 15,
       "netProfit": 92585,
-      "eps": null,
-      "roe": null,
+      "eps": 5.3,
+      "roe": 9,
       "roic": null,
-      "operatingCashFlow": null,
+      "operatingCashFlow": 368037,
       "capex": null,
       "freeCashFlow": null,
       "netDebt": null,
@@ -2520,10 +2520,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": "https://paper.cnstock.com/html/2026-08/21/content_2257372.htm",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "2026年中期财务数据已核验；保险估值指标与价格待核验",
-      "dataNotes": "金额单位：百万元人民币。营业收入5,751.38亿元，同比增长15.0%；归母净利润925.85亿元，同比增长36.1%；归母营运利润841.96亿元，同比增长8.3%；寿险及健康险新业务价值248.47亿元，同比增长11.2%。保险估值需另补EV、NBV、内含价值增长、偿付能力与投资收益等指标；不要把营运利润与归母净利润混用。",
+      "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12512669",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "公开披露财务数据已补核；行情估值字段仍待核验",
+      "dataNotes": "金额单位：百万元人民币。营业收入5,751.38亿元，同比增长15.0%；归母净利润925.85亿元，同比增长36.1%；归母营运利润841.96亿元，同比增长8.3%；寿险及健康险新业务价值248.47亿元，同比增长11.2%。保险估值需另补EV、NBV、内含价值增长、偿付能力与投资收益等指标；不要把营运利润与归母净利润混用。 2026年中期报告：基本EPS 5.30元/股（非年化）、加权平均ROE 9.0%（非年化）、经营现金流368,037百万元、每股净资产56.78元；另披露中期股息0.98元/股，非全年股息率。",
       "derivedMetrics": {
         "netProfitMarginPct": 16.1,
         "profitability": "盈利",
@@ -2540,7 +2540,8 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "bookValuePerShare": 56.78
     },
     {
       "layer": 5,
@@ -2999,7 +3000,7 @@
       "revenue": 7940,
       "revenueGrowth": 8,
       "netProfit": 339.1,
-      "eps": null,
+      "eps": 0.82,
       "roe": null,
       "roic": null,
       "operatingCashFlow": null,
@@ -3012,10 +3013,10 @@
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
-      "sourceUrl": "https://www.globenewswire.com/news-release/2026/08/27/3351838/0/en/bilibili-inc-announces-second-quarter-2026-financial-results.html",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "2026年第二季度收入79.4亿元人民币，同比+8%；净利润3.391亿元，同比+55%；调整后净利润7.036亿元，同比+25%。此处为单季度数据，不是半年累计；港股以港币、ADR以美元分别估值。",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526371261/d434015dex991.htm",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "公开披露财务数据已补核；行情估值字段仍待核验",
+      "dataNotes": "2026年第二季度收入79.4亿元人民币，同比+8%；净利润3.391亿元，同比+55%；调整后净利润7.036亿元，同比+25%。此处为单季度数据，不是半年累计；港股以港币、ADR以美元分别估值。 2026年第二季度业绩公告：基本每股收益人民币0.82元/股（季度口径），报告同时披露季度收入7.94十亿元、净利润339.1百万元；与半年累计指标不可直接比较。",
       "derivedMetrics": {
         "netProfitMarginPct": 4.27,
         "profitability": "盈利",
@@ -3315,6 +3316,15 @@
         "招商银行",
         "工商银行"
       ]
+    },
+    {
+      "date": "2026-10-23",
+      "description": "补录中国平安、阿里巴巴、哔哩哔哩公开业绩披露中可核实的EPS/ROE/经营现金流/每股净资产；记录报告期差异并更新审计。",
+      "companies": [
+        "阿里巴巴",
+        "中国平安",
+        "哔哩哔哩"
+      ]
     }
   ],
   "valuationModels": {
@@ -3438,18 +3448,18 @@
       "duplicatePrimaryCodes": [],
       "historicalPercentileWithoutCurrentMetric": []
     },
-    "note": "截至2026-10-23，本轮根据公开可查的2026年半年度报告补录财务字段，并单独记录银行每股净资产。金额字段统一为百万元人民币；港股等非人民币数据须保留原币种。净债务、资本开支、估值倍数及历史分位未核实则保留空值。覆盖率不代表数据准确性；银行不适用普通工商企业FCF/净债务分析框架。",
+    "note": "截至2026-10-23，持续依据公开可查财报补录可核实字段；对单季度、半年度累计、非年化ROE及不同市场币种分别注明，不强行混比。金额字段按百万元人民币记录。未核实的净债务、资本开支、估值倍数及历史分位保留空值；银行/保险现金流口径需行业适配。",
     "withRevenue": 49,
     "withNetProfit": 49,
-    "withEPS": 40,
-    "withOperatingCashFlow": 38,
+    "withEPS": 43,
+    "withOperatingCashFlow": 39,
     "withFreeCashFlow": 3,
     "derivedNetProfitMargin": 49,
     "derivedCashFlowConversion": 37,
     "companiesWithQualityAlerts": 5,
     "withCurrency": 24,
     "withRevenueGrowth": 48,
-    "withROE": 33,
+    "withROE": 34,
     "missingFieldLists": {
       "price": [
         "牧原股份",
@@ -3622,14 +3632,11 @@
         "瀚蓝环境"
       ],
       "EPS": [
-        "阿里巴巴",
         "中芯国际",
         "海光信息",
-        "中国平安",
         "中信证券",
         "京东集团",
         "分众传媒",
-        "哔哩哔哩",
         "中公教育"
       ],
       "ROE": [
@@ -3643,7 +3650,6 @@
         "阿里巴巴",
         "中芯国际",
         "海光信息",
-        "中国平安",
         "京东集团",
         "锦江酒店",
         "分众传媒",
@@ -3656,7 +3662,6 @@
         "中国建筑",
         "招商银行",
         "工商银行",
-        "中国平安",
         "中信证券",
         "京东集团",
         "分众传媒",
@@ -3747,7 +3752,6 @@
         "宁德时代",
         "阳光电源",
         "汇川技术",
-        "中国平安",
         "中国太保",
         "中信证券",
         "东方财富",
@@ -3761,7 +3765,7 @@
         "瀚蓝环境"
       ]
     },
-    "withBookValuePerShare": 2
+    "withBookValuePerShare": 3
   },
   "marketDataSourceMap": {
     "A股": {
