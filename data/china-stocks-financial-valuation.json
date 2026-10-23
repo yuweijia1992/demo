@@ -206,8 +206,8 @@
       ],
       "formula": "以正常化EPS/FCF为基础，结合合理PE或FCF收益率区间，并对增长、利润率与资本回报做情景敏感性分析。",
       "financialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
-      "priceDate": null,
-      "price": null,
+      "priceDate": "2026-10-22",
+      "price": 33.47,
       "currency": "CNY",
       "revenue": 16146.2738,
       "revenueGrowth": 6.01,
@@ -220,14 +220,14 @@
       "freeCashFlow": null,
       "netDebt": null,
       "dividendYield": null,
-      "peTtm": null,
-      "pb": null,
+      "peTtm": 26.74,
+      "pb": 4.94,
       "psTtm": null,
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863&stockid=603288",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "2026年半年度财务数据已核验；价格及估值待核验",
+      "verifiedAt": "2026-10-23",
+      "dataStatus": "财报部分字段已核验；行情为2026-10-22公开历史收盘价",
       "dataNotes": "金额单位：百万元人民币；EPS为半年度基本每股收益。归母净利润同比增长7.13%，扣非归母净利润同比增长3.77%，经营现金流同比下降18.52%；估值时需留意利润增长与现金流变动不一致。",
       "derivedMetrics": {
         "netProfitMarginPct": 25.95,
@@ -253,7 +253,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://quote.cfi.cn/quote_603288.html",
+      "marketDataNotes": "中财网行情页显示2026-10-22 15:00价格33.47元、PE 26.74、PB 4.94；页面说明行情可能延时，估值口径需交叉核验。"
     },
     {
       "layer": 1,
@@ -1657,9 +1659,9 @@
       ],
       "formula": "用企业自由现金流DCF或股息折现估值，区分维持性与扩张性资本开支；用股息率、净债务和项目回报交叉核验。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": "CNY（A股；港股交易价格为HKD）",
+      "priceDate": "2026-10-22",
+      "price": 6.66,
+      "currency": "CNY",
       "revenue": 259010.338291,
       "revenueGrowth": -3.9,
       "netProfit": 19587.741668,
@@ -1678,7 +1680,7 @@
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910",
       "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年半年度报告核心财务数据已核验（未经审计）；行情估值与历史分位待补",
+      "dataStatus": "财报部分字段已核验；行情为2026-10-22公开历史收盘价",
       "dataNotes": "营收2590.1亿元，同比-3.9%；经营活动现金净流入603.8亿元，同比+28.4%。归母净利润、EPS仍待核对。金额单位百万元人民币。 补充核验：2026年半年度营业收入、归母净利润、基本EPS、加权平均ROE、经营现金流来自2026年半年度报告；财务报表未经审计。",
       "derivedMetrics": {
         "revenueTrend": "营收同比下降",
@@ -1704,7 +1706,9 @@
       },
       "interimDividendPerShare": 0.1606,
       "interimDividendCurrency": "CNY",
-      "interimDividendPeriod": "2026年中期拟派发股息（含税），每股人民币0.1606元；并非年度股息率"
+      "interimDividendPeriod": "2026年中期拟派发股息（含税），每股人民币0.1606元；并非年度股息率",
+      "marketDataSourceUrl": "https://cn.investing.com/equities/china-telecom-corp-historical-data",
+      "marketDataNotes": "Investing.com历史行情表显示A股601728于2026-10-22收盘6.66元；本轮仅核价，PE/PB/PS未从同一页面核实，继续留空。"
     },
     {
       "layer": 3,
@@ -2811,9 +2815,9 @@
       ],
       "formula": "以跨周期正常化利润而非景气高点利润估值；辅以EV/EBITDA、重置成本或分部估值，设置低/中/高周期盈利。",
       "financialPeriod": "2026-06-30（2026年半年度报告）",
-      "priceDate": null,
-      "price": null,
-      "currency": null,
+      "priceDate": "2026-10-22",
+      "price": 48.57,
+      "currency": "CNY",
       "revenue": 27655.202065,
       "revenueGrowth": -1.76,
       "netProfit": 3106.431288,
@@ -2832,7 +2836,7 @@
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12511941",
       "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
+      "dataStatus": "财报部分字段已核验；行情为2026-10-22公开历史收盘价",
       "dataNotes": "营收276.55亿元，同比-1.76%；归母净利润31.06亿元，同比+19.49%；扣非净利润30.78亿元，同比+18.61%。估值需结合客流、客单价、渠道政策、库存和毛利率。 2026年半年度报告：基本EPS 1.4983元/股、加权平均ROE 5.46%、经营现金流净额2,479.63百万元。",
       "derivedMetrics": {
         "netProfitMarginPct": 11.23,
@@ -2854,7 +2858,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "marketDataSourceUrl": "https://cn.investing.com/equities/cits-historical-data",
+      "marketDataNotes": "Investing.com历史行情表显示A股601888于2026-10-22收盘48.57元；本轮仅核价，PE/PB/PS未从同一页面核实，继续留空。"
     },
     {
       "layer": 6,
@@ -3339,6 +3345,15 @@
         "宁德时代",
         "中国平安"
       ]
+    },
+    {
+      "date": "2026-10-23",
+      "description": "补录海天味业、中国电信、中国中免2026-10-22公开历史收盘价；仅在同一行情页提供且口径可识别时录入PE/PB。",
+      "companies": [
+        "海天味业",
+        "中国电信",
+        "中国中免"
+      ]
     }
   ],
   "valuationModels": {
@@ -3435,9 +3450,9 @@
   "auditSnapshot": {
     "auditedAt": "2026-10-23",
     "listedCompanies": 49,
-    "withPrice": 19,
-    "withPE": 11,
-    "withPB": 8,
+    "withPrice": 22,
+    "withPE": 12,
+    "withPB": 9,
     "withPS": 1,
     "with5YPercentile": 0,
     "with10YPercentile": 0,
@@ -3524,7 +3539,7 @@
         }
       ]
     },
-    "note": "截至2026-10-23，财务字段与行情字段分开维护。本轮新增4家公司的公开行情快照（日期2026-10-22），其中腾讯数据来自第三方估值页，需交叉核验；宁德时代行情页的EPS日期为2026-09-30，主财务记录仍为半年报。未核实的估值倍数、净债务、资本开支及历史分位保持空值。历史分位必须来自真实历史序列，不由当前倍数推算。",
+    "note": "截至2026-10-23，财务字段与行情字段分开维护。本轮新增公开历史收盘价，估值倍数仅在同一行情页有明确口径时录入。未核实的净债务、资本开支、估值倍数及历史分位保持空值；历史分位必须来自真实历史序列，不由当前倍数推算。",
     "withRevenue": 49,
     "withNetProfit": 49,
     "withEPS": 43,
@@ -3539,7 +3554,6 @@
     "missingFieldLists": {
       "price": [
         "牧原股份",
-        "海天味业",
         "申洲国际",
         "比亚迪",
         "宇通客车",
@@ -3551,7 +3565,6 @@
         "国药股份",
         "川投能源",
         "国电南瑞",
-        "中国电信",
         "中国建筑",
         "阿里巴巴",
         "海光信息",
@@ -3561,7 +3574,6 @@
         "中信证券",
         "东方财富",
         "京东集团",
-        "中国中免",
         "锦江酒店",
         "分众传媒",
         "哔哩哔哩",
@@ -3571,7 +3583,6 @@
       ],
       "PE": [
         "牧原股份",
-        "海天味业",
         "申洲国际",
         "海尔智家",
         "美的集团",
@@ -3611,7 +3622,6 @@
       ],
       "PB": [
         "牧原股份",
-        "海天味业",
         "海澜之家",
         "申洲国际",
         "海尔智家",
