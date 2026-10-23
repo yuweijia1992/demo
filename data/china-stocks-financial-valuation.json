@@ -641,9 +641,6 @@
       },
       "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
       "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
-      "cashAndCashEquivalents": 128248.277441,
-      "cashAndCashEquivalentsDate": "2026-06-30",
-      "cashAndCashEquivalentsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
       "shortTermBorrowings": 79719.24039952,
       "shortTermBorrowingsDate": "2026-06-30",
       "shortTermBorrowingsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
@@ -651,10 +648,13 @@
       "longTermBorrowingsDate": "2026-06-30",
       "longTermBorrowingsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
       "balanceSheetSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
-      "balanceSheetDebtNotes": "2026-06-30合并资产负债表，金额单位百万元人民币。货币资金128,248.277；短期借款79,719.240；长期借款2,128.656。货币资金不完全等于现金及现金等价物，计算净债务前应检查货币资金附注、受限资金及其他融资项目，本轮不直接以货币资金替代现金及现金等价物。",
+      "balanceSheetDebtNotes": "2026-06-30合并资产负债表，金额单位百万元人民币。货币资金128,248.277；短期借款79,719.240；长期借款2,128.656。报告列示的是货币资金，未在本轮逐项拆分受限资金及现金等价物，因此不得将该值当作现金及现金等价物计算净债务。",
       "bookValuePerShare": 26.512644043858778,
       "bookValuePerShareMethod": "计算值：2026-06-30归属于母公司股东权益148,508.077百万元÷股本5,601.406百万股，约26.514元/股；以报告披露归母权益及股本计算，未另行调整库存股对每股口径的影响。",
-      "bookValuePerShareSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651"
+      "bookValuePerShareSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
+      "monetaryFunds": 128248.277441,
+      "monetaryFundsDate": "2026-06-30",
+      "monetaryFundsSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651"
     },
     {
       "layer": 1,
