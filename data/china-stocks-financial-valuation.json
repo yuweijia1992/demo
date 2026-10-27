@@ -7,7 +7,7 @@
     "operatingCashFlow": 49,
     "capex": 49,
     "freeCashFlow": 43,
-    "bookValuePerShare": 41,
+    "bookValuePerShare": 42,
     "peTtm": 14,
     "pb": 11,
     "psTtm": 1,
@@ -3306,9 +3306,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12511941",
-      "verifiedAt": "2026-10-23",
+      "verifiedAt": "2026-10-27",
       "dataStatus": "2026年半年度合并现金流量表字段已核验；估值字段仍需单独补齐",
-      "dataNotes": "营收276.55亿元，同比-1.76%；归母净利润31.06亿元，同比+19.49%；扣非净利润30.78亿元，同比+18.61%。估值需结合客流、客单价、渠道政策、库存和毛利率。 2026年半年度报告：基本EPS 1.4983元/股、加权平均ROE 5.46%、经营现金流净额2,479.63百万元。 2026H1现金流量表补录：合并经营活动现金流净额2479.626822百万元，购建固定资产、无形资产和其他长期资产支付的现金541.158342百万元，简化FCF=1938.468480百万元。来源为2026年半年度报告合并现金流量表；半年值不年化，未把投资支付现金或收购子公司支出混入资本开支。",
+      "dataNotes": "营收276.55亿元，同比-1.76%；归母净利润31.06亿元，同比+19.49%；扣非净利润30.78亿元，同比+18.61%。估值需结合客流、客单价、渠道政策、库存和毛利率。 2026年半年度报告：基本EPS 1.4983元/股、加权平均ROE 5.46%、经营现金流净额2,479.63百万元。 2026H1现金流量表补录：合并经营活动现金流净额2479.626822百万元，购建固定资产、无形资产和其他长期资产支付的现金541.158342百万元，简化FCF=1938.468480百万元。来源为2026年半年度报告合并现金流量表；半年值不年化，未把投资支付现金或收购子公司支出混入资本开支。 每股净资产27.65元，采用同花顺2026年中报财务指标直接披露值。",
       "derivedMetrics": {
         "netProfitMarginPct": 11.23,
         "profitability": "盈利",
@@ -3333,7 +3333,10 @@
       "marketDataSourceUrl": "https://cn.investing.com/equities/cits-historical-data",
       "marketDataNotes": "Investing.com历史行情表显示A股601888于2026-10-22收盘48.57元；本轮仅核价，PE/PB/PS未从同一页面核实，继续留空。",
       "capexSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12511941&stockid=601888",
-      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "bookValuePerShare": 27.65,
+      "bookValuePerShareSourceUrl": "https://basic.10jqka.com.cn/601888/index.html",
+      "bookValuePerShareMethod": "同花顺2026-06-30财务指标直接披露值；人民币/股"
     },
     {
       "layer": 6,
@@ -4187,6 +4190,13 @@
         "锦江酒店",
         "中信证券"
       ]
+    },
+    {
+      "date": "2026-10-27",
+      "batch": "补录中国中免2026H1每股净资产BVPS",
+      "companies": [
+        "中国中免"
+      ]
     }
   ],
   "valuationModels": {
@@ -4537,7 +4547,6 @@
         "腾讯控股",
         "阿里巴巴",
         "京东集团",
-        "中国中免",
         "分众传媒",
         "哔哩哔哩",
         "中公教育",
@@ -4710,7 +4719,6 @@
         "腾讯控股",
         "阿里巴巴",
         "京东集团",
-        "中国中免",
         "分众传媒",
         "哔哩哔哩",
         "中公教育",
@@ -4932,7 +4940,6 @@
         "腾讯控股",
         "阿里巴巴",
         "京东集团",
-        "中国中免",
         "分众传媒",
         "哔哩哔哩",
         "中公教育",
@@ -5090,13 +5097,13 @@
         "瀚蓝环境"
       ]
     },
-    "withBookValuePerShare": 41,
+    "withBookValuePerShare": 42,
     "withROIC": 0,
     "withCapex": 49,
     "withNetDebt": 2,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
-    "withBVPS": 41,
+    "withBVPS": 42,
     "withMonetaryFunds": 7,
     "withCashAndCashEquivalents": 7,
     "withShortTermBorrowings": 8,
