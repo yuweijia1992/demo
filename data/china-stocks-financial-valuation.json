@@ -5,7 +5,7 @@
   "coverage": {
     "total": 49,
     "operatingCashFlow": 49,
-    "capex": 48,
+    "capex": 49,
     "freeCashFlow": 43,
     "bookValuePerShare": 22,
     "peTtm": 14,
@@ -2936,7 +2936,7 @@
       "roe": 9.7,
       "roic": null,
       "operatingCashFlow": 115080,
-      "capex": null,
+      "capex": 1048,
       "freeCashFlow": null,
       "netDebt": null,
       "dividendYield": null,
@@ -2946,9 +2946,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12558328&stockid=601601",
-      "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收2121.36亿元，同比+5.8%；归母净利润307.75亿元，同比+10.4%；经营现金流1150.80亿元，同比-4.5%；EPS 3.20元，ROE 9.7%。保险应结合EV/NBV与偿付能力估值。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年半年度资本开支字段已按公开报告补录；保险行业FCF不套用普通工商企业口径",
+      "dataNotes": "营收2121.36亿元，同比+5.8%；归母净利润307.75亿元，同比+10.4%；经营现金流1150.80亿元，同比-4.5%；EPS 3.20元，ROE 9.7%。保险应结合EV/NBV与偿付能力估值。 2026年半年度报告合并现金流量表（单位百万元人民币）披露购建固定资产、无形资产和其他长期资产支付的现金1,048百万元。保险集团现金流受保费、赔付与金融投资现金流影响，不按普通工商企业口径计算FCF。",
       "derivedMetrics": {
         "netProfitMarginPct": 14.51,
         "operatingCashFlowToNetProfit": 3.739,
@@ -2975,7 +2975,8 @@
       "financialAnalysisDate": "2026-06-30",
       "financialAnalysisSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12558328&stockid=601601",
       "financialAnalysisMetrics": {},
-      "financialAnalysisNotes": "保险公司不套用普通制造业净债务、FCF和ROIC；优先补齐寿险新业务价值、内含价值、保险服务业绩、投资收益、偿付能力充足率、归母净资产、每股净资产及分部估值。待本批次继续核验原始半年报对应数值。"
+      "financialAnalysisNotes": "保险公司不套用普通制造业净债务、FCF和ROIC；优先补齐寿险新业务价值、内含价值、保险服务业绩、投资收益、偿付能力充足率、归母净资产、每股净资产及分部估值。待本批次继续核验原始半年报对应数值。",
+      "capexSourceUrl": "https://stock.stockstar.com/notice/SN2026082700054843.shtml"
     },
     {
       "layer": 5,
@@ -4079,6 +4080,13 @@
       "companies": [
         "中国平安"
       ]
+    },
+    {
+      "date": "2026-10-27",
+      "batch": "补录中国太保2026H1资本开支；保险行业FCF保持行业适用性限制",
+      "companies": [
+        "中国太保"
+      ]
     }
   ],
   "valuationModels": {
@@ -4506,9 +4514,7 @@
         "瀚蓝环境"
       ],
       "经营现金流": [],
-      "资本开支": [
-        "中国太保"
-      ],
+      "资本开支": [],
       "自由现金流": [
         "招商银行",
         "工商银行",
@@ -4751,9 +4757,7 @@
         "瀚蓝环境"
       ],
       "OCF": [],
-      "capex": [
-        "中国太保"
-      ],
+      "capex": [],
       "FCF": [
         "招商银行",
         "工商银行",
@@ -5045,7 +5049,7 @@
     },
     "withBookValuePerShare": 22,
     "withROIC": 0,
-    "withCapex": 48,
+    "withCapex": 49,
     "withNetDebt": 2,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
