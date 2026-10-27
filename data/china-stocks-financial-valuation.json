@@ -5,8 +5,8 @@
   "coverage": {
     "total": 49,
     "operatingCashFlow": 46,
-    "capex": 32,
-    "freeCashFlow": 33,
+    "capex": 35,
+    "freeCashFlow": 36,
     "bookValuePerShare": 22,
     "peTtm": 14,
     "pb": 11,
@@ -2395,8 +2395,8 @@
       "roe": 37.62,
       "roic": null,
       "operatingCashFlow": 1799.674832,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 4802.16119537,
+      "freeCashFlow": -3002.4863633500004,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": 38.59,
@@ -2405,9 +2405,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491753.PDF",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "营收417.78亿元，同比+182.49%；归母净利润136.51亿元，同比+241.70%；扣非净利润130.92亿元，同比+229.32%；经营现金流17.997亿元，同比-44.08%；EPS 12.31元，ROE 37.62%。增长极强但现金流落后利润，需关注AI光模块周期、客户集中与资本开支。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补；2026H1合并资本开支/FCF已补录（2026-10-27）",
+      "dataNotes": "营收417.78亿元，同比+182.49%；归母净利润136.51亿元，同比+241.70%；扣非净利润130.92亿元，同比+229.32%；经营现金流17.997亿元，同比-44.08%；EPS 12.31元，ROE 37.62%。增长极强但现金流落后利润，需关注AI光模块周期、客户集中与资本开支。 2026H1合并经营活动现金流净额1,799.675百万元；购建固定资产、无形资产和其他长期资产支付4,802.161百万元；简化FCF=-3,002.486百万元。光通信高速成长阶段资本投入较大，需结合产能扩张、在建工程和未来利用率解释，不宜直接外推为长期常态。",
       "marketDataSourceUrl": "https://www.lixinger.com/equity/company/detail/sz/300308/300308/fundamental/valuation/pe-ttm",
       "marketDataNotes": "理杏仁页面最后更新2026-10-16：股价670元、PE-TTM 38.59。页面显示估值分位点29.06%，但分位周期选择器口径未确认，因此不写入5年/10年分位字段。",
       "derivedMetrics": {
@@ -2432,7 +2432,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "capexSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518497&stockid=300308",
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 4,
@@ -2548,8 +2550,8 @@
       "roe": 10.73,
       "roic": null,
       "operatingCashFlow": 3735.133201,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 1174.74763947,
+      "freeCashFlow": 2560.3855615700004,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -2558,9 +2560,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570250&stockid=300274",
-      "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
-      "dataNotes": "营收309.12亿元，同比-28.99%；归母净利润52.59亿元，同比-32.01%。需结合逆变器/储能出货、毛利率、海外需求及营运资金。 2026年半年度报告：基本EPS 2.56元/股、加权平均ROE 10.73%、经营现金流净额3,735.13百万元。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验；2026H1合并资本开支/FCF已补录（2026-10-27）",
+      "dataNotes": "营收309.12亿元，同比-28.99%；归母净利润52.59亿元，同比-32.01%。需结合逆变器/储能出货、毛利率、海外需求及营运资金。 2026年半年度报告：基本EPS 2.56元/股、加权平均ROE 10.73%、经营现金流净额3,735.13百万元。 2026H1合并经营活动现金流净额3,735.133百万元；购建固定资产、无形资产和其他长期资产支付1,174.748百万元；简化FCF=2,560.386百万元。投资支付31,803.866百万元主要属于理财/金融投资活动，不计入本口径资本开支。",
       "derivedMetrics": {
         "netProfitMarginPct": 17.01,
         "profitability": "盈利",
@@ -2583,7 +2585,9 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "marketDataSourceUrl": "https://www.yyqyx.com/s/300274.SZ",
-      "marketDataNotes": "公开历史行情页列示2026-10-21收盘价72.30元；尚未核验10月22日收盘价，因此明确保留价格日期。"
+      "marketDataNotes": "公开历史行情页列示2026-10-21收盘价72.30元；尚未核验10月22日收盘价，因此明确保留价格日期。",
+      "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570250&stockid=300274",
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 4,
@@ -2613,8 +2617,8 @@
       "roe": 7.69,
       "roic": null,
       "operatingCashFlow": 1975.05903,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 1479.32793745,
+      "freeCashFlow": 495.73109254999986,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -2623,9 +2627,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225524610.PDF",
-      "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
-      "dataNotes": "营收246.75亿元，同比+20.31%；归母净利润28.10亿元，同比-5.35%。比较期按报告会计政策变更追溯调整后口径。 2026年半年度报告：基本EPS 1.04元/股、加权平均ROE 7.69%、经营现金流净额1,975.06百万元。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验；2026H1合并资本开支/FCF已补录（2026-10-27）",
+      "dataNotes": "营收246.75亿元，同比+20.31%；归母净利润28.10亿元，同比-5.35%。比较期按报告会计政策变更追溯调整后口径。 2026年半年度报告：基本EPS 1.04元/股、加权平均ROE 7.69%、经营现金流净额1,975.06百万元。 2026H1合并现金流量表披露购建固定资产、无形资产和其他长期资产支付1,479.328百万元；经营活动现金流净额1,975.059百万元；简化FCF=495.731百万元。未将定期存款、理财产品及其他投资活动现金流混入资本开支。",
       "derivedMetrics": {
         "netProfitMarginPct": 11.39,
         "profitability": "盈利",
@@ -2649,7 +2653,9 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "marketDataSourceUrl": "https://cn.investing.com/equities/shenzhen-inovance-tech-historical-data",
-      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价50.45元。"
+      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价50.45元。",
+      "capexSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12566577&stockid=300124",
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 5,
@@ -3982,6 +3988,15 @@
         "北方华创",
         "兴蓉环境"
       ]
+    },
+    {
+      "date": "2026-10-27",
+      "batch": "补录阳光电源、中际旭创、汇川技术2026H1资本开支/简化FCF",
+      "companies": [
+        "中际旭创",
+        "阳光电源",
+        "汇川技术"
+      ]
     }
   ],
   "valuationModels": {
@@ -4172,7 +4187,7 @@
     "withNetProfit": 49,
     "withEPS": 48,
     "withOperatingCashFlow": 46,
-    "withFreeCashFlow": 33,
+    "withFreeCashFlow": 36,
     "derivedNetProfitMargin": 49,
     "derivedCashFlowConversion": 37,
     "companiesWithQualityAlerts": 5,
@@ -4327,9 +4342,6 @@
       "freeCashFlow": [
         "申洲国际",
         "海光信息",
-        "中际旭创",
-        "阳光电源",
-        "汇川技术",
         "招商银行",
         "工商银行",
         "中国平安",
@@ -4431,9 +4443,6 @@
         "申洲国际",
         "阿里巴巴",
         "海光信息",
-        "中际旭创",
-        "阳光电源",
-        "汇川技术",
         "招商银行",
         "工商银行",
         "中国平安",
@@ -4449,9 +4458,6 @@
       "自由现金流": [
         "申洲国际",
         "海光信息",
-        "中际旭创",
-        "阳光电源",
-        "汇川技术",
         "招商银行",
         "工商银行",
         "中国平安",
@@ -4706,9 +4712,6 @@
         "申洲国际",
         "阿里巴巴",
         "海光信息",
-        "中际旭创",
-        "阳光电源",
-        "汇川技术",
         "招商银行",
         "工商银行",
         "中国平安",
@@ -4724,9 +4727,6 @@
       "FCF": [
         "申洲国际",
         "海光信息",
-        "中际旭创",
-        "阳光电源",
-        "汇川技术",
         "招商银行",
         "工商银行",
         "中国平安",
@@ -5036,7 +5036,7 @@
     },
     "withBookValuePerShare": 22,
     "withROIC": 0,
-    "withCapex": 32,
+    "withCapex": 35,
     "withNetDebt": 2,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
