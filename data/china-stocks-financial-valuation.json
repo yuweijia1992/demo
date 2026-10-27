@@ -5,7 +5,7 @@
   "coverage": {
     "total": 49,
     "operatingCashFlow": 49,
-    "capex": 47,
+    "capex": 48,
     "freeCashFlow": 43,
     "bookValuePerShare": 22,
     "peTtm": 14,
@@ -2857,7 +2857,7 @@
       "roe": 9,
       "roic": null,
       "operatingCashFlow": 368037,
-      "capex": null,
+      "capex": 3038,
       "freeCashFlow": null,
       "netDebt": null,
       "dividendYield": null,
@@ -2867,9 +2867,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12512669",
-      "verifiedAt": "2026-10-23",
-      "dataStatus": "财报部分字段已核验；行情为2026-10-22公开快照，仍需交叉核验",
-      "dataNotes": "金额单位：百万元人民币。营业收入5,751.38亿元，同比增长15.0%；归母净利润925.85亿元，同比增长36.1%；归母营运利润841.96亿元，同比增长8.3%；寿险及健康险新业务价值248.47亿元，同比增长11.2%。保险估值需另补EV、NBV、内含价值增长、偿付能力与投资收益等指标；不要把营运利润与归母净利润混用。 2026年中期报告：基本EPS 5.30元/股（非年化）、加权平均ROE 9.0%（非年化）、经营现金流368,037百万元、每股净资产56.78元；另披露中期股息0.98元/股，非全年股息率。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年中期资本开支字段已按原始报告补录；保险金融行业FCF不套用普通工商企业口径",
+      "dataNotes": "金额单位：百万元人民币。营业收入5,751.38亿元，同比增长15.0%；归母净利润925.85亿元，同比增长36.1%；归母营运利润841.96亿元，同比增长8.3%；寿险及健康险新业务价值248.47亿元，同比增长11.2%。保险估值需另补EV、NBV、内含价值增长、偿付能力与投资收益等指标；不要把营运利润与归母净利润混用。 2026年中期报告：基本EPS 5.30元/股（非年化）、加权平均ROE 9.0%（非年化）、经营现金流368,037百万元、每股净资产56.78元；另披露中期股息0.98元/股，非全年股息率。 2026年中期报告合并现金流量表（单位百万元人民币）披露购建固定资产、无形资产和其他长期资产支付的现金3,038百万元。保险集团现金流包含保费、赔付、金融资产交易及银行业务，不按普通工商企业口径计算FCF。",
       "derivedMetrics": {
         "netProfitMarginPct": 16.1,
         "profitability": "盈利",
@@ -2905,7 +2905,8 @@
       "financialAnalysisNotes": "综合金融/保险集团不适用普通制造业净债务和FCF；应分寿险新业务价值、内含价值、保险服务业绩、投资收益与风险、偿付能力充足率、归母净资产及分部估值。2026-06-30归母权益1,028,084百万元。",
       "parentEquityDate": "2026-06-30",
       "parentEquity": 1028084,
-      "parentEquitySourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12512667&stockid=601318"
+      "parentEquitySourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12512667&stockid=601318",
+      "capexSourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225487480.PDF"
     },
     {
       "layer": 5,
@@ -4071,6 +4072,13 @@
       "companies": [
         "工商银行"
       ]
+    },
+    {
+      "date": "2026-10-27",
+      "batch": "补录中国平安2026H1资本开支；保险金融行业FCF保持行业适用性限制",
+      "companies": [
+        "中国平安"
+      ]
     }
   ],
   "valuationModels": {
@@ -4499,7 +4507,6 @@
       ],
       "经营现金流": [],
       "资本开支": [
-        "中国平安",
         "中国太保"
       ],
       "自由现金流": [
@@ -4745,7 +4752,6 @@
       ],
       "OCF": [],
       "capex": [
-        "中国平安",
         "中国太保"
       ],
       "FCF": [
@@ -5039,7 +5045,7 @@
     },
     "withBookValuePerShare": 22,
     "withROIC": 0,
-    "withCapex": 47,
+    "withCapex": 48,
     "withNetDebt": 2,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
