@@ -4,9 +4,9 @@
   "asOf": "2026-10-27",
   "coverage": {
     "total": 49,
-    "operatingCashFlow": 46,
-    "capex": 39,
-    "freeCashFlow": 40,
+    "operatingCashFlow": 47,
+    "capex": 40,
+    "freeCashFlow": 41,
     "bookValuePerShare": 22,
     "peTtm": 14,
     "pb": 11,
@@ -3155,9 +3155,9 @@
       "eps": null,
       "roe": null,
       "roic": null,
-      "operatingCashFlow": null,
-      "capex": null,
-      "freeCashFlow": null,
+      "operatingCashFlow": 38273,
+      "capex": 10583,
+      "freeCashFlow": 25354,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -3166,9 +3166,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://ir.jd.com/news-releases/news-release-details/jdcom-announces-second-quarter-and-interim-2026-results",
-      "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "2026年第二季度收入3464亿元人民币，同比-2.9%；归属于普通股股东净利润约71亿元人民币，上年同期62亿元；非GAAP净利润约89亿元。记录为单季度，非半年累计；港股价格以港币、ADR价格以美元分别处理。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年中期业绩现金流已按公司公告补录；公司披露FCF口径与简化FCF不同",
+      "dataNotes": "2026年第二季度收入3464亿元人民币，同比-2.9%；归属于普通股股东净利润约71亿元人民币，上年同期62亿元；非GAAP净利润约89亿元。记录为单季度，非半年累计；港股价格以港币、ADR价格以美元分别处理。 2026年上半年业绩公告披露经营现金流38,273百万元、资本开支（扣除相关处置收入）10,583百万元、公司定义自由现金流25,354百万元。公司FCF口径还扣除了消费金融应收款影响2,336百万元，故不等同于数据库常规简化FCF=OCF-capex，已明确标注以避免口径混用。",
       "derivedMetrics": {
         "netProfitMarginPct": 2.05,
         "profitability": "盈利",
@@ -3176,8 +3176,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 50,
-        "valuationCorePresent": 3,
+        "valuationCorePct": 83,
+        "valuationCorePresent": 5,
         "valuationCoreRequired": 6,
         "requiredFields": [
           "revenue",
@@ -3190,7 +3190,9 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "marketDataSourceUrl": "https://hk.finance.yahoo.com/quote/9618.HK/history/",
-      "marketDataNotes": "Yahoo Finance列示2026-10-22京东集团-SW（9618.HK）收盘97.90港元；对应港股，不是美股JD ADR。"
+      "marketDataNotes": "Yahoo Finance列示2026-10-22京东集团-SW（9618.HK）收盘97.90港元；对应港股，不是美股JD ADR。",
+      "capexSourceUrl": "https://ir.jd.com/news-releases/news-release-details/jdcom-announces-second-quarter-and-interim-2026-results",
+      "freeCashFlowMethod": "京东集团公司披露口径FCF：2026H1经营现金流38,273百万元，减消费金融应收款影响2,336百万元、资本开支（扣除相关处置收入）10,583百万元，得到公司披露FCF 25,354百万元；与简单OCF-capex口径不同，不年化"
     },
     {
       "layer": 6,
@@ -4021,6 +4023,13 @@
         "锦江酒店",
         "分众传媒"
       ]
+    },
+    {
+      "date": "2026-10-27",
+      "batch": "补录京东集团2026H1经营现金流、资本开支及公司披露FCF（单独标注公司口径）",
+      "companies": [
+        "京东集团"
+      ]
     }
   ],
   "valuationModels": {
@@ -4210,8 +4219,8 @@
     "withRevenue": 49,
     "withNetProfit": 49,
     "withEPS": 48,
-    "withOperatingCashFlow": 46,
-    "withFreeCashFlow": 40,
+    "withOperatingCashFlow": 47,
+    "withFreeCashFlow": 41,
     "derivedNetProfitMargin": 49,
     "derivedCashFlowConversion": 37,
     "companiesWithQualityAlerts": 5,
@@ -4360,7 +4369,6 @@
       ],
       "operatingCashFlow": [
         "申洲国际",
-        "京东集团",
         "哔哩哔哩"
       ],
       "freeCashFlow": [
@@ -4371,7 +4379,6 @@
         "中国太保",
         "中信证券",
         "东方财富",
-        "京东集团",
         "哔哩哔哩"
       ],
       "bookValuePerShare": [
@@ -4456,7 +4463,6 @@
       ],
       "经营现金流": [
         "申洲国际",
-        "京东集团",
         "哔哩哔哩"
       ],
       "资本开支": [
@@ -4468,7 +4474,6 @@
         "中国太保",
         "中信证券",
         "东方财富",
-        "京东集团",
         "哔哩哔哩"
       ],
       "自由现金流": [
@@ -4479,7 +4484,6 @@
         "中国太保",
         "中信证券",
         "东方财富",
-        "京东集团",
         "哔哩哔哩"
       ],
       "净债务": [
@@ -4717,7 +4721,6 @@
       ],
       "OCF": [
         "申洲国际",
-        "京东集团",
         "哔哩哔哩"
       ],
       "capex": [
@@ -4729,7 +4732,6 @@
         "中国太保",
         "中信证券",
         "东方财富",
-        "京东集团",
         "哔哩哔哩"
       ],
       "FCF": [
@@ -4740,7 +4742,6 @@
         "中国太保",
         "中信证券",
         "东方财富",
-        "京东集团",
         "哔哩哔哩"
       ],
       "netDebt": [
@@ -5026,7 +5027,7 @@
     },
     "withBookValuePerShare": 22,
     "withROIC": 0,
-    "withCapex": 39,
+    "withCapex": 40,
     "withNetDebt": 2,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
