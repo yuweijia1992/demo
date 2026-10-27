@@ -7,7 +7,7 @@
     "operatingCashFlow": 49,
     "capex": 49,
     "freeCashFlow": 43,
-    "bookValuePerShare": 31,
+    "bookValuePerShare": 41,
     "peTtm": 14,
     "pb": 11,
     "psTtm": 1,
@@ -401,7 +401,7 @@
       "sourceUrl": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2313",
       "verifiedAt": "2026-10-27",
       "dataStatus": "2026年中期报告现金流字段已按港交所原始报告补录；估值字段另行核验",
-      "dataNotes": "中期营业额141.79亿元人民币，同比-5.26%；股东应占溢利19.05亿元人民币，同比-40.05%；每股盈利人民币1.27元。原始页面单位人民币千元，已换算为百万元人民币；港股股价另以港币记录。 截至2026-06-30每股净资产24.84元人民币，来自同花顺公开财务指标页；该值是人民币计价每股净资产，不是港元。 2026-10-22港股收盘价35.60港元，来源StockAnalysis历史行情页；不同第三方页面报价存在差异，需交叉复核。 依据港交所2026年中期报告第20页，经营现金流量净额1,924.371百万元；第21页购置物业厂房及设备764.712百万元、收购无形资产4.116百万元、预付使用权资产款项80.412百万元，按统一简化口径合计资本开支849.240百万元，简化FCF=1,075.131百万元。未扣除处置物业设备所得32.535百万元；半年值不年化。",
+      "dataNotes": "中期营业额141.79亿元人民币，同比-5.26%；股东应占溢利19.05亿元人民币，同比-40.05%；每股盈利人民币1.27元。原始页面单位人民币千元，已换算为百万元人民币；港股股价另以港币记录。 截至2026-06-30每股净资产24.84元人民币，来自同花顺公开财务指标页；该值是人民币计价每股净资产，不是港元。 2026-10-22港股收盘价35.60港元，来源StockAnalysis历史行情页；不同第三方页面报价存在差异，需交叉复核。 依据港交所2026年中期报告第20页，经营现金流量净额1,924.371百万元；第21页购置物业厂房及设备764.712百万元、收购无形资产4.116百万元、预付使用权资产款项80.412百万元，按统一简化口径合计资本开支849.240百万元，简化FCF=1,075.131百万元。未扣除处置物业设备所得32.535百万元；半年值不年化。 每股净资产24.84元人民币，采用同花顺2026年中报财务指标直接披露值。",
       "derivedMetrics": {
         "netProfitMarginPct": 13.43,
         "epsAndProfitBothPresent": true,
@@ -431,7 +431,10 @@
       "marketDataSourceUrl": "https://stockanalysis.com/quote/hkg/2313/history/",
       "marketDataNotes": "StockAnalysis历史行情页列示2026-10-22收盘35.60港元；与部分第三方行情源存在报价差异，暂按该页明确标注Close的数据录入，建议后续用港交所/第二来源复核。该证券为港股2313.HK。",
       "capexSourceUrl": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800507_c.pdf",
-      "freeCashFlowMethod": "简化FCF=经营活动现金流量净额-购置物业厂房及设备-收购无形资产-预付使用权资产款项；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=经营活动现金流量净额-购置物业厂房及设备-收购无形资产-预付使用权资产款项；2026H1，百万元人民币，不年化",
+      "bookValuePerShare": 24.84,
+      "bookValuePerShareSourceUrl": "https://basic.10jqka.com.cn/02313/",
+      "bookValuePerShareMethod": "同花顺2026年中期财务指标直接披露值；人民币/股（港股报价仍为港币）"
     },
     {
       "layer": 1,
@@ -2242,7 +2245,7 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12559855&stockid=688981",
       "verifiedAt": "2026-10-27",
       "dataStatus": "2026年半年度财务字段已按公开报告补核；估值字段另行核验；2026H1合并资本开支/FCF已补录（2026-10-27）",
-      "dataNotes": "营收386.35亿元，同比+19.4%；归母净利润44.67亿元，同比+94.2%；扣非净利润29.94亿元，同比+57.2%；经营现金流207.60亿元，同比+252%。需关注资本开支、产能利用率与折旧。 2026年半年度报告（人民币千元口径）：基本EPS 0.56元、加权平均ROE 2.9%、经营现金流净额20,759.511百万元；不与港股报价币种混用。 2026H1合并现金流量表单位千元人民币：经营活动现金流净额20,759,511千元，购建固定资产、无形资产和其他长期资产支付19,724,655千元；换算为百万元人民币分别为20,759.511和19,724.655，简化FCF=1,034.856百万元。另有购买定期存款现金13,158.536百万元，不计入本口径资本开支。",
+      "dataNotes": "营收386.35亿元，同比+19.4%；归母净利润44.67亿元，同比+94.2%；扣非净利润29.94亿元，同比+57.2%；经营现金流207.60亿元，同比+252%。需关注资本开支、产能利用率与折旧。 2026年半年度报告（人民币千元口径）：基本EPS 0.56元、加权平均ROE 2.9%、经营现金流净额20,759.511百万元；不与港股报价币种混用。 2026H1合并现金流量表单位千元人民币：经营活动现金流净额20,759,511千元，购建固定资产、无形资产和其他长期资产支付19,724,655千元；换算为百万元人民币分别为20,759.511和19,724.655，简化FCF=1,034.856百万元。另有购买定期存款现金13,158.536百万元，不计入本口径资本开支。 每股净资产20.03元人民币，采用同花顺2026年中报财务指标直接披露值。",
       "marketDataSourceUrl": "https://www.yyqyx.com/s/688981.SH",
       "marketDataNotes": "最新可核验行情页为2026-10-19收盘；PE-TTM 118.45、PB 4.98、PS-TTM 11.60。非2026-10-20当日收盘，故保留真实行情日期。A/H股分别估值。",
       "derivedMetrics": {
@@ -2267,7 +2270,10 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "capexSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12559855&stockid=688981",
-      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "bookValuePerShare": 20.03,
+      "bookValuePerShareSourceUrl": "https://basic.10jqka.com.cn/688981/index.html",
+      "bookValuePerShareMethod": "同花顺2026-06-30财务指标直接披露值；人民币/股"
     },
     {
       "layer": 4,
@@ -2309,7 +2315,7 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12534434&stockid=002371",
       "verifiedAt": "2026-10-27",
       "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验；2026H1合并资本开支/FCF已补录（2026-10-27）",
-      "dataNotes": "营收201.61亿元，同比+24.90%；归母净利润33.70亿元，同比+5.05%；经营现金流37.74亿元；EPS 4.6486元，ROE 8.58%。 2026H1合并现金流量表购建固定资产、无形资产和其他长期资产支付830.474百万元；经营活动现金流净额3,773.699百万元；简化FCF=2,943.225百万元。未把投资支付或收购子公司支付的现金混入资本开支口径。",
+      "dataNotes": "营收201.61亿元，同比+24.90%；归母净利润33.70亿元，同比+5.05%；经营现金流37.74亿元；EPS 4.6486元，ROE 8.58%。 2026H1合并现金流量表购建固定资产、无形资产和其他长期资产支付830.474百万元；经营活动现金流净额3,773.699百万元；简化FCF=2,943.225百万元。未把投资支付或收购子公司支付的现金混入资本开支口径。 每股净资产55.87元，采用同花顺2026年中报公司资料直接披露值。",
       "marketDataSourceUrl": "https://quote.cfi.cn/quote.aspx?client=pc&stockid=10802",
       "marketDataNotes": "中财网列示2026-10-20 15:00价格566.49元、PE 72.54、PB 8.83；设备公司需结合订单、利润率、研发与周期判断估值。",
       "derivedMetrics": {
@@ -2336,7 +2342,10 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "capexSourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501903.PDF",
-      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "bookValuePerShare": 55.87,
+      "bookValuePerShareSourceUrl": "https://basic.10jqka.com.cn/mobile/002371/companyn.html",
+      "bookValuePerShareMethod": "同花顺2026年中报公司资料直接披露值；人民币/股"
     },
     {
       "layer": 4,
@@ -2378,7 +2387,7 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492765&stockid=688041",
       "verifiedAt": "2026-10-27",
       "dataStatus": "2026年半年度现金流字段已按公开报告补录；估值字段另行核验",
-      "dataNotes": "营收90.99亿元，同比+66.52%；归母净利润17.98亿元，同比+49.69%；扣非净利润16.31亿元，同比+49.67%；经营现金流-4.28亿元。增长较快但现金流转弱。 2026年半年度报告：基本EPS 0.78元、加权平均ROE 7.56%、经营现金流净额-427.541百万元。报告解释现金流下降与备货采购支出增加有关。 2026年上半年合并现金流量表：经营活动现金流净额-427.541百万元；购建固定资产、无形资产和其他长期资产支付的现金914.417百万元；简化FCF=-427.541-914.417=-1,341.958百万元。半年值不年化；公司解释经营现金流转弱与备货采购支出增加有关。",
+      "dataNotes": "营收90.99亿元，同比+66.52%；归母净利润17.98亿元，同比+49.69%；扣非净利润16.31亿元，同比+49.67%；经营现金流-4.28亿元。增长较快但现金流转弱。 2026年半年度报告：基本EPS 0.78元、加权平均ROE 7.56%、经营现金流净额-427.541百万元。报告解释现金流下降与备货采购支出增加有关。 2026年上半年合并现金流量表：经营活动现金流净额-427.541百万元；购建固定资产、无形资产和其他长期资产支付的现金914.417百万元；简化FCF=-427.541-914.417=-1,341.958百万元。半年值不年化；公司解释经营现金流转弱与备货采购支出增加有关。 每股净资产10.92元，采用同花顺2026年中报财务指标直接披露值。",
       "derivedMetrics": {
         "netProfitMarginPct": 19.77,
         "operatingCashFlowToNetProfit": -0.238,
@@ -2407,7 +2416,10 @@
       "marketDataSourceUrl": "https://cn.investing.com/equities/hygon-information-tech-historical-data",
       "marketDataNotes": "2026-10-22历史收盘价，来源为Investing.com公开历史行情；属于第三方行情源，仍建议后续与交易所或另一主流行情源交叉核验。",
       "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492765&stockid=688041",
-      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "bookValuePerShare": 10.92,
+      "bookValuePerShareSourceUrl": "https://basic.10jqka.com.cn/688041/",
+      "bookValuePerShareMethod": "同花顺2026-06-30财务指标直接披露值；人民币/股"
     },
     {
       "layer": 4,
@@ -2449,7 +2461,7 @@
       "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491753.PDF",
       "verifiedAt": "2026-10-27",
       "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补；2026H1合并资本开支/FCF已补录（2026-10-27）",
-      "dataNotes": "营收417.78亿元，同比+182.49%；归母净利润136.51亿元，同比+241.70%；扣非净利润130.92亿元，同比+229.32%；经营现金流17.997亿元，同比-44.08%；EPS 12.31元，ROE 37.62%。增长极强但现金流落后利润，需关注AI光模块周期、客户集中与资本开支。 2026H1合并经营活动现金流净额1,799.675百万元；购建固定资产、无形资产和其他长期资产支付4,802.161百万元；简化FCF=-3,002.486百万元。光通信高速成长阶段资本投入较大，需结合产能扩张、在建工程和未来利用率解释，不宜直接外推为长期常态。",
+      "dataNotes": "营收417.78亿元，同比+182.49%；归母净利润136.51亿元，同比+241.70%；扣非净利润130.92亿元，同比+229.32%；经营现金流17.997亿元，同比-44.08%；EPS 12.31元，ROE 37.62%。增长极强但现金流落后利润，需关注AI光模块周期、客户集中与资本开支。 2026H1合并经营活动现金流净额1,799.675百万元；购建固定资产、无形资产和其他长期资产支付4,802.161百万元；简化FCF=-3,002.486百万元。光通信高速成长阶段资本投入较大，需结合产能扩张、在建工程和未来利用率解释，不宜直接外推为长期常态。 每股净资产35.74元，采用同花顺财务指标表2026年中报披露值；排除另一移动页面出现的73.23元冲突值。",
       "marketDataSourceUrl": "https://www.lixinger.com/equity/company/detail/sz/300308/300308/fundamental/valuation/pe-ttm",
       "marketDataNotes": "理杏仁页面最后更新2026-10-16：股价670元、PE-TTM 38.59。页面显示估值分位点29.06%，但分位周期选择器口径未确认，因此不写入5年/10年分位字段。",
       "derivedMetrics": {
@@ -2476,7 +2488,10 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "capexSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518497&stockid=300308",
-      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "bookValuePerShare": 35.74,
+      "bookValuePerShareSourceUrl": "https://basic.10jqka.com.cn/300308/index.html",
+      "bookValuePerShareMethod": "同花顺2026-06-30财务指标表直接披露值；人民币/股。另一个移动公司资料页出现73.23元，与中报财务指标表及归母净资产/股本不一致，故不采用该冲突值。"
     },
     {
       "layer": 4,
@@ -2604,7 +2619,7 @@
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570250&stockid=300274",
       "verifiedAt": "2026-10-27",
       "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验；2026H1合并资本开支/FCF已补录（2026-10-27）",
-      "dataNotes": "营收309.12亿元，同比-28.99%；归母净利润52.59亿元，同比-32.01%。需结合逆变器/储能出货、毛利率、海外需求及营运资金。 2026年半年度报告：基本EPS 2.56元/股、加权平均ROE 10.73%、经营现金流净额3,735.13百万元。 2026H1合并经营活动现金流净额3,735.133百万元；购建固定资产、无形资产和其他长期资产支付1,174.748百万元；简化FCF=2,560.386百万元。投资支付31,803.866百万元主要属于理财/金融投资活动，不计入本口径资本开支。",
+      "dataNotes": "营收309.12亿元，同比-28.99%；归母净利润52.59亿元，同比-32.01%。需结合逆变器/储能出货、毛利率、海外需求及营运资金。 2026年半年度报告：基本EPS 2.56元/股、加权平均ROE 10.73%、经营现金流净额3,735.13百万元。 2026H1合并经营活动现金流净额3,735.133百万元；购建固定资产、无形资产和其他长期资产支付1,174.748百万元；简化FCF=2,560.386百万元。投资支付31,803.866百万元主要属于理财/金融投资活动，不计入本口径资本开支。 每股净资产24.18元，采用同花顺2026年中报财务指标直接披露值。",
       "derivedMetrics": {
         "netProfitMarginPct": 17.01,
         "profitability": "盈利",
@@ -2629,7 +2644,10 @@
       "marketDataSourceUrl": "https://www.yyqyx.com/s/300274.SZ",
       "marketDataNotes": "公开历史行情页列示2026-10-21收盘价72.30元；尚未核验10月22日收盘价，因此明确保留价格日期。",
       "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570250&stockid=300274",
-      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "bookValuePerShare": 24.18,
+      "bookValuePerShareSourceUrl": "https://basic.10jqka.com.cn/300274/",
+      "bookValuePerShareMethod": "同花顺2026-06-30财务指标直接披露值；人民币/股"
     },
     {
       "layer": 4,
@@ -2671,7 +2689,7 @@
       "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225524610.PDF",
       "verifiedAt": "2026-10-27",
       "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验；2026H1合并资本开支/FCF已补录（2026-10-27）",
-      "dataNotes": "营收246.75亿元，同比+20.31%；归母净利润28.10亿元，同比-5.35%。比较期按报告会计政策变更追溯调整后口径。 2026年半年度报告：基本EPS 1.04元/股、加权平均ROE 7.69%、经营现金流净额1,975.06百万元。 2026H1合并现金流量表披露购建固定资产、无形资产和其他长期资产支付1,479.328百万元；经营活动现金流净额1,975.059百万元；简化FCF=495.731百万元。未将定期存款、理财产品及其他投资活动现金流混入资本开支。",
+      "dataNotes": "营收246.75亿元，同比+20.31%；归母净利润28.10亿元，同比-5.35%。比较期按报告会计政策变更追溯调整后口径。 2026年半年度报告：基本EPS 1.04元/股、加权平均ROE 7.69%、经营现金流净额1,975.06百万元。 2026H1合并现金流量表披露购建固定资产、无形资产和其他长期资产支付1,479.328百万元；经营活动现金流净额1,975.059百万元；简化FCF=495.731百万元。未将定期存款、理财产品及其他投资活动现金流混入资本开支。 每股净资产13.59元，采用同花顺2026年中报财务指标直接披露值。",
       "derivedMetrics": {
         "netProfitMarginPct": 11.39,
         "profitability": "盈利",
@@ -2697,7 +2715,10 @@
       "marketDataSourceUrl": "https://cn.investing.com/equities/shenzhen-inovance-tech-historical-data",
       "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价50.45元。",
       "capexSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12566577&stockid=300124",
-      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "bookValuePerShare": 13.59,
+      "bookValuePerShareSourceUrl": "https://basic.10jqka.com.cn/300124/index.html",
+      "bookValuePerShareMethod": "同花顺2026-06-30财务指标直接披露值；人民币/股"
     },
     {
       "layer": 5,
@@ -2905,7 +2926,7 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12512669",
       "verifiedAt": "2026-10-27",
       "dataStatus": "2026年中期资本开支字段已按原始报告补录；保险金融行业FCF不套用普通工商企业口径",
-      "dataNotes": "金额单位：百万元人民币。营业收入5,751.38亿元，同比增长15.0%；归母净利润925.85亿元，同比增长36.1%；归母营运利润841.96亿元，同比增长8.3%；寿险及健康险新业务价值248.47亿元，同比增长11.2%。保险估值需另补EV、NBV、内含价值增长、偿付能力与投资收益等指标；不要把营运利润与归母净利润混用。 2026年中期报告：基本EPS 5.30元/股（非年化）、加权平均ROE 9.0%（非年化）、经营现金流368,037百万元、每股净资产56.78元；另披露中期股息0.98元/股，非全年股息率。 2026年中期报告合并现金流量表（单位百万元人民币）披露购建固定资产、无形资产和其他长期资产支付的现金3,038百万元。保险集团现金流包含保费、赔付、金融资产交易及银行业务，不按普通工商企业口径计算FCF。",
+      "dataNotes": "金额单位：百万元人民币。营业收入5,751.38亿元，同比增长15.0%；归母净利润925.85亿元，同比增长36.1%；归母营运利润841.96亿元，同比增长8.3%；寿险及健康险新业务价值248.47亿元，同比增长11.2%。保险估值需另补EV、NBV、内含价值增长、偿付能力与投资收益等指标；不要把营运利润与归母净利润混用。 2026年中期报告：基本EPS 5.30元/股（非年化）、加权平均ROE 9.0%（非年化）、经营现金流368,037百万元、每股净资产56.78元；另披露中期股息0.98元/股，非全年股息率。 2026年中期报告合并现金流量表（单位百万元人民币）披露购建固定资产、无形资产和其他长期资产支付的现金3,038百万元。保险集团现金流包含保费、赔付、金融资产交易及银行业务，不按普通工商企业口径计算FCF。 每股净资产56.78元人民币，采用同花顺2026年中报行业财务指标直接披露值。",
       "derivedMetrics": {
         "netProfitMarginPct": 16.1,
         "profitability": "盈利",
@@ -2942,7 +2963,9 @@
       "parentEquityDate": "2026-06-30",
       "parentEquity": 1028084,
       "parentEquitySourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12512667&stockid=601318",
-      "capexSourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225487480.PDF"
+      "capexSourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225487480.PDF",
+      "bookValuePerShareSourceUrl": "https://basic.10jqka.com.cn/601318/field.html",
+      "bookValuePerShareMethod": "同花顺2026-06-30行业财务指标直接披露值；人民币/股"
     },
     {
       "layer": 5,
@@ -2984,7 +3007,7 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12558328&stockid=601601",
       "verifiedAt": "2026-10-27",
       "dataStatus": "2026年半年度资本开支字段已按公开报告补录；保险行业FCF不套用普通工商企业口径",
-      "dataNotes": "营收2121.36亿元，同比+5.8%；归母净利润307.75亿元，同比+10.4%；经营现金流1150.80亿元，同比-4.5%；EPS 3.20元，ROE 9.7%。保险应结合EV/NBV与偿付能力估值。 2026年半年度报告合并现金流量表（单位百万元人民币）披露购建固定资产、无形资产和其他长期资产支付的现金1,048百万元。保险集团现金流受保费、赔付与金融投资现金流影响，不按普通工商企业口径计算FCF。",
+      "dataNotes": "营收2121.36亿元，同比+5.8%；归母净利润307.75亿元，同比+10.4%；经营现金流1150.80亿元，同比-4.5%；EPS 3.20元，ROE 9.7%。保险应结合EV/NBV与偿付能力估值。 2026年半年度报告合并现金流量表（单位百万元人民币）披露购建固定资产、无形资产和其他长期资产支付的现金1,048百万元。保险集团现金流受保费、赔付与金融投资现金流影响，不按普通工商企业口径计算FCF。 每股净资产33.18元人民币，采用同花顺2026年中报财务指标直接披露值。",
       "derivedMetrics": {
         "netProfitMarginPct": 14.51,
         "operatingCashFlowToNetProfit": 3.739,
@@ -3012,7 +3035,10 @@
       "financialAnalysisSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12558328&stockid=601601",
       "financialAnalysisMetrics": {},
       "financialAnalysisNotes": "保险公司不套用普通制造业净债务、FCF和ROIC；优先补齐寿险新业务价值、内含价值、保险服务业绩、投资收益、偿付能力充足率、归母净资产、每股净资产及分部估值。待本批次继续核验原始半年报对应数值。",
-      "capexSourceUrl": "https://stock.stockstar.com/notice/SN2026082700054843.shtml"
+      "capexSourceUrl": "https://stock.stockstar.com/notice/SN2026082700054843.shtml",
+      "bookValuePerShare": 33.18,
+      "bookValuePerShareSourceUrl": "https://basic.10jqka.com.cn/72/02601/",
+      "bookValuePerShareMethod": "同花顺2026年中报财务指标直接披露值；人民币/股"
     },
     {
       "layer": 5,
@@ -3053,7 +3079,7 @@
       "sourceUrl": "https://statics.citics.com/website/report/2026/web/e-book/web/index.html",
       "verifiedAt": "2026-10-27",
       "dataStatus": "2026年半年度资本开支字段已按公开报告补录；金融业务FCF不套用普通工商企业口径",
-      "dataNotes": "营收496.92亿元，同比+50.00%；归母净利润233.43亿元，同比+69.60%；ROE 7.81%。券商盈利受市场成交及自营投资波动影响。 2026年半年度报告：基本EPS 1.53元、加权平均ROE 7.81%、经营现金流净额105,619.809百万元。券商经营现金流受金融资产负债变动影响，不直接等同工业企业自由现金流。 2026年上半年合并现金流量表披露购建固定资产、无形资产和其他长期资产支付的现金608.935百万元。券商经营现金流受金融资产负债和客户资金变动影响，本数据库不据此套算普通工商企业FCF。",
+      "dataNotes": "营收496.92亿元，同比+50.00%；归母净利润233.43亿元，同比+69.60%；ROE 7.81%。券商盈利受市场成交及自营投资波动影响。 2026年半年度报告：基本EPS 1.53元、加权平均ROE 7.81%、经营现金流净额105,619.809百万元。券商经营现金流受金融资产负债变动影响，不直接等同工业企业自由现金流。 2026年上半年合并现金流量表披露购建固定资产、无形资产和其他长期资产支付的现金608.935百万元。券商经营现金流受金融资产负债和客户资金变动影响，本数据库不据此套算普通工商企业FCF。 每股净资产19.93元，采用同花顺2026年中报财务指标直接披露值。",
       "derivedMetrics": {
         "netProfitMarginPct": 46.98,
         "profitability": "盈利",
@@ -3093,7 +3119,10 @@
       "parentEquityDate": "2026-06-30",
       "parentEquity": 351036,
       "parentEquitySourceUrl": "https://statics.citics.com/website/report/2026/web/e-book/web/index.html",
-      "capexSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12511186&stockid=600030"
+      "capexSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12511186&stockid=600030",
+      "bookValuePerShare": 19.93,
+      "bookValuePerShareSourceUrl": "https://basic.10jqka.com.cn/600030/index.html",
+      "bookValuePerShareMethod": "同花顺2026年中报财务指标直接披露值；人民币/股"
     },
     {
       "layer": 5,
@@ -3345,7 +3374,7 @@
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571973&stockid=600754",
       "verifiedAt": "2026-10-27",
       "dataStatus": "2026年半年度现金流字段已按公开报告补录；估值字段另行核验",
-      "dataNotes": "营收68.01亿元，同比+4.21%；归母净利润5.45亿元，同比+47.05%；扣非净利润5.93亿元，同比+45.16%；经营现金流21.03亿元，同比+57.95%；EPS 0.51元。 2026年上半年合并现金流量表：经营活动现金流净额2,102.645百万元；购建固定资产、无形资产和其他长期资产支付的现金1,008.794百万元；简化FCF=1,093.851百万元。半年值不年化，未扣除其他投资现金流。",
+      "dataNotes": "营收68.01亿元，同比+4.21%；归母净利润5.45亿元，同比+47.05%；扣非净利润5.93亿元，同比+45.16%；经营现金流21.03亿元，同比+57.95%；EPS 0.51元。 2026年上半年合并现金流量表：经营活动现金流净额2,102.645百万元；购建固定资产、无形资产和其他长期资产支付的现金1,008.794百万元；简化FCF=1,093.851百万元。半年值不年化，未扣除其他投资现金流。 每股净资产14.98元，采用同花顺2026年中报财务指标直接披露值。",
       "derivedMetrics": {
         "netProfitMarginPct": 8.01,
         "operatingCashFlowToNetProfit": 3.857,
@@ -3371,7 +3400,10 @@
       "marketDataSourceUrl": "https://kr.investing.com/equities/jinjiang-hotel-historical-data",
       "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价17.69元。",
       "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571973&stockid=600754",
-      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "bookValuePerShare": 14.98,
+      "bookValuePerShareSourceUrl": "https://basic.10jqka.com.cn/600754/",
+      "bookValuePerShareMethod": "同花顺2026-06-30财务指标直接披露值；人民币/股"
     },
     {
       "layer": 6,
@@ -4138,6 +4170,23 @@
         "爱尔眼科",
         "国药股份"
       ]
+    },
+    {
+      "date": "2026-10-27",
+      "batch": "补齐11家公司2026H1每股净资产BVPS，记录来源、币种与口径；中际旭创排除来源冲突值",
+      "companies": [
+        "申洲国际",
+        "中芯国际",
+        "北方华创",
+        "海光信息",
+        "中际旭创",
+        "阳光电源",
+        "汇川技术",
+        "中国太保",
+        "中国平安",
+        "锦江酒店",
+        "中信证券"
+      ]
     }
   ],
   "valuationModels": {
@@ -4485,20 +4534,10 @@
         "东方财富"
       ],
       "bookValuePerShare": [
-        "申洲国际",
         "腾讯控股",
         "阿里巴巴",
-        "中芯国际",
-        "北方华创",
-        "海光信息",
-        "中际旭创",
-        "阳光电源",
-        "汇川技术",
-        "中国太保",
-        "中信证券",
         "京东集团",
         "中国中免",
-        "锦江酒店",
         "分众传媒",
         "哔哩哔哩",
         "中公教育",
@@ -4668,20 +4707,10 @@
         "瀚蓝环境"
       ],
       "每股净资产": [
-        "申洲国际",
         "腾讯控股",
         "阿里巴巴",
-        "中芯国际",
-        "北方华创",
-        "海光信息",
-        "中际旭创",
-        "阳光电源",
-        "汇川技术",
-        "中国太保",
-        "中信证券",
         "京东集团",
         "中国中免",
-        "锦江酒店",
         "分众传媒",
         "哔哩哔哩",
         "中公教育",
@@ -4900,20 +4929,10 @@
         "瀚蓝环境"
       ],
       "BVPS": [
-        "申洲国际",
         "腾讯控股",
         "阿里巴巴",
-        "中芯国际",
-        "北方华创",
-        "海光信息",
-        "中际旭创",
-        "阳光电源",
-        "汇川技术",
-        "中国太保",
-        "中信证券",
         "京东集团",
         "中国中免",
-        "锦江酒店",
         "分众传媒",
         "哔哩哔哩",
         "中公教育",
@@ -5071,13 +5090,13 @@
         "瀚蓝环境"
       ]
     },
-    "withBookValuePerShare": 31,
+    "withBookValuePerShare": 41,
     "withROIC": 0,
     "withCapex": 49,
     "withNetDebt": 2,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
-    "withBVPS": 31,
+    "withBVPS": 41,
     "withMonetaryFunds": 7,
     "withCashAndCashEquivalents": 7,
     "withShortTermBorrowings": 8,
