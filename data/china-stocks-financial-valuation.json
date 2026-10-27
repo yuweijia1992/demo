@@ -4,9 +4,9 @@
   "asOf": "2026-10-27",
   "coverage": {
     "total": 49,
-    "operatingCashFlow": 47,
-    "capex": 40,
-    "freeCashFlow": 41,
+    "operatingCashFlow": 48,
+    "capex": 41,
+    "freeCashFlow": 42,
     "bookValuePerShare": 22,
     "peTtm": 14,
     "pb": 11,
@@ -3421,9 +3421,9 @@
       "eps": 0.82,
       "roe": 3.58,
       "roic": null,
-      "operatingCashFlow": null,
-      "capex": null,
-      "freeCashFlow": null,
+      "operatingCashFlow": 2952.457,
+      "capex": 1957.843,
+      "freeCashFlow": 994.614,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -3432,9 +3432,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526371261/d434015dex991.htm",
-      "verifiedAt": "2026-10-23",
-      "dataStatus": "补录港股收盘价与半年度ROE；其余现金流、资本开支等仍待原始报告核验",
-      "dataNotes": "2026年第二季度收入79.4亿元人民币，同比+8%；净利润3.391亿元，同比+55%；调整后净利润7.036亿元，同比+25%。此处为单季度数据，不是半年累计；港股以港币、ADR以美元分别估值。 2026年第二季度业绩公告：基本每股收益人民币0.82元/股（季度口径），报告同时披露季度收入7.94十亿元、净利润339.1百万元；与半年累计指标不可直接比较。 2026年上半年平均净资产收益率3.58%，来源为同花顺2026年中报报道；为报告期口径，未年化。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年中期报告现金流字段已按SEC披露补录；估值字段另行核验",
+      "dataNotes": "2026年第二季度收入79.4亿元人民币，同比+8%；净利润3.391亿元，同比+55%；调整后净利润7.036亿元，同比+25%。此处为单季度数据，不是半年累计；港股以港币、ADR以美元分别估值。 2026年第二季度业绩公告：基本每股收益人民币0.82元/股（季度口径），报告同时披露季度收入7.94十亿元、净利润339.1百万元；与半年累计指标不可直接比较。 2026年上半年平均净资产收益率3.58%，来源为同花顺2026年中报报道；为报告期口径，未年化。 2026年中期报告合并现金流量表（人民币千元）披露经营现金流2,952.457百万元；购置物业及设备1,219.708百万元、购置无形资产738.135百万元，合计资本开支1,957.843百万元；简化FCF=994.614百万元。半年值不年化，短期投资与定期存款配置不计入资本开支。",
       "derivedMetrics": {
         "netProfitMarginPct": 4.27,
         "profitability": "盈利",
@@ -3442,8 +3442,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 67,
-        "valuationCorePresent": 4,
+        "valuationCorePct": 100,
+        "valuationCorePresent": 6,
         "valuationCoreRequired": 6,
         "requiredFields": [
           "revenue",
@@ -3457,7 +3457,9 @@
       },
       "marketDataSourceUrl": "https://hk.investing.com/equities/bilibili-historical-data",
       "marketDataNotes": "港股09626.HK历史行情页列示2026-10-22收盘103.50港元；非美股BILI ADR，行情源为第三方，作为公开收盘快照。",
-      "roeSourceUrl": "https://stock.10jqka.com.cn/hks/20260924/c680278220.shtml"
+      "roeSourceUrl": "https://stock.10jqka.com.cn/hks/20260924/c680278220.shtml",
+      "capexSourceUrl": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526400258/d163378dex991.pdf",
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建物业设备与无形资产现金支出；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 6,
@@ -4030,6 +4032,13 @@
       "companies": [
         "京东集团"
       ]
+    },
+    {
+      "date": "2026-10-27",
+      "batch": "补录哔哩哔哩2026H1经营现金流、资本开支与简化FCF",
+      "companies": [
+        "哔哩哔哩"
+      ]
     }
   ],
   "valuationModels": {
@@ -4219,8 +4228,8 @@
     "withRevenue": 49,
     "withNetProfit": 49,
     "withEPS": 48,
-    "withOperatingCashFlow": 47,
-    "withFreeCashFlow": 41,
+    "withOperatingCashFlow": 48,
+    "withFreeCashFlow": 42,
     "derivedNetProfitMargin": 49,
     "derivedCashFlowConversion": 37,
     "companiesWithQualityAlerts": 5,
@@ -4368,8 +4377,7 @@
         "锦江酒店"
       ],
       "operatingCashFlow": [
-        "申洲国际",
-        "哔哩哔哩"
+        "申洲国际"
       ],
       "freeCashFlow": [
         "申洲国际",
@@ -4378,8 +4386,7 @@
         "中国平安",
         "中国太保",
         "中信证券",
-        "东方财富",
-        "哔哩哔哩"
+        "东方财富"
       ],
       "bookValuePerShare": [
         "牧原股份",
@@ -4462,8 +4469,7 @@
         "瀚蓝环境"
       ],
       "经营现金流": [
-        "申洲国际",
-        "哔哩哔哩"
+        "申洲国际"
       ],
       "资本开支": [
         "申洲国际",
@@ -4473,8 +4479,7 @@
         "中国平安",
         "中国太保",
         "中信证券",
-        "东方财富",
-        "哔哩哔哩"
+        "东方财富"
       ],
       "自由现金流": [
         "申洲国际",
@@ -4483,8 +4488,7 @@
         "中国平安",
         "中国太保",
         "中信证券",
-        "东方财富",
-        "哔哩哔哩"
+        "东方财富"
       ],
       "净债务": [
         "伊利股份",
@@ -4720,8 +4724,7 @@
         "瀚蓝环境"
       ],
       "OCF": [
-        "申洲国际",
-        "哔哩哔哩"
+        "申洲国际"
       ],
       "capex": [
         "申洲国际",
@@ -4731,8 +4734,7 @@
         "中国平安",
         "中国太保",
         "中信证券",
-        "东方财富",
-        "哔哩哔哩"
+        "东方财富"
       ],
       "FCF": [
         "申洲国际",
@@ -4741,8 +4743,7 @@
         "中国平安",
         "中国太保",
         "中信证券",
-        "东方财富",
-        "哔哩哔哩"
+        "东方财富"
       ],
       "netDebt": [
         "伊利股份",
@@ -5027,7 +5028,7 @@
     },
     "withBookValuePerShare": 22,
     "withROIC": 0,
-    "withCapex": 40,
+    "withCapex": 41,
     "withNetDebt": 2,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
