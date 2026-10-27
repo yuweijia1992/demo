@@ -5,7 +5,7 @@
   "coverage": {
     "total": 49,
     "operatingCashFlow": 49,
-    "capex": 46,
+    "capex": 47,
     "freeCashFlow": 43,
     "bookValuePerShare": 22,
     "peTtm": 14,
@@ -2774,7 +2774,7 @@
       "roe": 8.63,
       "roic": null,
       "operatingCashFlow": 1369013,
-      "capex": null,
+      "capex": 5669,
       "freeCashFlow": null,
       "netDebt": null,
       "dividendYield": null,
@@ -2784,9 +2784,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
-      "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
-      "dataNotes": "金额单位：百万元人民币。营业收入4,658.59亿元，同比增长9.1%；归母净利润1,736.82亿元；年化加权平均ROE 8.63%；经营活动现金流量净额1,369,013百万元；期末每股净资产11.12元。银行业经营现金流受存贷款等金融业务现金流影响，不应按普通工商企业口径解释自由现金流；估值重点看PB—ROE、资产质量与资本充足率。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年半年度资本开支字段已按公开报告补录；银行业FCF不套用普通工商企业口径",
+      "dataNotes": "金额单位：百万元人民币。营业收入4,658.59亿元，同比增长9.1%；归母净利润1,736.82亿元；年化加权平均ROE 8.63%；经营活动现金流量净额1,369,013百万元；期末每股净资产11.12元。银行业经营现金流受存贷款等金融业务现金流影响，不应按普通工商企业口径解释自由现金流；估值重点看PB—ROE、资产质量与资本充足率。 2026年半年度报告合并现金流量表（单位百万元人民币）披露购建固定资产、无形资产和其他长期资产支付的现金5,669百万元。银行业经营现金流受存贷款和金融资产负债变动影响，不按普通工商企业口径计算自由现金流。",
       "marketDataSourceUrl": "https://cn.investing.com/equities/icbc-ss-historical-data",
       "marketDataNotes": "Investing.com列示2026-10-20收盘8.56元；PE/PB需用银行专属估值口径补核。",
       "derivedMetrics": {
@@ -2826,7 +2826,8 @@
       "parentEquity": 4326994,
       "parentEquitySourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
       "bookValuePerShareMethod": "2026年半年度报告披露的普通股每股净资产",
-      "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398"
+      "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
+      "capexSourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225530114.PDF"
     },
     {
       "layer": 5,
@@ -4063,6 +4064,13 @@
         "中信证券",
         "东方财富"
       ]
+    },
+    {
+      "date": "2026-10-27",
+      "batch": "补录工商银行2026H1资本开支；银行业FCF保持行业适用性限制",
+      "companies": [
+        "工商银行"
+      ]
     }
   ],
   "valuationModels": {
@@ -4491,7 +4499,6 @@
       ],
       "经营现金流": [],
       "资本开支": [
-        "工商银行",
         "中国平安",
         "中国太保"
       ],
@@ -4738,7 +4745,6 @@
       ],
       "OCF": [],
       "capex": [
-        "工商银行",
         "中国平安",
         "中国太保"
       ],
@@ -5033,7 +5039,7 @@
     },
     "withBookValuePerShare": 22,
     "withROIC": 0,
-    "withCapex": 46,
+    "withCapex": 47,
     "withNetDebt": 2,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
