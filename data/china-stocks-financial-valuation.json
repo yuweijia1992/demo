@@ -5,8 +5,8 @@
   "coverage": {
     "total": 49,
     "operatingCashFlow": 46,
-    "capex": 37,
-    "freeCashFlow": 38,
+    "capex": 39,
+    "freeCashFlow": 40,
     "bookValuePerShare": 22,
     "peTtm": 14,
     "pb": 11,
@@ -3285,8 +3285,8 @@
       "roe": null,
       "roic": null,
       "operatingCashFlow": 2102.645032,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 1008.79433002,
+      "freeCashFlow": 1093.8507016,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -3295,9 +3295,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571973&stockid=600754",
-      "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收68.01亿元，同比+4.21%；归母净利润5.45亿元，同比+47.05%；扣非净利润5.93亿元，同比+45.16%；经营现金流21.03亿元，同比+57.95%；EPS 0.51元。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年半年度现金流字段已按公开报告补录；估值字段另行核验",
+      "dataNotes": "营收68.01亿元，同比+4.21%；归母净利润5.45亿元，同比+47.05%；扣非净利润5.93亿元，同比+45.16%；经营现金流21.03亿元，同比+57.95%；EPS 0.51元。 2026年上半年合并现金流量表：经营活动现金流净额2,102.645百万元；购建固定资产、无形资产和其他长期资产支付的现金1,008.794百万元；简化FCF=1,093.851百万元。半年值不年化，未扣除其他投资现金流。",
       "derivedMetrics": {
         "netProfitMarginPct": 8.01,
         "operatingCashFlowToNetProfit": 3.857,
@@ -3308,8 +3308,8 @@
       },
       "qualityAlerts": [],
       "dataCompleteness": {
-        "valuationCorePct": 60,
-        "valuationCorePresent": 3,
+        "valuationCorePct": 80,
+        "valuationCorePresent": 4,
         "valuationCoreRequired": 5,
         "requiredFields": [
           "revenue",
@@ -3321,7 +3321,9 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "marketDataSourceUrl": "https://kr.investing.com/equities/jinjiang-hotel-historical-data",
-      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价17.69元。"
+      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价17.69元。",
+      "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571973&stockid=600754",
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 6,
@@ -3350,8 +3352,8 @@
       "roe": 20.44,
       "roic": null,
       "operatingCashFlow": 4453.428032,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 492.2592,
+      "freeCashFlow": 3961.168832,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -3360,9 +3362,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12502839",
-      "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年半年度财务字段已按公开报告补核；估值字段另行核验",
-      "dataNotes": "2026年上半年营收约59.91亿元，同比减少约1.21亿元；归母净利润31.28亿元，同比+17.39%，扣非净利润同比-7.06%。营收同比百分比未直接录入，避免根据新闻摘要倒算。 2026年半年度报告摘要：基本EPS 0.2166元、加权平均ROE 20.44%、经营现金流净额4,453.428百万元。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年半年度现金流字段已按公开报告补录；估值字段另行核验",
+      "dataNotes": "2026年上半年营收约59.91亿元，同比减少约1.21亿元；归母净利润31.28亿元，同比+17.39%，扣非净利润同比-7.06%。营收同比百分比未直接录入，避免根据新闻摘要倒算。 2026年半年度报告摘要：基本EPS 0.2166元、加权平均ROE 20.44%、经营现金流净额4,453.428百万元。 2026年上半年报告披露购建固定资产、无形资产和其他长期资产现金净流出49,225.92万元，即492.259百万元；经营活动现金流净额4,453.428百万元；简化FCF=3,961.169百万元。半年值不年化，未扣除其他投资现金流。",
       "derivedMetrics": {
         "netProfitMarginPct": 52.21,
         "profitability": "盈利",
@@ -3373,8 +3375,8 @@
         "净利率超过50%：建议复核行业口径/非经常性损益"
       ],
       "dataCompleteness": {
-        "valuationCorePct": 60,
-        "valuationCorePresent": 3,
+        "valuationCorePct": 80,
+        "valuationCorePresent": 4,
         "valuationCoreRequired": 5,
         "requiredFields": [
           "revenue",
@@ -3386,7 +3388,9 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "marketDataSourceUrl": "https://cn.investing.com/equities/hedy-holding-a-historical-data",
-      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价4.97元。"
+      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价4.97元。",
+      "capexSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?CompanyCode=10001415&gather=1&id=12502843",
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 6,
@@ -4009,6 +4013,14 @@
         "海光信息",
         "中公教育"
       ]
+    },
+    {
+      "date": "2026-10-27",
+      "batch": "补录锦江酒店、分众传媒2026H1资本开支与简化FCF",
+      "companies": [
+        "锦江酒店",
+        "分众传媒"
+      ]
     }
   ],
   "valuationModels": {
@@ -4199,7 +4211,7 @@
     "withNetProfit": 49,
     "withEPS": 48,
     "withOperatingCashFlow": 46,
-    "withFreeCashFlow": 38,
+    "withFreeCashFlow": 40,
     "derivedNetProfitMargin": 49,
     "derivedCashFlowConversion": 37,
     "companiesWithQualityAlerts": 5,
@@ -4353,7 +4365,6 @@
       ],
       "freeCashFlow": [
         "申洲国际",
-        "海光信息",
         "招商银行",
         "工商银行",
         "中国平安",
@@ -4361,10 +4372,7 @@
         "中信证券",
         "东方财富",
         "京东集团",
-        "锦江酒店",
-        "分众传媒",
-        "哔哩哔哩",
-        "中公教育"
+        "哔哩哔哩"
       ],
       "bookValuePerShare": [
         "牧原股份",
@@ -4461,8 +4469,6 @@
         "中信证券",
         "东方财富",
         "京东集团",
-        "锦江酒店",
-        "分众传媒",
         "哔哩哔哩"
       ],
       "自由现金流": [
@@ -4474,8 +4480,6 @@
         "中信证券",
         "东方财富",
         "京东集团",
-        "锦江酒店",
-        "分众传媒",
         "哔哩哔哩"
       ],
       "净债务": [
@@ -4726,8 +4730,6 @@
         "中信证券",
         "东方财富",
         "京东集团",
-        "锦江酒店",
-        "分众传媒",
         "哔哩哔哩"
       ],
       "FCF": [
@@ -4739,8 +4741,6 @@
         "中信证券",
         "东方财富",
         "京东集团",
-        "锦江酒店",
-        "分众传媒",
         "哔哩哔哩"
       ],
       "netDebt": [
@@ -5026,7 +5026,7 @@
     },
     "withBookValuePerShare": 22,
     "withROIC": 0,
-    "withCapex": 37,
+    "withCapex": 39,
     "withNetDebt": 2,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
