@@ -5,9 +5,9 @@
   "coverage": {
     "total": 49,
     "operatingCashFlow": 46,
-    "capex": 28,
-    "freeCashFlow": 29,
-    "bookValuePerShare": 21,
+    "capex": 32,
+    "freeCashFlow": 33,
+    "bookValuePerShare": 22,
     "peTtm": 14,
     "pb": 11,
     "psTtm": 1,
@@ -1985,8 +1985,8 @@
       "roe": 4.61,
       "roic": null,
       "operatingCashFlow": -28461.271,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 12931.372,
+      "freeCashFlow": -41392.643,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -1995,9 +1995,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12569505&stockid=601668",
-      "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
-      "dataNotes": "营收9758.37亿元，同比-12.0%；归母净利润230.00亿元，同比-24.3%。原报告金额单位为千元人民币，已换算为百万元人民币。建筑施工需关注新签合同、现金回款、应收与地产相关风险。 2026年半年度报告摘要：基本EPS 0.55元/股、加权平均ROE 4.61%。经营现金流原始摘要单位口径需进一步核对，暂不填入。 2026年半年度报告披露归属普通股股东的每股净资产11.98元。 2026年半年度报告披露经营活动现金流量净额-28,461.271百万元。建筑企业现金流受项目结算、应收款与合同负债变化影响。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验；2026H1合并资本开支/FCF已补录（2026-10-27）",
+      "dataNotes": "营收9758.37亿元，同比-12.0%；归母净利润230.00亿元，同比-24.3%。原报告金额单位为千元人民币，已换算为百万元人民币。建筑施工需关注新签合同、现金回款、应收与地产相关风险。 2026年半年度报告摘要：基本EPS 0.55元/股、加权平均ROE 4.61%。经营现金流原始摘要单位口径需进一步核对，暂不填入。 2026年半年度报告披露归属普通股股东的每股净资产11.98元。 2026年半年度报告披露经营活动现金流量净额-28,461.271百万元。建筑企业现金流受项目结算、应收款与合同负债变化影响。 2026H1合并现金流量表单位万元：经营活动现金流净额-2,846,127.10万元，购建固定资产、无形资产和其他长期资产支付1,293,137.20万元；换算为百万元人民币分别为-28,461.271和12,931.372，简化FCF=-41,392.643。建筑施工企业上半年经营现金流易受项目结算、应收款与付款节奏影响，不能单凭半年负值判断长期现金创造能力。",
       "derivedMetrics": {
         "netProfitMarginPct": 2.36,
         "profitability": "盈利",
@@ -2026,7 +2026,9 @@
       "bookValueSourceUrl": "https://stock.stockstar.com/notice/SN2026082800049566.shtml",
       "marketDataSourceUrl": "https://cn.investing.com/equities/china-state-co-ss-historical-data",
       "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价4.52元。",
-      "bookValuePerShareDate": "2026-06-30"
+      "bookValuePerShareDate": "2026-06-30",
+      "capexSourceUrl": "https://money.finance.sina.com.cn/corp/go.php/vFD_CashFlow/stockid/601668/ctrl/2026/displaytype/4.phtml",
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 4,
@@ -2188,8 +2190,8 @@
       "roe": 2.9,
       "roic": null,
       "operatingCashFlow": 20759.511,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 19724.655,
+      "freeCashFlow": 1034.8559999999998,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": 118.45,
@@ -2198,9 +2200,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12559855&stockid=688981",
-      "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年半年度财务字段已按公开报告补核；估值字段另行核验",
-      "dataNotes": "营收386.35亿元，同比+19.4%；归母净利润44.67亿元，同比+94.2%；扣非净利润29.94亿元，同比+57.2%；经营现金流207.60亿元，同比+252%。需关注资本开支、产能利用率与折旧。 2026年半年度报告（人民币千元口径）：基本EPS 0.56元、加权平均ROE 2.9%、经营现金流净额20,759.511百万元；不与港股报价币种混用。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年半年度财务字段已按公开报告补核；估值字段另行核验；2026H1合并资本开支/FCF已补录（2026-10-27）",
+      "dataNotes": "营收386.35亿元，同比+19.4%；归母净利润44.67亿元，同比+94.2%；扣非净利润29.94亿元，同比+57.2%；经营现金流207.60亿元，同比+252%。需关注资本开支、产能利用率与折旧。 2026年半年度报告（人民币千元口径）：基本EPS 0.56元、加权平均ROE 2.9%、经营现金流净额20,759.511百万元；不与港股报价币种混用。 2026H1合并现金流量表单位千元人民币：经营活动现金流净额20,759,511千元，购建固定资产、无形资产和其他长期资产支付19,724,655千元；换算为百万元人民币分别为20,759.511和19,724.655，简化FCF=1,034.856百万元。另有购买定期存款现金13,158.536百万元，不计入本口径资本开支。",
       "marketDataSourceUrl": "https://www.yyqyx.com/s/688981.SH",
       "marketDataNotes": "最新可核验行情页为2026-10-19收盘；PE-TTM 118.45、PB 4.98、PS-TTM 11.60。非2026-10-20当日收盘，故保留真实行情日期。A/H股分别估值。",
       "derivedMetrics": {
@@ -2223,7 +2225,9 @@
           "peTtm"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "capexSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12559855&stockid=688981",
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 4,
@@ -2253,8 +2257,8 @@
       "roe": 8.58,
       "roic": null,
       "operatingCashFlow": 3773.698817,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 830.47430148,
+      "freeCashFlow": 2943.22451552,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": 72.54,
@@ -2263,9 +2267,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12534434&stockid=002371",
-      "verifiedAt": "2026-10-20",
-      "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验",
-      "dataNotes": "营收201.61亿元，同比+24.90%；归母净利润33.70亿元，同比+5.05%；经营现金流37.74亿元；EPS 4.6486元，ROE 8.58%。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年半年度部分财务数据已核验；价格、估值与历史分位待核验；2026H1合并资本开支/FCF已补录（2026-10-27）",
+      "dataNotes": "营收201.61亿元，同比+24.90%；归母净利润33.70亿元，同比+5.05%；经营现金流37.74亿元；EPS 4.6486元，ROE 8.58%。 2026H1合并现金流量表购建固定资产、无形资产和其他长期资产支付830.474百万元；经营活动现金流净额3,773.699百万元；简化FCF=2,943.225百万元。未把投资支付或收购子公司支付的现金混入资本开支口径。",
       "marketDataSourceUrl": "https://quote.cfi.cn/quote.aspx?client=pc&stockid=10802",
       "marketDataNotes": "中财网列示2026-10-20 15:00价格566.49元、PE 72.54、PB 8.83；设备公司需结合订单、利润率、研发与周期判断估值。",
       "derivedMetrics": {
@@ -2290,7 +2294,9 @@
           "price"
         ],
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
-      }
+      },
+      "capexSourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501903.PDF",
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
     },
     {
       "layer": 4,
@@ -3535,8 +3541,8 @@
       "roe": 5.07,
       "roic": null,
       "operatingCashFlow": 728.29495,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 1455.50963913,
+      "freeCashFlow": -727.2146888100001,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": null,
@@ -3545,9 +3551,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12539476&stockid=000598",
-      "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补",
-      "dataNotes": "营收43.88亿元，同比+4.67%；归母净利润10.21亿元，同比+4.74%；经营现金流7.28亿元，同比-22.05%；EPS 0.3426元，ROE 5.07%。公用事业估值需进一步补充净债务、资本开支、分红和项目回报。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年部分财务数据已核验；行情估值与部分财务指标待补；2026H1合并资本开支/FCF及BVPS计算值已补录（2026-10-27）",
+      "dataNotes": "营收43.88亿元，同比+4.67%；归母净利润10.21亿元，同比+4.74%；经营现金流7.28亿元，同比-22.05%；EPS 0.3426元，ROE 5.07%。公用事业估值需进一步补充净债务、资本开支、分红和项目回报。 2026H1合并经营活动现金流净额728.295百万元；购建固定资产、无形资产和其他长期资产支付1,455.510百万元；简化FCF=-727.215百万元。BVPS计算值=2026-06-30归母净资产20,044.106百万元÷股本2,984.009百万股≈6.719元/股。现金流及净资产均取合并报表。",
       "derivedMetrics": {
         "netProfitMarginPct": 23.27,
         "operatingCashFlowToNetProfit": 0.713,
@@ -3571,7 +3577,13 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "marketDataSourceUrl": "https://hk.investing.com/equities/xingrong-invest-a-historical-data",
-      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价6.95元。"
+      "marketDataNotes": "Investing.com历史行情列示2026-10-22收盘价6.95元。",
+      "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12539479&stockid=000598",
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "bookValuePerShare": 6.717173904321843,
+      "bookValuePerShareMethod": "计算值：2026-06-30归母净资产÷期末股本；非报告直接列示值",
+      "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12539479&stockid=000598",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 6,
@@ -3960,6 +3972,16 @@
       "companies": [
         "国电南瑞"
       ]
+    },
+    {
+      "date": "2026-10-27",
+      "batch": "补录中国建筑、兴蓉环境、中芯国际、北方华创2026H1资本开支/简化FCF；兴蓉环境补录计算型BVPS",
+      "companies": [
+        "中国建筑",
+        "中芯国际",
+        "北方华创",
+        "兴蓉环境"
+      ]
     }
   ],
   "valuationModels": {
@@ -4145,12 +4167,12 @@
         }
       ]
     },
-    "note": "字段非空覆盖率不代表每项数据均完成交叉核验；历史估值分位必须基于同一证券、同一口径的真实时间序列，当前未建立时保留空值。",
+    "note": "字段非空覆盖率不代表每项数据均完成独立交叉核验；2026H1数据为半年值且不年化；历史估值分位须基于同一证券、同一倍数定义的真实历史序列，未建立时保留空值。",
     "withRevenue": 49,
     "withNetProfit": 49,
     "withEPS": 48,
     "withOperatingCashFlow": 46,
-    "withFreeCashFlow": 29,
+    "withFreeCashFlow": 33,
     "derivedNetProfitMargin": 49,
     "derivedCashFlowConversion": 37,
     "companiesWithQualityAlerts": 5,
@@ -4304,9 +4326,6 @@
       ],
       "freeCashFlow": [
         "申洲国际",
-        "中国建筑",
-        "中芯国际",
-        "北方华创",
         "海光信息",
         "中际旭创",
         "阳光电源",
@@ -4321,8 +4340,7 @@
         "锦江酒店",
         "分众传媒",
         "哔哩哔哩",
-        "中公教育",
-        "兴蓉环境"
+        "中公教育"
       ],
       "bookValuePerShare": [
         "牧原股份",
@@ -4351,7 +4369,6 @@
         "分众传媒",
         "哔哩哔哩",
         "中公教育",
-        "兴蓉环境",
         "瀚蓝环境"
       ],
       "ROIC": [
@@ -4412,10 +4429,7 @@
       ],
       "资本开支": [
         "申洲国际",
-        "中国建筑",
         "阿里巴巴",
-        "中芯国际",
-        "北方华创",
         "海光信息",
         "中际旭创",
         "阳光电源",
@@ -4430,14 +4444,10 @@
         "锦江酒店",
         "分众传媒",
         "哔哩哔哩",
-        "中公教育",
-        "兴蓉环境"
+        "中公教育"
       ],
       "自由现金流": [
         "申洲国际",
-        "中国建筑",
-        "中芯国际",
-        "北方华创",
         "海光信息",
         "中际旭创",
         "阳光电源",
@@ -4452,8 +4462,7 @@
         "锦江酒店",
         "分众传媒",
         "哔哩哔哩",
-        "中公教育",
-        "兴蓉环境"
+        "中公教育"
       ],
       "净债务": [
         "伊利股份",
@@ -4584,7 +4593,6 @@
         "分众传媒",
         "哔哩哔哩",
         "中公教育",
-        "兴蓉环境",
         "瀚蓝环境"
       ],
       "5年分位": [
@@ -4696,10 +4704,7 @@
       ],
       "capex": [
         "申洲国际",
-        "中国建筑",
         "阿里巴巴",
-        "中芯国际",
-        "北方华创",
         "海光信息",
         "中际旭创",
         "阳光电源",
@@ -4714,14 +4719,10 @@
         "锦江酒店",
         "分众传媒",
         "哔哩哔哩",
-        "中公教育",
-        "兴蓉环境"
+        "中公教育"
       ],
       "FCF": [
         "申洲国际",
-        "中国建筑",
-        "中芯国际",
-        "北方华创",
         "海光信息",
         "中际旭创",
         "阳光电源",
@@ -4736,8 +4737,7 @@
         "锦江酒店",
         "分众传媒",
         "哔哩哔哩",
-        "中公教育",
-        "兴蓉环境"
+        "中公教育"
       ],
       "netDebt": [
         "伊利股份",
@@ -5034,13 +5034,13 @@
         "瀚蓝环境"
       ]
     },
-    "withBookValuePerShare": 21,
+    "withBookValuePerShare": 22,
     "withROIC": 0,
-    "withCapex": 28,
+    "withCapex": 32,
     "withNetDebt": 2,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
-    "withBVPS": 21,
+    "withBVPS": 22,
     "withMonetaryFunds": 7,
     "withCashAndCashEquivalents": 7,
     "withShortTermBorrowings": 8,
