@@ -5,9 +5,9 @@
   "coverage": {
     "total": 49,
     "operatingCashFlow": 46,
-    "capex": 27,
-    "freeCashFlow": 28,
-    "bookValuePerShare": 20,
+    "capex": 28,
+    "freeCashFlow": 29,
+    "bookValuePerShare": 21,
     "peTtm": 14,
     "pb": 11,
     "psTtm": 1,
@@ -1748,8 +1748,8 @@
       "roe": 5.73,
       "roic": null,
       "operatingCashFlow": 591.109592,
-      "capex": null,
-      "freeCashFlow": null,
+      "capex": 754.32957819,
+      "freeCashFlow": -163.21998639000003,
       "netDebt": null,
       "dividendYield": null,
       "peTtm": 22.26,
@@ -1758,9 +1758,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12543045",
-      "verifiedAt": "2026-10-23",
-      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验",
-      "dataNotes": "营业收入277.67亿元，同比增长14.54%；归母净利润30.73亿元，同比增长4.08%。半年度报告未经审计。重点跟踪订单交付、应收账款/合同资产、经营现金流与利润匹配、研发投入。 2026年半年度报告摘要：基本EPS 0.38元/股、加权平均ROE 5.73%、经营现金流净额591.11百万元。",
+      "verifiedAt": "2026-10-27",
+      "dataStatus": "2026年半年度财务数据已补核；行情估值字段仍待核验；2026H1资本开支/FCF及BVPS计算值已补录（2026-10-27）",
+      "dataNotes": "营业收入277.67亿元，同比增长14.54%；归母净利润30.73亿元，同比增长4.08%。半年度报告未经审计。重点跟踪订单交付、应收账款/合同资产、经营现金流与利润匹配、研发投入。 2026年半年度报告摘要：基本EPS 0.38元/股、加权平均ROE 5.73%、经营现金流净额591.11百万元。 2026H1合并经营活动现金流净额591.110百万元；购建固定资产、无形资产和其他长期资产支付754.330百万元；简化FCF=-163.220百万元。BVPS计算值=2026-06-30归母净资产52,073.958百万元÷期末总股本8,031.756百万股=6.485元/股。现金流及净资产均取合并报表，单位换算为百万元人民币。",
       "derivedMetrics": {
         "netProfitMarginPct": 11.07,
         "profitability": "盈利",
@@ -1786,7 +1786,13 @@
         "definition": "按当前行业模型所需字段计算的字段覆盖率，不代表数据正确性或估值已完成"
       },
       "marketDataSourceUrl": "https://data.cfi.cn/quote1752_600406.html",
-      "marketDataNotes": "中财网列示2026-10-22收盘价23.28元，PE-TTM 22.26倍、PB 3.36倍。该页面为第三方行情源，估值口径需后续交叉核验。"
+      "marketDataNotes": "中财网列示2026-10-22收盘价23.28元，PE-TTM 22.26倍、PB 3.36倍。该页面为第三方行情源，估值口径需后续交叉核验。",
+      "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12543058&stockid=600406",
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "bookValuePerShare": 6.48350834390919,
+      "bookValuePerShareMethod": "计算值：2026-06-30归母净资产52,073.958百万元÷期末总股本8,031.756百万股；非报告直接列示值",
+      "bookValuePerShareSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12543058&stockid=600406",
+      "bookValuePerShareDate": "2026-06-30"
     },
     {
       "layer": 3,
@@ -3946,6 +3952,13 @@
       "companies": [
         "川投能源",
         "中国核电"
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "batch": "2026-10-27：补录国电南瑞2026H1合并资本开支、简化FCF及计算型BVPS。",
+      "companies": [
+        "国电南瑞"
       ]
     }
   ],
