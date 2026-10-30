@@ -1,0 +1,5123 @@
+{
+  "source": "Eniu public A-share historical charts (candidate; pending metric-basis review)",
+  "sourceReference": "Legacy public Eniu chart endpoint mappings in jstarcraft-crawler En(iu).java; candidate source, metric freshness/basis pending verification",
+  "fetchedAt": "2026-10-30T10:30:07+00:00",
+  "requestedAshareCompanies": 44,
+  "candidateDailyRowsWritten": 196935,
+  "companiesWithAnyHistory": 44,
+  "metricCoverageCompanies": {
+    "peTtm": 44,
+    "pb": 44,
+    "psRaw": 44,
+    "close": 44
+  },
+  "metrics": [
+    {
+      "code": "600887.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh600887/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 7433,
+      "firstDate": "1996-03-12",
+      "lastDate": "2026-10-29",
+      "validValues": 7433,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "600887.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh600887/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6978,
+      "firstDate": "1997-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 6978,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "600887.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh600887/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5414,
+      "firstDate": "2004-04-07",
+      "lastDate": "2026-10-29",
+      "validValues": 5414,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600887.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh600887/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6978,
+      "firstDate": "1997-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 6978,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "002714.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz002714/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2654,
+      "firstDate": "2015-04-28",
+      "lastDate": "2026-10-29",
+      "validValues": 2654,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "002714.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz002714/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3098,
+      "firstDate": "2014-01-28",
+      "lastDate": "2026-10-29",
+      "validValues": 3098,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "002714.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz002714/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2654,
+      "firstDate": "2015-04-28",
+      "lastDate": "2026-10-29",
+      "validValues": 2654,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "002714.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz002714/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2654,
+      "firstDate": "2015-04-28",
+      "lastDate": "2026-10-29",
+      "validValues": 2654,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "603288.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh603288/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2760,
+      "firstDate": "2015-03-11",
+      "lastDate": "2026-10-29",
+      "validValues": 2760,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "603288.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh603288/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2760,
+      "firstDate": "2015-03-11",
+      "lastDate": "2026-10-29",
+      "validValues": 2760,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "603288.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh603288/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3093,
+      "firstDate": "2014-02-11",
+      "lastDate": "2026-10-29",
+      "validValues": 3093,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "603288.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh603288/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2760,
+      "firstDate": "2015-03-11",
+      "lastDate": "2026-10-29",
+      "validValues": 2760,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "600398.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh600398/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6073,
+      "firstDate": "2001-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 6073,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "600398.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh600398/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6260,
+      "firstDate": "2000-12-28",
+      "lastDate": "2026-10-28",
+      "validValues": 6260,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "600398.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh600398/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6073,
+      "firstDate": "2001-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 6073,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "600398.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh600398/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5428,
+      "firstDate": "2004-03-22",
+      "lastDate": "2026-10-29",
+      "validValues": 5428,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600690.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh600690/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5426,
+      "firstDate": "2004-03-29",
+      "lastDate": "2026-10-29",
+      "validValues": 5426,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600690.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh600690/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 7043,
+      "firstDate": "1997-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 7043,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "000333.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz000333/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2845,
+      "firstDate": "2014-03-31",
+      "lastDate": "2026-10-29",
+      "validValues": 2845,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "600690.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh600690/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 8007,
+      "firstDate": "1993-11-19",
+      "lastDate": "2026-10-29",
+      "validValues": 8007,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "000333.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz000333/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2845,
+      "firstDate": "2014-03-31",
+      "lastDate": "2026-10-29",
+      "validValues": 2845,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "600690.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh600690/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 7043,
+      "firstDate": "1997-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 7043,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "000333.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz000333/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2845,
+      "firstDate": "2014-03-31",
+      "lastDate": "2026-10-29",
+      "validValues": 2845,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "000333.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz000333/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3184,
+      "firstDate": "2013-09-18",
+      "lastDate": "2026-10-29",
+      "validValues": 3184,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "000651.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz000651/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6905,
+      "firstDate": "1997-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 6905,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "000651.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz000651/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6905,
+      "firstDate": "1997-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 6905,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "000651.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz000651/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5338,
+      "firstDate": "2004-04-26",
+      "lastDate": "2026-10-29",
+      "validValues": 5338,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "000651.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz000651/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 7257,
+      "firstDate": "1996-11-18",
+      "lastDate": "2026-10-28",
+      "validValues": 7257,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "002594.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz002594/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3406,
+      "firstDate": "2012-03-27",
+      "lastDate": "2026-10-29",
+      "validValues": 3406,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "002594.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz002594/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3406,
+      "firstDate": "2012-03-27",
+      "lastDate": "2026-10-29",
+      "validValues": 3406,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "002594.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz002594/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3406,
+      "firstDate": "2012-03-27",
+      "lastDate": "2026-10-29",
+      "validValues": 3406,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "002594.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz002594/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3722,
+      "firstDate": "2011-06-30",
+      "lastDate": "2026-10-28",
+      "validValues": 3722,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "600066.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh600066/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6739,
+      "firstDate": "1998-01-05",
+      "lastDate": "2026-10-29",
+      "validValues": 6739,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "600066.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh600066/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5440,
+      "firstDate": "2004-03-03",
+      "lastDate": "2026-10-29",
+      "validValues": 5440,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600066.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh600066/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6739,
+      "firstDate": "1998-01-05",
+      "lastDate": "2026-10-29",
+      "validValues": 6739,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "600066.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh600066/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 7148,
+      "firstDate": "1997-05-08",
+      "lastDate": "2026-10-29",
+      "validValues": 7148,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "601816.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh601816/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1196,
+      "firstDate": "2021-05-06",
+      "lastDate": "2026-10-29",
+      "validValues": 1196,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "601816.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh601816/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1196,
+      "firstDate": "2021-05-06",
+      "lastDate": "2026-10-29",
+      "validValues": 1196,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "601816.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh601816/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1196,
+      "firstDate": "2021-05-06",
+      "lastDate": "2026-10-29",
+      "validValues": 1196,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "601816.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh601816/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1642,
+      "firstDate": "2020-01-16",
+      "lastDate": "2026-10-29",
+      "validValues": 1642,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "002352.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz002352/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3667,
+      "firstDate": "2011-03-07",
+      "lastDate": "2026-10-29",
+      "validValues": 3667,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "002352.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz002352/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3667,
+      "firstDate": "2011-03-07",
+      "lastDate": "2026-10-29",
+      "validValues": 3667,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "002352.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz002352/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3667,
+      "firstDate": "2011-03-07",
+      "lastDate": "2026-10-29",
+      "validValues": 3667,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "002352.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz002352/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4058,
+      "firstDate": "2010-02-05",
+      "lastDate": "2026-10-28",
+      "validValues": 4058,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "601919.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh601919/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4348,
+      "firstDate": "2008-04-23",
+      "lastDate": "2026-10-29",
+      "validValues": 4348,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "601919.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh601919/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4702,
+      "firstDate": "2007-06-26",
+      "lastDate": "2026-10-29",
+      "validValues": 4702,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "601919.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh601919/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4348,
+      "firstDate": "2008-04-23",
+      "lastDate": "2026-10-29",
+      "validValues": 4348,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "601919.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh601919/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4348,
+      "firstDate": "2008-04-23",
+      "lastDate": "2026-10-29",
+      "validValues": 4348,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "300760.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz300760/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1950,
+      "firstDate": "2018-10-16",
+      "lastDate": "2026-10-29",
+      "validValues": 1950,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "300760.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz300760/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1589,
+      "firstDate": "2019-04-25",
+      "lastDate": "2026-10-29",
+      "validValues": 1589,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "300760.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz300760/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1589,
+      "firstDate": "2019-04-25",
+      "lastDate": "2026-10-29",
+      "validValues": 1589,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "300760.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz300760/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1589,
+      "firstDate": "2019-04-25",
+      "lastDate": "2026-10-29",
+      "validValues": 1589,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600276.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh600276/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6060,
+      "firstDate": "2001-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 6060,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "600276.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh600276/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5449,
+      "firstDate": "2004-02-19",
+      "lastDate": "2026-10-29",
+      "validValues": 5449,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600276.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh600276/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6312,
+      "firstDate": "2000-10-18",
+      "lastDate": "2026-10-29",
+      "validValues": 6312,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "600276.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh600276/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6060,
+      "firstDate": "2001-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 6060,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "603259.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh603259/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1675,
+      "firstDate": "2019-03-25",
+      "lastDate": "2026-10-29",
+      "validValues": 1675,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "603259.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh603259/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2058,
+      "firstDate": "2018-05-08",
+      "lastDate": "2026-10-29",
+      "validValues": 2058,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "603259.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh603259/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1675,
+      "firstDate": "2019-03-25",
+      "lastDate": "2026-10-29",
+      "validValues": 1675,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "603259.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh603259/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1675,
+      "firstDate": "2019-03-25",
+      "lastDate": "2026-10-29",
+      "validValues": 1675,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "300015.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz300015/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3793,
+      "firstDate": "2010-03-16",
+      "lastDate": "2026-10-29",
+      "validValues": 3793,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "300015.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz300015/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3793,
+      "firstDate": "2010-03-16",
+      "lastDate": "2026-10-29",
+      "validValues": 3793,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "300015.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz300015/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4128,
+      "firstDate": "2009-10-30",
+      "lastDate": "2026-10-29",
+      "validValues": 4128,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "300015.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz300015/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3793,
+      "firstDate": "2010-03-16",
+      "lastDate": "2026-10-29",
+      "validValues": 3793,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "600511.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh600511/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5672,
+      "firstDate": "2003-03-17",
+      "lastDate": "2026-10-29",
+      "validValues": 5672,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "600511.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh600511/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5423,
+      "firstDate": "2004-03-29",
+      "lastDate": "2026-10-29",
+      "validValues": 5423,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600511.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh600511/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5806,
+      "firstDate": "2002-11-27",
+      "lastDate": "2026-10-28",
+      "validValues": 5806,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "600511.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh600511/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5672,
+      "firstDate": "2003-03-17",
+      "lastDate": "2026-10-29",
+      "validValues": 5672,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "600900.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh600900/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5310,
+      "firstDate": "2004-04-01",
+      "lastDate": "2026-10-29",
+      "validValues": 5310,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "600900.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh600900/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5310,
+      "firstDate": "2004-04-01",
+      "lastDate": "2026-10-29",
+      "validValues": 5310,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "600900.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh600900/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5310,
+      "firstDate": "2004-04-01",
+      "lastDate": "2026-10-29",
+      "validValues": 5310,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600900.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh600900/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5573,
+      "firstDate": "2003-11-18",
+      "lastDate": "2026-10-29",
+      "validValues": 5573,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "600674.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh600674/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 7042,
+      "firstDate": "1997-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 7042,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "600674.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh600674/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 7042,
+      "firstDate": "1997-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 7042,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "600674.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh600674/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5422,
+      "firstDate": "2004-03-08",
+      "lastDate": "2026-10-29",
+      "validValues": 5422,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600674.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh600674/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 8046,
+      "firstDate": "1993-09-24",
+      "lastDate": "2026-10-29",
+      "validValues": 8046,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "601985.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh601985/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2469,
+      "firstDate": "2016-05-03",
+      "lastDate": "2026-10-29",
+      "validValues": 2469,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "601985.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh601985/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2469,
+      "firstDate": "2016-05-03",
+      "lastDate": "2026-10-29",
+      "validValues": 2469,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "601985.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh601985/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2469,
+      "firstDate": "2016-05-03",
+      "lastDate": "2026-10-29",
+      "validValues": 2469,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "601985.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh601985/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2765,
+      "firstDate": "2015-06-10",
+      "lastDate": "2026-10-28",
+      "validValues": 2765,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "601088.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh601088/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4357,
+      "firstDate": "2008-03-17",
+      "lastDate": "2026-10-29",
+      "validValues": 4357,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "601088.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh601088/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4357,
+      "firstDate": "2008-03-17",
+      "lastDate": "2026-10-29",
+      "validValues": 4357,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "601088.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh601088/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4357,
+      "firstDate": "2008-03-17",
+      "lastDate": "2026-10-29",
+      "validValues": 4357,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600406.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh600406/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5447,
+      "firstDate": "2004-02-18",
+      "lastDate": "2026-10-29",
+      "validValues": 5447,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "601088.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh601088/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4632,
+      "firstDate": "2007-10-09",
+      "lastDate": "2026-10-29",
+      "validValues": 4632,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "600406.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh600406/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5447,
+      "firstDate": "2004-02-18",
+      "lastDate": "2026-10-29",
+      "validValues": 5447,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600941.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh600941/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 913,
+      "firstDate": "2022-03-25",
+      "lastDate": "2026-10-29",
+      "validValues": 913,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "600941.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh600941/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 913,
+      "firstDate": "2022-03-25",
+      "lastDate": "2026-10-29",
+      "validValues": 913,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "600406.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh600406/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5447,
+      "firstDate": "2004-02-18",
+      "lastDate": "2026-10-29",
+      "validValues": 5447,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "600941.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh600941/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1164,
+      "firstDate": "2022-01-05",
+      "lastDate": "2026-10-28",
+      "validValues": 1164,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "601728.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh601728/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1114,
+      "firstDate": "2021-08-20",
+      "lastDate": "2026-10-29",
+      "validValues": 1114,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "600941.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh600941/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 913,
+      "firstDate": "2022-03-25",
+      "lastDate": "2026-10-29",
+      "validValues": 913,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600406.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh600406/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5596,
+      "firstDate": "2003-10-16",
+      "lastDate": "2026-10-29",
+      "validValues": 5596,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "601728.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh601728/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1114,
+      "firstDate": "2021-08-20",
+      "lastDate": "2026-10-29",
+      "validValues": 1114,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "601728.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh601728/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1255,
+      "firstDate": "2021-08-20",
+      "lastDate": "2026-10-29",
+      "validValues": 1255,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "601728.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh601728/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1114,
+      "firstDate": "2021-08-20",
+      "lastDate": "2026-10-29",
+      "validValues": 1114,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "601668.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh601668/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3860,
+      "firstDate": "2010-04-21",
+      "lastDate": "2026-10-29",
+      "validValues": 3860,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "601668.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh601668/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3860,
+      "firstDate": "2010-04-21",
+      "lastDate": "2026-10-29",
+      "validValues": 3860,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "688981.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh688981/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1188,
+      "firstDate": "2021-04-02",
+      "lastDate": "2026-10-29",
+      "validValues": 1188,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "601668.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh601668/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4189,
+      "firstDate": "2009-07-29",
+      "lastDate": "2026-10-29",
+      "validValues": 4189,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "688981.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh688981/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1188,
+      "firstDate": "2021-04-02",
+      "lastDate": "2026-10-29",
+      "validValues": 1188,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "601668.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh601668/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3860,
+      "firstDate": "2010-04-21",
+      "lastDate": "2026-10-29",
+      "validValues": 3860,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "688981.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh688981/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1188,
+      "firstDate": "2021-04-02",
+      "lastDate": "2026-10-29",
+      "validValues": 1188,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "688981.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh688981/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1523,
+      "firstDate": "2020-07-16",
+      "lastDate": "2026-10-28",
+      "validValues": 1523,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "002371.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz002371/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3648,
+      "firstDate": "2011-02-28",
+      "lastDate": "2026-10-29",
+      "validValues": 3648,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "002371.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz002371/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3648,
+      "firstDate": "2011-02-28",
+      "lastDate": "2026-10-29",
+      "validValues": 3648,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "002371.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz002371/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3648,
+      "firstDate": "2011-02-28",
+      "lastDate": "2026-10-29",
+      "validValues": 3648,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "002371.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz002371/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4037,
+      "firstDate": "2010-03-16",
+      "lastDate": "2026-10-29",
+      "validValues": 4037,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "688041.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh688041/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 653,
+      "firstDate": "2023-08-28",
+      "lastDate": "2026-10-29",
+      "validValues": 653,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "688041.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh688041/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 653,
+      "firstDate": "2023-08-28",
+      "lastDate": "2026-10-29",
+      "validValues": 653,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "688041.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh688041/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 653,
+      "firstDate": "2023-08-28",
+      "lastDate": "2026-10-29",
+      "validValues": 653,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "688041.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh688041/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1018,
+      "firstDate": "2022-08-12",
+      "lastDate": "2026-10-28",
+      "validValues": 1018,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "300308.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz300308/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3099,
+      "firstDate": "2013-03-20",
+      "lastDate": "2026-10-29",
+      "validValues": 3099,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "300308.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz300308/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3099,
+      "firstDate": "2013-03-20",
+      "lastDate": "2026-10-29",
+      "validValues": 3099,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "300308.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz300308/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3099,
+      "firstDate": "2013-03-20",
+      "lastDate": "2026-10-29",
+      "validValues": 3099,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "300308.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz300308/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3536,
+      "firstDate": "2012-04-10",
+      "lastDate": "2026-10-29",
+      "validValues": 3536,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "300750.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz300750/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1617,
+      "firstDate": "2019-04-26",
+      "lastDate": "2026-10-29",
+      "validValues": 1617,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "300750.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz300750/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1617,
+      "firstDate": "2019-04-26",
+      "lastDate": "2026-10-29",
+      "validValues": 1617,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "300750.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz300750/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 1617,
+      "firstDate": "2019-04-26",
+      "lastDate": "2026-10-29",
+      "validValues": 1617,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "300750.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz300750/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 2034,
+      "firstDate": "2018-06-11",
+      "lastDate": "2026-10-29",
+      "validValues": 2034,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "300274.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz300274/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3292,
+      "firstDate": "2012-02-29",
+      "lastDate": "2026-10-29",
+      "validValues": 3292,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "300274.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz300274/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3292,
+      "firstDate": "2012-02-29",
+      "lastDate": "2026-10-29",
+      "validValues": 3292,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "300274.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz300274/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3292,
+      "firstDate": "2012-02-29",
+      "lastDate": "2026-10-29",
+      "validValues": 3292,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "300274.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz300274/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3639,
+      "firstDate": "2011-11-02",
+      "lastDate": "2026-10-28",
+      "validValues": 3639,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "300124.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz300124/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3545,
+      "firstDate": "2011-03-24",
+      "lastDate": "2026-10-29",
+      "validValues": 3545,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "300124.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz300124/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3545,
+      "firstDate": "2011-03-24",
+      "lastDate": "2026-10-29",
+      "validValues": 3545,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "300124.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz300124/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3545,
+      "firstDate": "2011-03-24",
+      "lastDate": "2026-10-29",
+      "validValues": 3545,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "300124.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz300124/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3905,
+      "firstDate": "2010-09-28",
+      "lastDate": "2026-10-29",
+      "validValues": 3905,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "600036.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh600036/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5646,
+      "firstDate": "2003-04-21",
+      "lastDate": "2026-10-29",
+      "validValues": 5646,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "600036.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh600036/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5646,
+      "firstDate": "2003-04-21",
+      "lastDate": "2026-10-29",
+      "validValues": 5646,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "600036.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh600036/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5962,
+      "firstDate": "2002-04-09",
+      "lastDate": "2026-10-29",
+      "validValues": 5962,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "600036.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh600036/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5646,
+      "firstDate": "2003-04-21",
+      "lastDate": "2026-10-29",
+      "validValues": 5646,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "601398.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh601398/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4669,
+      "firstDate": "2007-05-08",
+      "lastDate": "2026-10-29",
+      "validValues": 4669,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "601398.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh601398/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4669,
+      "firstDate": "2007-05-08",
+      "lastDate": "2026-10-29",
+      "validValues": 4669,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "601398.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh601398/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4861,
+      "firstDate": "2006-10-27",
+      "lastDate": "2026-10-29",
+      "validValues": 4861,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "601398.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh601398/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4669,
+      "firstDate": "2007-05-08",
+      "lastDate": "2026-10-29",
+      "validValues": 4669,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "601318.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh601318/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4458,
+      "firstDate": "2008-03-21",
+      "lastDate": "2026-10-29",
+      "validValues": 4458,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "601318.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh601318/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4458,
+      "firstDate": "2008-03-21",
+      "lastDate": "2026-10-29",
+      "validValues": 4458,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "601318.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh601318/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4780,
+      "firstDate": "2007-03-01",
+      "lastDate": "2026-10-29",
+      "validValues": 4780,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "601601.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh601601/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4324,
+      "firstDate": "2008-04-14",
+      "lastDate": "2026-10-29",
+      "validValues": 4324,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "601601.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh601601/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4324,
+      "firstDate": "2008-04-14",
+      "lastDate": "2026-10-29",
+      "validValues": 4324,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "601601.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh601601/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4324,
+      "firstDate": "2008-04-14",
+      "lastDate": "2026-10-29",
+      "validValues": 4324,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "601318.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh601318/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4458,
+      "firstDate": "2008-03-21",
+      "lastDate": "2026-10-29",
+      "validValues": 4458,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "601601.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh601601/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4577,
+      "firstDate": "2007-12-25",
+      "lastDate": "2026-10-29",
+      "validValues": 4577,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "600030.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh600030/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5414,
+      "firstDate": "2004-03-30",
+      "lastDate": "2026-10-29",
+      "validValues": 5414,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "600030.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh600030/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5414,
+      "firstDate": "2004-03-30",
+      "lastDate": "2026-10-29",
+      "validValues": 5414,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "600030.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh600030/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5414,
+      "firstDate": "2004-03-30",
+      "lastDate": "2026-10-29",
+      "validValues": 5414,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600030.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh600030/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5780,
+      "firstDate": "2003-01-06",
+      "lastDate": "2026-10-29",
+      "validValues": 5780,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "300059.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz300059/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3602,
+      "firstDate": "2011-04-28",
+      "lastDate": "2026-10-29",
+      "validValues": 3602,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "300059.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz300059/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3602,
+      "firstDate": "2011-04-28",
+      "lastDate": "2026-10-29",
+      "validValues": 3602,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "601888.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh601888/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3859,
+      "firstDate": "2010-08-30",
+      "lastDate": "2026-10-29",
+      "validValues": 3859,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "601888.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh601888/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3859,
+      "firstDate": "2010-08-30",
+      "lastDate": "2026-10-29",
+      "validValues": 3859,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "300059.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz300059/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3602,
+      "firstDate": "2011-04-28",
+      "lastDate": "2026-10-29",
+      "validValues": 3602,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "300059.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz300059/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4034,
+      "firstDate": "2010-03-19",
+      "lastDate": "2026-10-29",
+      "validValues": 4034,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "601888.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh601888/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3859,
+      "firstDate": "2010-08-30",
+      "lastDate": "2026-10-29",
+      "validValues": 3859,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "601888.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh601888/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 4139,
+      "firstDate": "2009-10-15",
+      "lastDate": "2026-10-29",
+      "validValues": 4139,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "600754.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh600754/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6961,
+      "firstDate": "1997-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 6961,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "600754.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh600754/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6961,
+      "firstDate": "1997-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 6961,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "600754.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh600754/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5405,
+      "firstDate": "2004-04-19",
+      "lastDate": "2026-10-29",
+      "validValues": 5405,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600754.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh600754/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 7285,
+      "firstDate": "1996-10-11",
+      "lastDate": "2026-10-30",
+      "validValues": 7285,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "002027.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz002027/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5058,
+      "firstDate": "2005-03-25",
+      "lastDate": "2026-10-29",
+      "validValues": 5058,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "002027.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz002027/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5058,
+      "firstDate": "2005-03-25",
+      "lastDate": "2026-10-29",
+      "validValues": 5058,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "002027.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz002027/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5058,
+      "firstDate": "2005-03-25",
+      "lastDate": "2026-10-29",
+      "validValues": 5058,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "002027.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz002027/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5401,
+      "firstDate": "2004-08-04",
+      "lastDate": "2026-10-29",
+      "validValues": 5401,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "002607.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz002607/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3246,
+      "firstDate": "2012-04-18",
+      "lastDate": "2026-10-29",
+      "validValues": 3246,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "002607.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz002607/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3246,
+      "firstDate": "2012-04-18",
+      "lastDate": "2026-10-29",
+      "validValues": 3246,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "002607.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz002607/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3246,
+      "firstDate": "2012-04-18",
+      "lastDate": "2026-10-29",
+      "validValues": 3246,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "002607.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz002607/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 3694,
+      "firstDate": "2011-08-10",
+      "lastDate": "2026-10-29",
+      "validValues": 3694,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "000598.SZ",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sz000598/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 7036,
+      "firstDate": "1997-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 7036,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    },
+    {
+      "code": "000598.SZ",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sz000598/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 7036,
+      "firstDate": "1997-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 7036,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "000598.SZ",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sz000598/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5363,
+      "firstDate": "2004-03-22",
+      "lastDate": "2026-10-29",
+      "validValues": 5363,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "000598.SZ",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sz000598/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 7378,
+      "firstDate": "1996-05-29",
+      "lastDate": "2026-10-29",
+      "validValues": 7378,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "600323.SH",
+      "metric": "close",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pricea/sh600323/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6264,
+      "firstDate": "2000-12-25",
+      "lastDate": "2026-10-29",
+      "validValues": 6264,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price"
+        ],
+        "valueField": "price"
+      },
+      "error": null
+    },
+    {
+      "code": "600323.SH",
+      "metric": "psRaw",
+      "status": "OK",
+      "url": "https://eniu.com/chart/psa/sh600323/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 5422,
+      "firstDate": "2004-03-29",
+      "lastDate": "2026-10-29",
+      "validValues": 5422,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "price",
+          "ps"
+        ],
+        "valueField": "ps"
+      },
+      "error": null
+    },
+    {
+      "code": "600323.SH",
+      "metric": "peTtm",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pea/sh600323/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6084,
+      "firstDate": "2001-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 6084,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pe_ttm",
+          "price"
+        ],
+        "valueField": "pe_ttm"
+      },
+      "error": null
+    },
+    {
+      "code": "600323.SH",
+      "metric": "pb",
+      "status": "OK",
+      "url": "https://eniu.com/chart/pba/sh600323/t/all",
+      "httpStatus": 200,
+      "returnedPoints": 6084,
+      "firstDate": "2001-01-02",
+      "lastDate": "2026-10-29",
+      "validValues": 6084,
+      "schema": {
+        "shape": "columnar_arrays",
+        "rootKeys": [
+          "date",
+          "pb",
+          "price"
+        ],
+        "valueField": "pb"
+      },
+      "error": null
+    }
+  ],
+  "securities": [
+    {
+      "code": "600887.SH",
+      "symbol": "sh600887",
+      "dailyUnionRows": 7433,
+      "firstDate": "1996-03-12",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 6978,
+          "validValues": 6978,
+          "firstDate": "1997-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 6978,
+          "validValues": 6978,
+          "firstDate": "1997-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5414,
+          "validValues": 5414,
+          "firstDate": "2004-04-07",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 7433,
+          "validValues": 7433,
+          "firstDate": "1996-03-12",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "002714.SZ",
+      "symbol": "sz002714",
+      "dailyUnionRows": 3098,
+      "firstDate": "2014-01-28",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 2654,
+          "validValues": 2654,
+          "firstDate": "2015-04-28",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 2654,
+          "validValues": 2654,
+          "firstDate": "2015-04-28",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 2654,
+          "validValues": 2654,
+          "firstDate": "2015-04-28",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 3098,
+          "validValues": 3098,
+          "firstDate": "2014-01-28",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "603288.SH",
+      "symbol": "sh603288",
+      "dailyUnionRows": 3093,
+      "firstDate": "2014-02-11",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 2760,
+          "validValues": 2760,
+          "firstDate": "2015-03-11",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 2760,
+          "validValues": 2760,
+          "firstDate": "2015-03-11",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 2760,
+          "validValues": 2760,
+          "firstDate": "2015-03-11",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 3093,
+          "validValues": 3093,
+          "firstDate": "2014-02-11",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "600398.SH",
+      "symbol": "sh600398",
+      "dailyUnionRows": 6261,
+      "firstDate": "2000-12-28",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 6073,
+          "validValues": 6073,
+          "firstDate": "2001-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 6073,
+          "validValues": 6073,
+          "firstDate": "2001-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5428,
+          "validValues": 5428,
+          "firstDate": "2004-03-22",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 6260,
+          "validValues": 6260,
+          "firstDate": "2000-12-28",
+          "lastDate": "2026-10-28"
+        }
+      }
+    },
+    {
+      "code": "600690.SH",
+      "symbol": "sh600690",
+      "dailyUnionRows": 8007,
+      "firstDate": "1993-11-19",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 7043,
+          "validValues": 7043,
+          "firstDate": "1997-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 7043,
+          "validValues": 7043,
+          "firstDate": "1997-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5426,
+          "validValues": 5426,
+          "firstDate": "2004-03-29",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 8007,
+          "validValues": 8007,
+          "firstDate": "1993-11-19",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "000333.SZ",
+      "symbol": "sz000333",
+      "dailyUnionRows": 3184,
+      "firstDate": "2013-09-18",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 2845,
+          "validValues": 2845,
+          "firstDate": "2014-03-31",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 2845,
+          "validValues": 2845,
+          "firstDate": "2014-03-31",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 2845,
+          "validValues": 2845,
+          "firstDate": "2014-03-31",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 3184,
+          "validValues": 3184,
+          "firstDate": "2013-09-18",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "000651.SZ",
+      "symbol": "sz000651",
+      "dailyUnionRows": 7258,
+      "firstDate": "1996-11-18",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 6905,
+          "validValues": 6905,
+          "firstDate": "1997-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 6905,
+          "validValues": 6905,
+          "firstDate": "1997-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5338,
+          "validValues": 5338,
+          "firstDate": "2004-04-26",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 7257,
+          "validValues": 7257,
+          "firstDate": "1996-11-18",
+          "lastDate": "2026-10-28"
+        }
+      }
+    },
+    {
+      "code": "002594.SZ",
+      "symbol": "sz002594",
+      "dailyUnionRows": 3723,
+      "firstDate": "2011-06-30",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 3406,
+          "validValues": 3406,
+          "firstDate": "2012-03-27",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 3406,
+          "validValues": 3406,
+          "firstDate": "2012-03-27",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 3406,
+          "validValues": 3406,
+          "firstDate": "2012-03-27",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 3722,
+          "validValues": 3722,
+          "firstDate": "2011-06-30",
+          "lastDate": "2026-10-28"
+        }
+      }
+    },
+    {
+      "code": "600066.SH",
+      "symbol": "sh600066",
+      "dailyUnionRows": 7148,
+      "firstDate": "1997-05-08",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 6739,
+          "validValues": 6739,
+          "firstDate": "1998-01-05",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 6739,
+          "validValues": 6739,
+          "firstDate": "1998-01-05",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5440,
+          "validValues": 5440,
+          "firstDate": "2004-03-03",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 7148,
+          "validValues": 7148,
+          "firstDate": "1997-05-08",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "601816.SH",
+      "symbol": "sh601816",
+      "dailyUnionRows": 1642,
+      "firstDate": "2020-01-16",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 1196,
+          "validValues": 1196,
+          "firstDate": "2021-05-06",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 1196,
+          "validValues": 1196,
+          "firstDate": "2021-05-06",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 1196,
+          "validValues": 1196,
+          "firstDate": "2021-05-06",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 1642,
+          "validValues": 1642,
+          "firstDate": "2020-01-16",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "002352.SZ",
+      "symbol": "sz002352",
+      "dailyUnionRows": 4059,
+      "firstDate": "2010-02-05",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 3667,
+          "validValues": 3667,
+          "firstDate": "2011-03-07",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 3667,
+          "validValues": 3667,
+          "firstDate": "2011-03-07",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 3667,
+          "validValues": 3667,
+          "firstDate": "2011-03-07",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 4058,
+          "validValues": 4058,
+          "firstDate": "2010-02-05",
+          "lastDate": "2026-10-28"
+        }
+      }
+    },
+    {
+      "code": "601919.SH",
+      "symbol": "sh601919",
+      "dailyUnionRows": 4702,
+      "firstDate": "2007-06-26",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 4348,
+          "validValues": 4348,
+          "firstDate": "2008-04-23",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 4348,
+          "validValues": 4348,
+          "firstDate": "2008-04-23",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 4348,
+          "validValues": 4348,
+          "firstDate": "2008-04-23",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 4702,
+          "validValues": 4702,
+          "firstDate": "2007-06-26",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "300760.SZ",
+      "symbol": "sz300760",
+      "dailyUnionRows": 1950,
+      "firstDate": "2018-10-16",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 1589,
+          "validValues": 1589,
+          "firstDate": "2019-04-25",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 1589,
+          "validValues": 1589,
+          "firstDate": "2019-04-25",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 1589,
+          "validValues": 1589,
+          "firstDate": "2019-04-25",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 1950,
+          "validValues": 1950,
+          "firstDate": "2018-10-16",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "600276.SH",
+      "symbol": "sh600276",
+      "dailyUnionRows": 6312,
+      "firstDate": "2000-10-18",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 6060,
+          "validValues": 6060,
+          "firstDate": "2001-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 6060,
+          "validValues": 6060,
+          "firstDate": "2001-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5449,
+          "validValues": 5449,
+          "firstDate": "2004-02-19",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 6312,
+          "validValues": 6312,
+          "firstDate": "2000-10-18",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "603259.SH",
+      "symbol": "sh603259",
+      "dailyUnionRows": 2058,
+      "firstDate": "2018-05-08",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 1675,
+          "validValues": 1675,
+          "firstDate": "2019-03-25",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 1675,
+          "validValues": 1675,
+          "firstDate": "2019-03-25",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 1675,
+          "validValues": 1675,
+          "firstDate": "2019-03-25",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 2058,
+          "validValues": 2058,
+          "firstDate": "2018-05-08",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "300015.SZ",
+      "symbol": "sz300015",
+      "dailyUnionRows": 4128,
+      "firstDate": "2009-10-30",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 3793,
+          "validValues": 3793,
+          "firstDate": "2010-03-16",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 3793,
+          "validValues": 3793,
+          "firstDate": "2010-03-16",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 3793,
+          "validValues": 3793,
+          "firstDate": "2010-03-16",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 4128,
+          "validValues": 4128,
+          "firstDate": "2009-10-30",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "600511.SH",
+      "symbol": "sh600511",
+      "dailyUnionRows": 5807,
+      "firstDate": "2002-11-27",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 5672,
+          "validValues": 5672,
+          "firstDate": "2003-03-17",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 5672,
+          "validValues": 5672,
+          "firstDate": "2003-03-17",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5423,
+          "validValues": 5423,
+          "firstDate": "2004-03-29",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 5806,
+          "validValues": 5806,
+          "firstDate": "2002-11-27",
+          "lastDate": "2026-10-28"
+        }
+      }
+    },
+    {
+      "code": "600900.SH",
+      "symbol": "sh600900",
+      "dailyUnionRows": 5573,
+      "firstDate": "2003-11-18",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 5310,
+          "validValues": 5310,
+          "firstDate": "2004-04-01",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 5310,
+          "validValues": 5310,
+          "firstDate": "2004-04-01",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5310,
+          "validValues": 5310,
+          "firstDate": "2004-04-01",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 5573,
+          "validValues": 5573,
+          "firstDate": "2003-11-18",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "600674.SH",
+      "symbol": "sh600674",
+      "dailyUnionRows": 8046,
+      "firstDate": "1993-09-24",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 7042,
+          "validValues": 7042,
+          "firstDate": "1997-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 7042,
+          "validValues": 7042,
+          "firstDate": "1997-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5422,
+          "validValues": 5422,
+          "firstDate": "2004-03-08",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 8046,
+          "validValues": 8046,
+          "firstDate": "1993-09-24",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "601985.SH",
+      "symbol": "sh601985",
+      "dailyUnionRows": 2766,
+      "firstDate": "2015-06-10",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 2469,
+          "validValues": 2469,
+          "firstDate": "2016-05-03",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 2469,
+          "validValues": 2469,
+          "firstDate": "2016-05-03",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 2469,
+          "validValues": 2469,
+          "firstDate": "2016-05-03",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 2765,
+          "validValues": 2765,
+          "firstDate": "2015-06-10",
+          "lastDate": "2026-10-28"
+        }
+      }
+    },
+    {
+      "code": "601088.SH",
+      "symbol": "sh601088",
+      "dailyUnionRows": 4632,
+      "firstDate": "2007-10-09",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 4357,
+          "validValues": 4357,
+          "firstDate": "2008-03-17",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 4357,
+          "validValues": 4357,
+          "firstDate": "2008-03-17",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 4357,
+          "validValues": 4357,
+          "firstDate": "2008-03-17",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 4632,
+          "validValues": 4632,
+          "firstDate": "2007-10-09",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "600406.SH",
+      "symbol": "sh600406",
+      "dailyUnionRows": 5596,
+      "firstDate": "2003-10-16",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 5447,
+          "validValues": 5447,
+          "firstDate": "2004-02-18",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 5447,
+          "validValues": 5447,
+          "firstDate": "2004-02-18",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5447,
+          "validValues": 5447,
+          "firstDate": "2004-02-18",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 5596,
+          "validValues": 5596,
+          "firstDate": "2003-10-16",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "600941.SH",
+      "symbol": "sh600941",
+      "dailyUnionRows": 1165,
+      "firstDate": "2022-01-05",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 913,
+          "validValues": 913,
+          "firstDate": "2022-03-25",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 913,
+          "validValues": 913,
+          "firstDate": "2022-03-25",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 913,
+          "validValues": 913,
+          "firstDate": "2022-03-25",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 1164,
+          "validValues": 1164,
+          "firstDate": "2022-01-05",
+          "lastDate": "2026-10-28"
+        }
+      }
+    },
+    {
+      "code": "601728.SH",
+      "symbol": "sh601728",
+      "dailyUnionRows": 1255,
+      "firstDate": "2021-08-20",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 1114,
+          "validValues": 1114,
+          "firstDate": "2021-08-20",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 1114,
+          "validValues": 1114,
+          "firstDate": "2021-08-20",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 1114,
+          "validValues": 1114,
+          "firstDate": "2021-08-20",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 1255,
+          "validValues": 1255,
+          "firstDate": "2021-08-20",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "601668.SH",
+      "symbol": "sh601668",
+      "dailyUnionRows": 4189,
+      "firstDate": "2009-07-29",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 3860,
+          "validValues": 3860,
+          "firstDate": "2010-04-21",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 3860,
+          "validValues": 3860,
+          "firstDate": "2010-04-21",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 3860,
+          "validValues": 3860,
+          "firstDate": "2010-04-21",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 4189,
+          "validValues": 4189,
+          "firstDate": "2009-07-29",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "688981.SH",
+      "symbol": "sh688981",
+      "dailyUnionRows": 1524,
+      "firstDate": "2020-07-16",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 1188,
+          "validValues": 1188,
+          "firstDate": "2021-04-02",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 1188,
+          "validValues": 1188,
+          "firstDate": "2021-04-02",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 1188,
+          "validValues": 1188,
+          "firstDate": "2021-04-02",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 1523,
+          "validValues": 1523,
+          "firstDate": "2020-07-16",
+          "lastDate": "2026-10-28"
+        }
+      }
+    },
+    {
+      "code": "002371.SZ",
+      "symbol": "sz002371",
+      "dailyUnionRows": 4037,
+      "firstDate": "2010-03-16",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 3648,
+          "validValues": 3648,
+          "firstDate": "2011-02-28",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 3648,
+          "validValues": 3648,
+          "firstDate": "2011-02-28",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 3648,
+          "validValues": 3648,
+          "firstDate": "2011-02-28",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 4037,
+          "validValues": 4037,
+          "firstDate": "2010-03-16",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "688041.SH",
+      "symbol": "sh688041",
+      "dailyUnionRows": 1019,
+      "firstDate": "2022-08-12",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 653,
+          "validValues": 653,
+          "firstDate": "2023-08-28",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 653,
+          "validValues": 653,
+          "firstDate": "2023-08-28",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 653,
+          "validValues": 653,
+          "firstDate": "2023-08-28",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 1018,
+          "validValues": 1018,
+          "firstDate": "2022-08-12",
+          "lastDate": "2026-10-28"
+        }
+      }
+    },
+    {
+      "code": "300308.SZ",
+      "symbol": "sz300308",
+      "dailyUnionRows": 3536,
+      "firstDate": "2012-04-10",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 3099,
+          "validValues": 3099,
+          "firstDate": "2013-03-20",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 3099,
+          "validValues": 3099,
+          "firstDate": "2013-03-20",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 3099,
+          "validValues": 3099,
+          "firstDate": "2013-03-20",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 3536,
+          "validValues": 3536,
+          "firstDate": "2012-04-10",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "300750.SZ",
+      "symbol": "sz300750",
+      "dailyUnionRows": 2034,
+      "firstDate": "2018-06-11",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 1617,
+          "validValues": 1617,
+          "firstDate": "2019-04-26",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 1617,
+          "validValues": 1617,
+          "firstDate": "2019-04-26",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 1617,
+          "validValues": 1617,
+          "firstDate": "2019-04-26",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 2034,
+          "validValues": 2034,
+          "firstDate": "2018-06-11",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "300274.SZ",
+      "symbol": "sz300274",
+      "dailyUnionRows": 3640,
+      "firstDate": "2011-11-02",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 3292,
+          "validValues": 3292,
+          "firstDate": "2012-02-29",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 3292,
+          "validValues": 3292,
+          "firstDate": "2012-02-29",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 3292,
+          "validValues": 3292,
+          "firstDate": "2012-02-29",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 3639,
+          "validValues": 3639,
+          "firstDate": "2011-11-02",
+          "lastDate": "2026-10-28"
+        }
+      }
+    },
+    {
+      "code": "300124.SZ",
+      "symbol": "sz300124",
+      "dailyUnionRows": 3905,
+      "firstDate": "2010-09-28",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 3545,
+          "validValues": 3545,
+          "firstDate": "2011-03-24",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 3545,
+          "validValues": 3545,
+          "firstDate": "2011-03-24",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 3545,
+          "validValues": 3545,
+          "firstDate": "2011-03-24",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 3905,
+          "validValues": 3905,
+          "firstDate": "2010-09-28",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "600036.SH",
+      "symbol": "sh600036",
+      "dailyUnionRows": 5962,
+      "firstDate": "2002-04-09",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 5646,
+          "validValues": 5646,
+          "firstDate": "2003-04-21",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 5646,
+          "validValues": 5646,
+          "firstDate": "2003-04-21",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5646,
+          "validValues": 5646,
+          "firstDate": "2003-04-21",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 5962,
+          "validValues": 5962,
+          "firstDate": "2002-04-09",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "601398.SH",
+      "symbol": "sh601398",
+      "dailyUnionRows": 4861,
+      "firstDate": "2006-10-27",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 4669,
+          "validValues": 4669,
+          "firstDate": "2007-05-08",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 4669,
+          "validValues": 4669,
+          "firstDate": "2007-05-08",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 4669,
+          "validValues": 4669,
+          "firstDate": "2007-05-08",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 4861,
+          "validValues": 4861,
+          "firstDate": "2006-10-27",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "601318.SH",
+      "symbol": "sh601318",
+      "dailyUnionRows": 4780,
+      "firstDate": "2007-03-01",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 4458,
+          "validValues": 4458,
+          "firstDate": "2008-03-21",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 4458,
+          "validValues": 4458,
+          "firstDate": "2008-03-21",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 4458,
+          "validValues": 4458,
+          "firstDate": "2008-03-21",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 4780,
+          "validValues": 4780,
+          "firstDate": "2007-03-01",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "601601.SH",
+      "symbol": "sh601601",
+      "dailyUnionRows": 4577,
+      "firstDate": "2007-12-25",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 4324,
+          "validValues": 4324,
+          "firstDate": "2008-04-14",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 4324,
+          "validValues": 4324,
+          "firstDate": "2008-04-14",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 4324,
+          "validValues": 4324,
+          "firstDate": "2008-04-14",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 4577,
+          "validValues": 4577,
+          "firstDate": "2007-12-25",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "600030.SH",
+      "symbol": "sh600030",
+      "dailyUnionRows": 5780,
+      "firstDate": "2003-01-06",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 5414,
+          "validValues": 5414,
+          "firstDate": "2004-03-30",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 5414,
+          "validValues": 5414,
+          "firstDate": "2004-03-30",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5414,
+          "validValues": 5414,
+          "firstDate": "2004-03-30",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 5780,
+          "validValues": 5780,
+          "firstDate": "2003-01-06",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "300059.SZ",
+      "symbol": "sz300059",
+      "dailyUnionRows": 4034,
+      "firstDate": "2010-03-19",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 3602,
+          "validValues": 3602,
+          "firstDate": "2011-04-28",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 3602,
+          "validValues": 3602,
+          "firstDate": "2011-04-28",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 3602,
+          "validValues": 3602,
+          "firstDate": "2011-04-28",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 4034,
+          "validValues": 4034,
+          "firstDate": "2010-03-19",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "601888.SH",
+      "symbol": "sh601888",
+      "dailyUnionRows": 4139,
+      "firstDate": "2009-10-15",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 3859,
+          "validValues": 3859,
+          "firstDate": "2010-08-30",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 3859,
+          "validValues": 3859,
+          "firstDate": "2010-08-30",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 3859,
+          "validValues": 3859,
+          "firstDate": "2010-08-30",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 4139,
+          "validValues": 4139,
+          "firstDate": "2009-10-15",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "600754.SH",
+      "symbol": "sh600754",
+      "dailyUnionRows": 7285,
+      "firstDate": "1996-10-11",
+      "lastDate": "2026-10-30",
+      "metrics": {
+        "peTtm": {
+          "points": 6961,
+          "validValues": 6961,
+          "firstDate": "1997-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 6961,
+          "validValues": 6961,
+          "firstDate": "1997-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5405,
+          "validValues": 5405,
+          "firstDate": "2004-04-19",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 7285,
+          "validValues": 7285,
+          "firstDate": "1996-10-11",
+          "lastDate": "2026-10-30"
+        }
+      }
+    },
+    {
+      "code": "002027.SZ",
+      "symbol": "sz002027",
+      "dailyUnionRows": 5401,
+      "firstDate": "2004-08-04",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 5058,
+          "validValues": 5058,
+          "firstDate": "2005-03-25",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 5058,
+          "validValues": 5058,
+          "firstDate": "2005-03-25",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5058,
+          "validValues": 5058,
+          "firstDate": "2005-03-25",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 5401,
+          "validValues": 5401,
+          "firstDate": "2004-08-04",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "002607.SZ",
+      "symbol": "sz002607",
+      "dailyUnionRows": 3694,
+      "firstDate": "2011-08-10",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 3246,
+          "validValues": 3246,
+          "firstDate": "2012-04-18",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 3246,
+          "validValues": 3246,
+          "firstDate": "2012-04-18",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 3246,
+          "validValues": 3246,
+          "firstDate": "2012-04-18",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 3694,
+          "validValues": 3694,
+          "firstDate": "2011-08-10",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "000598.SZ",
+      "symbol": "sz000598",
+      "dailyUnionRows": 7378,
+      "firstDate": "1996-05-29",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 7036,
+          "validValues": 7036,
+          "firstDate": "1997-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 7036,
+          "validValues": 7036,
+          "firstDate": "1997-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5363,
+          "validValues": 5363,
+          "firstDate": "2004-03-22",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 7378,
+          "validValues": 7378,
+          "firstDate": "1996-05-29",
+          "lastDate": "2026-10-29"
+        }
+      }
+    },
+    {
+      "code": "600323.SH",
+      "symbol": "sh600323",
+      "dailyUnionRows": 6264,
+      "firstDate": "2000-12-25",
+      "lastDate": "2026-10-29",
+      "metrics": {
+        "peTtm": {
+          "points": 6084,
+          "validValues": 6084,
+          "firstDate": "2001-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "pb": {
+          "points": 6084,
+          "validValues": 6084,
+          "firstDate": "2001-01-02",
+          "lastDate": "2026-10-29"
+        },
+        "psRaw": {
+          "points": 5422,
+          "validValues": 5422,
+          "firstDate": "2004-03-29",
+          "lastDate": "2026-10-29"
+        },
+        "close": {
+          "points": 6264,
+          "validValues": 6264,
+          "firstDate": "2000-12-25",
+          "lastDate": "2026-10-29"
+        }
+      }
+    }
+  ],
+  "qualityWarning": "PE-TTM field is explicitly pe_ttm; PB field is pb. PS endpoint returns vendor field ps, but its basis is not confirmed as TTM. Candidate data are not merged into the formal monthly valuation series."
+}
