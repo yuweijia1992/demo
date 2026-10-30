@@ -1,4 +1,4 @@
-name: Refresh public A-share valuation history
+name: Refresh public A/H valuation history
 
 on:
   workflow_dispatch:
@@ -10,6 +10,7 @@ on:
       - "scripts/fetch_eastmoney_a_share_valuation.py"
       - "scripts/fetch_baostock_a_share_valuation.py"
       - "scripts/fetch_baidu_valuation_history.py"
+      - "scripts/probe_legulegu_a_share_history.py"
       - "scripts/build_valuation_history.py"
   schedule:
     # Monthly refresh; 17:30 China Standard Time on the 3rd day of each month.
@@ -48,6 +49,10 @@ jobs:
       - name: Install exchange trading calendars
         run: |
           python -m pip install --disable-pip-version-check "exchange-calendars>=4.5,<5"
+
+      - name: Probe Legulegu public A-share single-stock history (isolated candidate)
+        run: |
+          python scripts/probe_legulegu_a_share_history.py
 
       - name: Ensure BaoStock input file exists
         run: |
