@@ -255,7 +255,7 @@ def main() -> int:
                     if label == "5Y":
                         for q in (20, 50, 80):
                             value = quantile(window_values, q / 100) if enough else None
-                            output[f"{metric}P{q}5Y"] = round(value, 6) if value is not None else None
+                            output[f"{metric}P{q}_5Y"] = round(value, 6) if value is not None else None
             monthly_rows.append(output)
 
         first_idx = month_index(date.fromisoformat(series[0]["date"])) if series else None
