@@ -1,0 +1,51 @@
+name: Audit public F.I.R.E. A-share valuation package
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/audit_fire_valuation_release.py"
+      - ".github/workflows/audit-fire-valuation-release.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fire-public-valuation-crosscheck
+  cancel-in-progress: true
+
+jobs:
+  audit-fire-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Feather reader
+        run: |
+          python -m pip install --disable-pip-version-check pandas pyarrow requests
+
+      - name: Download public release and cross-check 44 selected A-shares
+        run: |
+          python -m py_compile scripts/audit_fire_valuation_release.py
+          python scripts/audit_fire_valuation_release.py --timeout 180 --max-download-bytes 1600000000
+
+      - name: Commit compact audit only (do not redistribute source package)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/valuation-history/raw/fire-release-crosscheck-audit.json
+          if git diff --cached --quiet; then
+            echo "No change in F.I.R.E. cross-check audit"
+          else
+            git commit -m "Audit public F.I.R.E. A-share valuation history"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
