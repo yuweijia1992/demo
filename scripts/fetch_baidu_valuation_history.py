@@ -229,7 +229,7 @@ def main() -> int:
     securities = load_universe(Path(args.universe))
     excluded = load_excluded(Path(args.exclude_file) if args.exclude_file else None)
     cutoff = date.fromisoformat(args.a_share_cutoff)
-    market_sessions = load_market_sessions("1999-01-01", date.today().isoformat())
+    market_sessions = load_market_sessions("1999-01-04", date.today().isoformat())
     output_rows: list[dict[str, Any]] = []
     audits: list[dict[str, Any]] = []
     any_codes: set[str] = set()
