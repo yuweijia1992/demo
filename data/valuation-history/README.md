@@ -18,21 +18,44 @@ universe.json 冻结49家公司的主证券代码。对同一发行人存在A/H�
 
 ## 数据源策略
 
-### A股主路径
+### A股：直接使用网上公开历史数据（首批44家）
 
-1. **BigQuant cn_stock_valuation**：公开数据说明列出日频估值字段，覆盖2005-01-04至2026-10-26，包含PE-TTM、PB、PS-TTM；其财务数据按公告日处理，公告前沿用此前已披露值。该来源最贴合本项目的点时（point-in-time）要求。实际下载权限、授权范围和导出方式仍需以账号/数据服务合同为准。
-   - 数据说明：https://bigquant.com/data/datasources/cn_stock_valuation
-2. **TuShare daily_basic 备选/交叉核验**：字段包括 pe_ttm、pb、ps_ttm、close；单次最多6000行，至少2000积分可调取，5000积分无限制。它是日频数据，应取月内最后一个实际交易日，不是月初或月均值。
-   - 官方接口：https://tushare.pro/document/2?doc_id=32
-3. A股历史估值若由多家供应商混合，必须在数据行保留 source、sourceUrl；不得在同一个序列里无标识拼接不同估值口径。
+**主源：东方财富数据中心 RPT_VALUEANALYSIS_DET，由 AKShare 的 stock_value_em 接口封装。**
 
-### 港股主路径
+AKShare 最新估值文档说明，stock_value_em(symbol) 可按单只A股代码获取全部历史估值记录，字段包含交易日期、收盘价、PE(TTM)、PE(静)、PB(MRQ)、PS(TTM)、市值等；接口底层为东方财富 Data Center，数据集为 RPT_VALUEANALYSIS_DET。本项目直接请求其公开 JSON 数据接口，不要求 Tushare 积分或个人 Token。
+- AKShare 官方文档：https://akshare.akfamily.xyz/data/stock/stock_valuation.html （搜索“个股估值 / stock_value_em”）
+- 东方财富个股估值页面示例：https://data.eastmoney.com/gzfx/detail/600887.html
+- 接口实现参考：https://docs.rs/adaq-data-stock-cn/latest/src/adaq_data_stock_cn/stock/indicator.rs.html （RPT_VALUEANALYSIS_DET 请求参数与字段映射）
+- 原始字段：PE_TTM、PB_MRQ、PS_TTM、CLOSE_PRICE、TRADE_DATE
+- 口径：日频；下载后按每月最后一个有效交易日聚合。PE 为负值/亏损期保留在原始文件，但不纳入正PE历史分位。PB 使用 MRQ；PS 使用 TTM。
 
-理杏仁港股个股基本面接口提供PE-TTM、PB、PS-TTM与日期区间查询。接口需要个人Token；带 startDate 的单次区间最长10年，且按单只证券查询。因此2006—2026需要拆成多个不超过10年的区间，按 securityCode 单独抓取。
-- 港股接口：https://www.lixinger.com/api/open-api/html-doc/hk/company/fundamental/security
-- A股接口：https://www.lixinger.com/api/open-api/html-doc/cn/company/fundamental/security
+执行方式：GitHub Actions 每月自动拉取44只A股主证券的日频历史数据，再生成月末估值序列、60/120个月历史分位与 P20/P50/P80 阈值。也可在仓库 Actions 页面手动运行 Refresh public A-share valuation history。
 
-**安全要求：** Token 只能在本地环境变量或本地私有配置中使用；严禁写入GitHub、网页JavaScript、CSV或公开日志。静态网页只读取整理完成的公开数据文件，不直接连接带Token的API。
+脚本与工作流：
+- scripts/fetch_eastmoney_a_share_valuation.py：从东方财富公开 JSON 接口抓取44只A股历史估值
+- scripts/build_valuation_history.py：日频聚合月频、分位计算、缺口审计
+- .github/workflows/refresh-valuation-history.yml：每月自动更新
+
+**数据限制：** 东方财富个股估值页的历史长度取决于个股上市时间及上游返回记录数；本项目按上游可得历史记录入库，不对上市前月份补值。数据源为公开金融信息服务，不等同于交易所原始公告；建议对异常值及关键证券与第二来源抽样核验。
+
+### 港股：5家公司单独维护，暂不混用A股源
+
+当前49家研究池中有5家主证券为港股：申洲国际、腾讯控股、阿里巴巴、京东集团、哔哩哔哩。东方财富 stock_value_em 的个股历史估值接口按A股证券代码查询，不能将它直接用于港股。
+
+可用的线上来源：
+1. **理杏仁港股历史估值API**：提供PE-TTM、PB、PS-TTM的日数据及5/10年分位统计，但需要用户专属Token。文档：https://www.lixinger.com/api/open-api/html-doc/hk/company/fundamental/security
+2. **GuruFocus**：公开个股页面展示历史PE等日频估值历史，但批量导出/下载权限及使用限制需以其账户和许可规则为准。示例：https://www.gurufocus.com/stock/HKSE%3A00700/data/pe-ratio
+3. **StockAnalysis / Macrotrends**：可用来交叉核验部分港股/ADR的年度或季度估值历史，但不能把这些低频样本伪装成完整月度序列。示例：https://stockanalysis.com/quote/hkg/2313/financials/ratios/ 、https://www.macrotrends.net/stocks/charts/BABA/alibaba/price-book
+
+在取得可公开下载且允许再处理的港股日频/月频数据前，港股5家公司保持 NO_HISTORICAL_DATA；不混用A股、ADR与港股交易价格，也不以年度报告比率插值出月度值。
+
+### 付费/授权备选
+
+- TuShare daily_basic 提供A股日频 pe_ttm、pb、ps_ttm，但需要至少2000积分；官方文档：https://tushare.pro/document/2?doc_id=32
+- BigQuant cn_stock_valuation 提供A股日频PE/PB/PS及公告日财务口径，但数据下载和再发布须符合平台权限与许可：https://bigquant.com/data/datasources/cn_stock_valuation
+- 不将上述需授权数据与免费来源无标识混接；如改用付费源，应在每行保留供应商和口径。
+
+**Token 安全：** 任何第三方Token只放在GitHub Actions Secrets或本地环境变量中；禁止写入公开代码、网页JavaScript、CSV或日志。当前A股Eastmoney公开数据抓取不需要Token。
 
 ## 统一输入CSV
 
