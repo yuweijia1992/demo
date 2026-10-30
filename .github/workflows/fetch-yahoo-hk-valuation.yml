@@ -1,0 +1,53 @@
+name: Fetch public Yahoo monthly valuation history for HK five
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/fetch_yahoo_hk_valuation.py"
+      - ".github/workflows/fetch-yahoo-hk-valuation.yml"
+  schedule:
+    - cron: "15 10 3 * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: public-yahoo-hk-valuation
+  cancel-in-progress: true
+
+jobs:
+  fetch-hk-history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Yahoo Finance client
+        run: |
+          python -m pip install --disable-pip-version-check "yfinance>=0.2.65"
+
+      - name: Fetch five HK-listed stocks monthly valuation history
+        run: |
+          python -m py_compile scripts/fetch_yahoo_hk_valuation.py
+          python scripts/fetch_yahoo_hk_valuation.py --timeout 30 --delay 1
+
+      - name: Commit HK candidate series and provenance audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/valuation-history/raw/yahoo-hk-candidate.csv data/valuation-history/raw/yahoo-hk-fetch-audit.json
+          if git diff --cached --quiet; then
+            echo "No change in Yahoo HK history"
+          else
+            git commit -m "Fetch Yahoo monthly valuation history for HK universe"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
