@@ -307,9 +307,14 @@ def main() -> int:
                     lag_sessions = None
             else:
                 lag_sessions = None
-            output["expectedLastTradingDate"] = expected_last
-            output["monthEndTradingSessionLag"] = lag_sessions
-            output["isExactMonthEndObservation"] = (lag_sessions == 0) if lag_sessions is not None else False
+            record["expectedLastTradingDate"] = expected_last
+            record["monthEndTradingSessionLag"] = lag_sessions
+            record["isExactMonthEndObservation"] = (lag_sessions == 0) if lag_sessions is not None else False
+            output.update({
+                "expectedLastTradingDate": expected_last,
+                "monthEndTradingSessionLag": lag_sessions,
+                "isExactMonthEndObservation": (lag_sessions == 0) if lag_sessions is not None else False,
+            })
             for metric in METRICS:
                 for label, config in WINDOWS.items():
                     lower_idx = current_idx - config["months"] + 1
