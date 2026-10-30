@@ -1,0 +1,23 @@
+{
+  "title": "Baidu / Enniu historical valuation fetch audit",
+  "status": "PENDING_FIRST_AUTOMATED_FETCH",
+  "fetchedAt": null,
+  "requestedPeriod": "全部",
+  "requestedMarkets": [
+    "A-share pre-2018",
+    "HK all returned dates"
+  ],
+  "metrics": [
+    "PE-TTM",
+    "PB",
+    "PS-TTM experimental probe"
+  ],
+  "companiesWithAnyData": 0,
+  "aShareCompaniesWithPre2018Data": 0,
+  "hkCompaniesWithData": 0,
+  "dailyRowsWritten": 0,
+  "eniuHistoricalFallbackRows": 0,
+  "metricsWithReturnedRows": [],
+  "psTtmReturnedByProbe": false,
+  "note": "This is an explicit empty audit placeholder, not evidence that the provider returned zero history. The first execution of scripts/fetch_baidu_valuation_history.py will overwrite this file with the actual dated results or per-security errors. No synthetic values are included."
+}
