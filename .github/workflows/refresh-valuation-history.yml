@@ -7,6 +7,7 @@ on:
     paths:
       - "data/valuation-history/universe.json"
       - "scripts/fetch_eastmoney_a_share_valuation.py"
+      - "scripts/fetch_baostock_a_share_valuation.py"
       - "scripts/build_valuation_history.py"
   schedule:
     # Monthly refresh; 17:30 China Standard Time on the 3rd day of each month.
@@ -32,16 +33,23 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch Eastmoney A-share daily valuation history
+      - name: Install BaoStock public data client
+        run: |
+          python -m pip install --disable-pip-version-check baostock
+
+      - name: Fetch BaoStock historical valuation backfill (pre-2018)
+        run: |
+          python scripts/fetch_baostock_a_share_valuation.py
+
+      - name: Fetch Eastmoney daily valuation history (2018 onward)
         run: |
           python scripts/fetch_eastmoney_a_share_valuation.py
 
-      - name: Build month-end data and valuation percentiles
+      - name: Build month-end data and strict 5Y/10Y valuation percentiles
         run: |
           python scripts/build_valuation_history.py \
+            --input data/valuation-history/raw/baostock-pre2018-daily.csv \
             --input data/valuation-history/raw/eastmoney-a-share-daily.csv \
-            --source-label "Eastmoney Data Center / RPT_VALUEANALYSIS_DET" \
-            --source-url "https://data.eastmoney.com/gzfx/" \
             --out-dir data/valuation-history/generated
 
       - name: Commit refreshed public data
