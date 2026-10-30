@@ -35,9 +35,9 @@ COLUMNS = ["code", "date", "close", "currency", "peTtm", "pb", "psTtm", "source"
 ALIASES = {
     "date": {"tradedate", "date", "tradingdate", "datetime"},
     "close": {"close", "closeprice", "price"},
-    "peTtm": {"pettm", "petrailingtwelvemonths", "pe12m", "pe"},
-    "pb": {"pb", "pbmrq", "pricebook", "pbm"},
-    "psTtm": {"psttm", "pstrailingtwelvemonths", "ps12m", "ps"},
+    "peTtm": {"pettm", "petrailingtwelvemonths", "pe12m"},
+    "pb": {"pb", "pbmrq", "pricebook"},
+    "psTtm": {"psttm", "pstrailingtwelvemonths", "ps12m"},
 }
 
 
