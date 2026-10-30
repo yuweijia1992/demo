@@ -184,7 +184,7 @@ def read_monthly_csv(path: Path, metric_field: str) -> dict[str, dict[str, float
         return {}
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
         for row in csv.DictReader(handle):
-            code = str(row.get("code", "")).upper()
+            code = norm_code(row.get("code", ""))
             day = parse_day(row.get("date"))
             value = number(row.get(metric_field))
             if not code or not day or value is None or value <= 0:
@@ -279,7 +279,12 @@ def main() -> int:
             metric_series[metric] = series
             axis_audit[metric] = audit
 
-        eniu = {m: read_monthly_csv(Path(args.eniu), m) for m in ("peTtm", "pb", "psTtm")}
+        # Enniu raw PS is held separately; compare it diagnostically to FIRE PS-TTM.
+        eniu = {
+            "peTtm": read_monthly_csv(Path(args.eniu), "peTtm"),
+            "pb": read_monthly_csv(Path(args.eniu), "pb"),
+            "psTtm": read_monthly_csv(Path(args.eniu), "psRaw"),
+        }
         east = {m: read_monthly_csv(Path(args.eastmoney), m) for m in ("peTtm", "pb", "psTtm")}
         comparisons = {}
         for metric in FIRE_METRICS.values():
