@@ -11,7 +11,9 @@ import csv
 import hashlib
 import json
 import math
+import re
 import time
+import http.cookiejar
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -42,7 +44,7 @@ ALIASES = {
 
 
 def token_for(day: date) -> str:
-    return hashlib.md5(day.isoformat().encode("utf-8")).hexdigest()
+    return hashlib.md5(day.strftime("%Y%m%d").encode("utf-8")).hexdigest()
 
 
 def norm_key(value: Any) -> str:
@@ -85,33 +87,69 @@ def request_payload(code: str, timeout: int, retries: int) -> tuple[dict[str, An
     attempts: list[str] = []
     now_cn = datetime.now(ZoneInfo("Asia/Shanghai")).date()
     token_dates = [now_cn, now_cn - timedelta(days=1), now_cn + timedelta(days=1)]
-    for base in API_URLS:
+    user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/128 Safari/537.36"
+    for api_url in API_URLS:
+        origin = api_url.split("/api/", 1)[0]
+        page_url = origin + "/"
         for day in token_dates:
-            params = urllib.parse.urlencode({"token": token_for(day), "id": code})
-            url = base + "?" + params
-            headers = {
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/128 Safari/537.36",
-                "Accept": "application/json,text/plain,*/*",
-                "Referer": PAGE_URLS[API_URLS.index(base)].format(code=code),
+            jar = http.cookiejar.CookieJar()
+            opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
+            csrf_headers = {
+                "User-Agent": user_agent,
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
             }
-            for attempt in range(retries + 1):
-                try:
-                    req = urllib.request.Request(url, headers=headers)
-                    with urllib.request.urlopen(req, timeout=timeout) as resp:
-                        body = resp.read().decode("utf-8", errors="replace")
+            try:
+                with opener.open(urllib.request.Request(page_url, headers=csrf_headers), timeout=timeout) as resp:
+                    html = resp.read().decode("utf-8", errors="replace")
+                match = re.search(
+                    r'<meta[^>]+name=["\\\']_csrf["\\\'][^>]+content=["\\\']([^"\\\']+)["\\\']',
+                    html,
+                    flags=re.IGNORECASE,
+                )
+                if not match:
+                    match = re.search(
+                        r'<meta[^>]+content=["\\\']([^"\\\']+)["\\\'][^>]+name=["\\\']_csrf["\\\']',
+                        html,
+                        flags=re.IGNORECASE,
+                    )
+                if not match:
+                    raise RuntimeError("homepage did not expose meta[name=_csrf]")
+                csrf = match.group(1)
+            except Exception as exc:
+                attempts.append(f"{page_url} tokenDate={day.isoformat()}: csrf bootstrap failed: {exc}")
+                continue
+
+            params = urllib.parse.urlencode({"token": token_for(day), "id": code})
+            headers = {
+                "User-Agent": user_agent,
+                "Accept": "application/json,text/plain,*/*",
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "X-CSRF-Token": csrf,
+                "X-Requested-With": "XMLHttpRequest",
+                "Origin": origin,
+                "Referer": PAGE_URLS[API_URLS.index(api_url)].format(code=code),
+            }
+            for method in ("POST", "GET"):
+                for attempt in range(retries + 1):
+                    try:
+                        if method == "POST":
+                            req = urllib.request.Request(api_url, data=params.encode("utf-8"), headers=headers, method="POST")
+                        else:
+                            req = urllib.request.Request(api_url + "?" + params, headers=headers, method="GET")
+                        with opener.open(req, timeout=timeout) as resp:
+                            body = resp.read().decode("utf-8", errors="replace")
                         if not body.strip():
                             raise RuntimeError("empty response body")
                         data = json.loads(body)
-                    if not isinstance(data, dict):
-                        raise RuntimeError(f"unexpected top-level type: {type(data).__name__}")
-                    return data, base, attempts
-                except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
-                        json.JSONDecodeError, RuntimeError, OSError) as exc:
-                    attempts.append(f"{base} tokenDate={day.isoformat()} attempt={attempt+1}: {exc}")
-                    if attempt < retries:
-                        time.sleep(1.0 * (attempt + 1))
+                        if not isinstance(data, dict):
+                            raise RuntimeError(f"unexpected top-level type: {type(data).__name__}")
+                        return data, api_url, attempts
+                    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
+                            json.JSONDecodeError, RuntimeError, OSError) as exc:
+                        attempts.append(f"{method} {api_url} tokenDate={day.isoformat()} attempt={attempt+1}: {exc}")
+                        if attempt < retries:
+                            time.sleep(1.0 * (attempt + 1))
     return None, "", attempts
-
 
 def unpack_payload(payload: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
     data = payload.get("data")
