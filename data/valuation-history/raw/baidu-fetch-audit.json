@@ -1,23 +1,3601 @@
 {
-  "title": "Baidu / Enniu historical valuation fetch audit",
-  "status": "PENDING_FIRST_AUTOMATED_FETCH",
-  "fetchedAt": null,
+  "source": "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
+  "sourceDocumentation": "https://github.com/akfamily/akshare/blob/master/docs/data/stock/stock_valuation.md",
+  "endpointImplementation": "https://github.com/akfamily/akshare/blob/master/akshare/stock/valuation/stock_zh_valuation_baidu.py",
+  "fetchedAt": "2026-10-30T09:27:34+00:00",
   "requestedPeriod": "全部",
-  "requestedMarkets": [
-    "A-share pre-2018",
-    "HK all returned dates"
-  ],
-  "metrics": [
-    "PE-TTM",
-    "PB",
-    "PS-TTM experimental probe"
-  ],
-  "companiesWithAnyData": 0,
-  "aShareCompaniesWithPre2018Data": 0,
-  "hkCompaniesWithData": 0,
-  "dailyRowsWritten": 0,
+  "aShareCutoffExclusive": "2018-01-01",
+  "requestedCompanies": 49,
+  "companiesWithAnyData": 41,
+  "aShareCompaniesWithPre2018Data": 36,
+  "hkCompaniesWithData": 5,
+  "dailyRowsWritten": 23045,
   "eniuHistoricalFallbackRows": 0,
-  "metricsWithReturnedRows": [],
-  "psTtmReturnedByProbe": false,
-  "note": "This is an explicit empty audit placeholder, not evidence that the provider returned zero history. The first execution of scripts/fetch_baidu_valuation_history.py will overwrite this file with the actual dated results or per-security errors. No synthetic values are included."
+  "aShareRowsArePre2018Only": true,
+  "documentedMetrics": [
+    "PE-TTM",
+    "PB"
+  ],
+  "undocumentedPSProbeLabels": [
+    "市销率(TTM)",
+    "市销率"
+  ],
+  "metricsWithReturnedRows": [
+    "pb",
+    "peTtm"
+  ],
+  "psTtmReturnedByBaiduProbe": false,
+  "excludedSameDayKeysFromBaoStock": 0,
+  "indicators": [
+    {
+      "code": "000333.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 685,
+      "rowsRetainedForBuild": 224,
+      "firstDate": "2013-09-19",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-000333",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "000333.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 685,
+      "rowsRetainedForBuild": 224,
+      "firstDate": "2013-09-20",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-000333",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "000333.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-000333",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "000598.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 618,
+      "rowsRetainedForBuild": 438,
+      "firstDate": "1996-06-03",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-000598",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "000598.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 618,
+      "rowsRetainedForBuild": 438,
+      "firstDate": "1996-06-02",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-000598",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "000598.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-000598",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "000651.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 608,
+      "rowsRetainedForBuild": 428,
+      "firstDate": "1996-11-30",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-000651",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "000651.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 608,
+      "rowsRetainedForBuild": 428,
+      "firstDate": "1996-11-30",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-000651",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "000651.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-000651",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "002027.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 625,
+      "rowsRetainedForBuild": 376,
+      "firstDate": "2004-08-14",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002027",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "002027.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 625,
+      "rowsRetainedForBuild": 377,
+      "firstDate": "2004-08-13",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002027",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "002027.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002027",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "002352.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 679,
+      "rowsRetainedForBuild": 320,
+      "firstDate": "2010-02-13",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002352",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "002352.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 680,
+      "rowsRetainedForBuild": 321,
+      "firstDate": "2010-02-05",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002352",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "002352.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002352",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "002371.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 675,
+      "rowsRetainedForBuild": 316,
+      "firstDate": "2010-03-22",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002371",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "002371.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 675,
+      "rowsRetainedForBuild": 316,
+      "firstDate": "2010-03-22",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002371",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "002371.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002371",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "002594.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 623,
+      "rowsRetainedForBuild": 264,
+      "firstDate": "2011-07-02",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002594",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "002594.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 623,
+      "rowsRetainedForBuild": 264,
+      "firstDate": "2011-07-02",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002594",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "002594.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002594",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "002607.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 696,
+      "rowsRetainedForBuild": 292,
+      "firstDate": "2011-08-10",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002607",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "002607.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 696,
+      "rowsRetainedForBuild": 292,
+      "firstDate": "2011-08-10",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002607",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "002607.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002607",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "002714.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 666,
+      "rowsRetainedForBuild": 205,
+      "firstDate": "2014-01-31",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002714",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "002714.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 666,
+      "rowsRetainedForBuild": 205,
+      "firstDate": "2014-01-30",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002714",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "002714.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-002714",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "00700.HK",
+      "market": "HK",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 629,
+      "rowsRetainedForBuild": 629,
+      "firstDate": "2004-06-23",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-00700",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "00700.HK",
+      "market": "HK",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 629,
+      "rowsRetainedForBuild": 629,
+      "firstDate": "2004-06-23",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-00700",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "00700.HK",
+      "market": "HK",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-00700",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "00700.HK",
+      "market": "HK",
+      "metric": "pb",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/pbh/hk00700",
+      "status": "EMPTY"
+    },
+    {
+      "code": "00700.HK",
+      "market": "HK",
+      "metric": "peTtm",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/peh/hk00700",
+      "status": "ERROR",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "code": "00700.HK",
+      "market": "HK",
+      "metric": "psTtm",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/psh/hk00700",
+      "status": "ERROR",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "02313.HK",
+      "market": "HK",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 638,
+      "rowsRetainedForBuild": 638,
+      "firstDate": "2005-11-25",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-02313",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "02313.HK",
+      "market": "HK",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 638,
+      "rowsRetainedForBuild": 638,
+      "firstDate": "2005-11-25",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-02313",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "02313.HK",
+      "market": "HK",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-02313",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "02313.HK",
+      "market": "HK",
+      "metric": "pb",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/pbh/hk02313",
+      "status": "ERROR",
+      "error": "The read operation timed out"
+    },
+    {
+      "code": "02313.HK",
+      "market": "HK",
+      "metric": "peTtm",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/peh/hk02313",
+      "status": "EMPTY"
+    },
+    {
+      "code": "02313.HK",
+      "market": "HK",
+      "metric": "psTtm",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/psh/hk02313",
+      "status": "ERROR",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "09618.HK",
+      "market": "HK",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 775,
+      "rowsRetainedForBuild": 775,
+      "firstDate": "2020-06-20",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-09618",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "09618.HK",
+      "market": "HK",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 776,
+      "rowsRetainedForBuild": 776,
+      "firstDate": "2020-06-18",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-09618",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "09618.HK",
+      "market": "HK",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-09618",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "09618.HK",
+      "market": "HK",
+      "metric": "pb",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/pbh/hk09618",
+      "status": "EMPTY"
+    },
+    {
+      "code": "09618.HK",
+      "market": "HK",
+      "metric": "peTtm",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/peh/hk09618",
+      "status": "EMPTY"
+    },
+    {
+      "code": "09618.HK",
+      "market": "HK",
+      "metric": "psTtm",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/psh/hk09618",
+      "status": "ERROR",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "09626.HK",
+      "market": "HK",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 1021,
+      "rowsRetainedForBuild": 1021,
+      "firstDate": "2021-03-30",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-09626",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "09626.HK",
+      "market": "HK",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 1021,
+      "rowsRetainedForBuild": 1021,
+      "firstDate": "2021-03-30",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-09626",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "09626.HK",
+      "market": "HK",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-09626",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "09626.HK",
+      "market": "HK",
+      "metric": "pb",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/pbh/hk09626",
+      "status": "EMPTY"
+    },
+    {
+      "code": "09626.HK",
+      "market": "HK",
+      "metric": "peTtm",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/peh/hk09626",
+      "status": "EMPTY"
+    },
+    {
+      "code": "09626.HK",
+      "market": "HK",
+      "metric": "psTtm",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/psh/hk09626",
+      "status": "ERROR",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "09988.HK",
+      "market": "HK",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 844,
+      "rowsRetainedForBuild": 844,
+      "firstDate": "2019-11-26",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-09988",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "09988.HK",
+      "market": "HK",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 844,
+      "rowsRetainedForBuild": 844,
+      "firstDate": "2019-11-26",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-09988",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "09988.HK",
+      "market": "HK",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://finance.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/hk-09988",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "09988.HK",
+      "market": "HK",
+      "metric": "pb",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/pbh/hk09988",
+      "status": "EMPTY"
+    },
+    {
+      "code": "09988.HK",
+      "market": "HK",
+      "metric": "peTtm",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/peh/hk09988",
+      "status": "ERROR",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    {
+      "code": "09988.HK",
+      "market": "HK",
+      "metric": "psTtm",
+      "source": "Eniu public HK indicator chart",
+      "rowsReturned": 0,
+      "rowsRetainedBeforeBaidu": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "sourceUrl": "https://eniu.com/chart/psh/hk09988",
+      "status": "ERROR",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "code": "300015.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 621,
+      "rowsRetainedForBuild": 298,
+      "firstDate": "2009-11-08",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300015",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "300015.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 621,
+      "rowsRetainedForBuild": 298,
+      "firstDate": "2009-11-07",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300015",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "300015.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300015",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "300059.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 675,
+      "rowsRetainedForBuild": 316,
+      "firstDate": "2010-03-22",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300059",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "300059.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 675,
+      "rowsRetainedForBuild": 316,
+      "firstDate": "2010-03-21",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300059",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "300059.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300059",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "300124.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 653,
+      "rowsRetainedForBuild": 294,
+      "firstDate": "2010-10-06",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300124",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "300124.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 653,
+      "rowsRetainedForBuild": 294,
+      "firstDate": "2010-10-06",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300124",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "300124.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300124",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "300274.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 685,
+      "rowsRetainedForBuild": 281,
+      "firstDate": "2011-11-06",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300274",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "300274.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 685,
+      "rowsRetainedForBuild": 281,
+      "firstDate": "2011-11-06",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300274",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "300274.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300274",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "300308.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 665,
+      "rowsRetainedForBuild": 261,
+      "firstDate": "2012-04-14",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300308",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "300308.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 665,
+      "rowsRetainedForBuild": 261,
+      "firstDate": "2012-04-14",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300308",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "300308.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300308",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "300750.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 766,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2018-06-14",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300750",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "300750.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 766,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2018-06-13",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300750",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "300750.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300750",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "300760.SZ",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 734,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2018-10-19",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300760",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "300760.SZ",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 735,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2018-10-16",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300760",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "300760.SZ",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-300760",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "600030.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 622,
+      "rowsRetainedForBuild": 391,
+      "firstDate": "2003-01-09",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600030",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600030.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 622,
+      "rowsRetainedForBuild": 391,
+      "firstDate": "2003-01-10",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600030",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600030.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600030",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "600036.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 598,
+      "rowsRetainedForBuild": 383,
+      "firstDate": "2002-04-23",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600036",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600036.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 599,
+      "rowsRetainedForBuild": 384,
+      "firstDate": "2002-04-09",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600036",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600036.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600036",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "600066.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 599,
+      "rowsRetainedForBuild": 419,
+      "firstDate": "1997-05-11",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600066",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600066.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 599,
+      "rowsRetainedForBuild": 419,
+      "firstDate": "1997-05-11",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600066",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600066.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600066",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "600276.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 634,
+      "rowsRetainedForBuild": 419,
+      "firstDate": "2000-10-31",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600276",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600276.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 634,
+      "rowsRetainedForBuild": 419,
+      "firstDate": "2000-10-31",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600276",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600276.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600276",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "600323.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 630,
+      "rowsRetainedForBuild": 415,
+      "firstDate": "2000-12-30",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600323",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600323.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 630,
+      "rowsRetainedForBuild": 415,
+      "firstDate": "2000-12-30",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600323",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600323.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600323",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "600398.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 630,
+      "rowsRetainedForBuild": 415,
+      "firstDate": "2000-12-30",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600398",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600398.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 630,
+      "rowsRetainedForBuild": 415,
+      "firstDate": "2000-12-30",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600398",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600398.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600398",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "600406.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 602,
+      "rowsRetainedForBuild": 371,
+      "firstDate": "2003-10-16",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600406",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600406.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 602,
+      "rowsRetainedForBuild": 371,
+      "firstDate": "2003-10-17",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600406",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600406.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600406",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "600511.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 625,
+      "rowsRetainedForBuild": 394,
+      "firstDate": "2002-11-28",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600511",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600511.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 625,
+      "rowsRetainedForBuild": 394,
+      "firstDate": "2002-11-29",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600511",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600511.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600511",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "600674.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 595,
+      "rowsRetainedForBuild": 433,
+      "firstDate": "1994-04-21",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600674",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600674.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 595,
+      "rowsRetainedForBuild": 433,
+      "firstDate": "1994-04-20",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600674",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600674.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600674",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "600690.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 596,
+      "rowsRetainedForBuild": 434,
+      "firstDate": "1994-03-31",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600690",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600690.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 602,
+      "rowsRetainedForBuild": 440,
+      "firstDate": "1993-12-02",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600690",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600690.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600690",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "600754.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 610,
+      "rowsRetainedForBuild": 430,
+      "firstDate": "1996-10-25",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600754",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600754.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 610,
+      "rowsRetainedForBuild": 430,
+      "firstDate": "1996-10-24",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600754",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600754.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600754",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "600887.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 622,
+      "rowsRetainedForBuild": 442,
+      "firstDate": "1996-03-23",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600887",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600887.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 622,
+      "rowsRetainedForBuild": 442,
+      "firstDate": "1996-03-23",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600887",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600887.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600887",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "600900.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 645,
+      "rowsRetainedForBuild": 396,
+      "firstDate": "2003-11-28",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600900",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600900.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 645,
+      "rowsRetainedForBuild": 396,
+      "firstDate": "2003-11-28",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600900",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600900.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600900",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "600941.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 880,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2022-01-06",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600941",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600941.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 880,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2022-01-06",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600941",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "600941.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-600941",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "601088.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 633,
+      "rowsRetainedForBuild": 339,
+      "firstDate": "2007-10-18",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601088",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601088.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 633,
+      "rowsRetainedForBuild": 339,
+      "firstDate": "2007-10-18",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601088",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601088.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601088",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "601318.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 653,
+      "rowsRetainedForBuild": 359,
+      "firstDate": "2007-03-11",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601318",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601318.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 653,
+      "rowsRetainedForBuild": 359,
+      "firstDate": "2007-03-11",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601318",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601318.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601318",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "601398.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 609,
+      "rowsRetainedForBuild": 340,
+      "firstDate": "2006-11-07",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601398",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601398.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 609,
+      "rowsRetainedForBuild": 340,
+      "firstDate": "2006-11-07",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601398",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601398.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601398",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "601601.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 626,
+      "rowsRetainedForBuild": 332,
+      "firstDate": "2008-01-02",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601601",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601601.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 626,
+      "rowsRetainedForBuild": 332,
+      "firstDate": "2008-01-03",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601601",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601601.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601601",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "601668.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 631,
+      "rowsRetainedForBuild": 308,
+      "firstDate": "2009-07-30",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601668",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601668.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 631,
+      "rowsRetainedForBuild": 308,
+      "firstDate": "2009-07-31",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601668",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601668.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601668",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "601728.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 949,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2021-08-20",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601728",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601728.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 949,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2021-08-20",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601728",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601728.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601728",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "601816.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 827,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2020-01-16",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601816",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601816.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 827,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2020-01-16",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601816",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601816.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601816",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "601888.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 623,
+      "rowsRetainedForBuild": 300,
+      "firstDate": "2009-10-18",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601888",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601888.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 623,
+      "rowsRetainedForBuild": 300,
+      "firstDate": "2009-10-18",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601888",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601888.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601888",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "601919.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 643,
+      "rowsRetainedForBuild": 349,
+      "firstDate": "2007-06-30",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601919",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601919.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 643,
+      "rowsRetainedForBuild": 349,
+      "firstDate": "2007-06-30",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601919",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601919.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601919",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "601985.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 694,
+      "rowsRetainedForBuild": 156,
+      "firstDate": "2015-06-11",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601985",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601985.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 694,
+      "rowsRetainedForBuild": 156,
+      "firstDate": "2015-06-12",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601985",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "601985.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-601985",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "603259.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 775,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2018-05-09",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-603259",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "603259.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 775,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2018-05-09",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-603259",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "603259.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-603259",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "603288.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 664,
+      "rowsRetainedForBuild": 203,
+      "firstDate": "2014-02-13",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-603288",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "603288.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 664,
+      "rowsRetainedForBuild": 203,
+      "firstDate": "2014-02-14",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-603288",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "603288.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-603288",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "688041.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 1539,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2022-08-12",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-688041",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "688041.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 1540,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2022-08-12",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-688041",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "688041.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-688041",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    },
+    {
+      "code": "688981.SH",
+      "market": "CN",
+      "metric": "pb",
+      "indicator": "市净率",
+      "indicatorAttempts": [
+        {
+          "indicator": "市净率",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 766,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2020-07-17",
+      "lastDate": "2026-10-29",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-688981",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "688981.SH",
+      "market": "CN",
+      "metric": "peTtm",
+      "indicator": "市盈率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市盈率(TTM)",
+          "status": "OK"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 766,
+      "rowsRetainedForBuild": 0,
+      "firstDate": "2020-07-18",
+      "lastDate": "2026-10-30",
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-688981",
+      "status": "OK",
+      "undocumentedIndicatorProbe": false
+    },
+    {
+      "code": "688981.SH",
+      "market": "CN",
+      "metric": "psTtm",
+      "indicator": "市销率(TTM)",
+      "indicatorAttempts": [
+        {
+          "indicator": "市销率(TTM)",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        },
+        {
+          "indicator": "市销率",
+          "status": "ERROR",
+          "error": "API returned no Result array: {'DispExt': None, 'QueryDispInfo': None, 'ResultCode': 0, 'ResultNum': 0, 'QueryID': '', 'Result': None}"
+        }
+      ],
+      "periodRequested": "全部",
+      "rowsReturned": 0,
+      "rowsRetainedForBuild": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "endpoint": "https://gushitong.baidu.com/opendata",
+      "sourceUrl": "https://gushitong.baidu.com/stock/ab-688981",
+      "status": "ERROR",
+      "undocumentedIndicatorProbe": true
+    }
+  ],
+  "note": "Baidu documents PE-TTM and PB. The fetcher also probes undocumented PS labels; PS is included only if the endpoint returns dated values. For HK, Enniu PE/PB and any returned PS data are retained only strictly before Baidu's earliest date for that metric as a potentially stale historical fallback. A-share rows are clipped before Eastmoney's 2018-onward window; HK rows retain Baidu's full returned history. Failed/empty queries remain visible in the audit; no interpolation or imputation."
 }

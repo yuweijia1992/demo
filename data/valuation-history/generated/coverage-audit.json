@@ -1,8 +1,9 @@
 {
   "title": "中国49家公司历史估值月度序列覆盖审计",
-  "generatedAt": "2026-10-30T08:47:24+00:00",
+  "generatedAt": "2026-10-30T09:28:09+00:00",
   "inputFiles": [
     "data/valuation-history/raw/baostock-pre2018-daily.csv",
+    "data/valuation-history/raw/baidu-valuation-history.csv",
     "data/valuation-history/raw/eastmoney-a-share-daily.csv"
   ],
   "universeFile": "data/valuation-history/universe.json",
@@ -11,22 +12,16 @@
     "endMonth": "2026-10"
   },
   "frequency": "one last observed trading-date row per calendar month",
-  "inputDailyRowsRead": 89695,
-  "monthlyRowsWritten": 4446,
+  "inputDailyRowsRead": 112740,
+  "monthlyRowsWritten": 9258,
   "companiesInUniverse": 49,
-  "companiesWithHistory": 44,
-  "companiesWithoutHistory": [
-    "00700.HK",
-    "02313.HK",
-    "09618.HK",
-    "09626.HK",
-    "09988.HK"
-  ],
+  "companiesWithHistory": 49,
+  "companiesWithoutHistory": [],
   "unknownOrNonPrimaryCodes": [],
   "invalidDateRows": 0,
   "identicalDuplicateRowsIgnored": 0,
   "invalidNonPositiveValuesSetNull": {
-    "peTtm": 1482
+    "peTtm": 2891
   },
   "percentileMethod": "100 * (count(x < current) + 0.5 * count(x == current)) / N",
   "windows": {
@@ -41,12 +36,12 @@
   },
   "latestMonthEndPercentileCoverage": {
     "peTtm": {
-      "5Y": 39,
-      "10Y": 0
+      "5Y": 42,
+      "10Y": 18
     },
     "pb": {
-      "5Y": 42,
-      "10Y": 0
+      "5Y": 46,
+      "10Y": 20
     },
     "psTtm": {
       "5Y": 42,
@@ -59,18 +54,20 @@
       "issuerName": "美的集团",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 158,
+      "firstMonth": "2013-09",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 150,
+      "pbValidMonths": 114,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/000333.html"
+        "https://data.eastmoney.com/gzfx/detail/000333.html",
+        "https://gushitong.baidu.com/stock/ab-000333"
       ]
     },
     {
@@ -78,18 +75,20 @@
       "issuerName": "兴蓉环境",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 116,
+      "pbValidMonths": 240,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/000598.html"
+        "https://data.eastmoney.com/gzfx/detail/000598.html",
+        "https://gushitong.baidu.com/stock/ab-000598"
       ]
     },
     {
@@ -97,18 +96,20 @@
       "issuerName": "格力电器",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 250,
+      "pbValidMonths": 250,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/000651.html"
+        "https://data.eastmoney.com/gzfx/detail/000651.html",
+        "https://gushitong.baidu.com/stock/ab-000651"
       ]
     },
     {
@@ -116,18 +117,20 @@
       "issuerName": "分众传媒",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 113,
+      "pbValidMonths": 240,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/002027.html"
+        "https://data.eastmoney.com/gzfx/detail/002027.html",
+        "https://gushitong.baidu.com/stock/ab-002027"
       ]
     },
     {
@@ -135,18 +138,20 @@
       "issuerName": "顺丰控股",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 201,
+      "firstMonth": "2010-02",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 187,
+      "pbValidMonths": 120,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/002352.html"
+        "https://data.eastmoney.com/gzfx/detail/002352.html",
+        "https://gushitong.baidu.com/stock/ab-002352"
       ]
     },
     {
@@ -154,18 +159,20 @@
       "issuerName": "北方华创",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 200,
+      "firstMonth": "2010-03",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 200,
+      "pbValidMonths": 200,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/002371.html"
+        "https://data.eastmoney.com/gzfx/detail/002371.html",
+        "https://gushitong.baidu.com/stock/ab-002371"
       ]
     },
     {
@@ -173,18 +180,20 @@
       "issuerName": "比亚迪",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 184,
+      "firstMonth": "2011-07",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 184,
+      "pbValidMonths": 184,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/002594.html"
+        "https://data.eastmoney.com/gzfx/detail/002594.html",
+        "https://gushitong.baidu.com/stock/ab-002594"
       ]
     },
     {
@@ -192,18 +201,20 @@
       "issuerName": "中公教育",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 183,
+      "firstMonth": "2011-08",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 70,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 136,
+      "pbValidMonths": 183,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/002607.html"
+        "https://data.eastmoney.com/gzfx/detail/002607.html",
+        "https://gushitong.baidu.com/stock/ab-002607"
       ]
     },
     {
@@ -211,18 +222,115 @@
       "issuerName": "牧原股份",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 154,
+      "firstMonth": "2014-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 82,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 89,
+      "pbValidMonths": 147,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/002714.html"
+        "https://data.eastmoney.com/gzfx/detail/002714.html",
+        "https://gushitong.baidu.com/stock/ab-002714"
+      ]
+    },
+    {
+      "code": "00700.HK",
+      "issuerName": "腾讯控股",
+      "market": "HK",
+      "currency": "HKD",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
+      "lastMonth": "2026-10",
+      "missingCalendarMonthsBetweenFirstAndLast": 0,
+      "peTtmValidMonths": 250,
+      "pbValidMonths": 250,
+      "psTtmValidMonths": 0,
+      "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)"
+      ],
+      "sourceUrls": [
+        "https://gushitong.baidu.com/stock/hk-00700"
+      ]
+    },
+    {
+      "code": "02313.HK",
+      "issuerName": "申洲国际",
+      "market": "HK",
+      "currency": "HKD",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
+      "lastMonth": "2026-10",
+      "missingCalendarMonthsBetweenFirstAndLast": 0,
+      "peTtmValidMonths": 250,
+      "pbValidMonths": 250,
+      "psTtmValidMonths": 0,
+      "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)"
+      ],
+      "sourceUrls": [
+        "https://gushitong.baidu.com/stock/hk-02313"
+      ]
+    },
+    {
+      "code": "09618.HK",
+      "issuerName": "京东集团",
+      "market": "HK",
+      "currency": "HKD",
+      "monthlyRows": 77,
+      "firstMonth": "2020-06",
+      "lastMonth": "2026-10",
+      "missingCalendarMonthsBetweenFirstAndLast": 0,
+      "peTtmValidMonths": 45,
+      "pbValidMonths": 26,
+      "psTtmValidMonths": 0,
+      "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)"
+      ],
+      "sourceUrls": [
+        "https://gushitong.baidu.com/stock/hk-09618"
+      ]
+    },
+    {
+      "code": "09626.HK",
+      "issuerName": "哔哩哔哩",
+      "market": "HK",
+      "currency": "HKD",
+      "monthlyRows": 68,
+      "firstMonth": "2021-03",
+      "lastMonth": "2026-10",
+      "missingCalendarMonthsBetweenFirstAndLast": 0,
+      "peTtmValidMonths": 15,
+      "pbValidMonths": 68,
+      "psTtmValidMonths": 0,
+      "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)"
+      ],
+      "sourceUrls": [
+        "https://gushitong.baidu.com/stock/hk-09626"
+      ]
+    },
+    {
+      "code": "09988.HK",
+      "issuerName": "阿里巴巴",
+      "market": "HK",
+      "currency": "HKD",
+      "monthlyRows": 84,
+      "firstMonth": "2019-11",
+      "lastMonth": "2026-10",
+      "missingCalendarMonthsBetweenFirstAndLast": 0,
+      "peTtmValidMonths": 84,
+      "pbValidMonths": 84,
+      "psTtmValidMonths": 0,
+      "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)"
+      ],
+      "sourceUrls": [
+        "https://gushitong.baidu.com/stock/hk-09988"
       ]
     },
     {
@@ -230,18 +338,20 @@
       "issuerName": "爱尔眼科",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 204,
+      "firstMonth": "2009-11",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 118,
+      "pbValidMonths": 192,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/300015.html"
+        "https://data.eastmoney.com/gzfx/detail/300015.html",
+        "https://gushitong.baidu.com/stock/ab-300015"
       ]
     },
     {
@@ -249,18 +359,20 @@
       "issuerName": "东方财富",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 200,
+      "firstMonth": "2010-03",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 118,
+      "pbValidMonths": 186,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/300059.html"
+        "https://data.eastmoney.com/gzfx/detail/300059.html",
+        "https://gushitong.baidu.com/stock/ab-300059"
       ]
     },
     {
@@ -268,18 +380,20 @@
       "issuerName": "汇川技术",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 193,
+      "firstMonth": "2010-10",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 193,
+      "pbValidMonths": 193,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/300124.html"
+        "https://data.eastmoney.com/gzfx/detail/300124.html",
+        "https://gushitong.baidu.com/stock/ab-300124"
       ]
     },
     {
@@ -287,18 +401,20 @@
       "issuerName": "阳光电源",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 180,
+      "firstMonth": "2011-11",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 180,
+      "pbValidMonths": 180,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/300274.html"
+        "https://data.eastmoney.com/gzfx/detail/300274.html",
+        "https://gushitong.baidu.com/stock/ab-300274"
       ]
     },
     {
@@ -306,18 +422,20 @@
       "issuerName": "中际旭创",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 175,
+      "firstMonth": "2012-04",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 161,
+      "pbValidMonths": 175,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/300308.html"
+        "https://data.eastmoney.com/gzfx/detail/300308.html",
+        "https://gushitong.baidu.com/stock/ab-300308"
       ]
     },
     {
@@ -363,18 +481,20 @@
       "issuerName": "中信证券",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 240,
+      "pbValidMonths": 116,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/600030.html"
+        "https://data.eastmoney.com/gzfx/detail/600030.html",
+        "https://gushitong.baidu.com/stock/ab-600030"
       ]
     },
     {
@@ -382,18 +502,20 @@
       "issuerName": "招商银行",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 238,
+      "pbValidMonths": 118,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/600036.html"
+        "https://data.eastmoney.com/gzfx/detail/600036.html",
+        "https://gushitong.baidu.com/stock/ab-600036"
       ]
     },
     {
@@ -401,18 +523,20 @@
       "issuerName": "宇通客车",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 250,
+      "pbValidMonths": 250,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/600066.html"
+        "https://data.eastmoney.com/gzfx/detail/600066.html",
+        "https://gushitong.baidu.com/stock/ab-600066"
       ]
     },
     {
@@ -420,18 +544,20 @@
       "issuerName": "恒瑞医药",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 250,
+      "pbValidMonths": 250,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/600276.html"
+        "https://data.eastmoney.com/gzfx/detail/600276.html",
+        "https://gushitong.baidu.com/stock/ab-600276"
       ]
     },
     {
@@ -439,18 +565,20 @@
       "issuerName": "瀚蓝环境",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 250,
+      "pbValidMonths": 250,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/600323.html"
+        "https://data.eastmoney.com/gzfx/detail/600323.html",
+        "https://gushitong.baidu.com/stock/ab-600323"
       ]
     },
     {
@@ -458,18 +586,20 @@
       "issuerName": "海澜之家",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 250,
+      "pbValidMonths": 250,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/600398.html"
+        "https://data.eastmoney.com/gzfx/detail/600398.html",
+        "https://gushitong.baidu.com/stock/ab-600398"
       ]
     },
     {
@@ -477,18 +607,20 @@
       "issuerName": "国电南瑞",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 240,
+      "pbValidMonths": 116,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/600406.html"
+        "https://data.eastmoney.com/gzfx/detail/600406.html",
+        "https://gushitong.baidu.com/stock/ab-600406"
       ]
     },
     {
@@ -496,18 +628,20 @@
       "issuerName": "国药股份",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 240,
+      "pbValidMonths": 116,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/600511.html"
+        "https://data.eastmoney.com/gzfx/detail/600511.html",
+        "https://gushitong.baidu.com/stock/ab-600511"
       ]
     },
     {
@@ -515,18 +649,20 @@
       "issuerName": "川投能源",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 113,
+      "pbValidMonths": 243,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/600674.html"
+        "https://data.eastmoney.com/gzfx/detail/600674.html",
+        "https://gushitong.baidu.com/stock/ab-600674"
       ]
     },
     {
@@ -534,18 +670,20 @@
       "issuerName": "海尔智家",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 243,
+      "pbValidMonths": 113,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/600690.html"
+        "https://data.eastmoney.com/gzfx/detail/600690.html",
+        "https://gushitong.baidu.com/stock/ab-600690"
       ]
     },
     {
@@ -553,18 +691,20 @@
       "issuerName": "锦江酒店",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 93,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 103,
+      "pbValidMonths": 240,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/600754.html"
+        "https://data.eastmoney.com/gzfx/detail/600754.html",
+        "https://gushitong.baidu.com/stock/ab-600754"
       ]
     },
     {
@@ -572,18 +712,20 @@
       "issuerName": "伊利股份",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 225,
+      "pbValidMonths": 250,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/600887.html"
+        "https://data.eastmoney.com/gzfx/detail/600887.html",
+        "https://gushitong.baidu.com/stock/ab-600887"
       ]
     },
     {
@@ -591,18 +733,20 @@
       "issuerName": "长江电力",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 250,
+      "firstMonth": "2006-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 250,
+      "pbValidMonths": 250,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/600900.html"
+        "https://data.eastmoney.com/gzfx/detail/600900.html",
+        "https://gushitong.baidu.com/stock/ab-600900"
       ]
     },
     {
@@ -629,18 +773,20 @@
       "issuerName": "中国神华",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 229,
+      "firstMonth": "2007-10",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 229,
+      "pbValidMonths": 229,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/601088.html"
+        "https://data.eastmoney.com/gzfx/detail/601088.html",
+        "https://gushitong.baidu.com/stock/ab-601088"
       ]
     },
     {
@@ -648,18 +794,20 @@
       "issuerName": "中国平安",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 236,
+      "firstMonth": "2007-03",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 229,
+      "pbValidMonths": 236,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/601318.html"
+        "https://data.eastmoney.com/gzfx/detail/601318.html",
+        "https://gushitong.baidu.com/stock/ab-601318"
       ]
     },
     {
@@ -667,18 +815,20 @@
       "issuerName": "工商银行",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 240,
+      "firstMonth": "2006-11",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 240,
+      "pbValidMonths": 240,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/601398.html"
+        "https://data.eastmoney.com/gzfx/detail/601398.html",
+        "https://gushitong.baidu.com/stock/ab-601398"
       ]
     },
     {
@@ -686,18 +836,20 @@
       "issuerName": "中国太保",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 226,
+      "firstMonth": "2008-01",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 211,
+      "pbValidMonths": 115,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/601601.html"
+        "https://data.eastmoney.com/gzfx/detail/601601.html",
+        "https://gushitong.baidu.com/stock/ab-601601"
       ]
     },
     {
@@ -705,18 +857,20 @@
       "issuerName": "中国建筑",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 208,
+      "firstMonth": "2009-07",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 196,
+      "pbValidMonths": 118,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/601668.html"
+        "https://data.eastmoney.com/gzfx/detail/601668.html",
+        "https://gushitong.baidu.com/stock/ab-601668"
       ]
     },
     {
@@ -762,18 +916,20 @@
       "issuerName": "中国中免",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 205,
+      "firstMonth": "2009-10",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 205,
+      "pbValidMonths": 205,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/601888.html"
+        "https://data.eastmoney.com/gzfx/detail/601888.html",
+        "https://gushitong.baidu.com/stock/ab-601888"
       ]
     },
     {
@@ -781,18 +937,20 @@
       "issuerName": "中远海控",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 233,
+      "firstMonth": "2007-06",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 171,
+      "pbValidMonths": 233,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/601919.html"
+        "https://data.eastmoney.com/gzfx/detail/601919.html",
+        "https://gushitong.baidu.com/stock/ab-601919"
       ]
     },
     {
@@ -800,18 +958,20 @@
       "issuerName": "中国核电",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 137,
+      "firstMonth": "2015-06",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 131,
+      "pbValidMonths": 112,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/601985.html"
+        "https://data.eastmoney.com/gzfx/detail/601985.html",
+        "https://gushitong.baidu.com/stock/ab-601985"
       ]
     },
     {
@@ -838,18 +998,20 @@
       "issuerName": "海天味业",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 106,
-      "firstMonth": "2018-01",
+      "monthlyRows": 153,
+      "firstMonth": "2014-02",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 106,
-      "pbValidMonths": 106,
+      "peTtmValidMonths": 146,
+      "pbValidMonths": 113,
       "psTtmValidMonths": 106,
       "sourceLabels": [
+        "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
       "sourceUrls": [
-        "https://data.eastmoney.com/gzfx/detail/603288.html"
+        "https://data.eastmoney.com/gzfx/detail/603288.html",
+        "https://gushitong.baidu.com/stock/ab-603288"
       ]
     },
     {
