@@ -1,0 +1,47 @@
+name: Refresh public A-share valuation history
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Monthly refresh; 17:30 China Standard Time on the 3rd day of each month.
+    - cron: "30 9 3 * *"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch Eastmoney A-share daily valuation history
+        run: |
+          python scripts/fetch_eastmoney_a_share_valuation.py
+
+      - name: Build month-end data and valuation percentiles
+        run: |
+          python scripts/build_valuation_history.py \
+            --input data/valuation-history/raw/eastmoney-a-share-daily.csv \
+            --source-label "Eastmoney Data Center / RPT_VALUEANALYSIS_DET" \
+            --source-url "https://data.eastmoney.com/gzfx/" \
+            --out-dir data/valuation-history/generated
+
+      - name: Commit refreshed public data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/valuation-history/raw data/valuation-history/generated
+          if git diff --cached --quiet; then
+            echo "No valuation data changes."
+          else
+            git commit -m "Refresh public A-share valuation history"
+            git push
+          fi
