@@ -621,6 +621,6 @@
     }
   ],
   "refreshRequestedAt": "2026-10-30",
-  "refreshRequestReason": "Rerun with concurrent-safe rebase push and preserve first-run public data audit",
-  "refreshRevision": 1
+  "refreshRequestReason": "Trigger after fixing shell commit step; preserve 44-stock public Eastmoney daily history",
+  "refreshRevision": 2
 }
