@@ -145,7 +145,7 @@ def fetch_series(url: str, page_url: str, timeout: int, retries: int) -> list[tu
 
 
 def fetch_eniu_series(code: str, metric: str, timeout: int, retries: int) -> tuple[list[tuple[str, float | None]], str]:
-    """Fetch Enniu's public HK PE/PB chart as an older-history fallback.
+    """Fetch Enniu's public HK PE/PB and optional PS chart as an older-history fallback.
 
     AKShare documents this source as potentially stale. It is therefore used
     only strictly before the earliest dated observation from Baidu for a code.
@@ -296,7 +296,7 @@ def main() -> int:
                         "code": code, "market": market, "metric": metric,
                         "source": "Eniu public HK indicator chart", "rowsReturned": 0,
                         "rowsRetainedBeforeBaidu": 0, "firstDate": None, "lastDate": None,
-                        "sourceUrl": f"https://eniu.com/chart/{{'peTtm': 'peh', 'pb': 'pbh', 'psTtm': 'psh'}}[metric]/hk{raw_code}",
+                        "sourceUrl": f"https://eniu.com/chart/{ {'peTtm': 'peh', 'pb': 'pbh', 'psTtm': 'psh'}[metric] }/hk{raw_code}",
                         "status": "ERROR", "error": str(exc),
                     })
                 time.sleep(max(0.0, args.pause))
