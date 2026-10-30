@@ -71,12 +71,21 @@ jobs:
           python - <<'PY'
           import json, sys
           with open("data/valuation-history/raw/eastmoney-fetch-audit.json", encoding="utf-8") as f:
-              audit = json.load(f)
-          requested = audit.get("requestedAshareCompanies", 0)
-          covered = audit.get("companiesWithData", 0)
-          print(f"A-share history coverage: {covered}/{requested}; daily rows: {audit.get('dailyRows', 0)}")
-          for failure in audit.get("failedCompanies", []):
-              print("FAILED:", failure)
+              eastmoney = json.load(f)
+          with open("data/valuation-history/raw/baostock-fetch-audit.json", encoding="utf-8") as f:
+              baostock = json.load(f)
+          with open("data/valuation-history/generated/coverage-audit.json", encoding="utf-8") as f:
+              coverage = json.load(f)
+          requested = eastmoney.get("requestedAshareCompanies", 0)
+          covered = eastmoney.get("companiesWithData", 0)
+          print(f"Eastmoney coverage: {covered}/{requested}; daily rows: {eastmoney.get('dailyRows', 0)}")
+          print(f"BaoStock backfill: {baostock.get('companiesWithRows', 0)}/{baostock.get('requestedAshareCompanies', 0)}; daily rows: {baostock.get('dailyRows', 0)}")
+          print(f"Monthly rows: {coverage.get('monthlyRowsWritten', 0)}; companies with history: {coverage.get('companiesWithHistory', 0)}")
+          print("Latest 5Y/10Y percentile coverage:", coverage.get("latestMonthEndPercentileCoverage", {}))
+          for failure in eastmoney.get("failedCompanies", []):
+              print("EASTMONEY FAILED:", failure)
+          for failure in baostock.get("failedOrEmptyCompanies", []):
+              print("BAOSTOCK EMPTY/FAILED:", failure)
           if requested != 44 or covered != requested:
               sys.exit(1)
           PY
