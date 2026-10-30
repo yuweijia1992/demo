@@ -100,7 +100,7 @@
 <div class="hero-stat"><strong>49</strong><span>候选上市公司<br>覆盖六大经济层次 · 研究清单，不是买入指令</span></div>
 </section>
 <section class="container" id="layers">
-<div class="note-box"><h3>先读结论：需求重要，不等于股票便宜</h3><p>本页评估企业的长期商业价值与研究优先级，不提供实时买入评级。需求长期存在，不代表相关企业一定拥有高回报，更不代表当前股价便宜。投资判断仍要落实到竞争格局、资本回报、现金流、资产负债表和买入价格；银行、保险、周期行业与成长科技必须使用不同估值框架。</p></div>
+<div class="note-box"><h3>先读结论：需求重要，不等于股票便宜</h3><p>本页评估企业的长期商业价值与研究优先级，不提供实时买入评级。页面只展示数据库中有来源、带日期的价格快照与估值字段；不将其视为实时行情，也不自动推导目标价或买入评级。投资判断仍需结合竞争格局、资本回报、现金流、资产负债表和买入价格。</p></div>
 <div class="research-snapshot" aria-label="研究数据库覆盖概览">
  <div class="snapshot-head"><div><p class="eyebrow">RESEARCH DATABASE · COVERAGE AUDIT</p><h3>研究覆盖与数据缺口</h3></div><span id="dataAsOf">正在读取数据库基准日…</span></div>
  <div class="coverage-grid" id="coverageGrid"><div class="coverage-item"><span>数据库状态</span><strong>读取中</strong><small>正在检查本地 JSON 数据</small></div></div>
@@ -239,7 +239,7 @@ const vStock=document.getElementById('vStock');
 const fieldIds=['vPrice','vEPS','vPE','vPercentile','vYield','vHurdle','vYears','gBear','peBear','gBase','peBase','gBull','peBull'];
 function initValuation(){
  vStock.innerHTML=stocks.map((s,i)=>'<option value="'+i+'">'+esc(s.n)+' · '+esc(s.c)+' · '+layers[s.l-1].title+'</option>').join('');
- document.getElementById('vStockTable').innerHTML=stocks.map((s,i)=>'<tr><td>'+String(s.l).padStart(2,'0')+'</td><td>'+esc(s.n)+'</td><td>'+esc(s.c)+'</td><td>待核验最新数据</td><td><button type="button" data-stock-index="'+i+'">选择并分析</button></td></tr>').join('');
+ document.getElementById('vStockTable').innerHTML=stocks.map((s,i)=>'<tr><td>'+String(s.l).padStart(2,'0')+'</td><td>'+esc(s.n)+'</td><td>'+esc(s.c)+'</td><td>估值待完善：历史分位与行业模型需补</td><td><button type="button" data-stock-index="'+i+'">选择并分析</button></td></tr>').join('');
  document.querySelectorAll('[data-stock-index]').forEach(b=>b.addEventListener('click',()=>{vStock.value=b.dataset.stockIndex;vStock.dispatchEvent(new Event('change'));document.getElementById('valuationLab').scrollIntoView({behavior:'smooth',block:'start'});}));
  vStock.addEventListener('change',()=>{const s=stocks[Number(vStock.value)];const code=s.c.split('/')[0].trim().replace('.SH','').replace('.SZ','').replace('.HK','');document.getElementById('vValuationLink').href='https://baifenwei.com/stocks/';document.getElementById('vReportLink').href='https://www.cninfo.com.cn/new/fulltextSearch?keyWord='+encodeURIComponent(s.n);document.getElementById('vResults').innerHTML='<div class="lab-result"><h3>悲观情景</h3><p>为 '+esc(s.n)+' 录入最新数据后计算。</p></div><div class="lab-result"><h3>基准情景</h3><p>为 '+esc(s.n)+' 录入最新数据后计算。</p></div><div class="lab-result"><h3>乐观情景</h3><p>为 '+esc(s.n)+' 录入最新数据后计算。</p></div>';});
  document.getElementById('vCalculate').addEventListener('click',calculateValuation);
