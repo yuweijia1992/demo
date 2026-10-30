@@ -1,0 +1,623 @@
+{
+  "title": "中国49家公司历史估值主证券清单",
+  "version": "1.0.0",
+  "asOf": "2026-10-27",
+  "range": {
+    "startMonth": "2006-01",
+    "endMonth": "2026-09"
+  },
+  "frequency": "monthly_last_trading_day",
+  "rule": "每家发行人先选财务数据库 code 字段中的第一只主证券；A/H 双重上市的其他证券列入 alternateListings，不得与主证券混合计算估值序列。",
+  "securities": [
+    {
+      "issuerName": "伊利股份",
+      "issuerCode": "600887.SH",
+      "securityCode": "600887.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 1,
+      "industry": "乳制品与营养",
+      "businessType": "防御消费",
+      "valuationMethod": "quality_earnings_fcf"
+    },
+    {
+      "issuerName": "牧原股份",
+      "issuerCode": "002714.SZ",
+      "securityCode": "002714.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 1,
+      "industry": "生猪养殖",
+      "businessType": "强周期",
+      "valuationMethod": "normalized_cycle"
+    },
+    {
+      "issuerName": "海天味业",
+      "issuerCode": "603288.SH",
+      "securityCode": "603288.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 1,
+      "industry": "调味品",
+      "businessType": "品牌消费",
+      "valuationMethod": "quality_earnings_fcf"
+    },
+    {
+      "issuerName": "海澜之家",
+      "issuerCode": "600398.SH",
+      "securityCode": "600398.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 1,
+      "industry": "大众服装",
+      "businessType": "品牌零售",
+      "valuationMethod": "quality_earnings_fcf"
+    },
+    {
+      "issuerName": "申洲国际",
+      "issuerCode": "02313.HK",
+      "securityCode": "02313.HK",
+      "alternateListings": [],
+      "market": "HK",
+      "currency": "HKD",
+      "layer": 1,
+      "industry": "纺织制造与运动服装供应链",
+      "businessType": "全球制造",
+      "valuationMethod": "quality_earnings_fcf"
+    },
+    {
+      "issuerName": "海尔智家",
+      "issuerCode": "600690.SH",
+      "securityCode": "600690.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 1,
+      "industry": "家电与全球品牌",
+      "businessType": "全球消费",
+      "valuationMethod": "quality_earnings_fcf"
+    },
+    {
+      "issuerName": "美的集团",
+      "issuerCode": "000333.SZ",
+      "securityCode": "000333.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 1,
+      "industry": "家电、工业技术与自动化",
+      "businessType": "复合业务",
+      "valuationMethod": "quality_earnings_fcf"
+    },
+    {
+      "issuerName": "格力电器",
+      "issuerCode": "000651.SZ",
+      "securityCode": "000651.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 1,
+      "industry": "空调与家电",
+      "businessType": "现金流型",
+      "valuationMethod": "quality_earnings_fcf"
+    },
+    {
+      "issuerName": "比亚迪",
+      "issuerCode": "002594.SZ",
+      "securityCode": "002594.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 1,
+      "industry": "新能源汽车与汽车产业链",
+      "businessType": "成长制造",
+      "valuationMethod": "normalized_cycle"
+    },
+    {
+      "issuerName": "宇通客车",
+      "issuerCode": "600066.SH",
+      "securityCode": "600066.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 1,
+      "industry": "客车与商用交通",
+      "businessType": "细分龙头",
+      "valuationMethod": "quality_earnings_fcf"
+    },
+    {
+      "issuerName": "京沪高铁",
+      "issuerCode": "601816.SH",
+      "securityCode": "601816.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 1,
+      "industry": "铁路客运基础设施",
+      "businessType": "基础设施",
+      "valuationMethod": "cashflow_dcf"
+    },
+    {
+      "issuerName": "顺丰控股",
+      "issuerCode": "002352.SZ",
+      "securityCode": "002352.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 1,
+      "industry": "快递与综合物流",
+      "businessType": "物流网络",
+      "valuationMethod": "quality_earnings_fcf"
+    },
+    {
+      "issuerName": "中远海控",
+      "issuerCode": "601919.SH",
+      "securityCode": "601919.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 1,
+      "industry": "集装箱航运",
+      "businessType": "强周期",
+      "valuationMethod": "normalized_cycle"
+    },
+    {
+      "issuerName": "迈瑞医疗",
+      "issuerCode": "300760.SZ",
+      "securityCode": "300760.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 2,
+      "industry": "医疗器械",
+      "businessType": "高质量成长",
+      "valuationMethod": "growth_dcf"
+    },
+    {
+      "issuerName": "恒瑞医药",
+      "issuerCode": "600276.SH",
+      "securityCode": "600276.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 2,
+      "industry": "创新药与制药",
+      "businessType": "研发驱动",
+      "valuationMethod": "growth_dcf"
+    },
+    {
+      "issuerName": "药明康德",
+      "issuerCode": "603259.SH",
+      "securityCode": "603259.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 2,
+      "industry": "医药研发与生产服务",
+      "businessType": "平台服务",
+      "valuationMethod": "growth_dcf"
+    },
+    {
+      "issuerName": "爱尔眼科",
+      "issuerCode": "300015.SZ",
+      "securityCode": "300015.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 2,
+      "industry": "眼科医疗服务",
+      "businessType": "医疗服务网络",
+      "valuationMethod": "growth_dcf"
+    },
+    {
+      "issuerName": "国药股份",
+      "issuerCode": "600511.SH",
+      "securityCode": "600511.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 2,
+      "industry": "医药流通",
+      "businessType": "渠道基础设施",
+      "valuationMethod": "quality_earnings_fcf"
+    },
+    {
+      "issuerName": "长江电力",
+      "issuerCode": "600900.SH",
+      "securityCode": "600900.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 3,
+      "industry": "大型水电运营",
+      "businessType": "核心现金流",
+      "valuationMethod": "cashflow_dcf"
+    },
+    {
+      "issuerName": "川投能源",
+      "issuerCode": "600674.SH",
+      "securityCode": "600674.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 3,
+      "industry": "水电投资与电力资产",
+      "businessType": "防御现金流",
+      "valuationMethod": "cashflow_dcf"
+    },
+    {
+      "issuerName": "中国核电",
+      "issuerCode": "601985.SH",
+      "securityCode": "601985.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 3,
+      "industry": "核电运营",
+      "businessType": "能源转型",
+      "valuationMethod": "cashflow_dcf"
+    },
+    {
+      "issuerName": "中国神华",
+      "issuerCode": "601088.SH",
+      "securityCode": "601088.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 3,
+      "industry": "煤炭、电力、铁路与港口",
+      "businessType": "综合能源现金流",
+      "valuationMethod": "normalized_cycle"
+    },
+    {
+      "issuerName": "国电南瑞",
+      "issuerCode": "600406.SH",
+      "securityCode": "600406.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 3,
+      "industry": "电网自动化与电力设备",
+      "businessType": "电网数字化",
+      "valuationMethod": "quality_earnings_fcf"
+    },
+    {
+      "issuerName": "中国移动",
+      "issuerCode": "600941.SH / 00941.HK",
+      "securityCode": "600941.SH",
+      "alternateListings": [
+        "00941.HK"
+      ],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 3,
+      "industry": "通信网络、云与算力",
+      "businessType": "基础设施现金流",
+      "valuationMethod": "cashflow_dcf"
+    },
+    {
+      "issuerName": "中国电信",
+      "issuerCode": "601728.SH / 00728.HK",
+      "securityCode": "601728.SH",
+      "alternateListings": [
+        "00728.HK"
+      ],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 3,
+      "industry": "通信、云与政企数字化",
+      "businessType": "基础设施",
+      "valuationMethod": "cashflow_dcf"
+    },
+    {
+      "issuerName": "中国建筑",
+      "issuerCode": "601668.SH",
+      "securityCode": "601668.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 3,
+      "industry": "建筑工程与基础设施",
+      "businessType": "低利润率规模业务",
+      "valuationMethod": "quality_earnings_fcf"
+    },
+    {
+      "issuerName": "腾讯控股",
+      "issuerCode": "00700.HK",
+      "securityCode": "00700.HK",
+      "alternateListings": [],
+      "market": "HK",
+      "currency": "HKD",
+      "layer": 4,
+      "industry": "社交、游戏、广告与云",
+      "businessType": "网络效应",
+      "valuationMethod": "growth_dcf"
+    },
+    {
+      "issuerName": "阿里巴巴",
+      "issuerCode": "09988.HK / BABA",
+      "securityCode": "09988.HK",
+      "alternateListings": [
+        "BABA"
+      ],
+      "market": "HK",
+      "currency": "HKD",
+      "layer": 4,
+      "industry": "电商、云与数字平台",
+      "businessType": "平台与云",
+      "valuationMethod": "growth_dcf"
+    },
+    {
+      "issuerName": "中芯国际",
+      "issuerCode": "688981.SH / 00981.HK",
+      "securityCode": "688981.SH",
+      "alternateListings": [
+        "00981.HK"
+      ],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 4,
+      "industry": "晶圆代工",
+      "businessType": "战略科技资产",
+      "valuationMethod": "normalized_cycle"
+    },
+    {
+      "issuerName": "北方华创",
+      "issuerCode": "002371.SZ",
+      "securityCode": "002371.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 4,
+      "industry": "半导体设备",
+      "businessType": "国产设备成长",
+      "valuationMethod": "growth_dcf"
+    },
+    {
+      "issuerName": "海光信息",
+      "issuerCode": "688041.SH",
+      "securityCode": "688041.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 4,
+      "industry": "CPU与加速计算芯片",
+      "businessType": "AI与国产算力",
+      "valuationMethod": "growth_dcf"
+    },
+    {
+      "issuerName": "中际旭创",
+      "issuerCode": "300308.SZ",
+      "securityCode": "300308.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 4,
+      "industry": "光通信与高速光模块",
+      "businessType": "AI基础设施成长",
+      "valuationMethod": "growth_dcf"
+    },
+    {
+      "issuerName": "宁德时代",
+      "issuerCode": "300750.SZ / 03750.HK",
+      "securityCode": "300750.SZ",
+      "alternateListings": [
+        "03750.HK"
+      ],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 4,
+      "industry": "动力电池与储能",
+      "businessType": "规模技术壁垒",
+      "valuationMethod": "growth_dcf"
+    },
+    {
+      "issuerName": "阳光电源",
+      "issuerCode": "300274.SZ",
+      "securityCode": "300274.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 4,
+      "industry": "逆变器与储能系统",
+      "businessType": "能源转型成长",
+      "valuationMethod": "normalized_cycle"
+    },
+    {
+      "issuerName": "汇川技术",
+      "issuerCode": "300124.SZ",
+      "securityCode": "300124.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 4,
+      "industry": "工业自动化与电驱",
+      "businessType": "制造升级",
+      "valuationMethod": "growth_dcf"
+    },
+    {
+      "issuerName": "招商银行",
+      "issuerCode": "600036.SH / 03968.HK",
+      "securityCode": "600036.SH",
+      "alternateListings": [
+        "03968.HK"
+      ],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 5,
+      "industry": "零售银行与财富管理",
+      "businessType": "银行质量",
+      "valuationMethod": "bank_pb_roe"
+    },
+    {
+      "issuerName": "工商银行",
+      "issuerCode": "601398.SH",
+      "securityCode": "601398.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 5,
+      "industry": "大型商业银行",
+      "businessType": "系统重要性",
+      "valuationMethod": "bank_pb_roe"
+    },
+    {
+      "issuerName": "中国平安",
+      "issuerCode": "601318.SH / 02318.HK",
+      "securityCode": "601318.SH",
+      "alternateListings": [
+        "02318.HK"
+      ],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 5,
+      "industry": "保险与综合金融",
+      "businessType": "风险保障",
+      "valuationMethod": "insurance_ev"
+    },
+    {
+      "issuerName": "中国太保",
+      "issuerCode": "601601.SH / 02601.HK",
+      "securityCode": "601601.SH",
+      "alternateListings": [
+        "02601.HK"
+      ],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 5,
+      "industry": "寿险与财险",
+      "businessType": "保险保障",
+      "valuationMethod": "insurance_ev"
+    },
+    {
+      "issuerName": "中信证券",
+      "issuerCode": "600030.SH / 06030.HK",
+      "securityCode": "600030.SH",
+      "alternateListings": [
+        "06030.HK"
+      ],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 5,
+      "industry": "证券与资本市场",
+      "businessType": "市场周期",
+      "valuationMethod": "normalized_cycle"
+    },
+    {
+      "issuerName": "东方财富",
+      "issuerCode": "300059.SZ",
+      "securityCode": "300059.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 5,
+      "industry": "互联网证券与金融信息",
+      "businessType": "平台弹性",
+      "valuationMethod": "normalized_cycle"
+    },
+    {
+      "issuerName": "京东集团",
+      "issuerCode": "09618.HK / JD",
+      "securityCode": "09618.HK",
+      "alternateListings": [
+        "JD"
+      ],
+      "market": "HK",
+      "currency": "HKD",
+      "layer": 6,
+      "industry": "电商、零售与物流",
+      "businessType": "供应链效率",
+      "valuationMethod": "growth_dcf"
+    },
+    {
+      "issuerName": "中国中免",
+      "issuerCode": "601888.SH",
+      "securityCode": "601888.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 6,
+      "industry": "免税零售与旅游消费",
+      "businessType": "政策型消费",
+      "valuationMethod": "normalized_cycle"
+    },
+    {
+      "issuerName": "锦江酒店",
+      "issuerCode": "600754.SH",
+      "securityCode": "600754.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 6,
+      "industry": "酒店运营与管理",
+      "businessType": "轻资产扩张",
+      "valuationMethod": "normalized_cycle"
+    },
+    {
+      "issuerName": "分众传媒",
+      "issuerCode": "002027.SZ",
+      "securityCode": "002027.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 6,
+      "industry": "楼宇广告",
+      "businessType": "媒介网络",
+      "valuationMethod": "normalized_cycle"
+    },
+    {
+      "issuerName": "哔哩哔哩",
+      "issuerCode": "09626.HK / BILI",
+      "securityCode": "09626.HK",
+      "alternateListings": [
+        "BILI"
+      ],
+      "market": "HK",
+      "currency": "HKD",
+      "layer": 6,
+      "industry": "视频社区与内容",
+      "businessType": "用户社区成长",
+      "valuationMethod": "growth_dcf"
+    },
+    {
+      "issuerName": "中公教育",
+      "issuerCode": "002607.SZ",
+      "securityCode": "002607.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 6,
+      "industry": "职业培训与考试服务",
+      "businessType": "就业需求敏感",
+      "valuationMethod": "quality_earnings_fcf"
+    },
+    {
+      "issuerName": "兴蓉环境",
+      "issuerCode": "000598.SZ",
+      "securityCode": "000598.SZ",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 6,
+      "industry": "水务与环保运营",
+      "businessType": "公用事业",
+      "valuationMethod": "cashflow_dcf"
+    },
+    {
+      "issuerName": "瀚蓝环境",
+      "issuerCode": "600323.SH",
+      "securityCode": "600323.SH",
+      "alternateListings": [],
+      "market": "CN",
+      "currency": "CNY",
+      "layer": 6,
+      "industry": "固废处理与环保运营",
+      "businessType": "环境基础设施",
+      "valuationMethod": "cashflow_dcf"
+    }
+  ]
+}
