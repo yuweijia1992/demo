@@ -8,6 +8,7 @@ Only PE-TTM and PB are supplied by this endpoint; PS remains unavailable here.
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import csv
 import json
 import math
@@ -205,9 +206,10 @@ def main() -> int:
     parser.add_argument("--exclude-file", default="data/valuation-history/raw/baostock-pre2018-daily.csv")
     parser.add_argument("--a-share-cutoff", default="2018-01-01")
     parser.add_argument("--period", default="全部", choices=["近一年", "近三年", "近五年", "近十年", "全部"])
-    parser.add_argument("--timeout", type=int, default=25)
-    parser.add_argument("--retries", type=int, default=2)
-    parser.add_argument("--pause", type=float, default=0.35)
+    parser.add_argument("--timeout", type=int, default=10)
+    parser.add_argument("--retries", type=int, default=0)
+    parser.add_argument("--pause", type=float, default=0.12)
+    parser.add_argument("--workers", type=int, default=6)
     args = parser.parse_args()
 
     securities = load_universe(Path(args.universe))
@@ -219,17 +221,19 @@ def main() -> int:
     hk_codes: set[str] = set()
     a_pre2018_codes: set[str] = set()
 
-    print(f"Fetching Baidu historical PE/PB for {len(securities)} A/H securities; period={args.period}", flush=True)
-    for security in securities:
+    target_securities = [item for item in securities if str(item.get("market", "")).upper() in {"CN", "HK"}]
+    print(f"Fetching Baidu historical PE/PB for {len(target_securities)} A/H securities; period={args.period}; workers={args.workers}", flush=True)
+
+    def fetch_one_security(security: dict[str, Any]) -> tuple[str, str, list[dict[str, Any]], list[dict[str, Any]]]:
         code = canonical_code(security)
         market = str(security.get("market", "")).upper()
         raw_code = code.split(".")[0]
-        if market not in {"CN", "HK"}:
-            continue
         page_url = (A_PAGE if market == "CN" else HK_PAGE).format(code=raw_code)
         by_day: dict[str, dict[str, float | None]] = defaultdict(dict)
         day_sources: dict[str, set[str]] = defaultdict(set)
         day_source_urls: dict[str, set[str]] = defaultdict(set)
+        security_audits: list[dict[str, Any]] = []
+
         for metric, indicator_candidates in INDICATORS.items():
             series: list[tuple[str, float | None]] = []
             attempts: list[dict[str, str]] = []
@@ -255,7 +259,7 @@ def main() -> int:
                 day_source_urls[day].add(page_url)
             kept = sum(1 for day, _ in series if market != "CN" or date.fromisoformat(day) < cutoff)
             metric_status = "OK" if series else ("ERROR" if attempts and all(x["status"] == "ERROR" for x in attempts) else "EMPTY")
-            audits.append({
+            security_audits.append({
                 "code": code, "market": market, "metric": metric,
                 "indicator": chosen_indicator or indicator_candidates[0],
                 "indicatorAttempts": attempts,
@@ -267,25 +271,25 @@ def main() -> int:
                 "sourceUrl": page_url, "status": metric_status,
                 "undocumentedIndicatorProbe": metric == "psTtm",
             })
-            print(f"  {code} {metric}: {len(series)} raw points" if series else f"  {code} {metric}: {metric_status}", flush=True)
 
-        # Enniu is a secondary HK-only source. Keep only dates strictly earlier
-        # than Baidu's earliest dated point, so no daily observation is silently
-        # chosen between two vendors with potentially different valuation bases.
+        # Enniu is a secondary HK-only source, retained only before the first
+        # dated Baidu observation for the same metric. Missing metric cells only.
         if market == "HK":
             for metric in ("peTtm", "pb", "psTtm"):
                 baidu_metric_dates = [day for day, values in by_day.items() if values.get(metric) is not None]
                 baidu_first = min(baidu_metric_dates) if baidu_metric_dates else None
                 try:
                     eniu_series, eniu_url = fetch_eniu_series(raw_code, metric, args.timeout, args.retries)
-                    eligible = [(day, value) for day, value in eniu_series
-                                if (baidu_first is None or date.fromisoformat(day) < date.fromisoformat(baidu_first))
-                                and by_day.get(day, {}).get(metric) is None]
+                    eligible = [
+                        (day, value) for day, value in eniu_series
+                        if (baidu_first is None or date.fromisoformat(day) < date.fromisoformat(baidu_first))
+                        and by_day.get(day, {}).get(metric) is None
+                    ]
                     for day, value in eligible:
                         by_day.setdefault(day, {})[metric] = value
                         day_sources[day].add("Eniu public HK indicator chart (historical fallback)")
                         day_source_urls[day].add(eniu_url)
-                    audits.append({
+                    security_audits.append({
                         "code": code, "market": market, "metric": metric,
                         "source": "Eniu public HK indicator chart", "rowsReturned": len(eniu_series),
                         "rowsRetainedBeforeBaidu": len(eligible),
@@ -294,32 +298,59 @@ def main() -> int:
                         "sourceUrl": eniu_url, "status": "OK" if eniu_series else "EMPTY",
                     })
                 except Exception as exc:
-                    audits.append({
+                    suffix = {"peTtm": "peh", "pb": "pbh", "psTtm": "psh"}[metric]
+                    security_audits.append({
                         "code": code, "market": market, "metric": metric,
                         "source": "Eniu public HK indicator chart", "rowsReturned": 0,
                         "rowsRetainedBeforeBaidu": 0, "firstDate": None, "lastDate": None,
-                        "sourceUrl": f"https://eniu.com/chart/{ {'peTtm': 'peh', 'pb': 'pbh', 'psTtm': 'psh'}[metric] }/hk{raw_code}",
+                        "sourceUrl": f"https://eniu.com/chart/{suffix}/hk{raw_code}",
                         "status": "ERROR", "error": str(exc),
                     })
                 time.sleep(max(0.0, args.pause))
 
+        security_rows: list[dict[str, Any]] = []
         for day, values in sorted(by_day.items()):
             if (code, day) in excluded:
                 continue
-            output_rows.append({
+            security_rows.append({
                 "code": code, "date": day, "close": "", "currency": security.get("currency", ""),
                 "peTtm": values.get("peTtm", ""), "pb": values.get("pb", ""),
                 "psTtm": values.get("psTtm", ""),
                 "source": " + ".join(sorted(day_sources.get(day) or {SOURCE_LABEL})),
                 "sourceUrl": " ; ".join(sorted(day_source_urls.get(day) or {page_url})),
             })
-            any_codes.add(code)
-            if market == "HK":
-                hk_codes.add(code)
-            else:
-                a_pre2018_codes.add(code)
+        return code, market, security_rows, security_audits
+
+    worker_count = max(1, min(int(args.workers), 12))
+    with ThreadPoolExecutor(max_workers=worker_count) as pool:
+        futures = {pool.submit(fetch_one_security, item): item for item in target_securities}
+        completed = 0
+        for future in as_completed(futures):
+            completed += 1
+            security = futures[future]
+            try:
+                code, market, rows, security_audits = future.result()
+                output_rows.extend(rows)
+                audits.extend(security_audits)
+                if rows:
+                    any_codes.add(code)
+                    if market == "HK":
+                        hk_codes.add(code)
+                    else:
+                        a_pre2018_codes.add(code)
+                print(f"[{completed}/{len(target_securities)}] {code}: {len(rows)} rows", flush=True)
+            except Exception as exc:
+                code = canonical_code(security)
+                market = str(security.get("market", "")).upper()
+                audits.append({
+                    "code": code, "market": market, "metric": "all",
+                    "status": "ERROR", "rowsReturned": 0, "rowsRetainedForBuild": 0,
+                    "error": f"Unexpected per-security failure: {exc}",
+                })
+                print(f"[{completed}/{len(target_securities)}] {code}: ERROR {exc}", flush=True)
 
     output_rows.sort(key=lambda row: (row["code"], row["date"]))
+    audits.sort(key=lambda item: (item.get("code", ""), item.get("source", ""), item.get("metric", "")))
     output_path = Path(args.output)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with output_path.open("w", newline="", encoding="utf-8-sig") as handle:
