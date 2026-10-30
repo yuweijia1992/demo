@@ -34,12 +34,21 @@ jobs:
           python-version: "3.12"
 
       - name: Install BaoStock public data client
+        if: github.event_name == 'workflow_dispatch'
         run: |
           python -m pip install --disable-pip-version-check baostock
 
-      - name: Fetch BaoStock historical valuation backfill (pre-2018)
+      - name: Retry BaoStock historical valuation backfill (pre-2018) on manual run
+        if: github.event_name == 'workflow_dispatch'
         run: |
           python scripts/fetch_baostock_a_share_valuation.py
+
+      - name: Ensure BaoStock input file exists
+        run: |
+          mkdir -p data/valuation-history/raw
+          if [ ! -f data/valuation-history/raw/baostock-pre2018-daily.csv ]; then
+            printf 'code,date,close,currency,peTtm,pb,psTtm,source,sourceUrl\n' > data/valuation-history/raw/baostock-pre2018-daily.csv
+          fi
 
       - name: Fetch Eastmoney daily valuation history (2018 onward)
         run: |
