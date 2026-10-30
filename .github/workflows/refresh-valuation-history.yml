@@ -51,7 +51,9 @@ jobs:
           python -m pip install --disable-pip-version-check "exchange-calendars>=4.5,<5"
 
       - name: Probe Legulegu public A-share single-stock history (isolated candidate)
+        continue-on-error: true
         run: |
+          python -m py_compile scripts/probe_legulegu_a_share_history.py
           python scripts/probe_legulegu_a_share_history.py
 
       - name: Ensure BaoStock input file exists
