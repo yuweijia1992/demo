@@ -25,7 +25,6 @@ from typing import Any
 
 API_URLS = [
     "https://legulegu.com/api/s/base-info/",
-    "https://www.legulegu.com/api/s/base-info/",
 ]
 PAGE_URLS = [
     "https://legulegu.com/s/{code}",
@@ -43,8 +42,9 @@ ALIASES = {
 }
 
 
-def token_for(day: date) -> str:
-    return hashlib.md5(day.strftime("%Y%m%d").encode("utf-8")).hexdigest()
+def token_for(day: date, compact: bool = False) -> str:
+    token_date = day.strftime("%Y%m%d") if compact else day.isoformat()
+    return hashlib.md5(token_date.encode("utf-8")).hexdigest()
 
 
 def norm_key(value: Any) -> str:
@@ -86,56 +86,57 @@ def parse_number(value: Any) -> float | None:
 def request_payload(code: str, timeout: int, retries: int) -> tuple[dict[str, Any] | None, str, list[str]]:
     attempts: list[str] = []
     now_cn = datetime.now(ZoneInfo("Asia/Shanghai")).date()
-    token_dates = [now_cn, now_cn - timedelta(days=1), now_cn + timedelta(days=1)]
+    token_dates = [now_cn, now_cn - timedelta(days=1)]
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/128 Safari/537.36"
     for api_url in API_URLS:
         origin = api_url.split("/api/", 1)[0]
         page_url = origin + "/"
-        for day in token_dates:
-            jar = http.cookiejar.CookieJar()
-            opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
-            csrf_headers = {
-                "User-Agent": user_agent,
-                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            }
-            try:
-                with opener.open(urllib.request.Request(page_url, headers=csrf_headers), timeout=timeout) as resp:
-                    html = resp.read().decode("utf-8", errors="replace")
+        jar = http.cookiejar.CookieJar()
+        opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
+        csrf_headers = {
+            "User-Agent": user_agent,
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        }
+        try:
+            with opener.open(urllib.request.Request(page_url, headers=csrf_headers), timeout=timeout) as resp:
+                html = resp.read().decode("utf-8", errors="replace")
+            match = re.search(
+                r"""<meta[^>]+name=["']_csrf["'][^>]+content=["']([^"']+)["']""",
+                html,
+                flags=re.IGNORECASE,
+            )
+            if not match:
                 match = re.search(
-                    r'<meta[^>]+name=["\\\']_csrf["\\\'][^>]+content=["\\\']([^"\\\']+)["\\\']',
+                    r"""<meta[^>]+content=["']([^"']+)["'][^>]+name=["']_csrf["']""",
                     html,
                     flags=re.IGNORECASE,
                 )
-                if not match:
-                    match = re.search(
-                        r'<meta[^>]+content=["\\\']([^"\\\']+)["\\\'][^>]+name=["\\\']_csrf["\\\']',
-                        html,
-                        flags=re.IGNORECASE,
-                    )
-                if not match:
-                    raise RuntimeError("homepage did not expose meta[name=_csrf]")
-                csrf = match.group(1)
-            except Exception as exc:
-                attempts.append(f"{page_url} tokenDate={day.isoformat()}: csrf bootstrap failed: {exc}")
-                continue
+            if not match:
+                raise RuntimeError("homepage did not expose meta[name=_csrf]")
+            csrf = match.group(1)
+        except Exception as exc:
+            attempts.append(f"{page_url}: csrf bootstrap failed: {exc}")
+            continue
 
-            params = urllib.parse.urlencode({"token": token_for(day), "id": code})
-            headers = {
-                "User-Agent": user_agent,
-                "Accept": "application/json,text/plain,*/*",
-                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-                "X-CSRF-Token": csrf,
-                "X-Requested-With": "XMLHttpRequest",
-                "Origin": origin,
-                "Referer": PAGE_URLS[API_URLS.index(api_url)].format(code=code),
-            }
-            for method in ("POST", "GET"):
+        headers = {
+            "User-Agent": user_agent,
+            "Accept": "application/json,text/plain,*/*",
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "X-CSRF-Token": csrf,
+            "X-Requested-With": "XMLHttpRequest",
+            "Origin": origin,
+            "Referer": PAGE_URLS[API_URLS.index(api_url)].format(code=code),
+        }
+        # The legacy AKShare implementation used an ISO-date MD5 token;
+        # an independent JS port uses YYYYMMDD. Probe both without relaxing
+        # field mapping or assuming that either token format is accepted.
+        token_formats = (False, True)
+        for day in token_dates:
+            for compact in token_formats:
+                params = urllib.parse.urlencode({"token": token_for(day, compact=compact), "id": code})
                 for attempt in range(retries + 1):
                     try:
-                        if method == "POST":
-                            req = urllib.request.Request(api_url, data=params.encode("utf-8"), headers=headers, method="POST")
-                        else:
-                            req = urllib.request.Request(api_url + "?" + params, headers=headers, method="GET")
+                        req = urllib.request.Request(api_url, data=params.encode("utf-8"), headers=headers, method="POST")
                         with opener.open(req, timeout=timeout) as resp:
                             body = resp.read().decode("utf-8", errors="replace")
                         if not body.strip():
@@ -146,7 +147,8 @@ def request_payload(code: str, timeout: int, retries: int) -> tuple[dict[str, An
                         return data, api_url, attempts
                     except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
                             json.JSONDecodeError, RuntimeError, OSError) as exc:
-                        attempts.append(f"{method} {api_url} tokenDate={day.isoformat()} attempt={attempt+1}: {exc}")
+                        label = "YYYYMMDD" if compact else "YYYY-MM-DD"
+                        attempts.append(f"POST {api_url} tokenDate={day.isoformat()} format={label} attempt={attempt+1}: {exc}")
                         if attempt < retries:
                             time.sleep(1.0 * (attempt + 1))
     return None, "", attempts
