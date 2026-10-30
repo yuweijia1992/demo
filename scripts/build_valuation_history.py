@@ -19,16 +19,16 @@ from typing import Any
 
 METRICS = ("peTtm", "pb", "psTtm")
 WINDOWS = {
-    "5Y": {"months": 60, "minimum": 48},
-    "10Y": {"months": 120, "minimum": 96},
+    "5Y": {"months": 60, "minimum": 60},
+    "10Y": {"months": 120, "minimum": 120},
 }
 ALIASES = {
     "code": ("code", "ts_code", "stockCode", "securityCode", "security_code"),
     "date": ("date", "trade_date", "tradeDate"),
     "close": ("close", "sp", "close_price"),
-    "peTtm": ("peTtm", "pe_ttm", "peTtmValue"),
-    "pb": ("pb", "pb_lf"),
-    "psTtm": ("psTtm", "ps_ttm", "psTtmValue"),
+    "peTtm": ("peTtm", "pe_ttm", "peTtmValue", "peTTM"),
+    "pb": ("pb", "pb_lf", "pbMRQ"),
+    "psTtm": ("psTtm", "ps_ttm", "psTtmValue", "psTTM"),
     "currency": ("currency", "cur"),
     "source": ("source", "provider", "data_source"),
     "sourceUrl": ("sourceUrl", "source_url", "sourceURL", "url"),
@@ -110,31 +110,35 @@ def csv_write(path: Path, rows: list[dict[str, Any]], columns: list[str]) -> Non
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", required=True, help="Normalized or provider-exported daily valuation CSV")
+    parser.add_argument("--input", action="append", required=True, help="Daily valuation CSV; may be repeated for non-overlapping sources")
     parser.add_argument("--universe", default="data/valuation-history/universe.json")
     parser.add_argument("--out-dir", default="data/valuation-history/generated")
-    parser.add_argument("--start-month", default="2006-01")
-    parser.add_argument("--end-month", default="2026-09")
+    parser.add_argument("--start-month", default=None)
+    parser.add_argument("--end-month", default=None)
     parser.add_argument("--source-label", default="")
     parser.add_argument("--source-url", default="")
     args = parser.parse_args()
 
-    if not re.fullmatch(r"\d{4}-\d{2}", args.start_month) or not re.fullmatch(r"\d{4}-\d{2}", args.end_month):
-        parser.error("--start-month / --end-month must use YYYY-MM")
-    start_idx = month_index(date.fromisoformat(args.start_month + "-01"))
-    end_idx = month_index(date.fromisoformat(args.end_month + "-01"))
-    if start_idx > end_idx:
-        parser.error("start-month must not be later than end-month")
-
     universe_path = Path(args.universe)
-    input_path = Path(args.input)
+    input_paths = [Path(value) for value in args.input]
     out_dir = Path(args.out_dir)
     if not universe_path.exists():
         parser.error(f"universe file not found: {universe_path}")
-    if not input_path.exists():
-        parser.error(f"input file not found: {input_path}")
+    for input_path in input_paths:
+        if not input_path.exists():
+            parser.error(f"input file not found: {input_path}")
 
     universe = json.loads(universe_path.read_text(encoding="utf-8"))
+    universe_range = universe.get("range", {})
+    start_month = args.start_month or universe_range.get("startMonth", "2006-01")
+    end_month = args.end_month or universe_range.get("endMonth") or datetime.now().strftime("%Y-%m")
+    if not re.fullmatch(r"\d{4}-\d{2}", start_month) or not re.fullmatch(r"\d{4}-\d{2}", end_month):
+        parser.error("--start-month / --end-month must use YYYY-MM")
+    start_idx = month_index(date.fromisoformat(start_month + "-01"))
+    end_idx = month_index(date.fromisoformat(end_month + "-01"))
+    if start_idx > end_idx:
+        parser.error("start-month must not be later than end-month")
+
     securities = universe.get("securities", [])
     by_code = {canonical_code(item["securityCode"]): item for item in securities}
     if len(by_code) != len(securities):
@@ -150,67 +154,70 @@ def main() -> int:
     currency_mismatches: list[str] = []
     input_rows = 0
 
-    with input_path.open("r", newline="", encoding="utf-8-sig") as handle:
-        reader = csv.DictReader(handle)
-        headers = set(reader.fieldnames or [])
-        if not any(alias in headers for alias in ALIASES["code"]):
-            parser.error("input CSV is missing code/ts_code/stockCode")
-        if not any(alias in headers for alias in ALIASES["date"]):
-            parser.error("input CSV is missing date/trade_date")
-        for row_number, row in enumerate(reader, start=2):
-            input_rows += 1
-            raw_code = pick(row, "code")
-            code = canonical_code(raw_code)
-            if code not in by_code:
-                unknown_codes.add(code or f"(blank row {row_number})")
-                continue
-            try:
-                day = parse_date(pick(row, "date"))
-            except Exception:
-                invalid_dates += 1
-                continue
-            idx = month_index(day)
-            if idx < start_idx or idx > end_idx:
-                continue
-            source = str(pick(row, "source", args.source_label) or "").strip()
-            source_url = str(pick(row, "sourceUrl", args.source_url) or "").strip()
-            if not source or not source_url.startswith(("https://", "http://")):
-                missing_provenance += 1
-                continue
+    for input_path in input_paths:
+        with input_path.open("r", newline="", encoding="utf-8-sig") as handle:
+            reader = csv.DictReader(handle)
+            headers = set(reader.fieldnames or [])
+            if not any(alias in headers for alias in ALIASES["code"]):
+                parser.error(f"{input_path}: missing code/ts_code/stockCode")
+            if not any(alias in headers for alias in ALIASES["date"]):
+                parser.error(f"{input_path}: missing date/trade_date")
+            for row_number, row in enumerate(reader, start=2):
+                input_rows += 1
+                raw_code = pick(row, "code")
+                code = canonical_code(raw_code)
+                if code not in by_code:
+                    unknown_codes.add(code or f"(blank row {input_path}:{row_number})")
+                    continue
+                try:
+                    day = parse_date(pick(row, "date"))
+                except Exception:
+                    invalid_dates += 1
+                    continue
+                idx = month_index(day)
+                if idx < start_idx or idx > end_idx:
+                    continue
+                source = str(pick(row, "source", args.source_label) or "").strip()
+                source_url = str(pick(row, "sourceUrl", args.source_url) or "").strip()
+                if not source or not source_url.startswith(("https://", "http://")):
+                    missing_provenance += 1
+                    continue
 
-            expected_currency = str(by_code[code].get("currency", "")).strip().upper()
-            row_currency = str(pick(row, "currency", expected_currency) or expected_currency).strip().upper()
-            currency_aliases = {"RMB": "CNY", "CNH": "CNY"}
-            row_currency = currency_aliases.get(row_currency, row_currency)
-            if expected_currency and row_currency and row_currency != expected_currency:
-                currency_mismatches.append(f"{code} {day.isoformat()}: expected {expected_currency}, got {row_currency}")
-                continue
+                expected_currency = str(by_code[code].get("currency", "")).strip().upper()
+                row_currency = str(pick(row, "currency", expected_currency) or expected_currency).strip().upper()
+                currency_aliases = {"RMB": "CNY", "CNH": "CNY"}
+                row_currency = currency_aliases.get(row_currency, row_currency)
+                if expected_currency and row_currency and row_currency != expected_currency:
+                    currency_mismatches.append(f"{code} {day.isoformat()}: expected {expected_currency}, got {row_currency}")
+                    continue
 
-            record: dict[str, Any] = {
-                "code": code,
-                "issuerName": by_code[code]["issuerName"],
-                "date": day.isoformat(),
-                "month": month_label(idx),
-                "close": as_float(pick(row, "close")),
-                "currency": row_currency or expected_currency,
-                "source": source,
-                "sourceUrl": source_url,
-            }
-            for metric in METRICS:
-                raw = as_float(pick(row, metric))
-                if raw is not None and raw <= 0:
-                    invalid_values[metric] += 1
-                    raw = None
-                record[metric] = raw
+                record: dict[str, Any] = {
+                    "code": code,
+                    "issuerName": by_code[code]["issuerName"],
+                    "date": day.isoformat(),
+                    "month": month_label(idx),
+                    "close": as_float(pick(row, "close")),
+                    "currency": row_currency or expected_currency,
+                    "source": source,
+                    "sourceUrl": source_url,
+                }
+                for metric in METRICS:
+                    raw = as_float(pick(row, metric))
+                    if raw is not None and raw <= 0:
+                        invalid_values[metric] += 1
+                        raw = None
+                    record[metric] = raw
 
-            existing = daily[code].get(day)
-            if existing is not None:
-                if existing == record:
-                    duplicate_identical += 1
-                else:
-                    duplicate_conflicts.append(f"{code} {day.isoformat()}")
-                continue
-            daily[code][day] = record
+                existing = daily[code].get(day)
+                if existing is not None:
+                    # Eastmoney is the preferred source from 2018 onward; BaoStock backfill ends in 2017.
+                    same_metrics = all(existing.get(k) == record.get(k) for k in ("close", "peTtm", "pb", "psTtm"))
+                    if same_metrics:
+                        duplicate_identical += 1
+                    else:
+                        duplicate_conflicts.append(f"{code} {day.isoformat()} ({existing.get('source')} vs {record.get('source')})")
+                    continue
+                daily[code][day] = record
 
     if duplicate_conflicts:
         sample = ", ".join(duplicate_conflicts[:10])
@@ -288,12 +295,24 @@ def main() -> int:
     csv_write(out_dir / "valuation-monthly.csv", monthly_rows, columns)
 
     covered_codes = {row["code"] for row in monthly_rows}
+    latest_by_code: dict[str, dict[str, Any]] = {}
+    for row in monthly_rows:
+        code = row["code"]
+        if code not in latest_by_code or latest_by_code[code]["date"] < row["date"]:
+            latest_by_code[code] = row
+    latest_percentile_coverage = {
+        metric: {
+            "5Y": sum(1 for row in latest_by_code.values() if row.get(f"{metric}Pct5Y") is not None),
+            "10Y": sum(1 for row in latest_by_code.values() if row.get(f"{metric}Pct10Y") is not None),
+        }
+        for metric in METRICS
+    }
     coverage = {
         "title": "中国49家公司历史估值月度序列覆盖审计",
         "generatedAt": datetime.now().astimezone().isoformat(timespec="seconds"),
-        "inputFile": str(input_path),
+        "inputFiles": [str(path) for path in input_paths],
         "universeFile": str(universe_path),
-        "period": {"startMonth": args.start_month, "endMonth": args.end_month},
+        "period": {"startMonth": start_month, "endMonth": end_month},
         "frequency": "one last observed trading-date row per calendar month",
         "inputDailyRowsRead": input_rows,
         "monthlyRowsWritten": len(monthly_rows),
@@ -306,6 +325,7 @@ def main() -> int:
         "invalidNonPositiveValuesSetNull": dict(invalid_values),
         "percentileMethod": "100 * (count(x < current) + 0.5 * count(x == current)) / N",
         "windows": WINDOWS,
+        "latestMonthEndPercentileCoverage": latest_percentile_coverage,
         "securities": sorted(audit_securities, key=lambda x: x["code"]),
         "status": "NO_HISTORICAL_DATA" if not monthly_rows else "REVIEW_AUDIT_BEFORE_PUBLISH",
         "warnings": [
