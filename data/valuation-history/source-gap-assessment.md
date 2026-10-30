@@ -123,15 +123,32 @@
 | TuShare | A股daily_basic含PE/PB/PS，但需要积分；不作为免费源 | 否 |
 | BigQuant | 存在历史估值数据集候选，下载权限与再发布许可需核实 | 仅备选，不能按免费公开源处理 |
 
-## 新增候选源：乐咕单股历史估值接口（待实测）
+## 候选源实测：乐咕单股历史估值接口（未成功接入）
 
-旧版AKShare兼容实现及一个独立JavaScript客户端都记录了乐咕单股接口：
+旧版AKShare兼容实现及独立客户端记录了乐咕单股接口：
 - 请求路径：`https://legulegu.com/api/s/base-info/`
-- 请求流程：访问首页建立Cookie并读取 `meta[name=_csrf]`，然后POST `token` 与 `id`。
-- 字段样例：`trade_date, pe, pe_ttm, pb, ps, ps_ttm, dv_ratio, dv_ttm`。
-- 当前探测器只把明确的 `pe_ttm`、`pb`、`ps_ttm`映射为目标指标；静态PE和静态PS不冒充TTM。
-- 已在GitHub Actions中加入隔离探测步骤，候选输出路径为 `raw/legulegu-a-share-candidate.csv` 与 `raw/legulegu-fetch-audit.json`；该输出不参与正式月度序列的合并。
-- 当前仓库尚未出现这两个实测产物，因此此接口现在只能标为“已发现协议、待实测可用性”，不能称为已获取2015年数据。
+- 请求流程：访问首页建立Cookie并读取 `meta[name=_csrf]`，再POST日期MD5令牌与证券代码。
+- 历史客户端响应字段样例：`trade_date, pe, pe_ttm, pb, ps, ps_ttm, dv_ratio, dv_ttm`。
+- 本项目探测器严格只映射明确的 `pe_ttm`、`pb`、`ps_ttm`字段，未将静态PE/PS冒充TTM。
+
+**2026-10-30首轮实际探测结果：** 44/44只A股均为 `REQUEST_ERROR`，0家公司有映射记录，0条日频候选数据。审计错误主要为首页CSRF请求HTTP 504，以及API请求HTTP 401/429。候选CSV仅有表头。后续改为共用Cookie/CSRF会话、单线程顺序限速后，试运行被下一次工作流刷新取消；因此没有得到可以验证的第二轮完整样本。现已将乐咕探测调整为仅手动重试，不让失败端点拖慢常规数据更新。
+
+结论：乐咕历史接口的旧版字段与协议有参考价值，但**当前匿名公开访问不可用/不稳定**，没有取得任何可并入数据库的真实数值；不能把旧客户端代码当作当前可访问性证据。
+
+## 新增待实测来源：亿牛网A股历史估值图表
+
+公开客户端 `jstarcraft-crawler` 的 `EniuHistory.java` 将以下亿牛网接口映射为全历史估值字段：
+- `/chart/pea/{sh|sz代码}/t/all` → 日期数组与 `pe_ttm`；
+- `/chart/pba/{sh|sz代码}/t/all` → 日期数组与 `pb`；
+- `/chart/psa/{sh|sz代码}/t/all` → 日期数组与 `ps`；
+- `/chart/pricea/{sh|sz代码}/t/all` → 日期数组与 `price`。
+
+与乐咕不同，该来源的客户端代码直接读JSON列式数组，无需CSRF会话。已新增 `scripts/probe_eniu_a_share_history.py`，并纳入常规数据刷新工作流，候选输出与正式数据库隔离：
+- `raw/eniu-a-share-candidate.csv`
+- `raw/eniu-a-share-fetch-audit.json`
+
+**口径限制：** `pe_ttm` 明确为TTM，`pb` 为PB；图表的 `ps` 字段暂未确认是否为TTM，因此单独存为 `psRaw`，不直接计入正式PS-TTM覆盖。脚本已修正为请求 `t/all` 全历史区间，而非较短的 `t/1`。接口能否返回、覆盖起止日期与是否陈旧，均以本轮GitHub Actions的实际审计为准。
+
 
 ## 后续工作顺序
 
