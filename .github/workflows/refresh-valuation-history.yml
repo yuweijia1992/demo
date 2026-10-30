@@ -2,12 +2,22 @@ name: Refresh public A-share valuation history
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "data/valuation-history/universe.json"
+      - "scripts/fetch_eastmoney_a_share_valuation.py"
+      - "scripts/build_valuation_history.py"
   schedule:
     # Monthly refresh; 17:30 China Standard Time on the 3rd day of each month.
     - cron: "30 9 3 * *"
 
 permissions:
   contents: write
+
+concurrency:
+  group: public-a-share-valuation-refresh
+  cancel-in-progress: true
 
 jobs:
   fetch-and-build:
