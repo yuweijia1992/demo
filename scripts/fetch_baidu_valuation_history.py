@@ -21,6 +21,8 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
+import exchange_calendars as xcals
+
 A_ENDPOINT = "https://gushitong.baidu.com/opendata"
 HK_ENDPOINT = "https://finance.baidu.com/opendata"
 A_PAGE = "https://gushitong.baidu.com/stock/ab-{code}"
@@ -28,6 +30,18 @@ HK_PAGE = "https://gushitong.baidu.com/stock/hk-{code}"
 SOURCE_LABEL = "Baidu Stock Tong / valuation history (AKShare endpoint specification)"
 INDICATORS = {"peTtm": ("市盈率(TTM)",), "pb": ("市净率",), "psTtm": ("市销率(TTM)", "市销率")}
 COLUMNS = ["code", "date", "close", "currency", "peTtm", "pb", "psTtm", "source", "sourceUrl"]
+
+
+def load_market_sessions(start_day: str, end_day: str) -> dict[str, set[str]]:
+    """Return real exchange sessions; Baidu charts also contain weekend/holiday carry-forwards."""
+    sessions: dict[str, set[str]] = {}
+    for market, calendar_name in (("CN", "XSHG"), ("HK", "XHKG")):
+        calendar = xcals.get_calendar(calendar_name)
+        values = calendar.sessions_in_range(start_day, end_day)
+        sessions[market] = {str(value)[:10] for value in values}
+        if not sessions[market]:
+            raise RuntimeError(f"No exchange sessions returned for {market} ({calendar_name})")
+    return sessions
 
 
 def load_universe(path: Path) -> list[dict[str, Any]]:
@@ -215,6 +229,7 @@ def main() -> int:
     securities = load_universe(Path(args.universe))
     excluded = load_excluded(Path(args.exclude_file) if args.exclude_file else None)
     cutoff = date.fromisoformat(args.a_share_cutoff)
+    market_sessions = load_market_sessions("1999-01-01", date.today().isoformat())
     output_rows: list[dict[str, Any]] = []
     audits: list[dict[str, Any]] = []
     any_codes: set[str] = set()
@@ -229,6 +244,7 @@ def main() -> int:
         market = str(security.get("market", "")).upper()
         raw_code = code.split(".")[0]
         page_url = (A_PAGE if market == "CN" else HK_PAGE).format(code=raw_code)
+        valid_sessions = market_sessions[market]
         by_day: dict[str, dict[str, float | None]] = defaultdict(dict)
         day_sources: dict[str, set[str]] = defaultdict(set)
         day_source_urls: dict[str, set[str]] = defaultdict(set)
@@ -252,12 +268,18 @@ def main() -> int:
                     attempts.append({"indicator": indicator, "status": "ERROR", "error": str(exc)})
                 time.sleep(max(0.0, args.pause))
             for day, value in series:
+                if day not in valid_sessions:
+                    continue
                 if market == "CN" and date.fromisoformat(day) >= cutoff:
                     continue
                 by_day[day][metric] = value
                 day_sources[day].add(SOURCE_LABEL)
                 day_source_urls[day].add(page_url)
-            kept = sum(1 for day, _ in series if market != "CN" or date.fromisoformat(day) < cutoff)
+            kept = sum(
+                1 for day, _ in series
+                if day in valid_sessions and (market != "CN" or date.fromisoformat(day) < cutoff)
+            )
+            non_trading_dropped = sum(1 for day, _ in series if day not in valid_sessions)
             metric_status = "OK" if series else ("ERROR" if attempts and all(x["status"] == "ERROR" for x in attempts) else "EMPTY")
             security_audits.append({
                 "code": code, "market": market, "metric": metric,
@@ -265,6 +287,7 @@ def main() -> int:
                 "indicatorAttempts": attempts,
                 "periodRequested": args.period, "rowsReturned": len(series),
                 "rowsRetainedForBuild": kept,
+                "nonTradingCalendarRowsDropped": non_trading_dropped,
                 "firstDate": series[0][0] if series else None,
                 "lastDate": series[-1][0] if series else None,
                 "endpoint": request_url.split("?")[0] if request_url else "",
@@ -282,7 +305,8 @@ def main() -> int:
                     eniu_series, eniu_url = fetch_eniu_series(raw_code, metric, args.timeout, args.retries)
                     eligible = [
                         (day, value) for day, value in eniu_series
-                        if (baidu_first is None or date.fromisoformat(day) < date.fromisoformat(baidu_first))
+                        if day in valid_sessions
+                        and (baidu_first is None or date.fromisoformat(day) < date.fromisoformat(baidu_first))
                         and by_day.get(day, {}).get(metric) is None
                     ]
                     for day, value in eligible:
@@ -293,6 +317,7 @@ def main() -> int:
                         "code": code, "market": market, "metric": metric,
                         "source": "Eniu public HK indicator chart", "rowsReturned": len(eniu_series),
                         "rowsRetainedBeforeBaidu": len(eligible),
+                        "nonTradingCalendarRowsDropped": sum(1 for day, _ in eniu_series if day not in valid_sessions),
                         "firstDate": eniu_series[0][0] if eniu_series else None,
                         "lastDate": eniu_series[-1][0] if eniu_series else None,
                         "sourceUrl": eniu_url, "status": "OK" if eniu_series else "EMPTY",
@@ -370,8 +395,9 @@ def main() -> int:
         "aShareCompaniesWithPre2018Data": len(a_pre2018_codes),
         "hkCompaniesWithData": len(hk_codes),
         "dailyRowsWritten": len(output_rows),
-        "eniuHistoricalFallbackRows": sum(1 for row in output_rows if row["source"].startswith("Eniu")),
+        "eniuHistoricalFallbackRows": sum(1 for row in output_rows if "Eniu public HK" in row["source"]),
         "aShareRowsArePre2018Only": True,
+        "calendarSource": "exchange_calendars XSHG + XHKG sessions; weekends and exchange holidays removed before month-end aggregation",
         "documentedMetrics": ["PE-TTM", "PB"],
         "undocumentedPSProbeLabels": ["市销率(TTM)", "市销率"],
         "metricsWithReturnedRows": sorted({item["metric"] for item in audits if item["status"] == "OK"}),
