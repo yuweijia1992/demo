@@ -621,5 +621,6 @@
     }
   ],
   "refreshRequestedAt": "2026-10-30",
-  "refreshRequestReason": "Trigger first public Eastmoney A-share history ingestion and validate online data coverage"
+  "refreshRequestReason": "Rerun with concurrent-safe rebase push and preserve first-run public data audit",
+  "refreshRevision": 1
 }
