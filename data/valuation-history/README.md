@@ -2,14 +2,14 @@
 
 ## 状态
 
-**数据工程已建立；真实历史序列尚未导入。** 当前目录不含伪造的历史PE/PB/PS数值。只有取得可追溯的供应商历史记录、完成月末抽样和质量审计后，才会生成正式月度数据及估值分位。
+**A股首批真实历史数据已入库；2006—2017回补正在接入。** 东方财富公开接口首轮已成功取得44/44只A股共89,695条日频记录，聚合生成4,402条月度记录（实际历史起点为2018年1月，部分新上市公司更晚）。这些记录已提交仓库。BaoStock公开日频回补脚本已加入，计划补充2017年及以前的数据；未完成回补和审计的月份继续留空。
 
 - 发行人：49家
 - 当前主证券：44只A股 + 5只港股
-- 期间：2006-01 至 2026-09；公司上市前不补造数据
+- 目标期间：2006-01 至 2026-10；各证券实际起点由供应商历史记录决定，公司上市前不补造数据
 - 频率：每月最后一个有数据的交易日
 - 指标：PE-TTM、PB、PS-TTM
-- 统计窗口：最近60个日历月、120个日历月；5年/10年分别至少需要48/96个有效月度观测
+- 统计窗口：最近60个日历月、120个日历月；5年/10年分别必须有完整60/120个有效月度观测，否则分位留空
 - 原则：保留上市地币种、证券代码、原始日期、数据源与来源链接；负PE不进入PE分位；没有可靠数据时留空
 
 ## 证券口径
@@ -20,7 +20,7 @@ universe.json 冻结49家公司的主证券代码。对同一发行人存在A/H�
 
 ### A股：直接使用网上公开历史数据（首批44家）
 
-**主源：东方财富数据中心 RPT_VALUEANALYSIS_DET，由 AKShare 的 stock_value_em 接口封装。**
+**2018年至今主源：东方财富数据中心 RPT_VALUEANALYSIS_DET，由 AKShare 的 stock_value_em 接口封装。**
 
 AKShare 最新估值文档说明，stock_value_em(symbol) 可按单只A股代码获取全部历史估值记录，字段包含交易日期、收盘价、PE(TTM)、PE(静)、PB(MRQ)、PS(TTM)、市值等；接口底层为东方财富 Data Center，数据集为 RPT_VALUEANALYSIS_DET。本项目直接请求其公开 JSON 数据接口，不要求 Tushare 积分或个人 Token。
 - AKShare 官方文档：https://akshare.akfamily.xyz/data/stock/stock_valuation.html （搜索“个股估值 / stock_value_em”）
@@ -29,7 +29,7 @@ AKShare 最新估值文档说明，stock_value_em(symbol) 可按单只A股代码
 - 原始字段：PE_TTM、PB_MRQ、PS_TTM、CLOSE_PRICE、TRADE_DATE
 - 口径：日频；下载后按每月最后一个有效交易日聚合。PE 为负值/亏损期保留在原始文件，但不纳入正PE历史分位。PB 使用 MRQ；PS 使用 TTM。
 
-执行方式：GitHub Actions 每月自动拉取44只A股主证券的日频历史数据，再生成月末估值序列、60/120个月历史分位与 P20/P50/P80 阈值。也可在仓库 Actions 页面手动运行 Refresh public A-share valuation history。
+已完成首轮线上验证：44/44家A股成功，89,695条日频记录，生成4,402条月度记录，失败0家。该公开接口的实际回溯起点为2018-01（新上市公司按上市日期起算），不等于目标区间2006年。GitHub Actions 每月自动更新东方财富段，并可手动运行。
 
 脚本与工作流：
 - scripts/fetch_eastmoney_a_share_valuation.py：从东方财富公开 JSON 接口抓取44只A股历史估值
@@ -38,6 +38,18 @@ AKShare 最新估值文档说明，stock_value_em(symbol) 可按单只A股代码
 
 **数据限制：** 东方财富个股估值页的历史长度取决于个股上市时间及上游返回记录数；本项目按上游可得历史记录入库，不对上市前月份补值。数据源为公开金融信息服务，不等同于交易所原始公告；建议对异常值及关键证券与第二来源抽样核验。
 
+
+### A股历史回补：BaoStock（目标2006—2017）
+
+为延长历史区间，已新增 BaoStock 官方公开日频接口作为2017年及以前的回补源。官方 Python API `query_history_k_data_plus` 支持 `peTTM`、`pbMRQ`、`psTTM` 与收盘价字段；无需个人 Token。
+- 官方文档：https://github.com/baostock/baostock/blob/master/docs/pythonAPI.md
+- 官方项目：https://github.com/baostock/baostock
+- 下载脚本：`scripts/fetch_baostock_a_share_valuation.py`
+- 回补区间：2006-01-01 至 2017-12-31；实际起点以每只股票上游返回的记录为准
+
+自动更新时先抓取BaoStock早期数据，再抓取东方财富2018年至今数据，合并时保留每行来源。两个来源日期区间按设计不重叠；若供应商数据实际重叠且数值冲突，构建程序会停止，不静默覆盖。BaoStock没有返回的早期月份保持缺失，不按日/月股价或年度财务指标插值。
+
+**注意：** BaoStock回补脚本刚接入自动化，尚需首轮工作流实测确认每只证券的实际早期覆盖。不能把2006-01的目标日期当作已实现的数据起点。
 ### 港股公开网页样本核验（可见数据不等于可免费批量导出）
 
 已核实 GuruFocus 的个股页面可展示部分港股日频 PE-TTM 历史：
@@ -91,13 +103,12 @@ AKShare 最新估值文档说明，stock_value_em(symbol) 可按单只A股代码
 
 ## 生成月度序列
 
-在本仓库根目录运行：
+在本仓库根目录运行（支持多个来源文件，按证券与日期合并）：
 
 ~~~bash
 python scripts/build_valuation_history.py \\
-  --input raw/daily-valuation.csv \\
-  --source-label "供应商名称 / 数据集名称" \\
-  --source-url "https://供应商的来源说明页面" \\
+  --input data/valuation-history/raw/baostock-pre2018-daily.csv \\
+  --input data/valuation-history/raw/eastmoney-a-share-daily.csv \\
   --out-dir data/valuation-history/generated
 ~~~
 
@@ -113,8 +124,8 @@ python scripts/build_valuation_history.py \\
 
 P(x_t) = 100 × [计数(x_i < x_t) + 0.5 × 计数(x_i = x_t)] / N
 
-- 5年：当前月及此前59个日历月；有效样本不少于48个
-- 10年：当前月及此前119个日历月；有效样本不少于96个
+- 5年：当前月及此前59个日历月；有效样本必须达到60个
+- 10年：当前月及此前119个日历月；有效样本必须达到120个
 - P20/P50/P80阈值使用线性插值分位数，和“当前值处于历史分位”的百分比不是同一个概念
 - PE仅接受正值；亏损时PE为空。PB、PS也仅对正且可解释的口径计算
 - 上市不足5年或10年的公司，不输出对应完整窗口分位；可以单独展示“上市以来分位”，但不得冒充5年/10年分位
