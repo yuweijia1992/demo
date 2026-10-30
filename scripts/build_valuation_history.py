@@ -147,6 +147,7 @@ def main() -> int:
     duplicate_conflicts: list[str] = []
     invalid_values = defaultdict(int)
     missing_provenance = 0
+    currency_mismatches: list[str] = []
     input_rows = 0
 
     with input_path.open("r", newline="", encoding="utf-8-sig") as handle:
@@ -177,13 +178,21 @@ def main() -> int:
                 missing_provenance += 1
                 continue
 
+            expected_currency = str(by_code[code].get("currency", "")).strip().upper()
+            row_currency = str(pick(row, "currency", expected_currency) or expected_currency).strip().upper()
+            currency_aliases = {"RMB": "CNY", "CNH": "CNY"}
+            row_currency = currency_aliases.get(row_currency, row_currency)
+            if expected_currency and row_currency and row_currency != expected_currency:
+                currency_mismatches.append(f"{code} {day.isoformat()}: expected {expected_currency}, got {row_currency}")
+                continue
+
             record: dict[str, Any] = {
                 "code": code,
                 "issuerName": by_code[code]["issuerName"],
                 "date": day.isoformat(),
                 "month": month_label(idx),
                 "close": as_float(pick(row, "close")),
-                "currency": str(pick(row, "currency", by_code[code].get("currency", "")) or "").strip(),
+                "currency": row_currency or expected_currency,
                 "source": source,
                 "sourceUrl": source_url,
             }
@@ -206,6 +215,9 @@ def main() -> int:
     if duplicate_conflicts:
         sample = ", ".join(duplicate_conflicts[:10])
         parser.error(f"conflicting duplicate security/date rows ({len(duplicate_conflicts)}); examples: {sample}")
+    if currency_mismatches:
+        sample = "; ".join(currency_mismatches[:10])
+        parser.error(f"security currency mismatch ({len(currency_mismatches)}); examples: {sample}")
     if missing_provenance:
         parser.error(
             f"{missing_provenance} rows have no source label or valid sourceUrl. "
