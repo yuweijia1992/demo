@@ -1,0 +1,283 @@
+{
+  "source": "BaoStock / query_history_k_data_plus",
+  "sourceUrl": "https://github.com/baostock/baostock/blob/master/docs/pythonAPI.md",
+  "fetchedAt": "2026-10-30T08:46:47+00:00",
+  "startDate": "2015-01-01",
+  "endDate": "2017-12-31",
+  "requestedAshareCompanies": 44,
+  "companiesWithRows": 0,
+  "dailyRows": 0,
+  "failedOrEmptyCompanies": [
+    {
+      "scope": "login",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    }
+  ],
+  "securities": [
+    {
+      "code": "600887.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "002714.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "603288.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "600398.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "600690.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "000333.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "000651.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "002594.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "600066.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "601816.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "002352.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "601919.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "300760.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "600276.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "603259.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "300015.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "600511.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "600900.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "600674.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "601985.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "601088.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "600406.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "600941.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "601728.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "601668.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "688981.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "002371.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "688041.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "300308.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "300750.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "300274.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "300124.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "600036.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "601398.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "601318.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "601601.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "600030.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "300059.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "601888.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "600754.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "002027.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "002607.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "000598.SZ",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "code": "600323.SH",
+      "rows": 0,
+      "status": "ERROR",
+      "error": "BaoStock login failed: 10002007 网络接收错误。"
+    }
+  ],
+  "note": "BaoStock daily valuation indicators. Missing and non-positive valuation values remain blank; no forward filling or interpolation."
+}

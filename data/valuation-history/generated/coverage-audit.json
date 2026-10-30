@@ -1,7 +1,8 @@
 {
   "title": "中国49家公司历史估值月度序列覆盖审计",
-  "generatedAt": "2026-10-30T08:39:49+00:00",
+  "generatedAt": "2026-10-30T08:47:24+00:00",
   "inputFiles": [
+    "data/valuation-history/raw/baostock-pre2018-daily.csv",
     "data/valuation-history/raw/eastmoney-a-share-daily.csv"
   ],
   "universeFile": "data/valuation-history/universe.json",
