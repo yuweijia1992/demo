@@ -2,7 +2,7 @@
 
 ## 状态
 
-**A股首批真实历史数据已入库；2015—2017回补首轮失败，等待手动重试。** 东方财富公开接口成功取得44/44只A股共89,695条日频记录，聚合生成4,446条月度记录（截至2026-10）；实际历史起点为2018年1月，部分新上市公司更晚。BaoStock回补在GitHub Actions登录阶段返回10002007（网络接收错误），0家公司取得早期数据；原始失败审计已提交，缺失月份继续留空。
+**A股2018年至今首批真实历史数据已入库；新增百度公开估值历史补充源，等待首次自动化实测。** 东方财富公开接口成功取得44/44只A股共89,695条日频记录，聚合生成4,446条月度记录（截至2026-10）；实际历史起点为2018年1月，部分新上市公司更晚。BaoStock回补首轮在GitHub Actions登录阶段返回10002007（网络接收错误），0家公司取得早期数据。现已加入百度股市通PE-TTM/PB历史接口：A股尝试获取“全部”历史并仅保留2018年前数据，港股5只证券独立获取全部可返回历史；PS不由该源提供。首次抓取结果以 baidu-fetch-audit.json 为准，尚未将接口能力等同于数据覆盖。
 
 - 发行人：49家
 - 当前主证券：44只A股 + 5只港股
@@ -51,6 +51,20 @@ AKShare 最新估值文档说明，stock_value_em(symbol) 可按单只A股代码
 
 **注意：** BaoStock回补脚本刚接入自动化，尚需首轮工作流实测确认每只证券的实际早期覆盖。不能把2006-01的目标日期当作已实现的数据起点。
 
+
+### 新增公开回补源：百度股市通（A股 + 港股）
+
+AKShare公开接口封装了百度股市通个股估值历史：
+- A股：`stock_zh_valuation_baidu`，支持“市盈率(TTM)”“市净率”，周期选择包括“全部”；
+- 港股：`stock_hk_valuation_baidu`，支持“市盈率(TTM)”“市净率”，周期选择包括“全部”；
+- 接口文档：https://github.com/akfamily/akshare/blob/master/docs/data/stock/stock_valuation.md
+- A股接口实现：https://github.com/akfamily/akshare/blob/master/akshare/stock/valuation/stock_zh_valuation_baidu.py
+- 港股接口实现：https://github.com/akfamily/akshare/blob/master/akshare/stock/valuation/stock_hk_valuation_baidu.py
+
+抓取脚本：`scripts/fetch_baidu_valuation_history.py`。使用公开接口请求“全部”历史；A股仅输出2018-01-01之前的记录，避免与东方财富2018年至今的主序列重复；港股保留每只主证券自接口最早返回日起的记录。与BaoStock同日记录冲突时跳过百度该日，以免重复覆盖。原始来源、请求周期、每只证券/指标的行数、起止日期和错误均记录在 `raw/baidu-fetch-audit.json`。
+
+**重要口径限制：** 百度股市通接口只提供PE-TTM和PB，不提供PS-TTM；PS列保持空值，不从其他指标推算。港股5家公司分别使用港股代码、HKD口径和独立序列，绝不与其A股/ADR混接。接口支持“全部”只是文档能力；能否返回完整历史、实际起点和缺失日期以每次抓取审计为准。该源尚未经过首次工作流实测，首次结果出来之前不宣称补齐了2015年前后或任何港股公司的完整覆盖。
+
 ### 公开估值百分位交叉核验：百分位（baifenwei.com）
 
 百分位网站的公开说明显示：其横截面估值表覆盖5,317只A股，数据快照更新至2026-10-30；单股查询页面本地预生成了300只大市值股票近10年估值曲线，其他股票会尝试实时查询近10年估值。可用于逐公司核验当前PE/PB/PS百分位或交叉比较，但公开页面不等于可批量下载原始月度PE/PB/PS序列，因此本项目不将该网站百分位直接拼进月度历史数据库。
@@ -73,14 +87,14 @@ AKShare 最新估值文档说明，stock_value_em(symbol) 可按单只A股代码
 
 ### 港股：5家公司单独维护，暂不混用A股源
 
-当前49家研究池中有5家主证券为港股：申洲国际、腾讯控股、阿里巴巴、京东集团、哔哩哔哩。东方财富 stock_value_em 的个股历史估值接口按A股证券代码查询，不能将它直接用于港股。
+当前49家研究池中有5家主证券为港股：申洲国际、腾讯控股、阿里巴巴、京东集团、哔哩哔哩。东方财富 stock_value_em 的个股历史估值接口按A股证券代码查询，不能将它直接用于港股。现加入百度股市通港股接口作为公开PE-TTM/PB补充源，逐只按港股代码独立抓取；其PS-TTM仍需另找可核验来源。
 
 可用的线上来源：
 1. **理杏仁港股历史估值API**：提供PE-TTM、PB、PS-TTM的日数据及5/10年分位统计，但需要用户专属Token。文档：https://www.lixinger.com/api/open-api/html-doc/hk/company/fundamental/security
 2. **GuruFocus**：公开个股页面展示历史PE等日频估值历史，但批量导出/下载权限及使用限制需以其账户和许可规则为准。示例：https://www.gurufocus.com/stock/HKSE%3A00700/data/pe-ratio
 3. **StockAnalysis / Macrotrends**：可用来交叉核验部分港股/ADR的年度或季度估值历史，但不能把这些低频样本伪装成完整月度序列。示例：https://stockanalysis.com/quote/hkg/2313/financials/ratios/ 、https://www.macrotrends.net/stocks/charts/BABA/alibaba/price-book
 
-在取得可公开下载且允许再处理的港股日频/月频数据前，港股5家公司保持 NO_HISTORICAL_DATA；不混用A股、ADR与港股交易价格，也不以年度报告比率插值出月度值。
+在百度接口首次实测并核验数据之前，港股5家公司仍按“等待数据源验证”处理，不得写成已取得完整历史序列；即使取得PE/PB，PS仍然是独立缺口。不混用A股、ADR与港股交易价格，也不以年度报告比率插值出月度值。
 
 ### 付费/授权备选
 
