@@ -228,8 +228,8 @@ def main() -> int:
             continue
         page_url = (A_PAGE if market == "CN" else HK_PAGE).format(code=raw_code)
         by_day: dict[str, dict[str, float | None]] = defaultdict(dict)
-        day_source: dict[str, str] = {}
-        day_source_url: dict[str, str] = {}
+        day_sources: dict[str, set[str]] = defaultdict(set)
+        day_source_urls: dict[str, set[str]] = defaultdict(set)
         for metric, indicator_candidates in INDICATORS.items():
             series: list[tuple[str, float | None]] = []
             attempts: list[dict[str, str]] = []
@@ -251,8 +251,8 @@ def main() -> int:
                 if market == "CN" and date.fromisoformat(day) >= cutoff:
                     continue
                 by_day[day][metric] = value
-                day_source[day] = SOURCE_LABEL
-                day_source_url[day] = page_url
+                day_sources[day].add(SOURCE_LABEL)
+                day_source_urls[day].add(page_url)
             kept = sum(1 for day, _ in series if market != "CN" or date.fromisoformat(day) < cutoff)
             metric_status = "OK" if series else ("ERROR" if attempts and all(x["status"] == "ERROR" for x in attempts) else "EMPTY")
             audits.append({
@@ -273,16 +273,18 @@ def main() -> int:
         # than Baidu's earliest dated point, so no daily observation is silently
         # chosen between two vendors with potentially different valuation bases.
         if market == "HK":
-            baidu_first = min(by_day) if by_day else None
             for metric in ("peTtm", "pb", "psTtm"):
+                baidu_metric_dates = [day for day, values in by_day.items() if values.get(metric) is not None]
+                baidu_first = min(baidu_metric_dates) if baidu_metric_dates else None
                 try:
                     eniu_series, eniu_url = fetch_eniu_series(raw_code, metric, args.timeout, args.retries)
                     eligible = [(day, value) for day, value in eniu_series
-                                if baidu_first is None or date.fromisoformat(day) < date.fromisoformat(baidu_first)]
+                                if (baidu_first is None or date.fromisoformat(day) < date.fromisoformat(baidu_first))
+                                and by_day.get(day, {}).get(metric) is None]
                     for day, value in eligible:
                         by_day.setdefault(day, {})[metric] = value
-                        day_source[day] = "Eniu public HK indicator chart (historical fallback)"
-                        day_source_url[day] = eniu_url
+                        day_sources[day].add("Eniu public HK indicator chart (historical fallback)")
+                        day_source_urls[day].add(eniu_url)
                     audits.append({
                         "code": code, "market": market, "metric": metric,
                         "source": "Eniu public HK indicator chart", "rowsReturned": len(eniu_series),
@@ -308,8 +310,8 @@ def main() -> int:
                 "code": code, "date": day, "close": "", "currency": security.get("currency", ""),
                 "peTtm": values.get("peTtm", ""), "pb": values.get("pb", ""),
                 "psTtm": values.get("psTtm", ""),
-                "source": day_source.get(day, SOURCE_LABEL),
-                "sourceUrl": day_source_url.get(day, page_url),
+                "source": " + ".join(sorted(day_sources.get(day) or {SOURCE_LABEL})),
+                "sourceUrl": " ; ".join(sorted(day_source_urls.get(day) or {page_url})),
             })
             any_codes.add(code)
             if market == "HK":
