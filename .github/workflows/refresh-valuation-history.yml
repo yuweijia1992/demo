@@ -8,6 +8,7 @@ on:
       - "data/valuation-history/universe.json"
       - "scripts/fetch_eastmoney_a_share_valuation.py"
       - "scripts/fetch_baostock_a_share_valuation.py"
+      - "scripts/fetch_baidu_valuation_history.py"
       - "scripts/build_valuation_history.py"
   schedule:
     # Monthly refresh; 17:30 China Standard Time on the 3rd day of each month.
@@ -50,6 +51,10 @@ jobs:
             printf 'code,date,close,currency,peTtm,pb,psTtm,source,sourceUrl\n' > data/valuation-history/raw/baostock-pre2018-daily.csv
           fi
 
+      - name: Fetch Baidu public PE/PB history (A shares pre-2018, HK full history)
+        run: |
+          python scripts/fetch_baidu_valuation_history.py
+
       - name: Fetch Eastmoney daily valuation history (2018 onward)
         run: |
           python scripts/fetch_eastmoney_a_share_valuation.py
@@ -58,6 +63,7 @@ jobs:
         run: |
           python scripts/build_valuation_history.py \
             --input data/valuation-history/raw/baostock-pre2018-daily.csv \
+            --input data/valuation-history/raw/baidu-valuation-history.csv \
             --input data/valuation-history/raw/eastmoney-a-share-daily.csv \
             --out-dir data/valuation-history/generated
 
@@ -85,10 +91,13 @@ jobs:
               baostock = json.load(f)
           with open("data/valuation-history/generated/coverage-audit.json", encoding="utf-8") as f:
               coverage = json.load(f)
+          with open("data/valuation-history/raw/baidu-fetch-audit.json", encoding="utf-8") as f:
+              baidu = json.load(f)
           requested = eastmoney.get("requestedAshareCompanies", 0)
           covered = eastmoney.get("companiesWithData", 0)
           print(f"Eastmoney coverage: {covered}/{requested}; daily rows: {eastmoney.get('dailyRows', 0)}")
           print(f"BaoStock backfill: {baostock.get('companiesWithRows', 0)}/{baostock.get('requestedAshareCompanies', 0)}; daily rows: {baostock.get('dailyRows', 0)}")
+          print(f"Baidu supplement: A pre-2018 {baidu.get('aShareCompaniesWithPre2018Data', 0)}, HK {baidu.get('hkCompaniesWithData', 0)}; daily rows: {baidu.get('dailyRowsWritten', 0)}; PE/PB only (no PS)")
           print(f"Monthly rows: {coverage.get('monthlyRowsWritten', 0)}; companies with history: {coverage.get('companiesWithHistory', 0)}")
           print("Latest 5Y/10Y percentile coverage:", coverage.get("latestMonthEndPercentileCoverage", {}))
           for failure in eastmoney.get("failedCompanies", []):
