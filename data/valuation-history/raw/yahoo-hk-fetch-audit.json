@@ -1,0 +1,215 @@
+{
+  "source": "Yahoo Finance fundamentals-timeseries monthly valuation measures (candidate)",
+  "apiFamily": "Yahoo Finance fundamentals-timeseries",
+  "apiUrlPattern": "https://query1.finance.yahoo.com/ws/fundamentals-timeseries/v1/finance/timeseries/{symbol}?symbol={symbol}&type=monthlyMarketCap,monthlyPeRatio,monthlyPsRatio,monthlyPbRatio",
+  "method": "yfinance.Ticker.get_valuation_measures(freq='monthly', periods=None)",
+  "periodStartLimitInCurrentYFinanceImplementation": "2016-12-31",
+  "requestedCompanies": 5,
+  "companiesWithHistory": 5,
+  "monthlyRowsWritten": 75,
+  "securityAudits": [
+    {
+      "code": "00700.HK",
+      "ticker": "0700.HK",
+      "status": "OK",
+      "rowsWritten": 15,
+      "firstDate": "2025-07-31",
+      "lastDate": "2026-09-30",
+      "validMetricMonths": {
+        "peTtm": 15,
+        "pb": 15,
+        "psRaw": 15
+      },
+      "fieldLabels": {
+        "peTtm": "Trailing P/E",
+        "pb": "Price/Book",
+        "psRaw": "Price/Sales",
+        "marketCap": "Market Cap"
+      },
+      "missingLabels": [],
+      "frameShape": [
+        9,
+        16
+      ],
+      "frameColumns": [
+        "Current",
+        "9/30/2026",
+        "8/31/2026",
+        "7/31/2026",
+        "6/30/2026",
+        "5/31/2026",
+        "4/30/2026",
+        "3/31/2026",
+        "2/28/2026",
+        "1/31/2026",
+        "12/31/2025",
+        "11/30/2025"
+      ],
+      "sourceUrl": "https://finance.yahoo.com/quote/0700.HK/key-statistics/"
+    },
+    {
+      "code": "02313.HK",
+      "ticker": "2313.HK",
+      "status": "OK",
+      "rowsWritten": 15,
+      "firstDate": "2025-07-31",
+      "lastDate": "2026-09-30",
+      "validMetricMonths": {
+        "peTtm": 15,
+        "pb": 15,
+        "psRaw": 15
+      },
+      "fieldLabels": {
+        "peTtm": "Trailing P/E",
+        "pb": "Price/Book",
+        "psRaw": "Price/Sales",
+        "marketCap": "Market Cap"
+      },
+      "missingLabels": [],
+      "frameShape": [
+        9,
+        16
+      ],
+      "frameColumns": [
+        "Current",
+        "9/30/2026",
+        "8/31/2026",
+        "7/31/2026",
+        "6/30/2026",
+        "5/31/2026",
+        "4/30/2026",
+        "3/31/2026",
+        "2/28/2026",
+        "1/31/2026",
+        "12/31/2025",
+        "11/30/2025"
+      ],
+      "sourceUrl": "https://finance.yahoo.com/quote/2313.HK/key-statistics/"
+    },
+    {
+      "code": "09988.HK",
+      "ticker": "9988.HK",
+      "status": "OK",
+      "rowsWritten": 15,
+      "firstDate": "2025-07-31",
+      "lastDate": "2026-09-30",
+      "validMetricMonths": {
+        "peTtm": 14,
+        "pb": 15,
+        "psRaw": 13
+      },
+      "fieldLabels": {
+        "peTtm": "Trailing P/E",
+        "pb": "Price/Book",
+        "psRaw": "Price/Sales",
+        "marketCap": "Market Cap"
+      },
+      "missingLabels": [],
+      "frameShape": [
+        9,
+        16
+      ],
+      "frameColumns": [
+        "Current",
+        "9/30/2026",
+        "8/31/2026",
+        "7/31/2026",
+        "6/30/2026",
+        "5/31/2026",
+        "4/30/2026",
+        "3/31/2026",
+        "2/28/2026",
+        "1/31/2026",
+        "12/31/2025",
+        "11/30/2025"
+      ],
+      "sourceUrl": "https://finance.yahoo.com/quote/9988.HK/key-statistics/"
+    },
+    {
+      "code": "09618.HK",
+      "ticker": "9618.HK",
+      "status": "OK",
+      "rowsWritten": 15,
+      "firstDate": "2025-07-31",
+      "lastDate": "2026-09-30",
+      "validMetricMonths": {
+        "peTtm": 15,
+        "pb": 15,
+        "psRaw": 15
+      },
+      "fieldLabels": {
+        "peTtm": "Trailing P/E",
+        "pb": "Price/Book",
+        "psRaw": "Price/Sales",
+        "marketCap": "Market Cap"
+      },
+      "missingLabels": [],
+      "frameShape": [
+        9,
+        16
+      ],
+      "frameColumns": [
+        "Current",
+        "9/30/2026",
+        "8/31/2026",
+        "7/31/2026",
+        "6/30/2026",
+        "5/31/2026",
+        "4/30/2026",
+        "3/31/2026",
+        "2/28/2026",
+        "1/31/2026",
+        "12/31/2025",
+        "11/30/2025"
+      ],
+      "sourceUrl": "https://finance.yahoo.com/quote/9618.HK/key-statistics/"
+    },
+    {
+      "code": "09626.HK",
+      "ticker": "9626.HK",
+      "status": "OK",
+      "rowsWritten": 15,
+      "firstDate": "2025-07-31",
+      "lastDate": "2026-09-30",
+      "validMetricMonths": {
+        "peTtm": 14,
+        "pb": 15,
+        "psRaw": 15
+      },
+      "fieldLabels": {
+        "peTtm": "Trailing P/E",
+        "pb": "Price/Book",
+        "psRaw": "Price/Sales",
+        "marketCap": "Market Cap"
+      },
+      "missingLabels": [],
+      "frameShape": [
+        9,
+        16
+      ],
+      "frameColumns": [
+        "Current",
+        "9/30/2026",
+        "8/31/2026",
+        "7/31/2026",
+        "6/30/2026",
+        "5/31/2026",
+        "4/30/2026",
+        "3/31/2026",
+        "2/28/2026",
+        "1/31/2026",
+        "12/31/2025",
+        "11/30/2025"
+      ],
+      "sourceUrl": "https://finance.yahoo.com/quote/9626.HK/key-statistics/"
+    }
+  ],
+  "caveats": [
+    "Yahoo monthly measures are independent vendor calculations, not an exchange official record.",
+    "Price/Sales is retained as psRaw; it is not relabelled PS-TTM without method/overlap validation.",
+    "PE values that are non-positive are left blank, not forced into a valuation percentile.",
+    "Yahoo's current yfinance implementation requests valuation time series from 2016-12-31, so this source cannot alone provide 120 full monthly observations at 2026-10.",
+    "This source is for the five HK-listed securities only; no ADR or mainland listing is substituted."
+  ],
+  "fetchedAt": "2026-10-30T10:47:02+00:00"
+}
