@@ -144,6 +144,11 @@ def request_payload(code: str, timeout: int, retries: int) -> tuple[dict[str, An
                         data = json.loads(body)
                         if not isinstance(data, dict):
                             raise RuntimeError(f"unexpected top-level type: {type(data).__name__}")
+                        data_block = data.get("data")
+                        if not isinstance(data_block, dict) or not isinstance(data_block.get("fields"), list) or not isinstance(data_block.get("items"), list):
+                            preview = json.dumps(data, ensure_ascii=False)[:240]
+                            attempts.append(f"POST {api_url} tokenDate={day.isoformat()} returned JSON without data.fields/items: {preview}")
+                            continue
                         return data, api_url, attempts
                     except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
                             json.JSONDecodeError, RuntimeError, OSError) as exc:
