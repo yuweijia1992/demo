@@ -375,10 +375,10 @@ def main() -> int:
         "documentedMetrics": ["PE-TTM", "PB"],
         "undocumentedPSProbeLabels": ["市销率(TTM)", "市销率"],
         "metricsWithReturnedRows": sorted({item["metric"] for item in audits if item["status"] == "OK"}),
-        "psTtmReturnedByProbe": any(item["metric"] == "psTtm" and item["status"] == "OK" for item in audits),
+        "psTtmReturnedByBaiduProbe": any(item["metric"] == "psTtm" and item["status"] == "OK" and item.get("undocumentedIndicatorProbe") for item in audits),
         "excludedSameDayKeysFromBaoStock": len(excluded),
         "indicators": audits,
-        "note": "Baidu documents PE-TTM and PB. The fetcher also probes undocumented PS labels; PS is included only if the endpoint returns dated values. For HK, Enniu PE/PB data is retained only strictly before Baidu's earliest date as a potentially stale historical fallback. A-share rows are clipped before Eastmoney's 2018-onward window; HK rows retain Baidu's full returned history. Failed/empty queries remain visible in the audit; no interpolation or imputation.",
+        "note": "Baidu documents PE-TTM and PB. The fetcher also probes undocumented PS labels; PS is included only if the endpoint returns dated values. For HK, Enniu PE/PB and any returned PS data are retained only strictly before Baidu's earliest date for that metric as a potentially stale historical fallback. A-share rows are clipped before Eastmoney's 2018-onward window; HK rows retain Baidu's full returned history. Failed/empty queries remain visible in the audit; no interpolation or imputation.",
     }
     audit_path = Path(args.audit)
     audit_path.parent.mkdir(parents=True, exist_ok=True)
