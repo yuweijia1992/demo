@@ -91,7 +91,8 @@ AKShare公开接口封装了百度股市通个股估值历史：
 
 可用的线上来源：
 1. **理杏仁港股历史估值API**：提供PE-TTM、PB、PS-TTM的日数据及5/10年分位统计，但需要用户专属Token。文档：https://www.lixinger.com/api/open-api/html-doc/hk/company/fundamental/security
-2. **GuruFocus**：公开个股页面展示历史PE等日频估值历史，但批量导出/下载权限及使用限制需以其账户和许可规则为准。示例：https://www.gurufocus.com/stock/HKSE%3A00700/data/pe-ratio
+2. **亿牛网 Enniu（历史补充备选）**：AKShare公开实现显示可从 `https://eniu.com/chart/peh/hk{代码}` 与 `pbh` 读取港股PE/PB历史JSON；AKShare文档明确提示该数据源暂未更新。本项目仅保留严格早于百度最早有效日期的记录，不覆盖较新百度数据。另探测 `psh`，未返回真实带日期数据前不计入PS覆盖。接口实现：https://github.com/akfamily/akshare/blob/master/akshare/stock/valuation/stock_a_indicator.py 。
+3. **GuruFocus**：公开个股页面展示历史PE等日频估值历史，但批量导出/下载权限及使用限制需以其账户和许可规则为准。示例：https://www.gurufocus.com/stock/HKSE%3A00700/data/pe-ratio
 3. **StockAnalysis / Macrotrends**：可用来交叉核验部分港股/ADR的年度或季度估值历史，但不能把这些低频样本伪装成完整月度序列。示例：https://stockanalysis.com/quote/hkg/2313/financials/ratios/ 、https://www.macrotrends.net/stocks/charts/BABA/alibaba/price-book
 
 在百度接口首次实测并核验数据之前，港股5家公司仍按“等待数据源验证”处理，不得写成已取得完整历史序列；即使取得PE/PB，PS仍然是独立缺口。不混用A股、ADR与港股交易价格，也不以年度报告比率插值出月度值。
