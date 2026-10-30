@@ -67,18 +67,45 @@
 .lab-btn.secondary{background:transparent;color:var(--text);border-color:var(--line)}
 .lab-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.lab-links a{font-size:12px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:3px}
 .data-table-wrap{overflow-x:auto;margin-top:20px}.data-table{width:100%;border-collapse:collapse;font-size:12px;min-width:680px}.data-table th,.data-table td{text-align:left;padding:11px 9px;border-bottom:1px solid var(--line);white-space:nowrap}.data-table th{color:var(--muted);font-weight:500}.data-table button{background:none;border:0;color:var(--text);text-decoration:underline;cursor:pointer;font:inherit;padding:0}
+
+.research-snapshot{margin:24px 0 28px;padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+.snapshot-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:16px}
+.snapshot-head .eyebrow{margin:0 0 5px}
+.snapshot-head h3{font-size:19px;margin:0;font-weight:650}
+.snapshot-head>span{font-size:11px;color:var(--muted);white-space:nowrap}
+.coverage-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.coverage-item{min-width:0;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.coverage-item span{display:block;color:var(--muted);font-size:11px;line-height:1.5}
+.coverage-item strong{display:block;font-size:23px;line-height:1.35;font-weight:620;margin:3px 0 4px;font-variant-numeric:tabular-nums}
+.coverage-item small{display:block;color:var(--muted);font-size:10px;line-height:1.5}
+.snapshot-foot{font-size:11px;color:var(--muted);line-height:1.8;margin:14px 2px 0}
+.data-table td small{display:block;color:var(--muted);font-size:10px;line-height:1.5;margin-top:3px;white-space:normal}
+.data-table td:first-child{font-weight:600}
+.data-table td a{border-bottom:1px solid var(--line);margin-right:6px}
+.data-table td a:hover{color:var(--research-accent)}
+.data-table th{position:sticky;top:0;background:var(--surface)}
+.data-table-wrap{border:1px solid var(--line);border-radius:12px}
+#databaseQualityNote{font-size:11px;color:var(--muted);line-height:1.8;margin:12px 0}
+@media(max-width:760px){.research-snapshot{padding:16px}.coverage-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.snapshot-head{align-items:start;flex-direction:column;gap:6px}.snapshot-head>span{white-space:normal}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.stock-card,.layer-nav a{transition:none}}
+
 @media(max-width:760px){.lab-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lab-results{grid-template-columns:1fr}.valuation-lab{padding:16px}.lab-head h2{font-size:21px}}
 </style>
 </head>
-<body>
-<header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html">余暮<span> / RESEARCH</span></a><nav><a href="../index.html#investment">投资</a><a href="../index.html#research">研究</a><a href="#layers">六大层次</a></nav><button id="themeToggle" class="theme-btn" aria-label="切换深色模式">◐</button></div></header>
+<body id="top">
+<header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html">余暮<span> / RESEARCH</span></a><nav><a href="../index.html#investment">投资</a><a href="../index.html#research">研究</a><a href="#layers">六大层次</a><a href="#valuationLab">估值工作台</a></nav><button id="themeToggle" class="theme-btn" aria-label="切换深色模式">◐</button></div></header>
 <main>
 <section class="container article-hero">
-<div><p class="eyebrow">CHINA EQUITY RESEARCH · 2026.10</p><h1>从人类需求出发，<br><em>理解中国上市公司。</em></h1><p class="lead">衣食住行是生活底座，医疗健康保障生命，能源与基础设施支撑社会，科技推动生产率，金融配置风险与资本，消费服务承载现代生活。本页按六大层次梳理候选股票，并逐家公司分析商业价值、潜在护城河、估值重点与主要风险。</p></div>
-<div class="hero-stat"><strong>6 × 49</strong><span>六大经济层次 · 36 家候选公司<br>研究清单，不是买入指令</span></div>
+<div><p class="eyebrow">CHINA EQUITY RESEARCH · 2026.10.30</p><h1>从人类需求出发，<br><em>理解中国上市公司。</em></h1><p class="lead">衣食住行是生活底座，医疗健康保障生命，能源与基础设施支撑社会，科技推动生产率，金融配置风险与资本，消费服务承载现代生活。本页按六大层次梳理候选股票，并逐家公司分析商业价值、潜在护城河、估值重点与主要风险。</p></div>
+<div class="hero-stat"><strong>49</strong><span>候选上市公司<br>覆盖六大经济层次 · 研究清单，不是买入指令</span></div>
 </section>
 <section class="container" id="layers">
-<div class="note-box"><h3>先读结论：需求重要，不等于股票便宜</h3><p>本页判断的是企业的长期商业价值与研究优先级，不是实时买入评级。估值结论必须结合最新股价、财报、自由现金流、资本开支、负债和未来盈利预期。对银行看资产质量与净息差；对周期股看中周期利润；对成长股看长期现金流而非单年增速。文中不展示未经核实的实时股价、PE 或目标价。</p></div>
+<div class="note-box"><h3>先读结论：需求重要，不等于股票便宜</h3><p>本页评估企业的长期商业价值与研究优先级，不提供实时买入评级。需求长期存在，不代表相关企业一定拥有高回报，更不代表当前股价便宜。投资判断仍要落实到竞争格局、资本回报、现金流、资产负债表和买入价格；银行、保险、周期行业与成长科技必须使用不同估值框架。</p></div>
+<div class="research-snapshot" aria-label="研究数据库覆盖概览">
+ <div class="snapshot-head"><div><p class="eyebrow">RESEARCH DATABASE · COVERAGE AUDIT</p><h3>研究覆盖与数据缺口</h3></div><span id="dataAsOf">正在读取数据库基准日…</span></div>
+ <div class="coverage-grid" id="coverageGrid"><div class="coverage-item"><span>数据库状态</span><strong>读取中</strong><small>正在检查本地 JSON 数据</small></div></div>
+ <p class="snapshot-foot" id="coverageNote">页面不会把空值填成估算值；价格快照、财报报告期与估值分位必须分别看待。</p>
+</div>
 <div class="layer-nav"><a href="#layer1">01 衣食住行</a><a href="#layer2">02 医疗健康</a><a href="#layer3">03 能源与基础设施</a><a href="#layer4">04 科技进步</a><a href="#layer5">05 金融稳定</a><a href="#layer6">06 社会运行与消费服务</a></div>
 <div class="research-toolbar"><input id="stockSearch" type="search" placeholder="搜索公司、代码、行业、风险关键词…" aria-label="搜索股票"><select id="layerFilter" aria-label="筛选层次"><option value="all">全部六大层次</option><option value="1">衣食住行</option><option value="2">医疗健康</option><option value="3">能源与基础设施</option><option value="4">科技进步</option><option value="5">金融稳定</option><option value="6">社会运行与消费服务</option></select><span class="result-count" id="resultCount">共 49 家候选公司</span></div>
 
@@ -107,22 +134,23 @@
  </div>
  <div class="lab-actions"><button class="lab-btn" id="vCalculate">计算估值情景</button><button class="lab-btn secondary" id="vSave">保存本机输入</button><button class="lab-btn secondary" id="vReset">重置模型</button></div>
  <div class="lab-results" id="vResults"><div class="lab-result"><h3>悲观情景</h3><p>录入股价、EPS 和当前 PE 后计算。</p></div><div class="lab-result"><h3>基准情景</h3><p>录入股价、EPS 和当前 PE 后计算。</p></div><div class="lab-result"><h3>乐观情景</h3><p>录入股价、EPS 和当前 PE 后计算。</p></div></div>
- <div id="vSummary" style="font-size:13px;line-height:1.8;color:var(--muted);margin-top:14px">合理买入价采用目标回报率折现十年后期末价值；总回报近似计入股息再投资，未计税费、汇率和稀释。请将模型结果与 DCF、自由现金流和资产负债表交叉验证。</div>
- <div class="note-box" style="margin:18px 0 8px"><h3>估值方法按商业模式区分</h3><ul><li><b>银行：</b>PB—ROE、资产质量与股息；低 PB 必须结合可持续 ROE、不良生成、拨备与资本约束。</li><li><b>保险：</b>内含价值（EV）、新业务价值（NBV）及偿付能力；对长期投资收益率和风险贴现率做压力测试。</li><li><b>周期行业：</b>跨周期正常化利润、EV/EBITDA、单位成本与资产负债表；不使用景气峰值利润简单算 PE。</li><li><b>成熟现金流企业：</b>自由现金流 DCF、股息折现和净债务；区分维持性资本开支与扩张性资本开支。</li><li><b>成长科技：</b>多阶段情景 DCF、利润率/再投资/稀释假设，必要时分部估值；亏损企业不强行套 PE。</li><li><b>成熟消费与制造：</b>正常化 EPS 与自由现金流收益率交叉验证，并检查 ROIC、竞争优势和资本配置。</li></ul><p>数据库文件：<a href="../data/china-stocks-financial-valuation.json" target="_blank" rel="noopener">查看 49 家公司财务与估值数据库（JSON）↗</a>。该文件目前已建立字段、公司代码、行业分类、适用估值方法和核验来源，但财务数字仍为空值；只有逐项核验公司披露与行情后才会填入，避免把估算或旧数据伪装成最新实际值。</p></div>
+ <div id="vSummary" style="font-size:13px;line-height:1.8;color:var(--muted);margin-top:14px">合理买入价按“期末理论股价 × (1 + 假设股息率)^年数 ÷ (1 + 目标回报率)^年数”简化反推，假设股息率恒定且全部再投资；未计税费、汇率、股本稀释、估值路径波动及中途分红变化。当前 PE 仅用于与股价/EPS 隐含 PE 交叉检查，不直接决定期末估值。请再用 DCF、自由现金流与资产负债表验证。</div>
+ <div class="note-box" style="margin:18px 0 8px"><h3>估值方法按商业模式区分</h3><ul><li><b>银行：</b>PB—ROE、资产质量与股息；低 PB 必须结合可持续 ROE、不良生成、拨备与资本约束。</li><li><b>保险：</b>内含价值（EV）、新业务价值（NBV）及偿付能力；对长期投资收益率和风险贴现率做压力测试。</li><li><b>周期行业：</b>跨周期正常化利润、EV/EBITDA、单位成本与资产负债表；不使用景气峰值利润简单算 PE。</li><li><b>成熟现金流企业：</b>自由现金流 DCF、股息折现和净债务；区分维持性资本开支与扩张性资本开支。</li><li><b>成长科技：</b>多阶段情景 DCF、利润率/再投资/稀释假设，必要时分部估值；亏损企业不强行套 PE。</li><li><b>成熟消费与制造：</b>正常化 EPS 与自由现金流收益率交叉验证，并检查 ROIC、竞争优势和资本配置。</li></ul><p>数据库文件：<a href="../data/china-stocks-financial-valuation.json" target="_blank" rel="noopener">查看 49 家公司财务与估值数据库（JSON）↗</a>。数据库保留公司代码、报告期、价格快照、财务字段、适用估值方法、来源链接与核验备注；缺失字段明确留空，不以估算填充。价格快照不是实时行情，使用前应按表内日期重新核验。</p></div>
  <div class="lab-divider"></div>
- <div class="lab-head"><div><p class="eyebrow">VERIFIED FINANCIAL SNAPSHOT</p><h2>财务数据库：已核验数据与待补字段</h2><p>下表从同仓库 JSON 数据库读取。金额单位为百万元（报告记账币种），每股收益按报告币种；报告期不等于 TTM。未核验字段留空，不以估算值代替。</p></div><span class="stock-type" id="dbStatusBadge">正在读取数据库…</span></div>
- <div class="data-table-wrap"><table class="data-table" style="min-width:1080px"><thead><tr><th>公司</th><th>报告期</th><th>营业收入</th><th>营收同比%</th><th>归母净利润</th><th>EPS</th><th>ROE%</th><th>经营现金流</th><th>PE/PB/PS</th><th>数据状态</th><th>来源</th></tr></thead><tbody id="verifiedFinancialRows"><tr><td colspan="11">正在读取数据库…</td></tr></tbody></table></div>
- <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:10px">说明：截至 2026-10-20，49 家公司均已建立记录并录入至少一项有来源的财务数据；目前已有 17 家录入可追溯的行情价格，但全体公司的PE/PB/PS、5年/10年估值分位、行业估值模型与合理买入区间尚未全部核验。本数据库是研究底稿，不构成完整买入评级。</p>
+ <div class="lab-head"><div><p class="eyebrow">FINANCIAL DATA · SOURCE-AWARE SNAPSHOT</p><h2>财务数据库：逐家公司核验与缺口</h2><p>数据直接读取同仓库 JSON。营业收入、归母净利润、经营现金流、资本开支与 FCF 的金额单位为百万元；EPS、BVPS 为每股数据。各公司报告期可能不同，报告期 EPS 不等于 TTM EPS。</p></div><span class="stock-type" id="dbStatusBadge">正在读取数据库…</span></div>
+ <div class="data-table-wrap"><table class="data-table" style="min-width:1680px" aria-label="49家上市公司财务与估值字段"><thead><tr><th>公司 / 代码</th><th>财报期间</th><th>价格快照</th><th>营业收入<br>百万元</th><th>营收同比<br>%</th><th>归母净利润<br>百万元</th><th>EPS<br>报告期</th><th>ROE<br>%</th><th>经营现金流<br>百万元</th><th>资本开支<br>百万元</th><th>FCF<br>百万元</th><th>BVPS</th><th>PE / PB / PS</th><th>5年 / 10年<br>估值分位</th><th>数据状态</th><th>来源</th></tr></thead><tbody id="verifiedFinancialRows"><tr><td colspan="16">正在读取数据库…</td></tr></tbody></table></div>
+ <p id="databaseQualityNote">正在核验数据覆盖度…</p>
+ <div class="note-box"><h3>数据口径：先看期间，再看数字</h3><ul><li><b>财报期间：</b>表内为数据库记录的各公司最近可用披露期，不保证所有公司在同一天报告；半年度 EPS、ROE 不能直接当作 TTM 或全年数值。</li><li><b>价格快照：</b>显示采集日期与币种，不是实时行情；A 股与港股同一公司的证券价格和每股指标不能混用。</li><li><b>自由现金流：</b>以数据库逐家公司注明的定义为准；简化 FCF 常见口径为经营现金流减资本开支。银行、保险等金融企业不应直接与普通工商企业比较 FCF。</li><li><b>估值空值：</b>PE、PB、PS 与 5 年/10 年历史分位只在有可追溯依据时展示；空白表示缺数据，不代表估值为零。</li></ul></div>
  <div class="lab-links"><a id="vValuationLink" href="https://baifenwei.com/stocks/" target="_blank" rel="noopener">查询 PE/PB/历史分位 ↗</a><a id="vReportLink" href="https://www.cninfo.com.cn/" target="_blank" rel="noopener">查询上市公司财报 ↗</a><a href="https://www.hkexnews.hk/index_c.htm" target="_blank" rel="noopener">港股披露易 ↗</a></div>
  <div class="data-table-wrap"><table class="data-table"><thead><tr><th>层次</th><th>公司</th><th>代码</th><th>财报/估值数据状态</th><th>操作</th></tr></thead><tbody id="vStockTable"></tbody></table></div>
- <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:12px">数据状态说明：当前页面未接入授权行情/财报 API；数据库已建立 49 家公司字段与估值方法，但尚未完成数值填充，因此不伪造最新股价、EPS、PE 或历史分位。点击“选择并分析”后，请从交易所公告、公司年报/季报和估值历史服务核验数据并录入。保存本机输入只保存在当前浏览器，清除浏览器数据后可能丢失。</p>
+ <p style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:12px">估值工作台不会把报告期 EPS 自动当成 TTM，也不会将价格快照当作最新收盘价。请在同一币种、同一每股口径下录入最新数据；历史分位缺失时保持空白。输入保存于当前浏览器本机，不会上传到服务器，清除浏览器数据后可能丢失。</p>
 </section>
 <div id="stockSections"></div>
 </section>
 <section class="container section">
 <div class="note-box"><h3>如何判断“股票价值”——统一分析框架</h3><ul><li><b>商业价值：</b>需求持续性、客户付费意愿、行业竞争结构。</li><li><b>护城河：</b>品牌、规模成本、网络效应、牌照、技术、渠道或稀缺资产。</li><li><b>财务质量：</b>自由现金流、ROIC/ROE、资产负债表、资本开支与分红可持续性。</li><li><b>估值方法：</b>成熟现金流公司用正常化现金流/股息折现；银行看 PB、ROE 和不良生成；周期股看中周期利润；成长股用情景 DCF 并检验估值对增长假设的敏感度。</li><li><b>买入纪律：</b>先写出悲观、基准、乐观三种情景，再设置安全边际和组合上限。即使公司优秀，也不要让单一公司或单一国家风险支配整个资产组合。</li></ul></div>
 <div class="note-box"><h3>资料与核验入口</h3><p>正式投资前请优先阅读公司年报、半年报、交易所公告和投资者关系资料。本页面是定性研究底稿，不替代最新财报核验。</p><div class="source-list"><a href="https://www.sse.com.cn/disclosure/listedinfo/listedcompanies/" target="_blank" rel="noopener">上交所上市公司信息披露 ↗</a><a href="https://www.szse.cn/disclosure/listed/notice/" target="_blank" rel="noopener">深交所上市公司公告 ↗</a><a href="https://www.hkexnews.hk/index_c.htm" target="_blank" rel="noopener">港交所披露易 ↗</a><a href="https://www.tencent.com/zh-cn/investors/financial-reports/" target="_blank" rel="noopener">腾讯财报 ↗</a><a href="https://www.catl.com/en/investors/" target="_blank" rel="noopener">宁德时代投资者资料 ↗</a></div></div>
-<p style="font-size:12px;color:var(--muted)">说明：本页为一般性研究与教育内容，不构成个性化投资建议。行业、政策、上市状态及财务数据可能变化；代码与上市地以交易所最新信息为准。分析日期：2026 年 10 月 20 日。</p><a class="backtop" href="#top">↑ 返回顶部</a>
+<p style="font-size:12px;color:var(--muted)">说明：本页为一般性研究与教育内容，不构成个性化投资建议。行业、政策、上市状态及财务数据可能变化；代码与上市地以交易所最新信息为准。页面更新日期：2026 年 10 月 30 日；数据库基准日期以 JSON 文件中的 asOf 字段为准。</p><a class="backtop" href="#top">↑ 返回顶部</a>
 </section>
 </main>
 <footer class="footer container"><span>© 2026 余暮</span><a href="../index.html">回到个人知识宇宙 →</a></footer>
@@ -221,36 +249,107 @@ function initValuation(){
 }
 function calculateValuation(){
  const val=id=>Number(document.getElementById(id).value);
- const price=val('vPrice'),eps=val('vEPS'),pe=val('vPE'),yieldPct=val('vYield')/100,hurdle=val('vHurdle')/100,years=val('vYears');
- if(!(price>0&&eps>0&&pe>0&&years>0)){document.getElementById('vSummary').textContent='请录入正数的当前股价、EPS、当前 PE 和预测年限。若公司亏损，请改用自由现金流/销售额等适配模型。';return;}
+ const raw=id=>document.getElementById(id).value.trim();
+ const price=val('vPrice'),eps=val('vEPS'),pe=val('vPE');
+ const yieldPct=(raw('vYield')===''?0:val('vYield'))/100;
+ const hurdle=val('vHurdle')/100,years=val('vYears');
+ if(!(Number.isFinite(price)&&price>0&&Number.isFinite(eps)&&eps>0&&Number.isFinite(pe)&&pe>0&&Number.isInteger(years)&&years>=1&&years<=30&&Number.isFinite(hurdle)&&hurdle>=0&&hurdle<=0.5&&Number.isFinite(yieldPct)&&yieldPct>=0)){
+  document.getElementById('vSummary').textContent='请检查输入：股价、EPS、当前 PE 必须为正数；预测年限为 1–30 的整数；目标回报率为 0–50%；股息率应为非负数。亏损企业不适用常规 PE 模型。';
+  return;
+ }
  const scenarios=[['悲观',val('gBear')/100,val('peBear')],['基准',val('gBase')/100,val('peBase')],['乐观',val('gBull')/100,val('peBull')]];
+ if(scenarios.some(x=>!Number.isFinite(x[1])||x[1]<=-1||!Number.isFinite(x[2])||x[2]<0)){
+  document.getElementById('vSummary').textContent='情景假设无效：EPS 年增长率必须大于 -100%，期末 PE 不得为负数。';
+  return;
+ }
  const fmt=x=>Number.isFinite(x)?x.toLocaleString('zh-CN',{maximumFractionDigits:2,minimumFractionDigits:2}):'—';
  document.getElementById('vResults').innerHTML=scenarios.map(([name,g,terminalPE])=>{
-  const terminalEPS=eps*Math.pow(1+g,years),target=terminalEPS*terminalPE;
-  const buy=target/Math.pow(1+hurdle,years);
-  const cagr=(Math.pow(Math.max(0.000001,target/price),1/years)*(1+Math.max(0,yieldPct))-1)*100;
-  const upside=(target/price-1)*100;
-  return '<div class="lab-result"><h3>'+name+'情景 · '+years+' 年</h3><strong>'+fmt(target)+'</strong><p>期末理论股价（与当前股价同币种）</p><p class="mini">对应年化总回报近似：'+fmt(cagr)+'% · 股价空间：'+fmt(upside)+'%</p><div class="lab-divider"></div><p><b>对应合理买入价：</b>'+fmt(buy)+'</p><p class="mini">EPS 年增 '+fmt(g*100)+'% · 期末 PE '+fmt(terminalPE)+' 倍</p></div>';
+  const terminalEPS=eps*Math.pow(1+g,years);
+  const terminalPrice=terminalEPS*terminalPE;
+  const dividendFactor=Math.pow(1+yieldPct,years);
+  const terminalWealth=terminalPrice*dividendFactor;
+  const buy=terminalWealth/Math.pow(1+hurdle,years);
+  const cagr=(Math.pow(Math.max(0,terminalWealth/price),1/years)-1)*100;
+  const upside=(terminalPrice/price-1)*100;
+  return '<div class="lab-result"><h3>'+name+'情景 · '+years+' 年</h3><strong>'+fmt(terminalPrice)+'</strong><p>期末理论股价（不含股息，与输入股价同币种）</p><p class="mini">假设股息再投资后的年化总回报近似：'+fmt(cagr)+'% · 股价空间：'+fmt(upside)+'%</p><div class="lab-divider"></div><p><b>对应合理买入价：</b>'+fmt(buy)+'</p><p class="mini">EPS 年增 '+fmt(g*100)+'% · 期末 PE '+fmt(terminalPE)+' 倍 · 股息率 '+fmt(yieldPct*100)+'%</p></div>';
  }).join('');
- const p=val('vPercentile');
- document.getElementById('vSummary').textContent='估值分位：'+(Number.isFinite(p)&&p>=0&&p<=100?p+'%（请核实采用 5 年或 10 年口径）':'尚未录入')+'。模型假设 EPS 按固定增速复合增长，期末 PE 回归至设定值，股息率保持不变且可再投资；未计税费、汇率、股本稀释、周期波动和中途现金流。合理买入价=期末理论股价/(1+目标回报率)^年数，仅是简化反推值，不是精确内在价值。';
+ const p=raw('vPercentile')===''?null:val('vPercentile');
+ const impliedPE=price/eps;
+ const peGap=Math.abs(impliedPE/pe-1)*100;
+ const peCheck=Number.isFinite(peGap)&&peGap>15?'PE口径提醒：股价/EPS隐含 PE 为 '+fmt(impliedPE)+' 倍，与录入 PE '+fmt(pe)+' 倍相差 '+fmt(peGap)+'%；请检查 EPS 是否为 TTM/正常化口径、币种和股本口径。':'PE交叉检查：股价/EPS隐含 PE '+fmt(impliedPE)+' 倍，录入 PE '+fmt(pe)+' 倍，差异 '+fmt(peGap)+'%。';
+ document.getElementById('vSummary').textContent='估值分位：'+(p!==null&&Number.isFinite(p)&&p>=0&&p<=100?p+'%（请注明5年或10年口径）':'尚未录入')+'。'+peCheck+'模型假设 EPS 按固定增速复合增长、期末 PE 固定为情景设定值、股息率保持不变并全部再投资；合理买入价已计入这一简化股息因子。模型未计税费、汇率、稀释、估值路径波动与中途分红变化；期末 PE 和 EPS 增速是情景假设，不是预测保证。';
 }
 initValuation();
 (async function loadVerifiedFinancialData(){
  const status=document.getElementById('dbStatusBadge');
  const body=document.getElementById('verifiedFinancialRows');
- const fmt=(v,d=2)=>v===null||v===undefined||v===''?'—':Number(v).toLocaleString('zh-CN',{maximumFractionDigits:d});
+ const coverageGrid=document.getElementById('coverageGrid');
+ const coverageNote=document.getElementById('coverageNote');
+ const qualityNote=document.getElementById('databaseQualityNote');
+ const asOf=document.getElementById('dataAsOf');
+ const has=v=>v!==null&&v!==undefined&&v!=='';
+ const fmt=(v,d=2)=>!has(v)||!Number.isFinite(Number(v))?'—':Number(v).toLocaleString('zh-CN',{maximumFractionDigits:d});
+ const count=(list,key)=>list.filter(x=>has(x[key])).length;
+ const safeUrl=u=>typeof u==='string'&&/^https?:\/\//i.test(u)?u:'';
+ const sourceLink=(u,label)=>{const href=safeUrl(u);return href?'<a href="'+esc(href)+'" target="_blank" rel="noopener">'+label+' ↗</a>':'';};
+ const priceText=s=>has(s.price)?fmt(s.price,2)+' '+esc(s.currency||'')+'<small>'+esc(s.priceDate||'日期未记录')+'</small>':'—';
  try{
   const res=await fetch('../data/china-stocks-financial-valuation.json',{cache:'no-store'});
   if(!res.ok)throw new Error('HTTP '+res.status);
   const db=await res.json();
-  const ready=db.stocks.filter(s=>s.dataStatus&&s.dataStatus.startsWith('半年度')).length;
-  status.textContent=ready+' / '+db.stocks.length+' 家已录入部分财务数据';
-  body.innerHTML=db.stocks.map(s=>'<tr><td>'+esc(s.name)+'</td><td>'+esc(s.financialPeriod||'—')+'</td><td>'+fmt(s.revenue)+'</td><td>'+fmt(s.revenueGrowth)+'</td><td>'+fmt(s.netProfit)+'</td><td>'+fmt(s.eps,4)+'</td><td>'+fmt(s.roe)+'</td><td>'+fmt(s.operatingCashFlow)+'</td><td>'+((s.peTtm!==null&&s.peTtm!==undefined)?fmt(s.peTtm)+' / ':'— / ')+((s.pb!==null&&s.pb!==undefined)?fmt(s.pb):'—')+' / '+((s.psTtm!==null&&s.psTtm!==undefined)?fmt(s.psTtm):'—')+'</td><td>'+esc(s.dataStatus||'待核验')+'</td><td>'+(s.sourceUrl?'<a href="'+esc(s.sourceUrl)+'" target="_blank" rel="noopener">查看来源 ↗</a>':'—')+'</td></tr>').join('');
+  const list=Array.isArray(db.stocks)?db.stocks:[];
+  const total=list.length||49;
+  const priceDates=list.filter(s=>has(s.priceDate)).map(s=>s.priceDate).sort();
+  const firstDate=priceDates[0]||'—';
+  const lastDate=priceDates[priceDates.length-1]||'—';
+  const pct5=count(list,'valuationPercentile5Y');
+  const pct10=count(list,'valuationPercentile10Y');
+  const metrics=[
+   ['公司档案',String(list.length),'六大层次候选公司'],
+   ['价格快照',count(list,'price')+'/'+total,firstDate+' 至 '+lastDate+'；非实时行情'],
+   ['经营现金流 / 资本开支',count(list,'operatingCashFlow')+'/'+total+' / '+count(list,'capex')+'/'+total,'按数据库已录入字段统计'],
+   ['自由现金流 FCF',count(list,'freeCashFlow')+'/'+total,'按各公司记录的计算/披露口径'],
+   ['每股净资产 BVPS',count(list,'bookValuePerShare')+'/'+total,'其余公司字段保留空值'],
+   ['估值倍数 PE / PB / PS',count(list,'peTtm')+' / '+count(list,'pb')+' / '+count(list,'psTtm'),'未核验的估值倍数不补值'],
+   ['5年 / 10年估值分位',pct5+' / '+pct10,'目前没有可用的历史分位记录']
+  ];
+  coverageGrid.innerHTML=metrics.map(m=>'<div class="coverage-item"><span>'+esc(m[0])+'</span><strong>'+esc(m[1])+'</strong><small>'+esc(m[2])+'</small></div>').join('');
+  asOf.textContent='JSON 基准日：'+(db.asOf||'未注明')+' · 版本 '+(db.version||'—');
+  status.textContent=list.length+' 家记录 · 基准日 '+(db.asOf||'未注明');
+  coverageNote.textContent='数据库含 '+count(list,'price')+' 条价格记录，采集日期跨度为 '+firstDate+' 至 '+lastDate+'，不可视为同一交易日或实时行情。营收 '+count(list,'revenue')+'/'+total+'、归母净利润 '+count(list,'netProfit')+'/'+total+'、EPS '+count(list,'eps')+'/'+total+'、ROE '+count(list,'roe')+'/'+total+' 条有值；估值历史分位目前仍为 '+pct5+'/'+total+'（5年）和 '+pct10+'/'+total+'（10年）。';
+  qualityNote.textContent='数据审计摘要：JSON 基准日 '+(db.asOf||'未注明')+'；'+count(list,'price')+' 家有价格快照（日期 '+firstDate+'—'+lastDate+'），但并非实时行情。PE、PB、PS 分别有 '+count(list,'peTtm')+'、'+count(list,'pb')+'、'+count(list,'psTtm')+' 家有值；5年及10年估值分位均尚未形成完整可追溯序列。该数据库是研究底稿，不代表所有字段均已完成独立复核，也不构成买入评级。';
+  body.innerHTML=list.map(s=>{
+   const multiples=[s.peTtm,s.pb,s.psTtm].map(v=>fmt(v)).join(' / ');
+   const percentiles=[s.valuationPercentile5Y,s.valuationPercentile10Y].map(v=>has(v)?fmt(v,1)+'%':'—').join(' / ');
+   const src=[sourceLink(s.sourceUrl,'财报'),sourceLink(s.marketDataSourceUrl,'行情')].filter(Boolean).join(' ');
+   const note=[s.dataStatus||'待核验',s.dataNotes||'',s.qualityAlerts?JSON.stringify(s.qualityAlerts):''].filter(Boolean).join(' · ');
+   return '<tr>'+
+    '<td><b>'+esc(s.name||'—')+'</b><small>'+esc(s.code||'')+'</small></td>'+
+    '<td>'+esc(s.financialPeriod||'—')+'</td>'+
+    '<td>'+priceText(s)+'</td>'+
+    '<td>'+fmt(s.revenue)+'</td>'+
+    '<td>'+fmt(s.revenueGrowth)+'</td>'+
+    '<td>'+fmt(s.netProfit)+'</td>'+
+    '<td>'+fmt(s.eps,4)+'</td>'+
+    '<td>'+fmt(s.roe)+'</td>'+
+    '<td>'+fmt(s.operatingCashFlow)+'</td>'+
+    '<td>'+fmt(s.capex)+'</td>'+
+    '<td title="'+esc(s.freeCashFlowMethod||'')+'">'+fmt(s.freeCashFlow)+'</td>'+
+    '<td>'+fmt(s.bookValuePerShare,4)+'</td>'+
+    '<td>'+multiples+'</td>'+
+    '<td>'+percentiles+'</td>'+
+    '<td title="'+esc(note)+'">'+esc(s.dataStatus||'待核验')+'</td>'+
+    '<td>'+ (src||'—') +'</td>'+
+   '</tr>';
+  }).join('');
  }catch(err){
   status.textContent='数据库读取失败';
-  body.innerHTML='<tr><td colspan="11">暂时无法加载 JSON 数据库。可直接打开 <a href="../data/china-stocks-financial-valuation.json">数据库文件</a> 查看。</td></tr>';
+  asOf.textContent='无法取得数据库基准日';
+  coverageGrid.innerHTML='<div class="coverage-item"><span>数据库状态</span><strong>读取失败</strong><small>请检查 JSON 文件路径或网络连接</small></div>';
+  coverageNote.textContent='财务数据库未能加载；定性公司卡片仍可使用。';
+  qualityNote.textContent='无法加载数据文件：'+err.message+'。';
+  body.innerHTML='<tr><td colspan="16">暂时无法加载 JSON 数据库。可直接打开 <a href="../data/china-stocks-financial-valuation.json">数据库文件</a> 查看。</td></tr>';
  }
-})();
+})();;
 </script>
 </body></html>
