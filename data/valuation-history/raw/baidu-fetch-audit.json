@@ -2,7 +2,7 @@
   "source": "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
   "sourceDocumentation": "https://github.com/akfamily/akshare/blob/master/docs/data/stock/stock_valuation.md",
   "endpointImplementation": "https://github.com/akfamily/akshare/blob/master/akshare/stock/valuation/stock_zh_valuation_baidu.py",
-  "fetchedAt": "2026-10-30T10:31:01+00:00",
+  "fetchedAt": "2026-10-30T10:36:58+00:00",
   "requestedPeriod": "全部",
   "aShareCutoffExclusive": "2018-01-01",
   "requestedCompanies": 49,
@@ -755,11 +755,11 @@
       "source": "Eniu public HK indicator chart",
       "rowsReturned": 0,
       "rowsRetainedBeforeBaidu": 0,
-      "nonTradingCalendarRowsDropped": 0,
       "firstDate": null,
       "lastDate": null,
       "sourceUrl": "https://eniu.com/chart/pbh/hk00700",
-      "status": "EMPTY"
+      "status": "ERROR",
+      "error": "The read operation timed out"
     },
     {
       "code": "00700.HK",
@@ -768,11 +768,11 @@
       "source": "Eniu public HK indicator chart",
       "rowsReturned": 0,
       "rowsRetainedBeforeBaidu": 0,
-      "nonTradingCalendarRowsDropped": 0,
       "firstDate": null,
       "lastDate": null,
       "sourceUrl": "https://eniu.com/chart/peh/hk00700",
-      "status": "EMPTY"
+      "status": "ERROR",
+      "error": "The read operation timed out"
     },
     {
       "code": "00700.HK",
@@ -866,11 +866,11 @@
       "source": "Eniu public HK indicator chart",
       "rowsReturned": 0,
       "rowsRetainedBeforeBaidu": 0,
-      "nonTradingCalendarRowsDropped": 0,
       "firstDate": null,
       "lastDate": null,
       "sourceUrl": "https://eniu.com/chart/pbh/hk02313",
-      "status": "EMPTY"
+      "status": "ERROR",
+      "error": "The read operation timed out"
     },
     {
       "code": "02313.HK",
