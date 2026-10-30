@@ -11,6 +11,7 @@ on:
       - "scripts/fetch_baostock_a_share_valuation.py"
       - "scripts/fetch_baidu_valuation_history.py"
       - "scripts/probe_legulegu_a_share_history.py"
+      - "scripts/probe_eniu_a_share_history.py"
       - "scripts/build_valuation_history.py"
   schedule:
     # Monthly refresh; 17:30 China Standard Time on the 3rd day of each month.
@@ -55,6 +56,12 @@ jobs:
         run: |
           python -m py_compile scripts/probe_legulegu_a_share_history.py
           python scripts/probe_legulegu_a_share_history.py
+
+      - name: Probe Enniu public A-share PE/PB/PS charts (isolated candidate)
+        continue-on-error: true
+        run: |
+          python -m py_compile scripts/probe_eniu_a_share_history.py
+          python scripts/probe_eniu_a_share_history.py
 
       - name: Ensure BaoStock input file exists
         run: |
