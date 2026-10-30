@@ -150,7 +150,7 @@ def fetch_eniu_series(code: str, metric: str, timeout: int, retries: int) -> tup
     AKShare documents this source as potentially stale. It is therefore used
     only strictly before the earliest dated observation from Baidu for a code.
     """
-    suffix = "peh" if metric == "peTtm" else "pbh"
+    suffix = {"peTtm": "peh", "pb": "pbh", "psTtm": "psh"}[metric]
     url = f"https://eniu.com/chart/{suffix}/hk{code}"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/128 Safari/537.36",
@@ -167,7 +167,7 @@ def fetch_eniu_series(code: str, metric: str, timeout: int, retries: int) -> tup
                 payload = payload.get("data") or payload.get("result") or []
             if not isinstance(payload, list):
                 raise RuntimeError(f"Enniu returned unexpected payload: {str(payload)[:300]}")
-            keys = ("pe", "PE", "pe_ttm", "value") if metric == "peTtm" else ("pb", "PB", "value")
+            keys = {"peTtm": ("pe", "PE", "pe_ttm", "value"), "pb": ("pb", "PB", "value"), "psTtm": ("ps", "PS", "ps_ttm", "value")}[metric]
             points: dict[str, float | None] = {}
             for point in payload:
                 if not isinstance(point, dict):
@@ -274,7 +274,7 @@ def main() -> int:
         # chosen between two vendors with potentially different valuation bases.
         if market == "HK":
             baidu_first = min(by_day) if by_day else None
-            for metric in ("peTtm", "pb"):
+            for metric in ("peTtm", "pb", "psTtm"):
                 try:
                     eniu_series, eniu_url = fetch_eniu_series(raw_code, metric, args.timeout, args.retries)
                     eligible = [(day, value) for day, value in eniu_series
@@ -296,7 +296,7 @@ def main() -> int:
                         "code": code, "market": market, "metric": metric,
                         "source": "Eniu public HK indicator chart", "rowsReturned": 0,
                         "rowsRetainedBeforeBaidu": 0, "firstDate": None, "lastDate": None,
-                        "sourceUrl": f"https://eniu.com/chart/{'peh' if metric == 'peTtm' else 'pbh'}/hk{raw_code}",
+                        "sourceUrl": f"https://eniu.com/chart/{{'peTtm': 'peh', 'pb': 'pbh', 'psTtm': 'psh'}}[metric]/hk{raw_code}",
                         "status": "ERROR", "error": str(exc),
                     })
                 time.sleep(max(0.0, args.pause))
