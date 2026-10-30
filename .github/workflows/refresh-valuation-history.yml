@@ -60,6 +60,7 @@ jobs:
           python scripts/probe_legulegu_a_share_history.py
 
       - name: Probe Enniu public A-share PE/PB/PS charts (isolated candidate)
+        if: github.event_name != 'push'
         continue-on-error: true
         run: |
           python -m py_compile scripts/probe_eniu_a_share_history.py
