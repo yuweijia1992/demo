@@ -56,6 +56,7 @@ jobs:
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
+          fi
 
       - name: Check A-share source coverage
         run: |
@@ -71,4 +72,3 @@ jobs:
           if requested != 44 or covered != requested:
               sys.exit(1)
           PY
-          fi
