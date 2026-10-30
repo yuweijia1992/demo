@@ -1,6 +1,6 @@
 {
   "title": "中国49家公司历史估值月度序列覆盖审计",
-  "generatedAt": "2026-10-30T09:33:03+00:00",
+  "generatedAt": "2026-10-30T09:39:18+00:00",
   "inputFiles": [
     "data/valuation-history/raw/baostock-pre2018-daily.csv",
     "data/valuation-history/raw/baidu-valuation-history.csv",
@@ -11,9 +11,46 @@
     "startMonth": "2006-01",
     "endMonth": "2026-10"
   },
-  "frequency": "one last observed trading-date row per calendar month",
-  "inputDailyRowsRead": 105058,
-  "monthlyRowsWritten": 9034,
+  "frequency": "latest observed valid exchange-session row per calendar month; actual last-session lag is audited separately",
+  "calendarAudit": {
+    "calendarSource": "exchange_calendars XSHG + XHKG",
+    "byMarket": {
+      "CN": {
+        "observations": 8308,
+        "exactMonthEnd": 5022,
+        "lag1to2Sessions": 701,
+        "lag3to5Sessions": 1039,
+        "lag6PlusSessions": 1546,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 9.0,
+        "maxLagSessions": 21
+      },
+      "HK": {
+        "observations": 685,
+        "exactMonthEnd": 154,
+        "lag1to2Sessions": 187,
+        "lag3to5Sessions": 132,
+        "lag6PlusSessions": 212,
+        "medianLagSessions": 3,
+        "p90LagSessions": 12.0,
+        "maxLagSessions": 20
+      }
+    },
+    "overall": {
+      "observations": 8993,
+      "exactMonthEnd": 5176,
+      "lag1to2Sessions": 888,
+      "lag3to5Sessions": 1171,
+      "lag6PlusSessions": 1758,
+      "medianLagSessions": 0,
+      "p90LagSessions": 9.0,
+      "maxLagSessions": 21
+    },
+    "latestObservationExactMonthEndCompanies": 48,
+    "latestObservationWithin5SessionsCompanies": 49
+  },
+  "inputDailyRowsRead": 104405,
+  "monthlyRowsWritten": 8993,
   "companiesInUniverse": 49,
   "companiesWithHistory": 49,
   "companiesWithoutHistory": [],
@@ -37,11 +74,39 @@
   "latestMonthEndPercentileCoverage": {
     "peTtm": {
       "5Y": 41,
-      "10Y": 10
+      "10Y": 11
     },
     "pb": {
       "5Y": 45,
-      "10Y": 12
+      "10Y": 13
+    },
+    "psTtm": {
+      "5Y": 42,
+      "10Y": 0
+    }
+  },
+  "latestExactMonthEndPercentileCoverage": {
+    "peTtm": {
+      "5Y": 40,
+      "10Y": 11
+    },
+    "pb": {
+      "5Y": 44,
+      "10Y": 13
+    },
+    "psTtm": {
+      "5Y": 42,
+      "10Y": 0
+    }
+  },
+  "latestWithin5TradingSessionsPercentileCoverage": {
+    "peTtm": {
+      "5Y": 41,
+      "10Y": 11
+    },
+    "pb": {
+      "5Y": 45,
+      "10Y": 13
     },
     "psTtm": {
       "5Y": 42,
@@ -61,6 +126,16 @@
       "peTtmValidMonths": 148,
       "pbValidMonths": 116,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 158,
+        "exactMonthEnd": 137,
+        "lag1to2Sessions": 16,
+        "lag3to5Sessions": 5,
+        "lag6PlusSessions": 0,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 1.0,
+        "maxLagSessions": 3
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -82,6 +157,16 @@
       "peTtmValidMonths": 126,
       "pbValidMonths": 220,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 243,
+        "exactMonthEnd": 122,
+        "lag1to2Sessions": 18,
+        "lag3to5Sessions": 30,
+        "lag6PlusSessions": 73,
+        "medianLagSessions": 0,
+        "p90LagSessions": 11.0,
+        "maxLagSessions": 21
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -103,6 +188,16 @@
       "peTtmValidMonths": 235,
       "pbValidMonths": 235,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 235,
+        "exactMonthEnd": 115,
+        "lag1to2Sessions": 16,
+        "lag3to5Sessions": 24,
+        "lag6PlusSessions": 80,
+        "medianLagSessions": 1,
+        "p90LagSessions": 12.599999999999994,
+        "maxLagSessions": 21
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -124,6 +219,16 @@
       "peTtmValidMonths": 121,
       "pbValidMonths": 228,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 246,
+        "exactMonthEnd": 123,
+        "lag1to2Sessions": 27,
+        "lag3to5Sessions": 34,
+        "lag6PlusSessions": 62,
+        "medianLagSessions": 0.5,
+        "p90LagSessions": 11.5,
+        "maxLagSessions": 18
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -145,6 +250,16 @@
       "peTtmValidMonths": 180,
       "pbValidMonths": 127,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 201,
+        "exactMonthEnd": 128,
+        "lag1to2Sessions": 25,
+        "lag3to5Sessions": 37,
+        "lag6PlusSessions": 11,
+        "medianLagSessions": 0,
+        "p90LagSessions": 5,
+        "maxLagSessions": 11
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -166,6 +281,16 @@
       "peTtmValidMonths": 200,
       "pbValidMonths": 200,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 200,
+        "exactMonthEnd": 117,
+        "lag1to2Sessions": 22,
+        "lag3to5Sessions": 30,
+        "lag6PlusSessions": 31,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 6.199999999999989,
+        "maxLagSessions": 11
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -187,6 +312,16 @@
       "peTtmValidMonths": 184,
       "pbValidMonths": 184,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 184,
+        "exactMonthEnd": 117,
+        "lag1to2Sessions": 17,
+        "lag3to5Sessions": 30,
+        "lag6PlusSessions": 20,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 6.0,
+        "maxLagSessions": 12
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -208,6 +343,16 @@
       "peTtmValidMonths": 136,
       "pbValidMonths": 183,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 183,
+        "exactMonthEnd": 117,
+        "lag1to2Sessions": 16,
+        "lag3to5Sessions": 28,
+        "lag6PlusSessions": 22,
+        "medianLagSessions": 0,
+        "p90LagSessions": 8.600000000000023,
+        "maxLagSessions": 15
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -229,6 +374,16 @@
       "peTtmValidMonths": 91,
       "pbValidMonths": 145,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 154,
+        "exactMonthEnd": 135,
+        "lag1to2Sessions": 14,
+        "lag3to5Sessions": 5,
+        "lag6PlusSessions": 0,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 1.0,
+        "maxLagSessions": 3
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -250,6 +405,16 @@
       "peTtmValidMonths": 211,
       "pbValidMonths": 211,
       "psTtmValidMonths": 0,
+      "monthEndSessionLag": {
+        "observations": 211,
+        "exactMonthEnd": 14,
+        "lag1to2Sessions": 44,
+        "lag3to5Sessions": 54,
+        "lag6PlusSessions": 99,
+        "medianLagSessions": 5,
+        "p90LagSessions": 15,
+        "maxLagSessions": 20
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)"
       ],
@@ -269,6 +434,16 @@
       "peTtmValidMonths": 245,
       "pbValidMonths": 245,
       "psTtmValidMonths": 0,
+      "monthEndSessionLag": {
+        "observations": 245,
+        "exactMonthEnd": 28,
+        "lag1to2Sessions": 37,
+        "lag3to5Sessions": 67,
+        "lag6PlusSessions": 113,
+        "medianLagSessions": 5,
+        "p90LagSessions": 13.0,
+        "maxLagSessions": 20
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)"
       ],
@@ -288,6 +463,16 @@
       "peTtmValidMonths": 48,
       "pbValidMonths": 23,
       "psTtmValidMonths": 0,
+      "monthEndSessionLag": {
+        "observations": 77,
+        "exactMonthEnd": 50,
+        "lag1to2Sessions": 27,
+        "lag3to5Sessions": 0,
+        "lag6PlusSessions": 0,
+        "medianLagSessions": 0,
+        "p90LagSessions": 1.0,
+        "maxLagSessions": 2
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)"
       ],
@@ -307,6 +492,16 @@
       "peTtmValidMonths": 15,
       "pbValidMonths": 68,
       "psTtmValidMonths": 0,
+      "monthEndSessionLag": {
+        "observations": 68,
+        "exactMonthEnd": 36,
+        "lag1to2Sessions": 32,
+        "lag3to5Sessions": 0,
+        "lag6PlusSessions": 0,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 1.0,
+        "maxLagSessions": 1
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)"
       ],
@@ -326,6 +521,16 @@
       "peTtmValidMonths": 84,
       "pbValidMonths": 84,
       "psTtmValidMonths": 0,
+      "monthEndSessionLag": {
+        "observations": 84,
+        "exactMonthEnd": 26,
+        "lag1to2Sessions": 47,
+        "lag3to5Sessions": 11,
+        "lag6PlusSessions": 0,
+        "medianLagSessions": 1.0,
+        "p90LagSessions": 3.0,
+        "maxLagSessions": 4
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)"
       ],
@@ -345,6 +550,16 @@
       "peTtmValidMonths": 129,
       "pbValidMonths": 181,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 204,
+        "exactMonthEnd": 123,
+        "lag1to2Sessions": 25,
+        "lag3to5Sessions": 31,
+        "lag6PlusSessions": 25,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 6.0,
+        "maxLagSessions": 11
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -366,6 +581,16 @@
       "peTtmValidMonths": 122,
       "pbValidMonths": 179,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 200,
+        "exactMonthEnd": 128,
+        "lag1to2Sessions": 25,
+        "lag3to5Sessions": 36,
+        "lag6PlusSessions": 11,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 5.0,
+        "maxLagSessions": 11
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -387,6 +612,16 @@
       "peTtmValidMonths": 193,
       "pbValidMonths": 193,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 193,
+        "exactMonthEnd": 115,
+        "lag1to2Sessions": 21,
+        "lag3to5Sessions": 26,
+        "lag6PlusSessions": 31,
+        "medianLagSessions": 0,
+        "p90LagSessions": 7.600000000000023,
+        "maxLagSessions": 11
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -408,6 +643,16 @@
       "peTtmValidMonths": 180,
       "pbValidMonths": 180,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 180,
+        "exactMonthEnd": 117,
+        "lag1to2Sessions": 16,
+        "lag3to5Sessions": 26,
+        "lag6PlusSessions": 21,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 9.0,
+        "maxLagSessions": 15
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -429,6 +674,16 @@
       "peTtmValidMonths": 160,
       "pbValidMonths": 174,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 174,
+        "exactMonthEnd": 116,
+        "lag1to2Sessions": 15,
+        "lag3to5Sessions": 25,
+        "lag6PlusSessions": 18,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 5.700000000000017,
+        "maxLagSessions": 15
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -450,6 +705,16 @@
       "peTtmValidMonths": 101,
       "pbValidMonths": 101,
       "psTtmValidMonths": 101,
+      "monthEndSessionLag": {
+        "observations": 101,
+        "exactMonthEnd": 101,
+        "lag1to2Sessions": 0,
+        "lag3to5Sessions": 0,
+        "lag6PlusSessions": 0,
+        "medianLagSessions": 0,
+        "p90LagSessions": 0,
+        "maxLagSessions": 0
+      },
       "sourceLabels": [
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
@@ -469,6 +734,16 @@
       "peTtmValidMonths": 97,
       "pbValidMonths": 97,
       "psTtmValidMonths": 97,
+      "monthEndSessionLag": {
+        "observations": 97,
+        "exactMonthEnd": 97,
+        "lag1to2Sessions": 0,
+        "lag3to5Sessions": 0,
+        "lag6PlusSessions": 0,
+        "medianLagSessions": 0,
+        "p90LagSessions": 0.0,
+        "maxLagSessions": 0
+      },
       "sourceLabels": [
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
@@ -488,6 +763,16 @@
       "peTtmValidMonths": 240,
       "pbValidMonths": 116,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 250,
+        "exactMonthEnd": 148,
+        "lag1to2Sessions": 18,
+        "lag3to5Sessions": 55,
+        "lag6PlusSessions": 29,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 6.0,
+        "maxLagSessions": 14
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -509,6 +794,16 @@
       "peTtmValidMonths": 199,
       "pbValidMonths": 154,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 247,
+        "exactMonthEnd": 125,
+        "lag1to2Sessions": 22,
+        "lag3to5Sessions": 31,
+        "lag6PlusSessions": 69,
+        "medianLagSessions": 0,
+        "p90LagSessions": 9.0,
+        "maxLagSessions": 20
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -530,6 +825,16 @@
       "peTtmValidMonths": 235,
       "pbValidMonths": 235,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 235,
+        "exactMonthEnd": 115,
+        "lag1to2Sessions": 16,
+        "lag3to5Sessions": 24,
+        "lag6PlusSessions": 80,
+        "medianLagSessions": 1,
+        "p90LagSessions": 12.599999999999994,
+        "maxLagSessions": 21
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -551,6 +856,16 @@
       "peTtmValidMonths": 226,
       "pbValidMonths": 226,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 226,
+        "exactMonthEnd": 114,
+        "lag1to2Sessions": 19,
+        "lag3to5Sessions": 26,
+        "lag6PlusSessions": 67,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 10.0,
+        "maxLagSessions": 20
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -572,6 +887,16 @@
       "peTtmValidMonths": 226,
       "pbValidMonths": 226,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 226,
+        "exactMonthEnd": 114,
+        "lag1to2Sessions": 19,
+        "lag3to5Sessions": 26,
+        "lag6PlusSessions": 67,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 10.0,
+        "maxLagSessions": 20
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -593,6 +918,16 @@
       "peTtmValidMonths": 226,
       "pbValidMonths": 226,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 226,
+        "exactMonthEnd": 114,
+        "lag1to2Sessions": 19,
+        "lag3to5Sessions": 26,
+        "lag6PlusSessions": 67,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 10.0,
+        "maxLagSessions": 20
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -614,6 +949,16 @@
       "peTtmValidMonths": 250,
       "pbValidMonths": 250,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 250,
+        "exactMonthEnd": 138,
+        "lag1to2Sessions": 18,
+        "lag3to5Sessions": 55,
+        "lag6PlusSessions": 39,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 7.0,
+        "maxLagSessions": 14
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -635,6 +980,16 @@
       "peTtmValidMonths": 250,
       "pbValidMonths": 250,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 250,
+        "exactMonthEnd": 138,
+        "lag1to2Sessions": 18,
+        "lag3to5Sessions": 55,
+        "lag6PlusSessions": 39,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 7.0,
+        "maxLagSessions": 14
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -649,13 +1004,23 @@
       "issuerName": "川投能源",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 239,
+      "monthlyRows": 217,
       "firstMonth": "2006-02",
       "lastMonth": "2026-10",
-      "missingCalendarMonthsBetweenFirstAndLast": 10,
-      "peTtmValidMonths": 130,
-      "pbValidMonths": 215,
+      "missingCalendarMonthsBetweenFirstAndLast": 32,
+      "peTtmValidMonths": 217,
+      "pbValidMonths": 217,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 217,
+        "exactMonthEnd": 112,
+        "lag1to2Sessions": 17,
+        "lag3to5Sessions": 14,
+        "lag6PlusSessions": 74,
+        "medianLagSessions": 0,
+        "p90LagSessions": 12.0,
+        "maxLagSessions": 21
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -670,13 +1035,23 @@
       "issuerName": "海尔智家",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 239,
+      "monthlyRows": 217,
       "firstMonth": "2006-02",
       "lastMonth": "2026-10",
-      "missingCalendarMonthsBetweenFirstAndLast": 10,
-      "peTtmValidMonths": 215,
-      "pbValidMonths": 130,
+      "missingCalendarMonthsBetweenFirstAndLast": 32,
+      "peTtmValidMonths": 217,
+      "pbValidMonths": 217,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 217,
+        "exactMonthEnd": 112,
+        "lag1to2Sessions": 17,
+        "lag3to5Sessions": 14,
+        "lag6PlusSessions": 74,
+        "medianLagSessions": 0,
+        "p90LagSessions": 12.0,
+        "maxLagSessions": 21
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -698,6 +1073,16 @@
       "peTtmValidMonths": 116,
       "pbValidMonths": 220,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 243,
+        "exactMonthEnd": 122,
+        "lag1to2Sessions": 18,
+        "lag3to5Sessions": 30,
+        "lag6PlusSessions": 73,
+        "medianLagSessions": 0,
+        "p90LagSessions": 11.0,
+        "maxLagSessions": 21
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -719,6 +1104,16 @@
       "peTtmValidMonths": 211,
       "pbValidMonths": 235,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 235,
+        "exactMonthEnd": 115,
+        "lag1to2Sessions": 16,
+        "lag3to5Sessions": 24,
+        "lag6PlusSessions": 80,
+        "medianLagSessions": 1,
+        "p90LagSessions": 12.599999999999994,
+        "maxLagSessions": 21
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -740,6 +1135,16 @@
       "peTtmValidMonths": 238,
       "pbValidMonths": 238,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 238,
+        "exactMonthEnd": 110,
+        "lag1to2Sessions": 24,
+        "lag3to5Sessions": 34,
+        "lag6PlusSessions": 70,
+        "medianLagSessions": 1.0,
+        "p90LagSessions": 13.300000000000011,
+        "maxLagSessions": 20
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -761,6 +1166,16 @@
       "peTtmValidMonths": 58,
       "pbValidMonths": 58,
       "psTtmValidMonths": 58,
+      "monthEndSessionLag": {
+        "observations": 58,
+        "exactMonthEnd": 58,
+        "lag1to2Sessions": 0,
+        "lag3to5Sessions": 0,
+        "lag6PlusSessions": 0,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 0.0,
+        "maxLagSessions": 0
+      },
       "sourceLabels": [
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
@@ -780,6 +1195,16 @@
       "peTtmValidMonths": 228,
       "pbValidMonths": 228,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 228,
+        "exactMonthEnd": 120,
+        "lag1to2Sessions": 21,
+        "lag3to5Sessions": 32,
+        "lag6PlusSessions": 55,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 9.300000000000011,
+        "maxLagSessions": 15
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -801,6 +1226,16 @@
       "peTtmValidMonths": 127,
       "pbValidMonths": 212,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 236,
+        "exactMonthEnd": 130,
+        "lag1to2Sessions": 27,
+        "lag3to5Sessions": 43,
+        "lag6PlusSessions": 36,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 6.5,
+        "maxLagSessions": 14
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -815,13 +1250,23 @@
       "issuerName": "工商银行",
       "market": "CN",
       "currency": "CNY",
-      "monthlyRows": 236,
-      "firstMonth": "2006-11",
+      "monthlyRows": 239,
+      "firstMonth": "2006-10",
       "lastMonth": "2026-10",
-      "missingCalendarMonthsBetweenFirstAndLast": 4,
-      "peTtmValidMonths": 236,
-      "pbValidMonths": 236,
+      "missingCalendarMonthsBetweenFirstAndLast": 2,
+      "peTtmValidMonths": 239,
+      "pbValidMonths": 239,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 239,
+        "exactMonthEnd": 123,
+        "lag1to2Sessions": 18,
+        "lag3to5Sessions": 36,
+        "lag6PlusSessions": 62,
+        "medianLagSessions": 0,
+        "p90LagSessions": 12.0,
+        "maxLagSessions": 17
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -843,6 +1288,16 @@
       "peTtmValidMonths": 200,
       "pbValidMonths": 128,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 226,
+        "exactMonthEnd": 128,
+        "lag1to2Sessions": 25,
+        "lag3to5Sessions": 39,
+        "lag6PlusSessions": 34,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 6.0,
+        "maxLagSessions": 14
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -864,6 +1319,16 @@
       "peTtmValidMonths": 185,
       "pbValidMonths": 129,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 208,
+        "exactMonthEnd": 124,
+        "lag1to2Sessions": 27,
+        "lag3to5Sessions": 31,
+        "lag6PlusSessions": 26,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 6.0,
+        "maxLagSessions": 11
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -885,6 +1350,16 @@
       "peTtmValidMonths": 63,
       "pbValidMonths": 63,
       "psTtmValidMonths": 63,
+      "monthEndSessionLag": {
+        "observations": 63,
+        "exactMonthEnd": 63,
+        "lag1to2Sessions": 0,
+        "lag3to5Sessions": 0,
+        "lag6PlusSessions": 0,
+        "medianLagSessions": 0,
+        "p90LagSessions": 0.0,
+        "maxLagSessions": 0
+      },
       "sourceLabels": [
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
@@ -904,6 +1379,16 @@
       "peTtmValidMonths": 82,
       "pbValidMonths": 82,
       "psTtmValidMonths": 82,
+      "monthEndSessionLag": {
+        "observations": 82,
+        "exactMonthEnd": 82,
+        "lag1to2Sessions": 0,
+        "lag3to5Sessions": 0,
+        "lag6PlusSessions": 0,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 0.0,
+        "maxLagSessions": 0
+      },
       "sourceLabels": [
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
@@ -923,6 +1408,16 @@
       "peTtmValidMonths": 205,
       "pbValidMonths": 205,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 205,
+        "exactMonthEnd": 118,
+        "lag1to2Sessions": 19,
+        "lag3to5Sessions": 27,
+        "lag6PlusSessions": 41,
+        "medianLagSessions": 0,
+        "p90LagSessions": 9.0,
+        "maxLagSessions": 12
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -944,6 +1439,16 @@
       "peTtmValidMonths": 169,
       "pbValidMonths": 231,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 231,
+        "exactMonthEnd": 120,
+        "lag1to2Sessions": 22,
+        "lag3to5Sessions": 33,
+        "lag6PlusSessions": 56,
+        "medianLagSessions": 0,
+        "p90LagSessions": 10,
+        "maxLagSessions": 15
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -965,6 +1470,16 @@
       "peTtmValidMonths": 131,
       "pbValidMonths": 112,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 137,
+        "exactMonthEnd": 116,
+        "lag1to2Sessions": 14,
+        "lag3to5Sessions": 4,
+        "lag6PlusSessions": 3,
+        "medianLagSessions": 0,
+        "p90LagSessions": 2.0,
+        "maxLagSessions": 8
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -986,6 +1501,16 @@
       "peTtmValidMonths": 102,
       "pbValidMonths": 102,
       "psTtmValidMonths": 102,
+      "monthEndSessionLag": {
+        "observations": 102,
+        "exactMonthEnd": 102,
+        "lag1to2Sessions": 0,
+        "lag3to5Sessions": 0,
+        "lag6PlusSessions": 0,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 0.0,
+        "maxLagSessions": 0
+      },
       "sourceLabels": [
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
@@ -1002,9 +1527,19 @@
       "firstMonth": "2014-02",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 145,
-      "pbValidMonths": 114,
+      "peTtmValidMonths": 153,
+      "pbValidMonths": 153,
       "psTtmValidMonths": 106,
+      "monthEndSessionLag": {
+        "observations": 153,
+        "exactMonthEnd": 126,
+        "lag1to2Sessions": 14,
+        "lag3to5Sessions": 13,
+        "lag6PlusSessions": 0,
+        "medianLagSessions": 0,
+        "p90LagSessions": 2.0,
+        "maxLagSessions": 4
+      },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
@@ -1026,6 +1561,16 @@
       "peTtmValidMonths": 51,
       "pbValidMonths": 51,
       "psTtmValidMonths": 51,
+      "monthEndSessionLag": {
+        "observations": 51,
+        "exactMonthEnd": 51,
+        "lag1to2Sessions": 0,
+        "lag3to5Sessions": 0,
+        "lag6PlusSessions": 0,
+        "medianLagSessions": 0,
+        "p90LagSessions": 0,
+        "maxLagSessions": 0
+      },
       "sourceLabels": [
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
@@ -1045,6 +1590,16 @@
       "peTtmValidMonths": 76,
       "pbValidMonths": 76,
       "psTtmValidMonths": 76,
+      "monthEndSessionLag": {
+        "observations": 76,
+        "exactMonthEnd": 76,
+        "lag1to2Sessions": 0,
+        "lag3to5Sessions": 0,
+        "lag6PlusSessions": 0,
+        "medianLagSessions": 0.0,
+        "p90LagSessions": 0.0,
+        "maxLagSessions": 0
+      },
       "sourceLabels": [
         "Eastmoney Data Center / RPT_VALUEANALYSIS_DET"
       ],
@@ -1059,6 +1614,7 @@
     "Only each issuer's primary securityCode is accepted; alternate listings must be a separate security series.",
     "Rows with no source label and valid sourceUrl are rejected.",
     "Negative or zero PE/PB/PS values are excluded from percentile calculations.",
-    "A monthly row uses the latest observed daily row in that calendar month; ensure vendor export contains the full daily history."
+    "A monthly row uses the latest observed in-month exchange-session observation; expected last session and lag are recorded and must be reviewed before calling it a strict month-end close.",
+    "Sparse vendor history can omit calendar months or leave an observation several trading sessions before month-end; no missing month is filled or forward-carried."
   ]
 }
