@@ -7,7 +7,7 @@
     "operatingCashFlow": 49,
     "capex": 49,
     "freeCashFlow": 43,
-    "bookValuePerShare": 42,
+    "bookValuePerShare": 45,
     "peTtm": 14,
     "pb": 11,
     "psTtm": 1,
@@ -3241,9 +3241,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://ir.jd.com/news-releases/news-release-details/jdcom-announces-second-quarter-and-interim-2026-results",
-      "verifiedAt": "2026-10-27",
+      "verifiedAt": "2026-10-30",
       "dataStatus": "2026年中期业绩现金流已按公司公告补录；公司披露FCF口径与简化FCF不同",
-      "dataNotes": "2026年第二季度收入3464亿元人民币，同比-2.9%；归属于普通股股东净利润约71亿元人民币，上年同期62亿元；非GAAP净利润约89亿元。记录为单季度，非半年累计；港股价格以港币、ADR价格以美元分别处理。 2026年上半年业绩公告披露经营现金流38,273百万元、资本开支（扣除相关处置收入）10,583百万元、公司定义自由现金流25,354百万元。公司FCF口径还扣除了消费金融应收款影响2,336百万元，故不等同于数据库常规简化FCF=OCF-capex，已明确标注以避免口径混用。",
+      "dataNotes": "2026年第二季度收入3464亿元人民币，同比-2.9%；归属于普通股股东净利润约71亿元人民币，上年同期62亿元；非GAAP净利润约89亿元。记录为单季度，非半年累计；港股价格以港币、ADR价格以美元分别处理。 2026年上半年业绩公告披露经营现金流38,273百万元、资本开支（扣除相关处置收入）10,583百万元、公司定义自由现金流25,354百万元。公司FCF口径还扣除了消费金融应收款影响2,336百万元，故不等同于数据库常规简化FCF=OCF-capex，已明确标注以避免口径混用。 BVPS为计算值，使用母公司股东权益除以期末流通普通股数；不含非控股权益。财报报表币种为人民币，故每股净资产记录人民币元，即使港股交易币种为港币；ADR与港股普通股比例/换算不可混淆。",
       "derivedMetrics": {
         "netProfitMarginPct": 2.05,
         "profitability": "盈利",
@@ -3267,7 +3267,10 @@
       "marketDataSourceUrl": "https://hk.finance.yahoo.com/quote/9618.HK/history/",
       "marketDataNotes": "Yahoo Finance列示2026-10-22京东集团-SW（9618.HK）收盘97.90港元；对应港股，不是美股JD ADR。",
       "capexSourceUrl": "https://ir.jd.com/news-releases/news-release-details/jdcom-announces-second-quarter-and-interim-2026-results",
-      "freeCashFlowMethod": "京东集团公司披露口径FCF：2026H1经营现金流38,273百万元，减消费金融应收款影响2,336百万元、资本开支（扣除相关处置收入）10,583百万元，得到公司披露FCF 25,354百万元；与简单OCF-capex口径不同，不年化"
+      "freeCashFlowMethod": "京东集团公司披露口径FCF：2026H1经营现金流38,273百万元，减消费金融应收款影响2,336百万元、资本开支（扣除相关处置收入）10,583百万元，得到公司披露FCF 25,354百万元；与简单OCF-capex口径不同，不年化",
+      "bookValuePerShare": 81.52,
+      "bookValuePerShareMethod": "计算值：归属于JD.com, Inc.股东权益219,118百万元人民币÷期末流通普通股2,688百万股=81.52元人民币/股；2026-06-30。非港币计价；未使用含少数股东权益的总权益。",
+      "bookValuePerShareSourceUrl": "https://ir.jd.com/system/files-encrypted/nasdaq_kms/assets/2026/08/13/18-03-06/JD.com%20Announces%20Second%20Quarter%20and%20Interim%202026%20Results.pdf"
     },
     {
       "layer": 6,
@@ -3513,9 +3516,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526371261/d434015dex991.htm",
-      "verifiedAt": "2026-10-27",
+      "verifiedAt": "2026-10-30",
       "dataStatus": "2026年中期报告现金流字段已按SEC披露补录；估值字段另行核验",
-      "dataNotes": "2026年第二季度收入79.4亿元人民币，同比+8%；净利润3.391亿元，同比+55%；调整后净利润7.036亿元，同比+25%。此处为单季度数据，不是半年累计；港股以港币、ADR以美元分别估值。 2026年第二季度业绩公告：基本每股收益人民币0.82元/股（季度口径），报告同时披露季度收入7.94十亿元、净利润339.1百万元；与半年累计指标不可直接比较。 2026年上半年平均净资产收益率3.58%，来源为同花顺2026年中报报道；为报告期口径，未年化。 2026年中期报告合并现金流量表（人民币千元）披露经营现金流2,952.457百万元；购置物业及设备1,219.708百万元、购置无形资产738.135百万元，合计资本开支1,957.843百万元；简化FCF=994.614百万元。半年值不年化，短期投资与定期存款配置不计入资本开支。",
+      "dataNotes": "2026年第二季度收入79.4亿元人民币，同比+8%；净利润3.391亿元，同比+55%；调整后净利润7.036亿元，同比+25%。此处为单季度数据，不是半年累计；港股以港币、ADR以美元分别估值。 2026年第二季度业绩公告：基本每股收益人民币0.82元/股（季度口径），报告同时披露季度收入7.94十亿元、净利润339.1百万元；与半年累计指标不可直接比较。 2026年上半年平均净资产收益率3.58%，来源为同花顺2026年中报报道；为报告期口径，未年化。 2026年中期报告合并现金流量表（人民币千元）披露经营现金流2,952.457百万元；购置物业及设备1,219.708百万元、购置无形资产738.135百万元，合计资本开支1,957.843百万元；简化FCF=994.614百万元。半年值不年化，短期投资与定期存款配置不计入资本开支。 BVPS为计算值，使用母公司股东权益除以Class Y与Class Z普通股期末流通股数，不含非控股权益；财报币种人民币，记录人民币元/普通股，不以港币价格换算。",
       "derivedMetrics": {
         "netProfitMarginPct": 4.27,
         "profitability": "盈利",
@@ -3540,7 +3543,10 @@
       "marketDataNotes": "港股09626.HK历史行情页列示2026-10-22收盘103.50港元；非美股BILI ADR，行情源为第三方，作为公开收盘快照。",
       "roeSourceUrl": "https://stock.10jqka.com.cn/hks/20260924/c680278220.shtml",
       "capexSourceUrl": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526400258/d163378dex991.pdf",
-      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建物业设备与无形资产现金支出；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=经营活动现金流净额-购建物业设备与无形资产现金支出；2026H1，百万元人民币，不年化",
+      "bookValuePerShare": 38.11,
+      "bookValuePerShareMethod": "计算值：归属于Bilibili Inc.股东权益15,951.277百万元人民币÷期末Class Y与Class Z普通股流通数（79.700010+338.805755=418.505765百万股）=38.11元人民币/股；2026-06-30。",
+      "bookValuePerShareSourceUrl": "https://ebs.publicnow.com/view/538B27FB710054B314B89D3D1EA2365BFEC63FB5"
     },
     {
       "layer": 6,
@@ -3722,9 +3728,9 @@
       "valuationPercentile5Y": null,
       "valuationPercentile10Y": null,
       "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546824&stockid=600323",
-      "verifiedAt": "2026-10-23",
+      "verifiedAt": "2026-10-30",
       "dataStatus": "2026年半年度合并现金流量表字段已核验；估值字段仍需单独补齐",
-      "dataNotes": "营收77.37亿元，同比+34.25%；归母净利润12.06亿元，同比+24.76%；经营现金流16.32亿元，同比+33.65%；EPS 1.48元，ROE 7.93%。需留意并购/业务结构变化。 2026H1现金流量表补录：合并经营活动现金流净额1632.020652百万元，购建固定资产、无形资产和其他长期资产支付的现金891.792074百万元，简化FCF=740.228578百万元。来源为2026年半年度报告合并现金流量表；半年值不年化，不将投资支付或收购子公司支出混入资本开支。",
+      "dataNotes": "营收77.37亿元，同比+34.25%；归母净利润12.06亿元，同比+24.76%；经营现金流16.32亿元，同比+33.65%；EPS 1.48元，ROE 7.93%。需留意并购/业务结构变化。 2026H1现金流量表补录：合并经营活动现金流净额1632.020652百万元，购建固定资产、无形资产和其他长期资产支付的现金891.792074百万元，简化FCF=740.228578百万元。来源为2026年半年度报告合并现金流量表；半年值不年化，不将投资支付或收购子公司支出混入资本开支。 BVPS按2026年半年度合并报表归母股东权益除以期末股本计算，18.62元/股；与证券之星同期每股净资产18.62元交叉核对。",
       "derivedMetrics": {
         "netProfitMarginPct": 15.59,
         "operatingCashFlowToNetProfit": 1.353,
@@ -3750,7 +3756,10 @@
       "marketDataSourceUrl": "https://hk.finance.yahoo.com/quote/600323.SS/history/",
       "marketDataNotes": "Yahoo Finance历史行情列示2026-10-20收盘30.82元；当前未采用10月22日价格，后续需补最新交易日。",
       "capexSourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546824&stockid=600323",
-      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化"
+      "freeCashFlowMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+      "bookValuePerShare": 18.62,
+      "bookValuePerShareMethod": "报告直接披露/交叉核验值：归母净资产15,184,515,454.28元÷总股本815,347,146股=18.62元/股（四舍五入至2位）；2026-06-30，人民币。",
+      "bookValuePerShareSourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546824&stockid=600323"
     }
   ],
   "batchUpdateLog": [
@@ -4197,6 +4206,15 @@
       "companies": [
         "中国中免"
       ]
+    },
+    {
+      "date": "2026-10-30",
+      "batch": "补录瀚蓝环境、京东集团、哔哩哔哩2026H1 BVPS，区分报告交叉核验值与计算值",
+      "companies": [
+        "瀚蓝环境",
+        "京东集团",
+        "哔哩哔哩"
+      ]
     }
   ],
   "valuationModels": {
@@ -4291,7 +4309,7 @@
     "合理买入区间必须保存模型、输入假设、悲观/基准/乐观结果、安全边际与失效条件；禁止将模型演示值伪装成市场事实。"
   ],
   "auditSnapshot": {
-    "auditedAt": "2026-10-27",
+    "auditedAt": "2026-10-30",
     "listedCompanies": 49,
     "withPrice": 49,
     "withPE": 14,
@@ -4382,7 +4400,7 @@
         }
       ]
     },
-    "note": "字段非空覆盖率不代表每项数据均完成独立交叉核验；2026H1数据为半年值且不年化；历史估值分位须基于同一证券、同一倍数定义的真实历史序列，未建立时保留空值。",
+    "note": "字段非空覆盖率不代表每项数据均完成独立交叉核验；2026H1数据为半年值且不年化；历史估值分位须基于同一证券、同一倍数定义的真实历史序列，未建立时保留空值。 BVPS区分报告披露值与计算值；境外发行人若财报以人民币列报，BVPS保留人民币/普通股，避免与港币或美元交易价格混币。",
     "withRevenue": 49,
     "withNetProfit": 49,
     "withEPS": 48,
@@ -4546,11 +4564,8 @@
       "bookValuePerShare": [
         "腾讯控股",
         "阿里巴巴",
-        "京东集团",
         "分众传媒",
-        "哔哩哔哩",
-        "中公教育",
-        "瀚蓝环境"
+        "中公教育"
       ],
       "ROIC": [
         "伊利股份",
@@ -4718,11 +4733,8 @@
       "每股净资产": [
         "腾讯控股",
         "阿里巴巴",
-        "京东集团",
         "分众传媒",
-        "哔哩哔哩",
-        "中公教育",
-        "瀚蓝环境"
+        "中公教育"
       ],
       "5年分位": [
         "伊利股份",
@@ -4939,11 +4951,8 @@
       "BVPS": [
         "腾讯控股",
         "阿里巴巴",
-        "京东集团",
         "分众传媒",
-        "哔哩哔哩",
-        "中公教育",
-        "瀚蓝环境"
+        "中公教育"
       ],
       "pct5": [
         "伊利股份",
@@ -5097,18 +5106,18 @@
         "瀚蓝环境"
       ]
     },
-    "withBookValuePerShare": 42,
+    "withBookValuePerShare": 45,
     "withROIC": 0,
     "withCapex": 49,
     "withNetDebt": 2,
     "withDividendYield": 0,
     "withInterimDividendPerShare": 2,
-    "withBVPS": 42,
+    "withBVPS": 45,
     "withMonetaryFunds": 7,
     "withCashAndCashEquivalents": 7,
     "withShortTermBorrowings": 8,
     "withLongTermBorrowings": 8,
-    "updatedAt": "2026-10-27"
+    "updatedAt": "2026-10-30"
   },
   "marketDataSourceMap": {
     "A股": {
