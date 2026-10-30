@@ -53,7 +53,9 @@ jobs:
             echo "No valuation data changes."
           else
             git commit -m "Refresh public A-share valuation history"
-            git push
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
 
       - name: Check A-share source coverage
         run: |
