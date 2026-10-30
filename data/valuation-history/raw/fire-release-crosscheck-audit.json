@@ -201,6 +201,2648 @@
       "securitiesMedianErrorUnder10pct": 43
     }
   },
+  "perSecurityComparisons": [
+    {
+      "code": "000333.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00028647451479291153,
+      "p90AbsRelativeError": 0.04308240887480186,
+      "within5pct": 0.9193548387096774,
+      "within10pct": 0.9838709677419355
+    },
+    {
+      "code": "000333.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 2.676559437975179e-06,
+      "p90AbsRelativeError": 0.0010894069794156191,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "000598.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00020066502929061425,
+      "p90AbsRelativeError": 0.04950522648083622,
+      "within5pct": 0.9032258064516129,
+      "within10pct": 1.0
+    },
+    {
+      "code": "000598.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 2.713972537926601e-06,
+      "p90AbsRelativeError": 0.0001791218967670538,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "000651.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0003216499076543755,
+      "p90AbsRelativeError": 0.08105454545454549,
+      "within5pct": 0.8064516129032258,
+      "within10pct": 0.9516129032258065
+    },
+    {
+      "code": "000651.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 2.4047370020818803e-06,
+      "p90AbsRelativeError": 5.829437300763907e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "002027.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 119,
+      "medianAbsRelativeError": 0.00016592214422461726,
+      "p90AbsRelativeError": 0.4905560382276284,
+      "within5pct": 0.7058823529411765,
+      "within10pct": 0.7058823529411765
+    },
+    {
+      "code": "002027.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 9.351463862716791e-07,
+      "p90AbsRelativeError": 2.245734866845872e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "002352.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 7.598194680125125e-05,
+      "p90AbsRelativeError": 0.09547809247155659,
+      "within5pct": 0.8548387096774194,
+      "within10pct": 0.9274193548387096
+    },
+    {
+      "code": "002352.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 8.309533799932822e-07,
+      "p90AbsRelativeError": 0.0015508813542595146,
+      "within5pct": 0.9886363636363636,
+      "within10pct": 0.9886363636363636
+    },
+    {
+      "code": "002371.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 123,
+      "medianAbsRelativeError": 3.8356842365638855e-05,
+      "p90AbsRelativeError": 0.23652020963457532,
+      "within5pct": 0.7479674796747967,
+      "within10pct": 0.7967479674796748
+    },
+    {
+      "code": "002371.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 3.783933356649172e-07,
+      "p90AbsRelativeError": 0.001231726336656691,
+      "within5pct": 0.9886363636363636,
+      "within10pct": 1.0
+    },
+    {
+      "code": "002594.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 7.764924457531741e-05,
+      "p90AbsRelativeError": 0.4636827243225018,
+      "within5pct": 0.782258064516129,
+      "within10pct": 0.7983870967741935
+    },
+    {
+      "code": "002594.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 3.328236500843573e-07,
+      "p90AbsRelativeError": 1.2230252139922015e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "002607.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 75,
+      "medianAbsRelativeError": 3.40681362724915e-05,
+      "p90AbsRelativeError": 0.10960589775389273,
+      "within5pct": 0.8666666666666667,
+      "within10pct": 0.88
+    },
+    {
+      "code": "002607.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 53,
+      "medianAbsRelativeError": 2.753497543306338e-07,
+      "p90AbsRelativeError": 0.10857895813363583,
+      "within5pct": 0.8679245283018868,
+      "within10pct": 0.8679245283018868
+    },
+    {
+      "code": "002714.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 99,
+      "medianAbsRelativeError": 0.00013033175355459115,
+      "p90AbsRelativeError": 0.020615942028985534,
+      "within5pct": 0.9191919191919192,
+      "within10pct": 0.9191919191919192
+    },
+    {
+      "code": "002714.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 69,
+      "medianAbsRelativeError": 9.192300454152758e-07,
+      "p90AbsRelativeError": 3.0376912423246694e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "300015.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 5.0506824972818e-05,
+      "p90AbsRelativeError": 0.08476321283375465,
+      "within5pct": 0.8790322580645161,
+      "within10pct": 0.9516129032258065
+    },
+    {
+      "code": "300015.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 2.703558907302117e-07,
+      "p90AbsRelativeError": 1.255372146014011e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "300059.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 5.496575994951014e-05,
+      "p90AbsRelativeError": 0.045582301696469596,
+      "within5pct": 0.9193548387096774,
+      "within10pct": 0.9354838709677419
+    },
+    {
+      "code": "300059.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 4.876382475038632e-07,
+      "p90AbsRelativeError": 3.397480620059845e-06,
+      "within5pct": 0.9886363636363636,
+      "within10pct": 1.0
+    },
+    {
+      "code": "300124.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00010715644517833578,
+      "p90AbsRelativeError": 0.0920998342236139,
+      "within5pct": 0.8548387096774194,
+      "within10pct": 0.9112903225806451
+    },
+    {
+      "code": "300124.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 5.570970295076805e-07,
+      "p90AbsRelativeError": 4.9241941663336064e-05,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "300274.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00015241256728965036,
+      "p90AbsRelativeError": 0.20465850515463913,
+      "within5pct": 0.8306451612903226,
+      "within10pct": 0.8629032258064516
+    },
+    {
+      "code": "300274.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 6.30366455811604e-07,
+      "p90AbsRelativeError": 2.3575247485307926e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "300308.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 112,
+      "medianAbsRelativeError": 6.595125980740635e-05,
+      "p90AbsRelativeError": 0.17806557377049181,
+      "within5pct": 0.75,
+      "within10pct": 0.8035714285714286
+    },
+    {
+      "code": "300308.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 5.400728898541374e-07,
+      "p90AbsRelativeError": 1.4006362112350956e-06,
+      "within5pct": 0.9886363636363636,
+      "within10pct": 0.9886363636363636
+    },
+    {
+      "code": "300750.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 73,
+      "medianAbsRelativeError": 7.828356045247453e-05,
+      "p90AbsRelativeError": 0.2113845144356955,
+      "within5pct": 0.8082191780821918,
+      "within10pct": 0.8493150684931506
+    },
+    {
+      "code": "300750.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 83,
+      "medianAbsRelativeError": 5.630346415763654e-07,
+      "p90AbsRelativeError": 0.02183713273023513,
+      "within5pct": 0.9879518072289156,
+      "within10pct": 1.0
+    },
+    {
+      "code": "300760.SZ",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 73,
+      "medianAbsRelativeError": 7.81732153878334e-05,
+      "p90AbsRelativeError": 0.1111106243154435,
+      "within5pct": 0.7671232876712328,
+      "within10pct": 0.8904109589041096
+    },
+    {
+      "code": "300760.SZ",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 79,
+      "medianAbsRelativeError": 5.004525145402283e-07,
+      "p90AbsRelativeError": 1.2015550716615309e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600030.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0002748152413599714,
+      "p90AbsRelativeError": 0.1347851677457328,
+      "within5pct": 0.6854838709677419,
+      "within10pct": 0.8629032258064516
+    },
+    {
+      "code": "600030.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.1647440572026824e-06,
+      "p90AbsRelativeError": 2.812933082685376e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600036.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00044148094020213247,
+      "p90AbsRelativeError": 0.039273858921161864,
+      "within5pct": 0.9274193548387096,
+      "within10pct": 0.967741935483871
+    },
+    {
+      "code": "600036.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 3.087135196255808e-06,
+      "p90AbsRelativeError": 5.6487832980067765e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600066.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00014367249299895857,
+      "p90AbsRelativeError": 0.22867495711835328,
+      "within5pct": 0.8790322580645161,
+      "within10pct": 0.8790322580645161
+    },
+    {
+      "code": "600066.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.2079439458134722e-06,
+      "p90AbsRelativeError": 0.0006766659424833898,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600276.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 4.697402132708417e-05,
+      "p90AbsRelativeError": 0.05688092295014413,
+      "within5pct": 0.8870967741935484,
+      "within10pct": 0.9354838709677419
+    },
+    {
+      "code": "600276.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 3.3176209673912993e-07,
+      "p90AbsRelativeError": 8.355422784767086e-07,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600323.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00015341345927533112,
+      "p90AbsRelativeError": 0.03167990919409758,
+      "within5pct": 0.9435483870967742,
+      "within10pct": 0.9596774193548387
+    },
+    {
+      "code": "600323.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 2.4005434905438605e-06,
+      "p90AbsRelativeError": 0.0007221793990859204,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600398.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00022201098436841482,
+      "p90AbsRelativeError": 0.08191901408450697,
+      "within5pct": 0.8306451612903226,
+      "within10pct": 0.9354838709677419
+    },
+    {
+      "code": "600398.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 2.0672799646015427e-06,
+      "p90AbsRelativeError": 5.6262977629062405e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600406.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00010623902986145461,
+      "p90AbsRelativeError": 0.032153239714215354,
+      "within5pct": 0.9596774193548387,
+      "within10pct": 0.9838709677419355
+    },
+    {
+      "code": "600406.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.3556674456904894e-06,
+      "p90AbsRelativeError": 0.03219822592557808,
+      "within5pct": 0.9090909090909091,
+      "within10pct": 0.9090909090909091
+    },
+    {
+      "code": "600511.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00015223424894661441,
+      "p90AbsRelativeError": 0.0285185185185185,
+      "within5pct": 0.9435483870967742,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600511.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 2.0924420042200964e-06,
+      "p90AbsRelativeError": 1.1678176742746516e-05,
+      "within5pct": 0.9318181818181818,
+      "within10pct": 0.9772727272727273
+    },
+    {
+      "code": "600674.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0003012395963947756,
+      "p90AbsRelativeError": 0.10242263483642788,
+      "within5pct": 0.7983870967741935,
+      "within10pct": 0.8548387096774194
+    },
+    {
+      "code": "600674.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.93332143322289e-06,
+      "p90AbsRelativeError": 4.245998231899861e-06,
+      "within5pct": 0.9886363636363636,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600690.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00023567655424622247,
+      "p90AbsRelativeError": 0.08571039738704411,
+      "within5pct": 0.8629032258064516,
+      "within10pct": 0.9112903225806451
+    },
+    {
+      "code": "600690.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.0006027280742845198,
+      "p90AbsRelativeError": 0.010799216268560619,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600754.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 113,
+      "medianAbsRelativeError": 8.778724502966906e-05,
+      "p90AbsRelativeError": 0.2789695148132245,
+      "within5pct": 0.7964601769911505,
+      "within10pct": 0.8495575221238938
+    },
+    {
+      "code": "600754.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 77,
+      "medianAbsRelativeError": 7.607692225075624e-07,
+      "p90AbsRelativeError": 0.009716469001783246,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600887.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0001314662014224588,
+      "p90AbsRelativeError": 0.06342829394626093,
+      "within5pct": 0.8790322580645161,
+      "within10pct": 0.967741935483871
+    },
+    {
+      "code": "600887.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.1057434659011989e-06,
+      "p90AbsRelativeError": 2.077237757691641e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600900.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0014621193167106972,
+      "p90AbsRelativeError": 0.12763807285546425,
+      "within5pct": 0.7661290322580645,
+      "within10pct": 0.8467741935483871
+    },
+    {
+      "code": "600900.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.5409173212965754e-06,
+      "p90AbsRelativeError": 0.0013965035249206004,
+      "within5pct": 0.9545454545454546,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600941.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 36,
+      "medianAbsRelativeError": 0.008802514258173355,
+      "p90AbsRelativeError": 0.09071323529411757,
+      "within5pct": 0.7222222222222222,
+      "within10pct": 0.9722222222222222
+    },
+    {
+      "code": "600941.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 40,
+      "medianAbsRelativeError": 4.045959142162658e-06,
+      "p90AbsRelativeError": 0.0006213930899059417,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601088.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00027588070243089735,
+      "p90AbsRelativeError": 0.11863288718929266,
+      "within5pct": 0.8790322580645161,
+      "within10pct": 0.8951612903225806
+    },
+    {
+      "code": "601088.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 3.3791826777873624e-06,
+      "p90AbsRelativeError": 0.0003530758556893332,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601318.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00030842219518589786,
+      "p90AbsRelativeError": 0.014535398230088425,
+      "within5pct": 0.9274193548387096,
+      "within10pct": 0.967741935483871
+    },
+    {
+      "code": "601318.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 2.7889508253942097e-06,
+      "p90AbsRelativeError": 0.050262612144810204,
+      "within5pct": 0.875,
+      "within10pct": 0.9204545454545454
+    },
+    {
+      "code": "601398.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0005532621242808622,
+      "p90AbsRelativeError": 0.02575178997613381,
+      "within5pct": 0.9919354838709677,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601398.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 5.352030504834904e-06,
+      "p90AbsRelativeError": 0.04036226349723404,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601601.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00019038640163476783,
+      "p90AbsRelativeError": 0.03955294117647057,
+      "within5pct": 0.9112903225806451,
+      "within10pct": 0.9435483870967742
+    },
+    {
+      "code": "601601.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 2.5623560809262536e-06,
+      "p90AbsRelativeError": 0.11981635994433637,
+      "within5pct": 0.875,
+      "within10pct": 0.875
+    },
+    {
+      "code": "601668.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0004377477337229041,
+      "p90AbsRelativeError": 0.026800894854586366,
+      "within5pct": 0.9354838709677419,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601668.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 6.3468452423109945e-06,
+      "p90AbsRelativeError": 0.00038696418310602,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601728.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 45,
+      "medianAbsRelativeError": 0.008496884735202492,
+      "p90AbsRelativeError": 0.18124383561643842,
+      "within5pct": 0.8222222222222222,
+      "within10pct": 0.8444444444444444
+    },
+    {
+      "code": "601728.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 45,
+      "medianAbsRelativeError": 1.8465924924715438e-06,
+      "p90AbsRelativeError": 1.0720679528786192e-05,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601816.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 48,
+      "medianAbsRelativeError": 0.0001519136224701345,
+      "p90AbsRelativeError": 6.590996556177357,
+      "within5pct": 0.6875,
+      "within10pct": 0.6875
+    },
+    {
+      "code": "601816.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 64,
+      "medianAbsRelativeError": 6.360036706176686e-07,
+      "p90AbsRelativeError": 0.00027256159976873917,
+      "within5pct": 0.921875,
+      "within10pct": 0.921875
+    },
+    {
+      "code": "601888.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00012504202513219376,
+      "p90AbsRelativeError": 0.2717777777777779,
+      "within5pct": 0.6532258064516129,
+      "within10pct": 0.7661290322580645
+    },
+    {
+      "code": "601888.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 8.006022984563543e-07,
+      "p90AbsRelativeError": 0.005310859143873858,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601919.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 106,
+      "medianAbsRelativeError": 0.0003831036688179412,
+      "p90AbsRelativeError": 0.29166520749430913,
+      "within5pct": 0.7358490566037735,
+      "within10pct": 0.7830188679245284
+    },
+    {
+      "code": "601919.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 3.3321762722415826e-06,
+      "p90AbsRelativeError": 0.0018381115382275492,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601985.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 108,
+      "medianAbsRelativeError": 0.00019577612061560945,
+      "p90AbsRelativeError": 0.04493788819875788,
+      "within5pct": 0.9166666666666666,
+      "within10pct": 0.9629629629629629
+    },
+    {
+      "code": "601985.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.00022571852322067487,
+      "p90AbsRelativeError": 0.01765641188331668,
+      "within5pct": 0.9886363636363636,
+      "within10pct": 0.9886363636363636
+    },
+    {
+      "code": "603259.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 73,
+      "medianAbsRelativeError": 0.00017810760667891223,
+      "p90AbsRelativeError": 0.2081815403422983,
+      "within5pct": 0.8082191780821918,
+      "within10pct": 0.8082191780821918
+    },
+    {
+      "code": "603259.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 84,
+      "medianAbsRelativeError": 9.759586437341206e-07,
+      "p90AbsRelativeError": 3.43183860782581e-05,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "603288.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 122,
+      "medianAbsRelativeError": 7.91483056049036e-05,
+      "p90AbsRelativeError": 0.024524728165555953,
+      "within5pct": 0.9672131147540983,
+      "within10pct": 0.9918032786885246
+    },
+    {
+      "code": "603288.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 4.0023707881253756e-07,
+      "p90AbsRelativeError": 9.216688918733951e-07,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "688041.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 20,
+      "medianAbsRelativeError": 2.9492228252103736e-05,
+      "p90AbsRelativeError": 0.16585410191755112,
+      "within5pct": 0.8,
+      "within10pct": 0.8
+    },
+    {
+      "code": "688041.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 33,
+      "medianAbsRelativeError": 1.6122256796258227e-07,
+      "p90AbsRelativeError": 3.029677655419505e-07,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "688981.SH",
+      "metric": "peTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 49,
+      "medianAbsRelativeError": 0.00011694024246322599,
+      "p90AbsRelativeError": 0.12080805392939509,
+      "within5pct": 0.7755102040816326,
+      "within10pct": 0.8775510204081632
+    },
+    {
+      "code": "688981.SH",
+      "metric": "peTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 58,
+      "medianAbsRelativeError": 5.737953003792651e-06,
+      "p90AbsRelativeError": 0.04037937646886669,
+      "within5pct": 0.9137931034482759,
+      "within10pct": 0.9310344827586207
+    },
+    {
+      "code": "000333.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0011372016904210858,
+      "p90AbsRelativeError": 0.06840989399293285,
+      "within5pct": 0.8387096774193549,
+      "within10pct": 0.9919354838709677
+    },
+    {
+      "code": "000333.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.009894099169509729,
+      "p90AbsRelativeError": 0.07443083833743858,
+      "within5pct": 0.8295454545454546,
+      "within10pct": 0.9659090909090909
+    },
+    {
+      "code": "000598.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0018628750451861742,
+      "p90AbsRelativeError": 0.00449541284403665,
+      "within5pct": 0.9919354838709677,
+      "within10pct": 1.0
+    },
+    {
+      "code": "000598.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.0009560594138198764,
+      "p90AbsRelativeError": 0.0418850898434735,
+      "within5pct": 0.9886363636363636,
+      "within10pct": 1.0
+    },
+    {
+      "code": "000651.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0011788376637474896,
+      "p90AbsRelativeError": 0.07283653846153848,
+      "within5pct": 0.8709677419354839,
+      "within10pct": 0.9596774193548387
+    },
+    {
+      "code": "000651.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.005923108220448614,
+      "p90AbsRelativeError": 0.11891149778368115,
+      "within5pct": 0.6931818181818182,
+      "within10pct": 0.875
+    },
+    {
+      "code": "002027.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 122,
+      "medianAbsRelativeError": 0.00028507583965331484,
+      "p90AbsRelativeError": 0.05930184804928129,
+      "within5pct": 0.8770491803278688,
+      "within10pct": 0.9426229508196722
+    },
+    {
+      "code": "002027.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.002261375204050897,
+      "p90AbsRelativeError": 0.14906034865607176,
+      "within5pct": 0.6590909090909091,
+      "within10pct": 0.8522727272727273
+    },
+    {
+      "code": "002352.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0005808478955897645,
+      "p90AbsRelativeError": 0.018010471204188416,
+      "within5pct": 0.9919354838709677,
+      "within10pct": 0.9919354838709677
+    },
+    {
+      "code": "002352.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.6671243269594793e-05,
+      "p90AbsRelativeError": 0.072567155147504,
+      "within5pct": 0.8977272727272727,
+      "within10pct": 0.9545454545454546
+    },
+    {
+      "code": "002371.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 123,
+      "medianAbsRelativeError": 0.000402843601895686,
+      "p90AbsRelativeError": 0.05200200200200211,
+      "within5pct": 0.8861788617886179,
+      "within10pct": 0.967479674796748
+    },
+    {
+      "code": "002371.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.013987696252798387,
+      "p90AbsRelativeError": 0.12460402364652956,
+      "within5pct": 0.6704545454545454,
+      "within10pct": 0.8977272727272727
+    },
+    {
+      "code": "002594.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.061390544207708286,
+      "p90AbsRelativeError": 0.08552884615384593,
+      "within5pct": 0.46774193548387094,
+      "within10pct": 0.9112903225806451
+    },
+    {
+      "code": "002594.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.4196759353657384e-05,
+      "p90AbsRelativeError": 0.0887713763281488,
+      "within5pct": 0.8181818181818182,
+      "within10pct": 0.9431818181818182
+    },
+    {
+      "code": "002607.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00036381728373280353,
+      "p90AbsRelativeError": 0.06383184523809515,
+      "within5pct": 0.8790322580645161,
+      "within10pct": 0.9516129032258065
+    },
+    {
+      "code": "002607.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.00977710988747682,
+      "p90AbsRelativeError": 0.4450921993862694,
+      "within5pct": 0.5681818181818182,
+      "within10pct": 0.6477272727272727
+    },
+    {
+      "code": "002714.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 121,
+      "medianAbsRelativeError": 0.04650306748466271,
+      "p90AbsRelativeError": 0.24907455012853474,
+      "within5pct": 0.5041322314049587,
+      "within10pct": 0.7520661157024794
+    },
+    {
+      "code": "002714.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.0457722077417131e-05,
+      "p90AbsRelativeError": 0.23004448692359825,
+      "within5pct": 0.7272727272727273,
+      "within10pct": 0.8068181818181818
+    },
+    {
+      "code": "300015.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00022228643602983933,
+      "p90AbsRelativeError": 0.0029784065524943726,
+      "within5pct": 0.9758064516129032,
+      "within10pct": 1.0
+    },
+    {
+      "code": "300015.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 8.223059173051439e-05,
+      "p90AbsRelativeError": 0.0821694516373761,
+      "within5pct": 0.8409090909090909,
+      "within10pct": 0.9431818181818182
+    },
+    {
+      "code": "300059.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0007708210672804361,
+      "p90AbsRelativeError": 0.08562883435582824,
+      "within5pct": 0.7338709677419355,
+      "within10pct": 0.9758064516129032
+    },
+    {
+      "code": "300059.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.5970757751171405e-05,
+      "p90AbsRelativeError": 0.04919329179108489,
+      "within5pct": 0.9204545454545454,
+      "within10pct": 0.9659090909090909
+    },
+    {
+      "code": "300124.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0003544473567596018,
+      "p90AbsRelativeError": 0.005576719576719569,
+      "within5pct": 0.9596774193548387,
+      "within10pct": 0.9758064516129032
+    },
+    {
+      "code": "300124.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.005223177362290943,
+      "p90AbsRelativeError": 0.1357728620726384,
+      "within5pct": 0.625,
+      "within10pct": 0.8522727272727273
+    },
+    {
+      "code": "300274.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0004819367614076753,
+      "p90AbsRelativeError": 0.017277486910994733,
+      "within5pct": 0.9354838709677419,
+      "within10pct": 0.967741935483871
+    },
+    {
+      "code": "300274.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.011680091102826862,
+      "p90AbsRelativeError": 0.08733578484035154,
+      "within5pct": 0.7386363636363636,
+      "within10pct": 0.9318181818181818
+    },
+    {
+      "code": "300308.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0004414471309996948,
+      "p90AbsRelativeError": 0.00248939179632246,
+      "within5pct": 0.967741935483871,
+      "within10pct": 0.9838709677419355
+    },
+    {
+      "code": "300308.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.0013255630784037575,
+      "p90AbsRelativeError": 0.08317136830161553,
+      "within5pct": 0.7727272727272727,
+      "within10pct": 0.9431818181818182
+    },
+    {
+      "code": "300750.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 73,
+      "medianAbsRelativeError": 0.0005011933174224881,
+      "p90AbsRelativeError": 0.08915407854984903,
+      "within5pct": 0.8493150684931506,
+      "within10pct": 0.9178082191780822
+    },
+    {
+      "code": "300750.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 83,
+      "medianAbsRelativeError": 1.0567332697442033e-05,
+      "p90AbsRelativeError": 0.16257662354564117,
+      "within5pct": 0.7469879518072289,
+      "within10pct": 0.8795180722891566
+    },
+    {
+      "code": "300760.SZ",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 73,
+      "medianAbsRelativeError": 0.00021808268968659394,
+      "p90AbsRelativeError": 0.04194264569842743,
+      "within5pct": 0.9041095890410958,
+      "within10pct": 0.9863013698630136
+    },
+    {
+      "code": "300760.SZ",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 79,
+      "medianAbsRelativeError": 0.008964822482844692,
+      "p90AbsRelativeError": 0.10146412259761661,
+      "within5pct": 0.7088607594936709,
+      "within10pct": 0.8734177215189873
+    },
+    {
+      "code": "600030.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.002584175084175133,
+      "p90AbsRelativeError": 0.09084210526315784,
+      "within5pct": 0.6935483870967742,
+      "within10pct": 0.9758064516129032
+    },
+    {
+      "code": "600030.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 3.7162530931278415e-05,
+      "p90AbsRelativeError": 0.026178199026641646,
+      "within5pct": 0.9545454545454546,
+      "within10pct": 0.9886363636363636
+    },
+    {
+      "code": "600036.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.07032298136645965,
+      "p90AbsRelativeError": 0.15441176470588225,
+      "within5pct": 0.3467741935483871,
+      "within10pct": 0.5967741935483871
+    },
+    {
+      "code": "600036.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 5.787956398056737e-05,
+      "p90AbsRelativeError": 0.04341604475757954,
+      "within5pct": 0.9545454545454546,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600066.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0011669816074577066,
+      "p90AbsRelativeError": 0.06917355371900835,
+      "within5pct": 0.7016129032258065,
+      "within10pct": 0.9758064516129032
+    },
+    {
+      "code": "600066.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.0035239829527717315,
+      "p90AbsRelativeError": 0.09132803014426316,
+      "within5pct": 0.8181818181818182,
+      "within10pct": 0.9431818181818182
+    },
+    {
+      "code": "600276.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0002360664302015203,
+      "p90AbsRelativeError": 0.0005331882480958949,
+      "within5pct": 0.9516129032258065,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600276.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 6.732533709752353e-06,
+      "p90AbsRelativeError": 0.06508772253000816,
+      "within5pct": 0.8068181818181818,
+      "within10pct": 0.9886363636363636
+    },
+    {
+      "code": "600323.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0013580506899882883,
+      "p90AbsRelativeError": 0.01562211981566819,
+      "within5pct": 0.9838709677419355,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600323.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 3.01637109711983e-05,
+      "p90AbsRelativeError": 0.045114459128830386,
+      "within5pct": 0.9204545454545454,
+      "within10pct": 0.9772727272727273
+    },
+    {
+      "code": "600398.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.03483234042553185,
+      "p90AbsRelativeError": 0.06352112676056354,
+      "within5pct": 0.8790322580645161,
+      "within10pct": 0.9516129032258065
+    },
+    {
+      "code": "600398.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.0010820953778722386,
+      "p90AbsRelativeError": 0.07771626007131194,
+      "within5pct": 0.75,
+      "within10pct": 0.9431818181818182
+    },
+    {
+      "code": "600406.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0006763751376471783,
+      "p90AbsRelativeError": 0.013039832285115516,
+      "within5pct": 0.9596774193548387,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600406.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.006360288813063442,
+      "p90AbsRelativeError": 0.08172319648798765,
+      "within5pct": 0.6704545454545454,
+      "within10pct": 0.9545454545454546
+    },
+    {
+      "code": "600511.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0009615384615384581,
+      "p90AbsRelativeError": 0.0033333333333332993,
+      "within5pct": 0.9838709677419355,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600511.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 2.5869976162273822e-05,
+      "p90AbsRelativeError": 0.04302890586209562,
+      "within5pct": 0.9431818181818182,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600674.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0021165790214026647,
+      "p90AbsRelativeError": 0.02634146341463417,
+      "within5pct": 0.9838709677419355,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600674.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.0016941842081419356,
+      "p90AbsRelativeError": 0.0425265894219633,
+      "within5pct": 0.9318181818181818,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600690.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0022710790691722327,
+      "p90AbsRelativeError": 0.03547101449275347,
+      "within5pct": 0.9274193548387096,
+      "within10pct": 0.9758064516129032
+    },
+    {
+      "code": "600690.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.0024047849239905994,
+      "p90AbsRelativeError": 0.07914123305551302,
+      "within5pct": 0.7727272727272727,
+      "within10pct": 0.9545454545454546
+    },
+    {
+      "code": "600754.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0010908023483365836,
+      "p90AbsRelativeError": 0.015804347826086973,
+      "within5pct": 0.9838709677419355,
+      "within10pct": 0.9919354838709677
+    },
+    {
+      "code": "600754.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.002707325716364839,
+      "p90AbsRelativeError": 0.022860897038385675,
+      "within5pct": 0.9431818181818182,
+      "within10pct": 0.9886363636363636
+    },
+    {
+      "code": "600887.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0005489159528907495,
+      "p90AbsRelativeError": 0.05863117870722434,
+      "within5pct": 0.8709677419354839,
+      "within10pct": 0.9596774193548387
+    },
+    {
+      "code": "600887.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.4476860612400166e-05,
+      "p90AbsRelativeError": 0.10252921666848192,
+      "within5pct": 0.6931818181818182,
+      "within10pct": 0.8977272727272727
+    },
+    {
+      "code": "600900.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0011901408450704642,
+      "p90AbsRelativeError": 0.060268456375839,
+      "within5pct": 0.8548387096774194,
+      "within10pct": 0.9919354838709677
+    },
+    {
+      "code": "600900.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.006071148989874708,
+      "p90AbsRelativeError": 0.06226782485781812,
+      "within5pct": 0.7954545454545454,
+      "within10pct": 0.9772727272727273
+    },
+    {
+      "code": "600941.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 36,
+      "medianAbsRelativeError": 0.0027671875000000457,
+      "p90AbsRelativeError": 0.031129032258064404,
+      "within5pct": 0.9722222222222222,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600941.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 40,
+      "medianAbsRelativeError": 0.0006704843705892527,
+      "p90AbsRelativeError": 0.023780701787182057,
+      "within5pct": 0.975,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601088.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0019906280428432788,
+      "p90AbsRelativeError": 0.005340909090909118,
+      "within5pct": 0.9919354838709677,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601088.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.0028360973242336773,
+      "p90AbsRelativeError": 0.05567402364171392,
+      "within5pct": 0.8636363636363636,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601318.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0015522345301756113,
+      "p90AbsRelativeError": 0.008048780487804885,
+      "within5pct": 0.9516129032258065,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601318.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 4.146513392022655e-05,
+      "p90AbsRelativeError": 0.0498390491684777,
+      "within5pct": 0.9204545454545454,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601398.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.06575702075702072,
+      "p90AbsRelativeError": 0.11423076923076914,
+      "within5pct": 0.45161290322580644,
+      "within10pct": 0.7580645161290323
+    },
+    {
+      "code": "601398.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.002574169608749066,
+      "p90AbsRelativeError": 0.030579363428429707,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601601.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0016881655917204696,
+      "p90AbsRelativeError": 0.02659090909090911,
+      "within5pct": 0.967741935483871,
+      "within10pct": 0.9919354838709677
+    },
+    {
+      "code": "601601.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.001364157357701512,
+      "p90AbsRelativeError": 0.058514406402941255,
+      "within5pct": 0.8863636363636364,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601668.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.04422836752899195,
+      "p90AbsRelativeError": 0.1135353535353536,
+      "within5pct": 0.5080645161290323,
+      "within10pct": 0.7419354838709677
+    },
+    {
+      "code": "601668.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.0039646255130534325,
+      "p90AbsRelativeError": 0.04713143925041785,
+      "within5pct": 0.9204545454545454,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601728.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 45,
+      "medianAbsRelativeError": 0.002786885245901649,
+      "p90AbsRelativeError": 0.016818181818181843,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601728.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 45,
+      "medianAbsRelativeError": 4.139503853184401e-05,
+      "p90AbsRelativeError": 0.0163050298730949,
+      "within5pct": 0.9777777777777777,
+      "within10pct": 0.9777777777777777
+    },
+    {
+      "code": "601816.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 48,
+      "medianAbsRelativeError": 0.0025511465827337543,
+      "p90AbsRelativeError": 0.02338842975206612,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601816.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 64,
+      "medianAbsRelativeError": 0.004799372734826002,
+      "p90AbsRelativeError": 0.013006835907912517,
+      "within5pct": 0.984375,
+      "within10pct": 0.984375
+    },
+    {
+      "code": "601888.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00037483869137949766,
+      "p90AbsRelativeError": 0.023622047244094446,
+      "within5pct": 0.9274193548387096,
+      "within10pct": 0.9435483870967742
+    },
+    {
+      "code": "601888.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.007868289429313613,
+      "p90AbsRelativeError": 0.11465307491566112,
+      "within5pct": 0.8522727272727273,
+      "within10pct": 0.8636363636363636
+    },
+    {
+      "code": "601919.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.001590765338393474,
+      "p90AbsRelativeError": 0.06774193548387097,
+      "within5pct": 0.8870967741935484,
+      "within10pct": 0.9274193548387096
+    },
+    {
+      "code": "601919.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.018982119406250664,
+      "p90AbsRelativeError": 0.18854545778413923,
+      "within5pct": 0.6931818181818182,
+      "within10pct": 0.7840909090909091
+    },
+    {
+      "code": "601985.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 108,
+      "medianAbsRelativeError": 0.013175742244707855,
+      "p90AbsRelativeError": 0.15456410256410247,
+      "within5pct": 0.6666666666666666,
+      "within10pct": 0.7222222222222222
+    },
+    {
+      "code": "601985.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.0016169412178604903,
+      "p90AbsRelativeError": 0.04783108817731585,
+      "within5pct": 0.9090909090909091,
+      "within10pct": 0.9090909090909091
+    },
+    {
+      "code": "603259.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 73,
+      "medianAbsRelativeError": 0.0006091846298033055,
+      "p90AbsRelativeError": 0.037414448669201406,
+      "within5pct": 0.9178082191780822,
+      "within10pct": 0.9726027397260274
+    },
+    {
+      "code": "603259.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 84,
+      "medianAbsRelativeError": 2.185749155292349e-05,
+      "p90AbsRelativeError": 0.06310209369299358,
+      "within5pct": 0.8452380952380952,
+      "within10pct": 0.9523809523809523
+    },
+    {
+      "code": "603288.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 122,
+      "medianAbsRelativeError": 0.00020888103644800537,
+      "p90AbsRelativeError": 0.04538847117794498,
+      "within5pct": 0.9016393442622951,
+      "within10pct": 0.9672131147540983
+    },
+    {
+      "code": "603288.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.01906878976005283,
+      "p90AbsRelativeError": 0.10042568408568453,
+      "within5pct": 0.5454545454545454,
+      "within10pct": 0.8863636363636364
+    },
+    {
+      "code": "688041.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 20,
+      "medianAbsRelativeError": 0.0003622836221408021,
+      "p90AbsRelativeError": 0.02327868852459014,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "688041.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 33,
+      "medianAbsRelativeError": 5.849958047532411e-06,
+      "p90AbsRelativeError": 0.03633027310103065,
+      "within5pct": 0.9696969696969697,
+      "within10pct": 0.9696969696969697
+    },
+    {
+      "code": "688981.SH",
+      "metric": "pb",
+      "comparison": "Enniu",
+      "overlapMonths": 49,
+      "medianAbsRelativeError": 0.0013220338983052082,
+      "p90AbsRelativeError": 0.08194756554307114,
+      "within5pct": 0.8367346938775511,
+      "within10pct": 1.0
+    },
+    {
+      "code": "688981.SH",
+      "metric": "pb",
+      "comparison": "Eastmoney",
+      "overlapMonths": 58,
+      "medianAbsRelativeError": 0.006546931849908844,
+      "p90AbsRelativeError": 0.08665369863251149,
+      "within5pct": 0.8448275862068966,
+      "within10pct": 0.9482758620689655
+    },
+    {
+      "code": "000333.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.006330024587924643,
+      "p90AbsRelativeError": 0.02391891891891884,
+      "within5pct": 0.9193548387096774,
+      "within10pct": 0.9838709677419355
+    },
+    {
+      "code": "000333.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.005318578149105413,
+      "p90AbsRelativeError": 0.007048272927121735,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "000598.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0009685823921860015,
+      "p90AbsRelativeError": 0.03646288209606974,
+      "within5pct": 0.9354838709677419,
+      "within10pct": 0.9919354838709677
+    },
+    {
+      "code": "000598.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.1856569005375128e-05,
+      "p90AbsRelativeError": 0.003216372621104413,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "000651.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.01266588063099694,
+      "p90AbsRelativeError": 0.05282485875706211,
+      "within5pct": 0.8951612903225806,
+      "within10pct": 0.967741935483871
+    },
+    {
+      "code": "000651.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.010365549542210584,
+      "p90AbsRelativeError": 0.013533342210739319,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "002027.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 122,
+      "medianAbsRelativeError": 0.00046189794552509156,
+      "p90AbsRelativeError": 0.28208841463414647,
+      "within5pct": 0.7540983606557377,
+      "within10pct": 0.8360655737704918
+    },
+    {
+      "code": "002027.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 2.942507367098557e-06,
+      "p90AbsRelativeError": 6.063364162089968e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "002352.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0014520582329318188,
+      "p90AbsRelativeError": 0.0829245283018869,
+      "within5pct": 0.8467741935483871,
+      "within10pct": 0.9193548387096774
+    },
+    {
+      "code": "002352.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.7305389961586037e-05,
+      "p90AbsRelativeError": 0.0002624627117036038,
+      "within5pct": 0.9886363636363636,
+      "within10pct": 0.9886363636363636
+    },
+    {
+      "code": "002371.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 123,
+      "medianAbsRelativeError": 0.00044912923923012826,
+      "p90AbsRelativeError": 0.14330985915492955,
+      "within5pct": 0.7560975609756098,
+      "within10pct": 0.8536585365853658
+    },
+    {
+      "code": "002371.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 4.352016664099789e-06,
+      "p90AbsRelativeError": 0.0016542432366759563,
+      "within5pct": 0.9886363636363636,
+      "within10pct": 1.0
+    },
+    {
+      "code": "002594.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0020450367647058543,
+      "p90AbsRelativeError": 0.10480263157894731,
+      "within5pct": 0.7983870967741935,
+      "within10pct": 0.8870967741935484
+    },
+    {
+      "code": "002594.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.2702148954379933e-05,
+      "p90AbsRelativeError": 3.817528028005057e-05,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "002607.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0009709094620802272,
+      "p90AbsRelativeError": 0.1697667638483964,
+      "within5pct": 0.8548387096774194,
+      "within10pct": 0.8951612903225806
+    },
+    {
+      "code": "002607.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 4.277902219351759e-06,
+      "p90AbsRelativeError": 0.024388909696069216,
+      "within5pct": 0.9545454545454546,
+      "within10pct": 0.9545454545454546
+    },
+    {
+      "code": "002714.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 121,
+      "medianAbsRelativeError": 0.0006095551894563789,
+      "p90AbsRelativeError": 0.11537918871252206,
+      "within5pct": 0.8512396694214877,
+      "within10pct": 0.8925619834710744
+    },
+    {
+      "code": "002714.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 6.2278542078963994e-06,
+      "p90AbsRelativeError": 1.8256170585595477e-05,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "300015.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0003512739106278917,
+      "p90AbsRelativeError": 0.05235772357723578,
+      "within5pct": 0.8951612903225806,
+      "within10pct": 0.9596774193548387
+    },
+    {
+      "code": "300015.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.889426602397215e-06,
+      "p90AbsRelativeError": 6.574912382650844e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "300059.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 1.3900549092832668,
+      "p90AbsRelativeError": 2.012760617760618,
+      "within5pct": 0.12903225806451613,
+      "within10pct": 0.14516129032258066
+    },
+    {
+      "code": "300059.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.6199094703523862,
+      "p90AbsRelativeError": 2.1422043520979606,
+      "within5pct": 0.045454545454545456,
+      "within10pct": 0.045454545454545456
+    },
+    {
+      "code": "300124.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0004835167430217724,
+      "p90AbsRelativeError": 0.0804978354978354,
+      "within5pct": 0.7983870967741935,
+      "within10pct": 0.9758064516129032
+    },
+    {
+      "code": "300124.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 2.9934879954840454e-06,
+      "p90AbsRelativeError": 4.939097854494978e-05,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "300274.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0011700206398348456,
+      "p90AbsRelativeError": 0.12792349726775953,
+      "within5pct": 0.782258064516129,
+      "within10pct": 0.8225806451612904
+    },
+    {
+      "code": "300274.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 7.364938437504076e-06,
+      "p90AbsRelativeError": 2.4642360761495397e-05,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "300308.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0004261928787659963,
+      "p90AbsRelativeError": 0.10922413793103447,
+      "within5pct": 0.7741935483870968,
+      "within10pct": 0.8790322580645161
+    },
+    {
+      "code": "300308.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 3.92081248490328e-06,
+      "p90AbsRelativeError": 1.2156978652422268e-05,
+      "within5pct": 0.9886363636363636,
+      "within10pct": 0.9886363636363636
+    },
+    {
+      "code": "300750.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 73,
+      "medianAbsRelativeError": 0.0006917293233081878,
+      "p90AbsRelativeError": 0.19767973856209153,
+      "within5pct": 0.821917808219178,
+      "within10pct": 0.8493150684931506
+    },
+    {
+      "code": "300750.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 83,
+      "medianAbsRelativeError": 3.911171558845794e-06,
+      "p90AbsRelativeError": 1.3031630678117523e-05,
+      "within5pct": 0.9879518072289156,
+      "within10pct": 1.0
+    },
+    {
+      "code": "300760.SZ",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 73,
+      "medianAbsRelativeError": 0.00027845036319606997,
+      "p90AbsRelativeError": 0.06546661303298462,
+      "within5pct": 0.8356164383561644,
+      "within10pct": 0.9863013698630136
+    },
+    {
+      "code": "300760.SZ",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 79,
+      "medianAbsRelativeError": 1.7626353717714593e-06,
+      "p90AbsRelativeError": 3.835645552840994e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600030.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.1368872512752619,
+      "p90AbsRelativeError": 0.4977391304347827,
+      "within5pct": 0.3225806451612903,
+      "within10pct": 0.4435483870967742
+    },
+    {
+      "code": "600030.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 4.72893627434523e-06,
+      "p90AbsRelativeError": 9.118281590780875e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600036.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.026298129086103794,
+      "p90AbsRelativeError": 0.08708222811671085,
+      "within5pct": 0.5725806451612904,
+      "within10pct": 0.9435483870967742
+    },
+    {
+      "code": "600036.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 8.669188932497462e-06,
+      "p90AbsRelativeError": 1.9988056375153107e-05,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600066.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00238046748437859,
+      "p90AbsRelativeError": 0.06805970149253726,
+      "within5pct": 0.8790322580645161,
+      "within10pct": 0.9274193548387096
+    },
+    {
+      "code": "600066.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 2.4817867693149864e-05,
+      "p90AbsRelativeError": 0.00025658341659740014,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600276.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0001930378376956976,
+      "p90AbsRelativeError": 0.058765044479330286,
+      "within5pct": 0.8951612903225806,
+      "within10pct": 0.9354838709677419
+    },
+    {
+      "code": "600276.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.9878369091896886e-06,
+      "p90AbsRelativeError": 3.3544066666557626e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600323.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0013920118343194732,
+      "p90AbsRelativeError": 0.058996539792387614,
+      "within5pct": 0.8790322580645161,
+      "within10pct": 0.9274193548387096
+    },
+    {
+      "code": "600323.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.591469772443954e-05,
+      "p90AbsRelativeError": 4.817222052022618e-05,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600398.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0012509780737598453,
+      "p90AbsRelativeError": 0.01855855855855859,
+      "within5pct": 0.9435483870967742,
+      "within10pct": 0.9758064516129032
+    },
+    {
+      "code": "600398.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.7082064110884865e-05,
+      "p90AbsRelativeError": 3.479737191747212e-05,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600406.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0007489317117265748,
+      "p90AbsRelativeError": 0.033435897435897366,
+      "within5pct": 0.967741935483871,
+      "within10pct": 0.9838709677419355
+    },
+    {
+      "code": "600406.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.0809846557935376e-05,
+      "p90AbsRelativeError": 0.0671090770118582,
+      "within5pct": 0.875,
+      "within10pct": 0.9090909090909091
+    },
+    {
+      "code": "600511.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00396214896214897,
+      "p90AbsRelativeError": 0.01090909090909098,
+      "within5pct": 0.9919354838709677,
+      "within10pct": 0.9919354838709677
+    },
+    {
+      "code": "600511.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 4.7457545063633866e-05,
+      "p90AbsRelativeError": 0.0001012301663910753,
+      "within5pct": 0.9318181818181818,
+      "within10pct": 0.9318181818181818
+    },
+    {
+      "code": "600674.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 9.054248292783562e-05,
+      "p90AbsRelativeError": 0.07633205456095471,
+      "within5pct": 0.8467741935483871,
+      "within10pct": 0.9354838709677419
+    },
+    {
+      "code": "600674.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 5.756717904592534e-07,
+      "p90AbsRelativeError": 2.6271754340889686e-06,
+      "within5pct": 0.9886363636363636,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600690.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.003988609583660652,
+      "p90AbsRelativeError": 0.036730769230769234,
+      "within5pct": 0.9516129032258065,
+      "within10pct": 0.9838709677419355
+    },
+    {
+      "code": "600690.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.0004092067348677175,
+      "p90AbsRelativeError": 0.009747240964804949,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600754.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00099180327868853,
+      "p90AbsRelativeError": 0.033006756756756905,
+      "within5pct": 0.9193548387096774,
+      "within10pct": 0.9838709677419355
+    },
+    {
+      "code": "600754.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 9.360129292534936e-06,
+      "p90AbsRelativeError": 0.0076296940310195405,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600887.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.00623215444516545,
+      "p90AbsRelativeError": 0.028881578947368425,
+      "within5pct": 0.9758064516129032,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600887.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.003575319961960366,
+      "p90AbsRelativeError": 0.008469616636895383,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "600900.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.003792784050811626,
+      "p90AbsRelativeError": 0.08628089887640433,
+      "within5pct": 0.7903225806451613,
+      "within10pct": 0.9112903225806451
+    },
+    {
+      "code": "600900.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 3.2525566133756456e-06,
+      "p90AbsRelativeError": 0.04441193333907045,
+      "within5pct": 0.9431818181818182,
+      "within10pct": 0.9431818181818182
+    },
+    {
+      "code": "600941.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 36,
+      "medianAbsRelativeError": 0.014676016199190012,
+      "p90AbsRelativeError": 0.08203125,
+      "within5pct": 0.7222222222222222,
+      "within10pct": 0.9444444444444444
+    },
+    {
+      "code": "600941.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 40,
+      "medianAbsRelativeError": 2.7633698122142558e-05,
+      "p90AbsRelativeError": 0.0006062591920475979,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601088.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0017624372314540837,
+      "p90AbsRelativeError": 0.015754189944134134,
+      "within5pct": 0.967741935483871,
+      "within10pct": 0.9919354838709677
+    },
+    {
+      "code": "601088.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.0969539062599676e-05,
+      "p90AbsRelativeError": 3.258740516831615e-05,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601318.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.04531249999999998,
+      "p90AbsRelativeError": 0.24672268907563022,
+      "within5pct": 0.5080645161290323,
+      "within10pct": 0.532258064516129
+    },
+    {
+      "code": "601318.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 3.374011591550374e-05,
+      "p90AbsRelativeError": 0.10575112319262625,
+      "within5pct": 0.875,
+      "within10pct": 0.875
+    },
+    {
+      "code": "601398.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.026703975340136188,
+      "p90AbsRelativeError": 0.09363636363636363,
+      "within5pct": 0.5645161290322581,
+      "within10pct": 0.9838709677419355
+    },
+    {
+      "code": "601398.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.4029706718099444e-05,
+      "p90AbsRelativeError": 0.02159354588213236,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601601.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.07169856093080229,
+      "p90AbsRelativeError": 0.23325757575757577,
+      "within5pct": 0.46774193548387094,
+      "within10pct": 0.5483870967741935
+    },
+    {
+      "code": "601601.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 4.549944895815283e-05,
+      "p90AbsRelativeError": 0.1674443885257184,
+      "within5pct": 0.875,
+      "within10pct": 0.875
+    },
+    {
+      "code": "601668.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.01587121212121212,
+      "p90AbsRelativeError": 0.04700000000000004,
+      "within5pct": 0.9193548387096774,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601668.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 0.00015173729917394851,
+      "p90AbsRelativeError": 0.00039612949138978504,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601728.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 45,
+      "medianAbsRelativeError": 0.010873015873015923,
+      "p90AbsRelativeError": 0.08080291970802922,
+      "within5pct": 0.8,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601728.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 45,
+      "medianAbsRelativeError": 2.5691744449329867e-05,
+      "p90AbsRelativeError": 4.0755971049799555e-05,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601816.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 48,
+      "medianAbsRelativeError": 0.0006362629517079887,
+      "p90AbsRelativeError": 0.35913043478260875,
+      "within5pct": 0.6875,
+      "within10pct": 0.7291666666666666
+    },
+    {
+      "code": "601816.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 64,
+      "medianAbsRelativeError": 3.254118299156339e-06,
+      "p90AbsRelativeError": 5.7378318558676256e-06,
+      "within5pct": 0.921875,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601888.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.0012865627494249576,
+      "p90AbsRelativeError": 0.1089320388349515,
+      "within5pct": 0.7419354838709677,
+      "within10pct": 0.8870967741935484
+    },
+    {
+      "code": "601888.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 6.760839080577341e-06,
+      "p90AbsRelativeError": 0.005311932233945105,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601919.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 124,
+      "medianAbsRelativeError": 0.004225352112676051,
+      "p90AbsRelativeError": 0.10111111111111115,
+      "within5pct": 0.8145161290322581,
+      "within10pct": 0.8870967741935484
+    },
+    {
+      "code": "601919.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 4.661401438332824e-05,
+      "p90AbsRelativeError": 0.0002826049551836185,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "601985.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 108,
+      "medianAbsRelativeError": 0.001549331103678997,
+      "p90AbsRelativeError": 0.04535519125683063,
+      "within5pct": 0.9629629629629629,
+      "within10pct": 0.9907407407407407
+    },
+    {
+      "code": "601985.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 2.2548157081137e-05,
+      "p90AbsRelativeError": 0.0055690410588986605,
+      "within5pct": 0.9886363636363636,
+      "within10pct": 0.9886363636363636
+    },
+    {
+      "code": "603259.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 73,
+      "medianAbsRelativeError": 0.0006075949367088107,
+      "p90AbsRelativeError": 0.09643858903527414,
+      "within5pct": 0.7671232876712328,
+      "within10pct": 0.9041095890410958
+    },
+    {
+      "code": "603259.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 84,
+      "medianAbsRelativeError": 2.981922642197876e-06,
+      "p90AbsRelativeError": 3.450310301555959e-05,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "603288.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 122,
+      "medianAbsRelativeError": 0.00027111233645588095,
+      "p90AbsRelativeError": 0.03489583333333335,
+      "within5pct": 0.9836065573770492,
+      "within10pct": 0.9918032786885246
+    },
+    {
+      "code": "603288.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 88,
+      "medianAbsRelativeError": 1.7590338881046108e-06,
+      "p90AbsRelativeError": 3.5338169021015275e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "688041.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 20,
+      "medianAbsRelativeError": 0.00011860946158276375,
+      "p90AbsRelativeError": 0.1270875331564988,
+      "within5pct": 0.75,
+      "within10pct": 0.75
+    },
+    {
+      "code": "688041.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 33,
+      "medianAbsRelativeError": 6.783932706699858e-07,
+      "p90AbsRelativeError": 1.5374360092801354e-06,
+      "within5pct": 1.0,
+      "within10pct": 1.0
+    },
+    {
+      "code": "688981.SH",
+      "metric": "psTtm",
+      "comparison": "Enniu",
+      "overlapMonths": 49,
+      "medianAbsRelativeError": 0.0004425837320574111,
+      "p90AbsRelativeError": 0.16294902912621356,
+      "within5pct": 0.7142857142857143,
+      "within10pct": 0.8571428571428571
+    },
+    {
+      "code": "688981.SH",
+      "metric": "psTtm",
+      "comparison": "Eastmoney",
+      "overlapMonths": 58,
+      "medianAbsRelativeError": 5.858196778563141e-06,
+      "p90AbsRelativeError": 0.0003162590147397504,
+      "within5pct": 0.9655172413793104,
+      "within10pct": 0.9827586206896551
+    }
+  ],
   "perSecurityCoverage": [
     {
       "code": "000333.SZ",
@@ -1084,5 +3726,5 @@
     }
   ],
   "redistributionNote": "Only a compact coverage/consistency audit is retained. The 1.4GB third-party raw package is not copied into this repository. Verify underlying data rights before redistribution.",
-  "auditedAt": "2026-10-30T10:49:49+00:00"
+  "auditedAt": "2026-10-30T10:52:56+00:00"
 }
