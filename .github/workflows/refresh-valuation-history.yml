@@ -5,6 +5,7 @@ on:
   push:
     branches: [main]
     paths:
+      - ".github/workflows/refresh-valuation-history.yml"
       - "data/valuation-history/universe.json"
       - "scripts/fetch_eastmoney_a_share_valuation.py"
       - "scripts/fetch_baostock_a_share_valuation.py"
