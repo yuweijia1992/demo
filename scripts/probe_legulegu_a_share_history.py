@@ -83,79 +83,101 @@ def parse_number(value: Any) -> float | None:
     return number if math.isfinite(number) else None
 
 
-def request_payload(code: str, timeout: int, retries: int) -> tuple[dict[str, Any] | None, str, list[str]]:
-    attempts: list[str] = []
-    now_cn = datetime.now(ZoneInfo("Asia/Shanghai")).date()
-    token_dates = [now_cn, now_cn - timedelta(days=1)]
+def bootstrap_legulegu_session(timeout: int, retries: int) -> tuple[Any, str, str, list[str]] | None:
+    errors: list[str] = []
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/128 Safari/537.36"
     for api_url in API_URLS:
         origin = api_url.split("/api/", 1)[0]
         page_url = origin + "/"
         jar = http.cookiejar.CookieJar()
         opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
-        csrf_headers = {
+        headers = {
             "User-Agent": user_agent,
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         }
-        try:
-            with opener.open(urllib.request.Request(page_url, headers=csrf_headers), timeout=timeout) as resp:
-                html = resp.read().decode("utf-8", errors="replace")
-            match = re.search(
-                r"""<meta[^>]+name=["']_csrf["'][^>]+content=["']([^"']+)["']""",
-                html,
-                flags=re.IGNORECASE,
-            )
-            if not match:
+        for attempt in range(max(1, retries + 1)):
+            try:
+                with opener.open(urllib.request.Request(page_url, headers=headers), timeout=timeout) as resp:
+                    html = resp.read().decode("utf-8", errors="replace")
                 match = re.search(
-                    r"""<meta[^>]+content=["']([^"']+)["'][^>]+name=["']_csrf["']""",
+                    r"""<meta[^>]+name=["']_csrf["'][^>]+content=["']([^"']+)["']""",
                     html,
                     flags=re.IGNORECASE,
                 )
-            if not match:
-                raise RuntimeError("homepage did not expose meta[name=_csrf]")
-            csrf = match.group(1)
-        except Exception as exc:
-            attempts.append(f"{page_url}: csrf bootstrap failed: {exc}")
-            continue
+                if not match:
+                    match = re.search(
+                        r"""<meta[^>]+content=["']([^"']+)["'][^>]+name=["']_csrf["']""",
+                        html,
+                        flags=re.IGNORECASE,
+                    )
+                if not match:
+                    raise RuntimeError("homepage did not expose meta[name=_csrf]")
+                return opener, match.group(1), api_url, errors
+            except Exception as exc:
+                errors.append(f"{page_url} bootstrap attempt={attempt+1}: {exc}")
+                if attempt < retries:
+                    time.sleep(min(2 ** (attempt + 1), 6))
+    return None
 
-        headers = {
-            "User-Agent": user_agent,
-            "Accept": "application/json,text/plain,*/*",
-            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-            "X-CSRF-Token": csrf,
-            "X-Requested-With": "XMLHttpRequest",
-            "Origin": origin,
-            "Referer": PAGE_URLS[API_URLS.index(api_url)].format(code=code),
-        }
-        # The legacy AKShare implementation used an ISO-date MD5 token;
-        # an independent JS port uses YYYYMMDD. Probe both without relaxing
-        # field mapping or assuming that either token format is accepted.
-        token_formats = (False, True)
-        for day in token_dates:
-            for compact in token_formats:
-                params = urllib.parse.urlencode({"token": token_for(day, compact=compact), "id": code})
-                for attempt in range(retries + 1):
-                    try:
+
+def request_payload(
+    code: str, timeout: int, retries: int,
+    session: tuple[Any, str, str] | None,
+) -> tuple[dict[str, Any] | None, str, list[str]]:
+    attempts: list[str] = []
+    if session is None:
+        return None, "", ["Legulegu homepage/CSRF bootstrap failed"]
+    opener, csrf, api_url = session
+    origin = api_url.split("/api/", 1)[0]
+    page_url = PAGE_URLS[API_URLS.index(api_url)].format(code=code)
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/128 Safari/537.36",
+        "Accept": "application/json,text/plain,*/*",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "X-CSRF-Token": csrf,
+        "X-Requested-With": "XMLHttpRequest",
+        "Origin": origin,
+        "Referer": page_url,
+    }
+    now_cn = datetime.now(ZoneInfo("Asia/Shanghai")).date()
+    token_variants = [
+        (now_cn, False), (now_cn, True), (now_cn - timedelta(days=1), False),
+        (now_cn - timedelta(days=1), True),
+    ]
+    for day, compact in token_variants:
+        params = urllib.parse.urlencode({"token": token_for(day, compact=compact), "id": code})
+        for method in ("POST", "GET"):
+            for attempt in range(retries + 1):
+                try:
+                    if method == "POST":
                         req = urllib.request.Request(api_url, data=params.encode("utf-8"), headers=headers, method="POST")
-                        with opener.open(req, timeout=timeout) as resp:
-                            body = resp.read().decode("utf-8", errors="replace")
-                        if not body.strip():
-                            raise RuntimeError("empty response body")
-                        data = json.loads(body)
-                        if not isinstance(data, dict):
-                            raise RuntimeError(f"unexpected top-level type: {type(data).__name__}")
-                        data_block = data.get("data")
-                        if not isinstance(data_block, dict) or not isinstance(data_block.get("fields"), list) or not isinstance(data_block.get("items"), list):
-                            preview = json.dumps(data, ensure_ascii=False)[:240]
-                            attempts.append(f"POST {api_url} tokenDate={day.isoformat()} returned JSON without data.fields/items: {preview}")
-                            continue
-                        return data, api_url, attempts
-                    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
-                            json.JSONDecodeError, RuntimeError, OSError) as exc:
-                        label = "YYYYMMDD" if compact else "YYYY-MM-DD"
-                        attempts.append(f"POST {api_url} tokenDate={day.isoformat()} format={label} attempt={attempt+1}: {exc}")
-                        if attempt < retries:
-                            time.sleep(1.0 * (attempt + 1))
+                    else:
+                        req = urllib.request.Request(api_url + "?" + params, headers=headers, method="GET")
+                    with opener.open(req, timeout=timeout) as resp:
+                        body = resp.read().decode("utf-8", errors="replace")
+                    if not body.strip():
+                        raise RuntimeError("empty response body")
+                    data = json.loads(body)
+                    if not isinstance(data, dict):
+                        raise RuntimeError(f"unexpected top-level type: {type(data).__name__}")
+                    data_block = data.get("data")
+                    if not isinstance(data_block, dict) or not isinstance(data_block.get("fields"), list) or not isinstance(data_block.get("items"), list):
+                        preview = json.dumps(data, ensure_ascii=False)[:240]
+                        attempts.append(f"{method} {api_url} tokenDate={day.isoformat()} returned JSON without data.fields/items: {preview}")
+                        continue
+                    return data, api_url, attempts
+                except urllib.error.HTTPError as exc:
+                    attempts.append(f"{method} {api_url} tokenDate={day.isoformat()} status={exc.code}")
+                    if exc.code == 429:
+                        time.sleep(min(3 * (attempt + 1), 8))
+                    elif 500 <= exc.code < 600:
+                        time.sleep(min(2 ** (attempt + 1), 6))
+                    if attempt < retries and exc.code not in (401, 403):
+                        continue
+                except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, RuntimeError, OSError) as exc:
+                    attempts.append(f"{method} {api_url} tokenDate={day.isoformat()} attempt={attempt+1}: {exc}")
+                    if attempt < retries:
+                        time.sleep(min(2 ** (attempt + 1), 6))
     return None, "", attempts
 
 def unpack_payload(payload: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
@@ -204,79 +226,78 @@ def main() -> int:
     parser.add_argument("--universe", default="data/valuation-history/universe.json")
     parser.add_argument("--output", default="data/valuation-history/raw/legulegu-a-share-candidate.csv")
     parser.add_argument("--audit", default="data/valuation-history/raw/legulegu-fetch-audit.json")
-    parser.add_argument("--timeout", type=int, default=15)
-    parser.add_argument("--retries", type=int, default=0)
-    parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument("--timeout", type=int, default=20)
+    parser.add_argument("--retries", type=int, default=2)
+    parser.add_argument("--delay", type=float, default=0.6, help="seconds between securities; keep requests sequential to reduce upstream rate limiting")
     args = parser.parse_args()
 
-    securities = load_universe(Path(args.universe))
+    securities = sorted(load_universe(Path(args.universe)), key=lambda x: str(x["securityCode"]))
     all_rows: list[dict[str, Any]] = []
     audits: list[dict[str, Any]] = []
 
-    def fetch_one(security: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    boot = bootstrap_legulegu_session(args.timeout, args.retries)
+    session = (boot[0], boot[1], boot[2]) if boot else None
+    bootstrap_errors = boot[3] if boot else ["Could not establish a public Legulegu homepage session"]
+
+    for index, security in enumerate(securities):
         code = str(security["securityCode"]).split(".")[0]
-        payload, api_url, attempts = request_payload(code, args.timeout, args.retries)
+        payload, api_url, attempts = request_payload(code, args.timeout, args.retries, session)
         if payload is None:
-            return [], {
+            audit = {
                 "code": security["securityCode"], "status": "REQUEST_ERROR",
-                "rowsReturned": 0, "errors": attempts[-8:],
+                "rowsReturned": 0, "rowsWithMappedMetrics": 0,
+                "errors": (attempts or bootstrap_errors)[-12:],
                 "sourcePage": PAGE_URLS[0].format(code=code),
             }
-        raw_rows, fields = unpack_payload(payload)
-        output: list[dict[str, Any]] = []
-        unmapped_non_date_fields: set[str] = set()
-        for raw in raw_rows:
-            mapped = map_row(raw)
-            if mapped is None:
-                continue
-            if all(mapped[k] is None for k in ("peTtm", "pb", "psTtm")):
-                unmapped_non_date_fields.update(str(k) for k in raw.keys())
-                continue
-            output.append({
+            rows = []
+        else:
+            raw_rows, fields = unpack_payload(payload)
+            rows = []
+            unmapped_non_date_fields: set[str] = set()
+            for raw in raw_rows:
+                mapped = map_row(raw)
+                if mapped is None:
+                    continue
+                if all(mapped[k] is None for k in ("peTtm", "pb", "psTtm")):
+                    unmapped_non_date_fields.update(str(k) for k in raw.keys())
+                    continue
+                rows.append({
+                    "code": security["securityCode"],
+                    "date": mapped["date"],
+                    "close": "" if mapped["close"] is None else mapped["close"],
+                    "currency": "CNY",
+                    "peTtm": "" if mapped["peTtm"] is None else mapped["peTtm"],
+                    "pb": "" if mapped["pb"] is None else mapped["pb"],
+                    "psTtm": "" if mapped["psTtm"] is None else mapped["psTtm"],
+                    "source": SOURCE,
+                    "sourceUrl": PAGE_URLS[API_URLS.index(api_url)].format(code=code),
+                })
+            rows.sort(key=lambda x: x["date"])
+            valid_counts = {
+                metric: sum(1 for x in rows if x[metric] not in ("", None))
+                for metric in ("peTtm", "pb", "psTtm")
+            }
+            audit = {
                 "code": security["securityCode"],
-                "date": mapped["date"],
-                "close": "" if mapped["close"] is None else mapped["close"],
-                "currency": "CNY",
-                "peTtm": "" if mapped["peTtm"] is None else mapped["peTtm"],
-                "pb": "" if mapped["pb"] is None else mapped["pb"],
-                "psTtm": "" if mapped["psTtm"] is None else mapped["psTtm"],
-                "source": SOURCE,
-                "sourceUrl": PAGE_URLS[API_URLS.index(api_url)].format(code=code),
-            })
-        output.sort(key=lambda x: x["date"])
-        valid_counts = {
-            metric: sum(1 for x in output if x[metric] not in ("", None))
-            for metric in ("peTtm", "pb", "psTtm")
-        }
-        return output, {
-            "code": security["securityCode"],
-            "status": "OK" if output else ("SCHEMA_UNMAPPED" if raw_rows else "EMPTY"),
-            "rowsReturned": len(raw_rows),
-            "rowsWithMappedMetrics": len(output),
-            "firstDate": output[0]["date"] if output else None,
-            "lastDate": output[-1]["date"] if output else None,
-            "validMetricRows": valid_counts,
-            "fieldNames": fields,
-            "unmappedFieldsSample": sorted(unmapped_non_date_fields)[:40],
-            "apiBase": api_url,
-            "sourcePage": PAGE_URLS[API_URLS.index(api_url)].format(code=code),
-            "resultCode": payload.get("code", payload.get("status")),
-            "message": payload.get("msg", payload.get("message")),
-            "errors": attempts[-8:],
-        }
-
-    workers = max(1, min(int(args.workers), 8))
-    with ThreadPoolExecutor(max_workers=workers) as pool:
-        futures = {pool.submit(fetch_one, item): item for item in securities}
-        for future in as_completed(futures):
-            security = futures[future]
-            try:
-                rows, audit = future.result()
-                all_rows.extend(rows)
-                audits.append(audit)
-                print(f"{audit['code']}: {audit['status']} rows={audit.get('rowsWithMappedMetrics',0)}", flush=True)
-            except Exception as exc:
-                audits.append({"code": security["securityCode"], "status": "UNEXPECTED_ERROR", "error": str(exc), "rowsReturned": 0})
+                "status": "OK" if rows else ("SCHEMA_UNMAPPED" if raw_rows else "EMPTY"),
+                "rowsReturned": len(raw_rows),
+                "rowsWithMappedMetrics": len(rows),
+                "firstDate": rows[0]["date"] if rows else None,
+                "lastDate": rows[-1]["date"] if rows else None,
+                "validMetricRows": valid_counts,
+                "fieldNames": fields,
+                "unmappedFieldsSample": sorted(unmapped_non_date_fields)[:40],
+                "apiBase": api_url,
+                "sourcePage": PAGE_URLS[API_URLS.index(api_url)].format(code=code),
+                "resultCode": payload.get("code", payload.get("status")),
+                "message": payload.get("msg", payload.get("message")),
+                "errors": attempts[-12:],
+            }
+        all_rows.extend(rows)
+        audits.append(audit)
+        print(f"{audit['code']}: {audit['status']} rows={audit.get('rowsWithMappedMetrics',0)}", flush=True)
+        if index + 1 < len(securities) and args.delay > 0:
+            time.sleep(args.delay)
 
     all_rows.sort(key=lambda x: (x["code"], x["date"]))
     output_path = Path(args.output)
@@ -286,7 +307,6 @@ def main() -> int:
         writer.writeheader()
         writer.writerows(all_rows)
 
-    audits.sort(key=lambda x: x["code"])
     metric_coverage = {
         metric: sum(1 for row in all_rows if row[metric] not in ("", None))
         for metric in ("peTtm", "pb", "psTtm")
@@ -294,21 +314,22 @@ def main() -> int:
     audit_doc = {
         "source": SOURCE,
         "sourceCandidates": API_URLS,
-        "sourceReference": "Legacy AKShare stock_a_lg_indicator implementation; candidate endpoint only until current response is verified",
+        "sourceReference": "Legacy AKShare and JS clients; current availability probed separately",
         "fetchedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "requestStrategy": "one CSRF/cookie session; sequential requests; date-token variants; 0.6s default delay",
         "requestedAshareCompanies": len(securities),
         "companiesWithMappedRows": sum(1 for x in audits if x.get("rowsWithMappedMetrics", 0) > 0),
         "dailyRowsWritten": len(all_rows),
         "validMetricRows": metric_coverage,
+        "bootstrapErrors": bootstrap_errors,
         "securityAudits": audits,
-        "warning": "Candidate data are isolated and are not merged into generated/valuation-monthly.csv until source, metric definitions, duplicates, and point-in-time semantics pass review.",
+        "warning": "Candidate data remain isolated and are not merged into generated/valuation-monthly.csv until source, metric definitions, duplicates, and point-in-time semantics pass review.",
     }
     audit_path = Path(args.audit)
     audit_path.parent.mkdir(parents=True, exist_ok=True)
     audit_path.write_text(json.dumps(audit_doc, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({k: audit_doc[k] for k in ("requestedAshareCompanies", "companiesWithMappedRows", "dailyRowsWritten", "validMetricRows")}, ensure_ascii=False, indent=2))
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())
