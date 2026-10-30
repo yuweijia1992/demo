@@ -25,7 +25,7 @@ HK_ENDPOINT = "https://finance.baidu.com/opendata"
 A_PAGE = "https://gushitong.baidu.com/stock/ab-{code}"
 HK_PAGE = "https://gushitong.baidu.com/stock/hk-{code}"
 SOURCE_LABEL = "Baidu Stock Tong / valuation history (AKShare endpoint specification)"
-INDICATORS = {"peTtm": "市盈率(TTM)", "pb": "市净率"}
+INDICATORS = {"peTtm": ("市盈率(TTM)",), "pb": ("市净率",), "psTtm": ("市销率(TTM)", "市销率")}
 COLUMNS = ["code", "date", "close", "currency", "peTtm", "pb", "psTtm", "source", "sourceUrl"]
 
 
@@ -117,7 +117,14 @@ def fetch_series(url: str, page_url: str, timeout: int, retries: int) -> list[tu
             body = chart[0].get("body", [])
             output: dict[str, float | None] = {}
             if isinstance(body, dict):
-                body = list(body.items())
+                date_key = next((key for key in ("date", "日期", "x") if key in body), None)
+                value_key = next((key for key in ("value", "值", "y") if key in body), None)
+                if date_key and value_key:
+                    dates = body[date_key] if isinstance(body[date_key], list) else [body[date_key]]
+                    values = body[value_key] if isinstance(body[value_key], list) else [body[value_key]]
+                    body = list(zip(dates, values))
+                else:
+                    body = list(body.items())
             for point in body:
                 if isinstance(point, (list, tuple)) and len(point) >= 2:
                     raw_day, raw_value = point[0], point[1]
@@ -181,33 +188,42 @@ def main() -> int:
             continue
         page_url = (A_PAGE if market == "CN" else HK_PAGE).format(code=raw_code)
         by_day: dict[str, dict[str, float | None]] = defaultdict(dict)
-        for metric, indicator in INDICATORS.items():
-            request_url = build_url(market, raw_code, indicator, args.period)
-            try:
-                series = fetch_series(request_url, page_url, args.timeout, args.retries)
-                for day, value in series:
-                    if market == "CN" and date.fromisoformat(day) >= cutoff:
-                        continue
-                    by_day[day][metric] = value
-                audits.append({
-                    "code": code, "market": market, "metric": metric, "indicator": indicator,
-                    "periodRequested": args.period, "rowsReturned": len(series),
-                    "rowsRetainedForBuild": sum(1 for day, _ in series if market != "CN" or date.fromisoformat(day) < cutoff),
-                    "firstDate": series[0][0] if series else None,
-                    "lastDate": series[-1][0] if series else None,
-                    "endpoint": request_url.split("?")[0], "sourceUrl": page_url,
-                    "status": "OK" if series else "EMPTY",
-                })
-                print(f"  {code} {metric}: {len(series)} raw points", flush=True)
-            except Exception as exc:
-                audits.append({
-                    "code": code, "market": market, "metric": metric, "indicator": indicator,
-                    "periodRequested": args.period, "rowsReturned": 0, "rowsRetainedForBuild": 0,
-                    "firstDate": None, "lastDate": None, "endpoint": request_url.split("?")[0],
-                    "sourceUrl": page_url, "status": "ERROR", "error": str(exc),
-                })
-                print(f"  {code} {metric}: ERROR {exc}", flush=True)
-            time.sleep(max(0.0, args.pause))
+        for metric, indicator_candidates in INDICATORS.items():
+            series: list[tuple[str, float | None]] = []
+            attempts: list[dict[str, str]] = []
+            chosen_indicator = None
+            request_url = ""
+            for indicator in indicator_candidates:
+                request_url = build_url(market, raw_code, indicator, args.period)
+                try:
+                    candidate_series = fetch_series(request_url, page_url, args.timeout, args.retries)
+                    attempts.append({"indicator": indicator, "status": "OK" if candidate_series else "EMPTY"})
+                    if candidate_series:
+                        series = candidate_series
+                        chosen_indicator = indicator
+                        break
+                except Exception as exc:
+                    attempts.append({"indicator": indicator, "status": "ERROR", "error": str(exc)})
+                time.sleep(max(0.0, args.pause))
+            for day, value in series:
+                if market == "CN" and date.fromisoformat(day) >= cutoff:
+                    continue
+                by_day[day][metric] = value
+            kept = sum(1 for day, _ in series if market != "CN" or date.fromisoformat(day) < cutoff)
+            metric_status = "OK" if series else ("ERROR" if attempts and all(x["status"] == "ERROR" for x in attempts) else "EMPTY")
+            audits.append({
+                "code": code, "market": market, "metric": metric,
+                "indicator": chosen_indicator or indicator_candidates[0],
+                "indicatorAttempts": attempts,
+                "periodRequested": args.period, "rowsReturned": len(series),
+                "rowsRetainedForBuild": kept,
+                "firstDate": series[0][0] if series else None,
+                "lastDate": series[-1][0] if series else None,
+                "endpoint": request_url.split("?")[0] if request_url else "",
+                "sourceUrl": page_url, "status": metric_status,
+                "undocumentedIndicatorProbe": metric == "psTtm",
+            })
+            print(f"  {code} {metric}: {len(series)} raw points" if series else f"  {code} {metric}: {metric_status}", flush=True)
 
         for day, values in sorted(by_day.items()):
             if (code, day) in excluded:
@@ -215,7 +231,7 @@ def main() -> int:
             output_rows.append({
                 "code": code, "date": day, "close": "", "currency": security.get("currency", ""),
                 "peTtm": values.get("peTtm", ""), "pb": values.get("pb", ""),
-                "psTtm": "", "source": SOURCE_LABEL, "sourceUrl": page_url,
+                "psTtm": values.get("psTtm", ""), "source": SOURCE_LABEL, "sourceUrl": page_url,
             })
             any_codes.add(code)
             if market == "HK":
@@ -244,11 +260,13 @@ def main() -> int:
         "hkCompaniesWithData": len(hk_codes),
         "dailyRowsWritten": len(output_rows),
         "aShareRowsArePre2018Only": True,
-        "metricsProvided": ["PE-TTM", "PB"],
-        "psTtmProvided": False,
+        "documentedMetrics": ["PE-TTM", "PB"],
+        "undocumentedPSProbeLabels": ["市销率(TTM)", "市销率"],
+        "metricsWithReturnedRows": sorted({item["metric"] for item in audits if item["status"] == "OK"}),
+        "psTtmReturnedByProbe": any(item["metric"] == "psTtm" and item["status"] == "OK" for item in audits),
         "excludedSameDayKeysFromBaoStock": len(excluded),
         "indicators": audits,
-        "note": "Baidu source provides PE-TTM and PB only. A-share rows are clipped before Eastmoney's 2018-onward window; HK rows retain the full returned history. PS-TTM is intentionally blank. Failed/empty queries remain visible in the audit; no interpolation or imputation.",
+        "note": "Baidu documents PE-TTM and PB. The fetcher also probes undocumented PS labels; PS is included only if the endpoint returns dated values. A-share rows are clipped before Eastmoney's 2018-onward window; HK rows retain the full returned history. Failed/empty queries remain visible in the audit; no interpolation or imputation.",
     }
     audit_path = Path(args.audit)
     audit_path.parent.mkdir(parents=True, exist_ok=True)
