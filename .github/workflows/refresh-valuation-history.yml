@@ -45,6 +45,10 @@ jobs:
         run: |
           python scripts/fetch_baostock_a_share_valuation.py
 
+      - name: Install exchange trading calendars
+        run: |
+          python -m pip install --disable-pip-version-check "exchange-calendars>=4.5,<5"
+
       - name: Ensure BaoStock input file exists
         run: |
           mkdir -p data/valuation-history/raw
@@ -98,7 +102,7 @@ jobs:
           covered = eastmoney.get("companiesWithData", 0)
           print(f"Eastmoney coverage: {covered}/{requested}; daily rows: {eastmoney.get('dailyRows', 0)}")
           print(f"BaoStock backfill: {baostock.get('companiesWithRows', 0)}/{baostock.get('requestedAshareCompanies', 0)}; daily rows: {baostock.get('dailyRows', 0)}")
-          print(f"Baidu supplement: A pre-2018 {baidu.get('aShareCompaniesWithPre2018Data', 0)}, HK {baidu.get('hkCompaniesWithData', 0)}; daily rows: {baidu.get('dailyRowsWritten', 0)}; PE/PB only (no PS)")
+          print(f"Baidu supplement: A pre-2018 {baidu.get('aShareCompaniesWithPre2018Data', 0)}, HK {baidu.get('hkCompaniesWithData', 0)}; daily rows: {baidu.get('dailyRowsWritten', 0)}; PS returned by Baidu probe: {baidu.get('psTtmReturnedByBaiduProbe', False)}; Enniu fallback rows: {baidu.get('eniuHistoricalFallbackRows', 0)}")
           print(f"Monthly rows: {coverage.get('monthlyRowsWritten', 0)}; companies with history: {coverage.get('companiesWithHistory', 0)}")
           print("Latest 5Y/10Y percentile coverage:", coverage.get("latestMonthEndPercentileCoverage", {}))
           for failure in eastmoney.get("failedCompanies", []):
