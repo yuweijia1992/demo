@@ -107,12 +107,22 @@
 | 百度股市通公开历史接口 | 36只A股2018年前PE/PB，港股5只PE/PB；无有效PS返回 | 是，仅写入实测返回字段 |
 | BaoStock | API字段设计支持PE-TTM、PB-MRQ、PS-TTM；实际连接登录报10002007，未取到记录 | 否，等待网络重试 |
 | 亿牛网 Enniu | 港股PE/PB图表端点可调用，但本次抓取0条有效补段；上游文档提示数据源可能陈旧 | 否 |
-| 乐咕乐股 Legulegu | 当前AKShare公开实现中可见A股市场/指数PE、PB及部分股息率数据，不等于49只个股的逐股历史序列；个股接口未确认可稳定匿名批量访问 | 否；只作为待核查候选 |
+| 乐咕乐股 Legulegu | 发现旧版单股公开端点 `/api/s/base-info/`；历史客户端代码显示需先取首页CSRF/Cookie，再POST日期MD5令牌和证券代码，返回字段曾含 `trade_date / pe_ttm / pb / ps_ttm`。当前AKShare已不再提供该个股函数，上游是否仍开放尚未实测 | 否；已新增隔离探测脚本 `scripts/probe_legulegu_a_share_history.py`，等待真实工作流运行审计，未把候选记录并入主库 |
 | 百分位（Baifenwei） | 可查看A股横截面估值百分位和部分个股近10年曲线，但未取得可批量下载的逐股原始月度PE/PB/PS序列 | 只作交叉核验 |
 | GuruFocus | 港股个股页面可显示部分PE历史；完整数据导出涉及试用/订阅，尚未取得49只证券可用的开放CSV | 否 |
 | 理杏仁 Lixinger | 港股个股日频PE/PB/PS API文档明确，但需用户专属Token | 暂不接入；非匿名公开数据 |
 | TuShare | A股daily_basic含PE/PB/PS，但需要积分；不作为免费源 | 否 |
 | BigQuant | 存在历史估值数据集候选，下载权限与再发布许可需核实 | 仅备选，不能按免费公开源处理 |
+
+## 新增候选源：乐咕单股历史估值接口（待实测）
+
+旧版AKShare兼容实现及一个独立JavaScript客户端都记录了乐咕单股接口：
+- 请求路径：`https://legulegu.com/api/s/base-info/`
+- 请求流程：访问首页建立Cookie并读取 `meta[name=_csrf]`，然后POST `token` 与 `id`。
+- 字段样例：`trade_date, pe, pe_ttm, pb, ps, ps_ttm, dv_ratio, dv_ttm`。
+- 当前探测器只把明确的 `pe_ttm`、`pb`、`ps_ttm`映射为目标指标；静态PE和静态PS不冒充TTM。
+- 已在GitHub Actions中加入隔离探测步骤，候选输出路径为 `raw/legulegu-a-share-candidate.csv` 与 `raw/legulegu-fetch-audit.json`；该输出不参与正式月度序列的合并。
+- 当前仓库尚未出现这两个实测产物，因此此接口现在只能标为“已发现协议、待实测可用性”，不能称为已获取2015年数据。
 
 ## 后续工作顺序
 
