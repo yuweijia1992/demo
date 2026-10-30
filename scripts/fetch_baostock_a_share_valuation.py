@@ -26,7 +26,7 @@ def main() -> int:
     parser.add_argument("--universe", default="data/valuation-history/universe.json")
     parser.add_argument("--output", default="data/valuation-history/raw/baostock-pre2018-daily.csv")
     parser.add_argument("--audit", default="data/valuation-history/raw/baostock-fetch-audit.json")
-    parser.add_argument("--start-date", default="2006-01-01")
+    parser.add_argument("--start-date", default="2015-01-01")
     parser.add_argument("--end-date", default="2017-12-31")
     parser.add_argument("--pause", type=float, default=0.15)
     args = parser.parse_args()
