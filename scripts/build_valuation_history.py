@@ -13,9 +13,11 @@ import math
 import re
 import sys
 from collections import defaultdict
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
+
+import exchange_calendars as xcals
 
 METRICS = ("peTtm", "pb", "psTtm")
 WINDOWS = {
@@ -98,6 +100,50 @@ def quantile(values: list[float], probability: float) -> float | None:
         return ordered[lower]
     weight = position - lower
     return ordered[lower] * (1 - weight) + ordered[upper] * weight
+
+
+def build_exchange_session_maps(end_month: str) -> tuple[dict[str, dict[str, str]], dict[str, dict[str, int]]]:
+    """Return expected last trading session by market/month and ordered session indexes."""
+    end_first = date.fromisoformat(end_month + "-01")
+    if end_first.month == 12:
+        end_exclusive = date(end_first.year + 1, 1, 1)
+    else:
+        end_exclusive = date(end_first.year, end_first.month + 1, 1)
+    end_day = (end_exclusive - timedelta(days=1)).isoformat()
+    start_day = "1999-01-04"
+    expected_last: dict[str, dict[str, str]] = {}
+    session_indexes: dict[str, dict[str, int]] = {}
+    for market, calendar_name in (("CN", "XSHG"), ("HK", "XHKG")):
+        calendar = xcals.get_calendar(calendar_name, start=start_day, end=end_day)
+        sessions = [str(value)[:10] for value in calendar.sessions_in_range(start_day, end_day)]
+        if not sessions:
+            raise RuntimeError(f"No exchange sessions returned for {market} ({calendar_name})")
+        month_last: dict[str, str] = {}
+        for session in sessions:
+            month_last[session[:7]] = session
+        expected_last[market] = month_last
+        session_indexes[market] = {session: index for index, session in enumerate(sessions)}
+    return expected_last, session_indexes
+
+
+def summarize_session_lags(values: list[int]) -> dict[str, Any]:
+    ordered = sorted(values)
+    if not ordered:
+        return {
+            "observations": 0, "exactMonthEnd": 0, "lag1to2Sessions": 0,
+            "lag3to5Sessions": 0, "lag6PlusSessions": 0,
+            "medianLagSessions": None, "p90LagSessions": None, "maxLagSessions": None,
+        }
+    return {
+        "observations": len(ordered),
+        "exactMonthEnd": sum(value == 0 for value in ordered),
+        "lag1to2Sessions": sum(1 <= value <= 2 for value in ordered),
+        "lag3to5Sessions": sum(3 <= value <= 5 for value in ordered),
+        "lag6PlusSessions": sum(value >= 6 for value in ordered),
+        "medianLagSessions": quantile(ordered, 0.5),
+        "p90LagSessions": quantile(ordered, 0.9),
+        "maxLagSessions": max(ordered),
+    }
 
 
 def csv_write(path: Path, rows: list[dict[str, Any]], columns: list[str]) -> None:
@@ -231,6 +277,7 @@ def main() -> int:
             "Use per-row source/sourceUrl columns or --source-label and --source-url."
         )
 
+    expected_last_session, session_indexes = build_exchange_session_maps(end_month)
     monthly_rows: list[dict[str, Any]] = []
     audit_securities: list[dict[str, Any]] = []
 
@@ -241,10 +288,27 @@ def main() -> int:
             if key not in grouped or day > date.fromisoformat(grouped[key]["date"]):
                 grouped[key] = record
         series = sorted(grouped.values(), key=lambda x: x["date"])
+        market = str(by_code[code].get("market", "CN")).upper()
+        market_session_index = session_indexes.get(market, {})
+        market_expected_last = expected_last_session.get(market, {})
+        security_lags: list[int] = []
 
         for position, record in enumerate(series):
             current_idx = month_index(date.fromisoformat(record["date"]))
             output = dict(record)
+            expected_last = market_expected_last.get(record["month"])
+            actual_day = record["date"]
+            if expected_last and actual_day in market_session_index and expected_last in market_session_index:
+                lag_sessions = market_session_index[expected_last] - market_session_index[actual_day]
+                if lag_sessions >= 0:
+                    security_lags.append(lag_sessions)
+                else:
+                    lag_sessions = None
+            else:
+                lag_sessions = None
+            output["expectedLastTradingDate"] = expected_last
+            output["monthEndTradingSessionLag"] = lag_sessions
+            output["isExactMonthEndObservation"] = (lag_sessions == 0) if lag_sessions is not None else False
             for metric in METRICS:
                 for label, config in WINDOWS.items():
                     lower_idx = current_idx - config["months"] + 1
@@ -281,12 +345,13 @@ def main() -> int:
             "peTtmValidMonths": sum(x["peTtm"] is not None for x in series),
             "pbValidMonths": sum(x["pb"] is not None for x in series),
             "psTtmValidMonths": sum(x["psTtm"] is not None for x in series),
+            "monthEndSessionLag": summarize_session_lags(security_lags),
             "sourceLabels": sorted({x["source"] for x in series}),
             "sourceUrls": sorted({x["sourceUrl"] for x in series}),
         })
 
     monthly_rows.sort(key=lambda x: (x["code"], x["date"]))
-    columns = ["code", "issuerName", "date", "month", "close", "currency", "peTtm", "pb", "psTtm", "source", "sourceUrl"]
+    columns = ["code", "issuerName", "date", "month", "expectedLastTradingDate", "monthEndTradingSessionLag", "isExactMonthEndObservation", "close", "currency", "peTtm", "pb", "psTtm", "source", "sourceUrl"]
     for metric in METRICS:
         for label in ("5Y", "10Y"):
             columns.extend((f"{metric}Pct{label}", f"{metric}N{label}"))
@@ -307,13 +372,43 @@ def main() -> int:
         }
         for metric in METRICS
     }
+    latest_exact_month_end_coverage = {
+        metric: {
+            "5Y": sum(1 for row in latest_by_code.values() if row.get("monthEndTradingSessionLag") == 0 and row.get(f"{metric}Pct5Y") is not None),
+            "10Y": sum(1 for row in latest_by_code.values() if row.get("monthEndTradingSessionLag") == 0 and row.get(f"{metric}Pct10Y") is not None),
+        }
+        for metric in METRICS
+    }
+    latest_within_5_sessions_coverage = {
+        metric: {
+            "5Y": sum(1 for row in latest_by_code.values() if row.get("monthEndTradingSessionLag") is not None and row["monthEndTradingSessionLag"] <= 5 and row.get(f"{metric}Pct5Y") is not None),
+            "10Y": sum(1 for row in latest_by_code.values() if row.get("monthEndTradingSessionLag") is not None and row["monthEndTradingSessionLag"] <= 5 and row.get(f"{metric}Pct10Y") is not None),
+        }
+        for metric in METRICS
+    }
+    overall_lags = [row["monthEndTradingSessionLag"] for row in monthly_rows if row.get("monthEndTradingSessionLag") is not None]
+    lag_by_market = {
+        market: summarize_session_lags([
+            row["monthEndTradingSessionLag"] for row in monthly_rows
+            if row.get("monthEndTradingSessionLag") is not None
+            and str(by_code[row["code"]].get("market", "CN")).upper() == market
+        ])
+        for market in ("CN", "HK")
+    }
     coverage = {
         "title": "中国49家公司历史估值月度序列覆盖审计",
         "generatedAt": datetime.now().astimezone().isoformat(timespec="seconds"),
         "inputFiles": [str(path) for path in input_paths],
         "universeFile": str(universe_path),
         "period": {"startMonth": start_month, "endMonth": end_month},
-        "frequency": "one last observed trading-date row per calendar month",
+        "frequency": "latest observed valid exchange-session row per calendar month; actual last-session lag is audited separately",
+        "calendarAudit": {
+            "calendarSource": "exchange_calendars XSHG + XHKG",
+            "byMarket": lag_by_market,
+            "overall": summarize_session_lags(overall_lags),
+            "latestObservationExactMonthEndCompanies": sum(1 for row in latest_by_code.values() if row.get("monthEndTradingSessionLag") == 0),
+            "latestObservationWithin5SessionsCompanies": sum(1 for row in latest_by_code.values() if row.get("monthEndTradingSessionLag") is not None and row["monthEndTradingSessionLag"] <= 5),
+        },
         "inputDailyRowsRead": input_rows,
         "monthlyRowsWritten": len(monthly_rows),
         "companiesInUniverse": len(securities),
@@ -326,6 +421,8 @@ def main() -> int:
         "percentileMethod": "100 * (count(x < current) + 0.5 * count(x == current)) / N",
         "windows": WINDOWS,
         "latestMonthEndPercentileCoverage": latest_percentile_coverage,
+        "latestExactMonthEndPercentileCoverage": latest_exact_month_end_coverage,
+        "latestWithin5TradingSessionsPercentileCoverage": latest_within_5_sessions_coverage,
         "securities": sorted(audit_securities, key=lambda x: x["code"]),
         "status": "NO_HISTORICAL_DATA" if not monthly_rows else "REVIEW_AUDIT_BEFORE_PUBLISH",
         "warnings": [
@@ -333,7 +430,8 @@ def main() -> int:
             "Only each issuer's primary securityCode is accepted; alternate listings must be a separate security series.",
             "Rows with no source label and valid sourceUrl are rejected.",
             "Negative or zero PE/PB/PS values are excluded from percentile calculations.",
-            "A monthly row uses the latest observed daily row in that calendar month; ensure vendor export contains the full daily history."
+            "A monthly row uses the latest observed in-month exchange-session observation; expected last session and lag are recorded and must be reviewed before calling it a strict month-end close.",
+            "Sparse vendor history can omit calendar months or leave an observation several trading sessions before month-end; no missing month is filled or forward-carried."
         ]
     }
     (out_dir / "coverage-audit.json").write_text(json.dumps(coverage, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -344,6 +442,8 @@ def main() -> int:
         "monthlyRowsWritten": len(monthly_rows),
         "companiesWithHistory": len(covered_codes),
         "companiesWithoutHistory": coverage["companiesWithoutHistory"],
+        "monthEndLagAudit": coverage["calendarAudit"],
+        "latestExactMonthEndPercentileCoverage": latest_exact_month_end_coverage,
         "outputs": [str(out_dir / "valuation-monthly.csv"), str(out_dir / "coverage-audit.json")]
     }, ensure_ascii=False, indent=2))
     return 0
