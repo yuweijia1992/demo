@@ -1,30 +1,12 @@
 {
   "source": "Eastmoney Data Center / RPT_VALUEANALYSIS_DET",
   "endpoint": "https://datacenter-web.eastmoney.com/api/data/v1/get",
-  "fetchedAt": "2026-10-30T09:28:06+00:00",
+  "fetchedAt": "2026-10-30T09:33:00+00:00",
   "requestedAshareCompanies": 44,
   "companiesWithData": 44,
   "dailyRows": 89695,
   "failedCompanies": [],
   "securities": [
-    {
-      "code": "600398",
-      "rows": 2140,
-      "firstDate": "2018-01-02",
-      "lastDate": "2026-10-30",
-      "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/600398.html",
-      "status": "OK"
-    },
-    {
-      "code": "002714",
-      "rows": 2140,
-      "firstDate": "2018-01-02",
-      "lastDate": "2026-10-30",
-      "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/002714.html",
-      "status": "OK"
-    },
     {
       "code": "600887",
       "rows": 2140,
@@ -32,6 +14,15 @@
       "lastDate": "2026-10-30",
       "pages": 1,
       "sourceUrl": "https://data.eastmoney.com/gzfx/detail/600887.html",
+      "status": "OK"
+    },
+    {
+      "code": "600398",
+      "rows": 2140,
+      "firstDate": "2018-01-02",
+      "lastDate": "2026-10-30",
+      "pages": 1,
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/600398.html",
       "status": "OK"
     },
     {
@@ -44,6 +35,15 @@
       "status": "OK"
     },
     {
+      "code": "002714",
+      "rows": 2140,
+      "firstDate": "2018-01-02",
+      "lastDate": "2026-10-30",
+      "pages": 1,
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/002714.html",
+      "status": "OK"
+    },
+    {
       "code": "600690",
       "rows": 2140,
       "firstDate": "2018-01-02",
@@ -53,21 +53,21 @@
       "status": "OK"
     },
     {
-      "code": "000333",
-      "rows": 2140,
-      "firstDate": "2018-01-02",
-      "lastDate": "2026-10-30",
-      "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/000333.html",
-      "status": "OK"
-    },
-    {
       "code": "000651",
       "rows": 2140,
       "firstDate": "2018-01-02",
       "lastDate": "2026-10-30",
       "pages": 1,
       "sourceUrl": "https://data.eastmoney.com/gzfx/detail/000651.html",
+      "status": "OK"
+    },
+    {
+      "code": "000333",
+      "rows": 2140,
+      "firstDate": "2018-01-02",
+      "lastDate": "2026-10-30",
+      "pages": 1,
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/000333.html",
       "status": "OK"
     },
     {
@@ -107,12 +107,12 @@
       "status": "OK"
     },
     {
-      "code": "601919",
-      "rows": 2140,
-      "firstDate": "2018-01-02",
+      "code": "300760",
+      "rows": 1951,
+      "firstDate": "2018-10-16",
       "lastDate": "2026-10-30",
       "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/601919.html",
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/300760.html",
       "status": "OK"
     },
     {
@@ -125,30 +125,12 @@
       "status": "OK"
     },
     {
-      "code": "300760",
-      "rows": 1951,
-      "firstDate": "2018-10-16",
-      "lastDate": "2026-10-30",
-      "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/300760.html",
-      "status": "OK"
-    },
-    {
-      "code": "603259",
-      "rows": 2059,
-      "firstDate": "2018-05-08",
-      "lastDate": "2026-10-30",
-      "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/603259.html",
-      "status": "OK"
-    },
-    {
-      "code": "300015",
+      "code": "601919",
       "rows": 2140,
       "firstDate": "2018-01-02",
       "lastDate": "2026-10-30",
       "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/300015.html",
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/601919.html",
       "status": "OK"
     },
     {
@@ -158,6 +140,15 @@
       "lastDate": "2026-10-30",
       "pages": 1,
       "sourceUrl": "https://data.eastmoney.com/gzfx/detail/600900.html",
+      "status": "OK"
+    },
+    {
+      "code": "300015",
+      "rows": 2140,
+      "firstDate": "2018-01-02",
+      "lastDate": "2026-10-30",
+      "pages": 1,
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/300015.html",
       "status": "OK"
     },
     {
@@ -179,12 +170,12 @@
       "status": "OK"
     },
     {
-      "code": "600406",
+      "code": "601985",
       "rows": 2140,
       "firstDate": "2018-01-02",
       "lastDate": "2026-10-30",
       "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/600406.html",
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/601985.html",
       "status": "OK"
     },
     {
@@ -197,12 +188,12 @@
       "status": "OK"
     },
     {
-      "code": "601985",
+      "code": "600406",
       "rows": 2140,
       "firstDate": "2018-01-02",
       "lastDate": "2026-10-30",
       "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/601985.html",
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/600406.html",
       "status": "OK"
     },
     {
@@ -215,12 +206,12 @@
       "status": "OK"
     },
     {
-      "code": "688981",
-      "rows": 1525,
-      "firstDate": "2020-07-16",
+      "code": "603259",
+      "rows": 2059,
+      "firstDate": "2018-05-08",
       "lastDate": "2026-10-30",
       "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/688981.html",
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/603259.html",
       "status": "OK"
     },
     {
@@ -230,6 +221,15 @@
       "lastDate": "2026-10-30",
       "pages": 1,
       "sourceUrl": "https://data.eastmoney.com/gzfx/detail/601728.html",
+      "status": "OK"
+    },
+    {
+      "code": "688981",
+      "rows": 1525,
+      "firstDate": "2020-07-16",
+      "lastDate": "2026-10-30",
+      "pages": 1,
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/688981.html",
       "status": "OK"
     },
     {
@@ -260,15 +260,6 @@
       "status": "OK"
     },
     {
-      "code": "300308",
-      "rows": 2140,
-      "firstDate": "2018-01-02",
-      "lastDate": "2026-10-30",
-      "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/300308.html",
-      "status": "OK"
-    },
-    {
       "code": "300750",
       "rows": 2035,
       "firstDate": "2018-06-11",
@@ -284,15 +275,6 @@
       "lastDate": "2026-10-30",
       "pages": 1,
       "sourceUrl": "https://data.eastmoney.com/gzfx/detail/300274.html",
-      "status": "OK"
-    },
-    {
-      "code": "300124",
-      "rows": 2140,
-      "firstDate": "2018-01-02",
-      "lastDate": "2026-10-30",
-      "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/300124.html",
       "status": "OK"
     },
     {
@@ -314,12 +296,12 @@
       "status": "OK"
     },
     {
-      "code": "601601",
+      "code": "300308",
       "rows": 2140,
       "firstDate": "2018-01-02",
       "lastDate": "2026-10-30",
       "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/601601.html",
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/300308.html",
       "status": "OK"
     },
     {
@@ -332,12 +314,30 @@
       "status": "OK"
     },
     {
+      "code": "601601",
+      "rows": 2140,
+      "firstDate": "2018-01-02",
+      "lastDate": "2026-10-30",
+      "pages": 1,
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/601601.html",
+      "status": "OK"
+    },
+    {
       "code": "600030",
       "rows": 2140,
       "firstDate": "2018-01-02",
       "lastDate": "2026-10-30",
       "pages": 1,
       "sourceUrl": "https://data.eastmoney.com/gzfx/detail/600030.html",
+      "status": "OK"
+    },
+    {
+      "code": "300124",
+      "rows": 2140,
+      "firstDate": "2018-01-02",
+      "lastDate": "2026-10-30",
+      "pages": 1,
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/300124.html",
       "status": "OK"
     },
     {
@@ -350,21 +350,21 @@
       "status": "OK"
     },
     {
-      "code": "601888",
-      "rows": 2140,
-      "firstDate": "2018-01-02",
-      "lastDate": "2026-10-30",
-      "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/601888.html",
-      "status": "OK"
-    },
-    {
       "code": "600754",
       "rows": 2140,
       "firstDate": "2018-01-02",
       "lastDate": "2026-10-30",
       "pages": 1,
       "sourceUrl": "https://data.eastmoney.com/gzfx/detail/600754.html",
+      "status": "OK"
+    },
+    {
+      "code": "601888",
+      "rows": 2140,
+      "firstDate": "2018-01-02",
+      "lastDate": "2026-10-30",
+      "pages": 1,
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/601888.html",
       "status": "OK"
     },
     {
@@ -386,21 +386,21 @@
       "status": "OK"
     },
     {
-      "code": "600323",
-      "rows": 2140,
-      "firstDate": "2018-01-02",
-      "lastDate": "2026-10-30",
-      "pages": 1,
-      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/600323.html",
-      "status": "OK"
-    },
-    {
       "code": "000598",
       "rows": 2140,
       "firstDate": "2018-01-02",
       "lastDate": "2026-10-30",
       "pages": 1,
       "sourceUrl": "https://data.eastmoney.com/gzfx/detail/000598.html",
+      "status": "OK"
+    },
+    {
+      "code": "600323",
+      "rows": 2140,
+      "firstDate": "2018-01-02",
+      "lastDate": "2026-10-30",
+      "pages": 1,
+      "sourceUrl": "https://data.eastmoney.com/gzfx/detail/600323.html",
       "status": "OK"
     }
   ],
