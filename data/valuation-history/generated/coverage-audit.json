@@ -1,6 +1,6 @@
 {
   "title": "中国49家公司历史估值月度序列覆盖审计",
-  "generatedAt": "2026-10-30T09:39:18+00:00",
+  "generatedAt": "2026-10-30T09:44:06+00:00",
   "inputFiles": [
     "data/valuation-history/raw/baostock-pre2018-daily.csv",
     "data/valuation-history/raw/baidu-valuation-history.csv",
@@ -17,10 +17,10 @@
     "byMarket": {
       "CN": {
         "observations": 8308,
-        "exactMonthEnd": 5022,
-        "lag1to2Sessions": 701,
-        "lag3to5Sessions": 1039,
-        "lag6PlusSessions": 1546,
+        "exactMonthEnd": 5027,
+        "lag1to2Sessions": 708,
+        "lag3to5Sessions": 1043,
+        "lag6PlusSessions": 1530,
         "medianLagSessions": 0.0,
         "p90LagSessions": 9.0,
         "maxLagSessions": 21
@@ -38,10 +38,10 @@
     },
     "overall": {
       "observations": 8993,
-      "exactMonthEnd": 5176,
-      "lag1to2Sessions": 888,
-      "lag3to5Sessions": 1171,
-      "lag6PlusSessions": 1758,
+      "exactMonthEnd": 5181,
+      "lag1to2Sessions": 895,
+      "lag3to5Sessions": 1175,
+      "lag6PlusSessions": 1742,
       "medianLagSessions": 0,
       "p90LagSessions": 9.0,
       "maxLagSessions": 21
@@ -49,7 +49,7 @@
     "latestObservationExactMonthEndCompanies": 48,
     "latestObservationWithin5SessionsCompanies": 49
   },
-  "inputDailyRowsRead": 104405,
+  "inputDailyRowsRead": 104602,
   "monthlyRowsWritten": 8993,
   "companiesInUniverse": 49,
   "companiesWithHistory": 49,
@@ -71,14 +71,28 @@
       "minimum": 120
     }
   },
-  "latestMonthEndPercentileCoverage": {
+  "latestObservedRowPercentileCoverage": {
     "peTtm": {
       "5Y": 41,
-      "10Y": 11
+      "10Y": 10
     },
     "pb": {
       "5Y": 45,
-      "10Y": 13
+      "10Y": 12
+    },
+    "psTtm": {
+      "5Y": 42,
+      "10Y": 0
+    }
+  },
+  "latestMonthEndPercentileCoverage": {
+    "peTtm": {
+      "5Y": 41,
+      "10Y": 10
+    },
+    "pb": {
+      "5Y": 45,
+      "10Y": 12
     },
     "psTtm": {
       "5Y": 42,
@@ -87,12 +101,12 @@
   },
   "latestExactMonthEndPercentileCoverage": {
     "peTtm": {
-      "5Y": 40,
-      "10Y": 11
+      "5Y": 39,
+      "10Y": 0
     },
     "pb": {
-      "5Y": 44,
-      "10Y": 13
+      "5Y": 42,
+      "10Y": 0
     },
     "psTtm": {
       "5Y": 42,
@@ -101,16 +115,25 @@
   },
   "latestWithin5TradingSessionsPercentileCoverage": {
     "peTtm": {
-      "5Y": 41,
-      "10Y": 11
+      "5Y": 40,
+      "10Y": 1
     },
     "pb": {
-      "5Y": 45,
-      "10Y": 13
+      "5Y": 44,
+      "10Y": 1
     },
     "psTtm": {
       "5Y": 42,
       "10Y": 0
+    }
+  },
+  "percentileSamplePolicies": {
+    "observed": "all non-null monthly observations in the rolling calendar window; month-end lag is reported separately",
+    "within5Sessions": "only monthly observations no more than 5 exchange sessions before the expected month-end session; current row must also pass",
+    "exactMonthEnd": "only observations whose source date exactly equals the final exchange session of the month; current row must also pass",
+    "minimumValidObservations": {
+      "5Y": 60,
+      "10Y": 120
     }
   },
   "securities": [
@@ -1405,18 +1428,18 @@
       "firstMonth": "2009-10",
       "lastMonth": "2026-10",
       "missingCalendarMonthsBetweenFirstAndLast": 0,
-      "peTtmValidMonths": 205,
-      "pbValidMonths": 205,
+      "peTtmValidMonths": 182,
+      "pbValidMonths": 129,
       "psTtmValidMonths": 106,
       "monthEndSessionLag": {
         "observations": 205,
-        "exactMonthEnd": 118,
-        "lag1to2Sessions": 19,
-        "lag3to5Sessions": 27,
-        "lag6PlusSessions": 41,
+        "exactMonthEnd": 123,
+        "lag1to2Sessions": 26,
+        "lag3to5Sessions": 31,
+        "lag6PlusSessions": 25,
         "medianLagSessions": 0,
-        "p90LagSessions": 9.0,
-        "maxLagSessions": 12
+        "p90LagSessions": 6.0,
+        "maxLagSessions": 11
       },
       "sourceLabels": [
         "Baidu Stock Tong / valuation history (AKShare endpoint specification)",
