@@ -120,7 +120,7 @@ def fetch_chart(
     symbol: str, code: str, metric: str, config: dict[str, Any],
     timeout: int, retries: int,
 ) -> tuple[dict[str, float | None], dict[str, Any]]:
-    url = f"{BASE}/{config['path']}/{symbol}/t/1"
+    url = f"{BASE}/{config['path']}/{symbol}/t/all"
     headers = {
         "User-Agent": USER_AGENT,
         "Accept": "application/json,text/plain,*/*",
@@ -212,9 +212,9 @@ def main() -> int:
                 "psRawBasis": "UNVERIFIED_VENDOR_FIELD_ps",
                 "source": SOURCE,
                 "sourceUrl": page_url,
-                "peSourceUrl": f"{BASE}/pea/{symbol}/t/1",
-                "pbSourceUrl": f"{BASE}/pba/{symbol}/t/1",
-                "psSourceUrl": f"{BASE}/psa/{symbol}/t/1",
+                "peSourceUrl": f"{BASE}/pea/{symbol}/t/all",
+                "pbSourceUrl": f"{BASE}/pba/{symbol}/t/all",
+                "psSourceUrl": f"{BASE}/psa/{symbol}/t/all",
             })
         security_audits.append({
             "code": code,
