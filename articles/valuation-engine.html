@@ -30,12 +30,12 @@
 </div><div class="lab-actions" style="margin-top:16px"><button class="ve-btn" id="calc">计算估值区间</button><button class="ve-btn alt" id="loadData">载入已录入财务字段</button><button class="ve-btn alt" id="export">导出公司数据 CSV</button><button class="ve-btn alt" id="reset">重置假设</button></div>
 <div class="ve-metrics"><div class="ve-metric"><small>悲观合理价值</small><strong id="lowVal">—</strong><p id="lowBuy">安全边际买入价：—</p></div><div class="ve-metric"><small>基准合理价值</small><strong id="baseVal">—</strong><p id="baseBuy">安全边际买入价：—</p></div><div class="ve-metric"><small>乐观合理价值</small><strong id="highVal">—</strong><p id="highBuy">安全边际买入价：—</p></div><div class="ve-metric"><small>相对当前价格</small><strong id="upside">—</strong><p id="decision">请补齐输入并计算</p></div></div><p class="ve-note" id="modelNote">估值结果仅反映输入假设；不构成投资建议。</p></section>
 <section class="ve-panel"><h2>数据来源与历史分位接入</h2><p class="muted">截至 2026-10-23，A股横截面行情可通过东方财富估值页面交叉核对；5年/10年历史分位需要历史时间序列或授权数据接口。未接入凭证或无法复核时，数据库保持空值，不以单日估值猜测历史分位。</p><div class="lab-links"><a href="https://data.eastmoney.com/gzfx/" target="_blank" rel="noopener">东方财富估值分析 ↗</a><a href="https://www.lixinger.com/api/open-api/html-doc/cn/company/fundamental/security" target="_blank" rel="noopener">理杏仁估值 API 文档 ↗</a><a href="https://baifenwei.com/stocks/" target="_blank" rel="noopener">百分位历史估值查询 ↗</a><a href="https://www.hkexnews.hk/" target="_blank" rel="noopener">港交所披露易 ↗</a></div><p class="ve-note">接口约束：理杏仁的个股日数据与5年/10年估值统计 API 需要专属 Token。没有可用授权凭证时，不能批量下载并存储完整历史序列。港股与A股需分别使用交易币种、证券代码及数据源。</p></section><section class="ve-panel"><h2>03 / 历史估值分位计算器（CSV 导入）</h2>
-<p class="muted">用于把可核验的日频估值序列转成真实的5年/10年历史分位。支持从数据供应商导出的 CSV；浏览器本地计算，不会上传文件。要求列名：<code>code,date,peTtm,pb,psTtm</code>，其中 code 使用数据库中的证券代码（如 600887.SH），date 为 YYYY-MM-DD。不同币种或市场的证券请分别导入。</p>
+<p class="muted">导入供应商的真实日频估值CSV，工具会先按每个自然月最后一个有效交易日聚合，再计算滚动5年/10年分位与5年P20/P50/P80估值带。要求列名：<code>code,date,peTtm,pb,psTtm</code>；建议同时包含 <code>close,currency,source,sourceUrl</code>。A股与港股使用不同主证券代码与交易币种，不能混合。导入仅在浏览器本地处理，不会上传文件。</p>
 <div class="ve-controls"><div class="ve-field"><label>选择历史估值 CSV</label><input id="historyFile" type="file" accept=".csv,text/csv"></div><div class="ve-field"><label>分位指标</label><select id="historyMetric"><option value="peTtm">PE-TTM</option><option value="pb">PB</option><option value="psTtm">PS-TTM</option></select></div></div>
-<p class="ve-note"><a href="../data/valuation-history-import-template.csv" download>下载历史估值 CSV 模板</a>（仅表头，无虚构示例数据）。</p><div class="lab-actions"><button class="ve-btn" id="calcHistory">计算历史分位</button><button class="ve-btn alt" id="downloadHistory">导出计算结果 CSV</button></div>
+<p class="ve-note"><a href="../data/valuation-history-import-template.csv" download>下载历史估值 CSV 模板</a>（仅表头，无虚构示例数据）。</p><div class="lab-actions"><button class="ve-btn" id="calcHistory">计算月度历史分位</button><button class="ve-btn alt" id="applyHistoryBand">将P20/P50/P80应用到估值模型</button><button class="ve-btn alt" id="downloadHistory">导出计算结果 CSV</button></div>
 <p class="ve-note" id="historyStatus">尚未导入数据。计算结果只在本次浏览器会话中展示，不会覆盖数据库中的正式分位字段。</p>
-<div class="ve-table-wrap"><table><thead><tr><th>证券</th><th>指标</th><th>最新值</th><th>5年分位</th><th>10年分位</th><th>5年样本数</th><th>10年样本数</th><th>最新数据日</th></tr></thead><tbody id="historyRows"><tr><td colspan="8">请导入 CSV。</td></tr></tbody></table></div>
-<p class="ve-note">分位定义：窗口内历史值小于或等于最新有效值的比例 × 100。默认采用日期窗口内的所有有效记录；异常值、负PE和不同财报口径可能使结果失真，使用前必须先清洗数据。此处的计算结果是样本分位，不替代供应商官方统计口径。</p></section>
+<div class="ve-table-wrap"><table><thead><tr><th>证券</th><th>指标</th><th>最新值</th><th>5年分位</th><th>10年分位</th><th>5年样本数</th><th>10年样本数</th><th>5年P20</th><th>5年P50</th><th>5年P80</th><th>最新数据日</th></tr></thead><tbody id="historyRows"><tr><td colspan="11">请导入月度估值CSV。</td></tr></tbody></table></div>
+<p class="ve-note">分位定义采用中秩百分位：[小于当前值的样本数 + 0.5 × 等于当前值的样本数] ÷ 有效样本数 × 100。5年窗口取当前月及此前59个月，10年窗口取当前月及此前119个月；分别至少48/96个有效月度样本才显示分位。P20/P50/P80是历史倍数阈值，不是当前估值所处百分位。周期股、保险、成长科技和公用事业不得机械套用历史PE；银行/券商PB仍须结合可持续ROE与资本成本。数据不会自动写回正式数据库。</p></section>
 <section class="ve-panel"><h2>04 / 估值模型与质量控制规则</h2><div class="ve-table-wrap"><table><thead><tr><th>行业</th><th>主模型</th><th>必须核验的变量</th><th>禁止的简化</th></tr></thead><tbody>
 <tr><td>银行</td><td>PB–ROE、股利折现</td><td>核心一级资本、不良率、拨备覆盖、净息差、可持续ROE</td><td>直接套普通企业PE/FCF</td></tr><tr><td>保险</td><td>EV/NBV、内含价值分部估值</td><td>内含价值、新业务价值、偿付能力、投资收益假设</td><td>将IFRS净利润直接当作长期经营利润</td></tr><tr><td>周期</td><td>正常化盈利、EV/EBITDA、资产价值</td><td>完整价格周期、单位成本、产能、净债务</td><td>用景气顶点/谷底利润单年PE</td></tr><tr><td>成长 / 科技</td><td>多阶段DCF、SOTP、情景PE</td><td>收入增速、利润率、研发、稀释、资本开支、终值</td><td>把高增长永久外推</td></tr><tr><td>成熟消费 / 制造</td><td>正常化EPS、FCF收益率、DCF</td><td>ROIC、现金转化、竞争格局、分红回购</td><td>忽略非经常性损益和营运资本</td></tr><tr><td>公用事业</td><td>股息折现、DCF</td><td>资本开支、债务、监管、电价、资源禀赋</td><td>把经营现金流当自由现金流</td></tr></tbody></table></div><p class="ve-note">历史估值分位必须基于同口径、复权/未复权一致的时间序列计算；本工具不会在没有历史数据时伪造 5 年或 10 年分位。正式发布买入评级前，需补齐数据日期、来源、模型假设、反证条件及风险提示。</p></section>
 <p class="ve-note">数据文件：<a href="../data/china-stocks-financial-valuation.json">china-stocks-financial-valuation.json</a> · <a href="china-stocks-six-layers.html">返回六层股票研究</a> · <a href="../index.html">首页</a></p>
@@ -48,19 +48,112 @@ function loadSelected(){selected=db.stocks.find(s=>s.code===$('company').value)|
 function clearResults(){['lowVal','baseVal','highVal','upside'].forEach(x=>$(x).textContent='—');['lowBuy','baseBuy','highBuy'].forEach(x=>$(x).textContent='安全边际买入价：—');$('decision').textContent='请补齐输入并计算'}
 function loadData(){if(!selected)return;$('price').value=selected.price??'';$('eps').value=selected.eps??'';if(selected.bookValuePerShare!==null&&selected.bookValuePerShare!==undefined)$('bvps').value=selected.bookValuePerShare;if(selected.roe!==null&&selected.roe!==undefined)$('roe').value=selected.roe;if(selected.dividendYield&&num(selected.price))$('dps').value=(selected.dividendYield/100)*selected.price; $('modelNote').textContent='已载入数据库中现有字段；仍需人工核验TTM/正常化EPS、BVPS、股息或保险内含价值。'+(selected.sourceUrl?' 来源：'+selected.sourceUrl:'')}
 function calculate(){let m=$('model').value,price=num($('price').value),margin=(num($('margin').value)??25)/100,lo=num($('lowMult').value),ba=num($('baseMult').value),hi=num($('highMult').value),eps=num($('eps').value),bvps=num($('bvps').value),roe=(num($('roe').value)??0)/100,pb=num($('pb').value),embedded=num($('embedded').value),dps=num($('dps').value),r=(num($('discount').value)??10)/100,g=(num($('growthRate').value)??3)/100;let vals=null,note='';
-if(m==='bank'||m==='broker'){if(bvps===null||pb===null){note='需要输入最新每股净资产 BVPS 和合理 PB。';}else{vals=[bvps*pb*0.75,bvps*pb,bvps*pb*1.25];note='PB-ROE 简化估值：合理PB仍需根据可持续ROE、资本成本、资产质量/风险参数校准。当前模型用悲观/基准/乐观PB比例显示情景。'+(roe?' 输入可持续ROE '+fmt(roe*100)+'%，请结合资本成本复核。':'')}}
+if(m==='bank'||m==='broker'){let histPB=appliedHistoryByCode[primarySecurityCode(selected?.code)];if(bvps===null||pb===null){note='需要输入最新每股净资产 BVPS 和合理 PB。';}else if(histPB&&histPB.metric==='pb'&&histPB.p20>0&&histPB.p50>0&&histPB.p80>0){vals=[bvps*histPB.p20,bvps*histPB.p50,bvps*histPB.p80];note='历史PB估值带：BVPS × 本证券近5年PB的P20/P50/P80。它只用于情景锚定，仍需根据可持续ROE、股权资本成本、不良率/拨备和资本充足率调整。'+(roe?' 输入可持续ROE '+fmt(roe*100)+'%，请检查ROE是否已发生结构性变化。':'')}else{vals=[bvps*pb*0.75,bvps*pb,bvps*pb*1.25];note='PB-ROE简化估值：合理PB需根据可持续ROE、资本成本和资产质量校准；当前未应用历史PB分位，使用输入PB的75%/100%/125%显示情景。'+(roe?' 输入可持续ROE '+fmt(roe*100)+'%，请结合资本成本复核。':'')}}
 else if(m==='insurance'){if(embedded===null){note='需要输入最新每股内含价值或每股新业务价值，并将悲观/基准/乐观参数设为对应倍数。';}else vals=[embedded*lo,embedded*ba,embedded*hi],note='保险情景按每股内含价值×输入倍数计算；必须区分EV、NBV、偿付能力和新业务价值口径。'}
 else if(m==='utility'){if(dps===null||r<=g){note='股息折现需输入可持续年度DPS，并保证折现率大于长期增长率。';}else vals=[dps/(r-g*.5),dps/(r-g),dps/(r-g*.8)],note='简化戈登股息模型。仅适用于长期股息可持续、增长假设合理的企业；资本开支与债务仍需单独审查。'}
 else if(m==='growth'){if(eps===null||eps<=0){note='此简化成长模型需输入正的正常化EPS；更完整的多阶段DCF需要自由现金流、增长、利润率、折现率和终值。';}else vals=[eps*lo,eps*ba,eps*hi],note='当前使用情景EPS×倍数作为交叉检查，非完整DCF。应另做收入、利润率、资本开支、稀释和终值敏感性分析。'}
 else {if(eps===null||eps<=0){note='需要输入正的TTM/正常化EPS；亏损公司不得用PE硬算。周期股应使用完整周期正常化盈利。';}else vals=[eps*lo,eps*ba,eps*hi],note='情景正常化EPS×倍数。倍数必须结合增长、ROIC、现金转化、资产负债表和历史估值校准。'}
 if(!vals){clearResults();$('modelNote').textContent=note+' 估值结果未计算。';return}
 const ids=['low','base','high'];ids.forEach((id,i)=>{$(id+'Val').textContent=fmt(vals[i]);$(id+'Buy').textContent='安全边际买入价：'+fmt(vals[i]*(1-margin))});if(price!==null){let up=vals[1]/price-1;$('upside').textContent=(up>=0?'+':'')+fmt(up*100,1)+'%';$('decision').textContent=price<=vals[0]*(1-margin)?'低于悲观买入线：仍需核验风险':price<=vals[1]*(1-margin)?'达到基准安全边际线附近':price<vals[2]*(1-margin)?'仅接近乐观情景买入线':'当前价格高于基准安全边际价'}else{$('upside').textContent='缺价格';$('decision').textContent='补录可核验当前价后再判断'}$('modelNote').textContent=note+' | 数据报告期：'+(selected?.financialPeriod||'待核验')+' | 来源：'+(selected?.sourceUrl||'待补')+'。本结果是模型演示，不构成投资建议。'}
-let importedHistory=[],historyResults=[];
-function parseCSV(text){let rows=[],row=[],field='',quoted=false;for(let i=0;i<text.length;i++){let c=text[i],n=text[i+1];if(c==='"'&&quoted&&n==='"'){field+='"';i++}else if(c==='"'){quoted=!quoted}else if(c===','&&!quoted){row.push(field.trim());field=''}else if((c==='\\n'||c==='\\r')&&!quoted){if(c==='\\r'&&n==='\\n')i++;row.push(field.trim());if(row.some(v=>v!==''))rows.push(row);row=[];field=''}else field+=c}row.push(field.trim());if(row.some(v=>v!==''))rows.push(row);if(!rows.length)return[];let head=rows.shift().map(v=>v.replace(/^\\uFEFF/,''));return rows.map(r=>Object.fromEntries(head.map((h,i)=>[h,r[i]??''])));}
-function percentile(values,current){let valid=values.filter(v=>Number.isFinite(v));if(!valid.length||!Number.isFinite(current))return null;return 100*valid.filter(v=>v<=current).length/valid.length}
-function calculateHistory(){let f=$('historyFile').files[0];if(!f){$('historyStatus').textContent='请先选择 CSV 文件。';return}let reader=new FileReader();reader.onload=()=>{try{let rows=parseCSV(String(reader.result));let required=['code','date'];if(!rows.length||!required.every(k=>Object.prototype.hasOwnProperty.call(rows[0],k)))throw Error('缺少必需列 code,date');importedHistory=rows.map(r=>({...r,date:String(r.date||'').slice(0,10),value:Number(r[$('historyMetric').value])})).filter(r=>/^\\d{4}-\\d{2}-\\d{2}$/.test(r.date));let metric=$('historyMetric').value;historyResults=[];db.stocks.forEach(stock=>{let series=importedHistory.filter(r=>r.code===stock.code&&Number.isFinite(r.value)&&r.value>0).sort((a,b)=>a.date.localeCompare(b.date));if(!series.length)return;let latest=series[series.length-1],d=new Date(latest.date+'T00:00:00Z'),cut5=new Date(d);cut5.setUTCFullYear(cut5.getUTCFullYear()-5);let cut10=new Date(d);cut10.setUTCFullYear(cut10.getUTCFullYear()-10);let five=series.filter(r=>r.date>=cut5.toISOString().slice(0,10)&&r.date<=latest.date).map(r=>r.value),ten=series.filter(r=>r.date>=cut10.toISOString().slice(0,10)&&r.date<=latest.date).map(r=>r.value);historyResults.push({name:stock.name,code:stock.code,metric,latest:latest.value,p5:percentile(five,latest.value),p10:percentile(ten,latest.value),n5:five.length,n10:ten.length,date:latest.date})});$('historyRows').innerHTML=historyResults.length?historyResults.map(r=>'<tr><td>'+r.name+'<br><small>'+r.code+'</small></td><td>'+r.metric+'</td><td>'+fmt(r.latest,2)+'</td><td>'+(r.p5===null?'—':fmt(r.p5,1)+'%')+'</td><td>'+(r.p10===null?'—':fmt(r.p10,1)+'%')+'</td><td>'+r.n5+'</td><td>'+r.n10+'</td><td>'+r.date+'</td></tr>').join(''):'<tr><td colspan="8">没有与数据库证券代码匹配的有效记录，请检查 code 字段。</td></tr>';$('historyStatus').textContent='读取 '+rows.length+' 行；有效日期 '+importedHistory.length+' 行；成功匹配 '+historyResults.length+' 家公司。CSV 保留在本地浏览器，不会自动写回网站数据库。';}catch(e){$('historyStatus').textContent='导入失败：'+e.message}};reader.readAsText(f,'utf-8')}
-function exportHistory(){if(!historyResults.length){$('historyStatus').textContent='没有可导出的结果，请先计算。';return}let head=['name','code','metric','latest','p5','p10','n5','n10','date'];let lines=[head.join(','),...historyResults.map(r=>head.map(k=>'"'+String(r[k]??'').replace(/"/g,'""')+'"').join(','))];let blob=new Blob(['\\ufeff'+lines.join('\\r\\n')],{type:'text/csv;charset=utf-8;'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='valuation-history-percentiles.csv';a.click();URL.revokeObjectURL(a.href)}
+let importedHistory=[],historyResults=[],historyBands={},appliedHistoryByCode={};
+function parseCSV(text){let rows=[],row=[],field='',quoted=false;for(let i=0;i<text.length;i++){let c=text[i],n=text[i+1];if(c==='"'&&quoted&&n==='"'){field+='"';i++}else if(c==='"'){quoted=!quoted}else if(c===','&&!quoted){row.push(field.trim());field=''}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&n==='\n')i++;row.push(field.trim());if(row.some(v=>v!==''))rows.push(row);row=[];field=''}else field+=c}row.push(field.trim());if(row.some(v=>v!==''))rows.push(row);if(!rows.length)return[];let head=rows.shift().map(v=>v.replace(/^\uFEFF/,''));return rows.map(r=>Object.fromEntries(head.map((h,i)=>[h,r[i]??''])));}
+function primarySecurityCode(value){return String(value||'').split('/')[0].trim().toUpperCase();}
+function monthIndexFromDate(value){let m=String(value||'').match(/^(\d{4})-(\d{2})-(\d{2})$/);return m?Number(m[1])*12+Number(m[2])-1:null;}
+function midrankPercentile(values,current){if(!values.length||!Number.isFinite(current))return null;let lower=values.filter(v=>v<current).length,equal=values.filter(v=>v===current).length;return 100*(lower+0.5*equal)/values.length;}
+function empiricalQuantile(values,p){if(!values.length)return null;let a=[...values].sort((x,y)=>x-y);if(a.length===1)return a[0];let pos=(a.length-1)*p,lo=Math.floor(pos),hi=Math.ceil(pos);return lo===hi?a[lo]:a[lo]*(hi-pos)+a[hi]*(pos-lo);}
+function fmtHistory(v,d=2){return v===null||v===undefined||!Number.isFinite(v)?'—':fmt(v,d);}
+function calculateHistory(){
+ let f=$('historyFile').files[0];if(!f){$('historyStatus').textContent='请先选择真实历史估值CSV。';return}
+ let reader=new FileReader();
+ reader.onload=()=>{
+  try{
+   let rows=parseCSV(String(reader.result));
+   let required=['code','date','peTtm','pb','psTtm'];
+   if(!rows.length||!required.every(k=>Object.prototype.hasOwnProperty.call(rows[0],k)))throw Error('缺少必需列：'+required.join(','));
+   let metric=$('historyMetric').value;
+   let monthMap=new Map(),duplicateMonths=0,invalidDates=0;
+   rows.forEach(r=>{
+    let code=primarySecurityCode(r.code),date=String(r.date||'').slice(0,10),monthIdx=monthIndexFromDate(date);
+    if(!code||monthIdx===null){invalidDates++;return}
+    let key=code+'|'+monthIdx;
+    let prior=monthMap.get(key);
+    // If daily data was supplied, retain the latest observed trading date in each calendar month.
+    if(!prior||date>prior.date){monthMap.set(key,{...r,code,date,monthIdx});if(prior)duplicateMonths++}
+    else if(date<prior.date){duplicateMonths++}
+    else{
+     let differs=['peTtm','pb','psTtm','close'].some(k=>String(r[k]??'')!==String(prior[k]??''));
+     if(differs)throw Error('同一证券同一交易日出现冲突记录：'+code+' '+date);
+     duplicateMonths++;
+    }
+   });
+   importedHistory=[...monthMap.values()].sort((a,b)=>a.code.localeCompare(b.code)||a.monthIdx-b.monthIdx);
+   historyResults=[];historyBands={};
+   const minimum={5:48,10:96};
+   db.stocks.forEach(stock=>{
+    let code=primarySecurityCode(stock.code);
+    let series=importedHistory.filter(r=>r.code===code).sort((a,b)=>a.monthIdx-b.monthIdx);
+    if(!series.length)return;
+    let latest=series[series.length-1];
+    let raw=String(latest[metric]??'').trim(),current=raw===''?NaN:Number(raw);
+    if(!Number.isFinite(current)||current<=0)current=NaN;
+    let windowValues=(months)=>{
+     let lower=latest.monthIdx-months+1;
+     return series.filter(r=>r.monthIdx>=lower&&r.monthIdx<=latest.monthIdx).map(r=>Number(r[metric])).filter(v=>Number.isFinite(v)&&v>0);
+    };
+    let five=windowValues(60),ten=windowValues(120);
+    let enough5=five.length>=minimum[5],enough10=ten.length>=minimum[10];
+    let result={
+     name:stock.name,code,metric,latest:Number.isFinite(current)?current:null,
+     p5:enough5&&Number.isFinite(current)?midrankPercentile(five,current):null,
+     p10:enough10&&Number.isFinite(current)?midrankPercentile(ten,current):null,
+     n5:five.length,n10:ten.length,
+     p20:enough5?empiricalQuantile(five,.2):null,
+     p50:enough5?empiricalQuantile(five,.5):null,
+     p80:enough5?empiricalQuantile(five,.8):null,
+     date:latest.date,source:latest.source||'未注明',sourceUrl:latest.sourceUrl||''
+    };
+    historyResults.push(result);
+    if(!historyBands[code])historyBands[code]={};
+    historyBands[code][metric]=result;
+   });
+   $('historyRows').innerHTML=historyResults.length?historyResults.map(r=>'<tr><td>'+r.name+'<br><small>'+r.code+'</small></td><td>'+r.metric+'</td><td>'+fmtHistory(r.latest,2)+'</td><td>'+(r.p5===null?'样本不足':fmtHistory(r.p5,1)+'%')+'</td><td>'+(r.p10===null?'样本不足':fmtHistory(r.p10,1)+'%')+'</td><td>'+r.n5+'</td><td>'+r.n10+'</td><td>'+fmtHistory(r.p20,2)+'</td><td>'+fmtHistory(r.p50,2)+'</td><td>'+fmtHistory(r.p80,2)+'</td><td>'+r.date+'</td></tr>').join(''):'<tr><td colspan="11">没有与49家主证券代码匹配的有效记录，请检查 code 列及交易所后缀。</td></tr>';
+   $('historyStatus').textContent='导入 '+rows.length+' 条原始记录，按月末聚合后 '+importedHistory.length+' 条；匹配 '+historyResults.length+'/49 家。月内较早记录 '+duplicateMonths+' 条已折叠；无效日期 '+invalidDates+' 条。5年/10年分位至少需要48/96个有效月度样本。结果保留在本机浏览器，不会自动写回数据库。';
+  }catch(e){$('historyStatus').textContent='导入失败：'+e.message}
+ };
+ reader.readAsText(f,'utf-8');
+}
+function applyHistoryBand(){
+ if(!selected){$('historyStatus').textContent='请先选择公司。';return}
+ let code=primarySecurityCode(selected.code),metric=$('historyMetric').value;
+ let band=historyBands[code]?.[metric];
+ if(!band||band.p20===null||band.p50===null||band.p80===null){
+  $('historyStatus').textContent='该公司该指标的5年历史样本不足或最新值无效，不能带入估值模型。';
+  return;
+ }
+ let model=$('model').value,eps=num($('eps').value),bvps=num($('bvps').value);
+ if(metric==='peTtm'&&(model==='quality'||model==='growth')&&eps!==null&&eps>0){
+  $('lowMult').value=band.p20;$('baseMult').value=band.p50;$('highMult').value=band.p80;
+  appliedHistoryByCode[code]={metric,p20:band.p20,p50:band.p50,p80:band.p80,sourceDate:band.date,source:band.source};
+  calculate();
+  $('historyStatus').textContent='已将 '+selected.name+' 的5年PE历史P20/P50/P80分别写入悲观/基准/乐观倍数。成长股这里只是PE交叉验证，不替代多阶段DCF/SOTP；成熟企业也要检查盈利质量和商业模式是否变化。';
+  return;
+ }
+ if(metric==='pb'&&(model==='bank'||model==='broker')&&bvps!==null&&bvps>0){
+  $('pb').value=band.p50;
+  appliedHistoryByCode[code]={metric,p20:band.p20,p50:band.p50,p80:band.p80,sourceDate:band.date,source:band.source};
+  calculate();
+  $('historyStatus').textContent='已将 '+selected.name+' 的5年PB历史P20/P50/P80应用于BVPS估值区间。银行/券商必须继续用可持续ROE、资本成本、资产质量和资本充足率校准。';
+  return;
+ }
+ let reason=metric==='psTtm'?'PS历史分位暂不自动映射买入价：需要同一证券的收入/股本口径和利润率路径。':
+ model==='cyclical'?'周期股不自动使用历史PE反推买入价：盈利处于周期顶部时PE往往偏低，底部时PE往往偏高。':
+ model==='insurance'?'保险股优先使用EV/NBV与偿付能力模型，普通PE/PB不作为核心买入价锚。':
+ model==='utility'?'公用事业以股息折现/现金流DCF为主，历史倍数仅作交叉检查。':
+ '当前模型与该历史指标不匹配。成熟消费/制造可用PE，银行/券商可用PB；其他类型须按专属模型估值。';
+ $('historyStatus').textContent='未应用历史估值带。'+reason;
+}
+function exportHistory(){if(!historyResults.length){$('historyStatus').textContent='没有可导出的结果，请先导入并计算。';return}let head=['name','code','metric','latest','p5','p10','n5','n10','p20','p50','p80','date','source','sourceUrl'];let lines=[head.join(','),...historyResults.map(r=>head.map(k=>'"'+String(r[k]??'').replace(/"/g,'""')+'"').join(','))];let blob=new Blob(['\ufeff'+lines.join('\r\n')],{type:'text/csv;charset=utf-8;'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='valuation-history-percentiles.csv';a.click();URL.revokeObjectURL(a.href)}
 function exportCSV(){let head=['name','code','financialPeriod','priceDate','price','currency','revenue','revenueGrowth','netProfit','eps','roe','bookValuePerShare','roic','operatingCashFlow','capex','freeCashFlow','netDebt','dividendYield','peTtm','pb','psTtm','valuationPercentile5Y','valuationPercentile10Y','derivedNetProfitMarginPct','derivedOperatingCashFlowToNetProfit','valuationCorePct','qualityAlerts','sourceUrl','verifiedAt','dataStatus','dataNotes'];let lines=[head.join(','),...db.stocks.map(s=>head.map(k=>{let v=k==='derivedNetProfitMarginPct'?s.derivedMetrics?.netProfitMarginPct:k==='derivedOperatingCashFlowToNetProfit'?s.derivedMetrics?.operatingCashFlowToNetProfit:k==='valuationCorePct'?s.dataCompleteness?.valuationCorePct:k==='qualityAlerts'?(s.qualityAlerts||[]).join('；'):s[k];return '"'+String(v??'').replace(/"/g,'""')+'"'}).join(','))];let blob=new Blob(['\ufeff'+lines.join('\r\n')],{type:'text/csv;charset=utf-8;'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='china-stocks-financial-valuation.csv';a.click();URL.revokeObjectURL(a.href)}
 async function init(){try{let res=await fetch(DB);if(!res.ok)throw Error('HTTP '+res.status);db=await res.json();updateAudit();$('loadStatus').textContent='数据库加载成功：'+db.stocks.length+' 家公司｜基准日期 '+db.asOf+'｜缺失字段保留空值';$('company').innerHTML=db.stocks.map(s=>'<option value="'+s.code+'">'+s.name+'（'+s.code+'）</option>').join('');render();loadSelected()}catch(e){$('loadStatus').textContent='数据库加载失败：'+e.message+'。请通过 GitHub Pages 打开此页，勿直接 file:// 打开。'}}
-['search','modelFilter','statusFilter','sort'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));$('company').onchange=loadSelected;$('calc').onclick=calculate;$('calcHistory').onclick=calculateHistory;$('downloadHistory').onclick=exportHistory;$('historyMetric').onchange=()=>{historyResults=[];$('historyRows').innerHTML='<tr><td colspan="8">指标已更改，请重新计算。</td></tr>'};$('loadData').onclick=loadData;$('export').onclick=()=>db&&exportCSV();$('reset').onclick=()=>{['eps','bvps','roe','embedded','dps'].forEach(id=>$(id).value='');$('lowMult').value=12;$('baseMult').value=16;$('highMult').value=20;$('margin').value=25;$('discount').value=10;$('growthRate').value=3;loadSelected()};init();
+['search','modelFilter','statusFilter','sort'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));$('company').onchange=loadSelected;$('calc').onclick=calculate;$('calcHistory').onclick=calculateHistory;$('applyHistoryBand').onclick=applyHistoryBand;$('downloadHistory').onclick=exportHistory;$('historyMetric').onchange=()=>{historyResults=[];historyBands={};$('historyRows').innerHTML='<tr><td colspan="11">指标已更改，请重新计算。</td></tr>'};$('loadData').onclick=loadData;$('export').onclick=()=>db&&exportCSV();$('reset').onclick=()=>{['eps','bvps','roe','embedded','dps'].forEach(id=>$(id).value='');$('lowMult').value=12;$('baseMult').value=16;$('highMult').value=20;$('margin').value=25;$('discount').value=10;$('growthRate').value=3;loadSelected()};init();
 </script></body></html>
