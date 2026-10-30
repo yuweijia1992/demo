@@ -287,10 +287,21 @@ def main() -> int:
         }
         east = {m: read_monthly_csv(Path(args.eastmoney), m) for m in ("peTtm", "pb", "psTtm")}
         comparisons = {}
+        per_security_comparisons = []
         for metric in FIRE_METRICS.values():
             comparisons[f"FIRE:{metric}:Enniu"] = summarize_comparison(metric_series[metric], eniu[metric])
             if metric in east:
                 comparisons[f"FIRE:{metric}:Eastmoney"] = summarize_comparison(metric_series[metric], east[metric])
+            for code in sorted(code_map):
+                per_security_comparisons.append({
+                    "code": code_map[code], "metric": metric, "comparison": "Enniu",
+                    **compare_months(metric_series[metric].get(code, {}), eniu[metric].get(code, {})),
+                })
+                if metric in east:
+                    per_security_comparisons.append({
+                        "code": code_map[code], "metric": metric, "comparison": "Eastmoney",
+                        **compare_months(metric_series[metric].get(code, {}), east[metric].get(code, {})),
+                    })
 
         securities_audit = []
         for code in sorted(code_map):
@@ -324,6 +335,7 @@ def main() -> int:
             "matchedAshareCompanies": len(securities_audit),
             "axisAudit": axis_audit,
             "monthlyOverlapComparisons": comparisons,
+            "perSecurityComparisons": per_security_comparisons,
             "perSecurityCoverage": securities_audit,
             "redistributionNote": "Only a compact coverage/consistency audit is retained. The 1.4GB third-party raw package is not copied into this repository. Verify underlying data rights before redistribution.",
             "auditedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
