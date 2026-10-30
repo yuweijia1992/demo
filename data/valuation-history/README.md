@@ -29,7 +29,7 @@ AKShare 最新估值文档说明，stock_value_em(symbol) 可按单只A股代码
 - 原始字段：PE_TTM、PB_MRQ、PS_TTM、CLOSE_PRICE、TRADE_DATE
 - 口径：日频；下载后按每月最后一个有效交易日聚合。PE 为负值/亏损期保留在原始文件，但不纳入正PE历史分位。PB 使用 MRQ；PS 使用 TTM。
 
-已完成首轮线上验证：44/44家A股成功，89,695条日频记录，生成4,402条月度记录，失败0家。该公开接口的实际回溯起点为2018-01（新上市公司按上市日期起算），不等于目标区间2006年。GitHub Actions 每月自动更新东方财富段，并可手动运行。
+已完成首轮线上验证：44/44家A股成功，89,695条日频记录，生成4,446条月度记录，失败0家。该公开接口的实际回溯起点为2018-01（新上市公司按上市日期起算），不等于目标区间2006年。GitHub Actions 每月自动更新东方财富段，并可手动运行。
 
 脚本与工作流：
 - scripts/fetch_eastmoney_a_share_valuation.py：从东方财富公开 JSON 接口抓取44只A股历史估值
@@ -49,7 +49,7 @@ AKShare 最新估值文档说明，stock_value_em(symbol) 可按单只A股代码
 
 自动更新任务先读取BaoStock已有数据（仅手动workflow_dispatch会尝试重新抓取），再运行百度补充源，最后抓取东方财富2018年至今数据，合并时保留每行来源。百度脚本对BaoStock已有同日记录跳过处理，尽量避免来源冲突。两个来源日期区间按设计不重叠；若供应商数据实际重叠且数值冲突，构建程序会停止，不静默覆盖。BaoStock没有返回的早期月份保持缺失，不按日/月股价或年度财务指标插值。
 
-**注意：** BaoStock回补脚本刚接入自动化，尚需首轮工作流实测确认每只证券的实际早期覆盖。不能把2006-01的目标日期当作已实现的数据起点。
+**实测结果：** BaoStock已在2026-10-30首轮自动任务中按预期跳过（该数据源只在手动workflow_dispatch尝试）；此前手动抓取审计显示登录错误10002007、0条日频记录。未成功获取的2015—2017月份保持空白，不能把2006-01目标起点当作已实现覆盖。
 
 
 ### 新增公开回补源：百度股市通（A股 + 港股）
@@ -63,7 +63,7 @@ AKShare公开接口封装了百度股市通个股估值历史：
 
 抓取脚本：`scripts/fetch_baidu_valuation_history.py`。使用公开接口请求“全部”历史；A股仅输出2018-01-01之前的记录，避免与东方财富2018年至今的主序列重复；港股保留每只主证券自接口最早返回日起的记录。与BaoStock同日记录冲突时跳过百度该日，以免重复覆盖。原始来源、请求周期、每只证券/指标的行数、起止日期和错误均记录在 `raw/baidu-fetch-audit.json`。
 
-**重要口径限制：** 百度股市通官方文档只列PE-TTM和PB；抓取脚本额外探测“市销率(TTM)”和“市销率”标签，但不把接口能力当成事实。只有API确实返回可解析的日期与数值才写入PS；否则PS列保持空值，不从其他指标推算。港股5家公司分别使用港股代码、HKD口径和独立序列，绝不与其A股/ADR混接。接口支持“全部”只是文档能力；能否返回完整历史、实际起点和缺失日期以每次抓取审计为准。该源尚未经过首次工作流实测，首次结果出来之前不宣称补齐了2015年前后或任何港股公司的完整覆盖。
+**重要口径限制：** 百度股市通官方文档只列PE-TTM和PB；抓取脚本额外探测“市销率(TTM)”和“市销率”标签，但不把接口能力当成事实。只有API确实返回可解析的日期与数值才写入PS；否则PS列保持空值，不从其他指标推算。港股5家公司分别使用港股代码、HKD口径和独立序列，绝不与其A股/ADR混接。接口支持“全部”只是文档能力；能否返回完整历史、实际起点和缺失日期以每次抓取审计为准。百度抓取已接入自动任务；当前首次运行编号与实际返回状态请以GitHub Actions及 baidu-fetch-audit.json 为准。在逐证券审计生成前，不宣称补齐了2015年前后或任何港股公司的完整覆盖。
 
 ### 公开估值百分位交叉核验：百分位（baifenwei.com）
 
@@ -87,13 +87,13 @@ AKShare公开接口封装了百度股市通个股估值历史：
 
 ### 港股：5家公司单独维护，暂不混用A股源
 
-当前49家研究池中有5家主证券为港股：申洲国际、腾讯控股、阿里巴巴、京东集团、哔哩哔哩。东方财富 stock_value_em 的个股历史估值接口按A股证券代码查询，不能将它直接用于港股。现加入百度股市通港股接口作为公开PE-TTM/PB补充源，逐只按港股代码独立抓取；其PS-TTM仍需另找可核验来源。
+当前49家研究池中有5家主证券为港股：申洲国际、腾讯控股、阿里巴巴、京东集团、哔哩哔哩。东方财富 stock_value_em 的个股历史估值接口按A股证券代码查询，不能将它直接用于港股。现加入百度股市通港股接口作为公开PE-TTM/PB补充源，逐只按港股代码独立抓取；另加入亿牛网历史图表端点作为百度最早有效日期以前的后备补段。港股PS-TTM只有在百度/亿牛网未文档化探测真正返回日期和数值时才入库，否则仍为空。
 
 可用的线上来源：
 1. **理杏仁港股历史估值API**：提供PE-TTM、PB、PS-TTM的日数据及5/10年分位统计，但需要用户专属Token。文档：https://www.lixinger.com/api/open-api/html-doc/hk/company/fundamental/security
 2. **亿牛网 Enniu（历史补充备选）**：AKShare公开实现显示可从 `https://eniu.com/chart/peh/hk{代码}` 与 `pbh` 读取港股PE/PB历史JSON；AKShare文档明确提示该数据源暂未更新。本项目仅保留严格早于百度最早有效日期的记录，不覆盖较新百度数据。另探测 `psh`，未返回真实带日期数据前不计入PS覆盖。接口实现：https://github.com/akfamily/akshare/blob/master/akshare/stock/valuation/stock_a_indicator.py 。
 3. **GuruFocus**：公开个股页面展示历史PE等日频估值历史，但批量导出/下载权限及使用限制需以其账户和许可规则为准。示例：https://www.gurufocus.com/stock/HKSE%3A00700/data/pe-ratio
-3. **StockAnalysis / Macrotrends**：可用来交叉核验部分港股/ADR的年度或季度估值历史，但不能把这些低频样本伪装成完整月度序列。示例：https://stockanalysis.com/quote/hkg/2313/financials/ratios/ 、https://www.macrotrends.net/stocks/charts/BABA/alibaba/price-book
+4. **StockAnalysis / Macrotrends**：可用来交叉核验部分港股/ADR的年度或季度估值历史，但不能把这些低频样本伪装成完整月度序列。示例：https://stockanalysis.com/quote/hkg/2313/financials/ratios/ 、https://www.macrotrends.net/stocks/charts/BABA/alibaba/price-book
 
 在百度接口首次实测并核验数据之前，港股5家公司仍按“等待数据源验证”处理，不得写成已取得完整历史序列；即使取得PE/PB，PS仍然是独立缺口。不混用A股、ADR与港股交易价格，也不以年度报告比率插值出月度值。
 
@@ -130,6 +130,7 @@ AKShare公开接口封装了百度股市通个股估值历史：
 ~~~bash
 python scripts/build_valuation_history.py \\
   --input data/valuation-history/raw/baostock-pre2018-daily.csv \\
+  --input data/valuation-history/raw/baidu-valuation-history.csv \\
   --input data/valuation-history/raw/eastmoney-a-share-daily.csv \\
   --out-dir data/valuation-history/generated
 ~~~
