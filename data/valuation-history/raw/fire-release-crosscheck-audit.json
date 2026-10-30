@@ -153,28 +153,52 @@
   },
   "monthlyOverlapComparisons": {
     "FIRE:peTtm:Enniu": {
-      "securitiesWithOverlap": 0,
-      "overlapMonths": 0
+      "securitiesWithOverlap": 44,
+      "overlapMonths": 4742,
+      "medianOfSecurityMedianAbsRelativeError": 0.00015232340811813239,
+      "medianOfSecurityP90AbsRelativeError": 0.09378896334758524,
+      "securitiesMedianErrorUnder5pct": 44,
+      "securitiesMedianErrorUnder10pct": 44
     },
     "FIRE:peTtm:Eastmoney": {
-      "securitiesWithOverlap": 0,
-      "overlapMonths": 0
+      "securitiesWithOverlap": 44,
+      "overlapMonths": 3589,
+      "medianOfSecurityMedianAbsRelativeError": 1.1863440015080773e-06,
+      "medianOfSecurityP90AbsRelativeError": 0.0002258417482678965,
+      "securitiesMedianErrorUnder5pct": 44,
+      "securitiesMedianErrorUnder10pct": 44
     },
     "FIRE:pb:Enniu": {
-      "securitiesWithOverlap": 0,
-      "overlapMonths": 0
+      "securitiesWithOverlap": 44,
+      "overlapMonths": 4857,
+      "medianOfSecurityMedianAbsRelativeError": 0.001172909635602598,
+      "medianOfSecurityP90AbsRelativeError": 0.03967854718381442,
+      "securitiesMedianErrorUnder5pct": 41,
+      "securitiesMedianErrorUnder10pct": 44
     },
     "FIRE:pb:Eastmoney": {
-      "securitiesWithOverlap": 0,
-      "overlapMonths": 0
+      "securitiesWithOverlap": 44,
+      "overlapMonths": 3654,
+      "medianOfSecurityMedianAbsRelativeError": 0.001655562713001213,
+      "medianOfSecurityP90AbsRelativeError": 0.07349899674247129,
+      "securitiesMedianErrorUnder5pct": 44,
+      "securitiesMedianErrorUnder10pct": 44
     },
     "FIRE:psTtm:Enniu": {
-      "securitiesWithOverlap": 0,
-      "overlapMonths": 0
+      "securitiesWithOverlap": 44,
+      "overlapMonths": 4857,
+      "medianOfSecurityMedianAbsRelativeError": 0.0013392872918722154,
+      "medianOfSecurityP90AbsRelativeError": 0.08247788915094345,
+      "securitiesMedianErrorUnder5pct": 41,
+      "securitiesMedianErrorUnder10pct": 42
     },
     "FIRE:psTtm:Eastmoney": {
-      "securitiesWithOverlap": 0,
-      "overlapMonths": 0
+      "securitiesWithOverlap": 44,
+      "overlapMonths": 3654,
+      "medianOfSecurityMedianAbsRelativeError": 1.0084987925235156e-05,
+      "medianOfSecurityP90AbsRelativeError": 0.00017890679149423772,
+      "securitiesMedianErrorUnder5pct": 43,
+      "securitiesMedianErrorUnder10pct": 43
     }
   },
   "perSecurityCoverage": [
@@ -1060,5 +1084,5 @@
     }
   ],
   "redistributionNote": "Only a compact coverage/consistency audit is retained. The 1.4GB third-party raw package is not copied into this repository. Verify underlying data rights before redistribution.",
-  "auditedAt": "2026-10-30T10:45:14+00:00"
+  "auditedAt": "2026-10-30T10:49:49+00:00"
 }
