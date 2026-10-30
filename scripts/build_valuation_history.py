@@ -313,21 +313,50 @@ def main() -> int:
             for metric in METRICS:
                 for label, config in WINDOWS.items():
                     lower_idx = current_idx - config["months"] + 1
-                    window_values = [
-                        item[metric] for item in series[: position + 1]
+                    window_records = [
+                        item for item in series[: position + 1]
+                        if lower_idx <= month_index(date.fromisoformat(item["date"])) <= current_idx
+                    ]
+                    window_values = [item[metric] for item in window_records if item[metric] is not None]
+                    within5_values = [
+                        item[metric] for item in window_records
                         if item[metric] is not None
-                        and lower_idx <= month_index(date.fromisoformat(item["date"])) <= current_idx
+                        and item.get("monthEndTradingSessionLag") is not None
+                        and item["monthEndTradingSessionLag"] <= 5
+                    ]
+                    exact_values = [
+                        item[metric] for item in window_records
+                        if item[metric] is not None
+                        and item.get("monthEndTradingSessionLag") == 0
                     ]
                     enough = len(window_values) >= config["minimum"]
+                    enough_within5 = len(within5_values) >= config["minimum"]
+                    enough_exact = len(exact_values) >= config["minimum"]
                     output[f"{metric}Pct{label}"] = (
                         round(percentile_rank(window_values, record[metric]), 4)
                         if enough and record[metric] is not None else None
                     )
                     output[f"{metric}N{label}"] = len(window_values)
+                    current_within5 = lag_sessions is not None and lag_sessions <= 5
+                    current_exact = lag_sessions == 0
+                    output[f"{metric}Pct{label}Within5S"] = (
+                        round(percentile_rank(within5_values, record[metric]), 4)
+                        if enough_within5 and current_within5 and record[metric] is not None else None
+                    )
+                    output[f"{metric}N{label}Within5S"] = len(within5_values)
+                    output[f"{metric}Pct{label}ExactEOM"] = (
+                        round(percentile_rank(exact_values, record[metric]), 4)
+                        if enough_exact and current_exact and record[metric] is not None else None
+                    )
+                    output[f"{metric}N{label}ExactEOM"] = len(exact_values)
                     if label == "5Y":
                         for q in (20, 50, 80):
                             value = quantile(window_values, q / 100) if enough else None
                             output[f"{metric}P{q}_5Y"] = round(value, 6) if value is not None else None
+                            value_within5 = quantile(within5_values, q / 100) if enough_within5 else None
+                            output[f"{metric}P{q}_5YWithin5S"] = round(value_within5, 6) if value_within5 is not None else None
+                            value_exact = quantile(exact_values, q / 100) if enough_exact else None
+                            output[f"{metric}P{q}_5YExactEOM"] = round(value_exact, 6) if value_exact is not None else None
             monthly_rows.append(output)
 
         first_idx = month_index(date.fromisoformat(series[0]["date"])) if series else None
@@ -355,8 +384,13 @@ def main() -> int:
     columns = ["code", "issuerName", "date", "month", "expectedLastTradingDate", "monthEndTradingSessionLag", "isExactMonthEndObservation", "close", "currency", "peTtm", "pb", "psTtm", "source", "sourceUrl"]
     for metric in METRICS:
         for label in ("5Y", "10Y"):
-            columns.extend((f"{metric}Pct{label}", f"{metric}N{label}"))
-        columns.extend((f"{metric}P20_5Y", f"{metric}P50_5Y", f"{metric}P80_5Y"))
+            columns.extend((
+                f"{metric}Pct{label}", f"{metric}N{label}",
+                f"{metric}Pct{label}Within5S", f"{metric}N{label}Within5S",
+                f"{metric}Pct{label}ExactEOM", f"{metric}N{label}ExactEOM",
+            ))
+        for q in (20, 50, 80):
+            columns.extend((f"{metric}P{q}_5Y", f"{metric}P{q}_5YWithin5S", f"{metric}P{q}_5YExactEOM"))
 
     csv_write(out_dir / "valuation-monthly.csv", monthly_rows, columns)
 
@@ -375,15 +409,15 @@ def main() -> int:
     }
     latest_exact_month_end_coverage = {
         metric: {
-            "5Y": sum(1 for row in latest_by_code.values() if row.get("monthEndTradingSessionLag") == 0 and row.get(f"{metric}Pct5Y") is not None),
-            "10Y": sum(1 for row in latest_by_code.values() if row.get("monthEndTradingSessionLag") == 0 and row.get(f"{metric}Pct10Y") is not None),
+            "5Y": sum(1 for row in latest_by_code.values() if row.get(f"{metric}Pct5YExactEOM") is not None),
+            "10Y": sum(1 for row in latest_by_code.values() if row.get(f"{metric}Pct10YExactEOM") is not None),
         }
         for metric in METRICS
     }
     latest_within_5_sessions_coverage = {
         metric: {
-            "5Y": sum(1 for row in latest_by_code.values() if row.get("monthEndTradingSessionLag") is not None and row["monthEndTradingSessionLag"] <= 5 and row.get(f"{metric}Pct5Y") is not None),
-            "10Y": sum(1 for row in latest_by_code.values() if row.get("monthEndTradingSessionLag") is not None and row["monthEndTradingSessionLag"] <= 5 and row.get(f"{metric}Pct10Y") is not None),
+            "5Y": sum(1 for row in latest_by_code.values() if row.get(f"{metric}Pct5YWithin5S") is not None),
+            "10Y": sum(1 for row in latest_by_code.values() if row.get(f"{metric}Pct10YWithin5S") is not None),
         }
         for metric in METRICS
     }
@@ -421,9 +455,16 @@ def main() -> int:
         "invalidNonPositiveValuesSetNull": dict(invalid_values),
         "percentileMethod": "100 * (count(x < current) + 0.5 * count(x == current)) / N",
         "windows": WINDOWS,
+        "latestObservedRowPercentileCoverage": latest_percentile_coverage,
         "latestMonthEndPercentileCoverage": latest_percentile_coverage,
         "latestExactMonthEndPercentileCoverage": latest_exact_month_end_coverage,
         "latestWithin5TradingSessionsPercentileCoverage": latest_within_5_sessions_coverage,
+        "percentileSamplePolicies": {
+            "observed": "all non-null monthly observations in the rolling calendar window; month-end lag is reported separately",
+            "within5Sessions": "only monthly observations no more than 5 exchange sessions before the expected month-end session; current row must also pass",
+            "exactMonthEnd": "only observations whose source date exactly equals the final exchange session of the month; current row must also pass",
+            "minimumValidObservations": {"5Y": 60, "10Y": 120},
+        },
         "securities": sorted(audit_securities, key=lambda x: x["code"]),
         "status": "NO_HISTORICAL_DATA" if not monthly_rows else "REVIEW_AUDIT_BEFORE_PUBLISH",
         "warnings": [
