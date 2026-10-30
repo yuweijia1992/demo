@@ -1,0 +1,427 @@
+{
+  "source": "Legulegu legacy public single-stock base-info API (candidate; pending validation)",
+  "sourceCandidates": [
+    "https://legulegu.com/api/s/base-info/"
+  ],
+  "sourceReference": "Legacy AKShare stock_a_lg_indicator implementation; candidate endpoint only until current response is verified",
+  "fetchedAt": "2026-10-30T10:15:51+00:00",
+  "requestedAshareCompanies": 44,
+  "companiesWithMappedRows": 0,
+  "dailyRowsWritten": 0,
+  "validMetricRows": {
+    "peTtm": 0,
+    "pb": 0,
+    "psTtm": 0
+  },
+  "securityAudits": [
+    {
+      "code": "000333.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/000333"
+    },
+    {
+      "code": "000598.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/000598"
+    },
+    {
+      "code": "000651.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/000651"
+    },
+    {
+      "code": "002027.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/002027"
+    },
+    {
+      "code": "002352.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/002352"
+    },
+    {
+      "code": "002371.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/002371"
+    },
+    {
+      "code": "002594.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/002594"
+    },
+    {
+      "code": "002607.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/002607"
+    },
+    {
+      "code": "002714.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-30 format=YYYY-MM-DD attempt=1: HTTP Error 401: ",
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-30 format=YYYYMMDD attempt=1: HTTP Error 401: ",
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-29 format=YYYY-MM-DD attempt=1: HTTP Error 429: Too Many Requests",
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-29 format=YYYYMMDD attempt=1: HTTP Error 429: Too Many Requests"
+      ],
+      "sourcePage": "https://legulegu.com/s/002714"
+    },
+    {
+      "code": "300015.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/300015"
+    },
+    {
+      "code": "300059.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/300059"
+    },
+    {
+      "code": "300124.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/300124"
+    },
+    {
+      "code": "300274.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/300274"
+    },
+    {
+      "code": "300308.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/300308"
+    },
+    {
+      "code": "300750.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/300750"
+    },
+    {
+      "code": "300760.SZ",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/300760"
+    },
+    {
+      "code": "600030.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/600030"
+    },
+    {
+      "code": "600036.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/600036"
+    },
+    {
+      "code": "600066.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/600066"
+    },
+    {
+      "code": "600276.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/600276"
+    },
+    {
+      "code": "600323.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/600323"
+    },
+    {
+      "code": "600398.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-30 format=YYYY-MM-DD attempt=1: HTTP Error 401: ",
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-30 format=YYYYMMDD attempt=1: HTTP Error 429: Too Many Requests",
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-29 format=YYYY-MM-DD attempt=1: HTTP Error 429: Too Many Requests",
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-29 format=YYYYMMDD attempt=1: HTTP Error 429: Too Many Requests"
+      ],
+      "sourcePage": "https://legulegu.com/s/600398"
+    },
+    {
+      "code": "600406.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/600406"
+    },
+    {
+      "code": "600511.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/600511"
+    },
+    {
+      "code": "600674.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/600674"
+    },
+    {
+      "code": "600690.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/600690"
+    },
+    {
+      "code": "600754.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/600754"
+    },
+    {
+      "code": "600887.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-30 format=YYYY-MM-DD attempt=1: HTTP Error 401: ",
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-30 format=YYYYMMDD attempt=1: HTTP Error 401: ",
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-29 format=YYYY-MM-DD attempt=1: HTTP Error 401: ",
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-29 format=YYYYMMDD attempt=1: HTTP Error 401: "
+      ],
+      "sourcePage": "https://legulegu.com/s/600887"
+    },
+    {
+      "code": "600900.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/600900"
+    },
+    {
+      "code": "600941.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/600941"
+    },
+    {
+      "code": "601088.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/601088"
+    },
+    {
+      "code": "601318.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/601318"
+    },
+    {
+      "code": "601398.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/601398"
+    },
+    {
+      "code": "601601.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/601601"
+    },
+    {
+      "code": "601668.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/601668"
+    },
+    {
+      "code": "601728.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/601728"
+    },
+    {
+      "code": "601816.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/601816"
+    },
+    {
+      "code": "601888.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/601888"
+    },
+    {
+      "code": "601919.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/601919"
+    },
+    {
+      "code": "601985.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/601985"
+    },
+    {
+      "code": "603259.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/603259"
+    },
+    {
+      "code": "603288.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-30 format=YYYY-MM-DD attempt=1: HTTP Error 401: ",
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-30 format=YYYYMMDD attempt=1: HTTP Error 429: Too Many Requests",
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-29 format=YYYY-MM-DD attempt=1: HTTP Error 429: Too Many Requests",
+        "POST https://legulegu.com/api/s/base-info/ tokenDate=2026-10-29 format=YYYYMMDD attempt=1: HTTP Error 429: Too Many Requests"
+      ],
+      "sourcePage": "https://legulegu.com/s/603288"
+    },
+    {
+      "code": "688041.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/688041"
+    },
+    {
+      "code": "688981.SH",
+      "status": "REQUEST_ERROR",
+      "rowsReturned": 0,
+      "errors": [
+        "https://legulegu.com/: csrf bootstrap failed: HTTP Error 504: Gateway Time-out"
+      ],
+      "sourcePage": "https://legulegu.com/s/688981"
+    }
+  ],
+  "warning": "Candidate data are isolated and are not merged into generated/valuation-monthly.csv until source, metric definitions, duplicates, and point-in-time semantics pass review."
+}
