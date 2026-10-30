@@ -62,7 +62,7 @@ jobs:
         continue-on-error: true
         run: |
           python -m py_compile scripts/probe_eniu_a_share_history.py
-          python scripts/probe_eniu_a_share_history.py
+          python scripts/probe_eniu_a_share_history.py --timeout 8 --retries 1 --workers 4
 
       - name: Ensure BaoStock input file exists
         run: |
