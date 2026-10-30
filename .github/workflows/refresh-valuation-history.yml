@@ -54,4 +54,19 @@ jobs:
           else
             git commit -m "Refresh public A-share valuation history"
             git push
+
+      - name: Check A-share source coverage
+        run: |
+          python - <<'PY'
+          import json, sys
+          with open("data/valuation-history/raw/eastmoney-fetch-audit.json", encoding="utf-8") as f:
+              audit = json.load(f)
+          requested = audit.get("requestedAshareCompanies", 0)
+          covered = audit.get("companiesWithData", 0)
+          print(f"A-share history coverage: {covered}/{requested}; daily rows: {audit.get('dailyRows', 0)}")
+          for failure in audit.get("failedCompanies", []):
+              print("FAILED:", failure)
+          if requested != 44 or covered != requested:
+              sys.exit(1)
+          PY
           fi
