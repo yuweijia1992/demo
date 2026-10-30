@@ -109,7 +109,8 @@ def build_exchange_session_maps(end_month: str) -> tuple[dict[str, dict[str, str
         end_exclusive = date(end_first.year + 1, 1, 1)
     else:
         end_exclusive = date(end_first.year, end_first.month + 1, 1)
-    end_day = (end_exclusive - timedelta(days=1)).isoformat()
+    requested_end = end_exclusive - timedelta(days=1)
+    end_day = min(requested_end, date.today()).isoformat()
     start_day = "1999-01-04"
     expected_last: dict[str, dict[str, str]] = {}
     session_indexes: dict[str, dict[str, int]] = {}
