@@ -36,7 +36,7 @@ def load_market_sessions(start_day: str, end_day: str) -> dict[str, set[str]]:
     """Return real exchange sessions; Baidu charts also contain weekend/holiday carry-forwards."""
     sessions: dict[str, set[str]] = {}
     for market, calendar_name in (("CN", "XSHG"), ("HK", "XHKG")):
-        calendar = xcals.get_calendar(calendar_name)
+        calendar = xcals.get_calendar(calendar_name, start=start_day, end=end_day)
         values = calendar.sessions_in_range(start_day, end_day)
         sessions[market] = {str(value)[:10] for value in values}
         if not sessions[market]:
