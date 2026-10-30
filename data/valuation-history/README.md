@@ -65,11 +65,22 @@ AKShare公开接口封装了百度股市通个股估值历史：
 
 **重要口径限制：** 百度股市通官方文档只列PE-TTM和PB；抓取脚本额外探测“市销率(TTM)”和“市销率”标签，但不把接口能力当成事实。只有API确实返回可解析的日期与数值才写入PS；否则PS列保持空值，不从其他指标推算。港股5家公司分别使用港股代码、HKD口径和独立序列，绝不与其A股/ADR混接。接口支持“全部”只是文档能力；能否返回完整历史、实际起点和缺失日期以每次抓取审计为准。百度抓取已完成首轮实测，当前逐证券起止日期、指标覆盖及失败原因以 `raw/baidu-fetch-audit.json` 和 `generated/coverage-audit.json` 为准。已生成 [49家公司逐证券数据源与缺口审计](source-gap-assessment.md)，不能仅凭“49/49只证券有历史”宣称49家公司PE/PB/PS全部完整。
 
-### 新增待实测候选：乐咕单股历史估值接口
+### 乐咕单股历史估值接口：实际探测未成功
 
-在旧版AKShare实现及一个独立客户端中，发现乐咕单股历史接口 `/api/s/base-info/`。旧版响应字段样例包括 `trade_date`、`pe_ttm`、`pb`、`ps_ttm`，理论上可补A股三项真实日频估值；请求流程需要先读取首页CSRF令牌与Cookie，再POST日期MD5令牌及股票代码。当前最新版AKShare已不再提供该单股接口，故上游是否仍允许公开访问尚未得到确认。
+旧版客户端记录的 `/api/s/base-info/` 响应曾包含 `trade_date / pe_ttm / pb / ps_ttm`，请求需要首页CSRF/Cookie与POST日期令牌。本项目已对44只A股做首轮批量探测：**44/44请求失败、0条数据**；主要错误为HTTP 504、401、429。候选CSV只有表头。之后已尝试改为共享会话和顺序限速，但该次运行在下一轮常规更新时被取消，没有取得完整第二轮结果。现改为仅手动重试，常规刷新不再被该端点拖慢。
+- 程序：`scripts/probe_legulegu_a_share_history.py`
+- 审计：`raw/legulegu-fetch-audit.json`
+- 结论：旧接口有研究价值，但当前公开匿名访问不可用/不稳定，0条数据，不入正式库。
 
-已建立隔离探测程序：`scripts/probe_legulegu_a_share_history.py`，并在估值刷新工作流中增加可失败但不阻断主数据刷新的探测步骤。预期候选文件为 `raw/legulegu-a-share-candidate.csv`、审计文件为 `raw/legulegu-fetch-audit.json`。**这些候选文件尚未生成，接口尚未实测成功；不进入正式月度库，也不计入任何覆盖统计。** 只有返回完整 `trade_date / pe_ttm / pb / ps_ttm` 字段且逐证券日期通过审计，才会考虑合并。静态PE/PS不会误标为TTM。
+### 亿牛网A股历史估值接口：正在实测
+
+旧版公开客户端明确记录A股全历史图表：
+- `/chart/pea/{sh|sz代码}/t/all`：`pe_ttm`；
+- `/chart/pba/{sh|sz代码}/t/all`：`pb`；
+- `/chart/psa/{sh|sz代码}/t/all`：`ps`；
+- `/chart/pricea/{sh|sz代码}/t/all`：`price`。
+本项目已新增 `scripts/probe_eniu_a_share_history.py`，每只股票探测四项全历史图表，输出至 `raw/eniu-a-share-candidate.csv` 与 `raw/eniu-a-share-fetch-audit.json`，先隔离保存，不自动并入正式序列。请求口径使用 `t/all`。其中 `pe_ttm` 是明确的TTM字段；`ps` 目前只按来源原始字段保存为 `psRaw`，未确认是否TTM，因此不能计入PS-TTM。
+
 
 ### 公开估值百分位交叉核验：百分位（baifenwei.com）
 
