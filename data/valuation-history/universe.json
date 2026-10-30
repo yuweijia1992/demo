@@ -4,7 +4,7 @@
   "asOf": "2026-10-27",
   "range": {
     "startMonth": "2006-01",
-    "endMonth": "2026-09"
+    "endMonth": "2026-10"
   },
   "frequency": "monthly_last_trading_day",
   "rule": "每家发行人先选财务数据库 code 字段中的第一只主证券；A/H 双重上市的其他证券列入 alternateListings，不得与主证券混合计算估值序列。",
