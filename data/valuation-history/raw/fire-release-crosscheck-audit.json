@@ -1,0 +1,1064 @@
+{
+  "source": "F.I.R.E. Institute public A-stock release AStockData.tar.gz",
+  "releaseUrl": "https://github.com/fire-institute/fire/releases/download/marketdata/AStockData.tar.gz",
+  "releaseTag": "marketdata",
+  "releasePublishedAt": "2024-03-15T03:03:01Z",
+  "releaseUpdatedAt": "2025-05-23T07:06:16Z",
+  "packageBytes": 1396296954,
+  "packageSha256": "38c40f84bb0a7f269b5775d8a80b712cf81138593f5bfb1bae0e91aff3e2228b",
+  "archiveExtraction": {
+    "tarMembersVisited": 52,
+    "extractedMembers": {
+      "ps_ratio.feather": "fire_data/ps_ratio.feather",
+      "columns.feather": "fire_data/columns.feather",
+      "pe_ratio.feather": "fire_data/pe_ratio.feather",
+      "pb_ratio.feather": "fire_data/pb_ratio.feather",
+      "index.feather": "fire_data/index.feather"
+    },
+    "missingMembers": []
+  },
+  "dataRange": {
+    "firstDate": "2015-01-05",
+    "lastDate": "2025-04-30",
+    "dailyRows": 2509
+  },
+  "marketScope": "44 selected A-share securities only; Hong Kong stocks not included in this source",
+  "metricFields": {
+    "peTtm": "pe_ratio (documented TTM)",
+    "pb": "pb_ratio",
+    "psTtm": "ps_ratio (documented TTM)"
+  },
+  "matchedAshareCompanies": 44,
+  "axisAudit": {
+    "peTtm": {
+      "columnsMatched": 44,
+      "rows": 2509,
+      "firstDate": "2015-01-05",
+      "lastDate": "2025-04-30",
+      "tickersMatchedSample": [
+        [
+          "000333",
+          "000333.SZ"
+        ],
+        [
+          "000598",
+          "000598.SZ"
+        ],
+        [
+          "000651",
+          "000651.SZ"
+        ],
+        [
+          "002027",
+          "002027.SZ"
+        ],
+        [
+          "002352",
+          "002352.SZ"
+        ],
+        [
+          "002371",
+          "002371.SZ"
+        ],
+        [
+          "002594",
+          "002594.SZ"
+        ],
+        [
+          "002607",
+          "002607.SZ"
+        ]
+      ]
+    },
+    "pb": {
+      "columnsMatched": 44,
+      "rows": 2509,
+      "firstDate": "2015-01-05",
+      "lastDate": "2025-04-30",
+      "tickersMatchedSample": [
+        [
+          "000333",
+          "000333.SZ"
+        ],
+        [
+          "000598",
+          "000598.SZ"
+        ],
+        [
+          "000651",
+          "000651.SZ"
+        ],
+        [
+          "002027",
+          "002027.SZ"
+        ],
+        [
+          "002352",
+          "002352.SZ"
+        ],
+        [
+          "002371",
+          "002371.SZ"
+        ],
+        [
+          "002594",
+          "002594.SZ"
+        ],
+        [
+          "002607",
+          "002607.SZ"
+        ]
+      ]
+    },
+    "psTtm": {
+      "columnsMatched": 44,
+      "rows": 2509,
+      "firstDate": "2015-01-05",
+      "lastDate": "2025-04-30",
+      "tickersMatchedSample": [
+        [
+          "000333",
+          "000333.SZ"
+        ],
+        [
+          "000598",
+          "000598.SZ"
+        ],
+        [
+          "000651",
+          "000651.SZ"
+        ],
+        [
+          "002027",
+          "002027.SZ"
+        ],
+        [
+          "002352",
+          "002352.SZ"
+        ],
+        [
+          "002371",
+          "002371.SZ"
+        ],
+        [
+          "002594",
+          "002594.SZ"
+        ],
+        [
+          "002607",
+          "002607.SZ"
+        ]
+      ]
+    }
+  },
+  "monthlyOverlapComparisons": {
+    "FIRE:peTtm:Enniu": {
+      "securitiesWithOverlap": 0,
+      "overlapMonths": 0
+    },
+    "FIRE:peTtm:Eastmoney": {
+      "securitiesWithOverlap": 0,
+      "overlapMonths": 0
+    },
+    "FIRE:pb:Enniu": {
+      "securitiesWithOverlap": 0,
+      "overlapMonths": 0
+    },
+    "FIRE:pb:Eastmoney": {
+      "securitiesWithOverlap": 0,
+      "overlapMonths": 0
+    },
+    "FIRE:psTtm:Enniu": {
+      "securitiesWithOverlap": 0,
+      "overlapMonths": 0
+    },
+    "FIRE:psTtm:Eastmoney": {
+      "securitiesWithOverlap": 0,
+      "overlapMonths": 0
+    }
+  },
+  "perSecurityCoverage": [
+    {
+      "code": "000333.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "000598.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "000651.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "002027.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "002352.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "002371.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "002594.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "002607.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 78,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "002714.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 105,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "300015.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "300059.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "300124.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "300274.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "300308.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 116,
+          "firstMonth": "2015-03",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "300750.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 83,
+          "firstMonth": "2018-06",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 83,
+          "firstMonth": "2018-06",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 83,
+          "firstMonth": "2018-06",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "300760.SZ",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 79,
+          "firstMonth": "2018-10",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 79,
+          "firstMonth": "2018-10",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 79,
+          "firstMonth": "2018-10",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "600030.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "600036.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "600066.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "600276.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "600323.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "600398.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "600406.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "600511.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "600674.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "600690.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "600754.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 113,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "600887.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "600900.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "600941.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 40,
+          "firstMonth": "2022-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 40,
+          "firstMonth": "2022-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 40,
+          "firstMonth": "2022-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "601088.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "601318.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "601398.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "601601.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "601668.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "601728.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 45,
+          "firstMonth": "2021-08",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 45,
+          "firstMonth": "2021-08",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 45,
+          "firstMonth": "2021-08",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "601816.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 64,
+          "firstMonth": "2020-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 64,
+          "firstMonth": "2020-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 64,
+          "firstMonth": "2020-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "601888.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "601919.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 107,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "601985.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 119,
+          "firstMonth": "2015-06",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 119,
+          "firstMonth": "2015-06",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 119,
+          "firstMonth": "2015-06",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "603259.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 84,
+          "firstMonth": "2018-05",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 84,
+          "firstMonth": "2018-05",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 84,
+          "firstMonth": "2018-05",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "603288.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 124,
+          "firstMonth": "2015-01",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "688041.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 33,
+          "firstMonth": "2022-08",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 33,
+          "firstMonth": "2022-08",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 33,
+          "firstMonth": "2022-08",
+          "lastMonth": "2025-04"
+        }
+      }
+    },
+    {
+      "code": "688981.SH",
+      "metrics": {
+        "peTtm": {
+          "validMonths": 58,
+          "firstMonth": "2020-07",
+          "lastMonth": "2025-04"
+        },
+        "pb": {
+          "validMonths": 58,
+          "firstMonth": "2020-07",
+          "lastMonth": "2025-04"
+        },
+        "psTtm": {
+          "validMonths": 58,
+          "firstMonth": "2020-07",
+          "lastMonth": "2025-04"
+        }
+      }
+    }
+  ],
+  "redistributionNote": "Only a compact coverage/consistency audit is retained. The 1.4GB third-party raw package is not copied into this repository. Verify underlying data rights before redistribution.",
+  "auditedAt": "2026-10-30T10:45:14+00:00"
+}
