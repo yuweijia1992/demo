@@ -82,11 +82,8 @@ def main():
         "master_as_of": master.get("asOf"),
         "source_method": "AKShare stock_financial_report_sina; raw provider rows preserved",
         "scope": {"master_companies": len(stocks), "unique_a_share_codes": len(jobs),
-                  "statements": SYMBOLS,
-                  "hk_only_or_hk_primary_companies_not_downloaded": [
-                      s.get("name") for s in stocks
-                      if not re.search(r"(\d{6})\.(SH|SZ)", s.get("code", ""))
-                  ]},
+                  "unique_hk_codes": len(hk_jobs), "statements": SYMBOLS,
+                  "hk_period_modes": ["年度", "报告期"]},
         "records": records,
         "errors": errors
     }
