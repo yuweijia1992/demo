@@ -37,10 +37,11 @@ def load_market_sessions(start_day: str, end_day: str) -> dict[str, set[str]]:
     sessions: dict[str, set[str]] = {}
     for market, calendar_name in (("CN", "XSHG"), ("HK", "XHKG")):
         calendar = xcals.get_calendar(calendar_name)
-        # The installed exchange calendar may end before the real current date.
-        # Clamp to its latest published session (also handles weekends).
+        # The installed exchange calendar may cover a narrower date range than
+        # the requested vendor history. Clamp both ends to published sessions.
+        effective_start = max(date.fromisoformat(start_day), calendar.first_session.date())
         effective_end = min(date.fromisoformat(end_day), calendar.last_session.date())
-        values = calendar.sessions_in_range(start_day, effective_end.isoformat())
+        values = calendar.sessions_in_range(effective_start.isoformat(), effective_end.isoformat())
         sessions[market] = {str(value)[:10] for value in values}
         if not sessions[market]:
             raise RuntimeError(f"No exchange sessions returned for {market} ({calendar_name})")
