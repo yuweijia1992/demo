@@ -1,0 +1,2370 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-10-31",
+  "sourceFile": "data/china-stocks-financial-valuation.json",
+  "sourceAsOf": "2026-10-27",
+  "purpose": "49家公司估值输入数据补齐审计底稿；不将缺失数据用默认值或行业均值填充",
+  "companyCount": 49,
+  "definitions": {
+    "ttmFcf": "最近连续12个月经营活动现金流净额减购建固定资产、无形资产及其他长期资产支付的现金；需明确是否包含处置/并购等非经常投资现金流",
+    "roic": "NOPAT / 平均投入资本；披露税率、商誉、租赁负债、联营投资及金融资产处理口径",
+    "costOfEquity": "CAPM或可解释的替代方法；记录估值日无风险利率、Beta窗口/频率、ERP来源和币种",
+    "dilutedShares": "估值日完全稀释股数；分别保存基本股数、加权平均股数、期权/可转债/限制性股票潜在稀释",
+    "normalizedEarnings": "至少5年可比盈利，区分周期波动、一次性损益、减值、补贴、资产处置和会计政策变化",
+    "scenarios": "每个情景的输入值、来源、发布日期、假设理由和敏感性，不可仅填最终估值"
+  },
+  "records": [
+    {
+      "code": "600887.SH",
+      "name": "伊利股份",
+      "industry": "乳制品与营养",
+      "method": "quality_earnings_fcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
+        "market": "https://quote.cfi.cn/quote1587_600887.html"
+      },
+      "currentSnapshot": {
+        "revenue": 64330.9365,
+        "netProfit": 5758.6281,
+        "eps": 0.91,
+        "roe": 10.09,
+        "roic": null,
+        "operatingCashFlow": 9759.1475,
+        "capex": 1304.26204468,
+        "reportedFreeCashFlow": 8454.88545532,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 8.4914312099557,
+        "price": 27.8
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "002714.SZ",
+      "name": "牧原股份",
+      "industry": "生猪养殖",
+      "method": "normalized_cycle",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12510732&stockid=002714",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12510732&stockid=002714",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/002714/displaytype/4.phtml",
+        "market": "https://cn.investing.com/equities/muyuan-foodstuff-a-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 59410.3064,
+        "netProfit": -6077.6533,
+        "eps": -1.1,
+        "roe": -7.48,
+        "roic": null,
+        "operatingCashFlow": -2223.6684,
+        "capex": 6520.96651539,
+        "reportedFreeCashFlow": -8744.634898069999,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 13.8949,
+        "price": 42.08
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "603288.SH",
+      "name": "海天味业",
+      "industry": "调味品",
+      "method": "quality_earnings_fcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863&stockid=603288",
+        "fcf": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863&stockid=603288",
+        "bvps": "https://stock.quote.stockstar.com/finance/summary_603288.shtml",
+        "market": "https://quote.cfi.cn/quote_603288.html"
+      },
+      "currentSnapshot": {
+        "revenue": 16146.2738,
+        "netProfit": 4190.1563,
+        "eps": 0.72,
+        "roe": 10.07,
+        "roic": null,
+        "operatingCashFlow": 1224.2266,
+        "capex": 535.93094839,
+        "reportedFreeCashFlow": 688.295652,
+        "reportedFcfMethod": null,
+        "netDebt": null,
+        "bvps": 6.68,
+        "price": 33.47
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "600398.SH",
+      "name": "海澜之家",
+      "industry": "大众服装",
+      "method": "quality_earnings_fcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-16",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12565315&stockid=600398",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12565315&stockid=600398",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/600398/displaytype/4.phtml",
+        "market": "https://www.lixinger.com/equity/company/detail/sh/600398/600398/fundamental/valuation/pe-ttm"
+      },
+      "currentSnapshot": {
+        "revenue": 12419.761042,
+        "netProfit": 1487.862698,
+        "eps": 0.31,
+        "roe": 8.09,
+        "roic": null,
+        "operatingCashFlow": 2656.70219286,
+        "capex": 210.14908433,
+        "reportedFreeCashFlow": 2446.5531085300004,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 3.7594,
+        "price": 6.02
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "02313.HK",
+      "name": "申洲国际",
+      "industry": "纺织制造与运动服装供应链",
+      "method": "quality_earnings_fcf",
+      "currentFinancialPeriod": "2026-06-30（2026年中期业绩）",
+      "currency": "HKD",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2313",
+        "capex": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800507_c.pdf",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/02313/",
+        "market": "https://stockanalysis.com/quote/hkg/2313/history/"
+      },
+      "currentSnapshot": {
+        "revenue": 14179.177,
+        "netProfit": 1904.563,
+        "eps": 1.27,
+        "roe": null,
+        "roic": null,
+        "operatingCashFlow": 1924.371,
+        "capex": 849.24,
+        "reportedFreeCashFlow": 1075.131,
+        "reportedFcfMethod": "简化FCF=经营活动现金流量净额-购置物业厂房及设备-收购无形资产-预付使用权资产款项；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 24.84,
+        "price": 35.6
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "待补充",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "600690.SH",
+      "name": "海尔智家",
+      "industry": "家电与全球品牌",
+      "method": "quality_earnings_fcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-20",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563094&stockid=600690",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563095&stockid=600690",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563095&stockid=600690",
+        "market": "https://cn.investing.com/equities/qingdao-haier-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 152115.0502,
+        "netProfit": 10316.2549,
+        "eps": 1.12,
+        "roe": 8.36,
+        "roic": null,
+        "operatingCashFlow": 9752.034,
+        "capex": 4366.78921892,
+        "reportedFreeCashFlow": 5385.24475879,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": -16098.433343839999,
+        "bvps": 12.762111483282984,
+        "price": 20.1
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "000333.SZ",
+      "name": "美的集团",
+      "industry": "家电、工业技术与自动化",
+      "method": "quality_earnings_fcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-20",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572219&stockid=000333",
+        "capex": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-29/df25443f-d67a-4cc5-8bd6-6c3e681a9575.PDF",
+        "fcf": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-29/df25443f-d67a-4cc5-8bd6-6c3e681a9575.PDF",
+        "bvps": "https://www.stcn.com/quotes/index.html?stock_code=sz000333",
+        "market": "https://cn.investing.com/equities/midea-group-a-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 260042.49,
+        "netProfit": 26446.037,
+        "eps": 3.52,
+        "roe": 11.33,
+        "roic": null,
+        "operatingCashFlow": 37552.09,
+        "capex": 2634.21,
+        "reportedFreeCashFlow": 34917.88,
+        "reportedFcfMethod": null,
+        "netDebt": null,
+        "bvps": 27.8168,
+        "price": 85.3
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "000651.SZ",
+      "name": "格力电器",
+      "industry": "空调与家电",
+      "method": "quality_earnings_fcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-20",
+      "source": {
+        "financial": "https://4g.stockstar.com/detail/SN2026082700006450",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
+        "market": "https://cn.investing.com/equities/gree-electric-a-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 89397.5225,
+        "netProfit": 13278,
+        "eps": 2.38,
+        "roe": 8.68,
+        "roic": null,
+        "operatingCashFlow": 18808.8324,
+        "capex": 729.88813795,
+        "reportedFreeCashFlow": 18078.94425451,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 26.512644043858778,
+        "price": 38.65
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "002594.SZ",
+      "name": "比亚迪",
+      "industry": "新能源汽车与汽车产业链",
+      "method": "normalized_cycle",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572822&stockid=002594",
+        "capex": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-29/56e933c9-717e-42bd-8c21-3a0a11b8d2d0.PDF",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572791&stockid=002594",
+        "market": "https://cn.investing.com/equities/byd-a-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 344815.421,
+        "netProfit": 12325.408,
+        "eps": 1.35,
+        "roe": 4.86,
+        "roic": null,
+        "operatingCashFlow": 37334.744,
+        "capex": 44703.066,
+        "reportedFreeCashFlow": -7368.322,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 28.60730275290464,
+        "price": 80.74
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "600066.SH",
+      "name": "宇通客车",
+      "industry": "客车与商用交通",
+      "method": "quality_earnings_fcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12485740&stockid=600066",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12485740&stockid=600066",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/600066/displaytype/4.phtml",
+        "market": "https://cn.investing.com/equities/yutong-bus-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 16718.5255,
+        "netProfit": 1867.4134,
+        "eps": 0.84,
+        "roe": 11.85,
+        "roic": null,
+        "operatingCashFlow": 5948.73572109,
+        "capex": 317.83044634,
+        "reportedFreeCashFlow": 5630.90527475,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 5.97,
+        "price": 27.49
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "601816.SH",
+      "name": "京沪高铁",
+      "industry": "铁路客运基础设施",
+      "method": "cashflow_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574755&stockid=601816",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574755&stockid=601816",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/601816/displaytype/4.phtml",
+        "market": "https://cn.investing.com/equities/shanghai-high-speed-railway-co-ltd-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 21842,
+        "netProfit": 6771,
+        "eps": 0.1384,
+        "roe": 3.21,
+        "roic": null,
+        "operatingCashFlow": 10685.13462682,
+        "capex": 343.59523153,
+        "reportedFreeCashFlow": 10341.53939529,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 4.7507,
+        "price": 5.15
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "002352.SZ",
+      "name": "顺丰控股",
+      "industry": "快递与综合物流",
+      "method": "quality_earnings_fcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570675&stockid=002352",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570675&stockid=002352",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/002352/displaytype/4.phtml",
+        "market": "https://www.hstong.com/quotes/30000-002352-SZ"
+      },
+      "currentSnapshot": {
+        "revenue": 155506.421,
+        "netProfit": 5501.905,
+        "eps": 1.1,
+        "roe": 5.49,
+        "roic": null,
+        "operatingCashFlow": 11171.404,
+        "capex": 6083.116,
+        "reportedFreeCashFlow": 5088.288,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 21.702,
+        "price": 30.47
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "601919.SH",
+      "name": "中远海控",
+      "industry": "集装箱航运",
+      "method": "normalized_cycle",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571262&stockid=601919",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571262",
+        "fcf": null,
+        "bvps": "https://www.stcn.com/quotes/index/sh601919.html",
+        "market": "https://cn.investing.com/equities/china-cosco-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 111921.747569,
+        "netProfit": 13418.920777,
+        "eps": 0.88,
+        "roe": 5.7,
+        "roic": null,
+        "operatingCashFlow": 23330.22572657,
+        "capex": 14136.53085079,
+        "reportedFreeCashFlow": 9193.694875779998,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 15.3105,
+        "price": 16.36
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "300760.SZ",
+      "name": "迈瑞医疗",
+      "industry": "医疗器械",
+      "method": "growth_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-20",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+        "market": "https://cn.investing.com/equities/shenzhen-mindray-bio-medical-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 17746.9696,
+        "netProfit": 4796.7918,
+        "eps": 3.9584,
+        "roe": 12.01,
+        "roic": null,
+        "operatingCashFlow": 4876.986709,
+        "capex": 1063.901948,
+        "reportedFreeCashFlow": 3813.084761,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 33.45006233678624,
+        "price": 169.73
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "600276.SH",
+      "name": "恒瑞医药",
+      "industry": "创新药与制药",
+      "method": "growth_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-20",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+        "market": "https://cn.investing.com/equities/hengrui-medi-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 15455.583728,
+        "netProfit": 4465.28242,
+        "eps": 0.68,
+        "roe": 8.04,
+        "roic": null,
+        "operatingCashFlow": 1987.003873,
+        "capex": 1577.50532286,
+        "reportedFreeCashFlow": 409.49854948000007,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 9.712895713483828,
+        "price": 47.37
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "603259.SH",
+      "name": "药明康德",
+      "industry": "医药研发与生产服务",
+      "method": "growth_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12475210&stockid=603259",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12475210&stockid=603259",
+        "fcf": null,
+        "bvps": "https://stock.quote.stockstar.com/finance/summary_603259.shtml",
+        "market": "https://cn.investing.com/equities/wuxi-apptec-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 28897.478718,
+        "netProfit": 11080.173661,
+        "eps": 3.8,
+        "roe": 13.19,
+        "roic": null,
+        "operatingCashFlow": 9699.14238808,
+        "capex": 2961.57911641,
+        "reportedFreeCashFlow": 6737.56327167,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 27.9291,
+        "price": 142.1
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "300015.SZ",
+      "name": "爱尔眼科",
+      "industry": "眼科医疗服务",
+      "method": "growth_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12561169&stockid=300015",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12561167&stockid=300015",
+        "fcf": null,
+        "bvps": "https://stock.quote.stockstar.com/finance/summary_300015.shtml",
+        "market": "https://cn.investing.com/equities/aier-eye-hospital-group-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 11945.70458,
+        "netProfit": 1357.026449,
+        "eps": 0.1464,
+        "roe": 6.04,
+        "roic": null,
+        "operatingCashFlow": 2922.54307149,
+        "capex": 621.17682093,
+        "reportedFreeCashFlow": 2301.36625056,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 2.47,
+        "price": 7.99
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "600511.SH",
+      "name": "国药股份",
+      "industry": "医药流通",
+      "method": "quality_earnings_fcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12504833&stockid=600511",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12504833&stockid=600511",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/600511/displaytype/4.phtml",
+        "market": "https://www.laocaifu.com/stock/600511/"
+      },
+      "currentSnapshot": {
+        "revenue": 26728.336668,
+        "netProfit": 879.76948,
+        "eps": 1.166,
+        "roe": 4.69,
+        "roic": null,
+        "operatingCashFlow": -626.26760677,
+        "capex": 8.04754729,
+        "reportedFreeCashFlow": -634.31515406,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 27.2607,
+        "price": 27.34
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "600900.SH",
+      "name": "长江电力",
+      "industry": "大型水电运营",
+      "method": "cashflow_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度，未经审计）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-20",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+        "market": "https://cn.investing.com/equities/yangtze-power-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 37929.2689,
+        "netProfit": 14755.6948,
+        "eps": 0.6031,
+        "roe": 6.55,
+        "roic": null,
+        "operatingCashFlow": 24128.3138,
+        "capex": 4434.61615391,
+        "reportedFreeCashFlow": 19693.69764609,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 8.833146581319639,
+        "price": 29.69
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "600674.SH",
+      "name": "川投能源",
+      "industry": "水电投资与电力资产",
+      "method": "cashflow_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12495897&stockid=600674",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12495897&stockid=600674",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12495897&stockid=600674",
+        "market": "https://cn.investing.com/equities/chuantou-ener-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 679.525407,
+        "netProfit": 2329.685397,
+        "eps": 0.4779,
+        "roe": 5.06,
+        "roic": null,
+        "operatingCashFlow": 441.741231,
+        "capex": 415.60677172,
+        "reportedFreeCashFlow": 26.134459730000003,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 9.166167791516498,
+        "price": 17.29
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "601985.SH",
+      "name": "中国核电",
+      "industry": "核电运营",
+      "method": "cashflow_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-20",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572215&stockid=601985",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572215&stockid=601985",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572215&stockid=601985",
+        "market": "https://cn.investing.com/equities/china-national-nuclear-power-co-ltd-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 38397.89247,
+        "netProfit": 3641.153735,
+        "eps": 0.177,
+        "roe": null,
+        "roic": null,
+        "operatingCashFlow": 19177.441758,
+        "capex": 34603.30479777,
+        "reportedFreeCashFlow": -15425.863039319996,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 5.806275879598105,
+        "price": 9.52
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "待补充",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "601088.SH",
+      "name": "中国神华",
+      "industry": "煤炭、电力、铁路与港口",
+      "method": "normalized_cycle",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-20",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572344&stockid=601088",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572344&stockid=601088",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572344&stockid=601088",
+        "market": "https://cn.investing.com/equities/china-shenhua"
+      },
+      "currentSnapshot": {
+        "revenue": 189338,
+        "netProfit": 28715,
+        "eps": 1.339,
+        "roe": 5.83,
+        "roic": null,
+        "operatingCashFlow": 54664,
+        "capex": 29579,
+        "reportedFreeCashFlow": 25085,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，不年化；金额单位百万元人民币",
+        "netDebt": null,
+        "bvps": 20.79,
+        "price": 50.99
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "600406.SH",
+      "name": "国电南瑞",
+      "industry": "电网自动化与电力设备",
+      "method": "quality_earnings_fcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12543045",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12543058&stockid=600406",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12543058&stockid=600406",
+        "market": "https://data.cfi.cn/quote1752_600406.html"
+      },
+      "currentSnapshot": {
+        "revenue": 27767.19053,
+        "netProfit": 3073,
+        "eps": 0.38,
+        "roe": 5.73,
+        "roic": null,
+        "operatingCashFlow": 591.109592,
+        "capex": 754.32957819,
+        "reportedFreeCashFlow": -163.21998639000003,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 6.48350834390919,
+        "price": 23.28
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "600941.SH / 00941.HK",
+      "name": "中国移动",
+      "industry": "通信网络、云与算力",
+      "method": "cashflow_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-20",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492473&stockid=",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492474&stockid=600941",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492474&stockid=600941",
+        "market": "https://data.cfi.cn/600941.html"
+      },
+      "currentSnapshot": {
+        "revenue": 538035,
+        "netProfit": 78934,
+        "eps": 3.64,
+        "roe": 5.6,
+        "roic": null,
+        "operatingCashFlow": 114854,
+        "capex": 66290,
+        "reportedFreeCashFlow": 48564,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，不年化；金额单位百万元人民币",
+        "netDebt": null,
+        "bvps": 3.022251089061759,
+        "price": 101.77
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "601728.SH / 00728.HK",
+      "name": "中国电信",
+      "industry": "通信、云与政企数字化",
+      "method": "cashflow_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910&stockid=601728",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910&stockid=601728",
+        "market": "https://cn.investing.com/equities/china-telecom-corp-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 259010.338291,
+        "netProfit": 19587.741668,
+        "eps": 0.21,
+        "roe": 4.2,
+        "roic": null,
+        "operatingCashFlow": 60375.156021,
+        "capex": 26358.85506306,
+        "reportedFreeCashFlow": 34016.30095819,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，不年化；金额单位百万元人民币",
+        "netDebt": -33423.181201839994,
+        "bvps": 5.156784152825519,
+        "price": 6.66
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "601668.SH",
+      "name": "中国建筑",
+      "industry": "建筑工程与基础设施",
+      "method": "quality_earnings_fcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告，已审阅）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12569505&stockid=601668",
+        "capex": "https://money.finance.sina.com.cn/corp/go.php/vFD_CashFlow/stockid/601668/ctrl/2026/displaytype/4.phtml",
+        "fcf": null,
+        "bvps": "https://stock.stockstar.com/notice/SN2026082800049566.shtml",
+        "market": "https://cn.investing.com/equities/china-state-co-ss-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 975837.283,
+        "netProfit": 23000.277,
+        "eps": 0.55,
+        "roe": 4.61,
+        "roic": null,
+        "operatingCashFlow": -28461.271,
+        "capex": 12931.372,
+        "reportedFreeCashFlow": -41392.643,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 11.98,
+        "price": 4.52
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "00700.HK",
+      "name": "腾讯控股",
+      "industry": "社交、游戏、广告与云",
+      "method": "growth_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年中期）",
+      "currency": "HKD",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://www.tencent.com/zh-cn/investors/financial-reports/",
+        "capex": null,
+        "fcf": null,
+        "bvps": null,
+        "market": "https://www.gurufocus.com/stock/HKSE%3A00700/data/summary"
+      },
+      "currentSnapshot": {
+        "revenue": 401243,
+        "netProfit": 114115,
+        "eps": 12.639,
+        "roe": null,
+        "roic": null,
+        "operatingCashFlow": 154061,
+        "capex": 84720,
+        "reportedFreeCashFlow": 69341,
+        "reportedFcfMethod": null,
+        "netDebt": null,
+        "bvps": null,
+        "price": 381.8
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "待补充",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "09988.HK / BABA",
+      "name": "阿里巴巴",
+      "industry": "电商、云与数字平台",
+      "method": "growth_dcf",
+      "currentFinancialPeriod": "2026-06-30（截至2026-06-30季度业绩，非自然年半年累计）",
+      "currency": "HKD",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://ali-home.alibaba.com/document-2026456290057781248",
+        "capex": "https://ali-home.alibaba.com/document-2026456290057781248",
+        "fcf": null,
+        "bvps": null,
+        "market": "https://hk.investing.com/equities/alibaba-group-holding-hk-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 268953,
+        "netProfit": 10444,
+        "eps": 0.46,
+        "roe": null,
+        "roic": null,
+        "operatingCashFlow": 22945,
+        "capex": 67678,
+        "reportedFreeCashFlow": -44670,
+        "reportedFcfMethod": "公司披露口径FCF，2026年6月季度（单季度，非半年累计）；公司披露FCF=-44,670百万元。资本开支为公司披露的67,678百万元；经营现金流22,945百万元减资本开支为-44,733百万元，差异源于公司FCF调节项目，保留公司披露FCF，不强行覆盖",
+        "netDebt": null,
+        "bvps": null,
+        "price": 97.35
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "待补充",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "688981.SH / 00981.HK",
+      "name": "中芯国际",
+      "industry": "晶圆代工",
+      "method": "normalized_cycle",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-19",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12559855&stockid=688981",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12559855&stockid=688981",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/688981/index.html",
+        "market": "https://www.yyqyx.com/s/688981.SH"
+      },
+      "currentSnapshot": {
+        "revenue": 38635.115,
+        "netProfit": 4467.431,
+        "eps": 0.56,
+        "roe": 2.9,
+        "roic": null,
+        "operatingCashFlow": 20759.511,
+        "capex": 19724.655,
+        "reportedFreeCashFlow": 1034.8559999999998,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 20.03,
+        "price": 99.7
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "002371.SZ",
+      "name": "北方华创",
+      "industry": "半导体设备",
+      "method": "growth_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-20",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12534434&stockid=002371",
+        "capex": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501903.PDF",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/mobile/002371/companyn.html",
+        "market": "https://quote.cfi.cn/quote.aspx?client=pc&stockid=10802"
+      },
+      "currentSnapshot": {
+        "revenue": 20161.416891,
+        "netProfit": 3370.020677,
+        "eps": 4.6486,
+        "roe": 8.58,
+        "roic": null,
+        "operatingCashFlow": 3773.698817,
+        "capex": 830.47430148,
+        "reportedFreeCashFlow": 2943.22451552,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 55.87,
+        "price": 566.49
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "688041.SH",
+      "name": "海光信息",
+      "industry": "CPU与加速计算芯片",
+      "method": "growth_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492765&stockid=688041",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492765&stockid=688041",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/688041/",
+        "market": "https://cn.investing.com/equities/hygon-information-tech-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 9099.020775,
+        "netProfit": 1798.467918,
+        "eps": 0.78,
+        "roe": 7.56,
+        "roic": null,
+        "operatingCashFlow": -427.541001,
+        "capex": 914.41701279,
+        "reportedFreeCashFlow": -1341.95801415,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 10.92,
+        "price": 190.48
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "300308.SZ",
+      "name": "中际旭创",
+      "industry": "光通信与高速光模块",
+      "method": "growth_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-16",
+      "source": {
+        "financial": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491753.PDF",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518497&stockid=300308",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/300308/index.html",
+        "market": "https://www.lixinger.com/equity/company/detail/sz/300308/300308/fundamental/valuation/pe-ttm"
+      },
+      "currentSnapshot": {
+        "revenue": 41777.861795,
+        "netProfit": 13651.149693,
+        "eps": 12.31,
+        "roe": 37.62,
+        "roic": null,
+        "operatingCashFlow": 1799.674832,
+        "capex": 4802.16119537,
+        "reportedFreeCashFlow": -3002.4863633500004,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 35.74,
+        "price": 670
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "300750.SZ / 03750.HK",
+      "name": "宁德时代",
+      "industry": "动力电池与储能",
+      "method": "growth_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12462542&stockid=300750",
+        "capex": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-07-25/8e6750da-b178-4be9-a74a-4b1d8fc42c58.PDF",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12462543&stockid=300750",
+        "market": "https://data.cfi.cn/300750.html"
+      },
+      "currentSnapshot": {
+        "revenue": 276916.58,
+        "netProfit": 43284.002,
+        "eps": 9.51,
+        "roe": 12.08,
+        "roic": null,
+        "operatingCashFlow": 60216.851,
+        "capex": 25072.772,
+        "reportedFreeCashFlow": 35144.079,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 81.99308499151978,
+        "price": 220.41
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "300274.SZ",
+      "name": "阳光电源",
+      "industry": "逆变器与储能系统",
+      "method": "normalized_cycle",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-21",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570250&stockid=300274",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570250&stockid=300274",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/300274/",
+        "market": "https://www.yyqyx.com/s/300274.SZ"
+      },
+      "currentSnapshot": {
+        "revenue": 30912.265605,
+        "netProfit": 5258.509295,
+        "eps": 2.56,
+        "roe": 10.73,
+        "roic": null,
+        "operatingCashFlow": 3735.133201,
+        "capex": 1174.74763947,
+        "reportedFreeCashFlow": 2560.3855615700004,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 24.18,
+        "price": 72.3
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "300124.SZ",
+      "name": "汇川技术",
+      "industry": "工业自动化与电驱",
+      "method": "growth_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225524610.PDF",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12566577&stockid=300124",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/300124/index.html",
+        "market": "https://cn.investing.com/equities/shenzhen-inovance-tech-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 24675.250998,
+        "netProfit": 2809.924122,
+        "eps": 1.04,
+        "roe": 7.69,
+        "roic": null,
+        "operatingCashFlow": 1975.05903,
+        "capex": 1479.32793745,
+        "reportedFreeCashFlow": 495.73109254999986,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 13.59,
+        "price": 50.45
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "600036.SH / 03968.HK",
+      "name": "招商银行",
+      "industry": "零售银行与财富管理",
+      "method": "bank_pb_roe",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-20",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570089&stockid=600036",
+        "capex": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225530237.PDF",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570089&stockid=600036",
+        "market": "https://quote.cfi.cn/quote.aspx?stockcode=600036&zqlb=0"
+      },
+      "currentSnapshot": {
+        "revenue": 178181,
+        "netProfit": 76445,
+        "eps": 2.98,
+        "roe": 13.42,
+        "roic": null,
+        "operatingCashFlow": 304611,
+        "capex": 22744,
+        "reportedFreeCashFlow": null,
+        "reportedFcfMethod": null,
+        "netDebt": null,
+        "bvps": 45.4,
+        "price": 42.52
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "601398.SH",
+      "name": "工商银行",
+      "industry": "大型商业银行",
+      "method": "bank_pb_roe",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告，未经审计）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-20",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
+        "capex": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225530114.PDF",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
+        "market": "https://cn.investing.com/equities/icbc-ss-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 465859,
+        "netProfit": 173682,
+        "eps": 0.47,
+        "roe": 8.63,
+        "roic": null,
+        "operatingCashFlow": 1369013,
+        "capex": 5669,
+        "reportedFreeCashFlow": null,
+        "reportedFcfMethod": null,
+        "netDebt": null,
+        "bvps": 11.12,
+        "price": 8.56
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "601318.SH / 02318.HK",
+      "name": "中国平安",
+      "industry": "保险与综合金融",
+      "method": "insurance_ev",
+      "currentFinancialPeriod": "2026-06-30（2026年中期业绩）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12512669",
+        "capex": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225487480.PDF",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/601318/field.html",
+        "market": "https://quote.cfi.cn/quote.aspx?client=pc&lm=gsda&stockid=7143"
+      },
+      "currentSnapshot": {
+        "revenue": 575138,
+        "netProfit": 92585,
+        "eps": 5.3,
+        "roe": 9,
+        "roic": null,
+        "operatingCashFlow": 368037,
+        "capex": 3038,
+        "reportedFreeCashFlow": null,
+        "reportedFcfMethod": null,
+        "netDebt": null,
+        "bvps": 56.78,
+        "price": 50.94
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "601601.SH / 02601.HK",
+      "name": "中国太保",
+      "industry": "寿险与财险",
+      "method": "insurance_ev",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12558328&stockid=601601",
+        "capex": "https://stock.stockstar.com/notice/SN2026082700054843.shtml",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/72/02601/",
+        "market": "https://cn.investing.com/equities/china-pacific-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 212136,
+        "netProfit": 30775,
+        "eps": 3.2,
+        "roe": 9.7,
+        "roic": null,
+        "operatingCashFlow": 115080,
+        "capex": 1048,
+        "reportedFreeCashFlow": null,
+        "reportedFcfMethod": null,
+        "netDebt": null,
+        "bvps": 33.18,
+        "price": 28.45
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "600030.SH / 06030.HK",
+      "name": "中信证券",
+      "industry": "证券与资本市场",
+      "method": "normalized_cycle",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://statics.citics.com/website/report/2026/web/e-book/web/index.html",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12511186&stockid=600030",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/600030/index.html",
+        "market": "https://cn.investing.com/equities/citic-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 49692,
+        "netProfit": 23343,
+        "eps": 1.53,
+        "roe": 7.81,
+        "roic": null,
+        "operatingCashFlow": 105619.808843,
+        "capex": 608.93453231,
+        "reportedFreeCashFlow": null,
+        "reportedFcfMethod": null,
+        "netDebt": null,
+        "bvps": 19.93,
+        "price": 25.32
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "300059.SZ",
+      "name": "东方财富",
+      "industry": "互联网证券与金融信息",
+      "method": "normalized_cycle",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518817&stockid=300059",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518817&stockid=300059",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518811",
+        "market": "https://quote.cfi.cn/300059.html"
+      },
+      "currentSnapshot": {
+        "revenue": 10505.339284,
+        "netProfit": 8064.281453,
+        "eps": 0.5102,
+        "roe": 8.46,
+        "roic": null,
+        "operatingCashFlow": 30313.788394,
+        "capex": 54.22617092,
+        "reportedFreeCashFlow": null,
+        "reportedFcfMethod": null,
+        "netDebt": null,
+        "bvps": 6.22,
+        "price": 17.78
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "09618.HK / JD",
+      "name": "京东集团",
+      "industry": "电商、零售与物流",
+      "method": "growth_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年第二季度业绩，非半年累计）",
+      "currency": "HKD",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://ir.jd.com/news-releases/news-release-details/jdcom-announces-second-quarter-and-interim-2026-results",
+        "capex": "https://ir.jd.com/news-releases/news-release-details/jdcom-announces-second-quarter-and-interim-2026-results",
+        "fcf": null,
+        "bvps": "https://ir.jd.com/system/files-encrypted/nasdaq_kms/assets/2026/08/13/18-03-06/JD.com%20Announces%20Second%20Quarter%20and%20Interim%202026%20Results.pdf",
+        "market": "https://hk.finance.yahoo.com/quote/9618.HK/history/"
+      },
+      "currentSnapshot": {
+        "revenue": 346400,
+        "netProfit": 7100,
+        "eps": null,
+        "roe": null,
+        "roic": null,
+        "operatingCashFlow": 38273,
+        "capex": 10583,
+        "reportedFreeCashFlow": 25354,
+        "reportedFcfMethod": "京东集团公司披露口径FCF：2026H1经营现金流38,273百万元，减消费金融应收款影响2,336百万元、资本开支（扣除相关处置收入）10,583百万元，得到公司披露FCF 25,354百万元；与简单OCF-capex口径不同，不年化",
+        "netDebt": null,
+        "bvps": 81.52,
+        "price": 97.9
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "待补充",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "601888.SH",
+      "name": "中国中免",
+      "industry": "免税零售与旅游消费",
+      "method": "normalized_cycle",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12511941",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12511941&stockid=601888",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/601888/index.html",
+        "market": "https://cn.investing.com/equities/cits-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 27655.202065,
+        "netProfit": 3106.431288,
+        "eps": 1.4983,
+        "roe": 5.46,
+        "roic": null,
+        "operatingCashFlow": 2479.626822,
+        "capex": 541.15834215,
+        "reportedFreeCashFlow": 1938.4684800599998,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 27.65,
+        "price": 48.57
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "600754.SH",
+      "name": "锦江酒店",
+      "industry": "酒店运营与管理",
+      "method": "normalized_cycle",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571973&stockid=600754",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571973&stockid=600754",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/600754/",
+        "market": "https://kr.investing.com/equities/jinjiang-hotel-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 6801.169594,
+        "netProfit": 545.090554,
+        "eps": 0.51,
+        "roe": null,
+        "roic": null,
+        "operatingCashFlow": 2102.645032,
+        "capex": 1008.79433002,
+        "reportedFreeCashFlow": 1093.8507016,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 14.98,
+        "price": 17.69
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "待补充",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "002027.SZ",
+      "name": "分众传媒",
+      "industry": "楼宇广告",
+      "method": "normalized_cycle",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12502839",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?CompanyCode=10001415&gather=1&id=12502843",
+        "fcf": null,
+        "bvps": null,
+        "market": "https://cn.investing.com/equities/hedy-holding-a-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 5991,
+        "netProfit": 3128,
+        "eps": 0.2166,
+        "roe": 20.44,
+        "roic": null,
+        "operatingCashFlow": 4453.428032,
+        "capex": 492.2592,
+        "reportedFreeCashFlow": 3961.168832,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": null,
+        "price": 4.97
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "09626.HK / BILI",
+      "name": "哔哩哔哩",
+      "industry": "视频社区与内容",
+      "method": "growth_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年第二季度业绩，非半年累计）",
+      "currency": "HKD",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526371261/d434015dex991.htm",
+        "capex": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526400258/d163378dex991.pdf",
+        "fcf": null,
+        "bvps": "https://ebs.publicnow.com/view/538B27FB710054B314B89D3D1EA2365BFEC63FB5",
+        "market": "https://hk.investing.com/equities/bilibili-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 7940,
+        "netProfit": 339.1,
+        "eps": 0.82,
+        "roe": 3.58,
+        "roic": null,
+        "operatingCashFlow": 2952.457,
+        "capex": 1957.843,
+        "reportedFreeCashFlow": 994.614,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建物业设备与无形资产现金支出；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 38.11,
+        "price": 103.5
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "002607.SZ",
+      "name": "中公教育",
+      "industry": "职业培训与考试服务",
+      "method": "quality_earnings_fcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-21",
+      "source": {
+        "financial": "https://data.eastmoney.com/notices/detail/002607/AN202608260006752169.html",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12554459&stockid=002607",
+        "fcf": null,
+        "bvps": null,
+        "market": "https://cn.investing.com/equities/yaxia-automobile-a-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 1169,
+        "netProfit": 73.2244,
+        "eps": 0.01,
+        "roe": 9.22,
+        "roic": null,
+        "operatingCashFlow": 287.882824,
+        "capex": 7.03422912,
+        "reportedFreeCashFlow": 280.84859499,
+        "reportedFcfMethod": "简化FCF=经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": null,
+        "price": 1.79
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "000598.SZ",
+      "name": "兴蓉环境",
+      "industry": "水务与环保运营",
+      "method": "cashflow_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-22",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12539476&stockid=000598",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12539479&stockid=000598",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12539479&stockid=000598",
+        "market": "https://hk.investing.com/equities/xingrong-invest-a-historical-data"
+      },
+      "currentSnapshot": {
+        "revenue": 4387.757285,
+        "netProfit": 1020.85275,
+        "eps": 0.3426,
+        "roe": 5.07,
+        "roic": null,
+        "operatingCashFlow": 728.29495,
+        "capex": 1455.50963913,
+        "reportedFreeCashFlow": -727.2146888100001,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 6.717173904321843,
+        "price": 6.95
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    },
+    {
+      "code": "600323.SH",
+      "name": "瀚蓝环境",
+      "industry": "固废处理与环保运营",
+      "method": "cashflow_dcf",
+      "currentFinancialPeriod": "2026-06-30（2026年半年度报告）",
+      "currency": "CNY",
+      "currentPriceDate": "2026-10-20",
+      "source": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546824&stockid=600323",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546824&stockid=600323",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546824&stockid=600323",
+        "market": "https://hk.finance.yahoo.com/quote/600323.SS/history/"
+      },
+      "currentSnapshot": {
+        "revenue": 7736.749257,
+        "netProfit": 1206.223906,
+        "eps": 1.48,
+        "roe": 7.93,
+        "roic": null,
+        "operatingCashFlow": 1632.020652,
+        "capex": 891.7920741,
+        "reportedFreeCashFlow": 740.2285781999999,
+        "reportedFcfMethod": "简化FCF=合并经营活动现金流净额-合并购建固定资产、无形资产和其他长期资产支付的现金；2026H1，百万元人民币，不年化",
+        "netDebt": null,
+        "bvps": 18.62,
+        "price": 30.82
+      },
+      "status": {
+        "historicalFinancialSeries": "待补充：当前主表只有单期快照，未附2021—2025逐年可比数据",
+        "normalizedEarnings": "待补充：需至少5年利润、周期调整及一次性损益明细",
+        "forecast5Y": "待建立：缺少逐年收入、利润率、再投资率及FCF预测",
+        "roic": "待计算：需要NOPAT、平均投入资本及商誉/租赁口径",
+        "sustainableRoe": "当前仅有报告期加权ROE，尚非可持续ROE",
+        "costOfCapital": "待计算：缺少无风险利率、Beta、股权风险溢价及债务成本的归档输入",
+        "ttmFcf": "待计算：现有FCF为单期披露值，须按TTM口径拼接可比期间",
+        "dilutedShares": "待补充：缺少期末/加权平均/完全稀释股数及潜在稀释核验",
+        "industryParameters": "部分具备：已有估值模型分类，尚缺公司级参数",
+        "scenarioAssumptions": "待建立：尚无来源支持的悲观/基准/乐观假设"
+      },
+      "auditNotes": [
+        "不得将半年度收入、利润、EPS、经营现金流或FCF直接乘以2作为TTM。",
+        "不得把BVPS当作保险NBV。",
+        "不得将当前报告期ROE直接当作长期可持续ROE。",
+        "银行、券商和保险不套用一般工商企业FCF/净债务模板。"
+      ]
+    }
+  ]
+}
