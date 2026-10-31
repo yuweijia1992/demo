@@ -31,6 +31,8 @@ jobs:
           pip install akshare
       - name: Retrieve and archive source statements
         run: python scripts/collect_financial_statements.py
+      - name: Audit retrieved statement coverage
+        run: python scripts/audit_financial_archive.py
       - name: Commit archive if changed
         run: |
           git config user.name "github-actions[bot]"
