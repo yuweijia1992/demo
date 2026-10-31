@@ -11,7 +11,7 @@ from pathlib import Path
 
 import akshare as ak
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 MASTER = ROOT / "data/china-stocks-financial-valuation.json"
 OUT = ROOT / "data/raw-financials"
 OUT.mkdir(parents=True, exist_ok=True)
