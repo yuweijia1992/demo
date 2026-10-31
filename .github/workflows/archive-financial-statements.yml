@@ -2,6 +2,10 @@ name: Archive A-share financial statements
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/collect_financial_statements.py'
+      - '.github/workflows/archive-financial-statements.yml'
   schedule:
     - cron: "30 2 5 * *"
 
