@@ -13,6 +13,19 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import akshare as ak
+from akshare.stock.issue import stock_finance_sina as sina_module
+from akshare.stock.finance import stock_finance_hk_em as hk_module
+
+# Bound HTTP calls: upstream helpers otherwise may wait indefinitely on a stalled source.
+def _install_http_timeout(module):
+    original_get = module.http.get
+    def bounded_get(*args, **kwargs):
+        kwargs.setdefault("timeout", 25)
+        return original_get(*args, **kwargs)
+    module.http.get = bounded_get
+
+_install_http_timeout(sina_module)
+_install_http_timeout(hk_module)
 
 ROOT = Path(__file__).resolve().parents[1]
 MASTER = ROOT / "data/china-stocks-financial-valuation.json"
