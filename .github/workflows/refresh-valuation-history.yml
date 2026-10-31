@@ -13,6 +13,7 @@ on:
       - "scripts/probe_legulegu_a_share_history.py"
       - "scripts/probe_eniu_a_share_history.py"
       - "scripts/audit_eniu_candidate_overlap.py"
+      - "scripts/build_eniu_pre2018_supplement.py"
       - "scripts/build_valuation_history.py"
   schedule:
     # Monthly refresh; 17:30 China Standard Time on the 3rd day of each month.
@@ -87,11 +88,17 @@ jobs:
           python -m py_compile scripts/audit_eniu_candidate_overlap.py
           python scripts/audit_eniu_candidate_overlap.py
 
+      - name: Build conservative Enniu pre-2018 supplement (PE-TTM/PB only)
+        run: |
+          python -m py_compile scripts/build_eniu_pre2018_supplement.py
+          python scripts/build_eniu_pre2018_supplement.py
+
       - name: Build month-end data and strict 5Y/10Y valuation percentiles
         run: |
           python scripts/build_valuation_history.py \
             --input data/valuation-history/raw/baostock-pre2018-daily.csv \
             --input data/valuation-history/raw/baidu-valuation-history.csv \
+            --input data/valuation-history/raw/eniu-pre2018-supplement.csv \
             --input data/valuation-history/raw/eastmoney-a-share-daily.csv \
             --out-dir data/valuation-history/generated
 
