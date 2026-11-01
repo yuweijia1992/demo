@@ -20,10 +20,10 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap nav"><a class="brand" href="../index.html">余暮 <small>/ 投资实验室</small></a><div class="navright"><a href="../index.html">个人主页</a><a href="valuation-engine.html">49家公司估值引擎</a><button class="theme" id="themeBtn">◐ 外观</button></div></div></header>
+<header class="top"><div class="wrap nav"><a class="brand" href="../index.html">余暮 <small>/ 投资实验室</small></a><div class="navright"><a href="../index.html">个人主页</a><a href="china-stocks-six-layers.html">49家公司完整总表</a><a href="valuation-engine.html">49家公司估值引擎</a><button class="theme" id="themeBtn">◐ 外观</button></div></div></header>
 <main class="wrap">
 <section class="hero"><div><div class="eyebrow">LONG-TERM EQUITY RESEARCH · V1.2</div><h1>中国上市公司<br>20孔投资研究系统</h1><p>把稀缺的投资决策留给少数真正理解的企业。先验证商业质量，再验证财务与护城河，最后才讨论估值和买入。这里记录证据，不用故事代替数据。</p></div><aside class="heroNote"><b>打孔卡不是选股排行榜</b>每一次重大投资都应经过独立审查。候选名单可以变化，证据必须可追溯；没有足够证据，就保持空白，不强行给分。</aside></section>
-<nav class="quicknav" aria-label="研究导航"><a href="#midea-q3">美的2026三季报</a><a href="#midea-q3-quality">利润与现金流穿透</a><a href="#midea-capital">历史FCF / ROIC</a><a href="#kuka-return">KUKA投后回报</a><a href="#midea-audit">并购审计</a><a href="#midea-roic-rebuild">2006—2025 ROIC重建</a><span>数据更新：2026-11-01</span></nav>
+<nav class="quicknav" aria-label="研究导航"><a href="china-stocks-six-layers.html">49家公司完整总表与六大层次</a><a href="valuation-engine.html">行业估值引擎</a><a href="#midea-q3">美的2026三季报</a><a href="#midea-q3-quality">利润与现金流穿透</a><a href="#midea-capital">历史FCF / ROIC</a><a href="#kuka-return">KUKA投后回报</a><a href="#midea-audit">并购审计</a><a href="#midea-roic-rebuild">2006—2025 ROIC重建</a><span>数据更新：2026-11-01</span></nav>
 <section class="stats"><div class="stat"><strong>20</strong><span>初始候选观察池</span></div><div class="stat"><strong>8</strong><span>研究审查环节</span></div><div class="stat"><strong>0</strong><span>已完成证据审计的最终入选</span></div><div class="stat"><strong>待核验</strong><span>当前估值与买入价格</span></div></section>
 <section class="section"><div class="sectionHead"><div><h2>候选企业观察池</h2><p>20家是研究起点，不是必须填满的20个投资名额。点击公司查看研究问题。</p></div><div class="tools"><input id="search" placeholder="搜索公司 / 代码"><select id="sector"><option value="">全部行业</option><option>消费与品牌</option><option>平台与互联网</option><option>制造与科技</option><option>公用事业与能源</option><option>金融</option><option>医疗健康</option></select></div></div>
 <div class="filters"><button class="filter active" data-group="全部">全部候选</button><button class="filter" data-group="第一层">第一层 · 优先研究</button><button class="filter" data-group="第二层">第二层 · 验证护城河</button><button class="filter" data-group="第三层">第三层 · 高变化风险</button></div>
@@ -31,28 +31,18 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
 <section class="section grid2"><div class="panel"><h3>八道审查关口</h3><p>每一关必须有证据、日期、来源和反证。分数不是事实，底层证据才是。</p><div class="gates">
 <div class="gate"><b>01 商业模式</b><span>客户价值、收入机制、单位经济性</span></div><div class="gate"><b>02 护城河</b><span>品牌、网络、成本、转换成本、牌照</span></div><div class="gate"><b>03 财务质量</b><span>ROIC、ROE、利润率、现金流、杠杆</span></div><div class="gate"><b>04 再投资空间</b><span>增量资本回报、成长空间、资本需求</span></div><div class="gate"><b>05 管理层</b><span>诚信、股东意识、激励与治理</span></div><div class="gate"><b>06 风险与可预测性</b><span>周期、监管、技术替代、客户集中</span></div><div class="gate"><b>07 内在价值</b><span>行业适配模型、三情景估值</span></div><div class="gate"><b>08 买入与持有</b><span>安全边际、回报要求、退出条件</span></div></div></div>
 <div class="panel"><h3>决策流程</h3><p>不能因为企业优秀就跳过价格，也不能因为价格便宜就忽略企业质量。</p><div class="steps"><div class="step"><b>观察</b><span>进入候选池</span></div><div class="step"><b>研究</b><span>证据与反证</span></div><div class="step"><b>估值</b><span>悲观 / 基准 / 乐观</span></div><div class="step"><b>决策</b><span>买入 / 等待 / 淘汰</span></div></div><div class="note">20孔约束的是重大决策频率，不是要求买满20家公司。保留现金、等待更好的机会，也是一种有效决策。</div></div></section>
-<section class="section panel"><h3>第一阶段｜49家公司数据库桥接审计</h3><p>截至本次核对，已找到的历史底稿为《20年企业研究数据库 V2.0 估值框架版》，实际覆盖8家公司、2006—2025年度框架，共160个公司—年度行；它不是49家公司完整数据库。20孔候选池与底稿有6家重合，另有14家尚无对应底稿。以下状态只表示“是否存在底稿映射”，不代表财务数据已经完整或通过投资审查。</p><div class="stats" style="margin:16px 0"><div class="stat"><strong>8</strong><span>原底稿公司</span></div><div class="stat"><strong>6 / 20</strong><span>已映射至20孔候选池</span></div><div class="stat"><strong>14</strong><span>候选池待接入</span></div><div class="stat"><strong>0</strong><span>已完成ROIC与FCF长期审计</span></div></div><div class="tablebox"><table><thead><tr><th>20孔候选公司</th><th>代码</th><th>底稿映射</th><th>下一步</th></tr></thead><tbody>
-<tr><td>贵州茅台</td><td>600519</td><td><span class="tag">已映射</span></td><td>核验年报、现金流与资本回报</td></tr>
-<tr><td>腾讯控股</td><td>0700.HK</td><td>待接入</td><td>建立港股独立口径</td></tr>
-<tr><td>美的集团</td><td>000333</td><td><span class="tag">已映射</span></td><td>补齐早期财务、ROIC与FCF</td></tr>
-<tr><td>海尔智家</td><td>600690</td><td><span class="tag">已映射</span></td><td>核验财务连续性与资本开支</td></tr>
-<tr><td>伊利股份</td><td>600887</td><td>待接入</td><td>建立年度财务序列</td></tr>
-<tr><td>长江电力</td><td>600900</td><td><span class="tag">已映射</span></td><td>补齐历史年度与水电专属指标</td></tr>
-<tr><td>中国移动</td><td>600941 / 0941.HK</td><td>待接入</td><td>建立A/H股口径及资本开支序列</td></tr>
-<tr><td>中国神华</td><td>601088 / 1088.HK</td><td>待接入</td><td>建立煤炭、电力、铁路分部分析</td></tr>
-<tr><td>招商银行</td><td>600036</td><td><span class="tag">已映射</span></td><td>改用银行专属资本与资产质量指标</td></tr>
-<tr><td>中国海油</td><td>600938 / 0883.HK</td><td>待接入</td><td>建立油气储量、成本与周期现金流</td></tr>
-<tr><td>恒瑞医药</td><td>600276</td><td>待接入</td><td>建立研发管线与商业化数据</td></tr>
-<tr><td>美团</td><td>3690.HK</td><td>待接入</td><td>港股平台企业专属口径</td></tr>
-<tr><td>拼多多</td><td>PDD</td><td>待接入</td><td>美股ADR及人民币/美元口径转换</td></tr>
-<tr><td>比亚迪</td><td>002594 / 1211.HK</td><td>待接入</td><td>A/H股与汽车分部资本回报</td></tr>
-<tr><td>宁德时代</td><td>300750 / 3750.HK</td><td>待接入</td><td>电池业务产能、价格与资本回报</td></tr>
-<tr><td>福耀玻璃</td><td>600660 / 3606.HK</td><td>待接入</td><td>汽车玻璃全球业务与产能回报</td></tr>
-<tr><td>格力电器</td><td>000651</td><td><span class="tag">已映射</span></td><td>统一代码格式并补资本开支</td></tr>
-<tr><td>迈瑞医疗</td><td>300760</td><td>待接入</td><td>医疗设备分部与研发回报</td></tr>
-<tr><td>安踏体育</td><td>2020.HK</td><td>待接入</td><td>港股品牌组合及并购回报</td></tr>
-<tr><td>海天味业</td><td>603288</td><td>待接入</td><td>调味品销量、渠道与现金流</td></tr>
-</tbody></table></div><div class="note">原底稿中另有中国平安（601318）和工商银行（601398），二者不在当前20家候选池。暂时保留在49家公司长期研究库，不自动纳入20孔候选名单。代码格式须统一：例如美的集团000333、格力电器000651，不能丢失前导零。</div><h3 style="margin-top:20px">原始数据完整性抽查</h3><p>年度财务表中ROE、收入、净利润、负债等字段存在公司间差异；部分公司早期年度规模数据缺失。BVPS_History的历史值多数仍待核验；Valuation_History虽预置月度月份行，但价格和估值字段为空。现阶段没有足够数据计算20家公司的统一ROIC/FCF排名或安全边际。</p></section>
+<section class="section panel" id="universe-link"><h3>完整研究池｜49家公司数据库与20孔候选池的关系</h3>
+<p>本页的20孔是长期持仓前的精选观察池，限制重大投资决策数量；它不是完整研究股票池。完整股票研究池现已独立恢复为49家发行人：44家A股主证券、5家港股主证券，按衣食住行、医疗健康、能源与基础设施、科技进步、金融稳定、社会运行与消费服务六大层次分类。A/H双重上市和ADR参考证券单独记录，不重复算发行人。</p>
+<div class="stats" style="margin:16px 0">
+<div class="stat"><strong>49</strong><span>发行人总数：44 A股 + 5 港股</span></div>
+<div class="stat"><strong>210 / 210</strong><span>三大报表原始采集请求已返回记录</span></div>
+<div class="stat"><strong>8,942</strong><span>真实月度估值观测记录</span></div>
+<div class="stat"><strong>0 / 49</strong><span>正式5年/10年分位字段回填</span></div>
+</div>
+<p>财报采集审计显示49/49家公司均有三大报表记录；44家A股中43家最新报告期已到2026年9月30日，中芯国际截至2026年6月30日。注意：原始年报、中报和季报已回收，不等于2021—2025逐年科目标准化、BVPS/股本变动、分红、历史资本开支和ROIC分析全部完成。</p>
+<p>历史估值月度档案覆盖49/49家至少一条观测，但每家公司历史长度不同。按月内最后可得数据的5年分位覆盖PE/PB/PS为41/46/42家，10年为20/23/0家；要求最新值距月末不超过5个交易日后，覆盖下降至40/45/42家和2/3/0家。当前月度序列有21.5%的观测滞后月末超过5个交易日，故不能将全部观测说成严格月末数据。正式数据库的估值分位字段仍为0/49家回填。</p>
+<div class="lab-links" style="margin-top:16px"><a href="china-stocks-six-layers.html">打开49家公司完整总表与逐家公司财务档案 ↗</a><a href="valuation-engine.html">打开49家公司行业估值引擎 ↗</a><a href="../data/raw-financials/coverage_audit.json">三大报表210组采集审计 ↗</a><a href="../data/valuation-history/generated/coverage-audit.json">49家公司历史估值覆盖审计 ↗</a><a href="../data/valuation-inputs/valuation-input-audit-49.json">49家公司估值输入缺口审计 ↗</a></div>
+<div class="note">20孔页面保留为精选投资审查流程；49家公司完整研究与估值应以“六大层次总表”和“估值决策引擎”为准。本页的美的集团等公司专题是独立案例档案，不代表后续研究只围绕其中一家。</div></section>
 <section class="section panel"><h3>研究数据纪律</h3><div class="grid2"><div><p><b>数据来源</b><br>优先使用上市公司年报、审计报告、交易所公告、监管披露及可复核的历史行情。记录报告期、发布日期、币种、单位、合并口径和下载日期。</p><p style="margin-top:12px"><b>缺失处理</b><br>缺失值保留为空，不以行业均值或模型推测冒充历史事实。估算值必须标注估算方法和假设。</p></div><div><p><b>财务口径</b><br>区分经营现金流、资本开支与自由现金流；金融企业单独处理负债和资本。ROIC须说明税率、投入资本及商誉处理。</p><p style="margin-top:12px"><b>结论审计</b><br>每个重要判断同时记录支持证据、反证、失效条件、更新时间和责任结论。</p></div></div></section>
 <div class="note">版本说明：V1.0为研究框架与候选池界面。当前页面没有填入未经核验的ROIC、自由现金流、历史估值分位或买入价格。后续数据将从49家公司研究数据库导入，并按公司逐项完成审计。</div>
 </main>
