@@ -22,7 +22,6 @@ def main():
         item = company_map.setdefault(key, {
             "company": record.get("company"),
             "listings": [],
-            "company": record.get("company"),
             "provider": record.get("provider"),
             "statements": [],
         })
