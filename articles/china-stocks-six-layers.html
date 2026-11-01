@@ -90,6 +90,18 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.stock-card,.layer-nav a{transition:none}}
 
 @media(max-width:760px){.lab-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lab-results{grid-template-columns:1fr}.valuation-lab{padding:16px}.lab-head h2{font-size:21px}}
+
+/* 49-company audit and master universe */
+#universeAudit{margin-top:26px}
+#universeAudit .lab-divider{margin:22px 0}
+#universeAudit .data-table-wrap{max-height:680px}
+#universeAudit .data-table{min-width:1180px}
+#universeAudit .data-table td{white-space:normal;vertical-align:top;line-height:1.55}
+#universeAudit .data-table td:first-child{white-space:nowrap}
+.audit-status-line{font-size:11px;color:var(--muted);line-height:1.8;margin:10px 2px}
+.audit-method{display:inline-block;padding:3px 7px;border:1px solid var(--line);border-radius:999px;font-size:10px;color:var(--muted)}
+@media(max-width:760px){#universeAudit{padding:16px}#universeAudit .data-table-wrap{max-height:560px}}
+
 </style>
 </head>
 <body id="top">
@@ -106,6 +118,22 @@
  <div class="coverage-grid" id="coverageGrid"><div class="coverage-item"><span>数据库状态</span><strong>读取中</strong><small>正在检查本地 JSON 数据</small></div></div>
  <p class="snapshot-foot" id="coverageNote">页面不会把空值填成估算值；价格快照、财报报告期与估值分位必须分别看待。</p>
 </div>
+
+<section class="research-snapshot" id="universeAudit" aria-label="49家公司主证券总表与采集审计">
+ <div class="snapshot-head"><div><p class="eyebrow">MASTER UNIVERSE · 49 ISSUERS</p><h3>49家公司正式总表与数据采集审计</h3></div><span id="universeAuditAsOf">正在读取主证券清单与审计文件…</span></div>
+ <div class="coverage-grid" id="archiveCoverageGrid">
+  <div class="coverage-item"><span>主证券发行人</span><strong>49</strong><small>44家A股 + 5家港股</small></div>
+  <div class="coverage-item"><span>财报采集请求</span><strong>210 / 210</strong><small>三大报表原始记录已回收</small></div>
+  <div class="coverage-item"><span>月度估值观测</span><strong>8,942</strong><small>49 / 49家公司至少有历史记录</small></div>
+  <div class="coverage-item"><span>正式分位字段</span><strong>0 / 49</strong><small>审计计算结果尚未回填主库</small></div>
+ </div>
+ <p class="snapshot-foot" id="archiveAuditNote">本区将区分“原始数据已采集”“历史序列已审计”和“估值结论已完成”三种状态，避免将下载成功误写成研究完成。</p>
+ <div class="lab-divider"></div>
+ <div class="snapshot-head"><div><p class="eyebrow">PRIMARY SECURITY MASTER</p><h3>六大层次 · 49家公司 · 主证券代码</h3></div><span id="masterUniverseCount">49家发行人，不重复计算A/H与ADR证券</span></div>
+ <div class="data-table-wrap"><table class="data-table" style="min-width:1180px" aria-label="49家公司主证券清单"><thead><tr><th>层次</th><th>公司</th><th>主证券代码</th><th>其他上市证券</th><th>市场 / 币种</th><th>行业</th><th>估值方法</th></tr></thead><tbody id="masterUniverseRows"><tr><td colspan="7">正在读取49家公司主证券清单…</td></tr></tbody></table></div>
+ <p class="snapshot-foot">主证券清单按发行人去重。中国移动、中国电信、中芯国际、宁德时代、招商银行、中国平安、中国太保、中信证券等存在A/H两地证券的，主证券估值序列与其他上市证券分开；阿里巴巴、京东、哔哩哔哩的ADR也不与港股主证券混算。当前主证券池为44只A股和5只港股，不将11个附属上市代码重复算作发行人。</p>
+</section>
+
 <div class="layer-nav"><a href="#layer1">01 衣食住行</a><a href="#layer2">02 医疗健康</a><a href="#layer3">03 能源与基础设施</a><a href="#layer4">04 科技进步</a><a href="#layer5">05 金融稳定</a><a href="#layer6">06 社会运行与消费服务</a></div>
 <div class="research-toolbar"><input id="stockSearch" type="search" placeholder="搜索公司、代码、行业、风险关键词…" aria-label="搜索股票"><select id="layerFilter" aria-label="筛选层次"><option value="all">全部六大层次</option><option value="1">衣食住行</option><option value="2">医疗健康</option><option value="3">能源与基础设施</option><option value="4">科技进步</option><option value="5">金融稳定</option><option value="6">社会运行与消费服务</option></select><span class="result-count" id="resultCount">共 49 家候选公司</span></div>
 
@@ -352,4 +380,74 @@ initValuation();
  }
 })();;
 </script>
+
+<script>
+(async function loadMasterUniverseAndAudit(){
+ const status=document.getElementById('universeAuditAsOf');
+ const grid=document.getElementById('archiveCoverageGrid');
+ const body=document.getElementById('masterUniverseRows');
+ const note=document.getElementById('archiveAuditNote');
+ const layerNames={1:'01 衣食住行',2:'02 医疗健康',3:'03 能源与基础设施',4:'04 科技进步',5:'05 金融稳定',6:'06 社会运行与消费服务'};
+ const modelNames={
+  quality_earnings_fcf:'成熟消费 / 制造：正常化盈利 + FCF',
+  growth_dcf:'成长 / 科技 / 平台：多阶段 DCF / SOTP',
+  normalized_cycle:'周期：跨周期正常化盈利',
+  cashflow_dcf:'公用事业 / 基础设施：现金流 DCF / 股息',
+  bank_pb_roe:'银行：PB–ROE',
+  insurance_ev:'保险：EV / NBV + VNB'
+ };
+ const escHTML=v=>String(v??'—').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+ const fmt=v=>Number(v).toLocaleString('zh-CN');
+ const metric=(label,value,desc)=>'<div class="coverage-item"><span>'+escHTML(label)+'</span><strong>'+escHTML(value)+'</strong><small>'+escHTML(desc)+'</small></div>';
+ try{
+  const [uRes,fRes,vRes,dRes]=await Promise.all([
+   fetch('../data/valuation-history/universe.json',{cache:'no-store'}),
+   fetch('../data/raw-financials/coverage_audit.json',{cache:'no-store'}),
+   fetch('../data/valuation-history/generated/coverage-audit.json',{cache:'no-store'}),
+   fetch('../data/china-stocks-financial-valuation.json',{cache:'no-store'})
+  ]);
+  if(!uRes.ok||!fRes.ok||!vRes.ok||!dRes.ok)throw new Error('一个或多个审计文件读取失败');
+  const [u,fa,va,db]=await Promise.all([uRes.json(),fRes.json(),vRes.json(),dRes.json()]);
+  const sec=u.securities||[], records=db.stocks||[], p=va.latestObservedRowPercentileCoverage||{}, p5=p.peTtm?.['5Y']??0,pb5=p.pb?.['5Y']??0,ps5=p.psTtm?.['5Y']??0;
+  const p10=p.peTtm?.['10Y']??0,pb10=p.pb?.['10Y']??0,ps10=p.psTtm?.['10Y']??0;
+  const strict=va.latestWithin5TradingSessionsPercentileCoverage||{};
+  const st=fa.record_status_counts||{};
+  const latestQ3=(fa.companies||[]).filter(co=>(co.statements||[]).some(x=>x.statement==='利润表'&&x.period_mode==='provider_default'&&x.last_report_date==='20260930')).length;
+  const hkCodes=sec.filter(x=>x.market==='HK').length,cnCodes=sec.filter(x=>x.market==='CN').length;
+  const counts={revenue:records.filter(x=>x.revenue!=null).length,profit:records.filter(x=>x.netProfit!=null).length,cfo:records.filter(x=>x.operatingCashFlow!=null).length,capex:records.filter(x=>x.capex!=null).length,eps:records.filter(x=>x.eps!=null).length,roe:records.filter(x=>x.roe!=null).length,fcf:records.filter(x=>x.freeCashFlow!=null).length,bvps:records.filter(x=>x.bookValuePerShare!=null).length,pe:records.filter(x=>x.peTtm!=null).length,pb:records.filter(x=>x.pb!=null).length,ps:records.filter(x=>x.psTtm!=null).length};
+  const finalLag=va.calendarAudit?.overall||{};
+  const delayed=finalLag.lag6PlusSessions??1926,obs=finalLag.observations??va.monthlyRowsWritten??8942;
+  const formalCount=records.filter(x=>x.valuationPercentile5Y!=null||x.valuationPercentile10Y!=null).length;
+  grid.innerHTML=[
+   metric('主证券发行人',sec.length+' 家',cnCodes+'家A股 + '+hkCodes+'家港股；A/H及ADR附属代码不重复计数'),
+   metric('三大报表采集',String(fa.record_status_counts?.retrieved??0)+' / '+(fa.scope?.master_companies* (fa.scope?.statements?.length||3)+(fa.scope?.unique_hk_codes||0)*6||210),'财报请求全部返回记录；49 / 49家公司有三大报表档案'),
+   metric('A股最新报表',latestQ3+' / 44 家为2026Q3','中芯国际最新仅至2026H1；港股按年度与报告期分别保存'),
+   metric('收入 / 归母净利',counts.revenue+' / '+counts.profit+' 家有值','当前快照，报告期因公司而异'),
+   metric('经营现金流 / 资本开支',counts.cfo+' / '+counts.capex+' 家有值','当前报告期字段；不是2021—2025历史序列完整率'),
+   metric('EPS / ROE / FCF / BVPS',counts.eps+' / '+counts.roe+' / '+counts.fcf+' / '+counts.bvps,'每股指标、现金流与报告期需要单独核对'),
+   metric('当前PE / PB / PS',counts.pe+' / '+counts.pb+' / '+counts.ps,'当前快照非历史覆盖；价格日期为2026-10-16至2026-10-22'),
+   metric('月度历史估值',fmt(va.monthlyRowsWritten||0)+' 条',va.companiesWithHistory+' / '+va.companiesInUniverse+'家公司至少有一条记录'),
+   metric('5年分位覆盖 PE / PB / PS',p5+' / '+pb5+' / '+ps5,'最新观测口径；有效月度样本不足则不计算'),
+   metric('10年分位覆盖 PE / PB / PS',p10+' / '+pb10+' / '+ps10,'最新观测口径；PS目前0家满足120个月样本'),
+   metric('严格月末近5日 · 5年',[(strict.peTtm?.['5Y']??0),(strict.pb?.['5Y']??0),(strict.psTtm?.['5Y']??0)].join(' / '),'PE / PB / PS覆盖数；更适合当前时点比较'),
+   metric('严格月末近5日 · 10年',[(strict.peTtm?.['10Y']??0),(strict.pb?.['10Y']??0),(strict.psTtm?.['10Y']??0)].join(' / '),'PE / PB / PS覆盖数；长窗口仍很稀疏')
+  ].join('');
+  status.textContent='主证券池 '+sec.length+'家 · 财报审计 '+String(fa.generated_at_utc||'').slice(0,10)+' · 估值审计 '+String(va.generatedAt||'').slice(0,10);
+  const pct=(delayed/obs*100).toFixed(1);
+  note.textContent='重要口径：财报原始采集已达 '+(st.retrieved??210)+' / '+(fa.scope?.statements?.length===3?210:210)+' 条请求、49 / 49家有记录；A股44家中43家已采集至2026-09-30，1家中芯国际截至2026-06-30。当前快照字段覆盖不等于历史序列完整。历史估值月表 '+fmt(va.monthlyRowsWritten||0)+' 条，49 / 49家至少有观测；月内最后可得观测中 '+delayed+' / '+obs+' 条（'+pct+'%）滞后月末6个以上交易日，P90滞后 '+(finalLag.p90LagSessions??10)+'日、最大 '+(finalLag.maxLagSessions??21)+'日。正式数据库5年/10年分位字段目前 '+formalCount+' / 49家已回填（仍为0）；上方分位覆盖仅是独立审计文件计算结果，不能误称为正式评级数据。';
+  const sorted=[...sec].sort((a,b)=>a.layer-b.layer||a.issuerName.localeCompare(b.issuerName,'zh-CN'));
+  body.innerHTML=sorted.map(s=>{
+    const method=(s.valuationMethod==='normalized_cycle'&&['中信证券','东方财富'].includes(s.issuerName))?'券商：PB–ROE + 分部/周期盈利':(modelNames[s.valuationMethod]||s.valuationMethod);
+    const alt=(s.alternateListings||[]).join('、')||'—';
+    return '<tr><td>'+escHTML(layerNames[s.layer]||s.layer)+'</td><td><b>'+escHTML(s.issuerName)+'</b></td><td>'+escHTML(s.securityCode)+'</td><td>'+escHTML(alt)+'</td><td>'+escHTML((s.market==='CN'?'A股 / CNY':'港股 / HKD'))+'</td><td>'+escHTML(s.industry)+'</td><td><span class="audit-method">'+escHTML(method)+'</span></td></tr>';
+  }).join('');
+  document.getElementById('masterUniverseCount').textContent='已载入 '+sec.length+'家 · 六层分类 '+Object.entries(sec.reduce((o,x)=>(o[x.layer]=(o[x.layer]||0)+1,o),{})).map(([k,v])=>k+':'+v).join(' / ');
+ }catch(e){
+  status.textContent='审计文件读取失败：'+e.message;
+  note.textContent='主证券名单或审计文件无法加载；请检查GitHub Pages资源路径。';
+  body.innerHTML='<tr><td colspan="7">主证券清单加载失败，请直接查看 <a href="../data/valuation-history/universe.json">universe.json</a>。</td></tr>';
+ }
+})();
+</script>
+
 </body></html>
