@@ -1,29 +1,29 @@
 # 49家公司历史估值数据源与缺口审计
 
-> 审计日期：2026-10-30。下列统计来自仓库中的 `generated/coverage-audit.json` 与 `raw/baidu-fetch-audit.json`，是当前实际抓取结果，不代表已经满足最终发布门槛。
+> 审计日期：2026-10-30。下列统计以仓库当前 `generated/coverage-audit.json` 为准，代表真实抓取、清洗与月度聚合结果，不代表49家公司的三项估值指标全部齐全或已通过最终发布门槛。
 
 ## 当前真实数据状态
 
-- 研究池：49只主证券（44只A股、5只港股）。
-- 输入原始日频记录：104,602条；生成月度记录：8,993条。
-- 至少有一项历史估值：49/49家。这里的“有历史”只表示至少有一个月度观测，不能理解为PE、PB、PS全部齐备。
-- 东方财富：44/44只A股有2018年起的公开日频数据，当前审计源行数89,695条；字段含PE-TTM、PB-MRQ、PS-TTM及收盘价。
-- 百度股市通：36/44只A股取得2018年前历史数据；港股5/5只取得PE/PB历史。当前经交易日历过滤后保留14,907条原始记录。百度接口实测只返回PE/PB，PS探测没有返回数据。
-- BaoStock：此前回补尝试登录失败（10002007 网络接收错误），0条有效记录。
-- 亿牛网港股备用补段：本轮实际写入0条。不可把接口存在当作取得数据。
-- 月度数据仅保留真实观测；缺失月份不插值、不前向填充。
+- 研究池：49只主证券（44只A股、5只港股）；同一发行人的A/H与ADR其他代码不重复计入主证券数。
+- 月度估值：参与清洗的日频输入记录 100,724 条，生成 8,942 条月度观测，49/49只主证券至少有一项历史记录。
+- 每家公司实际历史起点不同；月度观测记录数量为 51—250 条，不能将“49/49有历史”解释为每家都有完整20年数据。
+- 数据源：A股主要来自东方财富（2018年至今）与百度股市通的早期PE/PB补段；港股主证券使用独立港股代码与HKD价格口径。BaoStock登录失败（10002007），本轮未贡献有效数据；百度PS探测未返回有效数据，港股5家公司PS均为空。
+- 月度数据保留真实观测；不对缺失月份插值、不向前填充。负PE及无效非正倍数不进入估值分位。
+- 当前价格日期、估值观测日期和财报报告期是不同维度，不能把月度估值最后观测日冒充为实时价格或报告期数据。
 
 ## 最新5年/10年分位覆盖
 
-窗口规则为最近60/120个日历月，至少需要60/120个有效月度数值。下列是当前最新月度行的覆盖家数：
+分位窗口分别要求最近60/120个日历月且有效样本不少于60/120个。最新审计结果如下：
 
 | 口径 | PE-TTM 5Y | PB 5Y | PS-TTM 5Y | PE-TTM 10Y | PB 10Y | PS-TTM 10Y |
 |---|---:|---:|---:|---:|---:|---:|
-| 月内最后可得观测 | 41 | 45 | 42 | 10 | 12 | 0 |
-| 当前值及窗口样本均要求距月末不超过5个交易日 | 40 | 44 | 42 | 1 | 1 | 0 |
+| 月内最后可得观测 | 41 | 46 | 42 | 20 | 23 | 0 |
+| 当前值及窗口样本均要求距月末不超过5个交易日 | 40 | 45 | 42 | 2 | 3 | 0 |
 | 当前值及窗口样本均要求恰为最后交易日 | 39 | 42 | 42 | 0 | 0 | 0 |
 
-**解释：** 默认“月内最后可得观测”是供应商在该月最后一次实际返回的数据点，并不保证恰好是交易所月末最后一个交易日。全体月度观测距月末交易日的滞后中位数为0个交易日，P90为9个交易日，最大21个交易日；港股中位数为3个交易日，P90为12个交易日。严谨分析应同时展示样本数量和距月末时滞。当前严格10年数据仍不足：在不超过5个交易日的口径下，PE/PB分别仅1家，PS为0家；精确月末口径10年三项均为0家。
+**月末时点质量：** 共8,942条月度观测，其中严格落在月内最后交易日的5,010条；滞后1—2个交易日869条，3—5个交易日1,137条，6个及以上交易日1,926条（21.5%）。整体P90滞后10个交易日，最大21个交易日。因此“月内最后可得观测”并不总是严格月末价。按严格5个交易日口径，10年PE/PB/PS仅覆盖2/3/0家；精确月末10年覆盖为0/0/0家。
+
+**重要区别：** 上表是从历史月度序列独立计算的审计覆盖。主财务估值JSON中的正式5年/10年分位字段目前仍未回填；不得将独立审计覆盖写成49家公司已拥有正式估值结论。
 
 ## 港股5家公司独立审计
 
@@ -33,14 +33,14 @@
 |---|---|---:|---|---:|---:|---:|---:|
 | 腾讯控股 | `00700.HK` | 211 | 2006-01 | 211 | 211 | 0 | 39 |
 | 申洲国际 | `02313.HK` | 245 | 2006-01 | 245 | 245 | 0 | 5 |
-| 京东集团 | `09618.HK` | 77 | 2020-06 | 48 | 23 | 0 | 0 |
+| 京东集团 | `09618.HK` | 77 | 2020-06 | 71 | 77 | 0 | 0 |
 | 哔哩哔哩 | `09626.HK` | 68 | 2021-03 | 15 | 68 | 0 | 0 |
 | 阿里巴巴 | `09988.HK` | 84 | 2019-11 | 84 | 84 | 0 | 0 |
 
 结论：
 - 腾讯、申洲国际的月度记录起点达到2006年研究区间起点；百度原始页面报告的最早日分别约为2004-06和2005-11，但本项目目标窗口从2006-01开始。
 - 阿里巴巴从2019-11开始；京东从2020-06开始；哔哩哔哩从2021-03开始。更早月份属于上市前，不应造数。
-- 京东PE仅48个有效月，哔哩哔哩PE仅15个有效月，须结合亏损/不可解释的PE空值处理；三家新上市港股均不足10年。
+- 京东PE有71个有效月、PB有77个有效月；哔哩哔哩PE仅15个有效月，须结合亏损/不可解释的PE空值处理；三家新上市港股均不足10年。
 - 港股5家公司当前PS-TTM均为空。百度股市通的公开接口文档与实际返回均只支持PE/PB；亿牛网本轮未补入数据。GuruFocus页面可见部分历史PE曲线，但未取得可免费批量导出的原始三指标月度CSV。
 
 ## A股2015年前后覆盖概况
@@ -57,56 +57,56 @@
 百度公开接口已使36/44只A股出现2018年前的PE/PB观测；另外8只A股目前仅有东方财富源。仅靠“起始月份”不足以认定每个月都有数据，逐股记录数量、缺月数及各指标有效月数见下表。当前数据库并未达到全部证券、全部指标的10年严格月末覆盖。
 
 | 市场 | 公司 | 代码 | 首月 | 月度记录 | 缺月 | PE有效月 | PB有效月 | PS有效月 | 主要来源 |
-|---|---|---|---|---:|---:|---:|---:|---:| 
-| CN | 美的集团 | `000333.SZ` | 2013-09 | 158 | 0 | 148 | 116 | 106 | 百度 + 东方财富 |
-| CN | 兴蓉环境 | `000598.SZ` | 2006-01 | 243 | 7 | 126 | 220 | 106 | 百度 + 东方财富 |
-| CN | 格力电器 | `000651.SZ` | 2006-01 | 235 | 15 | 235 | 235 | 106 | 百度 + 东方财富 |
-| CN | 分众传媒 | `002027.SZ` | 2006-01 | 246 | 4 | 121 | 228 | 106 | 百度 + 东方财富 |
-| CN | 顺丰控股 | `002352.SZ` | 2010-02 | 201 | 0 | 180 | 127 | 106 | 百度 + 东方财富 |
-| CN | 北方华创 | `002371.SZ` | 2010-03 | 200 | 0 | 200 | 200 | 106 | 百度 + 东方财富 |
-| CN | 比亚迪 | `002594.SZ` | 2011-07 | 184 | 0 | 184 | 184 | 106 | 百度 + 东方财富 |
-| CN | 中公教育 | `002607.SZ` | 2011-08 | 183 | 0 | 136 | 183 | 106 | 百度 + 东方财富 |
-| CN | 牧原股份 | `002714.SZ` | 2014-01 | 154 | 0 | 91 | 145 | 106 | 百度 + 东方财富 |
-| HK | 腾讯控股 | `00700.HK` | 2006-01 | 211 | 39 | 211 | 211 | 0 | 百度 |
-| HK | 申洲国际 | `02313.HK` | 2006-01 | 245 | 5 | 245 | 245 | 0 | 百度 |
-| HK | 京东集团 | `09618.HK` | 2020-06 | 77 | 0 | 48 | 23 | 0 | 百度 |
-| HK | 哔哩哔哩 | `09626.HK` | 2021-03 | 68 | 0 | 15 | 68 | 0 | 百度 |
-| HK | 阿里巴巴 | `09988.HK` | 2019-11 | 84 | 0 | 84 | 84 | 0 | 百度 |
-| CN | 爱尔眼科 | `300015.SZ` | 2009-11 | 204 | 0 | 129 | 181 | 106 | 百度 + 东方财富 |
-| CN | 东方财富 | `300059.SZ` | 2010-03 | 200 | 0 | 122 | 179 | 106 | 百度 + 东方财富 |
-| CN | 汇川技术 | `300124.SZ` | 2010-10 | 193 | 0 | 193 | 193 | 106 | 百度 + 东方财富 |
-| CN | 阳光电源 | `300274.SZ` | 2011-11 | 180 | 0 | 180 | 180 | 106 | 百度 + 东方财富 |
-| CN | 中际旭创 | `300308.SZ` | 2012-05 | 174 | 0 | 160 | 174 | 106 | 百度 + 东方财富 |
-| CN | 宁德时代 | `300750.SZ` | 2018-06 | 101 | 0 | 101 | 101 | 101 | 东方财富 |
-| CN | 迈瑞医疗 | `300760.SZ` | 2018-10 | 97 | 0 | 97 | 97 | 97 | 东方财富 |
-| CN | 中信证券 | `600030.SH` | 2006-01 | 250 | 0 | 240 | 116 | 106 | 百度 + 东方财富 |
-| CN | 招商银行 | `600036.SH` | 2006-01 | 247 | 3 | 199 | 154 | 106 | 百度 + 东方财富 |
-| CN | 宇通客车 | `600066.SH` | 2006-01 | 235 | 15 | 235 | 235 | 106 | 百度 + 东方财富 |
-| CN | 恒瑞医药 | `600276.SH` | 2006-01 | 226 | 24 | 226 | 226 | 106 | 百度 + 东方财富 |
-| CN | 瀚蓝环境 | `600323.SH` | 2006-01 | 226 | 24 | 226 | 226 | 106 | 百度 + 东方财富 |
-| CN | 海澜之家 | `600398.SH` | 2006-01 | 226 | 24 | 226 | 226 | 106 | 百度 + 东方财富 |
-| CN | 国电南瑞 | `600406.SH` | 2006-01 | 250 | 0 | 250 | 250 | 106 | 百度 + 东方财富 |
-| CN | 国药股份 | `600511.SH` | 2006-01 | 250 | 0 | 250 | 250 | 106 | 百度 + 东方财富 |
-| CN | 川投能源 | `600674.SH` | 2006-02 | 217 | 32 | 217 | 217 | 106 | 百度 + 东方财富 |
-| CN | 海尔智家 | `600690.SH` | 2006-02 | 217 | 32 | 217 | 217 | 106 | 百度 + 东方财富 |
-| CN | 锦江酒店 | `600754.SH` | 2006-01 | 243 | 7 | 116 | 220 | 106 | 百度 + 东方财富 |
-| CN | 伊利股份 | `600887.SH` | 2006-01 | 235 | 15 | 211 | 235 | 106 | 百度 + 东方财富 |
-| CN | 长江电力 | `600900.SH` | 2006-01 | 238 | 12 | 238 | 238 | 106 | 百度 + 东方财富 |
-| CN | 中国移动 | `600941.SH` | 2022-01 | 58 | 0 | 58 | 58 | 58 | 东方财富 |
-| CN | 中国神华 | `601088.SH` | 2007-10 | 228 | 1 | 228 | 228 | 106 | 百度 + 东方财富 |
-| CN | 中国平安 | `601318.SH` | 2007-03 | 236 | 0 | 127 | 212 | 106 | 百度 + 东方财富 |
-| CN | 工商银行 | `601398.SH` | 2006-10 | 239 | 2 | 239 | 239 | 106 | 百度 + 东方财富 |
-| CN | 中国太保 | `601601.SH` | 2008-01 | 226 | 0 | 200 | 128 | 106 | 百度 + 东方财富 |
-| CN | 中国建筑 | `601668.SH` | 2009-07 | 208 | 0 | 185 | 129 | 106 | 百度 + 东方财富 |
-| CN | 中国电信 | `601728.SH` | 2021-08 | 63 | 0 | 63 | 63 | 63 | 东方财富 |
-| CN | 京沪高铁 | `601816.SH` | 2020-01 | 82 | 0 | 82 | 82 | 82 | 东方财富 |
-| CN | 中国中免 | `601888.SH` | 2009-10 | 205 | 0 | 182 | 129 | 106 | 百度 + 东方财富 |
-| CN | 中远海控 | `601919.SH` | 2007-07 | 231 | 1 | 169 | 231 | 106 | 百度 + 东方财富 |
-| CN | 中国核电 | `601985.SH` | 2015-06 | 137 | 0 | 131 | 112 | 106 | 百度 + 东方财富 |
-| CN | 药明康德 | `603259.SH` | 2018-05 | 102 | 0 | 102 | 102 | 102 | 东方财富 |
-| CN | 海天味业 | `603288.SH` | 2014-02 | 153 | 0 | 153 | 153 | 106 | 百度 + 东方财富 |
-| CN | 海光信息 | `688041.SH` | 2022-08 | 51 | 0 | 51 | 51 | 51 | 东方财富 |
-| CN | 中芯国际 | `688981.SH` | 2020-07 | 76 | 0 | 76 | 76 | 76 | 东方财富 |
+|---|---|---|---|---:|---:|---:|---:|---:|---|
+| CN | 美的集团 | `000333.SZ` | 2013-09 | 158 | 0 | 158 | 158 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 兴蓉环境 | `000598.SZ` | 2006-01 | 235 | 15 | 206 | 235 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 格力电器 | `000651.SZ` | 2006-01 | 235 | 15 | 235 | 235 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 分众传媒 | `002027.SZ` | 2006-01 | 238 | 12 | 197 | 238 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 顺丰控股 | `002352.SZ` | 2010-02 | 201 | 0 | 201 | 201 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 北方华创 | `002371.SZ` | 2010-03 | 200 | 0 | 200 | 200 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 比亚迪 | `002594.SZ` | 2011-07 | 184 | 0 | 184 | 184 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 中公教育 | `002607.SZ` | 2011-08 | 183 | 0 | 136 | 183 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 牧原股份 | `002714.SZ` | 2014-02 | 153 | 0 | 129 | 153 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 爱尔眼科 | `300015.SZ` | 2009-11 | 203 | 1 | 203 | 203 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 东方财富 | `300059.SZ` | 2010-03 | 200 | 0 | 190 | 200 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 汇川技术 | `300124.SZ` | 2010-10 | 193 | 0 | 193 | 193 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 阳光电源 | `300274.SZ` | 2011-11 | 180 | 0 | 180 | 180 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 中际旭创 | `300308.SZ` | 2012-05 | 174 | 0 | 160 | 174 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 宁德时代 | `300750.SZ` | 2018-06 | 101 | 0 | 101 | 101 | 101 | Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 迈瑞医疗 | `300760.SZ` | 2018-10 | 97 | 0 | 97 | 97 | 97 | Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 中信证券 | `600030.SH` | 2006-01 | 250 | 0 | 250 | 250 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 招商银行 | `600036.SH` | 2006-01 | 226 | 24 | 226 | 226 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 宇通客车 | `600066.SH` | 2006-01 | 235 | 15 | 235 | 235 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 恒瑞医药 | `600276.SH` | 2006-01 | 226 | 24 | 226 | 226 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 瀚蓝环境 | `600323.SH` | 2006-01 | 226 | 24 | 226 | 226 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 海澜之家 | `600398.SH` | 2006-01 | 226 | 24 | 226 | 226 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 国电南瑞 | `600406.SH` | 2006-01 | 250 | 0 | 250 | 250 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 国药股份 | `600511.SH` | 2006-01 | 250 | 0 | 250 | 250 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 川投能源 | `600674.SH` | 2006-02 | 217 | 32 | 217 | 217 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 海尔智家 | `600690.SH` | 2006-02 | 217 | 32 | 217 | 217 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 锦江酒店 | `600754.SH` | 2006-01 | 235 | 15 | 222 | 235 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 伊利股份 | `600887.SH` | 2006-01 | 235 | 15 | 211 | 235 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 长江电力 | `600900.SH` | 2006-01 | 238 | 12 | 238 | 238 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 中国移动 | `600941.SH` | 2022-01 | 58 | 0 | 58 | 58 | 58 | Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 中国神华 | `601088.SH` | 2007-10 | 228 | 1 | 228 | 228 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 中国平安 | `601318.SH` | 2007-03 | 235 | 1 | 229 | 235 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 工商银行 | `601398.SH` | 2006-10 | 239 | 2 | 239 | 239 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 中国太保 | `601601.SH` | 2008-01 | 225 | 1 | 219 | 225 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 中国建筑 | `601668.SH` | 2009-07 | 207 | 1 | 207 | 207 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 中国电信 | `601728.SH` | 2021-08 | 63 | 0 | 63 | 63 | 63 | Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 京沪高铁 | `601816.SH` | 2020-01 | 82 | 0 | 82 | 82 | 82 | Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 中国中免 | `601888.SH` | 2009-10 | 204 | 1 | 204 | 204 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 中远海控 | `601919.SH` | 2007-07 | 231 | 1 | 169 | 231 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 中国核电 | `601985.SH` | 2015-06 | 137 | 0 | 137 | 137 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 药明康德 | `603259.SH` | 2018-05 | 102 | 0 | 102 | 102 | 102 | Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 海天味业 | `603288.SH` | 2014-02 | 153 | 0 | 153 | 153 | 106 | Baidu Stock Tong / valuation history (AKShare endpoint specification) + Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 海光信息 | `688041.SH` | 2022-08 | 51 | 0 | 51 | 51 | 51 | Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| CN | 中芯国际 | `688981.SH` | 2020-07 | 76 | 0 | 76 | 76 | 76 | Eastmoney Data Center / RPT_VALUEANALYSIS_DET |
+| HK | 腾讯控股 | `00700.HK` | 2006-01 | 211 | 39 | 211 | 211 | 0 | Baidu Stock Tong / valuation history (AKShare endpoint specification) |
+| HK | 申洲国际 | `02313.HK` | 2006-01 | 245 | 5 | 245 | 245 | 0 | Baidu Stock Tong / valuation history (AKShare endpoint specification) |
+| HK | 京东集团 | `09618.HK` | 2020-06 | 77 | 0 | 71 | 77 | 0 | Baidu Stock Tong / valuation history (AKShare endpoint specification) |
+| HK | 哔哩哔哩 | `09626.HK` | 2021-03 | 68 | 0 | 15 | 68 | 0 | Baidu Stock Tong / valuation history (AKShare endpoint specification) |
+| HK | 阿里巴巴 | `09988.HK` | 2019-11 | 84 | 0 | 84 | 84 | 0 | Baidu Stock Tong / valuation history (AKShare endpoint specification) |
 
 ## 继续寻找公开历史数据的结论
 
