@@ -22,8 +22,8 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
 <body>
 <header class="top"><div class="wrap nav"><a class="brand" href="../index.html">余暮 <small>/ 投资实验室</small></a><div class="navright"><a href="../index.html">个人主页</a><a href="valuation-engine.html">49家公司估值引擎</a><button class="theme" id="themeBtn">◐ 外观</button></div></div></header>
 <main class="wrap">
-<section class="hero"><div><div class="eyebrow">LONG-TERM EQUITY RESEARCH · V1.1</div><h1>中国上市公司<br>20孔投资研究系统</h1><p>把稀缺的投资决策留给少数真正理解的企业。先验证商业质量，再验证财务与护城河，最后才讨论估值和买入。这里记录证据，不用故事代替数据。</p></div><aside class="heroNote"><b>打孔卡不是选股排行榜</b>每一次重大投资都应经过独立审查。候选名单可以变化，证据必须可追溯；没有足够证据，就保持空白，不强行给分。</aside></section>
-<nav class="quicknav" aria-label="研究导航"><a href="#midea-q3">美的2026三季报</a><a href="#midea-capital">历史FCF / ROIC</a><a href="#midea-audit">并购审计</a><span>数据更新：2026-11-01</span></nav>
+<section class="hero"><div><div class="eyebrow">LONG-TERM EQUITY RESEARCH · V1.2</div><h1>中国上市公司<br>20孔投资研究系统</h1><p>把稀缺的投资决策留给少数真正理解的企业。先验证商业质量，再验证财务与护城河，最后才讨论估值和买入。这里记录证据，不用故事代替数据。</p></div><aside class="heroNote"><b>打孔卡不是选股排行榜</b>每一次重大投资都应经过独立审查。候选名单可以变化，证据必须可追溯；没有足够证据，就保持空白，不强行给分。</aside></section>
+<nav class="quicknav" aria-label="研究导航"><a href="#midea-q3">美的2026三季报</a><a href="#midea-q3-quality">利润与现金流穿透</a><a href="#midea-capital">历史FCF / ROIC</a><a href="#midea-audit">并购审计</a><span>数据更新：2026-11-01</span></nav>
 <section class="stats"><div class="stat"><strong>20</strong><span>初始候选观察池</span></div><div class="stat"><strong>8</strong><span>研究审查环节</span></div><div class="stat"><strong>0</strong><span>已完成证据审计的最终入选</span></div><div class="stat"><strong>待核验</strong><span>当前估值与买入价格</span></div></section>
 <section class="section"><div class="sectionHead"><div><h2>候选企业观察池</h2><p>20家是研究起点，不是必须填满的20个投资名额。点击公司查看研究问题。</p></div><div class="tools"><input id="search" placeholder="搜索公司 / 代码"><select id="sector"><option value="">全部行业</option><option>消费与品牌</option><option>平台与互联网</option><option>制造与科技</option><option>公用事业与能源</option><option>金融</option><option>医疗健康</option></select></div></div>
 <div class="filters"><button class="filter active" data-group="全部">全部候选</button><button class="filter" data-group="第一层">第一层 · 优先研究</button><button class="filter" data-group="第二层">第二层 · 验证护城河</button><button class="filter" data-group="第三层">第三层 · 高变化风险</button></div>
@@ -144,7 +144,9 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
   </div>
   <div class="grid2" style="margin-top:16px">
     <div class="panel"><h3>二、ROIC重建：为什么当前不发布数值</h3>
-      <p><b>ROIC = NOPAT ÷ 平均投入资本。</b>拟同时计算含商誉与剔除商誉两套口径。</p>
+      <p><b>ROIC = NOPAT ÷ 平均经营性投入资本。</b>拟同时计算含商誉与剔除商誉两套口径，并另列并购后增量ROIC。</p>
+      <p>经营性投入资本以经营资产减无息经营性负债为基础，纳入经营营运资本、固定资产、在建工程、使用权资产及经营性无形资产；剔除超额现金、交易性金融资产、财务公司金融资产和非经营性投资。含商誉口径保留商誉与购买价分摊无形资产；剔除商誉口径只剔除商誉，仍保留可辨认经营性无形资产。</p>
+      <p>NOPAT以经营性EBIT为起点，剔除投资收益、金融业务利润、重大非经常项目及明显不可持续的估值变动，再按正常化经营税率计算。不能直接用归母净利润替代NOPAT，也不能把集团财务费用简单视作经营融资成本。
       <ul>
         <li>NOPAT：从经营性EBIT出发，剔除投资收益、金融业务利润及非经常项目，再扣正常化经营税。</li>
         <li>投入资本：经营性权益资本＋有息债务＋经营性租赁负债－超额现金－可剔除金融资产。</li>
@@ -179,7 +181,7 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
 <div class="panel"><h3>ROIC审计状态</h3><p>已建立2006—2025年经营性EBIT、正常化税、经营营运资本、固定资产、使用权资产、租赁负债、金融资产、商誉及购买价分摊无形资产字段。含商誉与剔除商誉两套ROIC均暂不发布，待逐年重建投入资本与NOPAT。</p></div>
 </div>
 <div class="panel" style="margin-top:16px"><h3>并购回报档案扩展至六项</h3><p>KUKA、Arbonia Climate、Teka Industrial、东芝电梯（中国/沈阳）、锐珂医疗（Carestream）、Frigicoll及相关热能业务。购买价、可辨认净资产、商誉和净现金流出按公开披露分别记录；标的投后收入、EBITDA、FCF和ROIC缺失处保留空白。</p><p>特别注意：KUKA及TLSC商誉是审计重点；东芝电梯与TLSC家电业务不能混为一谈。2025年末完成的锐珂医疗并购，尚无足够投后观察期评价回报。</p></div>
-<div class="note">V1.0工作簿包含：审计版总览、FCF历史序列、ROIC重建底稿、并购回报档案、逐年核验清单、并购投后跟踪、来源索引。该版是集中审计底稿，不表示20年ROIC及并购投后回报已经全部算出。</div>
+<div class="note">V1.0工作簿包含：审计版总览、FCF历史序列、ROIC重建底稿、并购回报档案、逐年核验清单、并购投后跟踪、来源索引。网页V1.2另加入2026年前三季度利润质量、现金流桥接和ROIC口径说明。该版是集中审计底稿，不表示20年ROIC及并购投后回报已经全部算出。</div>
 </section>
 
 <section class="section" id="midea-q3">
@@ -231,6 +233,67 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
       <p style="margin-top:10px">资产减值损失是合计项目，不能将18.82亿元全部认定为商誉减值。商誉余额下降也须结合处置、汇率折算及具体减值附注核实。</p>
     </div>
   </div>
+
+  <section class="section" id="midea-q3-quality">
+    <div class="sectionHead"><div><div class="eyebrow">EARNINGS QUALITY · CASH CONVERSION · 2026 Q3</div><h2>利润质量与现金流穿透｜前三季度同比</h2><p>用利润表、现金流量表和资产负债表交叉验证，不把会计利润、现金流和金融资产交易混成一个指标。</p></div><span class="tag">新增穿透分析</span></div>
+    <div class="panel">
+      <h3>一、归母净利润增长，不等于扣非盈利同步增长</h3>
+      <div class="tablebox"><table><thead><tr><th>指标</th><th>2026年1—9月</th><th>2025年1—9月</th><th>同比</th><th>解释</th></tr></thead><tbody>
+      <tr><td>营业收入</td><td>3,673.65亿元</td><td>3,630.57亿元</td><td>+1.19%</td><td>收入增长明显放缓</td></tr>
+      <tr><td>归母净利润</td><td>413.93亿元</td><td>378.83亿元</td><td>+9.27%</td><td>高于收入增速</td></tr>
+      <tr><td>扣非归母净利润</td><td>287.88亿元</td><td>371.40亿元</td><td>-22.49%</td><td>核心疑点，需要拆分汇率和衍生工具影响</td></tr>
+      <tr><td>归母净利润－扣非归母净利润</td><td>126.05亿元</td><td>74.33亿元</td><td>约+69.6%</td><td>非经常性损益对当期归母利润的贡献扩大</td></tr>
+      </tbody></table></div>
+      <p style="margin-top:10px">三季报列示，前三季度非经常性损益合计126.05亿元；其中持有/处置交易性及衍生金融资产、负债的公允价值变动和投资收益项目为144.17亿元。公司同时解释，人民币走强产生的部分外币货币性项目汇兑损失计入经常性损益，而管理相关外汇风险的衍生金融工具收益计入非经常性损益。</p>
+      <div class="data-alert"><b>分析边界：</b>不能简单将126.05亿元全部认定为“虚假利润”或“不可持续收益”。其中可能包含外汇风险管理的经济对冲结果，但会计分类导致损失与收益分处经常性/非经常性项目。应按经济敞口重构净汇兑与套保损益，再判断可持续盈利；在重构前，扣非净利润下降22.49%是必须保留的风险信号。</div>
+    </div>
+    <div class="panel" style="margin-top:16px">
+      <h3>二、经营现金流桥接：销售收现增长，采购现金支出增长更快</h3>
+      <p>单位：亿元。下表为合并现金流量表项目，按报告人民币千元换算。</p>
+      <div class="tablebox"><table><thead><tr><th>现金流项目</th><th>2026年1—9月</th><th>2025年1—9月</th><th>同比变化</th></tr></thead><tbody>
+      <tr><td>销售商品、提供劳务收到的现金</td><td>3,364.05</td><td>3,299.18</td><td>+1.97%</td></tr>
+      <tr><td>购买商品、接受劳务支付的现金</td><td>2,287.15</td><td>2,072.62</td><td>+10.35%</td></tr>
+      <tr><td>支付给职工以及为职工支付的现金</td><td>329.60</td><td>345.26</td><td>-4.54%</td></tr>
+      <tr><td>支付的各项税费</td><td>155.34</td><td>160.14</td><td>-3.00%</td></tr>
+      <tr><td>支付其他与经营活动有关的现金</td><td>369.84</td><td>320.71</td><td>+15.32%</td></tr>
+      <tr><td>经营活动现金流量净额</td><td>401.87</td><td>570.66</td><td>-29.58%</td></tr>
+      </tbody></table></div>
+      <p style="margin-top:10px">现金流入小计由3,484.27亿元增至3,574.01亿元，增加89.74亿元；现金流出小计由2,913.61亿元增至3,172.13亿元，增加258.53亿元，净额因此减少168.79亿元。采购现金支出增加214.53亿元、其他经营现金支出增加49.13亿元，是最直观的压力项；员工和税费现金支出减少，对冲了部分压力。</p>
+      <p>另一个需要单列的项目是央行及同业款项：上年同期体现为净减少额15.39亿元（现金流入），本期则为净增加额19.77亿元（现金占用），同比形成约35.17亿元的现金流差异。这属于集团金融业务相关现金流，不能直接归为家电制造业务回款恶化。</p>
+    </div>
+    <div class="grid2" style="margin-top:16px">
+      <div class="panel"><h3>三、简化FCF与现金转化率</h3>
+        <div class="gates">
+          <div class="gate"><b>简化FCF 351.35亿元</b><span>2026年前三季度</span></div>
+          <div class="gate"><b>同比 -30.30%</b><span>2025同期504.11亿元</span></div>
+          <div class="gate"><b>CFO / 归母净利润 97.1%</b><span>2025同期约150.6%</span></div>
+          <div class="gate"><b>CFO / 收入 10.94%</b><span>2025同期15.72%</span></div>
+        </div>
+        <p style="margin-top:12px">简化FCF = 经营活动现金流净额－购建固定资产、无形资产和其他长期资产支付的现金。2026年前三季度资本性支出50.53亿元，低于上年同期66.55亿元；因此简化FCF下降主要来自经营现金流净额走弱，而不是资本开支增加。</p>
+      </div>
+      <div class="panel"><h3>四、现金余额与金融资产不可混为一谈</h3>
+        <div class="gates">
+          <div class="gate"><b>货币资金 1,103.98亿元</b><span>2026年9月末资产负债表</span></div>
+          <div class="gate"><b>现金及现金等价物 981.35亿元</b><span>现金流量表期末余额</span></div>
+          <div class="gate"><b>交易性金融资产 194.69亿元</b><span>不等同现金等价物</span></div>
+          <div class="gate"><b>衍生金融资产 37.48亿元</b><span>公允价值资产，不等同可自由支配现金</span></div>
+        </div>
+        <p style="margin-top:12px">资产负债表“货币资金”与现金流量表“现金及现金等价物”并非同一口径；交易性金融资产和衍生金融资产也不能无条件纳入超额现金。ROIC与净现金分析必须先识别受限资金、财务公司资金、投资期限及金融工具风险。</p>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:16px"><h3>五、下一步必须跟踪的验证项</h3>
+      <div class="tablebox"><table><thead><tr><th>跟踪事项</th><th>当前证据</th><th>后续验证方式</th><th>状态</th></tr></thead><tbody>
+      <tr><td>外汇及套保损益</td><td>部分汇兑损失计入经常性损益，相关衍生工具收益计入非经常性损益</td><td>按币种、净敞口、套保工具、到期和结算重构经济损益</td><td>待附注穿透</td></tr>
+      <tr><td>应收款与回款</td><td>应收账款期末余额520.31亿元，高于2025年末404.50亿元</td><td>结合季度销售季节性、账龄、坏账准备、票据和期后回款核验</td><td>待核验</td></tr>
+      <tr><td>供应商现金支出</td><td>采购现金支出同比增加214.53亿元</td><td>拆分采购量价、供应商账期、存货备货和票据结算</td><td>重点跟踪</td></tr>
+      <tr><td>金融业务现金流</td><td>央行/同业款项流向出现约35.17亿元同比摆动</td><td>与制造业务现金流分开建模</td><td>口径隔离</td></tr>
+      <tr><td>资本开支</td><td>前三季度购建长期资产现金支出50.53亿元</td><td>区分维护性支出、扩产、研发设备和并购整合投入</td><td>待分拆</td></tr>
+    </tbody></table></div>
+    <div class="data-alert"><b>阶段性结论：</b>2026年前三季度收入仍增长，但利润结构和现金转换质量明显承压。采购支出增长、其他经营支出增长以及金融业务资金流变化共同影响CFO。尚不足以断言长期竞争力恶化；但在扣非净利润、CFO和简化FCF三项未恢复之前，不应仅凭归母净利润增长上调长期盈利预测。</div>
+    <p style="margin-top:12px">比较资料：<a href="https://static.cninfo.com.cn/finalpage/2026-10-30/1225645132.PDF" target="_blank" rel="noopener">2026年第三季度报告（巨潮资讯）</a> ｜ <a href="https://static.cninfo.com.cn/finalpage/2025-10-30/1224767336.PDF" target="_blank" rel="noopener">2025年第三季度报告（同比基期）</a></p>
+    </div>
+  </section>
+
   <div class="panel" style="margin-top:16px"><h3>对长期投资研究的更新结论</h3>
     <ul>
       <li><b>盈利质量：</b>归母净利润、扣非净利润和经营现金流出现明显分化；接下来应对冲汇率影响后观察核心业务利润和现金转化。</li>
