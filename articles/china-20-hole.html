@@ -23,7 +23,7 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
 <header class="top"><div class="wrap nav"><a class="brand" href="../index.html">余暮 <small>/ 投资实验室</small></a><div class="navright"><a href="../index.html">个人主页</a><a href="valuation-engine.html">49家公司估值引擎</a><button class="theme" id="themeBtn">◐ 外观</button></div></div></header>
 <main class="wrap">
 <section class="hero"><div><div class="eyebrow">LONG-TERM EQUITY RESEARCH · V1.2</div><h1>中国上市公司<br>20孔投资研究系统</h1><p>把稀缺的投资决策留给少数真正理解的企业。先验证商业质量，再验证财务与护城河，最后才讨论估值和买入。这里记录证据，不用故事代替数据。</p></div><aside class="heroNote"><b>打孔卡不是选股排行榜</b>每一次重大投资都应经过独立审查。候选名单可以变化，证据必须可追溯；没有足够证据，就保持空白，不强行给分。</aside></section>
-<nav class="quicknav" aria-label="研究导航"><a href="#midea-q3">美的2026三季报</a><a href="#midea-q3-quality">利润与现金流穿透</a><a href="#midea-capital">历史FCF / ROIC</a><a href="#midea-audit">并购审计</a><span>数据更新：2026-11-01</span></nav>
+<nav class="quicknav" aria-label="研究导航"><a href="#midea-q3">美的2026三季报</a><a href="#midea-q3-quality">利润与现金流穿透</a><a href="#midea-capital">历史FCF / ROIC</a><a href="#kuka-return">KUKA投后回报</a><a href="#midea-audit">并购审计</a><span>数据更新：2026-11-01</span></nav>
 <section class="stats"><div class="stat"><strong>20</strong><span>初始候选观察池</span></div><div class="stat"><strong>8</strong><span>研究审查环节</span></div><div class="stat"><strong>0</strong><span>已完成证据审计的最终入选</span></div><div class="stat"><strong>待核验</strong><span>当前估值与买入价格</span></div></section>
 <section class="section"><div class="sectionHead"><div><h2>候选企业观察池</h2><p>20家是研究起点，不是必须填满的20个投资名额。点击公司查看研究问题。</p></div><div class="tools"><input id="search" placeholder="搜索公司 / 代码"><select id="sector"><option value="">全部行业</option><option>消费与品牌</option><option>平台与互联网</option><option>制造与科技</option><option>公用事业与能源</option><option>金融</option><option>医疗健康</option></select></div></div>
 <div class="filters"><button class="filter active" data-group="全部">全部候选</button><button class="filter" data-group="第一层">第一层 · 优先研究</button><button class="filter" data-group="第二层">第二层 · 验证护城河</button><button class="filter" data-group="第三层">第三层 · 高变化风险</button></div>
@@ -128,32 +128,46 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
 <div class="panel" style="margin-top:16px"><h3>ROIC重建口径</h3><p><b>ROIC = NOPAT ÷ 平均投入资本。</b>NOPAT以经营性EBIT扣除正常化经营所得税计算；投入资本从经营性资产出发，扣除无息经营负债，并单独披露商誉、租赁负债、超额现金及金融资产的处理方式。</p><p>同时形成含商誉ROIC与剔除商誉ROIC：前者检验包括并购在内的资本配置质量，后者观察存量业务效率。当前不发布ROIC数值，待逐项重建NOPAT和投入资本后再计算。</p></div>
 <div class="panel" style="margin-top:16px"><h3>阶段性判断与下一步</h3><ul><li>优势：智能家居业务稳健增长，商业及工业解决方案收入增长17.47%；研发费用177.88亿元，占收入3.90%。</li><li>疑点：海外扩张与ToB业务新增资本能否覆盖资本成本，尚待验证。</li><li>风险：商誉余额较大，2026年上半年商誉减值损失增加。</li><li>资本配置：2025年度拟每10股派现43元，需与回购价格、股权激励稀释及再投资回报一并评价。</li></ul><p><b>当前结论：</b>美的具备规模制造、全球渠道和较强现金创造能力；但新增海外资本投入和并购商誉规模较大。关键问题是这些新增资本能否持续产生高于资本成本的回报。暂不打分、不估值、不设买入价。</p><p>原始资料：<a href="https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12048854&stockid=000333" target="_blank" rel="noopener">2025年年度报告</a> ｜ <a href="https://static.cninfo.com.cn/finalpage/2026-08-28/1225533135.PDF" target="_blank" rel="noopener">2026年半年度报告</a> ｜ <a href="https://www.hkexnews.hk/listedco/listconews/sehk/2026/0330/2026033002440_c.pdf" target="_blank" rel="noopener">2025年度财务报表</a></p></div></section>
 <section class="section" id="midea-capital">
-  <div class="sectionHead"><div><div class="eyebrow">MIDEA CAPITAL RETURNS · HISTORICAL REBUILD V0.2</div><h2>美的集团历史ROIC / FCF重建｜2006—2025</h2><p>第一版现金流序列与并购建档已形成；ROIC仍处于数据重建阶段，不把未经核验的比率包装成结论。</p></div><span class="tag">历史底稿 V0.1</span></div>
+  <div class="sectionHead"><div><div class="eyebrow">MIDEA CAPITAL RETURNS · HISTORICAL REBUILD V0.3</div><h2>美的集团历史ROIC / FCF重建｜2006—2025</h2><p>第一版现金流序列与并购建档已形成；ROIC仍处于数据重建阶段，不把未经核验的比率包装成结论。</p></div><span class="tag">现金流核验 V1.1</span></div>
   <div class="panel">
     <h3>一、简化FCF代理序列（单位：亿元）</h3>
     <p>定义：经营活动现金流量净额（CFO）－购建固定资产、无形资产和其他长期资产支付的现金。该口径未扣并购现金流、租赁本金，也未剥离金融业务现金流，不能等同标准化FCFF或FCFE。</p>
     <div class="tablebox"><table><thead><tr><th>年度</th><th>简化FCF</th><th>年度</th><th>简化FCF</th><th>年度</th><th>简化FCF</th><th>年度</th><th>简化FCF</th></tr></thead><tbody>
-    <tr><td>2006</td><td>2.11</td><td>2011</td><td>-8.94</td><td>2016</td><td>243.72</td><td>2021</td><td>282.67</td></tr>
-    <tr><td>2007</td><td>暂空</td><td>2012</td><td>52.71</td><td>2017</td><td>212.25</td><td>2022</td><td>273.06</td></tr>
+    <tr><td>2006</td><td>2.11</td><td>2011</td><td>-8.94</td><td>2016</td><td>243.72</td><td>2021</td><td>282.66</td></tr>
+    <tr><td>2007</td><td>暂空</td><td>2012</td><td>52.71</td><td>2017</td><td>212.24</td><td>2022</td><td>273.06</td></tr>
     <tr><td>2008</td><td>17.25</td><td>2013</td><td>79.39</td><td>2018</td><td>222.49</td><td>2023</td><td>515.89</td></tr>
-    <tr><td>2009</td><td>9.33</td><td>2014</td><td>221.11</td><td>2019</td><td>351.38</td><td>2024</td><td>526.72</td></tr>
-    <tr><td>2010</td><td>15.09</td><td>2015</td><td>236.33</td><td>2020</td><td>249.00</td><td>2025</td><td>422.04</td></tr>
+    <tr><td>2009</td><td>9.33</td><td>2014</td><td>221.11</td><td>2019</td><td>351.39</td><td>2024</td><td>526.72</td></tr>
+    <tr><td>2010</td><td>15.09</td><td>2015</td><td>236.33</td><td>2020</td><td>249.01</td><td>2025</td><td>422.04</td></tr>
     </tbody></table></div>
-    <div class="chartbox"><b>简化FCF年度变化</b><svg viewBox="0 0 820 220" role="img" aria-label="2006年至2025年简化自由现金流柱状图，2007年缺数"><line x1="34" y1="24" x2="808" y2="24" stroke="var(--line)"/><line x1="34" y1="95" x2="808" y2="95" stroke="var(--line)"/><line x1="34" y1="168" x2="808" y2="168" stroke="var(--muted)"/><text x="3" y="28" font-size="10" fill="var(--muted)">540</text><text x="8" y="99" font-size="10" fill="var(--muted)">270</text><text x="16" y="172" font-size="10" fill="var(--muted)">0</text><rect x="43.4" y="167.4" width="22" height="2.0" rx="3" fill="var(--green)"><title>2006年：2.11亿元</title></rect><text x="54.4" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2006</text><rect x="84.1" y="163.4" width="22" height="4.6" rx="3" fill="var(--green)"><title>2008年：17.25亿元</title></rect><text x="95.1" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2008</text><rect x="124.8" y="165.5" width="22" height="2.5" rx="3" fill="var(--green)"><title>2009年：9.33亿元</title></rect><text x="135.8" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2009</text><rect x="165.6" y="164.0" width="22" height="4.0" rx="3" fill="var(--green)"><title>2010年：15.09亿元</title></rect><text x="176.6" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2010</text><rect x="206.3" y="168.0" width="22" height="2.4" rx="3" fill="var(--amber)"><title>2011年：-8.94亿元</title></rect><text x="217.3" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2011</text><rect x="247.1" y="153.9" width="22" height="14.1" rx="3" fill="var(--green)"><title>2012年：52.71亿元</title></rect><text x="258.1" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2012</text><rect x="287.8" y="146.8" width="22" height="21.2" rx="3" fill="var(--green)"><title>2013年：79.39亿元</title></rect><text x="298.8" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2013</text><rect x="328.5" y="109.0" width="22" height="59.0" rx="3" fill="var(--green)"><title>2014年：221.11亿元</title></rect><text x="339.5" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2014</text><rect x="369.3" y="105.0" width="22" height="63.0" rx="3" fill="var(--green)"><title>2015年：236.33亿元</title></rect><text x="380.3" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2015</text><rect x="410.0" y="103.0" width="22" height="65.0" rx="3" fill="var(--green)"><title>2016年：243.72亿元</title></rect><text x="421.0" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2016</text><rect x="450.7" y="111.4" width="22" height="56.6" rx="3" fill="var(--green)"><title>2017年：212.25亿元</title></rect><text x="461.7" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2017</text><rect x="491.5" y="108.7" width="22" height="59.3" rx="3" fill="var(--green)"><title>2018年：222.49亿元</title></rect><text x="502.5" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2018</text><rect x="532.2" y="74.3" width="22" height="93.7" rx="3" fill="var(--green)"><title>2019年：351.38亿元</title></rect><text x="543.2" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2019</text><rect x="572.9" y="101.6" width="22" height="66.4" rx="3" fill="var(--green)"><title>2020年：249.00亿元</title></rect><text x="583.9" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2020</text><rect x="613.7" y="92.6" width="22" height="75.4" rx="3" fill="var(--green)"><title>2021年：282.67亿元</title></rect><text x="624.7" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2021</text><rect x="654.4" y="95.2" width="22" height="72.8" rx="3" fill="var(--green)"><title>2022年：273.06亿元</title></rect><text x="665.4" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2022</text><rect x="695.2" y="30.4" width="22" height="137.6" rx="3" fill="var(--green)"><title>2023年：515.89亿元</title></rect><text x="706.2" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2023</text><rect x="735.9" y="27.5" width="22" height="140.5" rx="3" fill="var(--green)"><title>2024年：526.72亿元</title></rect><text x="746.9" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2024</text><rect x="776.6" y="55.5" width="22" height="112.5" rx="3" fill="var(--green)"><title>2025年：422.04亿元</title></rect><text x="787.6" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2025</text></svg><div class="chart-caption"><span>单位：亿元；2007年缺失值不绘制。</span><span>柱高按简化FCF绝对值绘制；负值向零轴下方显示。</span></div></div>
-    <p><b>审计状态：</b>2006、2008—2013已找到审计/公司年报原始报表；2014—2022暂用结构化历史数据库数值，逐年年报回查未完成；2023—2025与年度报告现金流表核对。2007年CFO在来源间存在冲突（2009年报摘要列示17.48亿元，2008年增发招股书列示16.34亿元），暂时留空。2013年是原广东美的电器与美的集团合并口径的重要断点，前后不应直接做不加说明的长期趋势比较。</p>
+
+    <div class="note"><b>2014—2022年原始年报复核已完成：</b>下表金额由年报现金流量表人民币千元换算为亿元；简化FCF按CFO－购建固定资产、无形资产和其他长期资产支付的现金逐年计算。年度报告的合并口径仍含集团金融业务相关现金流。</div>
+    <div class="tablebox" style="margin-top:12px"><table><thead><tr><th>年度</th><th>CFO</th><th>购建长期资产支出</th><th>简化FCF</th><th>原始年报</th></tr></thead><tbody>
+      <tr><td>2014</td><td>247.88511</td><td>26.78179</td><td>221.10332</td><td><a href="https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=1685537&stockid=000333" target="_blank" rel="noopener">2014年报</a></td></tr>
+      <tr><td>2015</td><td>267.64254</td><td>31.30932</td><td>236.33322</td><td><a href="https://static.cninfo.com.cn/finalpage/2016-03-26/1202084987.PDF" target="_blank" rel="noopener">2015年报</a></td></tr>
+      <tr><td>2016</td><td>266.95009</td><td>23.23430</td><td>243.71579</td><td><a href="https://www.midea.com.cn/content/dam/mideacn-aem/investors/reports/美的集团-2016年年度报告.PDF.coredownload.inline.pdf" target="_blank" rel="noopener">2016年报</a></td></tr>
+      <tr><td>2017</td><td>244.42623</td><td>32.18402</td><td>212.24221</td><td><a href="https://www.midea.com.cn/content/dam/mideacn-aem/mideacn-aem-old/investors/reports/美的集团-2017年年度报告.PDF.coredownload.inline.pdf" target="_blank" rel="noopener">2017年报</a></td></tr>
+      <tr><td>2018</td><td>278.61080</td><td>56.11851</td><td>222.49229</td><td><a href="https://www.midea.com.cn/content/dam/mideacn-aem/mideacn-aem-old/investors/reports/美的集团-2018年年度报告.PDF.coredownload.inline.pdf" target="_blank" rel="noopener">2018年报</a></td></tr>
+      <tr><td>2019</td><td>385.90404</td><td>34.51856</td><td>351.38548</td><td><a href="https://www.midea.com.cn/content/dam/mideacn-aem/mideacn-aem-old/investors/reports/美的集团-2019年年度报告.PDF.coredownload.inline.pdf" target="_blank" rel="noopener">2019年报</a></td></tr>
+      <tr><td>2020</td><td>295.57117</td><td>46.56582</td><td>249.00535</td><td><a href="https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=7210611&stockid=000333" target="_blank" rel="noopener">2020年报全文</a></td></tr>
+      <tr><td>2021</td><td>350.91704</td><td>68.25357</td><td>282.66347</td><td><a href="https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8182957&stockid=000333" target="_blank" rel="noopener">2021年报全文</a></td></tr>
+      <tr><td>2022</td><td>346.57828</td><td>73.52115</td><td>273.05713</td><td><a href="https://static.cninfo.com.cn/finalpage/2023-04-29/1216695045.PDF" target="_blank" rel="noopener">2022年报</a></td></tr>
+    </tbody></table></div>
+    <div class="chartbox"><b>简化FCF年度变化</b><svg viewBox="0 0 820 220" role="img" aria-label="2006年至2025年简化自由现金流柱状图，2007年缺数"><line x1="34" y1="24" x2="808" y2="24" stroke="var(--line)"/><line x1="34" y1="95" x2="808" y2="95" stroke="var(--line)"/><line x1="34" y1="168" x2="808" y2="168" stroke="var(--muted)"/><text x="3" y="28" font-size="10" fill="var(--muted)">540</text><text x="8" y="99" font-size="10" fill="var(--muted)">270</text><text x="16" y="172" font-size="10" fill="var(--muted)">0</text><rect x="43.4" y="167.4" width="22" height="2.0" rx="3" fill="var(--green)"><title>2006年：2.11亿元</title></rect><text x="54.4" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2006</text><rect x="84.1" y="163.4" width="22" height="4.6" rx="3" fill="var(--green)"><title>2008年：17.25亿元</title></rect><text x="95.1" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2008</text><rect x="124.8" y="165.5" width="22" height="2.5" rx="3" fill="var(--green)"><title>2009年：9.33亿元</title></rect><text x="135.8" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2009</text><rect x="165.6" y="164.0" width="22" height="4.0" rx="3" fill="var(--green)"><title>2010年：15.09亿元</title></rect><text x="176.6" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2010</text><rect x="206.3" y="168.0" width="22" height="2.4" rx="3" fill="var(--amber)"><title>2011年：-8.94亿元</title></rect><text x="217.3" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2011</text><rect x="247.1" y="153.9" width="22" height="14.1" rx="3" fill="var(--green)"><title>2012年：52.71亿元</title></rect><text x="258.1" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2012</text><rect x="287.8" y="146.8" width="22" height="21.2" rx="3" fill="var(--green)"><title>2013年：79.39亿元</title></rect><text x="298.8" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2013</text><rect x="328.5" y="109.0" width="22" height="59.0" rx="3" fill="var(--green)"><title>2014年：221.11亿元</title></rect><text x="339.5" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2014</text><rect x="369.3" y="105.0" width="22" height="63.0" rx="3" fill="var(--green)"><title>2015年：236.33亿元</title></rect><text x="380.3" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2015</text><rect x="410.0" y="103.0" width="22" height="65.0" rx="3" fill="var(--green)"><title>2016年：243.72亿元</title></rect><text x="421.0" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2016</text><rect x="450.7" y="111.4" width="22" height="56.6" rx="3" fill="var(--green)"><title>2017年：212.24亿元</title></rect><text x="461.7" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2017</text><rect x="491.5" y="108.7" width="22" height="59.3" rx="3" fill="var(--green)"><title>2018年：222.49亿元</title></rect><text x="502.5" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2018</text><rect x="532.2" y="74.3" width="22" height="93.7" rx="3" fill="var(--green)"><title>2019年：351.39亿元</title></rect><text x="543.2" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2019</text><rect x="572.9" y="101.6" width="22" height="66.4" rx="3" fill="var(--green)"><title>2020年：249.01亿元</title></rect><text x="583.9" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2020</text><rect x="613.7" y="92.6" width="22" height="75.4" rx="3" fill="var(--green)"><title>2021年：282.66亿元</title></rect><text x="624.7" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2021</text><rect x="654.4" y="95.2" width="22" height="72.8" rx="3" fill="var(--green)"><title>2022年：273.06亿元</title></rect><text x="665.4" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2022</text><rect x="695.2" y="30.4" width="22" height="137.6" rx="3" fill="var(--green)"><title>2023年：515.89亿元</title></rect><text x="706.2" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2023</text><rect x="735.9" y="27.5" width="22" height="140.5" rx="3" fill="var(--green)"><title>2024年：526.72亿元</title></rect><text x="746.9" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2024</text><rect x="776.6" y="55.5" width="22" height="112.5" rx="3" fill="var(--green)"><title>2025年：422.04亿元</title></rect><text x="787.6" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2025</text></svg><div class="chart-caption"><span>单位：亿元；2007年缺失值不绘制。</span><span>柱高按简化FCF绝对值绘制；负值向零轴下方显示。</span></div></div>
+    <p><b>审计状态：</b>2014—2022年CFO与购建长期资产支出已逐年回查原始年报现金流量表，已由结构化数据库待复核状态提升为年报核验状态；2023—2025亦与年报核对。2007年CFO在来源间存在冲突（2008年增发招股书与2009年报摘要不一致），继续留空。2006—2012为原广东美的电器000527，2013起为美的集团000333合并口径，属于主体和合并范围断点。</p>
   </div>
   <div class="grid2" style="margin-top:16px">
-    <div class="panel"><h3>二、ROIC重建：为什么当前不发布数值</h3>
-      <p><b>ROIC = NOPAT ÷ 平均经营性投入资本。</b>拟同时计算含商誉与剔除商誉两套口径，并另列并购后增量ROIC。</p>
-      <p>经营性投入资本以经营资产减无息经营性负债为基础，纳入经营营运资本、固定资产、在建工程、使用权资产及经营性无形资产；剔除超额现金、交易性金融资产、财务公司金融资产和非经营性投资。含商誉口径保留商誉与购买价分摊无形资产；剔除商誉口径只剔除商誉，仍保留可辨认经营性无形资产。</p>
-      <p>NOPAT以经营性EBIT为起点，剔除投资收益、金融业务利润、重大非经常项目及明显不可持续的估值变动，再按正常化经营税率计算。不能直接用归母净利润替代NOPAT，也不能把集团财务费用简单视作经营融资成本。
-      <ul>
-        <li>NOPAT：从经营性EBIT出发，剔除投资收益、金融业务利润及非经常项目，再扣正常化经营税。</li>
-        <li>投入资本：经营性权益资本＋有息债务＋经营性租赁负债－超额现金－可剔除金融资产。</li>
-        <li>并购：需明确KUKA、TLSC及后续并购形成的商誉、购买价分摊无形资产及摊销影响。</li>
-        <li>跨期：2006—2012与2013年后主体/合并范围存在差异，需建立原主体、备考合并及正式合并口径的桥接。</li>
-      </ul>
-      <p>2013年合并现金流量表已列示客户贷款及垫款、央行和同业存款、利息手续费现金流，说明集团金融业务会影响传统工业企业ROIC和FCF口径。待逐年拆分前，ROIC数值保持空白。</p>
+    <div class="panel"><h3>二、ROIC重建：方法已确定，年度数值不冒进</h3>
+      <p><b>ROIC = NOPAT ÷ 平均经营性投入资本。</b>最终并列呈现含商誉ROIC与剔除商誉ROIC；当前均暂不发布数值。</p>
+      <p>2006—2012是原广东美的电器000527；2013以后是美的集团000333合并口径，不能当作完全同一主体的连续序列。2013年后现金流量表含央行、同业、贷款及利息手续费等金融业务项目，ROIC必须剥离财务公司相关损益和资产。</p>
+      <p>2017年报将暖通空调、消费电器、机器人及自动化系统、其他及未分配金额列为报告分部；分部营业费用包含利息支出、手续费、财务费用和减值项目，不能把“分部利润”未经调整直接当作EBIT。该年因收购KUKA与东芝确认的购买价分摊摊销约24.14亿元，也必须保留在含商誉与剔除商誉口径的资产/利润桥接中。</p>
+      <div class="tablebox"><table><thead><tr><th>ROIC组成</th><th>计算要求</th><th>当前状态</th></tr></thead><tbody>
+        <tr><td>NOPAT</td><td>经营性EBIT剔除金融业务、非经营投资收益及重大非经常项目，再按正常化经营税率计算</td><td>2006—2025未形成连续可比序列</td></tr>
+        <tr><td>平均经营资本</td><td>平均经营营运资本、固定资产、在建工程、使用权资产和经营性无形资产；扣除无息经营负债</td><td>逐年资产负债表附注待重建</td></tr>
+        <tr><td>含商誉ROIC</td><td>投入资本保留商誉与购买价分摊无形资产</td><td>待重建</td></tr>
+        <tr><td>剔除商誉ROIC</td><td>只剔除商誉，仍保留可辨认经营性无形资产及其摊销</td><td>待重建</td></tr>
+      </tbody></table></div>
+      <div class="data-alert"><b>结论：</b>本轮不把第三方ROIC、ROE或“集团利润÷总资产”冒充经营性ROIC。缺少财务公司与分部资产负债拆分的年度继续留空，待分子和分母同口径核验后再计算。</div>
+      <p>资料：<a href="https://www.midea-group.com/asset/Midea-Group/Financial%20report.zip/Midea-Group-2017-Annual-Report.pdf" target="_blank" rel="noopener">美的集团2017年年报（英文财报注释）</a> ｜ <a href="https://www.midea.com.cn/content/dam/mideacn-aem/mideacn-aem-old/investors/reports/美的集团-2017年年度报告.PDF.coredownload.inline.pdf" target="_blank" rel="noopener">美的集团2017年年报（中文）</a></p>
     </div>
     <div class="panel"><h3>三、并购回报档案：已核实的初始交易数据</h3>
       <div class="tablebox"><table><thead><tr><th>项目</th><th>对价/现金投入</th><th>购买日净资产</th><th>商誉</th><th>当期净现金流出</th></tr></thead><tbody>
@@ -171,6 +185,72 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
     <p>2025年末美的集团商誉账面价值约342.57亿元，其中KUKA相关约234.35亿元，TLSC相关约20.86亿元。审计报告将KUKA与TLSC商誉减值测试列为关键审计事项；关键假设包括收入增长、毛利率、永续增长率与税前折现率。2025年审计测试结论为资产组可收回金额高于账面价值、当年无需计提减值，但这并不等于收购回报已经达到资本成本。</p>
     <p><b>下一步：</b>优先补齐2014—2022年年报原始现金流并核对2007冲突；随后按年报附注重建2006—2025年经营性EBIT、税率、债务、现金、金融资产、租赁负债和商誉；最后对KUKA、Arbonia Climate、Teka分别建立收购后经营表现与增量ROIC档案。</p>
     <p>原始资料：<a href="https://stock.tianyancha.com/an/5653f59974c751fe86e48a56c18e78c8.PDF" target="_blank" rel="noopener">美的电器2008年增发招股书</a> ｜ <a href="https://static.cninfo.com.cn/finalpage/2012-03-10/60651291.PDF" target="_blank" rel="noopener">美的电器2011年审计财务报表</a> ｜ <a href="https://www.midea.com.cn/content/dam/mideacn-aem/investors/reports/美的集团-2013年年度报告.PDF.coredownload.inline.pdf" target="_blank" rel="noopener">美的集团2013年年度报告</a> ｜ <a href="https://s.askci.com/stock/financialreport/000333/cashflow/" target="_blank" rel="noopener">中商数据库历史现金流</a> ｜ <a href="https://www.midea.com.cn/content/dam/mideacn-aem/mideacn-aem-old/investors/reports/美的集团-2017年年度报告.PDF.coredownload.inline.pdf" target="_blank" rel="noopener">美的集团2017年年度报告（KUKA）</a> ｜ <a href="https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF" target="_blank" rel="noopener">美的集团2025年年度报告与审计财务报表</a></p>
+  </div>
+</section>
+
+
+<section class="section" id="kuka-return">
+  <div class="sectionHead"><div><div class="eyebrow">KUKA STANDALONE · POST-ACQUISITION REVIEW 2017–2025</div><h2>KUKA收购后独立经营表现｜不用美的机器人分部代替</h2><p>直接采用KUKA自身合并年报披露的收入、EBIT、EBITDA、FCF和ROCE；单位除特别说明外均为欧元百万元。</p></div><span class="tag">独立标的年报序列</span></div>
+  <div class="panel">
+    <h3>收购交易基准</h3>
+    <div class="gates">
+      <div class="gate"><b>完成日 2017-01-06</b><span>从该日起纳入美的合并范围</span></div>
+      <div class="gate"><b>新购股权 81.04%</b><span>要约价€115/股</span></div>
+      <div class="gate"><b>新购现金对价 €3,706.86m</b><span>约人民币270.02亿元</span></div>
+      <div class="gate"><b>交易后持股约94.55%</b><span>含收购前持有的13.51%</span></div>
+    </div>
+    <p style="margin-top:12px">以上交易金额指新购81.04%股权的现金对价，不等同企业价值EV，也未把收购前13.51%股权的公允价值混入现金支出。KUKA报告主体是独立集团，涵盖Robotics、Systems、Swisslog等业务。</p>
+  </div>
+  <div class="panel" style="margin-top:16px">
+    <h3>一、KUKA集团2017—2025年核心经营序列</h3>
+    <div class="tablebox"><table><thead><tr><th>年度</th><th>收入</th><th>EBIT</th><th>EBIT率</th><th>EBITDA</th><th>FCF</th><th>平均资本占用</th><th>集团ROCE</th><th>资本开支</th></tr></thead><tbody>
+      <tr><td>2017</td><td>3,479.1</td><td>102.7</td><td>3.0%</td><td>180.2</td><td>-135.7</td><td>950.4</td><td>10.9%</td><td>138.8</td></tr>
+      <tr><td>2018</td><td>3,242.1</td><td>34.3</td><td>1.1%</td><td>121.2</td><td>-213.7</td><td>1,185.0</td><td>2.9%</td><td>295.4</td></tr>
+      <tr><td>2019</td><td>3,192.6</td><td>47.8</td><td>1.5%</td><td>176.5</td><td>20.7</td><td>1,374.3</td><td>3.5%</td><td>151.1</td></tr>
+      <tr><td>2020</td><td>2,573.5</td><td>-113.2</td><td>-4.4%</td><td>33.2</td><td>37.0</td><td>1,321.1</td><td>-8.6%</td><td>80.7</td></tr>
+      <tr><td>2021</td><td>3,286.2</td><td>61.8</td><td>1.9%</td><td>202.0</td><td>100.4</td><td>1,245.5</td><td>5.0%</td><td>101.4</td></tr>
+      <tr><td>2022</td><td>3,897.0</td><td>118.4</td><td>3.0%</td><td>251.2</td><td>-188.3</td><td>—</td><td>—</td><td>129.5</td></tr>
+      <tr><td>2023</td><td>4,053.7</td><td>158.2</td><td>3.9%</td><td>294.0</td><td>180.0</td><td>—</td><td>—</td><td>—</td></tr>
+      <tr><td>2024</td><td>3,732.4</td><td>76.5</td><td>2.0%</td><td>228.3</td><td>223.7</td><td>—</td><td>—</td><td>97.3</td></tr>
+      <tr><td>2025</td><td>3,897.2</td><td>58.7</td><td>1.5%</td><td>207.3</td><td>190.2</td><td>—</td><td>—</td><td>100.2</td></tr>
+    </tbody></table></div>
+    <p style="margin-top:10px">ROCE与平均资本占用只填入KUKA公开报告提供的2017—2021可比值；2022—2025未取得同口径可核验序列，故留空。2023年FCF采用KUKA 2025年报中的比较数180.0；较早的2023业绩稿曾出现155.0，当前以最新年报比较表统一，并保留原始差异供后续追溯。</p>
+  </div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="panel"><h3>二、收购后经营成果的变化</h3>
+      <div class="gates">
+        <div class="gate"><b>收入CAGR约1.43%</b><span>2017—2025，8年复合</span></div>
+        <div class="gate"><b>EBIT下降约42.8%</b><span>€102.7m降至€58.7m</span></div>
+        <div class="gate"><b>EBIT率3.0%→1.5%</b><span>2023年曾升至3.9%</span></div>
+        <div class="gate"><b>累计FCF约€214.3m</b><span>2017—2025披露口径合计</span></div>
+      </div>
+      <p style="margin-top:12px">收入从€3.479bn到€3.897bn，八年复合增速约1.43%；EBIT从€102.7m降至€58.7m。2025年收入已接近2022年高位，但EBIT率仍只有1.5%。仅凭收入扩张，不能认定收购已创造足够资本回报。</p>
+    </div>
+    <div class="panel"><h3>三、FCF波动背后的营运资本因素</h3>
+      <ul>
+        <li><b>2017：</b>FCF为-€135.7m，资本开支较高。</li>
+        <li><b>2018：</b>FCF为-€213.7m，厂房建设与投资活动支出明显增加，贸易营运资本亦占用现金。</li>
+        <li><b>2021：</b>FCF升至€100.4m，但KUKA明确指出部分客户提前结算项目里程碑款，令现金流显著高于计划值。</li>
+        <li><b>2022：</b>FCF转为-€188.3m，年报主要归因于供应链扰动造成存货增加。</li>
+        <li><b>2023—2025：</b>FCF连续为正，但EBIT率从3.9%降至1.5%，现金流改善不等于利润率同步提升。</li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:16px">
+    <h3>四、纯Robotics事业部补充｜不能与KUKA集团总体混为一谈</h3>
+    <div class="tablebox"><table><thead><tr><th>年度</th><th>Robotics收入（€m）</th><th>Robotics EBIT（€m）</th><th>Robotics EBIT率</th><th>Robotics ROCE</th><th>资本占用（€m）</th></tr></thead><tbody>
+      <tr><td>2018</td><td>1,247.3</td><td>80.9</td><td>6.5%</td><td>21.9%</td><td>369.7</td></tr>
+      <tr><td>2019</td><td>1,159.2</td><td>37.7</td><td>3.3%</td><td>8.8%</td><td>430.7</td></tr>
+      <tr><td>2021</td><td>—</td><td>—</td><td>—</td><td>16.6%</td><td>372.5</td></tr>
+    </tbody></table></div>
+    <p style="margin-top:10px">Robotics事业部在2018—2019年收入下降、EBIT率与ROCE明显回落；2021年ROCE回升至16.6%。这只说明KUKA内部机器人板块的经营情况，不能代替KUKA全集团数据，也不能据此直接计算美的收购回报。</p>
+  </div>
+  <div class="panel" style="margin-top:16px">
+    <h3>五、阶段性判断与尚不能回答的问题</h3>
+    <p><b>已经能判断的：</b>KUKA集团保持了接近€3.2bn—€4.1bn的收入规模，但利润率和ROCE并不稳定；2020年亏损、2022年负FCF，2023—2025年现金流恢复，2025年EBIT率仍低于收购首年。</p>
+    <p><b>尚不能判断的：</b>收购IRR、MOIC、累计股东现金回收和收购后增量ROIC。还缺少对美的实际追加资本、KUKA向股东现金分配/资金上划、收购融资成本、少数股权归属、重组/处置和完整资本占用序列的统一桥接。</p>
+    <div class="data-alert"><b>重要：</b>2017—2025年KUKA累计FCF约€214.3m是KUKA集团披露口径合计，不等于美的实际收回现金，也不能除以收购对价后命名为投资回报率。收购回报必须把投资成本、追加资金、股息、债务和退出价值放在同一现金流时间轴上。</div>
+    <p style="margin-top:12px">原始资料：<a href="https://pubhtml5.com/gkhi/bmjx/basic/" target="_blank" rel="noopener">KUKA 2017年报</a> ｜ <a href="https://www.kuka.com/-/media/kuka-corporate/documents/ir/reports-and-presentations/en/annual-report/kuka-annual-report-2019.pdf?hash=DABE3C2D7B14E0074CA4C97C66F14B43&rev=-1" target="_blank" rel="noopener">KUKA 2019年报</a> ｜ <a href="https://www.kuka.com/-/media/kuka-corporate/documents/ir/reports-and-presentations/en/annual-report/annual-report_2021.pdf?hash=99AC1CD91DDA07C76759E84735EA2F7A&rev=-1" target="_blank" rel="noopener">KUKA 2021年报</a> ｜ <a href="https://www.kuka.com/event/media?itemid=35009b3613a545c8b06aa7b6b5e1d293" target="_blank" rel="noopener">KUKA 2022年报</a> ｜ <a href="https://www.kuka.com/-/media/kuka-corporate/documents/ir/reports-and-presentations/en/annual-report/annual-report-2025.pdf" target="_blank" rel="noopener">KUKA 2025年报</a> ｜ <a href="https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=4185007&stockid=000333" target="_blank" rel="noopener">美的集团2017年报（收购交割及购买日会计处理）</a></p>
   </div>
 </section>
 
