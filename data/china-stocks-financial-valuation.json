@@ -5181,5 +5181,131 @@
       ],
       "rule": "只有来源能支持精确证券、数据日期和指标口径时才写入；否则保持null，并标记待核验。"
     }
+  },
+  "researchAudit": {
+    "auditDate": "2026-11-01",
+    "masterUniverse": {
+      "issuers": 49,
+      "primaryAShares": 44,
+      "primaryHKShares": 5,
+      "alternateTickers": 11,
+      "alternateHKListings": 8,
+      "adrReferences": 3,
+      "note": "主证券序列每家发行人只取一只；A/H双重上市与ADR分别记录，不混用股价、币种和每股指标。"
+    },
+    "financialStatementRetrieval": {
+      "sourceArchive": "data/raw-financials/company_statements_20261101T053843Z.json",
+      "auditFile": "data/raw-financials/coverage_audit.json",
+      "uniqueIssuers": 49,
+      "listingCodes": 57,
+      "requestedRecords": 210,
+      "retrievedRecords": 210,
+      "companiesWithAllRequestedStatements": 49,
+      "aShareMasterCompanies": 44,
+      "aShareCompaniesWithLatest2026Q3Statements": 43,
+      "aShareLatestOnly2026H1": [
+        "中芯国际"
+      ],
+      "statements": [
+        "资产负债表",
+        "利润表",
+        "现金流量表"
+      ],
+      "notes": "44只A股主证券的三大报表已回收；另对13个港股证券代码分别采集年度和报告期数据。原始记录已收集，但仍需逐年标准化、统一会计科目、复核报告期和回填公司级历史财务表。"
+    },
+    "financialSnapshotCoverage": {
+      "sourceAsOf": "2026-10-27",
+      "latestPriceDateRange": [
+        "2026-10-16",
+        "2026-10-22"
+      ],
+      "revenue": 49,
+      "netProfit": 49,
+      "revenueGrowth": 48,
+      "eps": 48,
+      "roe": 43,
+      "operatingCashFlow": 49,
+      "capex": 49,
+      "freeCashFlow": 43,
+      "bookValuePerShare": 45,
+      "peTtm": 14,
+      "pb": 11,
+      "psTtm": 1,
+      "netDebt": 2,
+      "dividendYield": 0,
+      "roic": 0,
+      "notes": "该主表财务快照以2026年半年度披露为主；价格日期不一致且已落后于2026-10-30最近交易日。半年EPS/现金流不等于TTM；金融企业FCF与工业企业不可直接比较。"
+    },
+    "historicalValuation": {
+      "auditFile": "data/valuation-history/generated/coverage-audit.json",
+      "generatedAt": "2026-10-30",
+      "dailyRowsRead": 100724,
+      "monthlyRowsWritten": 8942,
+      "securitiesWithAnyHistory": 49,
+      "securitiesInUniverse": 49,
+      "period": [
+        "2006-01",
+        "2026-10"
+      ],
+      "latestObservedPercentileCoverage5Y": {
+        "peTtm": 41,
+        "pb": 46,
+        "psTtm": 42
+      },
+      "latestObservedPercentileCoverage10Y": {
+        "peTtm": 20,
+        "pb": 23,
+        "psTtm": 0
+      },
+      "withinFiveTradingSessionsPercentileCoverage5Y": {
+        "peTtm": 40,
+        "pb": 45,
+        "psTtm": 42
+      },
+      "withinFiveTradingSessionsPercentileCoverage10Y": {
+        "peTtm": 2,
+        "pb": 3,
+        "psTtm": 0
+      },
+      "exactMonthEndPercentileCoverage5Y": {
+        "peTtm": 39,
+        "pb": 42,
+        "psTtm": 42
+      },
+      "exactMonthEndPercentileCoverage10Y": {
+        "peTtm": 0,
+        "pb": 0,
+        "psTtm": 0
+      },
+      "monthEndLag": {
+        "observations": 8942,
+        "exactMonthEnd": 5010,
+        "lagOneToTwoSessions": 869,
+        "lagThreeToFiveSessions": 1137,
+        "lagSixPlusSessions": 1926,
+        "p90Sessions": 10,
+        "maxSessions": 21
+      },
+      "notes": "月度序列覆盖49/49不代表每家均有完整20年或全部三项估值。分位覆盖按有效月度样本计算，PE/PB/PS分别要求5年60个、10年120个有效月。月内最后可得观测不必然等于最后交易日收盘；严格5个交易日口径应优先用于发布。估值分位计算结果仍在独立审计文件中，尚未回填主表正式字段。"
+    },
+    "industryModelMap": {
+      "qualityEarningsFCF": 13,
+      "growthDCF": 13,
+      "normalizedCycleIncludingBrokerage": 11,
+      "cashflowDCF": 8,
+      "bankPBRoe": 2,
+      "insuranceEVNBV": 2,
+      "brokerageSeparateModel": 2,
+      "note": "券商2家从原周期模型类别中单列PB-ROE/分部估值，周期公司数量相应为9家。"
+    },
+    "conclusionStatus": {
+      "qualitativeResearchCards": 49,
+      "completeFiveYearNormalizedFinancialSeries": 0,
+      "verifiedROIC": 0,
+      "sourcedCostOfEquity": 0,
+      "companySpecificScenarioAssumptions": 0,
+      "numericBuyPriceConclusions": 0,
+      "note": "49家公司均有基础研究卡片和行业模型归类；但在5年标准化盈利、TTM现金流、稀释股数、资本成本和来源支持的情景假设补齐前，不发布虚假精确的悲观/基准/乐观目标价。"
+    }
   }
 }
