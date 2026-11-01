@@ -18,14 +18,17 @@ def main():
     company_map = {}
     totals = defaultdict(int)
     for record in payload.get("records", []):
-        key = (record.get("exchange"), record.get("code"))
+        key = record.get("company")
         item = company_map.setdefault(key, {
-            "exchange": record.get("exchange"),
-            "code": record.get("code"),
+            "company": record.get("company"),
+            "listings": [],
             "company": record.get("company"),
             "provider": record.get("provider"),
             "statements": [],
         })
+        listing = {"exchange": record.get("exchange"), "code": record.get("code"), "master_code": record.get("master_code")}
+        if listing not in item["listings"]:
+            item["listings"].append(listing)
         rows = record.get("rows") or []
         date_fields = ("报告日", "报告日期", "STD_REPORT_DATE", "REPORT_DATE")
         dates = sorted({
@@ -59,6 +62,8 @@ def main():
         "run_id": payload.get("run_id"),
         "scope": payload.get("scope"),
         "record_status_counts": dict(totals),
+        "unique_company_count": len(companies),
+        "unique_listing_count": sum(len(c["listings"]) for c in companies),
         "companies_with_any_rows": sum(
             any(s["row_count"] > 0 for s in c["statements"]) for c in companies
         ),
@@ -78,6 +83,7 @@ def main():
     print(json.dumps({
         "source_archive": report["source_archive"],
         "companies": len(companies),
+        "listings": sum(len(c["listings"]) for c in companies),
         "companies_with_any_rows": report["companies_with_any_rows"],
         "record_status_counts": dict(totals),
         "audit_file": str(target.relative_to(ROOT)),
