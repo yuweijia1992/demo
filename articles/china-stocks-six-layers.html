@@ -420,7 +420,7 @@ initValuation();
   const formalCount=records.filter(x=>x.valuationPercentile5Y!=null||x.valuationPercentile10Y!=null).length;
   grid.innerHTML=[
    metric('主证券发行人',sec.length+' 家',cnCodes+'家A股 + '+hkCodes+'家港股；A/H及ADR附属代码不重复计数'),
-   metric('三大报表采集',String(fa.record_status_counts?.retrieved??0)+' / '+(fa.scope?.master_companies* (fa.scope?.statements?.length||3)+(fa.scope?.unique_hk_codes||0)*6||210),'财报请求全部返回记录；49 / 49家公司有三大报表档案'),
+   metric('三大报表采集',String(fa.record_status_counts?.retrieved??0)+' / '+((fa.scope?.unique_a_share_codes||44)*(fa.scope?.statements?.length||3)+(fa.scope?.unique_hk_codes||13)*6),'财报请求全部返回记录；49 / 49家公司有三大报表档案'),
    metric('A股最新报表',latestQ3+' / 44 家为2026Q3','中芯国际最新仅至2026H1；港股按年度与报告期分别保存'),
    metric('收入 / 归母净利',counts.revenue+' / '+counts.profit+' 家有值','当前快照，报告期因公司而异'),
    metric('经营现金流 / 资本开支',counts.cfo+' / '+counts.capex+' 家有值','当前报告期字段；不是2021—2025历史序列完整率'),
