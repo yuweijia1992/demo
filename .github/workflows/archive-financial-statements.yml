@@ -22,6 +22,8 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -33,6 +35,12 @@ jobs:
         run: python scripts/collect_financial_statements.py
       - name: Audit retrieved statement coverage
         run: python scripts/audit_financial_archive.py
+      - name: Upload raw archive and audit artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: financial-statements-${{ github.run_id }}
+          path: data/raw-financials/
+          retention-days: 30
       - name: Commit archive if changed
         run: |
           git config user.name "github-actions[bot]"
@@ -40,5 +48,6 @@ jobs:
           git add data/raw-financials/
           if ! git diff --cached --quiet; then
             git commit -m "Archive monthly A-share financial statements"
+            git pull --rebase origin main
             git push
           fi
