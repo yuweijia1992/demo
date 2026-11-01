@@ -23,7 +23,7 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
 <header class="top"><div class="wrap nav"><a class="brand" href="../index.html">余暮 <small>/ 投资实验室</small></a><div class="navright"><a href="../index.html">个人主页</a><a href="valuation-engine.html">49家公司估值引擎</a><button class="theme" id="themeBtn">◐ 外观</button></div></div></header>
 <main class="wrap">
 <section class="hero"><div><div class="eyebrow">LONG-TERM EQUITY RESEARCH · V1.2</div><h1>中国上市公司<br>20孔投资研究系统</h1><p>把稀缺的投资决策留给少数真正理解的企业。先验证商业质量，再验证财务与护城河，最后才讨论估值和买入。这里记录证据，不用故事代替数据。</p></div><aside class="heroNote"><b>打孔卡不是选股排行榜</b>每一次重大投资都应经过独立审查。候选名单可以变化，证据必须可追溯；没有足够证据，就保持空白，不强行给分。</aside></section>
-<nav class="quicknav" aria-label="研究导航"><a href="#midea-q3">美的2026三季报</a><a href="#midea-q3-quality">利润与现金流穿透</a><a href="#midea-capital">历史FCF / ROIC</a><a href="#kuka-return">KUKA投后回报</a><a href="#midea-audit">并购审计</a><span>数据更新：2026-11-01</span></nav>
+<nav class="quicknav" aria-label="研究导航"><a href="#midea-q3">美的2026三季报</a><a href="#midea-q3-quality">利润与现金流穿透</a><a href="#midea-capital">历史FCF / ROIC</a><a href="#kuka-return">KUKA投后回报</a><a href="#midea-audit">并购审计</a><a href="#midea-roic-rebuild">2006—2025 ROIC重建</a><span>数据更新：2026-11-01</span></nav>
 <section class="stats"><div class="stat"><strong>20</strong><span>初始候选观察池</span></div><div class="stat"><strong>8</strong><span>研究审查环节</span></div><div class="stat"><strong>0</strong><span>已完成证据审计的最终入选</span></div><div class="stat"><strong>待核验</strong><span>当前估值与买入价格</span></div></section>
 <section class="section"><div class="sectionHead"><div><h2>候选企业观察池</h2><p>20家是研究起点，不是必须填满的20个投资名额。点击公司查看研究问题。</p></div><div class="tools"><input id="search" placeholder="搜索公司 / 代码"><select id="sector"><option value="">全部行业</option><option>消费与品牌</option><option>平台与互联网</option><option>制造与科技</option><option>公用事业与能源</option><option>金融</option><option>医疗健康</option></select></div></div>
 <div class="filters"><button class="filter active" data-group="全部">全部候选</button><button class="filter" data-group="第一层">第一层 · 优先研究</button><button class="filter" data-group="第二层">第二层 · 验证护城河</button><button class="filter" data-group="第三层">第三层 · 高变化风险</button></div>
@@ -411,6 +411,71 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
     <p>原始披露：<a href="https://static.cninfo.com.cn/finalpage/2026-10-30/1225645132.PDF" target="_blank" rel="noopener">美的集团2026年第三季度报告（巨潮资讯PDF）</a> ｜ <a href="https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12680652&stockid=000333" target="_blank" rel="noopener">三季报公告文本镜像</a></p>
   </div>
   <div class="note">数据说明：金额单位均为人民币亿元，由三季报人民币千元字段换算；百分比按报告同比口径摘录。三季报未经审计。本节仅更新经营跟踪，不据此推算完整年度结果，也不把单季数字年化。</div>
+</section>
+
+
+<section class="section panel" id="midea-roic-rebuild">
+  <div class="eyebrow">MIDEA GROUP · ROIC RECONSTRUCTION · AUDIT UPDATE</div>
+  <h2>美的集团 2006—2025 年经营性 ROIC 重建</h2>
+  <p>本节将历史经营利润、金融业务隔离、投入资本、并购购买价分摊（PPA）与资本回报放在同一套可审计框架下。数据只在原始披露与计算口径能够对应时录入；未能可靠拆分的年度保留缺口，不用集团净利润、ROE 或第三方 ROIC 替代经营性 ROIC。</p>
+  <div class="stats" style="margin:16px 0">
+    <div class="stat"><strong>20年</strong><span>研究期间：2006—2025</span></div>
+    <div class="stat"><strong>2段</strong><span>主体口径：2006—2012 / 2013—2025</span></div>
+    <div class="stat"><strong>2套</strong><span>含商誉与剔除商誉 ROIC</span></div>
+    <div class="stat"><strong>待计算</strong><span>完整年度 NOPAT 与 ROIC</span></div>
+  </div>
+  <div class="data-alert"><b>重要口径断点：</b>2006—2012 年主体为广东美的电器（000527）历史披露，2013 年以后为美的集团（000333）合并口径。两段分别重建，不把主体、合并范围和分部分类变化造成的差异伪装成完全可比的连续序列。</div>
+
+  <h3 style="margin-top:20px">一、经营性 EBIT：先分部重建，再做集团桥接</h3>
+  <p>2006—2012 年优先采用原广东美的电器年报产品分部资料，逐年核对分部营业利润、总部及未分配项目、投资收益和财务费用。2007 年报披露空调、冰箱、洗衣机、压缩机等产品分部；2012 年报披露空调及零部件、冰箱及零部件、洗衣机及零部件、小家电等分部。不同年份的分部分类与利润定义并不完全一致，不能把单年分部营业利润直接拼成标准化 EBIT。</p>
+  <p>2013—2025 年以合并年报为基础，逐年还原报告分部利润与合并利润总额之间的差异。尤其要注意：报告分部费用可能包含利息支出、手续费及佣金支出、销售管理研发费用及财务收入；因此“分部利润”不等于未经调整的经营性 EBIT。</p>
+  <div class="tablebox"><table><thead><tr><th>重建项目</th><th>处理原则</th><th>当前审计状态</th></tr></thead><tbody>
+    <tr><td>2006—2012 产品分部利润</td><td>按各年原始分类录入，补总部费用及未分配项目，保留分类变更说明</td><td>部分年度已取得，尚未形成完整同口径 EBIT</td></tr>
+    <tr><td>2013—2025 报告分部利润</td><td>逐年桥接分部利润、其他损益、合并利润总额</td><td>已取得部分年度附注，待补齐完整年度序列</td></tr>
+    <tr><td>金融业务损益</td><td>财务公司利息收入、利息支出、手续费、信用减值单独识别</td><td>2022、2024—2025 有部分可核验数据，其他年度待补</td></tr>
+    <tr><td>非金融财务项目</td><td>区分超额现金利息、经营性汇兑、融资利息、租赁利息及其他财务收入</td><td>2024—2025 已取得部分披露，历史序列待补</td></tr>
+  </tbody></table></div>
+
+  <h3 style="margin-top:20px">二、金融业务隔离：不把“其他分部”整体剔除</h3>
+  <p>2025 年报告分部利润（人民币百万元）：智能家居 37,130.386；楼宇科技 4,503.740；工业技术 5,088.171；其他及未分配 2,603.866；分部间抵销 99.631；分部利润合计 49,425.794；其他损益 3,659.549；利润总额 53,085.343。2024 年对应分部利润合计 41,211.630 百万元，利润总额 46,689.746 百万元。</p>
+  <p>“其他及未分配”同时包含机器人、储能、绿色能源、金融服务及医疗器械等业务，不能整体视为金融业务，也不能整体视为工业业务。2025 年附注另披露金融业务利息收入 2,050.168 百万元；非金融业务利息费用 2,211.331 百万元、非金融业务利息收入 8,444.301 百万元、汇兑损益 -234.369 百万元及其他财务收入 -95.055 百万元。2024 年对应金融业务利息收入为 1,934.090 百万元，非金融业务利息收入为 7,200.991 百万元。</p>
+  <p>因此，金融公司需要按资产负债表和利润表独立隔离：吸收存款、发放贷款、存放同业及央行款项、同业负债、利息收入支出、手续费和贷款减值。若年报未给出足够独立数据，就标记为未拆分，不用“其他分部”作为替代变量。</p>
+
+  <h3 style="margin-top:20px">三、经营性投入资本：统一资产负债表边界</h3>
+  <p>投入资本采用经营性营运资本、固定资产、在建工程、使用权资产、经营性无形资产及商誉，减去无息经营负债的思路。逐年单独识别超额现金、交易性金融资产、定期存款、财务公司金融资产、租赁负债和非经营性投资。营运资本至少拆分存货、应收票据及账款、合同资产、预付款、应付票据及账款、合同负债和其他经营性应收应付。</p>
+  <p>ROIC 分母使用期初、期末经营性投入资本平均值。租赁会计必须前后一致：若将使用权资产纳入经营资本并把租赁负债视作融资负债，则 EBIT 也要采用匹配的租赁利息处理；不能只调整分母、不调整分子。</p>
+
+  <h3 style="margin-top:20px">四、并购 PPA 与商誉：不把收购成本从回报考核中抹去</h3>
+  <p>2017 年 KUKA 收购形成的商誉约 206.98 亿元，是含商誉 ROIC 必须保留的真实资本投入。集团无形资产摊销总额不能直接当作 KUKA PPA 摊销；必须逐项识别购买日确认的商标、技术、客户关系、订单储备等可辨认无形资产的公允价值、使用寿命和年度摊销。TLSC、小天鹅及其他收购也按同一原则建立购买日桥接。</p>
+  <p>两套指标的定义如下：</p>
+  <div class="gates">
+    <div class="gate"><b>含商誉 ROIC</b><span>NOPAT ÷ 平均经营性投入资本（包含商誉及经营性 PPA 无形资产）</span></div>
+    <div class="gate"><b>剔除商誉 ROIC</b><span>NOPAT ÷ 平均经营性投入资本（只剔除商誉，仍保留可辨认经营性无形资产）</span></div>
+  </div>
+  <p>剔除商誉口径不是“把并购无形资产也一并删除”的轻松版本。两套 ROIC 共用同一经营性 EBIT 与 NOPAT；差别只在分母是否保留商誉。并购资本配置是否创造价值，应优先观察含商誉 ROIC 及收购后增量现金回报。</p>
+
+  <h3 style="margin-top:20px">五、NOPAT 计算与税率</h3>
+  <p><b>NOPAT = 经营性 EBIT ×（1 − 正常化经营税率）</b>。正常化税率以经营性利润适用的长期税率为基础，逐年考虑境内外税率差异、税收优惠、递延所得税和重大一次性税务事项。不得直接将集团所得税费用除以利润总额作为所有业务统一税率，也不得把金融业务税负混入工业经营税率。</p>
+
+  <h3 style="margin-top:20px">六、当前可确认数据与缺口</h3>
+  <div class="tablebox"><table><thead><tr><th>数据项目</th><th>当前可确认信息</th><th>尚需完成</th></tr></thead><tbody>
+    <tr><td>2014—2022 简化 FCF</td><td>已有逐年 CFO 减长期资产购建支出的历史序列</td><td>金融业务现金流隔离；不得直接等同标准化 FCFF</td></tr>
+    <tr><td>2024—2025 分部利润</td><td>分部利润、其他损益及利润总额已录入桥接底稿</td><td>补全年度并统一分部利润定义及财务项目调整</td></tr>
+    <tr><td>金融业务</td><td>2022、2024—2025 部分利息披露可核验</td><td>2013—2025 逐年独立资产负债、利润、减值与税负</td></tr>
+    <tr><td>经营性营运资本</td><td>已确定拆分科目和计算边界</td><td>2006—2025 年度期初期末余额及合并范围调整</td></tr>
+    <tr><td>固定资产及其他经营资产</td><td>已确定固定资产、在建工程、使用权资产、无形资产的纳入原则</td><td>逐年剔除金融资产、非经营投资和超额现金</td></tr>
+    <tr><td>商誉及 PPA</td><td>KUKA 购买日商誉及部分集团摊销数据已确认</td><td>所有重大收购逐项确认可辨认无形资产、寿命和摊销</td></tr>
+    <tr><td>NOPAT 与两套 ROIC</td><td>公式和统一口径已固定</td><td>分子、分母年度桥接通过核验后再计算</td></tr>
+  </tbody></table></div>
+  <div class="data-alert"><b>阶段结论：</b>当前不发布未经完整重建的 2006—2025 ROIC 数值、行业排名或投资结论。现有资料足以确认美的集团需要进行金融业务隔离、并购 PPA 调整和主体口径分段，但不足以支持 20 年完整年度 NOPAT 与平均经营性投入资本。数据缺口不是零，也不能用估算数伪装成已核验值。</div>
+
+  <h3 style="margin-top:20px">七、原始披露与核验入口</h3>
+  <ul>
+    <li><a href="https://www.cninfo.com.cn/" target="_blank" rel="noopener">巨潮资讯网</a>：美的集团年度报告、审计报告及历史公告检索入口。</li>
+    <li><a href="https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12048854&stockid=000333" target="_blank" rel="noopener">美的集团 2025 年年度报告公告文本</a>。</li>
+    <li><a href="https://www.midea.com/" target="_blank" rel="noopener">美的集团官方网站</a>：公司及投资者关系信息入口。</li>
+  </ul>
+  <p class="note">研究纪律：金额统一为人民币；明确百万元/亿元单位；保留原始报告期、合并口径、来源链接和调整公式。只有年度分子桥接、分母桥接及来源审计完成后，才将状态改为“可计算”。</p>
 </section>
 
 <footer class="wrap footer"><span>© 2026 余暮 · 中国上市公司20孔投资研究系统</span><span>Evidence first · Price matters · Think long term</span></footer>
