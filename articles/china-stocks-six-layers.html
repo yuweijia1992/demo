@@ -400,14 +400,15 @@ initValuation();
  const fmt=v=>Number(v).toLocaleString('zh-CN');
  const metric=(label,value,desc)=>'<div class="coverage-item"><span>'+escHTML(label)+'</span><strong>'+escHTML(value)+'</strong><small>'+escHTML(desc)+'</small></div>';
  try{
-  const [uRes,fRes,vRes,dRes]=await Promise.all([
+  const [uRes,fRes,vRes,dRes,iRes]=await Promise.all([
    fetch('../data/valuation-history/universe.json',{cache:'no-store'}),
    fetch('../data/raw-financials/coverage_audit.json',{cache:'no-store'}),
    fetch('../data/valuation-history/generated/coverage-audit.json',{cache:'no-store'}),
-   fetch('../data/china-stocks-financial-valuation.json',{cache:'no-store'})
+   fetch('../data/china-stocks-financial-valuation.json',{cache:'no-store'}),
+   fetch('../data/valuation-inputs/valuation-input-audit-49.json',{cache:'no-store'})
   ]);
-  if(!uRes.ok||!fRes.ok||!vRes.ok||!dRes.ok)throw new Error('一个或多个审计文件读取失败');
-  const [u,fa,va,db]=await Promise.all([uRes.json(),fRes.json(),vRes.json(),dRes.json()]);
+  if(!uRes.ok||!fRes.ok||!vRes.ok||!dRes.ok||!iRes.ok)throw new Error('一个或多个审计文件读取失败');
+  const [u,fa,va,db,ia]=await Promise.all([uRes.json(),fRes.json(),vRes.json(),dRes.json(),iRes.json()]);
   const sec=u.securities||[], records=db.stocks||[], p=va.latestObservedRowPercentileCoverage||{}, p5=p.peTtm?.['5Y']??0,pb5=p.pb?.['5Y']??0,ps5=p.psTtm?.['5Y']??0;
   const p10=p.peTtm?.['10Y']??0,pb10=p.pb?.['10Y']??0,ps10=p.psTtm?.['10Y']??0;
   const strict=va.latestWithin5TradingSessionsPercentileCoverage||{};
@@ -434,7 +435,15 @@ initValuation();
   ].join('');
   status.textContent='主证券池 '+sec.length+'家 · 财报审计 '+String(fa.generated_at_utc||'').slice(0,10)+' · 估值审计 '+String(va.generatedAt||'').slice(0,10);
   const pct=(delayed/obs*100).toFixed(1);
-  note.textContent='重要口径：财报原始采集已达 '+(st.retrieved??210)+' / '+(fa.scope?.statements?.length===3?210:210)+' 条请求、49 / 49家有记录；A股44家中43家已采集至2026-09-30，1家中芯国际截至2026-06-30。当前快照字段覆盖不等于历史序列完整。历史估值月表 '+fmt(va.monthlyRowsWritten||0)+' 条，49 / 49家至少有观测；月内最后可得观测中 '+delayed+' / '+obs+' 条（'+pct+'%）滞后月末6个以上交易日，P90滞后 '+(finalLag.p90LagSessions??10)+'日、最大 '+(finalLag.maxLagSessions??21)+'日。正式数据库5年/10年分位字段目前 '+formalCount+' / 49家已回填（仍为0）；上方分位覆盖仅是独立审计文件计算结果，不能误称为正式评级数据。';
+  const auditRows=ia.records||[];
+  const incomplete=(field)=>auditRows.filter(x=>String(x.status?.[field]||'').includes('待补')||String(x.status?.[field]||'').includes('待完成')||String(x.status?.[field]||'').includes('仍待')).length;
+  const histDone=49-incomplete('historicalFinancialSeries');
+  const bvpsDone=49-incomplete('bookValuePerShareHistory');
+  const sharesDone=49-incomplete('shareCapitalHistory');
+  const divDone=49-incomplete('dividendHistory');
+  const capexDone=49-incomplete('capexHistory');
+  const scenarioDone=49-incomplete('scenarioAssumptions');
+  note.textContent='重要口径：财报原始采集已达 '+(st.retrieved??210)+' / '+((fa.scope?.unique_a_share_codes||44)*3+(fa.scope?.unique_hk_codes||13)*6)+' 条请求、49 / 49家有记录；A股44家中43家已采集至2026-09-30，1家中芯国际截至2026-06-30。历史标准化进度仍是：2021—2025三大报表统一序列 '+histDone+'/49、逐年BVPS '+bvpsDone+'/49、股本变化 '+sharesDone+'/49、股息序列 '+divDone+'/49、历史资本开支标准化 '+capexDone+'/49、来源支持的公司级三情景假设 '+scenarioDone+'/49；当前报告期资本开支字段虽有49/49家，不等于五年历史资本开支已完成。历史估值月表 '+fmt(va.monthlyRowsWritten||0)+' 条，49 / 49家至少有观测；月内最后可得观测中 '+delayed+' / '+obs+' 条（'+pct+'%）滞后月末6个以上交易日，P90滞后 '+(finalLag.p90LagSessions??10)+'日、最大 '+(finalLag.maxLagSessions??21)+'日。正式数据库5年/10年分位字段目前 '+formalCount+' / 49家已回填（仍为0）；上方分位覆盖仅是独立审计文件计算结果，不能误称为正式评级数据。 <a href="../data/valuation-inputs/valuation-input-audit-49.json">打开逐家公司历史财务与估值输入缺口审计 ↗</a>';
   const sorted=[...sec].sort((a,b)=>a.layer-b.layer||a.issuerName.localeCompare(b.issuerName,'zh-CN'));
   body.innerHTML=sorted.map(s=>{
     const method=(s.valuationMethod==='normalized_cycle'&&['中信证券','东方财富'].includes(s.issuerName))?'券商：PB–ROE + 分部/周期盈利':(modelNames[s.valuationMethod]||s.valuationMethod);
