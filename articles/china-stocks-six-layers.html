@@ -436,7 +436,7 @@ initValuation();
   status.textContent='主证券池 '+sec.length+'家 · 财报审计 '+String(fa.generated_at_utc||'').slice(0,10)+' · 估值审计 '+String(va.generatedAt||'').slice(0,10);
   const pct=(delayed/obs*100).toFixed(1);
   const auditRows=ia.records||[];
-  const incomplete=(field)=>auditRows.filter(x=>String(x.status?.[field]||'').includes('待补')||String(x.status?.[field]||'').includes('待完成')||String(x.status?.[field]||'').includes('仍待')).length;
+  const incomplete=(field)=>auditRows.filter(x=>String(x.status?.[field]||'').includes('待补')||String(x.status?.[field]||'').includes('待完成')||String(x.status?.[field]||'').includes('仍待')||String(x.status?.[field]||'').includes('待建立')).length;
   const histDone=49-incomplete('historicalFinancialSeries');
   const bvpsDone=49-incomplete('bookValuePerShareHistory');
   const sharesDone=49-incomplete('shareCapitalHistory');
