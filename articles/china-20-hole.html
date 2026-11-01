@@ -14,7 +14,7 @@
 .tablebox{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--line);font-size:13px}th{font-size:11px;color:var(--muted);font-weight:650;background:color-mix(in srgb,var(--panel),var(--bg) 45%)}tr:last-child td{border-bottom:0}tbody tr:hover{background:var(--soft)}.company{font-weight:720}.code{font-size:11px;color:var(--muted);margin-left:7px}.tag{display:inline-block;border-radius:99px;background:var(--soft);color:var(--green);padding:3px 8px;font-size:11px}.status{color:var(--amber);font-size:11px}.open{border:0;background:transparent;color:var(--green);font-weight:700;cursor:pointer}.empty{padding:30px;text-align:center;color:var(--muted)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow)}.panel h3{font-size:16px;margin:0 0 8px}.panel p{color:var(--muted);font-size:13px;margin:0}.gates{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}.gate{border:1px solid var(--line);border-radius:10px;padding:11px}.gate b{display:block;font-size:13px}.gate span{font-size:11px;color:var(--muted)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.step{padding:13px;border-radius:10px;background:var(--soft)}.step b{display:block;font-size:13px}.step span{font-size:11px;color:var(--muted)}
-.note{background:var(--soft);border-radius:12px;padding:15px 17px;color:var(--muted);font-size:12px;margin-top:15px}.footer{border-top:1px solid var(--line);margin-top:48px;padding:22px 0 35px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:15px}
+.note{background:var(--soft);border-radius:12px;padding:15px 17px;color:var(--muted);font-size:12px;margin-top:15px}.quicknav{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:0 0 16px;padding:11px 13px;background:var(--panel);border:1px solid var(--line);border-radius:12px;font-size:12px}.quicknav a{padding:5px 9px;border-radius:7px;background:var(--soft);color:var(--green);font-weight:650}.quicknav span{margin-left:auto;color:var(--muted)}.chartbox{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow-x:auto}.chartbox svg{display:block;width:100%;min-width:620px;height:auto}.chart-caption{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:11px;margin-top:6px}.data-alert{border-left:3px solid var(--amber);padding:12px 14px;background:var(--soft);border-radius:0 10px 10px 0;margin-top:14px;font-size:13px;color:var(--muted)}.footer{border-top:1px solid var(--line);margin-top:48px;padding:22px 0 35px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:15px}
 dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-radius:16px;padding:0;background:var(--panel);color:var(--ink);box-shadow:0 25px 90px #0003}dialog::backdrop{background:#10181088}.modalHead{padding:22px 24px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:15px}.modalHead h2{margin:0;font-size:22px}.modalBody{padding:20px 24px 24px}.modalBody h3{font-size:14px;margin:18px 0 6px}.modalBody p,.modalBody li{font-size:13px;color:var(--muted)}.close{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}.checklist{display:grid;grid-template-columns:1fr 1fr;gap:8px}.check{border:1px solid var(--line);border-radius:9px;padding:10px;font-size:12px;color:var(--muted)}
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:38px}.stats{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.navright a{display:none}.wrap{padding:0 16px}.tablebox{overflow-x:auto}table{min-width:720px}.sectionHead{align-items:start;flex-direction:column}.tools input{flex:1;min-width:130px}}
 </style>
@@ -22,7 +22,8 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
 <body>
 <header class="top"><div class="wrap nav"><a class="brand" href="../index.html">余暮 <small>/ 投资实验室</small></a><div class="navright"><a href="../index.html">个人主页</a><a href="valuation-engine.html">49家公司估值引擎</a><button class="theme" id="themeBtn">◐ 外观</button></div></div></header>
 <main class="wrap">
-<section class="hero"><div><div class="eyebrow">LONG-TERM EQUITY RESEARCH · V1.0</div><h1>中国上市公司<br>20孔投资研究系统</h1><p>把稀缺的投资决策留给少数真正理解的企业。先验证商业质量，再验证财务与护城河，最后才讨论估值和买入。这里记录证据，不用故事代替数据。</p></div><aside class="heroNote"><b>打孔卡不是选股排行榜</b>每一次重大投资都应经过独立审查。候选名单可以变化，证据必须可追溯；没有足够证据，就保持空白，不强行给分。</aside></section>
+<section class="hero"><div><div class="eyebrow">LONG-TERM EQUITY RESEARCH · V1.1</div><h1>中国上市公司<br>20孔投资研究系统</h1><p>把稀缺的投资决策留给少数真正理解的企业。先验证商业质量，再验证财务与护城河，最后才讨论估值和买入。这里记录证据，不用故事代替数据。</p></div><aside class="heroNote"><b>打孔卡不是选股排行榜</b>每一次重大投资都应经过独立审查。候选名单可以变化，证据必须可追溯；没有足够证据，就保持空白，不强行给分。</aside></section>
+<nav class="quicknav" aria-label="研究导航"><a href="#midea-q3">美的2026三季报</a><a href="#midea-capital">历史FCF / ROIC</a><a href="#midea-audit">并购审计</a><span>数据更新：2026-11-01</span></nav>
 <section class="stats"><div class="stat"><strong>20</strong><span>初始候选观察池</span></div><div class="stat"><strong>8</strong><span>研究审查环节</span></div><div class="stat"><strong>0</strong><span>已完成证据审计的最终入选</span></div><div class="stat"><strong>待核验</strong><span>当前估值与买入价格</span></div></section>
 <section class="section"><div class="sectionHead"><div><h2>候选企业观察池</h2><p>20家是研究起点，不是必须填满的20个投资名额。点击公司查看研究问题。</p></div><div class="tools"><input id="search" placeholder="搜索公司 / 代码"><select id="sector"><option value="">全部行业</option><option>消费与品牌</option><option>平台与互联网</option><option>制造与科技</option><option>公用事业与能源</option><option>金融</option><option>医疗健康</option></select></div></div>
 <div class="filters"><button class="filter active" data-group="全部">全部候选</button><button class="filter" data-group="第一层">第一层 · 优先研究</button><button class="filter" data-group="第二层">第二层 · 验证护城河</button><button class="filter" data-group="第三层">第三层 · 高变化风险</button></div>
@@ -126,8 +127,8 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
 <div class="panel"><h3>商誉与减值风险</h3><div class="gates"><div class="gate"><b>2025年末商誉 342.57亿元</b><span>约占总资产5.6%</span></div><div class="gate"><b>KUKA商誉 234.35亿元</b><span>占商誉约68%</span></div><div class="gate"><b>TLSC商誉 20.86亿元</b><span>需持续跟踪</span></div><div class="gate"><b>2026年上半年资产减值损失 16.53亿元</b><span>报告称主要因商誉减值损失增加</span></div></div><p>2025年审计报告将KUKA与TLSC商誉减值测试列为关键审计事项。未计提减值不代表未来没有减值风险。</p></div></div>
 <div class="panel" style="margin-top:16px"><h3>ROIC重建口径</h3><p><b>ROIC = NOPAT ÷ 平均投入资本。</b>NOPAT以经营性EBIT扣除正常化经营所得税计算；投入资本从经营性资产出发，扣除无息经营负债，并单独披露商誉、租赁负债、超额现金及金融资产的处理方式。</p><p>同时形成含商誉ROIC与剔除商誉ROIC：前者检验包括并购在内的资本配置质量，后者观察存量业务效率。当前不发布ROIC数值，待逐项重建NOPAT和投入资本后再计算。</p></div>
 <div class="panel" style="margin-top:16px"><h3>阶段性判断与下一步</h3><ul><li>优势：智能家居业务稳健增长，商业及工业解决方案收入增长17.47%；研发费用177.88亿元，占收入3.90%。</li><li>疑点：海外扩张与ToB业务新增资本能否覆盖资本成本，尚待验证。</li><li>风险：商誉余额较大，2026年上半年商誉减值损失增加。</li><li>资本配置：2025年度拟每10股派现43元，需与回购价格、股权激励稀释及再投资回报一并评价。</li></ul><p><b>当前结论：</b>美的具备规模制造、全球渠道和较强现金创造能力；但新增海外资本投入和并购商誉规模较大。关键问题是这些新增资本能否持续产生高于资本成本的回报。暂不打分、不估值、不设买入价。</p><p>原始资料：<a href="https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12048854&stockid=000333" target="_blank" rel="noopener">2025年年度报告</a> ｜ <a href="https://static.cninfo.com.cn/finalpage/2026-08-28/1225533135.PDF" target="_blank" rel="noopener">2026年半年度报告</a> ｜ <a href="https://www.hkexnews.hk/listedco/listconews/sehk/2026/0330/2026033002440_c.pdf" target="_blank" rel="noopener">2025年度财务报表</a></p></div></section>
-<section class="section">
-  <div class="sectionHead"><div><div class="eyebrow">MIDEA CAPITAL RETURNS · HISTORICAL REBUILD V0.1</div><h2>美的集团历史ROIC / FCF重建｜2006—2025</h2><p>第一版现金流序列与并购建档已形成；ROIC仍处于数据重建阶段，不把未经核验的比率包装成结论。</p></div><span class="tag">历史底稿 V0.1</span></div>
+<section class="section" id="midea-capital">
+  <div class="sectionHead"><div><div class="eyebrow">MIDEA CAPITAL RETURNS · HISTORICAL REBUILD V0.2</div><h2>美的集团历史ROIC / FCF重建｜2006—2025</h2><p>第一版现金流序列与并购建档已形成；ROIC仍处于数据重建阶段，不把未经核验的比率包装成结论。</p></div><span class="tag">历史底稿 V0.1</span></div>
   <div class="panel">
     <h3>一、简化FCF代理序列（单位：亿元）</h3>
     <p>定义：经营活动现金流量净额（CFO）－购建固定资产、无形资产和其他长期资产支付的现金。该口径未扣并购现金流、租赁本金，也未剥离金融业务现金流，不能等同标准化FCFF或FCFE。</p>
@@ -138,6 +139,7 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
     <tr><td>2009</td><td>9.33</td><td>2014</td><td>221.11</td><td>2019</td><td>351.38</td><td>2024</td><td>526.72</td></tr>
     <tr><td>2010</td><td>15.09</td><td>2015</td><td>236.33</td><td>2020</td><td>249.00</td><td>2025</td><td>422.04</td></tr>
     </tbody></table></div>
+    <div class="chartbox"><b>简化FCF年度变化</b><svg viewBox="0 0 820 220" role="img" aria-label="2006年至2025年简化自由现金流柱状图，2007年缺数"><line x1="34" y1="24" x2="808" y2="24" stroke="var(--line)"/><line x1="34" y1="95" x2="808" y2="95" stroke="var(--line)"/><line x1="34" y1="168" x2="808" y2="168" stroke="var(--muted)"/><text x="3" y="28" font-size="10" fill="var(--muted)">540</text><text x="8" y="99" font-size="10" fill="var(--muted)">270</text><text x="16" y="172" font-size="10" fill="var(--muted)">0</text><rect x="43.4" y="167.4" width="22" height="2.0" rx="3" fill="var(--green)"><title>2006年：2.11亿元</title></rect><text x="54.4" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2006</text><rect x="84.1" y="163.4" width="22" height="4.6" rx="3" fill="var(--green)"><title>2008年：17.25亿元</title></rect><text x="95.1" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2008</text><rect x="124.8" y="165.5" width="22" height="2.5" rx="3" fill="var(--green)"><title>2009年：9.33亿元</title></rect><text x="135.8" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2009</text><rect x="165.6" y="164.0" width="22" height="4.0" rx="3" fill="var(--green)"><title>2010年：15.09亿元</title></rect><text x="176.6" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2010</text><rect x="206.3" y="168.0" width="22" height="2.4" rx="3" fill="var(--amber)"><title>2011年：-8.94亿元</title></rect><text x="217.3" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2011</text><rect x="247.1" y="153.9" width="22" height="14.1" rx="3" fill="var(--green)"><title>2012年：52.71亿元</title></rect><text x="258.1" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2012</text><rect x="287.8" y="146.8" width="22" height="21.2" rx="3" fill="var(--green)"><title>2013年：79.39亿元</title></rect><text x="298.8" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2013</text><rect x="328.5" y="109.0" width="22" height="59.0" rx="3" fill="var(--green)"><title>2014年：221.11亿元</title></rect><text x="339.5" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2014</text><rect x="369.3" y="105.0" width="22" height="63.0" rx="3" fill="var(--green)"><title>2015年：236.33亿元</title></rect><text x="380.3" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2015</text><rect x="410.0" y="103.0" width="22" height="65.0" rx="3" fill="var(--green)"><title>2016年：243.72亿元</title></rect><text x="421.0" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2016</text><rect x="450.7" y="111.4" width="22" height="56.6" rx="3" fill="var(--green)"><title>2017年：212.25亿元</title></rect><text x="461.7" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2017</text><rect x="491.5" y="108.7" width="22" height="59.3" rx="3" fill="var(--green)"><title>2018年：222.49亿元</title></rect><text x="502.5" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2018</text><rect x="532.2" y="74.3" width="22" height="93.7" rx="3" fill="var(--green)"><title>2019年：351.38亿元</title></rect><text x="543.2" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2019</text><rect x="572.9" y="101.6" width="22" height="66.4" rx="3" fill="var(--green)"><title>2020年：249.00亿元</title></rect><text x="583.9" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2020</text><rect x="613.7" y="92.6" width="22" height="75.4" rx="3" fill="var(--green)"><title>2021年：282.67亿元</title></rect><text x="624.7" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2021</text><rect x="654.4" y="95.2" width="22" height="72.8" rx="3" fill="var(--green)"><title>2022年：273.06亿元</title></rect><text x="665.4" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2022</text><rect x="695.2" y="30.4" width="22" height="137.6" rx="3" fill="var(--green)"><title>2023年：515.89亿元</title></rect><text x="706.2" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2023</text><rect x="735.9" y="27.5" width="22" height="140.5" rx="3" fill="var(--green)"><title>2024年：526.72亿元</title></rect><text x="746.9" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2024</text><rect x="776.6" y="55.5" width="22" height="112.5" rx="3" fill="var(--green)"><title>2025年：422.04亿元</title></rect><text x="787.6" y="190" text-anchor="middle" font-size="9" fill="var(--muted)">2025</text></svg><div class="chart-caption"><span>单位：亿元；2007年缺失值不绘制。</span><span>柱高按简化FCF绝对值绘制；负值向零轴下方显示。</span></div></div>
     <p><b>审计状态：</b>2006、2008—2013已找到审计/公司年报原始报表；2014—2022暂用结构化历史数据库数值，逐年年报回查未完成；2023—2025与年度报告现金流表核对。2007年CFO在来源间存在冲突（2009年报摘要列示17.48亿元，2008年增发招股书列示16.34亿元），暂时留空。2013年是原广东美的电器与美的集团合并口径的重要断点，前后不应直接做不加说明的长期趋势比较。</p>
   </div>
   <div class="grid2" style="margin-top:16px">
@@ -153,11 +155,14 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
     </div>
     <div class="panel"><h3>三、并购回报档案：已核实的初始交易数据</h3>
       <div class="tablebox"><table><thead><tr><th>项目</th><th>对价/现金投入</th><th>购买日净资产</th><th>商誉</th><th>当期净现金流出</th></tr></thead><tbody>
-      <tr><td>KUKA（2017）</td><td>现金对价270.02亿元；原持股公允价值35.41亿元</td><td>104.12亿元</td><td>206.98亿元</td><td>标的现金净额后约243.48亿元</td></tr>
-      <tr><td>Arbonia Climate（2025）</td><td>最终调整对价41.22亿元</td><td>29.86亿元</td><td>11.36亿元</td><td>37.58亿元</td></tr>
-      <tr><td>Teka（2025）</td><td>总对价17.52亿元</td><td>10.71亿元</td><td>6.99亿元</td><td>11.75亿元</td></tr>
+      <tr><td>KUKA（2017）</td><td>新购约81.04%；加原持股后约94.55%；现金对价270.02亿元，原持股公允价值35.41亿元</td><td>104.12亿元</td><td>206.98亿元</td><td>243.48亿元</td></tr>
+      <tr><td>Arbonia Climate（2025-02）</td><td>100%；最终调整对价41.22亿元</td><td>29.86亿元</td><td>11.36亿元</td><td>37.58亿元</td></tr>
+      <tr><td>Teka Industrial（2025-04）</td><td>100%（97.38%+2.62%）；总对价17.52亿元</td><td>10.71亿元</td><td>6.99亿元</td><td>11.75亿元</td></tr>
+      <tr><td>东芝电梯（中国/沈阳，2025-02）</td><td>取得58%；对价9.89亿元</td><td>10.82亿元</td><td>3.62亿元</td><td>7.65亿元</td></tr>
+      <tr><td>Carestream / 锐珂医疗（2025-12）</td><td>收购11家子公司，取得100%；对价18.62亿元</td><td>14.51亿元</td><td>4.11亿元</td><td>4.47亿元</td></tr>
+      <tr><td>Frigicoll及相关热能业务（2025）</td><td>取得实际控制权；披露对价4,140.7万欧元，折合约3.48亿元；持股比例待核</td><td>未单列</td><td>未单列</td><td>未单列</td></tr>
       </tbody></table></div>
-      <p>购买日净资产、商誉与现金净流出不是同一个概念。以上交易数据已经建档；投后收入、EBITDA、EBIT、独立自由现金流和投入资本回报仍需标的层面资料，未披露的项目不会用集团分部数据硬分摊。</p>
+      <p>购买日净资产、商誉与现金净流出不是同一个概念。Frigicoll的购买价分摊及现金净流出未在现有披露中单独列出，故不填数。以上六项交易已建立初始档案；投后收入、EBITDA、EBIT、独立自由现金流和增量投入资本回报仍需标的层面资料，未披露的项目不会用集团分部数据硬分摊。</p>
     </div>
   </div>
   <div class="panel" style="margin-top:16px"><h3>四、商誉持续监控</h3>
@@ -167,7 +172,7 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="midea-audit">
 <div class="sectionHead"><div><div class="eyebrow">MIDEA CAPITAL RETURNS · AUDIT UPDATE V1.0</div><h2>美的集团历史资本回报审计更新｜一次性整理版</h2><p>将历史现金流、ROIC缺口、六项并购和逐年核验任务集中管理。未核验数值不以估算填补。</p></div><span class="tag">审计版 V1.0</span></div>
 <div class="grid2">
 <div class="panel"><h3>历史FCF序列状态</h3><p>2006—2025年简化FCF已建立完整年度框架。2007年经营现金流存在来源冲突，继续留空；2014—2022年先保留结构化数据库数值并标记为待逐年回查年报；其他已核对年份保留对应来源等级。</p><p>2013年为主体/合并范围断点；2013年后集团现金流含金融业务项目。该序列仅为CFO减购建长期资产支出的简化代理，不等同标准化FCFF或FCFE。</p></div>
@@ -176,6 +181,68 @@ dialog{width:min(680px,calc(100% - 28px));border:1px solid var(--line);border-ra
 <div class="panel" style="margin-top:16px"><h3>并购回报档案扩展至六项</h3><p>KUKA、Arbonia Climate、Teka Industrial、东芝电梯（中国/沈阳）、锐珂医疗（Carestream）、Frigicoll及相关热能业务。购买价、可辨认净资产、商誉和净现金流出按公开披露分别记录；标的投后收入、EBITDA、FCF和ROIC缺失处保留空白。</p><p>特别注意：KUKA及TLSC商誉是审计重点；东芝电梯与TLSC家电业务不能混为一谈。2025年末完成的锐珂医疗并购，尚无足够投后观察期评价回报。</p></div>
 <div class="note">V1.0工作簿包含：审计版总览、FCF历史序列、ROIC重建底稿、并购回报档案、逐年核验清单、并购投后跟踪、来源索引。该版是集中审计底稿，不表示20年ROIC及并购投后回报已经全部算出。</div>
 </section>
+
+<section class="section" id="midea-q3">
+  <div class="sectionHead"><div><div class="eyebrow">LATEST FILING · 2026-10-30</div><h2>美的集团2026年第三季度报告｜最新经营与现金流复核</h2><p>截至2026年9月30日；报告披露日2026年10月30日。三季报未经审计，以下金额由报告千元换算为亿元。</p></div><span class="tag">最新数据 · 未审计</span></div>
+  <div class="panel">
+    <h3>2026年前三季度核心数据</h3>
+    <div class="gates">
+      <div class="gate"><b>营业收入 3,673.65亿元</b><span>同比 +1.19%</span></div>
+      <div class="gate"><b>归母净利润 413.93亿元</b><span>同比 +9.27%</span></div>
+      <div class="gate"><b>扣非净利润 287.88亿元</b><span>同比 -22.49%</span></div>
+      <div class="gate"><b>经营现金流 401.87亿元</b><span>同比 -29.58%</span></div>
+      <div class="gate"><b>加权ROE 18.06%</b><span>同比提高1.27个百分点</span></div>
+      <div class="gate"><b>总资产 6,291.11亿元</b><span>较2025年末 +3.34%</span></div>
+    </div>
+    <div class="data-alert"><b>核心判断：</b>归母净利润增长与扣非净利润、经营现金流走势明显背离。不能将前三季度归母净利润增长9.27%直接解释为主营经营质量同步改善；必须拆开汇兑损益、衍生工具公允价值/处置收益、主业利润和现金回款。</div>
+  </div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="panel"><h3>单三季度与累计数据不能混读</h3>
+      <div class="tablebox"><table><thead><tr><th>指标</th><th>2026年第三季度</th><th>2026年前三季度</th></tr></thead><tbody>
+      <tr><td>营业收入</td><td>1,073.22亿元（-4.12%）</td><td>3,673.65亿元（+1.19%）</td></tr>
+      <tr><td>归母净利润</td><td>149.47亿元（+25.93%）</td><td>413.93亿元（+9.27%）</td></tr>
+      <tr><td>扣非归母净利润</td><td>91.93亿元（-15.70%）</td><td>287.88亿元（-22.49%）</td></tr>
+      <tr><td>经营现金流</td><td>报告未单列本季度净额</td><td>401.87亿元（-29.58%）</td></tr>
+      </tbody></table></div>
+      <p style="margin-top:10px">本季度归母净利润同比增长，但扣非净利润仍下降；单季经营现金流未在主要指标表中单列，不能用前三季度累计值替代。</p>
+    </div>
+    <div class="panel"><h3>利润差异与汇率因素</h3>
+      <p>前三季度非经常性损益合计126.05亿元。公司解释：人民币汇率走强，外币货币性项目产生的汇兑损失计入经常性损益；用于管理相关外汇风险的衍生金融工具收益计入非经常性损益。这种列报分类使扣非利润同比降幅明显大于归母净利润的表现。</p>
+      <p style="margin-top:10px">分析时应把外汇敞口、套期工具的经济对冲效果与会计列报分开观察，不应简单把所有非经常性收益都视为无价值，也不能把其直接资本化为可持续主营盈利。</p>
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="panel"><h3>业务分部观察｜前三季度</h3>
+      <div class="gates">
+        <div class="gate"><b>楼宇科技 309亿元</b><span>同比 +10%</span></div>
+        <div class="gate"><b>机器人与自动化 249亿元</b><span>同比 +10%</span></div>
+        <div class="gate"><b>工业技术 183亿元</b><span>同比 -13%</span></div>
+        <div class="gate"><b>工业技术需重点复核</b><span>收入下滑；待结合利润率、订单与现金回款判断</span></div>
+      </div>
+      <p style="margin-top:10px">机器人与自动化收入增长不能直接等同KUKA投后回报改善；需要分拆KUKA相关业务、并购后重组成本、商誉、营运资本和追加资本。</p>
+    </div>
+    <div class="panel"><h3>资产、商誉与减值信号</h3>
+      <div class="gates">
+        <div class="gate"><b>商誉 311.47亿元</b><span>2025年末342.57亿元，减少31.10亿元</span></div>
+        <div class="gate"><b>货币资金 1,103.98亿元</b><span>2026年9月末合并口径</span></div>
+        <div class="gate"><b>资产减值损失 18.82亿元</b><span>报告称增加主要系商誉减值损失增加</span></div>
+        <div class="gate"><b>长期借款 186.98亿元</b><span>较2025年末增加</span></div>
+      </div>
+      <p style="margin-top:10px">资产减值损失是合计项目，不能将18.82亿元全部认定为商誉减值。商誉余额下降也须结合处置、汇率折算及具体减值附注核实。</p>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:16px"><h3>对长期投资研究的更新结论</h3>
+    <ul>
+      <li><b>盈利质量：</b>归母净利润、扣非净利润和经营现金流出现明显分化；接下来应对冲汇率影响后观察核心业务利润和现金转化。</li>
+      <li><b>资本回报：</b>ROE为18.06%，仍不能替代ROIC。金融资产、财务公司业务、汇兑和衍生品会计影响，必须在NOPAT与投入资本中单独处理。</li>
+      <li><b>并购整合：</b>机器人与自动化收入增长10%是业务表现线索，不是KUKA独立ROIC证据；需要收购资产组的EBIT、资本开支、营运资本和商誉减值测试假设。</li>
+      <li><b>暂定判断：</b>前三季度收入温和增长，但主营利润口径与现金流偏弱；不能只看归母利润增长给企业质量加分。估值结论与买入价仍待完成历史ROIC和标准化FCF。</li>
+    </ul>
+    <p>原始披露：<a href="https://static.cninfo.com.cn/finalpage/2026-10-30/1225645132.PDF" target="_blank" rel="noopener">美的集团2026年第三季度报告（巨潮资讯PDF）</a> ｜ <a href="https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12680652&stockid=000333" target="_blank" rel="noopener">三季报公告文本镜像</a></p>
+  </div>
+  <div class="note">数据说明：金额单位均为人民币亿元，由三季报人民币千元字段换算；百分比按报告同比口径摘录。三季报未经审计。本节仅更新经营跟踪，不据此推算完整年度结果，也不把单季数字年化。</div>
+</section>
+
 <footer class="wrap footer"><span>© 2026 余暮 · 中国上市公司20孔投资研究系统</span><span>Evidence first · Price matters · Think long term</span></footer>
 <dialog id="detail"><div class="modalHead"><div><div class="eyebrow" id="dGroup"></div><h2 id="dName"></h2><span id="dCode" class="code"></span></div><button class="close" id="close">关闭</button></div><div class="modalBody"><p id="dThesis"></p><h3>需要验证的核心问题</h3><ul id="dQuestions"></ul><h3>主要风险与反证方向</h3><p id="dRisk"></p><h3>八关证据状态</h3><div class="checklist"><div class="check">商业模式：待补充证据</div><div class="check">护城河：待补充证据</div><div class="check">财务质量：待补充数据</div><div class="check">再投资空间：待补充证据</div><div class="check">管理层：待补充证据</div><div class="check">风险与可预测性：待审查</div><div class="check">内在价值：待建模</div><div class="check">买入与持有：待决策</div></div><div class="note">本页不对该公司作出买入建议。完成研究前，评分、估值和买入价格均保持空白。</div></div></dialog>
 <script>
