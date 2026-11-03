@@ -6,19 +6,19 @@
   "periodStartLimitInCurrentYFinanceImplementation": "2016-12-31",
   "requestedCompanies": 5,
   "companiesWithHistory": 5,
-  "monthlyRowsWritten": 75,
+  "monthlyRowsWritten": 78,
   "securityAudits": [
     {
       "code": "00700.HK",
       "ticker": "0700.HK",
       "status": "OK",
-      "rowsWritten": 15,
+      "rowsWritten": 16,
       "firstDate": "2025-07-31",
-      "lastDate": "2026-09-30",
+      "lastDate": "2026-10-31",
       "validMetricMonths": {
-        "peTtm": 15,
-        "pb": 15,
-        "psRaw": 15
+        "peTtm": 16,
+        "pb": 16,
+        "psRaw": 16
       },
       "fieldLabels": {
         "peTtm": "Trailing P/E",
@@ -29,10 +29,11 @@
       "missingLabels": [],
       "frameShape": [
         9,
-        16
+        17
       ],
       "frameColumns": [
         "Current",
+        "10/31/2026",
         "9/30/2026",
         "8/31/2026",
         "7/31/2026",
@@ -42,8 +43,7 @@
         "3/31/2026",
         "2/28/2026",
         "1/31/2026",
-        "12/31/2025",
-        "11/30/2025"
+        "12/31/2025"
       ],
       "sourceUrl": "https://finance.yahoo.com/quote/0700.HK/key-statistics/"
     },
@@ -51,13 +51,13 @@
       "code": "02313.HK",
       "ticker": "2313.HK",
       "status": "OK",
-      "rowsWritten": 15,
+      "rowsWritten": 16,
       "firstDate": "2025-07-31",
-      "lastDate": "2026-09-30",
+      "lastDate": "2026-10-31",
       "validMetricMonths": {
-        "peTtm": 15,
-        "pb": 15,
-        "psRaw": 15
+        "peTtm": 16,
+        "pb": 16,
+        "psRaw": 16
       },
       "fieldLabels": {
         "peTtm": "Trailing P/E",
@@ -68,10 +68,11 @@
       "missingLabels": [],
       "frameShape": [
         9,
-        16
+        17
       ],
       "frameColumns": [
         "Current",
+        "10/31/2026",
         "9/30/2026",
         "8/31/2026",
         "7/31/2026",
@@ -81,8 +82,7 @@
         "3/31/2026",
         "2/28/2026",
         "1/31/2026",
-        "12/31/2025",
-        "11/30/2025"
+        "12/31/2025"
       ],
       "sourceUrl": "https://finance.yahoo.com/quote/2313.HK/key-statistics/"
     },
@@ -90,13 +90,13 @@
       "code": "09988.HK",
       "ticker": "9988.HK",
       "status": "OK",
-      "rowsWritten": 15,
+      "rowsWritten": 16,
       "firstDate": "2025-07-31",
-      "lastDate": "2026-09-30",
+      "lastDate": "2026-10-31",
       "validMetricMonths": {
-        "peTtm": 14,
-        "pb": 15,
-        "psRaw": 13
+        "peTtm": 15,
+        "pb": 16,
+        "psRaw": 14
       },
       "fieldLabels": {
         "peTtm": "Trailing P/E",
@@ -107,10 +107,11 @@
       "missingLabels": [],
       "frameShape": [
         9,
-        16
+        17
       ],
       "frameColumns": [
         "Current",
+        "10/31/2026",
         "9/30/2026",
         "8/31/2026",
         "7/31/2026",
@@ -120,8 +121,7 @@
         "3/31/2026",
         "2/28/2026",
         "1/31/2026",
-        "12/31/2025",
-        "11/30/2025"
+        "12/31/2025"
       ],
       "sourceUrl": "https://finance.yahoo.com/quote/9988.HK/key-statistics/"
     },
@@ -131,7 +131,7 @@
       "status": "OK",
       "rowsWritten": 15,
       "firstDate": "2025-07-31",
-      "lastDate": "2026-09-30",
+      "lastDate": "2026-10-31",
       "validMetricMonths": {
         "peTtm": 15,
         "pb": 15,
@@ -146,10 +146,11 @@
       "missingLabels": [],
       "frameShape": [
         9,
-        16
+        17
       ],
       "frameColumns": [
         "Current",
+        "10/31/2026",
         "9/30/2026",
         "8/31/2026",
         "7/31/2026",
@@ -159,8 +160,7 @@
         "3/31/2026",
         "2/28/2026",
         "1/31/2026",
-        "12/31/2025",
-        "11/30/2025"
+        "12/31/2025"
       ],
       "sourceUrl": "https://finance.yahoo.com/quote/9618.HK/key-statistics/"
     },
@@ -170,7 +170,7 @@
       "status": "OK",
       "rowsWritten": 15,
       "firstDate": "2025-07-31",
-      "lastDate": "2026-09-30",
+      "lastDate": "2026-10-31",
       "validMetricMonths": {
         "peTtm": 14,
         "pb": 15,
@@ -185,10 +185,11 @@
       "missingLabels": [],
       "frameShape": [
         9,
-        16
+        17
       ],
       "frameColumns": [
         "Current",
+        "10/31/2026",
         "9/30/2026",
         "8/31/2026",
         "7/31/2026",
@@ -198,8 +199,7 @@
         "3/31/2026",
         "2/28/2026",
         "1/31/2026",
-        "12/31/2025",
-        "11/30/2025"
+        "12/31/2025"
       ],
       "sourceUrl": "https://finance.yahoo.com/quote/9626.HK/key-statistics/"
     }
@@ -211,5 +211,5 @@
     "Yahoo's current yfinance implementation requests valuation time series from 2016-12-31, so this source cannot alone provide 120 full monthly observations at 2026-10.",
     "This source is for the five HK-listed securities only; no ADR or mainland listing is substituted."
   ],
-  "fetchedAt": "2026-10-30T10:47:02+00:00"
+  "fetchedAt": "2026-11-03T17:50:17+00:00"
 }
