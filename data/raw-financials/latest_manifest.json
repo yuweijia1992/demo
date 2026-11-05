@@ -1,5 +1,5 @@
 {
-  "run_id": "20261101T053843Z",
+  "run_id": "20261105T094248Z",
   "master_companies": 49,
   "unique_a_share_codes": 44,
   "unique_hk_codes": 13,
@@ -7,7 +7,7 @@
   "retrieved": 210,
   "empty": 0,
   "errors": 0,
-  "raw_file": "data/raw-financials/company_statements_20261101T053843Z.json",
-  "sha256": "6ddae184c770f2ae7cba59ff8f909bd257be72b5ffcfc420ea1c26cef5009327",
+  "raw_file": "data/raw-financials/company_statements_20261105T094248Z.json",
+  "sha256": "e750ba0fcb25afb8d857a74bbbb8b151a2db4ffb94b874932eff06e66aca6c3f",
   "note": "Raw source archive only. Verify against exchange/company filings; do not treat cumulative interim values as TTM."
 }

@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-11-01T05:48:45.039773+00:00",
-  "source_archive": "data/raw-financials/company_statements_20261101T053843Z.json",
-  "run_id": "20261101T053843Z",
+  "generated_at_utc": "2026-11-05T09:51:53.561274+00:00",
+  "source_archive": "data/raw-financials/company_statements_20261105T094248Z.json",
+  "run_id": "20261105T094248Z",
   "scope": {
     "master_companies": 49,
     "unique_a_share_codes": 44,
