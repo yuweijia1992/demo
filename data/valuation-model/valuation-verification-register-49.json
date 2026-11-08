@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-08T08:30:09.312288+00:00",
+  "generatedAtUtc": "2026-11-08T08:31:57.392893+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -18,10 +18,12 @@
       "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
       "verification": {
         "officialReportCrossCheck": {
-          "status": "pending",
+          "status": "partial_report_text_crosscheck",
           "sourceClass": "secondary_or_unclassified",
           "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
-          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对",
+          "issuerIRUrl": "https://www.yili.com/investors",
+          "reportTextUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12279896&stockid=600887"
         },
         "roic": {
           "status": "pending_inputs",
@@ -60,6 +62,196 @@
           "status": "pending",
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
+      },
+      "manualEvidence": {
+        "code": "600887.SH",
+        "name": "伊利股份",
+        "period": "FY2025",
+        "status": "partial_report_text_crosscheck",
+        "issuerIRUrl": "https://www.yili.com/investors",
+        "reportTextUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12279896&stockid=600887",
+        "reportDate": "2026-04-30",
+        "auditOpinion": "标准无保留意见（信永中和会计师事务所）",
+        "reportingCurrency": "CNY",
+        "reportingUnit": "人民币元",
+        "verifiedFields": {
+          "operatingRevenue": {
+            "value": 115636231250.05,
+            "unit": "CNY",
+            "basis": "合并利润表：其中营业收入",
+            "reportLines": "2025年报全文第968-972行"
+          },
+          "totalOperatingRevenue": {
+            "value": 115931105774.99,
+            "unit": "CNY",
+            "basis": "合并利润表：营业总收入",
+            "reportLines": "第968-972行"
+          },
+          "interestIncome": {
+            "value": 294874524.94,
+            "unit": "CNY",
+            "basis": "营业总收入与营业收入之差；合并利润表列示利息收入",
+            "reportLines": "第970-972行"
+          },
+          "netProfitParent": {
+            "value": 11565166497.81,
+            "unit": "CNY",
+            "basis": "归属于母公司股东的净利润",
+            "reportLines": "第1012-1013行"
+          },
+          "operatingProfit": {
+            "value": 13527806620.67,
+            "unit": "CNY",
+            "basis": "营业利润",
+            "reportLines": "第1001-1005行"
+          },
+          "profitBeforeTax": {
+            "value": 12993830374.42,
+            "unit": "CNY",
+            "basis": "利润总额",
+            "reportLines": "第1003-1006行"
+          },
+          "incomeTax": {
+            "value": 1479919620.42,
+            "unit": "CNY",
+            "basis": "所得税费用",
+            "reportLines": "第1005-1007行"
+          },
+          "operatingCashFlow": {
+            "value": 14343920490.32,
+            "unit": "CNY",
+            "basis": "经营活动产生的现金流量净额",
+            "reportLines": "第1082-1110行"
+          },
+          "capex": {
+            "value": 3036644156.68,
+            "unit": "CNY",
+            "basis": "购建固定资产、无形资产和其他长期资产支付的现金",
+            "reportLines": "第1118-1124行"
+          },
+          "totalAssets": {
+            "value": 152098516632.34,
+            "unit": "CNY",
+            "basis": "合并资产负债表资产总计",
+            "reportLines": "第821-823行"
+          },
+          "currentLiabilities": {
+            "value": 91053004170.21,
+            "unit": "CNY",
+            "basis": "合并资产负债表流动负债合计",
+            "reportLines": "第846-848行"
+          },
+          "parentEquity": {
+            "value": 54655690475.89,
+            "unit": "CNY",
+            "basis": "归属于母公司所有者权益合计",
+            "reportLines": "第864-879行"
+          },
+          "cash": {
+            "value": 19494920358,
+            "unit": "CNY",
+            "basis": "合并资产负债表货币资金；含受限资金",
+            "reportLines": "第774-779行、第1386-1403行"
+          },
+          "shortBorrowings": {
+            "value": 45630626027.83,
+            "unit": "CNY",
+            "basis": "短期借款",
+            "reportLines": "第824-825行、第1997-2005行"
+          },
+          "longBorrowings": {
+            "value": 472479632.72,
+            "unit": "CNY",
+            "basis": "长期借款",
+            "reportLines": "第849-855行"
+          },
+          "leaseLiabilities": {
+            "value": 288520048.5,
+            "unit": "CNY",
+            "basis": "租赁负债（非流动）",
+            "reportLines": "第849-856行"
+          },
+          "shareCapital": {
+            "value": 6325360667,
+            "unit": "CNY nominal capital",
+            "basis": "实收资本（或股本）；对应报告期末普通股股本金额，面值需与股数核对",
+            "reportLines": "第864-876行"
+          },
+          "dilutedEPS": {
+            "value": 1.83,
+            "unit": "CNY/share",
+            "basis": "稀释每股收益",
+            "reportLines": "第1033-1036行"
+          },
+          "acquisitionsPaid": {
+            "value": 88319674.4,
+            "unit": "CNY",
+            "basis": "取得子公司及其他营业单位支付的现金净额",
+            "reportLines": "第1119-1124行"
+          },
+          "investmentsPurchased": {
+            "value": 36128466723.36,
+            "unit": "CNY",
+            "basis": "投资支付的现金",
+            "reportLines": "第1119-1124行"
+          },
+          "investmentsDisposed": {
+            "value": 30315337269.42,
+            "unit": "CNY",
+            "basis": "收回投资收到的现金",
+            "reportLines": "第1112-1118行"
+          },
+          "debtRepayments": {
+            "value": 235559924291.73,
+            "unit": "CNY",
+            "basis": "偿还债务支付的现金",
+            "reportLines": "第1126-1137行"
+          },
+          "dividendsAndInterestPaidCombined": {
+            "value": 12024842791.32,
+            "unit": "CNY",
+            "basis": "分配股利、利润或偿付利息支付的现金；不可视为纯股息",
+            "reportLines": "第1126-1137行"
+          },
+          "sharesOutstandingAt2026Q1End": {
+            "value": 6325360667,
+            "unit": "shares",
+            "basis": "年报利润分配预案按截至2026-03-31总股本计算",
+            "reportLines": "第53-56行"
+          },
+          "proposedFY2025DividendPerShare": {
+            "value": 0.9,
+            "unit": "CNY/share",
+            "basis": "董事会拟向全体股东每股派发现金红利0.90元（含税）；属于预案",
+            "reportLines": "第53-56行"
+          },
+          "cashAndCashEquivalentsEnding": {
+            "value": 17677587920.54,
+            "unit": "CNY",
+            "basis": "cash flow statement ending cash and cash equivalents",
+            "reportLines": "第1138-1141行"
+          },
+          "restrictedMonetaryFunds": {
+            "value": 1806734061.15,
+            "unit": "CNY",
+            "basis": "other monetary funds; includes statutory reserve 1,760,784,462.61 and other deposits",
+            "reportLines": "第1386-1402行"
+          }
+        },
+        "unresolved": {
+          "fullNetDebt": "未计算。货币资金19.495bn中其他货币资金1.807bn（含法定存款准备金1.761bn）；现金流量表期末现金及现金等价物17.678bn。还需拆分一年内到期非流动负债4.415bn、短期应付债券及租赁负债，不能直接用货币资金总额抵扣。",
+          "roic": "未计算。当前债务分类和经营性/金融性投资尚未完整拆分，不能把近似投入资本结果当作已核验ROIC。",
+          "currentFullyDilutedShares": "报告披露的期末普通股股数不是估值日完全稀释股数；需检查回购、股权激励、可转债及后续股本变动。",
+          "dividends": "0.90元/股是2025年度利润分配预案；年度现金流量表把股息、利润和利息合并，不能从合并金额倒推纯股息历史。",
+          "capitalAllocation": "投资支付36.13bn属于金融/股权投资等投资现金流，不等于经营资本开支；维护性与扩张性资本开支仍需附注拆分。",
+          "officialPDF": "发行人投资者关系页面列示2025年年报，但本次未能直接下载其PDF；可访问的全文文本为报告镜像。"
+        },
+        "importantCorrections": [
+          "此前标准化的revenue取值115,931,105,774.99实际是营业总收入，不是营业收入；两者差额294,874,524.94为利息收入。非金融企业收入应采用营业收入。",
+          "伊利短期借款45.63bn包含票据贴现借款36.61bn；债务结构必须结合附注，不可只把短借/长借字段相加。",
+          "货币资金19.49bn含受限资金约1.81bn，净债务不能简单全额抵扣货币资金。",
+          "货币资金19.495bn包含其他货币资金1.807bn，其中法定存款准备金1.761bn；现金流量表期末现金及现金等价物为17.678bn，净债务应优先采用可用现金口径并进一步核对受限资金。"
+        ]
       },
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.01223950948578545,
@@ -134,6 +326,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.1626381209994634,
         "recentThreeYearMedianNetMargin": 0.10743969596237243,
@@ -207,6 +400,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.036625531470272366,
         "recentThreeYearMedianNetMargin": 0.23578302505653023,
@@ -280,6 +474,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.017346238578550555,
         "recentThreeYearMedianNetMargin": 0.10300388499346115,
@@ -353,6 +548,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.06774884260231007,
         "recentThreeYearMedianNetMargin": 0.18794967963199785,
@@ -426,6 +622,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.07416073598997808,
         "recentThreeYearMedianNetMargin": 0.06467010486916092,
@@ -499,6 +696,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.07543927372771542,
         "recentThreeYearMedianNetMargin": 0.0946512952487243,
@@ -572,6 +770,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": -0.024036290386873382,
         "recentThreeYearMedianNetMargin": 0.17014140761566202,
@@ -645,6 +844,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.38875069755909375,
         "recentThreeYearMedianNetMargin": 0.04987555240041249,
@@ -718,6 +918,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.15555392900897647,
         "recentThreeYearMedianNetMargin": 0.11059810154508691,
@@ -791,6 +992,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.10100435056740964,
         "recentThreeYearMedianNetMargin": 0.3028739309296336,
@@ -864,6 +1066,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.10440179785863868,
         "recentThreeYearMedianNetMargin": 0.0357584729985588,
@@ -937,6 +1140,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": -0.0994176476560501,
         "recentThreeYearMedianNetMargin": 0.14062693715064475,
@@ -1010,6 +1214,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.07128090679351051,
         "recentThreeYearMedianNetMargin": 0.31771951036014834,
@@ -1083,6 +1288,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.05117418948603736,
         "recentThreeYearMedianNetMargin": 0.2264290290071161,
@@ -1156,6 +1362,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.18693796611193014,
         "recentThreeYearMedianNetMargin": 0.24082476352893414,
@@ -1229,6 +1436,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.1048501044024226,
         "recentThreeYearMedianNetMargin": 0.16491607438189299,
@@ -1302,6 +1510,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.030823484839084703,
         "recentThreeYearMedianNetMargin": 0.03953019276362482,
@@ -1375,6 +1584,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.11575963593610106,
         "recentThreeYearMedianNetMargin": 0.38460709404067384,
@@ -1448,6 +1658,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.07188218995735562,
         "recentThreeYearMedianNetMargin": 2.850798772561599,
@@ -1521,6 +1732,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.06965824510829544,
         "recentThreeYearMedianNetMargin": 0.11359011546604468,
@@ -1594,6 +1806,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": -0.03181989172277144,
         "recentThreeYearMedianNetMargin": 0.173997446615016,
@@ -1667,6 +1880,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.11787267890056108,
         "recentThreeYearMedianNetMargin": 0.13159855812433585,
@@ -1740,6 +1954,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.05483533263215823,
         "recentThreeYearMedianNetMargin": 0.13055070350110817,
@@ -1813,6 +2028,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.04810521503121956,
         "recentThreeYearMedianNetMargin": 0.06305200451028295,
@@ -1886,6 +2102,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.024133963563287786,
         "recentThreeYearMedianNetMargin": 0.021118717104953753,
@@ -1959,6 +2176,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.07715434109834085,
         "recentThreeYearMedianNetMargin": 0.2974307967227486,
@@ -2032,6 +2250,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.085623189912162,
         "recentThreeYearMedianNetMargin": 0.08501032759294834,
@@ -2105,6 +2324,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.17242558517062911,
         "recentThreeYearMedianNetMargin": 0.07487366315013703,
@@ -2178,6 +2398,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.41983189419125044,
         "recentThreeYearMedianNetMargin": 0.17659264876873956,
@@ -2251,6 +2472,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.5794057689316909,
         "recentThreeYearMedianNetMargin": 0.21010958289492113,
@@ -2324,6 +2546,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.4930399228618292,
         "recentThreeYearMedianNetMargin": 0.21672329850069386,
@@ -2397,6 +2620,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.34271085255413336,
         "recentThreeYearMedianNetMargin": 0.14017381839194448,
@@ -2470,6 +2694,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.3864466227499317,
         "recentThreeYearMedianNetMargin": 0.14175069170590374,
@@ -2543,6 +2768,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.2591587269372959,
         "recentThreeYearMedianNetMargin": 0.11569609022604598,
@@ -2616,6 +2842,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.004705507987726731,
         "recentThreeYearMedianNetMargin": 0.4396926705542123,
@@ -2689,6 +2916,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": -0.028941344420260307,
         "recentThreeYearMedianNetMargin": 0.43966979612773927,
@@ -2762,6 +2990,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": -0.028733774365474418,
         "recentThreeYearMedianNetMargin": 0.12304784119347863,
@@ -2835,6 +3064,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": -0.0031277075763515017,
         "recentThreeYearMedianNetMargin": 0.11126261788863344,
@@ -2908,6 +3138,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": -0.005498886011062187,
         "recentThreeYearMedianNetMargin": 0.37343545664215694,
@@ -2981,6 +3212,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": -0.1008783281788378,
         "recentThreeYearMedianNetMargin": 3.089345373048596,
@@ -3054,6 +3286,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.08300201852203282,
         "recentThreeYearMedianNetMargin": 0.02228067361076538,
@@ -3127,6 +3360,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": -0.05621581360543815,
         "recentThreeYearMedianNetMargin": 0.0755590738383766,
@@ -3200,6 +3434,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.04913650164054406,
         "recentThreeYearMedianNetMargin": 0.06700978366861765,
@@ -3273,6 +3508,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": -0.0370155468150426,
         "recentThreeYearMedianNetMargin": 0.40551186719741694,
@@ -3346,6 +3582,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.11859429850771619,
         "recentThreeYearMedianNetMargin": -0.05019468703325659,
@@ -3419,6 +3656,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": -0.24574777023162064,
         "recentThreeYearMedianNetMargin": 0.02185643951857184,
@@ -3492,6 +3730,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.07654482938195883,
         "recentThreeYearMedianNetMargin": 0.22111741100832233,
@@ -3565,6 +3804,7 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
+      "manualEvidence": null,
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.043007435865569654,
         "recentThreeYearMedianNetMargin": 0.13998547114564933,

@@ -1,5 +1,5 @@
 {
-  "generatedAtUtc": "2026-11-08T08:30:09.286625+00:00",
+  "generatedAtUtc": "2026-11-08T08:31:57.364446+00:00",
   "masterCompanies": 49,
   "financialRecordsMatched": 49,
   "historyRecordsMatched": 49,
@@ -51,5 +51,7 @@
     "Net debt is gross interest-bearing debt less cash; short/long investments are not netted.",
     "DividendsPaidCombinedWithInterest is not a dividend-only field and is never used as a payout ratio.",
     "Implied weighted-average diluted shares are not current fully diluted shares; per-share fair value remains blocked."
-  ]
+  ],
+  "issuerEvidenceRecords": 1,
+  "issuerEvidenceCrossChecks": 0
 }
