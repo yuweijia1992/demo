@@ -30,7 +30,7 @@ jobs:
       - name: Upload normalized dataset and audit
         uses: actions/upload-artifact@v4
         with:
-          name: standardized-company-financials-\${{ github.run_id }}
+          name: standardized-company-financials
           path: data/financial-standardized/
           retention-days: 30
       - name: Commit standardized dataset
