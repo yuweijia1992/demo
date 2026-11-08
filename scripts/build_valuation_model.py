@@ -262,7 +262,7 @@ def main():
         verification_register={
           "officialReportCrossCheck":{"status":"pending","sourceClass":classify_source(fin_source),"sourceUrl":fin_source,"required":"发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"},
           "roic":{"status":"calculated_not_independently_verified" if any(x["roicPct"] is not None for x in annual) else "pending_inputs","availableYears":sum(x["roicPct"] is not None for x in annual),"required":"NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"},
-          "netDebt":{"status":"calculated_not_independently_verified" if any(x["netDebt"] is not None for x in annual) else ("not_applicable_financial" if financial else "pending_inputs"),"availableYears":sum(x["netDebt"] is not None for x in annual),"required":"短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"},
+          "netDebt":{"status":"calculated_not_independently_verified" if any(x["netDebt"] is not None for x in annual) else ("not_applicable_financial" if financial else "pending_inputs"),"availableYears":sum(x["netDebt"] is not None for x in annual),"knownComponentsYears":sum(x["netDebtKnownComponents"] is not None for x in annual),"required":"短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"},
           "shareCapital":{"status":"raw_share_capital_only" if any(x["shareCapitalRaw"] is not None for x in annual) else "pending","availableYears":sum(x["shareCapitalRaw"] is not None for x in annual),"required":"期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"},
           "currentFullyDilutedShares":{"status":"pending","required":"估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"},
           "dividendPerShareHistory":{"status":"pending","required":"逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"},
