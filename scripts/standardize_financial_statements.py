@@ -17,29 +17,29 @@ CURRENCY_FIELDS = ("币种", "货币币种", "报告币种", "CURRENCY")
 UNIT_FIELDS = ("单位", "金额单位", "计量单位", "UNIT", "AMOUNT_UNIT")
 MAP = {
  "income": {
-  "revenue": ("营业总收入", "营业收入", "营业总收入(元)", "营业收入合计"),
-  "operatingProfit": ("营业利润", "经营利润"),
-  "netProfitParent": ("归属于母公司所有者的净利润", "归属于母公司股东的净利润", "归母净利润"),
-  "netProfit": ("净利润", "净利润(含少数股东损益)"),
-  "basicEps": ("基本每股收益", "基本每股收益(元/股)"),
-  "dilutedEps": ("稀释每股收益", "稀释每股收益(元/股)"),
-  "incomeTax": ("所得税费用",), "interestExpense": ("利息费用", "利息支出")
+  "revenue": ("营业总收入", "营业收入", "营业额", "营运收入", "经营收入总额", "经营收入"),
+  "operatingProfit": ("营业利润", "经营利润", "经营溢利", "除税前溢利"),
+  "netProfitParent": ("归属于母公司所有者的净利润", "归属于母公司股东的净利润", "归母净利润", "股东应占溢利", "本公司拥有人应占溢利"),
+  "netProfit": ("净利润", "净利润(含少数股东损益)", "除税后溢利", "持续经营业务税后利润"),
+  "basicEps": ("基本每股收益", "基本每股收益(元/股)", "每股基本盈利"),
+  "dilutedEps": ("稀释每股收益", "稀释每股收益(元/股)", "每股摊薄盈利"),
+  "incomeTax": ("所得税费用", "税项"), "interestExpense": ("利息费用", "利息支出", "融资成本")
  },
  "balance": {
-  "totalAssets": ("资产总计", "资产总额", "资产合计"),
-  "totalLiabilities": ("负债合计", "负债总计"),
-  "totalEquity": ("所有者权益合计", "股东权益合计", "所有者权益总计"),
-  "parentEquity": ("归属于母公司所有者权益合计", "归属于母公司股东权益合计", "归属于母公司所有者权益", "归属于母公司股东权益"),
-  "cash": ("货币资金", "现金及现金等价物"),
-  "shortBorrowings": ("短期借款", "短期贷款"), "longBorrowings": ("长期借款", "长期贷款"),
-  "bondsPayable": ("应付债券", "债券"), "leaseLiabilities": ("租赁负债",),
-  "shareCapital": ("股本", "普通股股本"), "accountsReceivable": ("应收账款",),
+  "totalAssets": ("资产总计", "资产总额", "资产合计", "总资产"),
+  "totalLiabilities": ("负债合计", "负债总计", "总负债"),
+  "totalEquity": ("所有者权益合计", "股东权益合计", "所有者权益总计", "总权益"),
+  "parentEquity": ("归属于母公司所有者权益合计", "归属于母公司股东权益合计", "归属于母公司所有者权益", "归属于母公司股东权益", "股东权益"),
+  "cash": ("货币资金", "现金及现金等价物", "现金及等价物"),
+  "shortBorrowings": ("短期借款", "短期贷款", "银行贷款及透支"), "longBorrowings": ("长期借款", "长期贷款", "长期银行贷款"),
+  "bondsPayable": ("应付债券", "债券", "已发行债券"), "leaseLiabilities": ("租赁负债",),
+  "shareCapital": ("股本", "普通股股本"), "accountsReceivable": ("应收账款", "应收帐款"),
   "inventory": ("存货",), "goodwill": ("商誉",)
  },
  "cashflow": {
-  "operatingCashFlow": ("经营活动产生的现金流量净额", "经营活动现金流量净额"),
+  "operatingCashFlow": ("经营活动产生的现金流量净额", "经营活动现金流量净额", "经营业务现金净额", "经营产生现金"),
   "capex": ("购建固定资产、无形资产和其他长期资产支付的现金", "购建固定资产、无形资产和其他长期资产所支付的现金", "购建固定资产、无形资产和其他长期资产支付现金"),
-  "dividendsPaid": ("分配股利、利润或偿付利息支付的现金", "分配股利、利润或偿付利息所支付的现金")
+  "dividendsPaid": ("分配股利、利润或偿付利息支付的现金", "分配股利、利润或偿付利息所支付的现金", "已付股息(融资)")
  }
 }
 def clean(v):
@@ -84,76 +84,118 @@ def expand_rows(rows, company, statement, mode):
 def mapped(row, section, record):
  fields={}
  for key,aliases in MAP[section].items():
-  raw,field=first(row,aliases); val=number(raw)
-  fields[key]={"value":val,"rawValue":clean(raw),"sourceField":field,"status":"derived" if val is not None else "pending"}
+  raw,field=first(row,aliases); val=number(raw); status="derived" if val is not None else "pending"
+  if section=="cashflow" and key=="capex" and val is None:
+   fixed=number(row.get("购建固定资产")); intangible=number(row.get("购建无形资产及其他资产"))
+   if fixed is not None and intangible is not None:
+    val=fixed+intangible; field="购建固定资产 + 购建无形资产及其他资产"; raw=f"{fixed} + {intangible}"; status="derived_sum"
+   elif fixed is not None or intangible is not None:
+    val=None; field="购建固定资产 / 购建无形资产及其他资产"; raw=clean(fixed) or clean(intangible); status="partial_components"
+  fields[key]={"value":val,"rawValue":clean(raw),"sourceField":field,"status":status}
  date,date_field=row_date(row)
  cur,_=first(row,CURRENCY_FIELDS); unit,_=first(row,UNIT_FIELDS); ann,_=first(row,ANNOUNCEMENT_FIELDS)
- return {"reportDate":date,"dateField":date_field,"announcementDate":clean(ann),"currency":clean(cur),"reportedUnit":clean(unit),"fields":fields,"provider":record.get("provider"),"sourceUrl":record.get("source_url"),"periodMode":record.get("period_mode"),"sourceStatus":record.get("status")}
+ return {"reportDate":date,"fiscalYear":clean(row.get("FISCAL_YEAR")),"dateField":date_field,"announcementDate":clean(ann),"currency":clean(cur),"reportedUnit":clean(unit),"fields":fields,"provider":record.get("provider"),"sourceUrl":record.get("source_url"),"periodMode":record.get("period_mode"),"sourceStatus":record.get("status")}
 def value(item,key):
  return (item or {}).get("fields",{}).get(key,{}).get("value")
+def listing_dataset(listing_code, sections):
+ market="HK" if listing_code.endswith(".HK") else "CN"
+ annual_by_year={}; interim_by_date={}
+ for section in ("income","balance","cashflow"):
+  for item in sections.get(section,[]):
+   date=item["reportDate"]; mode=item.get("periodMode") or ""
+   fiscal=number(item.get("fiscalYear"))
+   year=int(fiscal) if fiscal is not None and 1900<=fiscal<=2100 else int(date[:4])
+   annual_flag=(mode=="年度") or (market=="CN" and date[5:]=="12-31")
+   if annual_flag and year in YEARS:
+    dest=annual_by_year.setdefault(year,{})
+    if section not in dest or mode=="年度":dest[section]=item
+   elif int(date[:4])>=2025:
+    interim_by_date.setdefault(date,{}).setdefault(section,item)
+ annual=[]
+ for year in YEARS:
+  sections_y=annual_by_year.get(year,{})
+  valid={"income":all(value(sections_y.get("income"),k) is not None for k in ("revenue","netProfitParent")),
+         "balance":all(value(sections_y.get("balance"),k) is not None for k in ("totalAssets","parentEquity")),
+         "cashflow":all(value(sections_y.get("cashflow"),k) is not None for k in ("operatingCashFlow","capex"))}
+  annual.append({"year":year,"income":sections_y.get("income"),"balance":sections_y.get("balance"),"cashflow":sections_y.get("cashflow"),
+                 "completeness":valid,"sourceRowsPresent":{k:bool(sections_y.get(k)) for k in ("income","balance","cashflow")}})
+ ttm={"status":"pending","method":None,"asOf":None,"fields":{}}
+ if market=="CN":
+  dates=sorted(d for d in interim_by_date if d.startswith("2026-"))
+  if dates:
+   latest=dates[-1];prior="2025"+latest[4:];current=interim_by_date.get(latest,{});previous=interim_by_date.get(prior,{});fy=annual_by_year.get(2025,{})
+   formulas={"revenue":("income","revenue"),"netProfitParent":("income","netProfitParent"),"operatingCashFlow":("cashflow","operatingCashFlow"),"capex":("cashflow","capex")}
+   ok=True
+   for out_key,(section,key) in formulas.items():
+    fyv=value(fy.get(section),key);cyv=value(current.get(section),key);pyv=value(previous.get(section),key)
+    result=fyv+cyv-pyv if None not in (fyv,cyv,pyv) else None
+    ttm["fields"][out_key]={"value":result,"formula":"FY2025 + 2026 YTD - 2025 same-period YTD","inputs":{"FY2025":fyv,"currentYTD":cyv,"priorYTD":pyv},
+      "sourceDates":{"FY2025":fy.get(section,{}).get("reportDate"),"currentYTD":current.get(section,{}).get("reportDate"),"priorYTD":previous.get(section,{}).get("reportDate")},"status":"derived" if result is not None else "pending"}
+    if result is None:ok=False
+   ttm.update({"status":"derived" if ok else "partial","method":"FY2025 + 2026 YTD - 2025 same-period YTD","asOf":latest,"warning":"Confirm matching accounting scope, currency and cumulative-period basis before using TTM."})
+ else:ttm["warning"]="HK fiscal-year alignment not standardized; TTM left pending."
+ all_items=[x for sec in sections.values() for x in sec]
+ currencies=sorted({x["currency"] for x in all_items if x.get("currency")})
+ units=sorted({x["reportedUnit"] for x in all_items if x.get("reportedUnit")})
+ coverage={"annualYears":{str(x["year"]):x["completeness"] for x in annual},
+  "annualIncomeYears":sum(x["completeness"]["income"] for x in annual),
+  "annualBalanceYears":sum(x["completeness"]["balance"] for x in annual),
+  "annualCashflowYears":sum(x["completeness"]["cashflow"] for x in annual),
+  "sourceRowCount":sum(len(v) for v in sections.values())}
+ return {"listingCode":listing_code,"market":market,"sourceCurrencies":currencies,"reportedUnits":units,
+  "unitPolicy":"Raw source values retained; no conversion or inferred unit. Verify reporting currency/unit before per-share valuation.",
+  "annual":annual,"ttm":ttm,"coverage":coverage}
+
 def main():
- master=json.loads(MASTER_PATH.read_text(encoding="utf-8")); stocks=master.get("stocks",[])
+ master=json.loads(MASTER_PATH.read_text(encoding="utf-8"));stocks=master.get("stocks",[])
  archives=sorted(RAW_DIR.glob("company_statements_*.json"))
  if not archives:raise SystemExit("No raw statement archive found")
- archive=archives[-1]; payload=json.loads(archive.read_text(encoding="utf-8"))
- archive_sha=hashlib.sha256(archive.read_bytes()).hexdigest()
- stock_map={}
- for stock in stocks:
-  code=stock.get("code",""); stock_map[code]=stock; stock_map[code.split(".")[0]]=stock
- grouped=defaultdict(lambda:defaultdict(list))
+ archive=archives[-1];payload=json.loads(archive.read_text(encoding="utf-8"));archive_sha=hashlib.sha256(archive.read_bytes()).hexdigest()
+ stock_map={stock.get("code"):stock for stock in stocks}
+ grouped=defaultdict(lambda:defaultdict(lambda:defaultdict(list)))
  for rec in payload.get("records",[]):
-  code=str(rec.get("master_code") or rec.get("code") or "")
-  stock=stock_map.get(code) or stock_map.get(code.split(".")[0])
+  stock=stock_map.get(str(rec.get("master_code") or ""))
   if not stock:continue
+  exchange=str(rec.get("exchange") or "");raw_code=str(rec.get("code") or "")
+  listing_code=(raw_code.zfill(5)+".HK") if exchange=="HK" else (raw_code.zfill(6)+"."+exchange if exchange in ("SH","SZ") else raw_code)
   section={"利润表":"income","资产负债表":"balance","现金流量表":"cashflow"}.get(rec.get("statement"))
   if not section:continue
-  for raw in expand_rows(rec.get("rows") or [], rec.get("company"), rec.get("statement"), rec.get("period_mode")):
+  rows=expand_rows(rec.get("rows") or [],rec.get("company"),rec.get("statement"),rec.get("period_mode"))
+  for raw in rows:
    item=mapped(raw,section,rec)
-   if item["reportDate"]:grouped[stock["code"]][section].append(item)
- companies=[]; audit_rows=[]
+   if item["reportDate"]:grouped[stock["code"]][listing_code][section].append(item)
+ companies=[];audit_rows=[]
  for stock in stocks:
-  code=stock.get("code"); market="HK" if code.endswith(".HK") else "CN"; groups=grouped.get(code,{})
-  annual_by_year={}; interim_by_date={}
-  for section in ("income","balance","cashflow"):
-   for item in groups.get(section,[]):
-    date=item["reportDate"]; year=int(date[:4]); mode=item.get("periodMode") or ""
-    annual_flag=(mode=="年度") or (market=="CN" and date[5:]=="12-31")
-    if annual_flag and year in YEARS:
-     dest=annual_by_year.setdefault(year,{})
-     if section not in dest or mode=="年度":dest[section]=item
-    elif year>=2025:interim_by_date.setdefault(date,{}).setdefault(section,item)
-  annual=[]
-  for year in YEARS:
-   sections=annual_by_year.get(year,{})
-   valid={
-    "income": all(value(sections.get("income"),k) is not None for k in ("revenue","netProfitParent")),
-    "balance": all(value(sections.get("balance"),k) is not None for k in ("totalAssets","parentEquity")),
-    "cashflow": all(value(sections.get("cashflow"),k) is not None for k in ("operatingCashFlow","capex"))
-   }
-   annual.append({"year":year,"income":sections.get("income"),"balance":sections.get("balance"),"cashflow":sections.get("cashflow"),"completeness":valid,"sourceRowsPresent":{s:bool(sections.get(s)) for s in ("income","balance","cashflow")}})
-  ttm={"status":"pending","method":None,"asOf":None,"fields":{}}
-  if market=="CN":
-   dates=sorted(d for d in interim_by_date if d.startswith("2026-"))
-   if dates:
-    latest=dates[-1]; prior="2025"+latest[4:]; current=interim_by_date.get(latest,{}); previous=interim_by_date.get(prior,{}); fy=annual_by_year.get(2025,{})
-    formulas={"revenue":("income","revenue"),"netProfitParent":("income","netProfitParent"),"operatingCashFlow":("cashflow","operatingCashFlow"),"capex":("cashflow","capex")}
-    ok=True
-    for out_key,(section,key) in formulas.items():
-     fyv=value(fy.get(section),key); cyv=value(current.get(section),key); pyv=value(previous.get(section),key)
-     result=fyv+cyv-pyv if None not in (fyv,cyv,pyv) else None
-     ttm["fields"][out_key]={"value":result,"formula":"FY2025 + 2026 YTD - 2025 same-period YTD","inputs":{"FY2025":fyv,"currentYTD":cyv,"priorYTD":pyv},"status":"derived" if result is not None else "pending"}
-     if result is None:ok=False
-    ttm.update({"status":"derived" if ok else "partial","method":"FY2025 + 2026 YTD - 2025 same-period YTD","asOf":latest,"warning":"Confirm matching accounting scope, currency and cumulative period basis before using TTM."})
-  else:ttm["warning"]="HK fiscal-year alignment not standardized; TTM left pending."
-  all_items=[x for section in groups.values() for x in section]
-  currencies=sorted({x["currency"] for x in all_items if x.get("currency")}); units=sorted({x["reportedUnit"] for x in all_items if x.get("reportedUnit")})
-  coverage={"annualYears":{str(x["year"]):x["completeness"] for x in annual},"annualIncomeYears":sum(x["completeness"]["income"] for x in annual),"annualBalanceYears":sum(x["completeness"]["balance"] for x in annual),"annualCashflowYears":sum(x["completeness"]["cashflow"] for x in annual),"sourceRowCount":sum(len(v) for v in groups.values())}
-  companies.append({"name":stock.get("name"),"code":code,"industry":stock.get("industry"),"businessType":stock.get("businessType"),"modelType":stock.get("method"),"market":market,"masterCurrency":stock.get("currency"),"sourceCurrencies":currencies,"reportedUnits":units,"unitPolicy":"Raw source values retained; unit is not inferred or converted.","annual":annual,"interim":{d:secs for d,secs in sorted(interim_by_date.items())},"ttm":ttm,"coverage":coverage,"sourcePolicy":"Sina Finance via AKShare (A-share) or Eastmoney HK via AKShare; raw archive retained separately."})
-  audit_rows.append({"name":stock.get("name"),"code":code,"annualIncomeYears":coverage["annualIncomeYears"],"annualBalanceYears":coverage["annualBalanceYears"],"annualCashflowYears":coverage["annualCashflowYears"],"ttmStatus":ttm["status"],"ttmAsOf":ttm["asOf"],"sourceCurrencies":currencies,"reportedUnits":units})
+  code=stock.get("code","");primary=code.split("/")[0].strip()
+  listing_map=grouped.get(code,{})
+  listing_data={k:listing_dataset(k,v) for k,v in listing_map.items()}
+  chosen=listing_data.get(primary)
+  if chosen is None and listing_data:
+   chosen=listing_data[sorted(listing_data)[0]];primary=chosen["listingCode"]
+  if chosen is None:
+   chosen={"listingCode":primary,"market":"HK" if primary.endswith(".HK") else "CN","annual":[],"ttm":{"status":"pending","fields":{}},"coverage":{"annualIncomeYears":0,"annualBalanceYears":0,"annualCashflowYears":0},"sourceCurrencies":[],"reportedUnits":[]}
+  alternates=[v for k,v in listing_data.items() if k!=primary]
+  companies.append({"name":stock.get("name"),"code":code,"primaryListingCode":primary,"industry":stock.get("industry"),"businessType":stock.get("businessType"),"modelType":stock.get("method"),
+   "market":chosen["market"],"marketCurrency":stock.get("currency"),"primaryFinancials":chosen,"annual":chosen.get("annual",[]),"ttm":chosen.get("ttm",{}),"coverage":chosen.get("coverage",{}),"alternateListings":alternates,
+   "sourcePolicy":"Primary listing financial statements only are used in the main series; alternate A/H listing data is retained separately and never merged."})
+  audit_rows.append({"name":stock.get("name"),"code":code,"primaryListingCode":primary,"market":chosen["market"],
+   "annualIncomeYears":chosen["coverage"].get("annualIncomeYears",0),"annualBalanceYears":chosen["coverage"].get("annualBalanceYears",0),
+   "annualCashflowYears":chosen["coverage"].get("annualCashflowYears",0),"ttmStatus":chosen["ttm"].get("status"),
+   "ttmAsOf":chosen["ttm"].get("asOf"),"alternateListingCodes":[x["listingCode"] for x in alternates]})
  OUT_DIR.mkdir(parents=True,exist_ok=True)
- output={"schemaVersion":"1.0.0","generatedAtUtc":datetime.now(timezone.utc).isoformat(),"sourceArchive":str(archive.relative_to(ROOT)),"sourceArchiveSha256":archive_sha,"sourceRunId":payload.get("run_id"),"companyCount":len(companies),"years":YEARS,"fieldPolicy":"Exact source-field mappings only. Raw source values remain in reported units; no currency/unit conversion, interpolation, ROIC, net debt or per-share derivation.","ttmPolicy":"Calendar-year A-share TTM = FY2025 + 2026 cumulative period - 2025 same-period cumulative. HK TTM pending fiscal-year alignment.","companies":companies}
+ output={"schemaVersion":"1.1.0","generatedAtUtc":datetime.now(timezone.utc).isoformat(),"sourceArchive":str(archive.relative_to(ROOT)),
+  "sourceArchiveSha256":archive_sha,"sourceRunId":payload.get("run_id"),"companyCount":len(companies),"years":YEARS,
+  "fieldPolicy":"Exact field mapping. Raw values remain in source-reported units; no currency/unit conversion, interpolation, ROIC, net debt or per-share derivation.",
+  "listingPolicy":"A/H cross-listings are standardized separately. The first listing in the master code is primary; alternate listing statements are never merged.",
+  "ttmPolicy":"Calendar-year A-share TTM = FY2025 + 2026 cumulative period - 2025 same-period cumulative. HK TTM pending fiscal-year alignment.",
+  "companies":companies}
  (OUT_DIR/"company-financials-2021-2025.json").write_text(json.dumps(output,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
- audit={"generatedAtUtc":output["generatedAtUtc"],"sourceArchive":output["sourceArchive"],"sourceArchiveSha256":archive_sha,"sourceRunId":payload.get("run_id"),"masterCompanies":len(stocks),"normalizedCompanies":len(companies),"annualCoverageByMetric":{"income":sum(x["coverage"]["annualIncomeYears"]==5 for x in companies),"balance":sum(x["coverage"]["annualBalanceYears"]==5 for x in companies),"cashflow":sum(x["coverage"]["annualCashflowYears"]==5 for x in companies)},"ttmDerived":sum(x["ttm"]["status"]=="derived" for x in companies),"ttmPartial":sum(x["ttm"]["status"]=="partial" for x in companies),"ttmPending":sum(x["ttm"]["status"]=="pending" for x in companies),"unitCaution":"No conversion performed; source units require validation before cross-company or per-share use.","companies":audit_rows}
+ annual_cov={m:sum(x["coverage"].get(k,0)==5 for x in companies) for m,k in (("income","annualIncomeYears"),("balance","annualBalanceYears"),("cashflow","annualCashflowYears"))}
+ audit={"generatedAtUtc":output["generatedAtUtc"],"sourceArchive":output["sourceArchive"],"sourceArchiveSha256":archive_sha,"sourceRunId":payload.get("run_id"),
+  "masterCompanies":len(stocks),"normalizedCompanies":len(companies),"annualFiveYearCompleteByMetric":annual_cov,
+  "ttmDerived":sum(x["ttm"].get("status")=="derived" for x in companies),"ttmPartial":sum(x["ttm"].get("status")=="partial" for x in companies),
+  "ttmPending":sum(x["ttm"].get("status")=="pending" for x in companies),
+  "unitCaution":"No unit conversion. A/H alternate listing statements are not merged into primary listing data.","companies":audit_rows}
  (OUT_DIR/"standardization-audit.json").write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding="utf-8")
  (OUT_DIR/"hk-item-map-audit.json").write_text(json.dumps(HK_ITEM_AUDIT,ensure_ascii=False,indent=2),encoding="utf-8")
  print(json.dumps({k:v for k,v in audit.items() if k!="companies"},ensure_ascii=False,indent=2))
