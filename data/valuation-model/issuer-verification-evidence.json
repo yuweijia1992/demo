@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "Manual cross-check records. 'report_text_crosschecked_via_mirror' means the issuer IR site confirms the report listing, while the accessible full-text copy was a report mirror; it is not a claim that the PDF bytes were downloaded directly from the issuer.",
+  "records": [
+    {
+      "code": "600887.SH",
+      "name": "伊利股份",
+      "period": "FY2025",
+      "status": "partial_report_text_crosscheck",
+      "issuerIRUrl": "https://www.yili.com/investors",
+      "reportTextUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12279896&stockid=600887",
+      "reportDate": "2026-04-30",
+      "auditOpinion": "标准无保留意见（信永中和会计师事务所）",
+      "reportingCurrency": "CNY",
+      "reportingUnit": "人民币元",
+      "verifiedFields": {
+        "operatingRevenue": {
+          "value": 115636231250.05,
+          "unit": "CNY",
+          "basis": "合并利润表：其中营业收入",
+          "reportLines": "2025年报全文第968-972行"
+        },
+        "totalOperatingRevenue": {
+          "value": 115931105774.99,
+          "unit": "CNY",
+          "basis": "合并利润表：营业总收入",
+          "reportLines": "第968-972行"
+        },
+        "interestIncome": {
+          "value": 294874524.94,
+          "unit": "CNY",
+          "basis": "营业总收入与营业收入之差；合并利润表列示利息收入",
+          "reportLines": "第970-972行"
+        },
+        "netProfitParent": {
+          "value": 11565166497.81,
+          "unit": "CNY",
+          "basis": "归属于母公司股东的净利润",
+          "reportLines": "第1012-1013行"
+        },
+        "operatingProfit": {
+          "value": 13527806620.67,
+          "unit": "CNY",
+          "basis": "营业利润",
+          "reportLines": "第1001-1005行"
+        },
+        "profitBeforeTax": {
+          "value": 12993830374.42,
+          "unit": "CNY",
+          "basis": "利润总额",
+          "reportLines": "第1003-1006行"
+        },
+        "incomeTax": {
+          "value": 1479919620.42,
+          "unit": "CNY",
+          "basis": "所得税费用",
+          "reportLines": "第1005-1007行"
+        },
+        "operatingCashFlow": {
+          "value": 14343920490.32,
+          "unit": "CNY",
+          "basis": "经营活动产生的现金流量净额",
+          "reportLines": "第1082-1110行"
+        },
+        "capex": {
+          "value": 3036644156.68,
+          "unit": "CNY",
+          "basis": "购建固定资产、无形资产和其他长期资产支付的现金",
+          "reportLines": "第1118-1124行"
+        },
+        "totalAssets": {
+          "value": 152098516632.34,
+          "unit": "CNY",
+          "basis": "合并资产负债表资产总计",
+          "reportLines": "第821-823行"
+        },
+        "currentLiabilities": {
+          "value": 91053004170.21,
+          "unit": "CNY",
+          "basis": "合并资产负债表流动负债合计",
+          "reportLines": "第846-848行"
+        },
+        "parentEquity": {
+          "value": 54655690475.89,
+          "unit": "CNY",
+          "basis": "归属于母公司所有者权益合计",
+          "reportLines": "第864-879行"
+        },
+        "cash": {
+          "value": 19494920358,
+          "unit": "CNY",
+          "basis": "合并资产负债表货币资金；含受限资金",
+          "reportLines": "第774-779行、第1386-1403行"
+        },
+        "shortBorrowings": {
+          "value": 45630626027.83,
+          "unit": "CNY",
+          "basis": "短期借款",
+          "reportLines": "第824-825行、第1997-2005行"
+        },
+        "longBorrowings": {
+          "value": 472479632.72,
+          "unit": "CNY",
+          "basis": "长期借款",
+          "reportLines": "第849-855行"
+        },
+        "leaseLiabilities": {
+          "value": 288520048.5,
+          "unit": "CNY",
+          "basis": "租赁负债（非流动）",
+          "reportLines": "第849-856行"
+        },
+        "shareCapital": {
+          "value": 6325360667,
+          "unit": "CNY nominal capital",
+          "basis": "实收资本（或股本）；对应报告期末普通股股本金额，面值需与股数核对",
+          "reportLines": "第864-876行"
+        },
+        "dilutedEPS": {
+          "value": 1.83,
+          "unit": "CNY/share",
+          "basis": "稀释每股收益",
+          "reportLines": "第1033-1036行"
+        },
+        "acquisitionsPaid": {
+          "value": 88319674.4,
+          "unit": "CNY",
+          "basis": "取得子公司及其他营业单位支付的现金净额",
+          "reportLines": "第1119-1124行"
+        },
+        "investmentsPurchased": {
+          "value": 36128466723.36,
+          "unit": "CNY",
+          "basis": "投资支付的现金",
+          "reportLines": "第1119-1124行"
+        },
+        "investmentsDisposed": {
+          "value": 30315337269.42,
+          "unit": "CNY",
+          "basis": "收回投资收到的现金",
+          "reportLines": "第1112-1118行"
+        },
+        "debtRepayments": {
+          "value": 235559924291.73,
+          "unit": "CNY",
+          "basis": "偿还债务支付的现金",
+          "reportLines": "第1126-1137行"
+        },
+        "dividendsAndInterestPaidCombined": {
+          "value": 12024842791.32,
+          "unit": "CNY",
+          "basis": "分配股利、利润或偿付利息支付的现金；不可视为纯股息",
+          "reportLines": "第1126-1137行"
+        },
+        "sharesOutstandingAt2026Q1End": {
+          "value": 6325360667,
+          "unit": "shares",
+          "basis": "年报利润分配预案按截至2026-03-31总股本计算",
+          "reportLines": "第53-56行"
+        },
+        "proposedFY2025DividendPerShare": {
+          "value": 0.9,
+          "unit": "CNY/share",
+          "basis": "董事会拟向全体股东每股派发现金红利0.90元（含税）；属于预案",
+          "reportLines": "第53-56行"
+        }
+      },
+      "unresolved": {
+        "fullNetDebt": "未计算。需拆分一年内到期非流动负债、短期应付债券、债券及租赁负债，并扣除受限货币资金；现金流量表与资产负债表现金口径也需勾稽。",
+        "roic": "未计算。当前债务分类和经营性/金融性投资尚未完整拆分，不能把近似投入资本结果当作已核验ROIC。",
+        "currentFullyDilutedShares": "报告披露的期末普通股股数不是估值日完全稀释股数；需检查回购、股权激励、可转债及后续股本变动。",
+        "dividends": "0.90元/股是2025年度利润分配预案；年度现金流量表把股息、利润和利息合并，不能从合并金额倒推纯股息历史。",
+        "capitalAllocation": "投资支付36.13bn属于金融/股权投资等投资现金流，不等于经营资本开支；维护性与扩张性资本开支仍需附注拆分。",
+        "officialPDF": "发行人投资者关系页面列示2025年年报，但本次未能直接下载其PDF；可访问的全文文本为报告镜像。"
+      },
+      "importantCorrections": [
+        "此前标准化的revenue取值115,931,105,774.99实际是营业总收入，不是营业收入；两者差额294,874,524.94为利息收入。非金融企业收入应采用营业收入。",
+        "伊利短期借款45.63bn包含票据贴现借款36.61bn；债务结构必须结合附注，不可只把短借/长借字段相加。",
+        "货币资金19.49bn含受限资金约1.81bn，净债务不能简单全额抵扣货币资金。"
+      ]
+    }
+  ]
+}
