@@ -1,8 +1,99 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>风险监控｜余暮投资实验室</title><link rel="stylesheet" href="../styles.css"><style>.wrap{max-width:1080px;margin:auto}.hero2{padding:65px 0}.risk{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.panel{border:1px solid var(--line);background:var(--surface);padding:25px}.panel h2{font-family:Georgia,"Songti SC",serif;font-weight:500}.check{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);align-items:flex-start}.check input{margin-top:5px}.muted{color:var(--muted)}@media(max-width:700px){.risk{grid-template-columns:1fr}}</style></head><body><header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html">余暮<span> / Y.M.</span></a><nav><a href="investment-dashboard.html">仪表盘</a><a href="risk-monitor.html">风险</a><a href="annual-review.html">复盘</a></nav><button id="themeToggle" class="theme-btn">◐</button></div></header><main class="container wrap"><section class="hero2"><p class="eyebrow">INVESTMENT SYSTEM · 08</p><h1>风险监控</h1><p class="lead">风险监控同时读取仪表盘的宏观状态、资产评分和组合偏离。勾选项保存在浏览器本地。</p><div id="auto" class="panel" style="margin-top:20px"><strong>自动风险提示：</strong>读取中……</div></section><section class="section"><div class="risk"><div class="panel"><h2>组合风险</h2><div id="a"></div></div><div class="panel"><h2>宏观风险</h2><div id="b"></div></div><div class="panel"><h2>行为风险</h2><div id="c"></div></div><div class="panel"><h2>资产风险</h2><div id="d"></div></div></div></section></main><footer class="footer container"><span>© 2026 余暮 · Investment Lab</span><span><a href="investment-lab.html">← 返回实验室</a></span></footer><script src="../script.js"></script><script>const groups={a:["单一资产权重是否过高","股票总仓位是否超过风险承受能力","现金流是否覆盖未来1年以上支出","组合是否出现明显相关性上升"],b:["通胀是否重新上行","实际利率是否快速上升","美元流动性是否明显收紧","衰退/信用风险是否快速恶化"],c:["是否因为上涨追高","是否因为下跌恐慌卖出","是否频繁修改长期规则","是否因为短期新闻改变长期判断"],d:["核心投资逻辑是否改变","盈利/现金流是否恶化","估值是否远超历史与基本面合理区间","是否出现无法解释的重大治理风险"]};for(const k in groups){document.getElementById(k).innerHTML=groups[k].map((x,i)=>'<label class="check"><input type="checkbox" data-key="'+k+i+'"><span>'+x+'</span></label>').join("")}document.querySelectorAll("input[data-key]").forEach(x=>{x.checked=localStorage.getItem("ym_risk_"+x.dataset.key)==="1";x.onchange=()=>localStorage.setItem("ym_risk_"+x.dataset.key,x.checked?"1":"0")});</script><script>
-const regime=localStorage.getItem("ym_regime")||"未知",signal=localStorage.getItem("ym_signal")||"未知",scores=JSON.parse(localStorage.getItem("ym_scores")||"null");
-let alerts=[];
-if(regime.includes("滞胀")||regime.includes("通胀")) alerts.push("通胀/能源压力：检查股票估值、长久期债券与黄金配置。");
-if(regime.includes("偏紧")) alerts.push("金融条件偏紧：避免因短期下跌改变长期战略，但应检查新增资金节奏。");
-if(scores&&scores.gold>=70) alerts.push("黄金评分较高：优先检查黄金是否已经超过战略上限，而不是继续追涨。");
-document.getElementById("auto").innerHTML='<strong>自动风险提示：</strong>'+(alerts.length?alerts.join(" · "):"暂无自动触发项。")+'<br><span class="muted">当前状态：'+regime+'；动作：'+signal+'</span>';
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>风险监控 V2.1｜余暮投资实验室</title><link rel="stylesheet" href="../styles.css">
+<style>
+.wrap{max-width:1120px;margin:auto}.hero{padding:60px 0 36px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.panel,.metric{border:1px solid var(--line);background:var(--surface);padding:22px;box-shadow:var(--shadow)}
+.metric small,.muted{color:var(--muted)}.metric strong{display:block;font:500 25px Georgia,serif;margin-top:8px}
+table{width:100%;border-collapse:collapse;min-width:650px}th,td{padding:11px 8px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}th{font-size:11px;color:var(--muted);font-weight:500}
+.table-wrap{overflow:auto}.check{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:flex-start;font-size:13px}
+.check:last-child{border:0}.check input{margin-top:3px}.notice{border-left:3px solid var(--line);background:var(--surface);padding:13px 15px}
+.tag{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:4px 8px;font-size:10px}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.grid,.risk-grid{grid-template-columns:1fr}.hero{padding-top:42px}.panel{padding:16px}}
+</style></head><body>
+<header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html">余暮<span> / Y.M.</span></a><nav><a href="investment-lab.html">实验室</a><a href="investment-dashboard.html">配置</a><a href="global-macro-model.html">宏观</a><a href="financial-independence-simulator.html">50年模拟</a></nav><button id="themeToggle" class="theme-btn">◐</button></div></header>
+<main class="container wrap">
+<section class="hero"><p class="eyebrow">INVESTMENT SYSTEM · 07 / V2.1 RISK ENGINE</p><h1>风险监控</h1><p class="lead">风险监控读取共享月度数据和实际持仓输入。没有真实的人民币组合月收益时，不显示虚构的组合最大回撤、波动率或Sharpe。</p></section>
+<section class="section"><div class="grid">
+<div class="metric"><small>战略基准</small><strong>52 / 28 / 10 / 10</strong><p class="muted">全球股票 / 债券 / 黄金 / 现金</p></div>
+<div class="metric"><small>实际持仓录入</small><strong id="holdingStatus">待录入</strong><p class="muted" id="holdingTotal">—</p></div>
+<div class="metric"><small>组合月度样本</small><strong id="portfolioObs">0</strong><p class="muted" id="portfolioRange">等待人民币组合收益序列</p></div>
+</div></section>
+<section class="section"><div class="section-head"><span>01</span><div><h2>自动风险提示</h2><p>按已录入数据触发检查；缺失数据本身也是风险信息。</p></div></div><div class="panel"><div id="autoAlerts" class="notice">读取共享数据…</div></div></section>
+<section class="section"><div class="section-head"><span>02</span><div><h2>组合风险统计</h2><p>只有portfolio_return_cny_pct完整导入后，才计算实际人民币组合收益统计。</p></div></div>
+<div class="grid">
+<div class="metric"><small>组合年化收益</small><strong id="riskCagr">不可计算</strong></div>
+<div class="metric"><small>年化波动率</small><strong id="riskVol">不可计算</strong></div>
+<div class="metric"><small>最大回撤</small><strong id="riskMdd">不可计算</strong></div>
+</div><p class="muted" id="riskDataNote" style="margin-top:12px">需要至少12个月的真实人民币组合月度收益。单一沪深300指数价格回报不能代表整个组合。</p>
+</section>
+<section class="section"><div class="section-head"><span>03</span><div><h2>战略权重偏离</h2><p>读取执行驾驶舱的本地持仓，不把目标权重误当作当前持仓。</p></div></div>
+<div class="panel table-wrap"><table><thead><tr><th>资产</th><th>目标</th><th>当前</th><th>偏离</th><th>检查</th></tr></thead><tbody id="driftRows"></tbody></table></div>
+<p class="muted">完整录入与修正持仓请前往 <a href="investment-dashboard.html">400万元投资驾驶舱</a>。±5个百分点只触发复核，不代表自动交易。</p>
+</section>
+<section class="section"><div class="section-head"><span>04</span><div><h2>组合压力测试</h2><p>假设冲击用于检查组合结构，不是对未来市场的预测。</p></div></div>
+<div class="panel"><div class="table-wrap"><table><thead><tr><th>情景</th><th>股票</th><th>债券</th><th>黄金</th><th>现金</th><th>组合估算损失</th></tr></thead><tbody id="stressRows"></tbody></table></div>
+<p class="muted">默认冲击幅度是情景假设。若完整录入实际持仓，使用实际权重；否则使用战略目标权重。尚未计入相关性变化、交易成本、市场流动性和税费。</p></div></section>
+<section class="section"><div class="section-head"><span>05</span><div><h2>持续风险清单</h2><p>勾选记录保存在当前浏览器，可在每月复盘时更新。</p></div></div>
+<div class="risk-grid">
+<div class="panel"><h2>组合风险</h2><div id="groupPortfolio"></div></div>
+<div class="panel"><h2>宏观风险</h2><div id="groupMacro"></div></div>
+<div class="panel"><h2>行为风险</h2><div id="groupBehavior"></div></div>
+<div class="panel"><h2>资产风险</h2><div id="groupAsset"></div></div>
+</div></section>
+<section class="section"><div class="panel"><h2>数据边界</h2><p>目前落库的沪深300数据是价格指数回报，不含分红；美元资产尚未全部完成汇率换算；中债财富指数和完整港股全收益序列待接入。因此，本页不会用单一市场序列估算52/28/10/10整个组合的历史回撤。</p><p>导入数据及覆盖情况：<a href="global-macro-model.html">打开宏观模型与数据中心 →</a></p></div></section>
+</main><footer class="footer container"><span>© 2026 余暮 · Investment Lab V2.1</span><span><a href="investment-lab.html">← 返回实验室</a></span></footer>
+<script src="../assets/investment-config.js"></script><script src="../assets/investment-data-core.js"></script><script src="../script.js"></script>
+<script>
+(async function(){
+const C=window.YM_DATA_CORE,cfg=window.YM_INVESTMENT_CONFIG;
+const checks={
+groupPortfolio:["单一资产权重是否过高","现金流是否覆盖未来12个月支出","股票/债券/黄金是否出现相关性同步上升","是否有足够现金覆盖短期支出"],
+groupMacro:["通胀是否重新上行","实际利率是否快速上升","美元流动性是否明显收紧","衰退或信用利差是否快速恶化"],
+groupBehavior:["是否因为上涨追高","是否因为下跌恐慌卖出","是否频繁修改长期规则","是否因为短期新闻改变长期判断"],
+groupAsset:["核心投资逻辑是否改变","盈利或现金流是否恶化","估值是否明显偏离基本面","是否出现重大治理或流动性风险"]
+};
+Object.entries(checks).forEach(([id,items])=>{
+ const box=document.getElementById(id);
+ box.innerHTML=items.map((x,i)=>'<label class="check"><input type="checkbox" data-risk="'+id+i+'"><span>'+x+'</span></label>').join("");
+});
+document.querySelectorAll("[data-risk]").forEach(x=>{x.checked=localStorage.getItem("ym_risk_v21_"+x.dataset.risk)==="1";x.addEventListener("change",()=>localStorage.setItem("ym_risk_v21_"+x.dataset.risk,x.checked?"1":"0"));});
+const data=await C.load(),rows=data.rows,targets=cfg.allocation;
+function val(id){const x=localStorage.getItem("ym_v2_current_"+id);return x===null||x===""?null:Number(x);}
+const current=targets.map(a=>({...a,current:val(a.id)})),all=current.every(x=>Number.isFinite(x.current));
+const total=current.reduce((s,x)=>s+(x.current??0),0),valid=all&&Math.abs(total-100)<=.5;
+document.getElementById("holdingStatus").textContent=valid?"完整录入":current.some(x=>x.current!==null)?"部分录入":"待录入";
+document.getElementById("holdingTotal").textContent=all?"合计 "+total.toFixed(1)+"%":"请在配置页录入四类资产";
+document.getElementById("driftRows").innerHTML=current.map(x=>{
+ const d=x.current===null?null:x.current-x.weight;
+ return '<tr><td>'+x.name+'</td><td>'+x.weight+'%</td><td>'+(d===null?"—":x.current.toFixed(1)+"%")+'</td><td>'+(d===null?"—":(d>0?"+":"")+d.toFixed(1)+"个百分点")+'</td><td><span class="tag">'+(d===null?"缺失":Math.abs(d)>=cfg.rebalanceThresholdPct?"复核":"阈值内")+'</span></td></tr>';
+}).join("");
+const breaches=valid?current.filter(x=>Math.abs(x.current-x.weight)>=cfg.rebalanceThresholdPct):[];
+const csi=C.coverage(rows,"csi300_price_index_cny"),port=C.portfolioReturns(rows),stats=C.stats(port);
+document.getElementById("portfolioObs").textContent=port.length;
+document.getElementById("portfolioRange").textContent=port.length?(port[0].date+" — "+port.at(-1).date):"尚未导入人民币组合月收益";
+document.getElementById("riskCagr").textContent=stats.ready&&port.length>=12?(stats.cagr*100).toFixed(2)+"%":"不可计算";
+document.getElementById("riskVol").textContent=stats.ready&&port.length>=12?(stats.vol*100).toFixed(2)+"%":"不可计算";
+document.getElementById("riskMdd").textContent=stats.ready&&port.length>=12?(stats.maxdd*100).toFixed(2)+"%":"不可计算";
+document.getElementById("riskDataNote").textContent=port.length>=12?"基于真实人民币组合月回报："+port.length+"个月；未计费用与税费。":"目前有沪深300价格指数序列"+csi.count+"个月，但没有真实人民币组合月收益；不以单一指数替代完整组合统计。";
+const latest=f=>C.latest(rows,f)?.value??null;
+const vix=latest("vix_index"),infl=latest("china_cpi_yoy_pct"),real=latest("dfii10_pct"),spread=latest("credit_spread_pct"),usd=latest("usd_cny");
+const alerts=[];
+if(!valid)alerts.push("当前持仓数据未完整校验；不能判断真实集中度和偏离。");
+if(valid&&breaches.length)alerts.push(breaches.length+"类资产偏离目标达到±"+cfg.rebalanceThresholdPct+"个百分点：需复核交易成本与现金需求。");
+if(port.length<120)alerts.push("人民币组合月度序列不足10年；长期回撤、波动和区块抽样风险暂不可验证。");
+if(vix!==null&&vix>=25)alerts.push("VIX达到"+vix+"：风险偏好明显转弱，重新检查风险预算。");
+if(infl!==null&&infl>=3)alerts.push("中国CPI同比达到"+infl+"%：复核实际支出通胀与现金缓冲。");
+if(real!==null&&real>=2)alerts.push("美国10年实际利率达到"+real+"%：检查长久期资产和黄金机会成本。");
+if(spread!==null&&spread>=4.5)alerts.push("信用利差达到"+spread+"%：检查信用风险暴露。");
+if(usd===null)alerts.push("USD/CNY未导入：美元资产人民币收益风险暂不能量化。");
+document.getElementById("autoAlerts").innerHTML=alerts.length?alerts.map(x=>"<p>"+x+"</p>").join(""):"当前已录入数据未触发自动检查项；这不代表没有风险。";
+const stress=[
+["全球衰退",-35,5,8,0],["滞胀冲击",-25,-15,18,2],["地缘冲突",-40,-7,15,0],["流动性危机",-30,-10,-5,0]
+];
+const weights=valid?current.map(x=>x.current/100):targets.map(x=>x.weight/100);
+document.getElementById("stressRows").innerHTML=stress.map(([n,e,b,g,c])=>{
+ const loss=weights[0]*e+weights[1]*b+weights[2]*g+weights[3]*c;
+ return '<tr><td>'+n+'</td><td>'+e+'%</td><td>'+b+'%</td><td>'+g+'%</td><td>'+c+'%</td><td><strong>'+loss.toFixed(2)+'%</strong></td></tr>';
+}).join("");
+})();
 </script></body></html>
