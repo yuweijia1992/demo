@@ -103,6 +103,12 @@ def history_metric(rows, metric):
     out["status"]="complete" if out["p5"] is not None and out["p10"] is not None else ("5y_complete" if out["p5"] is not None else "insufficient_contiguous_history")
     return out
 
+def classify_source(url):
+    u=str(url or "").lower()
+    if not u:return "missing"
+    if any(d in u for d in ("cninfo.com.cn","hkexnews.hk","sec.gov")):return "official_regulatory_filing"
+    return "secondary_or_unclassified"
+
 def is_financial(stock):
     s = " ".join(str(stock.get(k) or "") for k in ("industry","businessType","method"))
     return any(t in s for t in ("银行","保险","证券","券商","金融"))
@@ -247,6 +253,19 @@ def main():
         for k,cond in checks:
             if any(cond(x) for x in annual):audit["metrics"][k]+=1
         source_audit=audit_by_code.get(stock["code"]) or audit_by_code.get(code) or {}
+        fin_source=source_audit.get("source",{}).get("financial")
+        capex_source=source_audit.get("source",{}).get("capex")
+        verification_register={
+          "officialReportCrossCheck":{"status":"pending","sourceClass":classify_source(fin_source),"sourceUrl":fin_source,"required":"发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"},
+          "roic":{"status":"calculated_not_independently_verified" if any(x["roicPct"] is not None for x in annual) else "pending_inputs","availableYears":sum(x["roicPct"] is not None for x in annual),"required":"NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"},
+          "netDebt":{"status":"calculated_not_independently_verified" if any(x["netDebt"] is not None for x in annual) else ("not_applicable_financial" if financial else "pending_inputs"),"availableYears":sum(x["netDebt"] is not None for x in annual),"required":"短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽"},
+          "shareCapital":{"status":"raw_share_capital_only" if any(x["shareCapitalRaw"] is not None for x in annual) else "pending","availableYears":sum(x["shareCapitalRaw"] is not None for x in annual),"required":"期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"},
+          "currentFullyDilutedShares":{"status":"pending","required":"估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"},
+          "dividendPerShareHistory":{"status":"pending","required":"逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"},
+          "capitalAllocation":{"status":"partial_cashflow_fields_only","sourceClass":classify_source(capex_source),"required":"维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"},
+          "companySpecificForecast":{"status":"mechanical_reference_only","required":"量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"},
+          "costOfCapital":{"status":"pending","required":"估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"}
+        }
         results.append({"name":stock.get("name"),"code":stock.get("code"),"primaryListingCode":(c or {}).get("primaryListingCode"),
                         "industry":stock.get("industry"),"businessType":stock.get("businessType"),"modelType":stock.get("method"),
                         "isFinancialInstitution":financial,"currency":stock.get("currency"),
@@ -254,11 +273,12 @@ def main():
                         "sourceLinks":source_audit.get("source",{}),"annual":annual,"history":h,"forecast5Y":forecast,
                         "valuationFramework":{"method":stock.get("method"),"requiredInputs":stock.get("requiredMetrics",[]),
                           "status":"pending_company_specific_assumptions_and_independent_verification",
+                          "companySpecificAssumptions":{"historicalRevenueCagr":growth,"recentThreeYearMedianNetMargin":median(margins),"recentThreeYearMedianCapexToRevenue":median(capex_ratios),"sustainableROE":None,"normalizedROIC":median([x["roicPct"] for x in annual if x["roicPct"] is not None]),"WACC":None,"costOfEquity":None,"terminalGrowth":None,"currentFullyDilutedShares":None,"fairValuePerShare":None,"status":"historical_reference_only_until_official_crosscheck"},
                           "requiredAssumptions":["normalized earnings / sustainable ROE","forecast revenue and margin drivers",
                             "reinvestment and maintenance capex","cost of equity or WACC with dated inputs",
                             "terminal growth or exit multiple","current fully diluted shares","dividend and buyback policy"],
                           "valuationOutputStatus":"blocked_no_verified_per_share_fair_value"},
-                        "verification":{"financialSourceCrossCheck":"pending_official_issuer_report","shareCount":"pending_current_fully_diluted_shares",
+                        "verification":{"financialSourceCrossCheck":"pending_official_issuer_report","register":verification_register,"shareCount":"pending_current_fully_diluted_shares",
                           "dividendHistory":"pending_per_share_and_ex_date_history","capitalAllocation":"pending_capex_mna_dividend_buyback_reconciliation",
                           "companySpecificScenarios":"pending_driver_based_forecast","costOfCapital":"pending_dated_risk_free_beta_erp"},
                         "quality":{"financialHistoryMatched":bool(c),"annualRevenueYears":sum(x["revenue"] is not None for x in annual),
@@ -291,6 +311,12 @@ def main():
               "forecast":"历史收入CAGR及最近三年净利率中位数的机械情景，不是公司指引或分析师预测。"},
             "companies":results}
     (OUT/"valuation-model-49.json").write_text(json.dumps(output,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
+    register={"schemaVersion":"1.0.0","generatedAtUtc":datetime.now(timezone.utc).isoformat(),
+              "companyCount":len(results),"records":[{"code":x["code"],"name":x["name"],"industry":x["industry"],
+              "modelType":x["modelType"],"sourceLinks":x["sourceLinks"],"verification":x["verification"]["register"],
+              "companySpecificAssumptions":x["valuationFramework"]["companySpecificAssumptions"],
+              "valuationOutputStatus":x["valuationFramework"]["valuationOutputStatus"]} for x in results]}
+    (OUT/"valuation-verification-register-49.json").write_text(json.dumps(register,ensure_ascii=False,indent=2),encoding="utf-8")
     (OUT/"valuation-model-audit.json").write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding="utf-8")
     print(json.dumps(audit,ensure_ascii=False,indent=2))
 
