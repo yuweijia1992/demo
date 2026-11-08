@@ -1,10 +1,10 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>历史回测｜余暮投资实验室</title><link rel="stylesheet" href="../styles.css"><style>
 .wrap{max-width:1120px;margin:auto}.hero2{padding:65px 0 40px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.panel{border:1px solid var(--line);background:var(--surface);padding:22px;margin-bottom:14px}.metric{padding:18px;border:1px solid var(--line);background:var(--surface)}.metric .v{font:500 28px Georgia,serif;margin-top:8px}.muted{color:var(--muted)}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:900px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:right}th:first-child,td:first-child{text-align:left}.bar{height:10px;background:var(--line);position:relative;overflow:hidden}.bar i{display:block;height:100%;background:var(--text)}.year-row{display:grid;grid-template-columns:55px 1fr 75px;gap:10px;align-items:center;margin:7px 0;font-size:12px}.controls{display:flex;gap:10px;flex-wrap:wrap}.controls label{border:1px solid var(--line);padding:8px 10px;font-size:12px}.controls input{width:65px;background:transparent;color:var(--text);border:0;border-bottom:1px solid var(--line)}.tag{display:inline-block;border:1px solid var(--line);padding:5px 9px;border-radius:999px;font-size:11px;margin:3px}.good{font-weight:600}.warn{font-weight:600}.case{padding:15px 0;border-bottom:1px solid var(--line)}.case:last-child{border-bottom:0}@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.grid6{grid-template-columns:repeat(3,1fr)}}@media(max-width:600px){.grid,.grid6{grid-template-columns:1fr 1fr}.hero2{padding-top:45px}}
 </style></head><body><header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html">余暮<span> / Y.M.</span></a><nav><a href="investment-dashboard.html">仪表盘</a><a href="global-macro-model.html">宏观</a><a href="historical-backtest.html">回测</a><a href="risk-monitor.html">风险</a></nav><button id="themeToggle" class="theme-btn">◐</button></div></header>
-<main class="container wrap"><section class="hero2"><p class="eyebrow">INVESTMENT SYSTEM · 05 / HISTORICAL ENGINE V2.2 · STRATEGIC BASELINE 52/28/10/10</p><h1>历史回测：年度代理对照 + V2.2人民币月度矩阵</h1><p class="lead">把历史收益、组合风险、滚动相关性、宏观状态代理、Campbell跨期对冲代理和历史相似环境统一接入。核心年度序列覆盖2006—2025完整年度，2026使用截至最新可得日期的YTD；缺失数据明确留空，不用估算值伪造连续历史。</p></section>
+<main class="container wrap"><section class="hero2"><p class="eyebrow">INVESTMENT SYSTEM · 05 / HISTORICAL ENGINE V2.3 · STRATEGIC BASELINE 52/28/10/10</p><h1>历史回测：年度代理对照 + V2.3人民币月度矩阵</h1><p class="lead">把历史收益、组合风险、滚动相关性、宏观状态代理、Campbell跨期对冲代理和历史相似环境统一接入。核心年度序列覆盖2006—2025完整年度，2026使用截至最新可得日期的YTD；缺失数据明确留空，不用估算值伪造连续历史。</p></section>
 <section class="section"><div class="panel">
-<h2>V2.2 · 人民币月度收益矩阵</h2>
-<p class="muted">所有数据使用YYYY-MM统一月份键，按资产分别显示覆盖范围。美元资产使用相邻月份USD/CNY月均值换算；价格回报、全收益回报和现金收益严格分列。完整52/28/10/10组合收益暂不计算，因为恒生全收益、中债财富、现金收益仍缺失，且股票/债券内部权重待明确。</p>
+<h2>V2.3 · 人民币月度收益矩阵与ETF代理</h2>
+<p class="muted">所有数据使用YYYY-MM统一月份键，按资产分别显示覆盖范围。美元资产使用相邻月份USD/CNY月均值换算；价格回报、全收益回报和现金收益严格分列。完整52/28/10/10组合收益暂不计算，因为恒生全收益、中债财富、人民币现金仍缺失，且股票/债券内部权重待明确。</p>
 <div class="grid" id="monthlyMetrics">
 <div class="metric"><span class="muted">统一月份</span><div class="v" id="monthlyCount">读取中</div></div>
 <div class="metric"><span class="muted">沪深300全收益样本</span><div class="v" id="csiObs">—</div></div>
@@ -13,7 +13,7 @@
 </div>
 <div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>真实月度序列</th><th>有效月份</th><th>覆盖区间</th><th>收益/估值口径</th><th>年化/观察指标</th></tr></thead><tbody id="monthlyCoverageRows"></tbody></table></div>
 <div class="notice" style="margin-top:14px" id="matrixStatus">正在读取覆盖审计…</div>
-<p class="muted">当前不是完整战略组合回测。年度六资产代理仍保留在下方作为旧结果对照，禁止与这份月度矩阵混用。可下载 <a href="../data/investment-monthly.csv" download>月度矩阵CSV</a> 和 <a href="../data/investment-monthly-manifest.json" download>来源及覆盖审计JSON</a>。</p>
+<p class="muted">ETF代理AGG、IEF、SHY和FXI是可投资产品的自动复权总回报，不是官方资产指数；它们与中债财富指数、恒生TRI仍分列。当前不是完整战略组合回测。年度六资产代理仍保留在下方作为旧结果对照，禁止与这份月度矩阵混用。可下载 <a href="../data/investment-monthly.csv" download>月度矩阵CSV</a> 和 <a href="../data/investment-monthly-manifest.json" download>来源及覆盖审计JSON</a>。</p>
 </div></section><section class="panel"><div class="grid"><div class="metric"><span class="muted">完整年度窗口</span><div class="v">2006—2025</div></div><div class="metric"><span class="muted">2026状态</span><div class="v">YTD</div></div><div class="metric"><span class="muted">资产序列</span><div class="v">6</div></div><div class="metric"><span class="muted">组合本金</span><div class="v">¥400万</div></div></div></section>
 <section class="section"><div class="panel"><h2>六资产数据层</h2><div class="table-wrap"><table><thead><tr><th>资产</th><th>2006—2025 CAGR</th><th>年化波动</th><th>最大回撤</th><th>最差年份</th><th>2026 YTD</th></tr></thead><tbody id="assetStats"></tbody></table></div><p class="muted">注意：S&P 500为总回报；沪深300为价格回报；TLT为总回报；黄金为价格回报；美国1个月国债为收益率代理而非严格总回报；中国长期国债为总回报。口径差异已在数据层标注。</p></div></section>
 <section class="section"><div class="panel"><h2>400万元组合回测</h2><p class="muted">战略基准统一为股票52% / 债券28% / 黄金10% / 现金10%。为映射现有六条年度序列，本页暂以S&P 500与沪深300各26%、TLT与中国长期国债各14%构造研究代理；不含其他市场股票。原始序列存在美元/人民币、总回报/价格回报/收益率代理差异，且缺失年份会按可用资产重新归一。该结果仅用于检查旧数据与策略逻辑，不是完整全球组合的人民币正式回测。</p><div class="controls" id="weights"></div><div class="grid" id="portfolioMetrics"></div></div></section>
@@ -24,7 +24,7 @@
 <section class="section"><div class="panel"><h2>压力阶段</h2><div id="stress"></div></div></section>
 <section class="section"><div class="panel"><h2>V2.2 月度数据接入与质量控制</h2><p class="muted">正式月度/日度数据库不再用手工填数。这里提供标准CSV入口：浏览器本地读取，不上传服务器。建议字段：date,sp500,csi300,us10y,real10y,dxy,vix,gold,brent,usdcny,china10y,fedfunds。价格/指数请先转换成月度总回报或月末水平；状态变量保留月末值。</p><input id="csvInput" type="file" accept=".csv,text/csv"><div id="csvStatus" class="muted" style="margin-top:12px">尚未导入CSV。</div><div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>窗口</th><th>S&P×CSI</th><th>S&P×Gold</th><th>S&P×TLT</th><th>CSI×Gold</th></tr></thead><tbody id="rolling10"></tbody></table></div></div></section>
 <section class="section"><div class="panel"><h2>Campbell ICAPM正式估计框架</h2><p class="muted">V2.0采用可检验的预测回归：<br><b>r<sub>t+1</sub> − r<sub>f,t+1</sub> = α + β′z<sub>t</sub> + ε<sub>t+1</sub></b>；其中 z 为估值、利率、美元、波动、通胀/能源等机会集变量。跨期对冲需求再由状态变量变化 Δz 进入资产暴露分析。页面只在导入真实月度数据后计算 β、t 值、R² 和样本外预测，避免把年度代理冒充正式ICAPM结果。</p><div id="regressionStatus" class="grid"></div></div></section><section class="section"><div class="panel"><h2>数据完整性与来源</h2><p><span class="tag">2006—2025年度：已接入</span><span class="tag">2026 YTD：已接入</span><span class="tag">2023—2026部分月度：已接入</span><span class="tag">完整2006—2026日度：下一数据层</span></p><p class="muted">这一区分很重要：当前页面已经能真实计算长期年度回测，但还没有把所有资产2006—2026的逐日原始行情塞进静态站点，因此不会把“年度回测”包装成“完整日度回测”。</p><div id="sources"></div></div></section></main>
-<footer class="footer container"><span>© 2026 余暮 · Investment Lab V2.2</span><span><a href="investment-lab.html">← 返回实验室</a></span></footer>
+<footer class="footer container"><span>© 2026 余暮 · Investment Lab V2.3</span><span><a href="investment-lab.html">← 返回实验室</a></span></footer>
 <script src="../script.js"></script><script src="../assets/investment-config.js"></script><script src="../assets/investment-historical-data.js"></script><script>
 const D=YM_HISTORICAL, A=D.assets, Y=D.years;
 const pct=x=>x==null?"—":(x*100).toFixed(1)+"%";
@@ -57,13 +57,21 @@ document.getElementById("csvInput").addEventListener("change",async e=>{const f=
  ["沪深300价格回报","csi300_price_return_pct","价格指数回报 / CNY"],
  ["沪深300全收益","csi300_total_return_pct","H00300全收益指数 / CNY"],
  ["S&P 500总回报","sp500_total_return_pct","含股息再投资 / USD"],
- ["S&P 500人民币总回报","sp500_total_return_cny_pct","美元总回报 + USD/CNY月均变化"],
+ ["S&P 500人民币总回报","sp500_total_return_cny_pct","USD总回报 + USD/CNY月均换算 / CNY"],
+ ["美国综合债券ETF AGG","us_agg_etf_total_return_usd_pct","ETF自动复权总回报 / USD"],
+ ["美国综合债券ETF AGG（人民币）","us_agg_etf_total_return_cny_pct","ETF自动复权总回报 + FX / CNY"],
+ ["美国7–10年国债ETF IEF","us_ief_7_10y_etf_total_return_usd_pct","ETF自动复权总回报 / USD"],
+ ["美国7–10年国债ETF IEF（人民币）","us_ief_7_10y_etf_total_return_cny_pct","ETF自动复权总回报 + FX / CNY"],
+ ["美国1–3年国债ETF SHY","us_shy_1_3y_etf_total_return_usd_pct","ETF自动复权总回报 / USD"],
+ ["美国1–3年国债ETF SHY（人民币）","us_shy_1_3y_etf_total_return_cny_pct","ETF自动复权总回报 + FX / CNY"],
+ ["中国大型股ETF FXI","fxi_china_largecap_etf_total_return_usd_pct","离岸中国股票ETF总回报 / USD"],
+ ["中国大型股ETF FXI（人民币）","fxi_china_largecap_etf_total_return_cny_pct","离岸中国股票ETF总回报 + FX / CNY"],
  ["黄金美元价格","gold_usd_oz","世界银行美元月均价 / 盎司"],
  ["黄金人民币价格回报","gold_cny_return_pct","金价月均 × USD/CNY月均"],
  ["USD/CNY月均汇率变化","usd_cny_change_pct","汇率变化，不作为资产收益"],
  ["恒生指数全收益","hang_seng_total_return_pct","官方TR / HKD，待接入"],
  ["中债财富指数","china_bond_wealth_return_cny_pct","财富指数 / CNY，待接入"],
- ["美国国债总回报","us_treasury_7_10y_total_return_pct","7-10年总回报 / USD，待接入"],
+ ["美国国债官方总回报指数","us_treasury_7_10y_total_return_pct","7–10年官方总回报 / USD，待接入"],
  ["人民币现金回报","cny_cash_return_pct","现金总回报 / CNY，待接入"],
  ["完整人民币组合收益","portfolio_return_cny_pct","真实组合月收益 / CNY，待接入"]
  ];
