@@ -17,7 +17,8 @@ CURRENCY_FIELDS = ("币种", "货币币种", "报告币种", "CURRENCY")
 UNIT_FIELDS = ("单位", "金额单位", "计量单位", "UNIT", "AMOUNT_UNIT")
 MAP = {
  "income": {
-  "revenue": ("营业总收入", "营业收入", "营业额", "营运收入", "经营收入总额", "经营收入"),
+  "revenue": ("营业收入", "营业额", "营运收入", "经营收入"),
+  "totalOperatingRevenue": ("营业总收入", "总营业收入"),
   "operatingProfit": ("营业利润", "经营利润", "经营溢利"),
   "profitBeforeTax": ("利润总额", "税前利润", "除税前利润", "除税前溢利"),
   "netProfitParent": ("归属于母公司所有者的净利润", "归属于母公司股东的净利润", "归属于母公司的净利润", "归母净利润", "股东应占溢利", "本公司拥有人应占溢利"),
@@ -132,7 +133,9 @@ def listing_dataset(listing_code, sections, financial=False):
  annual=[]
  for year in YEARS:
   sections_y=annual_by_year.get(year,{})
-  valid={"income":all(value(sections_y.get("income"),k) is not None for k in ("revenue","netProfitParent")),
+  revenue_value=value(sections_y.get("income"),"revenue")
+  if financial and revenue_value is None:revenue_value=value(sections_y.get("income"),"totalOperatingRevenue")
+  valid={"income":revenue_value is not None and value(sections_y.get("income"),"netProfitParent") is not None,
          "balance":all(value(sections_y.get("balance"),k) is not None for k in ("totalAssets","parentEquity")),
          "cashflow":all(value(sections_y.get("cashflow"),k) is not None for k in ("operatingCashFlow","capex"))}
   annual.append({"year":year,"income":sections_y.get("income"),"balance":sections_y.get("balance"),"cashflow":sections_y.get("cashflow"),
@@ -142,7 +145,8 @@ def listing_dataset(listing_code, sections, financial=False):
   dates=sorted(d for d in interim_by_date if d.startswith("2026-"))
   if dates:
    latest=dates[-1];prior="2025"+latest[4:];current=interim_by_date.get(latest,{});previous=interim_by_date.get(prior,{});fy=annual_by_year.get(2025,{})
-   formulas={"revenue":("income","revenue"),"netProfitParent":("income","netProfitParent")}
+   revenue_key="revenue" if value(current.get("income"),"revenue") is not None and value(previous.get("income"),"revenue") is not None and value(fy.get("income"),"revenue") is not None else ("totalOperatingRevenue" if financial else "revenue")
+   formulas={"revenue":("income",revenue_key),"netProfitParent":("income","netProfitParent")}
    if not financial:
     formulas.update({"operatingCashFlow":("cashflow","operatingCashFlow"),"capex":("cashflow","capex")})
    ok=True
