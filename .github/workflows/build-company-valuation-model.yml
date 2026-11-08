@@ -52,6 +52,8 @@ jobs:
           a=json.load(open("data/valuation-model/valuation-model-audit.json",encoding="utf-8"))
           assert p["companyCount"] == 49, p["companyCount"]
           assert len(p["companies"]) == 49
+          v=json.load(open("data/valuation-model/valuation-verification-register-49.json",encoding="utf-8"))
+          assert v["companyCount"] == 49 and len(v["records"]) == 49
           assert a["masterCompanies"] == 49
           assert all(len(c["annual"]) == 5 for c in p["companies"])
           print("PASS: 49 companies, 5 annual periods, audited valuation model generated")
@@ -71,6 +73,6 @@ jobs:
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/valuation-model/valuation-model-49.json data/valuation-model/valuation-model-audit.json
+          git add data/valuation-model/valuation-model-49.json data/valuation-model/valuation-model-audit.json data/valuation-model/valuation-verification-register-49.json
           git diff --cached --quiet || git commit -m "Build audited 49-company valuation model"
           git push origin HEAD:main
