@@ -312,11 +312,14 @@ def main():
         ev=evidence_by_code.get(company["code"])
         if ev:
             company["verification"]["manualEvidence"]=ev
+            company["verification"]["financialSourceCrossCheck"]=ev.get("status","partial_report_text_crosscheck")
             company["verification"]["register"]["officialReportCrossCheck"]["status"]=ev.get("status","partial_report_text_crosscheck")
             company["verification"]["register"]["officialReportCrossCheck"]["issuerIRUrl"]=ev.get("issuerIRUrl")
             company["verification"]["register"]["officialReportCrossCheck"]["reportTextUrl"]=ev.get("reportTextUrl")
     audit["issuerEvidenceRecords"]=len(evidence_by_code)
     audit["issuerEvidenceCrossChecks"]=sum(1 for x in manual_evidence.get("records",[]) if x.get("status")=="fully_crosschecked")
+    audit["issuerReportCrossChecksPartial"]=sum(1 for x in manual_evidence.get("records",[]) if x.get("status")=="partial_report_text_crosscheck")
+    audit["verification"]["issuerReportCrossChecksPending"]=max(0,len(results)-audit["issuerEvidenceCrossChecks"]-audit["issuerReportCrossChecksPartial"])
     OUT.mkdir(parents=True,exist_ok=True)
     output={"schemaVersion":"1.1.0","generatedAtUtc":datetime.now(timezone.utc).isoformat(),
             "sourceFiles":{"master":str(MASTER.relative_to(ROOT)),"financial":str(FIN.relative_to(ROOT)),
