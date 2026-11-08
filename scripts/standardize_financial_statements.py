@@ -39,7 +39,7 @@ MAP = {
   "bondsPayable": ("应付债券", "债券", "已发行债券", "可转换票据及债券"),
   "currentLeaseLiabilities": ("一年内到期的租赁负债", "租赁负债(流动)", "融资租赁负债(流动)"),
   "leaseLiabilities": ("租赁负债", "融资租赁负债(非流动)"),
-  "shareCapital": ("股本", "普通股股本"),
+  "shareCapital": ("股本", "普通股股本", "实收资本", "实收资本(或股本)", "实收资本（或股本）", "已发行股本", "已发行普通股"),
   "accountsReceivable": ("应收账款", "应收帐款"),
   "inventory": ("存货",),
   "goodwill": ("商誉",),
