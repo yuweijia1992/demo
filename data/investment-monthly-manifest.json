@@ -6,263 +6,287 @@
   "row_count": 250,
   "date_start": "2006-01",
   "date_end": "2026-10",
-  "latest_csi300_observation": "2026-07-10",
-  "latest_complete_csi300_month": "2026-06",
+  "latest_csi300_observation": "2026-09-09",
+  "latest_complete_csi300_month": "2026-08",
   "coverage_audit": {
-    "csi300_price_index_cny": {
-      "rows": 256,
-      "complete_return_months": 254,
-      "first_month_partial": true,
-      "last_month_partial": true,
-      "return_type": "price_return_not_total_return"
+    "csi300_price_return_pct": {
+      "count": 248,
+      "start": "2006-01",
+      "end": "2026-08"
+    },
+    "csi300_total_return_pct": {
+      "count": 248,
+      "start": "2006-01",
+      "end": "2026-08"
     },
     "sp500_total_return_pct": {
-      "rows": 0,
-      "status": "awaiting_ingestion"
+      "count": 247,
+      "start": "2006-01",
+      "end": "2026-07"
     },
-    "gold_usd_oz": {
-      "rows": 0,
-      "status": "awaiting_ingestion"
+    "sp500_total_return_cny_pct": {
+      "count": 247,
+      "start": "2006-01",
+      "end": "2026-07"
+    },
+    "gold_cny_return_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     "usd_cny": {
-      "rows": 0,
-      "status": "awaiting_ingestion"
-    },
-    "china_bond_total_return_index_cny": {
-      "rows": 0,
-      "status": "source_validation_required"
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     "hang_seng_total_return_pct": {
-      "rows": 0,
-      "status": "source_validation_required"
+      "count": 0,
+      "start": null,
+      "end": null
     },
-    "inflation_and_macro": {
-      "rows": 0,
-      "status": "shared_csv_import_ready"
+    "china_bond_wealth_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "us_treasury_7_10y_total_return_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "cny_cash_return_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "portfolio_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
     }
   },
   "series": [
     {
       "field": "csi300_price_index_cny",
       "count": 249,
-      "coverage_start": "2006-01",
-      "coverage_end": "2026-09"
+      "start": "2006-01",
+      "end": "2026-09"
     },
     {
       "field": "csi300_price_return_pct",
       "count": 248,
-      "coverage_start": "2006-01",
-      "coverage_end": "2026-08"
+      "start": "2006-01",
+      "end": "2026-08"
     },
     {
       "field": "csi300_total_return_index_cny",
       "count": 249,
-      "coverage_start": "2006-01",
-      "coverage_end": "2026-09"
+      "start": "2006-01",
+      "end": "2026-09"
     },
     {
       "field": "csi300_total_return_pct",
-      "count": 247,
-      "coverage_start": "2006-02",
-      "coverage_end": "2026-08"
+      "count": 248,
+      "start": "2006-01",
+      "end": "2026-08"
     },
     {
       "field": "csi300_period_status",
       "count": 249,
-      "coverage_start": "2006-01",
-      "coverage_end": "2026-09"
+      "start": "2006-01",
+      "end": "2026-09"
     },
     {
       "field": "sp500_total_return_index_usd",
       "count": 247,
-      "coverage_start": "2006-01",
-      "coverage_end": "2026-07"
+      "start": "2006-01",
+      "end": "2026-07"
     },
     {
       "field": "sp500_total_return_pct",
       "count": 247,
-      "coverage_start": "2006-01",
-      "coverage_end": "2026-07"
+      "start": "2006-01",
+      "end": "2026-07"
     },
     {
       "field": "sp500_total_return_cny_pct",
       "count": 247,
-      "coverage_start": "2006-01",
-      "coverage_end": "2026-07"
+      "start": "2006-01",
+      "end": "2026-07"
     },
     {
       "field": "gold_usd_oz",
       "count": 250,
-      "coverage_start": "2006-01",
-      "coverage_end": "2026-10"
+      "start": "2006-01",
+      "end": "2026-10"
     },
     {
       "field": "gold_cny_per_oz_monthly_avg",
       "count": 250,
-      "coverage_start": "2006-01",
-      "coverage_end": "2026-10"
+      "start": "2006-01",
+      "end": "2026-10"
     },
     {
       "field": "gold_cny_return_pct",
       "count": 250,
-      "coverage_start": "2006-01",
-      "coverage_end": "2026-10"
+      "start": "2006-01",
+      "end": "2026-10"
     },
     {
       "field": "usd_cny",
       "count": 250,
-      "coverage_start": "2006-01",
-      "coverage_end": "2026-10"
+      "start": "2006-01",
+      "end": "2026-10"
     },
     {
       "field": "usd_cny_change_pct",
       "count": 250,
-      "coverage_start": "2006-01",
-      "coverage_end": "2026-10"
+      "start": "2006-01",
+      "end": "2026-10"
     },
     {
       "field": "hang_seng_total_return_index_hkd",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "hang_seng_total_return_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "hang_seng_total_return_cny_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "china_bond_wealth_index_cny",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "china_bond_wealth_return_cny_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "us_treasury_7_10y_total_return_index_usd",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "us_treasury_7_10y_total_return_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "us_treasury_7_10y_total_return_cny_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "cny_cash_rate_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "cny_cash_return_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "us_tbill_1m_return_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "us_tbill_1m_return_cny_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "china_cpi_mom_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "china_cpi_yoy_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "us_cpi_index",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "us_cpi_yoy_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "dgs10_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "dfii10_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "dxy_index",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "vix_index",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "brent_usd_bbl",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "fedfunds_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "china10y_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     },
     {
       "field": "portfolio_return_cny_pct",
       "count": 0,
-      "coverage_start": null,
-      "coverage_end": null
+      "start": null,
+      "end": null
     }
   ],
   "notes": [
@@ -273,13 +297,13 @@
     "目前只有沪深300月度价格指数序列完成数据落库；其余序列仍待导入/验证，因此尚不能计算完整52/28/10/10月度正式回测。"
   ],
   "matrix_policy": [
-    "统一月份键YYYY-MM，期间2006-01至2026-10；不填补缺失值、不把缺失收益记为0。",
-    "沪深300的CSI300为价格指数，CSI300_TR为全收益指数；按各月最后一个可用交易日取水平计算月收益。数据源截止2026-09-09，因此2026-09标为部分月份，空缺月回报。",
-    "S&P 500总回报指数来自^SP500TR月度调整后指数，按月指数水平计算USD总回报。",
-    "美元资产人民币回报=(1+r_USD)*(USD/CNY_t/USD/CNY_t-1)-1。本矩阵使用Federal Reserve G.5月均USD/CNY，因此结果为月均FX变化换算代理，而非严格月末交易估值。",
-    "黄金来自世界银行Pink Sheet月均美元/盎司价格；人民币盎司价值=美元月均价×USD/CNY月均值。人民币黄金月收益为两个月均值估值的变动，不等同于日度黄金与日度汇率配对后的实际持有回报。",
-    "恒生全收益、中债财富、美国国债全收益、人民币现金和真实组合月收益仍保留空白，不能用债券收益率、债券价格指数或单一股票指数冒充。",
-    "52%股票和28%债券内部区域/久期权重尚未确定；因此不生成整套战略组合的月度回报。"
+    "统一月份键YYYY-MM，2006-01至2026-10共250个月份；不填补缺失值、不将缺失收益记为0。",
+    "沪深300的CSI300列为价格指数，CSI300_TR列为全收益指数；按每月最后一个可用交易日指数水平计算月收益。数据源最后观察为2026-09-09，2026-09属于部分月份，因此该月收益留空，2026-10尚无沪深300数据。",
+    "S&P 500总回报指数来自^SP500TR月度股息调整水平，计算USD总回报；再按相邻月份Federal Reserve G.5月均USD/CNY换算人民币。",
+    "黄金来自世界银行Pink Sheet月均美元/盎司价格；人民币月均估值代理=美元金价月均×USD/CNY月均值。此回报不是日度配对FX后实际持有收益。",
+    "美元汇率EXCHUS为月均汇率（CNY per USD），不是月末即期汇率。",
+    "恒生全收益、中债财富、美国国债总回报、人民币现金和完整组合月收益仍为空值。不得以价格指数、国债收益率或短期利率直接替代全收益指数。",
+    "52%股票和28%债券内部地区/久期权重待后续确定，因此当前不生成完整52/28/10/10组合月度回报或其历史统计。"
   ],
   "sources": [
     {
@@ -549,6 +573,7 @@
   ],
   "quality_checks": {
     "date_rows": 250,
+    "expected_rows": 250,
     "unique_months": 250,
     "csi300_price_complete_months": 248,
     "csi300_total_return_complete_months": 248,
