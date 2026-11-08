@@ -4,12 +4,14 @@
   "use strict";
   const STORAGE_KEY="ym_v21_imported_monthly_rows";
   const FIELDS=[
-    "csi300_price_index_cny","csi300_price_return_pct",
-    "sp500_total_return_pct","sp500_cpi_index",
+    "csi300_price_index_cny","csi300_price_return_pct","csi300_total_return_index_cny","csi300_total_return_pct",
+    "sp500_total_return_index_usd","sp500_total_return_pct","sp500_total_return_cny_pct","sp500_cpi_index","sp500_shiller_total_return_pct","sp500_shiller_cpi_index",
     "hang_seng_price_index_hkd","hang_seng_total_return_pct",
     "china_bond_total_return_index_cny","us_treasury_total_return_index_usd",
-    "gold_usd_oz","usd_cny","china_cpi_mom_pct","china_cpi_yoy_pct",
-    "us_cpi_index","us_cpi_yoy_pct","dgs10_pct","dfii10_pct","dxy_index",
+    "gold_usd_oz","gold_cny_per_oz_monthly_avg","gold_cny_return_pct","usd_cny","usd_cny_change_pct","china_cpi_mom_pct","china_cpi_yoy_pct",
+    "us_cpi_index","us_cpi_yoy_pct","hang_seng_total_return_cny_pct","china_bond_wealth_return_cny_pct",
+    "us_treasury_7_10y_total_return_pct","us_treasury_7_10y_total_return_cny_pct","cny_cash_return_pct","us_tbill_1m_return_cny_pct",
+    "dgs10_pct","dfii10_pct","dxy_index",
     "vix_index","brent_usd_bbl","fedfunds_pct","china10y_pct",
     "cn_pmi","us_pmi","us_unemployment_pct","credit_spread_pct",
     "sp500_forward_pe","csi300_pe","cash_rate_cny_pct","portfolio_return_cny_pct"

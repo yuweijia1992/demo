@@ -1,5 +1,5 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>风险监控 V2.1｜余暮投资实验室</title><link rel="stylesheet" href="../styles.css">
+<title>风险监控 V2.2｜余暮投资实验室</title><link rel="stylesheet" href="../styles.css">
 <style>
 .wrap{max-width:1120px;margin:auto}.hero{padding:60px 0 36px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
 .panel,.metric{border:1px solid var(--line);background:var(--surface);padding:22px;box-shadow:var(--shadow)}
@@ -12,7 +12,7 @@ table{width:100%;border-collapse:collapse;min-width:650px}th,td{padding:11px 8px
 </style></head><body>
 <header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html">余暮<span> / Y.M.</span></a><nav><a href="investment-lab.html">实验室</a><a href="investment-dashboard.html">配置</a><a href="global-macro-model.html">宏观</a><a href="financial-independence-simulator.html">50年模拟</a></nav><button id="themeToggle" class="theme-btn">◐</button></div></header>
 <main class="container wrap">
-<section class="hero"><p class="eyebrow">INVESTMENT SYSTEM · 07 / V2.1 RISK ENGINE</p><h1>风险监控</h1><p class="lead">风险监控读取共享月度数据和实际持仓输入。没有真实的人民币组合月收益时，不显示虚构的组合最大回撤、波动率或Sharpe。</p></section>
+<section class="hero"><p class="eyebrow">INVESTMENT SYSTEM · 07 / V2.2 RISK ENGINE · RMB MATRIX</p><h1>风险监控</h1><p class="lead">风险监控读取共享月度数据和实际持仓输入。没有真实的人民币组合月收益时，不显示虚构的组合最大回撤、波动率或Sharpe。</p></section>
 <section class="section"><div class="grid">
 <div class="metric"><small>战略基准</small><strong>52 / 28 / 10 / 10</strong><p class="muted">全球股票 / 债券 / 黄金 / 现金</p></div>
 <div class="metric"><small>实际持仓录入</small><strong id="holdingStatus">待录入</strong><p class="muted" id="holdingTotal">—</p></div>
@@ -40,7 +40,7 @@ table{width:100%;border-collapse:collapse;min-width:650px}th,td{padding:11px 8px
 <div class="panel"><h2>行为风险</h2><div id="groupBehavior"></div></div>
 <div class="panel"><h2>资产风险</h2><div id="groupAsset"></div></div>
 </div></section>
-<section class="section"><div class="panel"><h2>数据边界</h2><p>目前落库的沪深300数据是价格指数回报，不含分红；美元资产尚未全部完成汇率换算；中债财富指数和完整港股全收益序列待接入。因此，本页不会用单一市场序列估算52/28/10/10整个组合的历史回撤。</p><p>导入数据及覆盖情况：<a href="global-macro-model.html">打开宏观模型与数据中心 →</a></p></div></section>
+<section class="section"><div class="panel"><h2>数据边界</h2><p>当前月度矩阵已并列接入沪深300价格与H00300全收益（完整月收益截至2026-08）、S&P 500人民币总回报（截至2026-07）、黄金人民币价格回报与USD/CNY月均值（截至2026-10）。恒生全收益、中债财富、美国国债总回报、人民币现金仍待补齐；股票和债券内部战略权重也尚未确定。因此完整人民币组合月收益仍为空，本页不显示整个52/28/10/10组合的历史回撤。</p><p>导入数据及覆盖情况：<a href="global-macro-model.html">打开宏观模型与数据中心 →</a></p></div></section>
 </main><footer class="footer container"><span>© 2026 余暮 · Investment Lab V2.1</span><span><a href="investment-lab.html">← 返回实验室</a></span></footer>
 <script src="../assets/investment-config.js"></script><script src="../assets/investment-data-core.js"></script><script src="../script.js"></script>
 <script>
@@ -74,7 +74,7 @@ document.getElementById("portfolioRange").textContent=port.length?(port[0].date+
 document.getElementById("riskCagr").textContent=stats.ready&&port.length>=12?(stats.cagr*100).toFixed(2)+"%":"不可计算";
 document.getElementById("riskVol").textContent=stats.ready&&port.length>=12?(stats.vol*100).toFixed(2)+"%":"不可计算";
 document.getElementById("riskMdd").textContent=stats.ready&&port.length>=12?(stats.maxdd*100).toFixed(2)+"%":"不可计算";
-document.getElementById("riskDataNote").textContent=port.length>=12?"基于真实人民币组合月回报："+port.length+"个月；未计费用与税费。":"目前有沪深300价格指数序列"+csi.count+"个月，但没有真实人民币组合月收益；不以单一指数替代完整组合统计。";
+document.getElementById("riskDataNote").textContent=port.length>=12?"基于真实人民币组合月回报："+port.length+"个月；未计费用与税费。":"目前月度矩阵包含沪深300价格/全收益、S&P 500人民币总回报和黄金人民币价格回报；但没有完整人民币组合月收益"+csi.count+"个月，但没有真实人民币组合月收益；不以单一指数替代完整组合统计。";
 const latest=f=>C.latest(rows,f)?.value??null;
 const vix=latest("vix_index"),infl=latest("china_cpi_yoy_pct"),real=latest("dfii10_pct"),spread=latest("credit_spread_pct"),usd=latest("usd_cny");
 const alerts=[];

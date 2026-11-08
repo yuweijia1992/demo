@@ -1,167 +1,292 @@
 {
-  "dataset_version": "2.1.0",
+  "dataset_version": "2.2.0",
   "generated_at": "2026-11-08",
   "dataset_file": "data/investment-monthly.csv",
   "frequency": "monthly",
-  "row_count": 256,
-  "date_start": "2005-04",
-  "date_end": "2026-07",
-  "latest_csi300_observation": "2026-07-10",
-  "latest_complete_csi300_month": "2026-06",
+  "row_count": 250,
+  "date_start": "2006-01",
+  "date_end": "2026-10",
+  "latest_csi300_observation": "2026-09-09",
+  "latest_complete_csi300_month": "2026-08",
   "coverage_audit": {
-    "csi300_price_index_cny": {
-      "rows": 256,
-      "complete_return_months": 254,
-      "first_month_partial": true,
-      "last_month_partial": true,
-      "return_type": "price_return_not_total_return"
+    "csi300_price_return_pct": {
+      "count": 248,
+      "start": "2006-01",
+      "end": "2026-08"
+    },
+    "csi300_total_return_pct": {
+      "count": 248,
+      "start": "2006-01",
+      "end": "2026-08"
     },
     "sp500_total_return_pct": {
-      "rows": 0,
-      "status": "awaiting_ingestion"
+      "count": 247,
+      "start": "2006-01",
+      "end": "2026-07"
     },
-    "gold_usd_oz": {
-      "rows": 0,
-      "status": "awaiting_ingestion"
+    "sp500_total_return_cny_pct": {
+      "count": 247,
+      "start": "2006-01",
+      "end": "2026-07"
+    },
+    "gold_cny_return_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     "usd_cny": {
-      "rows": 0,
-      "status": "awaiting_ingestion"
-    },
-    "china_bond_total_return_index_cny": {
-      "rows": 0,
-      "status": "source_validation_required"
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     "hang_seng_total_return_pct": {
-      "rows": 0,
-      "status": "source_validation_required"
+      "count": 0,
+      "start": null,
+      "end": null
     },
-    "inflation_and_macro": {
-      "rows": 0,
-      "status": "shared_csv_import_ready"
+    "china_bond_wealth_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "us_treasury_7_10y_total_return_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "cny_cash_return_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "portfolio_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
     }
   },
   "series": [
     {
-      "id": "csi300_price_index_cny",
-      "name": "沪深300指数月末收盘",
-      "unit": "index_points",
-      "currency": "CNY",
-      "field_type": "price_index",
-      "return_type": "price_return",
-      "source": "Tencent Finance K-line API",
-      "source_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get",
-      "upstream_dataset": "https://github.com/sky910140/financial-agent-takehome/tree/main/data/market",
-      "upstream_retrieved_at": "2026-07-10T14:25:39Z",
-      "coverage_start": "2005-04",
-      "coverage_end": "2026-07",
-      "method": "取每个自然月最后一个交易日收盘价；月度价格回报=本月末/上月末-1；不填补非交易日；2005-04为指数起始部分月，2026-07仅到7月10日，均不作为完整月回报。",
-      "caveat": "沪深300价格指数，不含现金分红；不是沪深300全收益指数。上游数据集使用腾讯 qfq K线接口，授权/再分发条款尚未单独确认；仅作研究工作数据。"
+      "field": "csi300_price_index_cny",
+      "count": 249,
+      "start": "2006-01",
+      "end": "2026-09"
     },
     {
-      "id": "sp500_total_return_pct",
-      "name": "S&P 500月度名义总回报",
-      "unit": "percent",
-      "currency": "USD",
-      "field_type": "monthly_return",
-      "return_type": "total_return_dividends_reinvested",
-      "source": "Shiller monthly dataset prepared by Firenum",
-      "source_url": "https://firenum.com/tools/shiller-data",
-      "download_url": "https://firenum.com/data/shiller-monthly.csv",
-      "license": "CC BY 4.0 per source page; attribution required",
-      "status": "not yet imported"
+      "field": "csi300_price_return_pct",
+      "count": 248,
+      "start": "2006-01",
+      "end": "2026-08"
     },
     {
-      "id": "gold_usd_oz",
-      "name": "国际黄金月均价",
-      "unit": "USD_per_troy_ounce",
-      "currency": "USD",
-      "field_type": "price_level",
-      "return_type": "price_return",
-      "source": "IMF Primary Commodity Prices / World Price Index",
-      "source_url": "https://worldpriceindex.org/data/commodities/metals/gold-pgold",
-      "api_url": "https://worldpriceindex.org/v1/commodity-series/gold-pgold-usd-monthly",
-      "status": "not yet imported"
+      "field": "csi300_total_return_index_cny",
+      "count": 249,
+      "start": "2006-01",
+      "end": "2026-09"
     },
     {
-      "id": "usd_cny",
-      "name": "美元兑人民币月末汇率",
-      "unit": "CNY_per_USD",
-      "currency": "CNY",
-      "field_type": "exchange_rate",
-      "source": "FRED DEXCHUS",
-      "source_url": "https://fred.stlouisfed.org/series/DEXCHUS",
-      "status": "not yet imported"
+      "field": "csi300_total_return_pct",
+      "count": 248,
+      "start": "2006-01",
+      "end": "2026-08"
     },
     {
-      "id": "dgs10_pct",
-      "name": "美国10年期国债收益率",
-      "unit": "percent",
-      "currency": "USD",
-      "field_type": "macro_level",
-      "source": "FRED DGS10",
-      "source_url": "https://fred.stlouisfed.org/series/DGS10",
-      "status": "not yet imported"
+      "field": "csi300_period_status",
+      "count": 249,
+      "start": "2006-01",
+      "end": "2026-09"
     },
     {
-      "id": "dfii10_pct",
-      "name": "美国10年期TIPS实际利率",
-      "unit": "percent",
-      "currency": "USD",
-      "field_type": "macro_level",
-      "source": "FRED DFII10",
-      "source_url": "https://fred.stlouisfed.org/series/DFII10",
-      "status": "not yet imported"
+      "field": "sp500_total_return_index_usd",
+      "count": 247,
+      "start": "2006-01",
+      "end": "2026-07"
     },
     {
-      "id": "vix_index",
-      "name": "CBOE VIX",
-      "unit": "index_points",
-      "currency": "USD",
-      "field_type": "macro_level",
-      "source": "FRED VIXCLS",
-      "source_url": "https://fred.stlouisfed.org/series/VIXCLS",
-      "status": "not yet imported"
+      "field": "sp500_total_return_pct",
+      "count": 247,
+      "start": "2006-01",
+      "end": "2026-07"
     },
     {
-      "id": "dxy_index",
-      "name": "美元广义贸易加权指数",
-      "unit": "index_points",
-      "currency": "USD",
-      "field_type": "macro_level",
-      "source": "FRED DTWEXBGS",
-      "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS",
-      "status": "not yet imported"
+      "field": "sp500_total_return_cny_pct",
+      "count": 247,
+      "start": "2006-01",
+      "end": "2026-07"
     },
     {
-      "id": "us_cpi_index",
-      "name": "美国CPI指数",
-      "unit": "index",
-      "currency": "USD",
-      "field_type": "price_index",
-      "source": "FRED CPIAUCSL / BLS",
-      "source_url": "https://fred.stlouisfed.org/series/CPIAUCSL",
-      "status": "not yet imported"
+      "field": "gold_usd_oz",
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     {
-      "id": "china_cpi_mom_pct",
-      "name": "中国CPI环比",
-      "unit": "percent",
-      "currency": "CNY",
-      "field_type": "inflation_rate",
-      "source": "国家统计局",
-      "source_url": "https://www.stats.gov.cn/english/Statisticaldata/MonthlyData/",
-      "status": "not yet imported"
+      "field": "gold_cny_per_oz_monthly_avg",
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     {
-      "id": "china_bond_total_return_index_cny",
-      "name": "中债国债/总财富指数",
-      "unit": "index",
-      "currency": "CNY",
-      "field_type": "total_return_index",
-      "source": "中债登/中债估值中心",
-      "source_url": "https://www.chinabond.com.cn/",
-      "status": "source_validation_required"
+      "field": "gold_cny_return_pct",
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    {
+      "field": "usd_cny",
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    {
+      "field": "usd_cny_change_pct",
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    {
+      "field": "hang_seng_total_return_index_hkd",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "hang_seng_total_return_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "hang_seng_total_return_cny_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "china_bond_wealth_index_cny",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "china_bond_wealth_return_cny_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "us_treasury_7_10y_total_return_index_usd",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "us_treasury_7_10y_total_return_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "us_treasury_7_10y_total_return_cny_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "cny_cash_rate_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "cny_cash_return_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "us_tbill_1m_return_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "us_tbill_1m_return_cny_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "china_cpi_mom_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "china_cpi_yoy_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "us_cpi_index",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "us_cpi_yoy_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "dgs10_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "dfii10_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "dxy_index",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "vix_index",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "brent_usd_bbl",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "fedfunds_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "china10y_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "portfolio_return_cny_pct",
+      "count": 0,
+      "start": null,
+      "end": null
     }
   ],
   "notes": [
@@ -170,5 +295,293 @@
     "现金利率年化百分数需按月计息/复利规则转换为月回报；不能直接把年利率当作月收益。",
     "股票/债券价格指数必须与全收益指数分开标记，不能在同一策略回测中悄悄混用。",
     "目前只有沪深300月度价格指数序列完成数据落库；其余序列仍待导入/验证，因此尚不能计算完整52/28/10/10月度正式回测。"
-  ]
+  ],
+  "matrix_policy": [
+    "统一月份键YYYY-MM，2006-01至2026-10共250个月份；不填补缺失值、不将缺失收益记为0。",
+    "沪深300的CSI300列为价格指数，CSI300_TR列为全收益指数；按每月最后一个可用交易日指数水平计算月收益。数据源最后观察为2026-09-09，2026-09属于部分月份，因此该月收益留空，2026-10尚无沪深300数据。",
+    "S&P 500总回报指数来自^SP500TR月度股息调整水平，计算USD总回报；再按相邻月份Federal Reserve G.5月均USD/CNY换算人民币。",
+    "黄金来自世界银行Pink Sheet月均美元/盎司价格；人民币月均估值代理=美元金价月均×USD/CNY月均值。此回报不是日度配对FX后实际持有收益。",
+    "美元汇率EXCHUS为月均汇率（CNY per USD），不是月末即期汇率。",
+    "恒生全收益、中债财富、美国国债总回报、人民币现金和完整组合月收益仍为空值。不得以价格指数、国债收益率或短期利率直接替代全收益指数。",
+    "52%股票和28%债券内部地区/久期权重待后续确定，因此当前不生成完整52/28/10/10组合月度回报或其历史统计。"
+  ],
+  "sources": [
+    {
+      "series": "csi300_price_index_cny / csi300_total_return_index_cny",
+      "name": "CSI 300 / CSI 300 Total Return (H00300)",
+      "source": "CSIndex official series referenced by source project",
+      "url": "https://www.csindex.com.cn/",
+      "repository_url": "https://github.com/dongzhaohe321418-lab/csi300-spmo-index",
+      "data_url": "https://github.com/dongzhaohe321418-lab/csi300-spmo-index/blob/main/output/performance/index_levels.csv",
+      "source_sha": "d886bec02084df56ddb12bdcb0856874976c76d9",
+      "coverage_start": "2005-09",
+      "coverage_end": "2026-09-09",
+      "method": "Last available daily close per month; CSI300 is price index and CSI300_TR is total-return index built against official H00300",
+      "caveat": "Third-party repository's derived benchmark data, not raw CSIndex download. Sep-2026 is partial; no Sep return."
+    },
+    {
+      "series": "sp500_total_return_index_usd / sp500_total_return_pct",
+      "name": "S&P 500 Total Return (^SP500TR)",
+      "source": "Yahoo Finance via vanexymx monthly collector",
+      "url": "https://github.com/vanexymx/sp500-historical-analysis",
+      "data_url": "https://github.com/vanexymx/sp500-historical-analysis/blob/main/data/SP500TR_monthly.json",
+      "source_sha": "90d8a3fd8181eef9ec666bca49b9c2f11fb1b368",
+      "coverage_start": "1988-01",
+      "coverage_end": "2026-07",
+      "method": "Monthly dividend-adjusted total-return index levels, month-over-month ratio",
+      "caveat": "Third-party collector; Yahoo Finance-derived series. Redistribution rights for upstream market data have not been independently confirmed."
+    },
+    {
+      "series": "gold_usd_oz / gold_cny_per_oz_monthly_avg / gold_cny_return_pct",
+      "name": "World Bank Commodity Markets Gold Monthly",
+      "source": "World Bank Pink Sheet via datasets/gold-prices",
+      "url": "https://github.com/datasets/gold-prices",
+      "data_url": "https://github.com/datasets/gold-prices/blob/main/data/monthly.csv",
+      "source_sha": "9c3d5e73fe44b2490d1685d0a0818db4802fbb46",
+      "coverage_start": "1960-01",
+      "coverage_end": "2026-10",
+      "method": "Monthly average USD per troy ounce; CNY level proxy = USD monthly average × USD/CNY monthly average",
+      "license": "ODC-PDDL per upstream repository",
+      "caveat": "Price-only series; CNY returns are based on product of two monthly averages, not paired daily observations."
+    },
+    {
+      "series": "usd_cny / usd_cny_change_pct",
+      "name": "Federal Reserve G.5 monthly USD/CNY",
+      "source": "Board of Governors of the Federal Reserve via datasets/exchange-rates",
+      "url": "https://fred.stlouisfed.org/series/EXCHUS",
+      "data_url": "https://github.com/datasets/exchange-rates/blob/main/data/monthly.csv",
+      "source_sha": "7136be26d4e5ac193c7420267adceb394ac7f3a0",
+      "coverage_start": "1981-01",
+      "coverage_end": "2026-10",
+      "method": "Monthly average of daily CNY per USD values",
+      "license": "ODC-PDDL per upstream repository"
+    }
+  ],
+  "coverage": {
+    "csi300_price_index_cny": {
+      "count": 249,
+      "start": "2006-01",
+      "end": "2026-09"
+    },
+    "csi300_price_return_pct": {
+      "count": 248,
+      "start": "2006-01",
+      "end": "2026-08"
+    },
+    "csi300_total_return_index_cny": {
+      "count": 249,
+      "start": "2006-01",
+      "end": "2026-09"
+    },
+    "csi300_total_return_pct": {
+      "count": 248,
+      "start": "2006-01",
+      "end": "2026-08"
+    },
+    "csi300_period_status": {
+      "count": 249,
+      "start": "2006-01",
+      "end": "2026-09"
+    },
+    "sp500_total_return_index_usd": {
+      "count": 247,
+      "start": "2006-01",
+      "end": "2026-07"
+    },
+    "sp500_total_return_pct": {
+      "count": 247,
+      "start": "2006-01",
+      "end": "2026-07"
+    },
+    "sp500_total_return_cny_pct": {
+      "count": 247,
+      "start": "2006-01",
+      "end": "2026-07"
+    },
+    "gold_usd_oz": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    "gold_cny_per_oz_monthly_avg": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    "gold_cny_return_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    "usd_cny": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    "usd_cny_change_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    "hang_seng_total_return_index_hkd": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "hang_seng_total_return_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "hang_seng_total_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "china_bond_wealth_index_cny": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "china_bond_wealth_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "us_treasury_7_10y_total_return_index_usd": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "us_treasury_7_10y_total_return_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "us_treasury_7_10y_total_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "cny_cash_rate_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "cny_cash_return_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "us_tbill_1m_return_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "us_tbill_1m_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "china_cpi_mom_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "china_cpi_yoy_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "us_cpi_index": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "us_cpi_yoy_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "dgs10_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "dfii10_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "dxy_index": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "vix_index": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "brent_usd_bbl": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "fedfunds_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "china10y_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "portfolio_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    }
+  },
+  "gaps": [
+    {
+      "field": "hang_seng_total_return_pct",
+      "status": "missing",
+      "reason": "官方恒生全收益历史数据未取得可复核的开放下载文件"
+    },
+    {
+      "field": "china_bond_wealth_index_cny",
+      "status": "missing",
+      "reason": "中债财富指数虽可在官方指数查询页选取财富口径，但历史数据POST接口和公开使用授权仍待核实"
+    },
+    {
+      "field": "us_treasury_7_10y_total_return_pct",
+      "status": "missing",
+      "reason": "Safe Rate 7-10年美国国债总回报公开数据存在，但本矩阵尚未获得月度指数水平CSV"
+    },
+    {
+      "field": "cny_cash_return_pct",
+      "status": "missing",
+      "reason": "人民币现金投资回报序列尚未核实；不得将存款利率直接当作月度收益"
+    },
+    {
+      "field": "portfolio_return_cny_pct",
+      "status": "missing",
+      "reason": "完整多资产月度回报缺失，且52%股票与28%债券内部权重未确定"
+    }
+  ],
+  "quality_checks": {
+    "date_rows": 250,
+    "expected_rows": 250,
+    "unique_months": 250,
+    "csi300_price_complete_months": 248,
+    "csi300_total_return_complete_months": 248,
+    "sp500_usd_total_return_months": 247,
+    "sp500_cny_total_return_months": 247,
+    "gold_cny_price_return_months": 250,
+    "usd_cny_months": 250,
+    "csi300_partial_month": "2026-09",
+    "portfolio_return_ready": false
+  }
 }
