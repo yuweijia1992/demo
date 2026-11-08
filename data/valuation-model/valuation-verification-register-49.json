@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-08T08:28:23.839786+00:00",
+  "generatedAtUtc": "2026-11-08T08:30:09.312288+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -62,9 +62,9 @@
         }
       },
       "companySpecificAssumptions": {
-        "historicalRevenueCagr": 0.01184950107899696,
-        "recentThreeYearMedianNetMargin": 0.08264847998592326,
-        "recentThreeYearMedianCapexToRevenue": 3.436114720781622,
+        "historicalRevenueCagr": 0.01223950948578545,
+        "recentThreeYearMedianNetMargin": 0.08292535226768002,
+        "recentThreeYearMedianCapexToRevenue": 3.447616059620336,
         "sustainableROE": null,
         "normalizedROIC": null,
         "WACC": null,
@@ -500,9 +500,9 @@
         }
       },
       "companySpecificAssumptions": {
-        "historicalRevenueCagr": 0.07497340292793564,
-        "recentThreeYearMedianNetMargin": 0.0942036646307976,
-        "recentThreeYearMedianCapexToRevenue": 1.9163865862296448,
+        "historicalRevenueCagr": 0.07543927372771542,
+        "recentThreeYearMedianNetMargin": 0.0946512952487243,
+        "recentThreeYearMedianCapexToRevenue": 1.9254927427166821,
         "sustainableROE": null,
         "normalizedROIC": null,
         "WACC": null,
@@ -573,9 +573,9 @@
         }
       },
       "companySpecificAssumptions": {
-        "historicalRevenueCagr": -0.025384070614090315,
-        "recentThreeYearMedianNetMargin": 0.16935854010986748,
-        "recentThreeYearMedianCapexToRevenue": 1.736382248754097,
+        "historicalRevenueCagr": -0.024036290386873382,
+        "recentThreeYearMedianNetMargin": 0.17014140761566202,
+        "recentThreeYearMedianCapexToRevenue": 1.7444087541745275,
         "sustainableROE": null,
         "normalizedROIC": null,
         "WACC": null,
@@ -2982,9 +2982,9 @@
         }
       },
       "companySpecificAssumptions": {
-        "historicalRevenueCagr": 0.052489963311630694,
-        "recentThreeYearMedianNetMargin": 0.7521029196017295,
-        "recentThreeYearMedianCapexToRevenue": 2.023496752686605,
+        "historicalRevenueCagr": -0.1008783281788378,
+        "recentThreeYearMedianNetMargin": 3.089345373048596,
+        "recentThreeYearMedianCapexToRevenue": 7.548500548598884,
         "sustainableROE": null,
         "normalizedROIC": null,
         "WACC": null,
