@@ -11,6 +11,7 @@
 - `valuation-model-49.json`：49家公司逐年财务派生指标、历史估值分位、五年机械情景预测和质量状态。
 - `valuation-model-audit.json`：覆盖数量、严格连续窗口分位覆盖及限制。
 - `valuation-verification-register-49.json`：49家公司逐项核验清单、来源类型、公司特定假设状态及每股估值放行状态。
+- `issuer-verification-evidence.json`：人工逐项对照发行人年报的证据档案；目前伊利股份2025年报为部分交叉核验，其余公司仍待核验。
 
 ## 计算口径
 
@@ -32,3 +33,5 @@
 GitHub Actions 工作流：`.github/workflows/build-company-valuation-model.yml`。当模型脚本、财务标准化文件、月度估值库或估值引擎页面更新时自动重建并校验49家公司记录。
 
 逐家公司核验页面：`articles/company-verification.html`。当前财务来源多数为二手数据平台转载/结构化接口；即使公式已算出，未与交易所或发行人正式年报逐项勾稽前，状态仍为待核验。
+
+逐家公司核验工作台：`articles/company-verification.html`。目前伊利股份FY2025已对收入定义、利润、现金流、资产负债、股本、EPS和分红预案等部分项目完成报告文本交叉对照；官方IR页面提供年报PDF入口，但本轮使用的可检索全文为报告文本镜像，故状态仍是“部分交叉核验”，不标记为全量官方核验。其余48家公司尚未完成逐项年报勾稽。
