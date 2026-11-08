@@ -110,6 +110,7 @@ def main():
         code=stock["code"].split("/")[0].strip()
         c=financial_by_code.get(stock["code"]) or financial_by_code.get(code)
         fdata=(c or {}).get("primaryFinancials") or {}
+        financial=is_financial(stock)
         annual=[]
         prior_equity=None
         for yr in YEARS:
@@ -123,12 +124,12 @@ def main():
             ocf=v(cf,"operatingCashFlow"); capex=v(cf,"capex")
             cash=v(bal,"cash")
             debt_parts=[v(bal,k) for k in ("shortBorrowings","longBorrowings","bondsPayable","leaseLiabilities")]
-            net_debt=(sum(debt_parts)-cash) if cash is not None and all(x is not None for x in debt_parts) else None
+            net_debt=(sum(debt_parts)-cash) if (not financial and cash is not None and all(x is not None for x in debt_parts)) else None
             avg_equity=(equity+prior_equity)/2 if equity is not None and prior_equity is not None and (equity+prior_equity)>0 else None
             roe=profit/avg_equity*100 if profit is not None and avg_equity else None
             # Deliberately conservative: current mapping does not establish a comparable NOPAT tax base and invested-capital scope.
             roic=None
-            fcf=ocf-capex if ocf is not None and capex is not None else None
+            fcf=ocf-capex if (not financial and ocf is not None and capex is not None) else None
             annual.append({"year":yr,"revenue":revenue,"netProfitParent":profit,"operatingProfit":op,"incomeTax":tax,
                            "totalAssets":assets,"parentEquity":equity,"averageParentEquity":avg_equity,
                            "roePct":roe,"operatingCashFlow":ocf,"capex":capex,"freeCashFlow":fcf,
@@ -147,7 +148,6 @@ def main():
         growth=cagr(last5[0]["revenue"],last5[-1]["revenue"],last5[-1]["year"]-last5[0]["year"]) if len(last5)>=2 else None
         margins=[x["netProfitParent"]/x["revenue"] for x in annual[-3:] if x["netProfitParent"] is not None and x["revenue"] not in (None,0)]
         fcf_margins=[x["freeCashFlow"]/x["revenue"] for x in annual[-3:] if x["freeCashFlow"] is not None and x["revenue"] not in (None,0)]
-        financial=is_financial(stock)
         forecast={"status":"reference_only" if growth is not None and margins else "insufficient_history",
                   "label":"estimated_mechanical_scenario_not_guidance",
                   "baseRevenueCagr":growth,"baseNetMargin":median(margins),
