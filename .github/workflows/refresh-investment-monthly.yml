@@ -1,0 +1,34 @@
+name: Refresh Investment Lab monthly data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 20 * *"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refresh monthly source observations
+        run: python scripts/update_investment_monthly_data.py
+      - name: Commit refreshed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/investment-monthly.csv data/investment-monthly-manifest.json
+          if git diff --cached --quiet; then
+            echo "No monthly data changes."
+          else
+            git commit -m "Refresh Investment Lab monthly market data"
+            git push
+          fi

@@ -1,0 +1,174 @@
+{
+  "dataset_version": "2.1.0",
+  "generated_at": "2026-11-08",
+  "dataset_file": "data/investment-monthly.csv",
+  "frequency": "monthly",
+  "row_count": 256,
+  "date_start": "2005-04",
+  "date_end": "2026-07",
+  "latest_csi300_observation": "2026-07-10",
+  "latest_complete_csi300_month": "2026-06",
+  "coverage_audit": {
+    "csi300_price_index_cny": {
+      "rows": 256,
+      "complete_return_months": 254,
+      "first_month_partial": true,
+      "last_month_partial": true,
+      "return_type": "price_return_not_total_return"
+    },
+    "sp500_total_return_pct": {
+      "rows": 0,
+      "status": "awaiting_ingestion"
+    },
+    "gold_usd_oz": {
+      "rows": 0,
+      "status": "awaiting_ingestion"
+    },
+    "usd_cny": {
+      "rows": 0,
+      "status": "awaiting_ingestion"
+    },
+    "china_bond_total_return_index_cny": {
+      "rows": 0,
+      "status": "source_validation_required"
+    },
+    "hang_seng_total_return_pct": {
+      "rows": 0,
+      "status": "source_validation_required"
+    },
+    "inflation_and_macro": {
+      "rows": 0,
+      "status": "shared_csv_import_ready"
+    }
+  },
+  "series": [
+    {
+      "id": "csi300_price_index_cny",
+      "name": "沪深300指数月末收盘",
+      "unit": "index_points",
+      "currency": "CNY",
+      "field_type": "price_index",
+      "return_type": "price_return",
+      "source": "Tencent Finance K-line API",
+      "source_url": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get",
+      "upstream_dataset": "https://github.com/sky910140/financial-agent-takehome/tree/main/data/market",
+      "upstream_retrieved_at": "2026-07-10T14:25:39Z",
+      "coverage_start": "2005-04",
+      "coverage_end": "2026-07",
+      "method": "取每个自然月最后一个交易日收盘价；月度价格回报=本月末/上月末-1；不填补非交易日；2005-04为指数起始部分月，2026-07仅到7月10日，均不作为完整月回报。",
+      "caveat": "沪深300价格指数，不含现金分红；不是沪深300全收益指数。上游数据集使用腾讯 qfq K线接口，授权/再分发条款尚未单独确认；仅作研究工作数据。"
+    },
+    {
+      "id": "sp500_total_return_pct",
+      "name": "S&P 500月度名义总回报",
+      "unit": "percent",
+      "currency": "USD",
+      "field_type": "monthly_return",
+      "return_type": "total_return_dividends_reinvested",
+      "source": "Shiller monthly dataset prepared by Firenum",
+      "source_url": "https://firenum.com/tools/shiller-data",
+      "download_url": "https://firenum.com/data/shiller-monthly.csv",
+      "license": "CC BY 4.0 per source page; attribution required",
+      "status": "not yet imported"
+    },
+    {
+      "id": "gold_usd_oz",
+      "name": "国际黄金月均价",
+      "unit": "USD_per_troy_ounce",
+      "currency": "USD",
+      "field_type": "price_level",
+      "return_type": "price_return",
+      "source": "IMF Primary Commodity Prices / World Price Index",
+      "source_url": "https://worldpriceindex.org/data/commodities/metals/gold-pgold",
+      "api_url": "https://worldpriceindex.org/v1/commodity-series/gold-pgold-usd-monthly",
+      "status": "not yet imported"
+    },
+    {
+      "id": "usd_cny",
+      "name": "美元兑人民币月末汇率",
+      "unit": "CNY_per_USD",
+      "currency": "CNY",
+      "field_type": "exchange_rate",
+      "source": "FRED DEXCHUS",
+      "source_url": "https://fred.stlouisfed.org/series/DEXCHUS",
+      "status": "not yet imported"
+    },
+    {
+      "id": "dgs10_pct",
+      "name": "美国10年期国债收益率",
+      "unit": "percent",
+      "currency": "USD",
+      "field_type": "macro_level",
+      "source": "FRED DGS10",
+      "source_url": "https://fred.stlouisfed.org/series/DGS10",
+      "status": "not yet imported"
+    },
+    {
+      "id": "dfii10_pct",
+      "name": "美国10年期TIPS实际利率",
+      "unit": "percent",
+      "currency": "USD",
+      "field_type": "macro_level",
+      "source": "FRED DFII10",
+      "source_url": "https://fred.stlouisfed.org/series/DFII10",
+      "status": "not yet imported"
+    },
+    {
+      "id": "vix_index",
+      "name": "CBOE VIX",
+      "unit": "index_points",
+      "currency": "USD",
+      "field_type": "macro_level",
+      "source": "FRED VIXCLS",
+      "source_url": "https://fred.stlouisfed.org/series/VIXCLS",
+      "status": "not yet imported"
+    },
+    {
+      "id": "dxy_index",
+      "name": "美元广义贸易加权指数",
+      "unit": "index_points",
+      "currency": "USD",
+      "field_type": "macro_level",
+      "source": "FRED DTWEXBGS",
+      "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS",
+      "status": "not yet imported"
+    },
+    {
+      "id": "us_cpi_index",
+      "name": "美国CPI指数",
+      "unit": "index",
+      "currency": "USD",
+      "field_type": "price_index",
+      "source": "FRED CPIAUCSL / BLS",
+      "source_url": "https://fred.stlouisfed.org/series/CPIAUCSL",
+      "status": "not yet imported"
+    },
+    {
+      "id": "china_cpi_mom_pct",
+      "name": "中国CPI环比",
+      "unit": "percent",
+      "currency": "CNY",
+      "field_type": "inflation_rate",
+      "source": "国家统计局",
+      "source_url": "https://www.stats.gov.cn/english/Statisticaldata/MonthlyData/",
+      "status": "not yet imported"
+    },
+    {
+      "id": "china_bond_total_return_index_cny",
+      "name": "中债国债/总财富指数",
+      "unit": "index",
+      "currency": "CNY",
+      "field_type": "total_return_index",
+      "source": "中债登/中债估值中心",
+      "source_url": "https://www.chinabond.com.cn/",
+      "status": "source_validation_required"
+    }
+  ],
+  "notes": [
+    "只要指标没有实际观测，就保留空白；禁止前值填充或将缺失收益当作0。",
+    "美国资产转人民币收益需同时使用美元资产总回报与USD/CNY汇率： (1+r_USD)*(FX_t/FX_t-1)-1。",
+    "现金利率年化百分数需按月计息/复利规则转换为月回报；不能直接把年利率当作月收益。",
+    "股票/债券价格指数必须与全收益指数分开标记，不能在同一策略回测中悄悄混用。",
+    "目前只有沪深300月度价格指数序列完成数据落库；其余序列仍待导入/验证，因此尚不能计算完整52/28/10/10月度正式回测。"
+  ]
+}
