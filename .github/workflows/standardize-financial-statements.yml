@@ -1,0 +1,45 @@
+name: Standardize company financial statements
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/standardize_financial_statements.py'
+      - '.github/workflows/standardize-financial-statements.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: standardize-company-financials
+  cancel-in-progress: true
+
+jobs:
+  standardize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Normalize archived statements
+        run: python scripts/standardize_financial_statements.py
+      - name: Upload normalized dataset and audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: standardized-company-financials-\${{ github.run_id }}
+          path: data/financial-standardized/
+          retention-days: 30
+      - name: Commit standardized dataset
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/financial-standardized/
+          if ! git diff --cached --quiet; then
+            git commit -m "Standardize 2021-2025 company financial statements"
+            git pull --rebase origin main
+            git push
+          fi
