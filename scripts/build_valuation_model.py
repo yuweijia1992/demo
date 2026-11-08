@@ -15,10 +15,23 @@ OUT = ROOT / "data/valuation-model"
 YEARS = list(range(2021, 2026))
 METRICS = ("peTtm", "pb", "psTtm")
 
+def field(item, key):
+    return (((item or {}).get("fields") or {}).get(key) or {})
 def v(item, key):
-    x = ((item or {}).get("fields") or {}).get(key) or {}
-    z = x.get("value")
-    return float(z) if isinstance(z, (int, float)) and math.isfinite(z) else None
+    z = field(item,key).get("value")
+    return float(z) if isinstance(z,(int,float)) and math.isfinite(z) else None
+def unit_multiplier(item):
+    unit=str((item or {}).get("reportedUnit") or "").strip().lower()
+    return {"元":1,"人民币元":1,"港元":1,"美元":1,"千元":1e3,"千港元":1e3,"千美元":1e3,
+            "万元":1e4,"万港元":1e4,"万美元":1e4,"百万元":1e6,"百万港元":1e6,"百万美元":1e6,
+            "亿元":1e8,"亿港元":1e8,"亿美元":1e8}.get(unit)
+def debt_components(balance):
+    return [v(balance,k) for k in ("shortBorrowings","longBorrowings","bondsPayable","currentLeaseLiabilities","leaseLiabilities")]
+def calc_effective_tax_rate(income):
+    pbt,tax=v(income,"profitBeforeTax"),v(income,"incomeTax")
+    if pbt is None or tax is None or pbt<=0:return None
+    rate=tax/pbt
+    return rate if 0<=rate<=0.50 else None
 
 def median(xs):
     a = [float(x) for x in xs if x is not None and math.isfinite(float(x))]
@@ -128,7 +141,7 @@ def main():
             avg_equity=(equity+prior_equity)/2 if equity is not None and prior_equity is not None and (equity+prior_equity)>0 else None
             roe=profit/avg_equity*100 if profit is not None and avg_equity else None
             # Deliberately conservative: current mapping does not establish a comparable NOPAT tax base and invested-capital scope.
-            roic=None
+            roic=(nopat/avg_invested_capital*100) if (nopat is not None and avg_invested_capital is not None and avg_invested_capital>0) else None
             fcf=ocf-capex if (not financial and ocf is not None and capex is not None) else None
             annual.append({"year":yr,"revenue":revenue,"netProfitParent":profit,"operatingProfit":op,"incomeTax":tax,
                            "totalAssets":assets,"parentEquity":equity,"averageParentEquity":avg_equity,
