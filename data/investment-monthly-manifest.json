@@ -350,8 +350,8 @@
       "end": "2026-09"
     },
     "csi300_total_return_pct": {
-      "count": 247,
-      "start": "2006-02",
+      "count": 248,
+      "start": "2006-01",
       "end": "2026-08"
     },
     "csi300_period_status": {
@@ -549,10 +549,9 @@
   ],
   "quality_checks": {
     "date_rows": 250,
-    "expected_rows": 250,
     "unique_months": 250,
     "csi300_price_complete_months": 248,
-    "csi300_total_return_complete_months": 247,
+    "csi300_total_return_complete_months": 248,
     "sp500_usd_total_return_months": 247,
     "sp500_cny_total_return_months": 247,
     "gold_cny_price_return_months": 250,
