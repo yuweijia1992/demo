@@ -1,14 +1,14 @@
 {
-  "generatedAtUtc": "2026-11-08T07:26:25.165884+00:00",
+  "generatedAtUtc": "2026-11-08T07:27:01.708782+00:00",
   "sourceArchive": "data/raw-financials/company_statements_20261105T094248Z.json",
   "sourceArchiveSha256": "e750ba0fcb25afb8d857a74bbbb8b151a2db4ffb94b874932eff06e66aca6c3f",
   "sourceRunId": "20261105T094248Z",
   "masterCompanies": 49,
   "normalizedCompanies": 49,
   "annualCoverageByMetric": {
-    "income": 48,
-    "balance": 48,
-    "cashflow": 48
+    "income": 35,
+    "balance": 35,
+    "cashflow": 36
   },
   "ttmDerived": 35,
   "ttmPartial": 4,
@@ -70,9 +70,9 @@
     {
       "name": "申洲国际",
       "code": "02313.HK",
-      "annualIncomeYears": 5,
-      "annualBalanceYears": 5,
-      "annualCashflowYears": 5,
+      "annualIncomeYears": 0,
+      "annualBalanceYears": 0,
+      "annualCashflowYears": 0,
       "ttmStatus": "pending",
       "ttmAsOf": null,
       "sourceCurrencies": [],
@@ -315,9 +315,9 @@
     {
       "name": "中国移动",
       "code": "600941.SH / 00941.HK",
-      "annualIncomeYears": 5,
-      "annualBalanceYears": 5,
-      "annualCashflowYears": 5,
+      "annualIncomeYears": 0,
+      "annualBalanceYears": 0,
+      "annualCashflowYears": 0,
       "ttmStatus": "pending",
       "ttmAsOf": null,
       "sourceCurrencies": [
@@ -328,9 +328,9 @@
     {
       "name": "中国电信",
       "code": "601728.SH / 00728.HK",
-      "annualIncomeYears": 5,
-      "annualBalanceYears": 5,
-      "annualCashflowYears": 5,
+      "annualIncomeYears": 0,
+      "annualBalanceYears": 0,
+      "annualCashflowYears": 0,
       "ttmStatus": "pending",
       "ttmAsOf": null,
       "sourceCurrencies": [
@@ -354,9 +354,9 @@
     {
       "name": "腾讯控股",
       "code": "00700.HK",
-      "annualIncomeYears": 5,
-      "annualBalanceYears": 5,
-      "annualCashflowYears": 5,
+      "annualIncomeYears": 0,
+      "annualBalanceYears": 0,
+      "annualCashflowYears": 0,
       "ttmStatus": "pending",
       "ttmAsOf": null,
       "sourceCurrencies": [],
@@ -365,9 +365,9 @@
     {
       "name": "阿里巴巴",
       "code": "09988.HK / BABA",
-      "annualIncomeYears": 5,
-      "annualBalanceYears": 5,
-      "annualCashflowYears": 5,
+      "annualIncomeYears": 0,
+      "annualBalanceYears": 0,
+      "annualCashflowYears": 0,
       "ttmStatus": "partial",
       "ttmAsOf": "2026-06-30",
       "sourceCurrencies": [],
@@ -376,9 +376,9 @@
     {
       "name": "中芯国际",
       "code": "688981.SH / 00981.HK",
-      "annualIncomeYears": 5,
-      "annualBalanceYears": 5,
-      "annualCashflowYears": 5,
+      "annualIncomeYears": 0,
+      "annualBalanceYears": 0,
+      "annualCashflowYears": 0,
       "ttmStatus": "pending",
       "ttmAsOf": null,
       "sourceCurrencies": [
@@ -428,9 +428,9 @@
     {
       "name": "宁德时代",
       "code": "300750.SZ / 03750.HK",
-      "annualIncomeYears": 4,
-      "annualBalanceYears": 4,
-      "annualCashflowYears": 4,
+      "annualIncomeYears": 0,
+      "annualBalanceYears": 0,
+      "annualCashflowYears": 0,
       "ttmStatus": "pending",
       "ttmAsOf": null,
       "sourceCurrencies": [
@@ -467,9 +467,9 @@
     {
       "name": "招商银行",
       "code": "600036.SH / 03968.HK",
-      "annualIncomeYears": 5,
-      "annualBalanceYears": 5,
-      "annualCashflowYears": 5,
+      "annualIncomeYears": 0,
+      "annualBalanceYears": 0,
+      "annualCashflowYears": 0,
       "ttmStatus": "pending",
       "ttmAsOf": null,
       "sourceCurrencies": [
@@ -480,8 +480,8 @@
     {
       "name": "工商银行",
       "code": "601398.SH",
-      "annualIncomeYears": 5,
-      "annualBalanceYears": 5,
+      "annualIncomeYears": 0,
+      "annualBalanceYears": 0,
       "annualCashflowYears": 5,
       "ttmStatus": "partial",
       "ttmAsOf": "2026-09-30",
@@ -493,9 +493,9 @@
     {
       "name": "中国平安",
       "code": "601318.SH / 02318.HK",
-      "annualIncomeYears": 5,
-      "annualBalanceYears": 5,
-      "annualCashflowYears": 5,
+      "annualIncomeYears": 0,
+      "annualBalanceYears": 0,
+      "annualCashflowYears": 0,
       "ttmStatus": "pending",
       "ttmAsOf": null,
       "sourceCurrencies": [
@@ -506,9 +506,9 @@
     {
       "name": "中国太保",
       "code": "601601.SH / 02601.HK",
-      "annualIncomeYears": 5,
-      "annualBalanceYears": 5,
-      "annualCashflowYears": 5,
+      "annualIncomeYears": 0,
+      "annualBalanceYears": 0,
+      "annualCashflowYears": 0,
       "ttmStatus": "pending",
       "ttmAsOf": null,
       "sourceCurrencies": [
@@ -519,9 +519,9 @@
     {
       "name": "中信证券",
       "code": "600030.SH / 06030.HK",
-      "annualIncomeYears": 5,
-      "annualBalanceYears": 5,
-      "annualCashflowYears": 5,
+      "annualIncomeYears": 0,
+      "annualBalanceYears": 0,
+      "annualCashflowYears": 0,
       "ttmStatus": "pending",
       "ttmAsOf": null,
       "sourceCurrencies": [
@@ -545,9 +545,9 @@
     {
       "name": "京东集团",
       "code": "09618.HK / JD",
-      "annualIncomeYears": 5,
-      "annualBalanceYears": 5,
-      "annualCashflowYears": 5,
+      "annualIncomeYears": 0,
+      "annualBalanceYears": 0,
+      "annualCashflowYears": 0,
       "ttmStatus": "partial",
       "ttmAsOf": "2026-06-30",
       "sourceCurrencies": [],
@@ -595,9 +595,9 @@
     {
       "name": "哔哩哔哩",
       "code": "09626.HK / BILI",
-      "annualIncomeYears": 5,
-      "annualBalanceYears": 5,
-      "annualCashflowYears": 5,
+      "annualIncomeYears": 0,
+      "annualBalanceYears": 0,
+      "annualCashflowYears": 0,
       "ttmStatus": "partial",
       "ttmAsOf": "2026-06-30",
       "sourceCurrencies": [],
