@@ -14,14 +14,14 @@
 <div class="ve-field"><label>数据状态</label><select id="statusFilter"><option value="all">全部公司</option><option value="price">有价格</option><option value="missing">价格待核验</option><option value="financial">财务字段不完整</option></select></div>
 <div class="ve-field"><label>排序</label><select id="sort"><option value="name">公司名称</option><option value="pe">PE（低到高）</option><option value="price">价格（低到高）</option><option value="revenue">营收（高到低）</option></select></div></div><p class="ve-note">选择公司后可查看财报字段、来源与缺失项。*净利率与经营现金流/净利润为根据现有字段计算的派生指标，不是公司直接披露字段；模型字段覆盖率仅表示关键输入是否存在，不代表数据已完整核验或估值结论可靠。A股、港股、ADR 不混用价格和每股指标。</p><div class="ve-table-wrap"><table><thead><tr><th>公司 / 代码</th><th>报告期</th><th>营收（百万元）</th><th>归母净利（百万元）</th><th>EPS / ROE / 每股净资产</th><th>价格</th><th>PE TTM</th><th>净利率*</th><th>经营现金流/净利润*</th><th>模型字段覆盖</th><th>数据状态/警报</th><th>操作</th></tr></thead><tbody id="stockRows"><tr><td colspan="12">正在加载……</td></tr></tbody></table></div></section>
 <section class="ve-panel" id="financialHistory"><h2>02 / 真实财务数据与五年预测</h2>
-<p class="muted">读取财报原始归档的标准化结果，按公司展示2021—2025年报、可计算TTM和来源字段。预测使用可编辑的悲观/基准/乐观假设；历史比率只作为起始参考，不代表未来必然延续。</p>
+<p class="muted">读取财报原始归档的标准化结果，按公司展示2021—2025年报、可计算TTM和来源字段。预测使用可编辑的悲观/基准/乐观假设；历史比率只作为起始参考，不代表未来必然延续。</p><p class="ve-note" id="financialLoadStatus">正在读取标准化财务档案……</p>
 <div class="ve-metrics">
 <div class="ve-metric"><small>财务标准化覆盖</small><strong id="financialCoverage">—</strong><p id="financialPeriodRange">正在读取标准化档案</p></div>
 <div class="ve-metric"><small>TTM状态</small><strong id="financialTtmStatus">—</strong><p id="financialTtmDate">—</p></div>
 <div class="ve-metric"><small>最新年度收入</small><strong id="financialRevenue">—</strong><p id="financialRevenueMeta">源报告金额单位</p></div>
 <div class="ve-metric"><small>最新年度归母净利</small><strong id="financialProfit">—</strong><p id="financialProfitMeta">源报告金额单位</p></div>
 </div>
-<div class="ve-note" id="financialSourceNote">标准化财务数据库尚未载入。</div>
+<div class="ve-note" id="financialSourceNote">标准化财务数据库尚未载入。</div><p class="ve-note"><a href="../data/financial-standardized/standardization-audit.json" target="_blank" rel="noopener">打开标准化覆盖审计</a> · <a href="../data/financial-standardized/company-financials-2021-2025.json" target="_blank" rel="noopener">查看标准化财务数据 JSON</a> · <a href="../data/raw-financials/coverage_audit.json" target="_blank" rel="noopener">查看原始报表覆盖审计</a></p>
 <h3>2021—2025年度财务序列</h3>
 <div class="ve-table-wrap"><table><thead><tr><th>年度</th><th>营业收入</th><th>归母净利润</th><th>基本EPS</th><th>总资产</th><th>归母权益</th><th>经营现金流</th><th>资本开支</th><th>简化FCF</th><th>净利率</th></tr></thead><tbody id="financialAnnualRows"><tr><td colspan="10">等待标准化财务数据库……</td></tr></tbody></table></div>
 <h3>TTM计算与数据来源</h3>
@@ -161,7 +161,7 @@ function renderFinancialCompany(){
  $('financialPeriodRange').textContent=(available[0]?.year||'—')+'—'+(latest?.year||'—')+'｜年报三表齐全 '+complete+'/5';
  let rev=latest?getFinancialField(latest,'income','revenue'):null,profit=latest?getFinancialField(latest,'income','netProfitParent'):null;
  $('financialRevenue').textContent=fmtRaw(rev);$('financialProfit').textContent=fmtRaw(profit);
- let unit=(latest?.income?.reportedUnit||latest?.income?.currency||'源数据单位未标明');
+ let pf=c.primaryFinancials||{},currencies=pf.sourceCurrencies||[],units=pf.reportedUnits||[];let unit=latest?.income?.reportedUnit||(latest?.income?.currency?(latest.income.currency+'；金额单位未标明'):(c.marketCurrency?'上市证券币种 '+c.marketCurrency+'；财报币种/金额单位未识别':'财报币种/金额单位未识别'));
  $('financialRevenueMeta').textContent=unit+'｜'+(latest?.income?.reportDate||'');$('financialProfitMeta').textContent=unit+'｜归母口径';
  let t=c.ttm||{},ttmFields=t.fields||{};$('financialTtmStatus').textContent=t.status==='derived'?'已推导':t.status==='partial'?'部分可算':'待补齐';$('financialTtmDate').textContent=t.asOf||'期间未对齐';
  $('financialAnnualRows').innerHTML=annual.map(x=>{
@@ -170,7 +170,7 @@ function renderFinancialCompany(){
   return '<tr><td>'+x.year+'<br><small>'+status+'</small></td><td>'+fmtRaw(r)+'</td><td>'+fmtRaw(p)+'</td><td>'+fmtRaw(eps)+'</td><td>'+fmtRaw(assets)+'</td><td>'+fmtRaw(equity)+'</td><td>'+fmtRaw(ocf)+'</td><td>'+fmtRaw(cap)+'</td><td>'+fmtRaw(fcf)+'</td><td>'+(margin===null?'—':fmtRaw(margin)+'%')+'</td></tr>'
  }).join('');
  $('financialTtmNote').textContent='公式：'+(t.method||'未形成可比TTM')+'；最新期：'+(t.asOf||'—')+'。'+(t.warning||'TTM仍需核对原始披露口径。')+' 收入 '+fmtRaw(ttmFields.revenue?.value)+'；归母净利 '+fmtRaw(ttmFields.netProfitParent?.value)+'；经营现金流 '+fmtRaw(ttmFields.operatingCashFlow?.value)+'；资本开支 '+fmtRaw(ttmFields.capex?.value)+'。各字段状态：'+Object.entries(ttmFields).map(([k,v])=>k+':'+(v.status||'pending')).join(' / ');
- $('financialSourceNote').textContent='来源批次 '+(financialDb.sourceRunId||'—')+'；原始文件 '+(financialDb.sourceArchive||'—')+'；源币种 '+((c.sourceCurrencies||[]).join('、')||'未标明')+'；金额单位 '+((c.reportedUnits||[]).join('、')||'未标明')+'。'+c.unitPolicy+' 逐项来源链接可在下方原始字段审计中查看；该标准化结果并不等同于交易所原始公告逐项复核。';
+ $('financialSourceNote').textContent='主上市证券 '+(c.primaryListingCode||c.code)+'；来源批次 '+(financialDb.sourceRunId||'—')+'；原始文件 '+(financialDb.sourceArchive||'—')+'；源币种 '+(currencies.join('、')||'未识别')+'；金额单位 '+(units.join('、')||'未标明')+'。'+(pf.unitPolicy||'')+' '+(c.sourcePolicy||'')+' 该标准化结果不等同于交易所原始公告逐项复核。';
  applyForecastReference(c);renderForecast(c);
 }
 function renderForecast(c){
