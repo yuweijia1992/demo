@@ -36,13 +36,15 @@
       return obj;
     });
   }
+  const FRED_ALIASES={DGS10:"dgs10_pct",DFII10:"dfii10_pct",DTWEXBGS:"dxy_index",VIXCLS:"vix_index",DEXCHUS:"usd_cny",CPIAUCSL:"us_cpi_index",FEDFUNDS:"fedfunds_pct",DCOILBRENTEU:"brent_usd_bbl"};
   function normalizeRow(raw){
-    let date=String(raw.date||"").trim();
+    let date=String(raw.date||raw.Date||raw.observation_date||raw.DATE||"").trim();
     if(!date&&raw.year&&raw.month)date=String(raw.year).padStart(4,"0")+"-"+String(raw.month).padStart(2,"0");
     if(/^\d{4}-\d{2}-\d{2}$/.test(date))date=date.slice(0,7);
     if(!/^\d{4}-(0[1-9]|1[0-2])$/.test(date))return null;
     const row={date};
     for(const f of FIELDS)if(isNum(raw[f]))row[f]=Number(raw[f]);
+    Object.entries(FRED_ALIASES).forEach(([source,target])=>{if(isNum(raw[source]))row[target]=Number(raw[source]);});
     // Source-specific adapter: Firenum / Shiller monthly CSV (CC BY 4.0).
     if(raw.nominalReturn!==undefined&&isNum(raw.nominalReturn))row.sp500_total_return_pct=Number(raw.nominalReturn)*100;
     if(raw.cpi!==undefined&&isNum(raw.cpi))row.sp500_cpi_index=Number(raw.cpi);
@@ -77,13 +79,16 @@
   }
   function inspect(text){
     const raw=parseCSV(text),rows=[],bad=[],duplicates=[];
-    const seen=new Set();
+    const byMonth=new Map();
     raw.forEach((r,i)=>{
       const x=normalizeRow(r);
       if(!x){bad.push(i+2);return;}
-      if(seen.has(x.date)){duplicates.push(x.date);return;}
-      seen.add(x.date);rows.push(x);
+      if(byMonth.has(x.date))duplicates.push(x.date);
+      const old=byMonth.get(x.date)||{date:x.date};
+      Object.keys(x).forEach(k=>{if(k!=="date"&&x[k]!==""&&x[k]!==null&&x[k]!==undefined)old[k]=x[k];});
+      byMonth.set(x.date,old);
     });
+    rows.push(...byMonth.values());
     const fields=FIELDS.filter(f=>rows.some(r=>isNum(r[f])));
     if(!rows.length)throw new Error("没有识别到有效的月份和数值列。请使用模板列名，或导入Shiller/Firenum year,month,nominalReturn,cpi格式。");
     if(!fields.length)throw new Error("数据中没有可识别的指标字段。");
