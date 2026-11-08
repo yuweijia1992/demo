@@ -1,5 +1,5 @@
 {
-  "generatedAtUtc": "2026-11-08T07:55:15.744377+00:00",
+  "generatedAtUtc": "2026-11-08T08:06:06.800935+00:00",
   "masterCompanies": 49,
   "financialRecordsMatched": 49,
   "historyRecordsMatched": 49,
@@ -8,8 +8,10 @@
     "annualProfit": 49,
     "annualROE": 49,
     "annualFCF": 43,
-    "annualNetDebt": 19,
-    "annualROIC": 0
+    "annualNetDebt": 0,
+    "annualROIC": 0,
+    "annualDividendCashFlowOnly": 4,
+    "annualDilutedShareProxy": 0
   },
   "historyCoverage": {
     "peTtm": {
@@ -28,11 +30,19 @@
       "10Y": 0
     }
   },
+  "verification": {
+    "issuerReportCrossChecksPending": 49,
+    "currentFullyDilutedSharesVerified": 0,
+    "dividendPerShareHistoryVerified": 0,
+    "companySpecificScenarioVerified": 0,
+    "costOfCapitalVerified": 0
+  },
   "warnings": [
-    "Financial fields from data provider remain pending independent issuer-report verification unless source audit says otherwise.",
-    "Source currency and reported unit are not converted or inferred.",
-    "ROIC is not calculated unless NOPAT and average invested capital are both supported by complete, comparable source fields.",
-    "Net debt is not calculated unless cash and every mapped interest-bearing debt component are present; null is not treated as zero.",
-    "No per-share fair value is generated without verified diluted shares, consistent units and security-specific currency."
+    "Provider fields are not independently issuer-report verified merely because they were retrieved.",
+    "Reported currency and unit are not inferred; no cross-company comparison is permitted without normalization.",
+    "ROIC is a derived approximation only where operating profit, pretax profit, tax, current liabilities, debt, cash and investments are complete.",
+    "Net debt is gross interest-bearing debt less cash; short/long investments are not netted.",
+    "DividendsPaidCombinedWithInterest is not a dividend-only field and is never used as a payout ratio.",
+    "Implied weighted-average diluted shares are not current fully diluted shares; per-share fair value remains blocked."
   ]
 }
