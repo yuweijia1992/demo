@@ -21,10 +21,12 @@ def v(item, key):
     z = field(item,key).get("value")
     return float(z) if isinstance(z,(int,float)) and math.isfinite(z) else None
 def unit_multiplier(item):
-    unit=str((item or {}).get("reportedUnit") or "").strip().lower()
-    return {"元":1,"人民币元":1,"港元":1,"美元":1,"千元":1e3,"千港元":1e3,"千美元":1e3,
-            "万元":1e4,"万港元":1e4,"万美元":1e4,"百万元":1e6,"百万港元":1e6,"百万美元":1e6,
-            "亿元":1e8,"亿港元":1e8,"亿美元":1e8}.get(unit)
+    unit=str((item or {}).get("reportedUnit") or "").strip().lower().replace(" ","")
+    return {"元":1,"人民币元":1,"人民币":1,"港元":1,"美元":1,
+            "千元":1e3,"人民币千元":1e3,"千港元":1e3,"千美元":1e3,
+            "万元":1e4,"人民币万元":1e4,"万港元":1e4,"万美元":1e4,
+            "百万元":1e6,"人民币百万元":1e6,"百万港元":1e6,"百万美元":1e6,
+            "亿元":1e8,"人民币亿元":1e8,"亿港元":1e8,"亿美元":1e8}.get(unit)
 def debt_components(balance):
     return [v(balance,k) for k in ("shortBorrowings","longBorrowings","bondsPayable","currentLeaseLiabilities","leaseLiabilities")]
 def calc_effective_tax_rate(income):
@@ -158,7 +160,7 @@ def main():
             nopat=op*(1-tax_rate) if (not financial and op is not None and tax_rate is not None) else None
             invested_capital=None
             if not financial and all(x is not None for x in (assets,current_liabilities,cash,short_invest,long_invest,*debts)):
-                invested_capital=assets-current_liabilities+sum(debts)-cash-short_invest-long_invest
+                invested_capital=assets-current_liabilities+debts[0]+debts[3]-cash-short_invest-long_invest
             avg_invested=(invested_capital+prior_invested_capital)/2 if invested_capital is not None and prior_invested_capital is not None and invested_capital>0 and prior_invested_capital>0 else None
             roic=(nopat/avg_invested*100) if (nopat is not None and avg_invested is not None and avg_invested>0) else None
             fcf=ocf-capex if (not financial and ocf is not None and capex is not None) else None
