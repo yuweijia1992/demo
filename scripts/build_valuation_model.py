@@ -124,7 +124,7 @@ def main():
     results=[]
     audit={"generatedAtUtc":datetime.now(timezone.utc).isoformat(),"masterCompanies":len(master.get("stocks",[])),
            "financialRecordsMatched":0,"historyRecordsMatched":0,
-           "metrics":{"annualRevenue":0,"annualProfit":0,"annualROE":0,"annualFCF":0,"annualNetDebt":0,
+           "metrics":{"annualRevenue":0,"annualProfit":0,"annualROE":0,"annualFCF":0,"annualNetDebt":0,"annualNetDebtKnownComponents":0,
                       "annualROIC":0,"annualDividendCashFlowOnly":0,"annualDilutedShareProxy":0,"annualShareCapital":0,"annualAcquisitions":0,"annualInvestments":0,
                       "annualBuybacks":0,"annualDebtRepayments":0,"annualDividendsOnly":0},
            "historyCoverage":{m:{"latest":0,"5Y":0,"10Y":0} for m in METRICS},
@@ -165,6 +165,8 @@ def main():
             debts=debt_components(bal)
             gross_debt=sum(debts) if all(x is not None for x in debts) else None
             net_debt=(gross_debt-cash) if (not financial and gross_debt is not None and cash is not None) else None
+            known_debt_values=[x for x in debts if x is not None]
+            net_debt_known_components=(sum(known_debt_values)-cash) if (not financial and known_debt_values and cash is not None) else None
             avg_equity=(equity+prior_equity)/2 if equity is not None and prior_equity is not None and (equity+prior_equity)>0 else None
             roe=profit/avg_equity*100 if profit is not None and avg_equity else None
             tax_rate=calc_effective_tax_rate(inc)
@@ -189,7 +191,8 @@ def main():
                            "shortTermInvestments":short_invest,"longTermInvestments":long_invest,
                            "interestBearingDebtComponents":{"shortBorrowings":debts[0],"longBorrowings":debts[1],
                              "bondsPayable":debts[2],"currentLeaseLiabilities":debts[3],"leaseLiabilities":debts[4]},
-                           "grossDebt":gross_debt,"netDebt":net_debt,"investedCapital":invested_capital,
+                           "grossDebt":gross_debt,"netDebt":net_debt,"netDebtKnownComponents":net_debt_known_components,
+                           "knownDebtComponentCount":len(known_debt_values),"investedCapital":invested_capital,
                            "averageInvestedCapital":avg_invested,"roicPct":roic,"interestExpense":interest,
                            "basicEps":v(inc,"basicEps"),"dilutedEps":diluted_eps,
                            "impliedWeightedAverageDilutedShares":implied_diluted_shares,"shareCapitalRaw":share_capital,
@@ -241,7 +244,8 @@ def main():
         if hrows:audit["historyRecordsMatched"]+=1
         checks=(("annualRevenue",lambda x:x["revenue"] is not None),("annualProfit",lambda x:x["netProfitParent"] is not None),
                 ("annualROE",lambda x:x["roePct"] is not None),("annualFCF",lambda x:x["freeCashFlow"] is not None),
-                ("annualNetDebt",lambda x:x["netDebt"] is not None),("annualROIC",lambda x:x["roicPct"] is not None),
+                ("annualNetDebt",lambda x:x["netDebt"] is not None),
+                ("annualNetDebtKnownComponents",lambda x:x["netDebtKnownComponents"] is not None),("annualROIC",lambda x:x["roicPct"] is not None),
                 ("annualDividendCashFlowOnly",lambda x:x["dividendsPaidOnly"] is not None),
                 ("annualDilutedShareProxy",lambda x:x["impliedWeightedAverageDilutedShares"] is not None),
                 ("annualShareCapital",lambda x:x["shareCapitalRaw"] is not None),
@@ -258,7 +262,7 @@ def main():
         verification_register={
           "officialReportCrossCheck":{"status":"pending","sourceClass":classify_source(fin_source),"sourceUrl":fin_source,"required":"发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"},
           "roic":{"status":"calculated_not_independently_verified" if any(x["roicPct"] is not None for x in annual) else "pending_inputs","availableYears":sum(x["roicPct"] is not None for x in annual),"required":"NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"},
-          "netDebt":{"status":"calculated_not_independently_verified" if any(x["netDebt"] is not None for x in annual) else ("not_applicable_financial" if financial else "pending_inputs"),"availableYears":sum(x["netDebt"] is not None for x in annual),"required":"短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽"},
+          "netDebt":{"status":"calculated_not_independently_verified" if any(x["netDebt"] is not None for x in annual) else ("not_applicable_financial" if financial else "pending_inputs"),"availableYears":sum(x["netDebt"] is not None for x in annual),"required":"短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"},
           "shareCapital":{"status":"raw_share_capital_only" if any(x["shareCapitalRaw"] is not None for x in annual) else "pending","availableYears":sum(x["shareCapitalRaw"] is not None for x in annual),"required":"期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"},
           "currentFullyDilutedShares":{"status":"pending","required":"估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"},
           "dividendPerShareHistory":{"status":"pending","required":"逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"},
@@ -270,7 +274,7 @@ def main():
                         "industry":stock.get("industry"),"businessType":stock.get("businessType"),"modelType":stock.get("method"),
                         "isFinancialInstitution":financial,"currency":stock.get("currency"),
                         "sourceCurrencies":fdata.get("sourceCurrencies",[]),"reportedUnits":fdata.get("reportedUnits",[]),
-                        "sourceLinks":source_audit.get("source",{}),"annual":annual,"history":h,"forecast5Y":forecast,
+                        "sourceLinks":source_audit.get("source",{}),"officialSearchUrl":"https://www.cninfo.com.cn/new/index" if stock.get("code","").split("/")[0].endswith((".SH",".SZ")) else "https://www.hkexnews.hk/index.htm?sc_lang=en","annual":annual,"history":h,"forecast5Y":forecast,
                         "valuationFramework":{"method":stock.get("method"),"requiredInputs":stock.get("requiredMetrics",[]),
                           "status":"pending_company_specific_assumptions_and_independent_verification",
                           "companySpecificAssumptions":{"historicalRevenueCagr":growth,"recentThreeYearMedianNetMargin":median(margins),"recentThreeYearMedianCapexToRevenue":median(capex_ratios),"sustainableROE":None,"normalizedROIC":median([x["roicPct"] for x in annual if x["roicPct"] is not None]),"WACC":None,"costOfEquity":None,"terminalGrowth":None,"currentFullyDilutedShares":None,"fairValuePerShare":None,"status":"historical_reference_only_until_official_crosscheck"},
@@ -286,6 +290,7 @@ def main():
                           "annualROEYears":sum(x["roePct"] is not None for x in annual),
                           "annualFCFYears":sum(x["freeCashFlow"] is not None for x in annual),
                           "annualNetDebtYears":sum(x["netDebt"] is not None for x in annual),
+                          "annualNetDebtKnownComponentsYears":sum(x["netDebtKnownComponents"] is not None for x in annual),
                           "annualROICYears":sum(x["roicPct"] is not None for x in annual),
                           "annualDividendCashFlowOnlyYears":sum(x["dividendsPaidOnly"] is not None for x in annual),
                           "annualDilutedShareProxyYears":sum(x["impliedWeightedAverageDilutedShares"] is not None for x in annual),
@@ -304,7 +309,7 @@ def main():
             "companyCount":len(results),
             "methodology":{"roe":"归母净利润 / 年初年末归母权益平均值；首年无上年权益时留空",
               "fcf":"经营活动现金流净额 - 购建固定资产、无形资产和其他长期资产支付的现金；简化FCF，不等于股权自由现金流",
-              "netDebt":"短期借款+长期借款+应付债券+流动及非流动租赁负债-现金；仅当全部债务分项与现金均有值时计算；不扣短/长期投资；金融企业不适用",
+              "netDebt":"完整净债务=短期借款+长期借款+应付债券+流动及非流动租赁负债-现金；仅当全部债务分项与现金均有值时计算。另列已识别债务项净额，仅作不完整分项汇总，不得称为完整净债务；不扣短/长期投资；金融企业不适用",
               "roic":"NOPAT=营业利润*(1-所得税费用/利润总额)；投入资本=总资产-流动负债+全部已映射有息债务(短借+长借+债券+流动租赁负债+非流动租赁负债)-现金-短期投资-长期投资；ROIC=NOPAT/平均投入资本；税率限定0%-50%，缺项留空。该口径为近似值，需逐项核验。不得只加回短借和流动租赁负债。",
               "dilutedShares":"归母净利润/稀释EPS并按财报金额单位换算，只代表年度加权平均稀释股数代理，不代表估值日当前完全稀释股数；单位不明则留空。",
               "dividends":"单列现金股息支付字段才计算现金派息率；股利/利润与利息合并字段不视为纯股息。",
@@ -313,7 +318,7 @@ def main():
     (OUT/"valuation-model-49.json").write_text(json.dumps(output,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
     register={"schemaVersion":"1.0.0","generatedAtUtc":datetime.now(timezone.utc).isoformat(),
               "companyCount":len(results),"records":[{"code":x["code"],"name":x["name"],"industry":x["industry"],
-              "modelType":x["modelType"],"sourceLinks":x["sourceLinks"],"verification":x["verification"]["register"],
+              "modelType":x["modelType"],"sourceLinks":x["sourceLinks"],"officialSearchUrl":x["officialSearchUrl"],"verification":x["verification"]["register"],
               "companySpecificAssumptions":x["valuationFramework"]["companySpecificAssumptions"],
               "valuationOutputStatus":x["valuationFramework"]["valuationOutputStatus"]} for x in results]}
     (OUT/"valuation-verification-register-49.json").write_text(json.dumps(register,ensure_ascii=False,indent=2),encoding="utf-8")
