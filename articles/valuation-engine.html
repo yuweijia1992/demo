@@ -154,7 +154,7 @@ function applyForecastReference(company){
 function renderFinancialCompany(){
  let c=financialByCode[selected?.code];
  if(!c){$('financialCoverage').textContent='待接入';$('financialSourceNote').textContent='当前证券暂无匹配的标准化财务档案；原始归档仍保留，缺失字段不补零。';$('financialAnnualRows').innerHTML='<tr><td colspan="10">该公司暂无标准化年报序列。</td></tr>';$('forecastRows').innerHTML='<tr><td colspan="8">没有可用的历史财务基数。</td></tr>';return}
- let annual=c.annual||[],isFinancial=['bank','broker','insurance'].includes(modelOf(selected)),complete=annual.filter(x=>x.income&&x.balance&&x.cashflow).length;
+ let annual=c.annual||[],isFinancial=['bank','broker','insurance'].includes(modelOf(selected)),complete=annual.filter(x=>x.completeness?.income&&x.completeness?.balance&&x.completeness?.cashflow).length;
  $('financialCoverage').textContent=complete+'/5';
  let available=annual.filter(x=>getFinancialField(x,'income','revenue')!==null);
  let latest=available[available.length-1];
