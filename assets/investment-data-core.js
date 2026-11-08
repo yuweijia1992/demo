@@ -5,7 +5,7 @@
   const STORAGE_KEY="ym_v21_imported_monthly_rows";
   const FIELDS=[
     "csi300_price_index_cny","csi300_price_return_pct","csi300_total_return_index_cny","csi300_total_return_pct",
-    "sp500_total_return_index_usd","sp500_total_return_pct","sp500_total_return_cny_pct","sp500_cpi_index",
+    "sp500_total_return_index_usd","sp500_total_return_pct","sp500_total_return_cny_pct","sp500_cpi_index","sp500_shiller_total_return_pct","sp500_shiller_cpi_index",
     "hang_seng_price_index_hkd","hang_seng_total_return_pct",
     "china_bond_total_return_index_cny","us_treasury_total_return_index_usd",
     "gold_usd_oz","gold_cny_per_oz_monthly_avg","gold_cny_return_pct","usd_cny","usd_cny_change_pct","china_cpi_mom_pct","china_cpi_yoy_pct",
