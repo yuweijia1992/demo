@@ -84,14 +84,14 @@ def expand_rows(rows, company, statement, mode):
 def mapped(row, section, record):
  fields={}
  for key,aliases in MAP[section].items():
-  raw,field=first(row,aliases); val=number(raw); status="derived" if val is not None else "pending"
+  raw,field=first(row,aliases); val=number(raw); status="pending"; mapping_status="mapped" if val is not None else "pending"
   if section=="cashflow" and key=="capex" and val is None:
    fixed=number(row.get("购建固定资产")); intangible=number(row.get("购建无形资产及其他资产"))
    if fixed is not None and intangible is not None:
-    val=fixed+intangible; field="购建固定资产 + 购建无形资产及其他资产"; raw=f"{fixed} + {intangible}"; status="derived_sum"
+    val=fixed+intangible; field="购建固定资产 + 购建无形资产及其他资产"; raw=f"{fixed} + {intangible}"; status="derived"; mapping_status="derived_sum"
    elif fixed is not None or intangible is not None:
-    val=None; field="购建固定资产 / 购建无形资产及其他资产"; raw=clean(fixed) or clean(intangible); status="partial_components"
-  fields[key]={"value":val,"rawValue":clean(raw),"sourceField":field,"status":status}
+    val=None; field="购建固定资产 / 购建无形资产及其他资产"; raw=clean(fixed) or clean(intangible); status="pending"; mapping_status="partial_components"
+  fields[key]={"value":val,"rawValue":clean(raw),"sourceField":field,"status":status,"mappingStatus":mapping_status,"sourceVerification":"pending"}
  date,date_field=row_date(row)
  cur,_=first(row,CURRENCY_FIELDS); unit,_=first(row,UNIT_FIELDS); ann,_=first(row,ANNOUNCEMENT_FIELDS)
  return {"reportDate":date,"fiscalYear":clean(row.get("FISCAL_YEAR")),"dateField":date_field,"announcementDate":clean(ann),"currency":clean(cur),"reportedUnit":clean(unit),"fields":fields,"provider":record.get("provider"),"sourceUrl":record.get("source_url"),"periodMode":record.get("period_mode"),"sourceStatus":record.get("status")}
@@ -188,7 +188,7 @@ def main():
  OUT_DIR.mkdir(parents=True,exist_ok=True)
  output={"schemaVersion":"1.1.0","generatedAtUtc":datetime.now(timezone.utc).isoformat(),"sourceArchive":str(archive.relative_to(ROOT)),
   "sourceArchiveSha256":archive_sha,"sourceRunId":payload.get("run_id"),"companyCount":len(companies),"years":YEARS,
-  "fieldPolicy":"Exact field mapping. Raw values remain in source-reported units; no currency/unit conversion, interpolation, ROIC, net debt or per-share derivation.",
+  "fieldPolicy":"Exact field mapping. Source-retrieved values remain pending independent report verification; calculated formulas are marked derived. Raw values remain in source-reported units; no currency/unit conversion, interpolation, ROIC, net debt or per-share derivation.",
   "listingPolicy":"A/H cross-listings are standardized separately. The first listing in the master code is primary; alternate listing statements are never merged.",
   "ttmPolicy":"Calendar-year A-share TTM = FY2025 + 2026 cumulative period - 2025 same-period cumulative. HK TTM pending fiscal-year alignment.",
   "companies":companies}
