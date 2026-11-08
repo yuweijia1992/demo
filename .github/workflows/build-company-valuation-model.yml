@@ -39,11 +39,13 @@ jobs:
               def handle_endtag(self, tag):
                   if tag.lower()=="script" and self.active:
                       self.parts.append("".join(self.current)); self.active=False
-          p=Scripts(); p.feed(Path("articles/valuation-engine.html").read_text(encoding="utf-8"))
-          Path("/tmp/valuation-engine-inline.js").write_text("\\n".join(p.parts),encoding="utf-8")
-          assert p.parts, "No inline script found"
+          for page in ("articles/valuation-engine.html","articles/company-verification.html"):
+              p=Scripts(); p.feed(Path(page).read_text(encoding="utf-8"))
+              assert p.parts, f"No inline script found in {page}"
+              Path("/tmp/"+Path(page).stem+".js").write_text("\\n".join(p.parts),encoding="utf-8")
           PY
-          node --check /tmp/valuation-engine-inline.js
+          node --check /tmp/valuation-engine.js
+          node --check /tmp/company-verification.js
       - name: Validate output and company count
         run: |
           python - <<'PY'
