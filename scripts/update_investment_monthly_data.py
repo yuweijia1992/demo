@@ -92,14 +92,15 @@ def read_existing():
     return out
 
 def ensure_rows(rows):
-    for month in target_months():
+    # A hidden Dec-2005 row is retained only as a predecessor for Jan-2006
+    # FX/asset return calculations; it is never written into the matrix output.
+    months=[prev_month(target_months()[0])]+target_months()
+    for month in months:
         item=rows.setdefault(month,{})
-        for field in HEADERS:
-            item.setdefault(field,"")
+        for field in HEADERS:item.setdefault(field,"")
         item["date"]=month
-    # Retain only the matrix window; source pre-periods are held in source maps below.
-    lo,hi=target_months()[0],target_months()[-1]
-    return {m:r for m,r in rows.items() if lo<=m<=hi}
+    keep=set(months)
+    return {m:r for m,r in rows.items() if m in keep}
 
 def load_csi_index_levels(rows):
     """Load monthly last-observation levels for CSI 300 price and H00300 total return."""
@@ -272,12 +273,13 @@ def main():
             print(f"[WARN] {name} refresh failed; retained existing observations: {errors[name]}")
     derive_rmb_returns(rows)
     if not rows:raise RuntimeError("No monthly rows; refusing to write empty dataset.")
-    months=sorted(rows)
+    months=target_months()
+    output_rows={m:rows[m] for m in months}
     with DATA.open("w",encoding="utf-8",newline="") as fh:
         writer=csv.DictWriter(fh,fieldnames=HEADERS,extrasaction="ignore")
         writer.writeheader()
-        for m in months:writer.writerow({k:rows[m].get(k,"") for k in HEADERS})
-    manifest=build_manifest(rows,source_stats,errors)
+        for m in months:writer.writerow({k:output_rows[m].get(k,"") for k in HEADERS})
+    manifest=build_manifest(output_rows,source_stats,errors)
     MANIFEST.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     counts={f:manifest["coverage"][f]["count"] for f in [
         "csi300_price_return_pct","csi300_total_return_pct","sp500_total_return_pct",
