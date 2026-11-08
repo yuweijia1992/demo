@@ -1,5 +1,5 @@
 {
-  "dataset_version": "2.2.0",
+  "dataset_version": "2.3.0",
   "generated_at": "2026-11-08",
   "dataset_file": "data/investment-monthly.csv",
   "frequency": "monthly",
@@ -19,11 +19,6 @@
       "start": "2006-01",
       "end": "2026-08"
     },
-    "sp500_total_return_pct": {
-      "count": 247,
-      "start": "2006-01",
-      "end": "2026-07"
-    },
     "sp500_total_return_cny_pct": {
       "count": 247,
       "start": "2006-01",
@@ -39,17 +34,17 @@
       "start": "2006-01",
       "end": "2026-10"
     },
+    "usd_cny_change_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
     "hang_seng_total_return_pct": {
       "count": 0,
       "start": null,
       "end": null
     },
     "china_bond_wealth_return_cny_pct": {
-      "count": 0,
-      "start": null,
-      "end": null
-    },
-    "us_treasury_7_10y_total_return_pct": {
       "count": 0,
       "start": null,
       "end": null
@@ -63,6 +58,16 @@
       "count": 0,
       "start": null,
       "end": null
+    },
+    "us_agg_etf_total_return_cny_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    "fxi_china_largecap_etf_total_return_cny_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     }
   },
   "series": [
@@ -287,6 +292,54 @@
       "count": 0,
       "start": null,
       "end": null
+    },
+    {
+      "field": "us_agg_etf_total_return_usd_pct",
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    {
+      "field": "us_agg_etf_total_return_cny_pct",
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    {
+      "field": "us_ief_7_10y_etf_total_return_usd_pct",
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    {
+      "field": "us_ief_7_10y_etf_total_return_cny_pct",
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    {
+      "field": "us_shy_1_3y_etf_total_return_usd_pct",
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    {
+      "field": "us_shy_1_3y_etf_total_return_cny_pct",
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    {
+      "field": "fxi_china_largecap_etf_total_return_usd_pct",
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    {
+      "field": "fxi_china_largecap_etf_total_return_cny_pct",
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     }
   ],
   "notes": [
@@ -303,7 +356,8 @@
     "黄金来自世界银行Pink Sheet月均美元/盎司价格；人民币月均估值代理=美元金价月均×USD/CNY月均值。此回报不是日度配对FX后实际持有收益。",
     "美元汇率EXCHUS为月均汇率（CNY per USD），不是月末即期汇率。",
     "恒生全收益、中债财富、美国国债总回报、人民币现金和完整组合月收益仍为空值。不得以价格指数、国债收益率或短期利率直接替代全收益指数。",
-    "52%股票和28%债券内部地区/久期权重待后续确定，因此当前不生成完整52/28/10/10组合月度回报或其历史统计。"
+    "52%股票和28%债券内部地区/久期权重待后续确定，因此当前不生成完整52/28/10/10组合月度回报或其历史统计。",
+    "V2.3 adds AGG, IEF, SHY and FXI Yahoo monthly auto-adjusted ETF total-return proxies, in both USD and CNY. These are separate investable ETF series and must not be represented as official ChinaBond or Hang Seng total-return indexes."
   ],
   "sources": [
     {
@@ -355,6 +409,33 @@
       "coverage_end": "2026-10",
       "method": "Monthly average of daily CNY per USD values",
       "license": "ODC-PDDL per upstream repository"
+    },
+    {
+      "series": [
+        "us_agg_etf_total_return_usd_pct",
+        "us_agg_etf_total_return_cny_pct",
+        "us_ief_7_10y_etf_total_return_usd_pct",
+        "us_ief_7_10y_etf_total_return_cny_pct",
+        "us_shy_1_3y_etf_total_return_usd_pct",
+        "us_shy_1_3y_etf_total_return_cny_pct",
+        "fxi_china_largecap_etf_total_return_usd_pct",
+        "fxi_china_largecap_etf_total_return_cny_pct"
+      ],
+      "name": "Monthly adjusted total returns for US bond ETFs and China large-cap ETF",
+      "source": "Yahoo Finance via HerdingAI stock-price-returns dataset",
+      "url": "https://github.com/HerdingAI/stock-price-returns",
+      "data_url": "https://github.com/HerdingAI/stock-price-returns/blob/main/output/monthly_returns_by_ticker.csv",
+      "source_sha": "ee6594efc62cff087fb23cad748c5f114029cbe8",
+      "coverage_start": "2006-01",
+      "coverage_end": "2026-07",
+      "method": "Yahoo Finance monthly auto-adjusted close returns; multiplied by 100 to percent, then RMB return=(1+rUSD)*(EXCHUS_t/EXCHUS_t-1)-1 using monthly-average USD/CNY",
+      "tickers": {
+        "AGG": "iShares Core US Aggregate Bond ETF — broad US aggregate bond total-return proxy",
+        "IEF": "iShares 7-10 Year Treasury Bond ETF — intermediate Treasury total-return proxy",
+        "SHY": "iShares 1-3 Year Treasury Bond ETF — short Treasury total-return proxy",
+        "FXI": "iShares China Large-Cap ETF — offshore China large-cap equity proxy, not Hang Seng TRI"
+      },
+      "caveat": "ETF adjusted total returns include distributions and reflect fund fees/tracking; these are investable ETF proxies, not official ChinaBond/Hang Seng index returns. Data source is Yahoo Finance via a third-party collector; the repository code is MIT-licensed, but Yahoo data redistribution rights are subject to Yahoo's terms and are not independently confirmed."
     }
   ],
   "coverage": {
@@ -542,6 +623,46 @@
       "count": 0,
       "start": null,
       "end": null
+    },
+    "us_agg_etf_total_return_usd_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    "us_agg_etf_total_return_cny_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    "us_ief_7_10y_etf_total_return_usd_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    "us_ief_7_10y_etf_total_return_cny_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    "us_shy_1_3y_etf_total_return_usd_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    "us_shy_1_3y_etf_total_return_cny_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    "fxi_china_largecap_etf_total_return_usd_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    "fxi_china_largecap_etf_total_return_cny_pct": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     }
   },
   "gaps": [
@@ -569,6 +690,22 @@
       "field": "portfolio_return_cny_pct",
       "status": "missing",
       "reason": "完整多资产月度回报缺失，且52%股票与28%债券内部权重未确定"
+    },
+    {
+      "field": "hang_seng_total_return_pct",
+      "reason": "Official Hang Seng TRI historical series is subscription data; FXI is a separately identified China large-cap ETF proxy, not a substitute."
+    },
+    {
+      "field": "china_bond_wealth_return_cny_pct",
+      "reason": "Official ChinaBond total wealth historical monthly data not yet obtained with usable provenance and permission."
+    },
+    {
+      "field": "cny_cash_return_pct",
+      "reason": "A 2006-2026 RMB cash total-return series is not yet available; SHY is a USD Treasury ETF and must not be used as CNY cash."
+    },
+    {
+      "field": "portfolio_return_cny_pct",
+      "reason": "Full strategic portfolio requires bond/cash series and sub-asset weights; no portfolio return is calculated."
     }
   ],
   "quality_checks": {
@@ -582,6 +719,12 @@
     "gold_cny_price_return_months": 250,
     "usd_cny_months": 250,
     "csi300_partial_month": "2026-09",
-    "portfolio_return_ready": false
+    "portfolio_return_ready": false,
+    "etf_proxy_months": {
+      "AGG": 247,
+      "IEF": 247,
+      "SHY": 247,
+      "FXI": 247
+    }
   }
 }
