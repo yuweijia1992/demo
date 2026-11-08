@@ -37,13 +37,13 @@ a.inline{border-bottom:1px solid var(--text)}
 <div class="panel table-wrap"><table><thead><tr><th>序列</th><th>字段</th><th>有效月份</th><th>覆盖区间</th><th>口径</th></tr></thead><tbody id="coverageRows"></tbody></table></div></section>
 <section class="section"><div class="panel">
 <h2>统一口径与计算规则</h2>
-<p><strong>S&P 500：</strong>月度名义总回报，含股息再投资。Firenum/Shiller CSV中的nominalReturn需乘100写入sp500_total_return_pct；来源页面标注CC BY 4.0并要求署名。</p>
-<p><strong>沪深300：</strong>目前接入的是指数价格回报，不含现金分红；2005年4月为首个不完整月，2026年7月只到7月10日，不纳入完整月收益。</p>
-<p><strong>美元资产人民币回报：</strong>(1+r_USD)×(USD/CNY_t ÷ USD/CNY_t-1)-1。不能仅用汇率变化代替资产回报。</p>
-<p><strong>债券：</strong>正式回测优先用财富/全收益指数；到期收益率不是债券总回报。中债财富指数仍待完成原始数据及口径核验。</p>
-<p><strong>缺失值：</strong>不前值填充、不将缺失收益记作0、不对不同覆盖期悄悄归一化。</p>
+<p><strong>S&P 500：</strong>当前主矩阵接入^SP500TR月度股息调整总回报指数（USD），并按相邻月份USD/CNY月均汇率变化换算人民币。源序列目前覆盖至2026年7月；Firenum/Shiller月度总回报（CC BY 4.0）作为独立交叉验证源，尚未合并进主序列。</p>
+<p><strong>沪深300：</strong>已并列接入价格指数与H00300全收益指数，月收益由月末最后一个可用交易日指数水平计算。来源序列只到2026年9月9日，因此2026年9月是部分月份，不计算9月收益；2026年10月暂缺。</p>
+<p><strong>美元资产人民币回报：</strong>(1+r_USD)×(FX_t/FX_t-1)-1。本矩阵当前使用美联储G.5的USD/CNY月均值，因此股票和黄金人民币收益属于月均汇率换算代理，不是严格月末交易估值；黄金人民币价格层使用美元月均价×月均汇率。</p>
+<p><strong>债券：</strong>中债财富指数与美国国债总回报目前仍为空。中债官方网站区分全价、净价与财富指数；本系统只接受财富/全收益口径，不用国债收益率冒充债券收益。</p>
+<p><strong>缺失值：</strong>不前值填充、不将缺失收益记作0、不对不同覆盖期悄悄归一化。2006-01至2026-10共250个月份；S&P、沪深300和黄金各自保留独立覆盖区间。</p><p><a href="../data/investment-monthly.csv" download>下载人民币月度收益矩阵CSV</a>　<a href="../data/investment-monthly-manifest.json" download>下载来源与覆盖审计JSON</a></p>
 </div></section>
-</main><footer class="footer container"><span>© 2026 余暮 · Investment Lab V2.1</span><span><a href="investment-lab.html">← 返回实验室</a></span></footer>
+</main><footer class="footer container"><span>© 2026 余暮 · Investment Lab V2.2</span><span><a href="investment-lab.html">← 返回实验室</a></span></footer>
 <script src="../script.js"></script><script src="../assets/investment-data-core.js"></script>
 <script>
 (async function(){
