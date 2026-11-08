@@ -8,7 +8,7 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Microsoft YaHei",sans-serif}
 header{background:#13243b;color:#fff;padding:30px max(20px,calc((100vw - 1400px)/2)) 26px}
 header h1{margin:0 0 8px;font-size:26px}header p{margin:0;color:#cbd5e1;max-width:900px}
-main{max-width:1400px;margin:22px auto;padding:0 18px}.stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-bottom:16px}
+main{max-width:1400px;margin:22px auto;padding:0 18px}.stats{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;margin-bottom:16px}
 .stat,.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}.stat small{color:var(--muted)}.stat strong{display:block;font-size:25px;margin-top:4px}
 .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.toolbar input,.toolbar select{padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
 .table-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:12px}
@@ -27,7 +27,7 @@ a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.acti
 <div class="stat"><small>公司总数</small><strong id="nTotal">—</strong></div>
 <div class="stat"><small>ROIC至少1年可计算</small><strong id="nRoic">—</strong></div>
 <div class="stat"><small>净债务至少1年可计算</small><strong id="nDebt">—</strong></div>
-<div class="stat"><small>已识别债务项净额（非完整）</small><strong id="nKnownDebt">—</strong></div><div class="stat"><small>稀释股数已核验</small><strong id="nShares">0</strong></div>
+<div class="stat"><small>已识别债务项净额（非完整）</small><strong id="nKnownDebt">—</strong></div><div class="stat"><small>已有部分年报交叉核验</small><strong id="nIssuer">0</strong></div><div class="stat"><small>稀释股数已核验</small><strong id="nShares">0</strong></div>
 <div class="stat"><small>每股公允价值已放行</small><strong id="nFair">0</strong></div>
 </div>
 <div class="notice"><b>核验原则：</b>年报来源必须能追溯至交易所/发行人披露；单位、币种、合并范围、报告期和会计准则要同时对齐。历史加权平均稀释股数不能替代估值日当前完全稀释股数。股息现金流不能替代每股股息历史。</div>
@@ -36,7 +36,7 @@ a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.acti
 <select id="status"><option value="all">全部公司</option><option value="pending">仍有待核验事项</option><option value="partial">已有部分可计算字段</option></select>
 <select id="industry"><option value="all">全部行业</option></select>
 </div>
-<div class="table-wrap"><table><thead><tr><th>公司</th><th>行业</th><th>模型</th><th>ROIC</th><th>净债务</th><th>已识别债务项</th><th>股本</th><th>股息历史</th><th>公司预测</th><th>资本成本</th><th>每股价值</th></tr></thead><tbody id="rows"><tr><td colspan="11">正在读取数据…</td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>公司</th><th>行业</th><th>年报交叉核验</th><th>模型</th><th>ROIC</th><th>净债务</th><th>已识别债务项</th><th>股本</th><th>股息历史</th><th>公司预测</th><th>资本成本</th><th>每股价值</th></tr></thead><tbody id="rows"><tr><td colspan="11">正在读取数据…</td></tr></tbody></table></div>
 <div class="layout">
 <section class="panel"><h2 id="detailTitle">选择一家上市公司</h2><div id="detail" class="muted">点击上方公司查看年度数据、来源链接、计算口径和核验缺口。</div></section>
 <section class="panel"><h2>核验口径与方法</h2>
@@ -55,6 +55,7 @@ const $=id=>document.getElementById(id);
 const fmt=x=>x===null||x===undefined?'—':Number(x).toLocaleString('zh-CN',{maximumFractionDigits:2});
 const tag=(s)=>'<span class="tag">'+s+'</span>';
 function statusText(s){
+ if(s==='partial_report_text_crosscheck')return '部分报告交叉核对';
  if(s==='calculated_not_independently_verified')return '已计算·待核验';
  if(s==='raw_share_capital_only')return '仅股本字段';
  if(s==='partial_cashflow_fields_only')return '部分现金流字段';
@@ -69,8 +70,8 @@ function render(){
  const data=register.filter(x=>(!q||(x.name+x.code).toLowerCase().includes(q))&&(ind==='all'||x.industry===ind));
  $('rows').innerHTML=data.filter(x=>st==='all'||(st==='pending'&&x.valuationOutputStatus!=='ready')||(st==='partial'&&Object.values(x.verification).some(v=>String(v.status).includes('calculated')||String(v.status).includes('partial')||String(v.status).includes('raw_')))).map(x=>{
  const v=x.verification||{};
- return '<tr class="company" data-code="'+x.code+'"><td><b>'+x.name+'</b><br><small class="muted">'+x.code+'</small></td><td>'+x.industry+'</td><td>'+x.modelType+'</td><td>'+statusText(v.roic?.status)+'</td><td>'+statusText(v.netDebt?.status)+'</td><td>'+(v.netDebt?.knownComponentsYears||0)+'年分项</td><td>'+statusText(v.shareCapital?.status)+'</td><td>'+statusText(v.dividendPerShareHistory?.status)+'</td><td>'+statusText(v.companySpecificForecast?.status)+'</td><td>'+statusText(v.costOfCapital?.status)+'</td><td>'+x.valuationOutputStatus+'</td></tr>'
- }).join('')||'<tr><td colspan="10">没有符合条件的公司</td></tr>';
+ return '<tr class="company" data-code="'+x.code+'"><td><b>'+x.name+'</b><br><small class="muted">'+x.code+'</small></td><td>'+x.industry+'</td><td>'+statusText(v.officialReportCrossCheck?.status)+'</td><td>'+x.modelType+'</td><td>'+statusText(v.roic?.status)+'</td><td>'+statusText(v.netDebt?.status)+'</td><td>'+(v.netDebt?.knownComponentsYears||0)+'年分项</td><td>'+statusText(v.shareCapital?.status)+'</td><td>'+statusText(v.dividendPerShareHistory?.status)+'</td><td>'+statusText(v.companySpecificForecast?.status)+'</td><td>'+statusText(v.costOfCapital?.status)+'</td><td>'+x.valuationOutputStatus+'</td></tr>'
+ }).join('')||'<tr><td colspan="12">没有符合条件的公司</td></tr>';
  document.querySelectorAll('tr.company').forEach(tr=>tr.addEventListener('click',()=>show(tr.dataset.code)));
 }
 function show(code){
@@ -88,7 +89,7 @@ async function init(){
  const rd=await r.json(),md=await m.json();register=rd.records||[];md.companies.forEach(x=>models[x.code]=x);
  $('nTotal').textContent=rd.companyCount;$('nRoic').textContent=md.companies.filter(x=>x.quality.annualROICYears>0).length;
  $('nDebt').textContent=md.companies.filter(x=>x.quality.annualNetDebtYears>0).length;$('nKnownDebt').textContent=md.companies.filter(x=>x.quality.annualNetDebtKnownComponentsYears>0).length;
- $('nShares').textContent='0';$('nFair').textContent='0';
+ $('nIssuer').textContent=register.filter(x=>x.manualEvidence&&x.manualEvidence.status).length;$('nShares').textContent='0';$('nFair').textContent='0';
  [...new Set(register.map(x=>x.industry).filter(Boolean))].sort().forEach(x=>{const o=document.createElement('option');o.value=x;o.textContent=x;$('industry').appendChild(o)});
  ['search','status','industry'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));render();
  }catch(e){$('rows').innerHTML='<tr><td colspan="10">'+e.message+'</td></tr>'}
