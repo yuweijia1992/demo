@@ -305,6 +305,18 @@ def main():
                           "roicStatus":"calculated_only_if_complete_components_and_tax_base_available",
                           "dilutedSharesStatus":"weighted_average_proxy_not_current_fully_diluted",
                           "perShareFairValueStatus":"blocked_until_current_share_count_currency_unit_and_assumptions_verified"}})
+    evidence_path=OUT/"issuer-verification-evidence.json"
+    manual_evidence=json.loads(evidence_path.read_text(encoding="utf-8")) if evidence_path.exists() else {"records":[]}
+    evidence_by_code={x["code"]:x for x in manual_evidence.get("records",[])}
+    for company in results:
+        ev=evidence_by_code.get(company["code"])
+        if ev:
+            company["verification"]["manualEvidence"]=ev
+            company["verification"]["register"]["officialReportCrossCheck"]["status"]=ev.get("status","partial_report_text_crosscheck")
+            company["verification"]["register"]["officialReportCrossCheck"]["issuerIRUrl"]=ev.get("issuerIRUrl")
+            company["verification"]["register"]["officialReportCrossCheck"]["reportTextUrl"]=ev.get("reportTextUrl")
+    audit["issuerEvidenceRecords"]=len(evidence_by_code)
+    audit["issuerEvidenceCrossChecks"]=sum(1 for x in manual_evidence.get("records",[]) if x.get("status")=="fully_crosschecked")
     OUT.mkdir(parents=True,exist_ok=True)
     output={"schemaVersion":"1.1.0","generatedAtUtc":datetime.now(timezone.utc).isoformat(),
             "sourceFiles":{"master":str(MASTER.relative_to(ROOT)),"financial":str(FIN.relative_to(ROOT)),
@@ -321,7 +333,7 @@ def main():
     (OUT/"valuation-model-49.json").write_text(json.dumps(output,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
     register={"schemaVersion":"1.0.0","generatedAtUtc":datetime.now(timezone.utc).isoformat(),
               "companyCount":len(results),"records":[{"code":x["code"],"name":x["name"],"industry":x["industry"],
-              "modelType":x["modelType"],"sourceLinks":x["sourceLinks"],"officialSearchUrl":x["officialSearchUrl"],"verification":x["verification"]["register"],
+              "modelType":x["modelType"],"sourceLinks":x["sourceLinks"],"officialSearchUrl":x["officialSearchUrl"],"verification":x["verification"]["register"],"manualEvidence":x["verification"].get("manualEvidence"),
               "companySpecificAssumptions":x["valuationFramework"]["companySpecificAssumptions"],
               "valuationOutputStatus":x["valuationFramework"]["valuationOutputStatus"]} for x in results]}
     (OUT/"valuation-verification-register-49.json").write_text(json.dumps(register,ensure_ascii=False,indent=2),encoding="utf-8")
