@@ -1,5 +1,5 @@
 {
-  "generatedAtUtc": "2026-11-08T07:52:28.911784+00:00",
+  "generatedAtUtc": "2026-11-08T07:53:12.374283+00:00",
   "masterCompanies": 49,
   "financialRecordsMatched": 49,
   "historyRecordsMatched": 49,
@@ -7,8 +7,8 @@
     "annualRevenue": 49,
     "annualProfit": 49,
     "annualROE": 49,
-    "annualFCF": 49,
-    "annualNetDebt": 20,
+    "annualFCF": 43,
+    "annualNetDebt": 19,
     "annualROIC": 0
   },
   "historyCoverage": {
