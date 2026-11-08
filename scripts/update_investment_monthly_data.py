@@ -36,7 +36,11 @@ HEADERS = [
     "china_cpi_mom_pct","china_cpi_yoy_pct","us_cpi_index","us_cpi_yoy_pct",
     "dgs10_pct","dfii10_pct","dxy_index","vix_index","brent_usd_bbl","fedfunds_pct","china10y_pct",
     "portfolio_return_cny_pct",
-    "sp500_shiller_total_return_pct","sp500_shiller_cpi_index"
+    "sp500_shiller_total_return_pct","sp500_shiller_cpi_index",
+    "us_agg_etf_total_return_usd_pct","us_agg_etf_total_return_cny_pct",
+    "us_ief_7_10y_etf_total_return_usd_pct","us_ief_7_10y_etf_total_return_cny_pct",
+    "us_shy_1_3y_etf_total_return_usd_pct","us_shy_1_3y_etf_total_return_cny_pct",
+    "fxi_china_largecap_etf_total_return_usd_pct","fxi_china_largecap_etf_total_return_cny_pct"
 ]
 # EXCHUS is the Federal Reserve's monthly-average Chinese yuan per U.S. dollar rate.
 # Daily FRED macro series are represented by the final available observation in each month.
@@ -50,9 +54,16 @@ URLS = {
     "csi_index_levels":"https://raw.githubusercontent.com/dongzhaohe321418-lab/csi300-spmo-index/main/output/performance/index_levels.csv",
     "sp500tr":"https://raw.githubusercontent.com/vanexymx/sp500-historical-analysis/main/data/SP500TR_monthly.json",
     "gold":"https://raw.githubusercontent.com/datasets/gold-prices/main/data/monthly.csv",
-    "shiller":"https://firenum.com/data/shiller-monthly.csv"
+    "shiller":"https://firenum.com/data/shiller-monthly.csv",
+    "yahoo_etf_monthly_returns":"https://raw.githubusercontent.com/HerdingAI/stock-price-returns/main/output/monthly_returns_by_ticker.csv"
 }
-USER_AGENT="InvestmentLabMonthlyData/2.2 (research; source attribution in manifest)"
+USER_AGENT="InvestmentLabMonthlyData/2.3 (research; source attribution in manifest)"
+ETF_RETURN_FIELDS={
+    "AGG":("us_agg_etf_total_return_usd_pct","us_agg_etf_total_return_cny_pct"),
+    "IEF":("us_ief_7_10y_etf_total_return_usd_pct","us_ief_7_10y_etf_total_return_cny_pct"),
+    "SHY":("us_shy_1_3y_etf_total_return_usd_pct","us_shy_1_3y_etf_total_return_cny_pct"),
+    "FXI":("fxi_china_largecap_etf_total_return_usd_pct","fxi_china_largecap_etf_total_return_cny_pct")
+}
 TODAY=date.today()
 
 def fetch(url:str,timeout:int=50)->str:
@@ -170,6 +181,21 @@ def load_gold_monthly(rows):
         if v is not None:item["gold_usd_oz"]=f"{v:.8f}"
     return {"monthly_observations":len(source),"coverage_start":min(source),"coverage_end":max(source)}
 
+def load_yahoo_etf_monthly_returns(rows):
+    """Load auto-adjusted ETF total returns (fraction) from the Yahoo data panel."""
+    counts={ticker:0 for ticker in ETF_RETURN_FIELDS}
+    text=fetch(URLS["yahoo_etf_monthly_returns"],timeout=90)
+    for r in csv.DictReader(io.StringIO(text)):
+        ticker=(r.get("ticker") or "").upper()
+        month=(r.get("date") or "")[:7]
+        value=num(r.get("monthly_return"))
+        if ticker not in ETF_RETURN_FIELDS or month not in rows or value is None:
+            continue
+        usd_field,_=ETF_RETURN_FIELDS[ticker]
+        rows[month][usd_field]=f"{value*100:.8f}"
+        counts[ticker]+=1
+    return {"ticker_months":counts,"source":"Yahoo Finance monthly auto-adjusted ETF total returns via HerdingAI dataset"}
+
 def load_shiller_validation(rows):
     """Keep Shiller/Firenum total returns as an independent validation column."""
     count=0
@@ -221,6 +247,12 @@ def derive_rmb_returns(rows):
         else:
             item["gold_cny_per_oz_monthly_avg"]=f"{gold*fx:.8f}" if gold is not None and fx is not None else ""
             item["gold_cny_return_pct"]=""
+        for usd_field,cny_field in ETF_RETURN_FIELDS.values():
+            r_usd=num(item.get(usd_field))
+            if r_usd is not None and fx is not None and pfx is not None and pfx>0:
+                item[cny_field]=f"{((1+r_usd/100)*(fx/pfx)-1)*100:.8f}"
+            else:
+                item[cny_field]=""
         # Portfolio return is never manufactured from component proxies.
         item.setdefault("portfolio_return_cny_pct","")
 
@@ -252,8 +284,19 @@ def build_manifest(rows,source_stats,errors):
         ]
     })
     manifest["series"]=[{"field":f,**coverage[f]} for f in HEADERS[1:]]
-    # Keep the manually curated source list, gap explanations and rights notes from
-    # the committed manifest. Refresh only the numeric coverage fields above.
+    sources=manifest.get("sources",[])
+    if not any("HerdingAI" in str(x.get("source","")) for x in sources):
+        sources.append({
+            "series":[v[0] for v in ETF_RETURN_FIELDS.values()]+[v[1] for v in ETF_RETURN_FIELDS.values()],
+            "name":"Auto-adjusted total-return ETF monthly proxy panel",
+            "source":"Yahoo Finance via HerdingAI stock-price-returns dataset",
+            "url":"https://github.com/HerdingAI/stock-price-returns",
+            "data_url":"https://github.com/HerdingAI/stock-price-returns/blob/main/output/monthly_returns_by_ticker.csv",
+            "source_sha":"ee6594efc62cff087fb23cad748c5f114029cbe8",
+            "coverage_start":"2006-01","coverage_end":"2026-07",
+            "method":"Monthly auto-adjusted ETF returns from Yahoo Finance; CNY conversion=(1+rUSD)*(EXCHUS_t/EXCHUS_t-1)-1.",
+            "caveat":"AGG/IEF/SHY/FXI are investable ETF proxies, not official ChinaBond or Hang Seng total-return indices. The repository code is MIT but market data remains subject to Yahoo Finance terms."
+        })
     return manifest
 
 def main():
@@ -264,6 +307,7 @@ def main():
         ("sp500_total_return",lambda:load_sp500_total_return(rows)),
         ("world_bank_gold",lambda:load_gold_monthly(rows)),
         ("fred_macro_and_fx",lambda:load_fred(rows)),
+        ("yahoo_etf_total_returns",lambda:load_yahoo_etf_monthly_returns(rows)),
         ("shiller_cross_check",lambda:load_shiller_validation(rows))
     ]
     for name,fn in loaders:
