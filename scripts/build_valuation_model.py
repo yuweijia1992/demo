@@ -119,7 +119,8 @@ def main():
     audit={"generatedAtUtc":datetime.now(timezone.utc).isoformat(),"masterCompanies":len(master.get("stocks",[])),
            "financialRecordsMatched":0,"historyRecordsMatched":0,
            "metrics":{"annualRevenue":0,"annualProfit":0,"annualROE":0,"annualFCF":0,"annualNetDebt":0,
-                      "annualROIC":0,"annualDividendCashFlowOnly":0,"annualDilutedShareProxy":0},
+                      "annualROIC":0,"annualDividendCashFlowOnly":0,"annualDilutedShareProxy":0,"annualShareCapital":0,"annualAcquisitions":0,"annualInvestments":0,
+                      "annualBuybacks":0,"annualDebtRepayments":0,"annualDividendsOnly":0},
            "historyCoverage":{m:{"latest":0,"5Y":0,"10Y":0} for m in METRICS},
            "verification":{"issuerReportCrossChecksPending":49,"currentFullyDilutedSharesVerified":0,
                            "dividendPerShareHistoryVerified":0,"companySpecificScenarioVerified":0,
@@ -150,6 +151,10 @@ def main():
             interest=v(inc,"interestExpense"); diluted_eps=v(inc,"dilutedEps")
             ocf=v(cf,"operatingCashFlow"); capex=v(cf,"capex")
             dividends_only=v(cf,"dividendsPaidOnly"); dividends_combined=v(cf,"dividendsPaid")
+            share_capital=v(bal,"shareCapital")
+            acquisitions_paid=v(cf,"acquisitionsPaid"); investments_purchased=v(cf,"investmentsPurchased")
+            investments_disposed=v(cf,"investmentsDisposed"); buybacks_paid=v(cf,"shareBuybacksPaid")
+            debt_repayments=v(cf,"debtRepayments"); interest_paid=v(cf,"interestPaid"); equity_raised=v(cf,"equityRaised")
             cash=v(bal,"cash"); short_invest=v(bal,"shortTermInvestments"); long_invest=v(bal,"longTermInvestments")
             debts=debt_components(bal)
             gross_debt=sum(debts) if all(x is not None for x in debts) else None
@@ -160,7 +165,7 @@ def main():
             nopat=op*(1-tax_rate) if (not financial and op is not None and tax_rate is not None) else None
             invested_capital=None
             if not financial and all(x is not None for x in (assets,current_liabilities,cash,short_invest,long_invest,*debts)):
-                invested_capital=assets-current_liabilities+debts[0]+debts[3]-cash-short_invest-long_invest
+                invested_capital=assets-current_liabilities+gross_debt-cash-short_invest-long_invest
             avg_invested=(invested_capital+prior_invested_capital)/2 if invested_capital is not None and prior_invested_capital is not None and invested_capital>0 and prior_invested_capital>0 else None
             roic=(nopat/avg_invested*100) if (nopat is not None and avg_invested is not None and avg_invested>0) else None
             fcf=ocf-capex if (not financial and ocf is not None and capex is not None) else None
@@ -181,9 +186,12 @@ def main():
                            "grossDebt":gross_debt,"netDebt":net_debt,"investedCapital":invested_capital,
                            "averageInvestedCapital":avg_invested,"roicPct":roic,"interestExpense":interest,
                            "basicEps":v(inc,"basicEps"),"dilutedEps":diluted_eps,
-                           "impliedWeightedAverageDilutedShares":implied_diluted_shares,
+                           "impliedWeightedAverageDilutedShares":implied_diluted_shares,"shareCapitalRaw":share_capital,
                            "dividendsPaidOnly":dividends_only,"dividendsPaidCombinedWithInterest":dividends_combined,
                            "cashDividendPayoutRatioPct":dividend_payout,
+                           "capitalAllocation":{"acquisitionsPaid":acquisitions_paid,"investmentsPurchased":investments_purchased,
+                             "investmentsDisposed":investments_disposed,"shareBuybacksPaid":buybacks_paid,
+                             "debtRepayments":debt_repayments,"interestPaid":interest_paid,"equityRaised":equity_raised},
                            "status":{"roic":"derived" if roic is not None else "pending_missing_or_incomparable_inputs",
                              "netDebt":"derived" if net_debt is not None else ("not_applicable_financial_institution" if financial else "pending_missing_debt_or_cash"),
                              "dividend":"separate_cash_dividend_field" if dividends_only is not None else ("combined_with_interest_or_missing" if dividends_combined is not None else "pending"),
@@ -229,7 +237,13 @@ def main():
                 ("annualROE",lambda x:x["roePct"] is not None),("annualFCF",lambda x:x["freeCashFlow"] is not None),
                 ("annualNetDebt",lambda x:x["netDebt"] is not None),("annualROIC",lambda x:x["roicPct"] is not None),
                 ("annualDividendCashFlowOnly",lambda x:x["dividendsPaidOnly"] is not None),
-                ("annualDilutedShareProxy",lambda x:x["impliedWeightedAverageDilutedShares"] is not None))
+                ("annualDilutedShareProxy",lambda x:x["impliedWeightedAverageDilutedShares"] is not None),
+                ("annualShareCapital",lambda x:x["shareCapitalRaw"] is not None),
+                ("annualAcquisitions",lambda x:x["capitalAllocation"]["acquisitionsPaid"] is not None),
+                ("annualInvestments",lambda x:x["capitalAllocation"]["investmentsPurchased"] is not None),
+                ("annualBuybacks",lambda x:x["capitalAllocation"]["shareBuybacksPaid"] is not None),
+                ("annualDebtRepayments",lambda x:x["capitalAllocation"]["debtRepayments"] is not None),
+                ("annualDividendsOnly",lambda x:x["dividendsPaidOnly"] is not None))
         for k,cond in checks:
             if any(cond(x) for x in annual):audit["metrics"][k]+=1
         source_audit=audit_by_code.get(stock["code"]) or audit_by_code.get(code) or {}
@@ -255,6 +269,11 @@ def main():
                           "annualROICYears":sum(x["roicPct"] is not None for x in annual),
                           "annualDividendCashFlowOnlyYears":sum(x["dividendsPaidOnly"] is not None for x in annual),
                           "annualDilutedShareProxyYears":sum(x["impliedWeightedAverageDilutedShares"] is not None for x in annual),
+                          "annualShareCapitalYears":sum(x["shareCapitalRaw"] is not None for x in annual),
+                          "annualAcquisitionsYears":sum(x["capitalAllocation"]["acquisitionsPaid"] is not None for x in annual),
+                          "annualInvestmentPurchaseYears":sum(x["capitalAllocation"]["investmentsPurchased"] is not None for x in annual),
+                          "annualBuybackYears":sum(x["capitalAllocation"]["shareBuybacksPaid"] is not None for x in annual),
+                          "annualDebtRepaymentYears":sum(x["capitalAllocation"]["debtRepayments"] is not None for x in annual),
                           "roicStatus":"calculated_only_if_complete_components_and_tax_base_available",
                           "dilutedSharesStatus":"weighted_average_proxy_not_current_fully_diluted",
                           "perShareFairValueStatus":"blocked_until_current_share_count_currency_unit_and_assumptions_verified"}})
@@ -266,7 +285,7 @@ def main():
             "methodology":{"roe":"归母净利润 / 年初年末归母权益平均值；首年无上年权益时留空",
               "fcf":"经营活动现金流净额 - 购建固定资产、无形资产和其他长期资产支付的现金；简化FCF，不等于股权自由现金流",
               "netDebt":"短期借款+长期借款+应付债券+流动及非流动租赁负债-现金；仅当全部债务分项与现金均有值时计算；不扣短/长期投资；金融企业不适用",
-              "roic":"NOPAT=营业利润*(1-所得税费用/利润总额)；投入资本=总资产-流动负债+全部已映射有息债务-现金-短期投资-长期投资；ROIC=NOPAT/平均投入资本；税率限定0%-50%，缺项留空。该口径为可复算近似值，须与发行人年报核验。",
+              "roic":"NOPAT=营业利润*(1-所得税费用/利润总额)；投入资本=总资产-流动负债+全部已映射有息债务(短借+长借+债券+流动租赁负债+非流动租赁负债)-现金-短期投资-长期投资；ROIC=NOPAT/平均投入资本；税率限定0%-50%，缺项留空。该口径为近似值，需逐项核验。不得只加回短借和流动租赁负债。",
               "dilutedShares":"归母净利润/稀释EPS并按财报金额单位换算，只代表年度加权平均稀释股数代理，不代表估值日当前完全稀释股数；单位不明则留空。",
               "dividends":"单列现金股息支付字段才计算现金派息率；股利/利润与利息合并字段不视为纯股息。",
               "forecast":"历史收入CAGR及最近三年净利率中位数的机械情景，不是公司指引或分析师预测。"},
