@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "scripts/build_valuation_model.py"
+      - "articles/valuation-engine.html"
       - "data/china-stocks-financial-valuation.json"
       - "data/financial-standardized/**"
       - "data/valuation-history/generated/valuation-monthly.csv"
