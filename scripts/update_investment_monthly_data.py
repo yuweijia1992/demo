@@ -1,206 +1,292 @@
 #!/usr/bin/env python3
-"""Refresh auditable monthly market/macro observations for Investment Lab V2.1.
+"""Refresh the auditable RMB monthly matrix for Investment Lab V2.2.
 
-Sources:
-- Shiller/Firenum monthly S&P composite total returns (CC BY 4.0; attribution required).
-- FRED monthly/daily public series, sampled at the last available observation in each month.
-- Tencent Finance K-line for CSI 300 daily close; aggregated to calendar month-end.
-No interpolation, forward-fill, or missing-as-zero behavior is permitted.
+Canonical return series:
+- CSI 300 price and total-return index levels from a public copy that documents
+  the official CSIndex 000300 / H00300 sources.
+- S&P 500 total-return index (^SP500TR) from a monthly dividend-adjusted series.
+- World Bank Pink Sheet gold monthly average USD/oz.
+- Federal Reserve G.5 monthly-average EXCHUS (CNY per USD).
+- FRED macro indicators, sampled at the final observation in each month.
+
+No interpolation, forward-fill or missing-as-zero is permitted. Incomplete latest
+months remain marked partial and their monthly return is blank.
 """
 from __future__ import annotations
 import csv, io, json, math, time
+from calendar import monthrange
 from datetime import date, datetime
 from pathlib import Path
-from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "investment-monthly.csv"
 MANIFEST = ROOT / "data" / "investment-monthly-manifest.json"
 HEADERS = [
-    "date","csi300_price_index_cny","csi300_price_return_pct","csi300_period_status",
-    "sp500_total_return_pct","sp500_cpi_index","hang_seng_price_index_hkd",
-    "hang_seng_total_return_pct","china_bond_total_return_index_cny",
-    "us_treasury_total_return_index_usd","gold_usd_oz","usd_cny",
+    "date",
+    "csi300_price_index_cny","csi300_price_return_pct",
+    "csi300_total_return_index_cny","csi300_total_return_pct","csi300_period_status",
+    "sp500_total_return_index_usd","sp500_total_return_pct","sp500_total_return_cny_pct",
+    "gold_usd_oz","gold_cny_per_oz_monthly_avg","gold_cny_return_pct",
+    "usd_cny","usd_cny_change_pct",
+    "hang_seng_total_return_index_hkd","hang_seng_total_return_pct","hang_seng_total_return_cny_pct",
+    "china_bond_wealth_index_cny","china_bond_wealth_return_cny_pct",
+    "us_treasury_7_10y_total_return_index_usd","us_treasury_7_10y_total_return_pct","us_treasury_7_10y_total_return_cny_pct",
+    "cny_cash_rate_pct","cny_cash_return_pct","us_tbill_1m_return_pct","us_tbill_1m_return_cny_pct",
     "china_cpi_mom_pct","china_cpi_yoy_pct","us_cpi_index","us_cpi_yoy_pct",
-    "dgs10_pct","dfii10_pct","dxy_index","vix_index","brent_usd_bbl",
-    "fedfunds_pct","china10y_pct","cn_pmi","us_pmi","us_unemployment_pct",
-    "credit_spread_pct","sp500_forward_pe","csi300_pe","cash_rate_cny_pct",
-    "portfolio_return_cny_pct"
+    "dgs10_pct","dfii10_pct","dxy_index","vix_index","brent_usd_bbl","fedfunds_pct","china10y_pct",
+    "portfolio_return_cny_pct",
+    "sp500_shiller_total_return_pct","sp500_shiller_cpi_index"
 ]
+# EXCHUS is the Federal Reserve's monthly-average Chinese yuan per U.S. dollar rate.
+# Daily FRED macro series are represented by the final available observation in each month.
 FRED_MAP = {
-    "DGS10":"dgs10_pct", "DFII10":"dfii10_pct", "DTWEXBGS":"dxy_index",
-    "VIXCLS":"vix_index", "DEXCHUS":"usd_cny", "CPIAUCSL":"us_cpi_index",
-    "FEDFUNDS":"fedfunds_pct", "DCOILBRENTEU":"brent_usd_bbl"
+    "EXCHUS":"usd_cny",
+    "DGS10":"dgs10_pct","DFII10":"dfii10_pct","DTWEXBGS":"dxy_index",
+    "VIXCLS":"vix_index","CPIAUCSL":"us_cpi_index","FEDFUNDS":"fedfunds_pct",
+    "DCOILBRENTEU":"brent_usd_bbl"
 }
-USER_AGENT = "InvestmentLabMonthlyData/2.1 (research; contact via repository)"
-TODAY = date.today()
+URLS = {
+    "csi_index_levels":"https://raw.githubusercontent.com/dongzhaohe321418-lab/csi300-spmo-index/main/output/performance/index_levels.csv",
+    "sp500tr":"https://raw.githubusercontent.com/vanexymx/sp500-historical-analysis/main/data/SP500TR_monthly.json",
+    "gold":"https://raw.githubusercontent.com/datasets/gold-prices/main/data/monthly.csv",
+    "shiller":"https://firenum.com/data/shiller-monthly.csv"
+}
+USER_AGENT="InvestmentLabMonthlyData/2.2 (research; source attribution in manifest)"
+TODAY=date.today()
 
-def fetch(url: str, timeout: int = 40) -> str:
-    req = Request(url, headers={"User-Agent": USER_AGENT})
-    with urlopen(req, timeout=timeout) as response:
-        return response.read().decode("utf-8-sig")
+def fetch(url:str,timeout:int=50)->str:
+    req=Request(url,headers={"User-Agent":USER_AGENT})
+    with urlopen(req,timeout=timeout) as res:
+        return res.read().decode("utf-8-sig")
 
 def num(value):
     try:
-        x = float(value)
+        x=float(value)
         return x if math.isfinite(x) else None
-    except (TypeError, ValueError):
+    except (TypeError,ValueError):
         return None
 
+def prev_month(month:str)->str:
+    y,m=map(int,month.split("-"))
+    return f"{y-1:04d}-12" if m==1 else f"{y:04d}-{m-1:02d}"
+
+def target_months():
+    # Only include completed calendar months; partial latest-source observations are
+    # still included in the source columns but not converted into full-month returns.
+    y,m=TODAY.year,TODAY.month-1
+    if m==0:y,m=y-1,12
+    start=2006*12
+    stop=y*12+m
+    return [f"{n//12:04d}-{n%12+1:02d}" for n in range(start,stop+1)]
+
 def read_existing():
-    out = {}
-    if not DATA.exists():
-        return out
-    with DATA.open("r", encoding="utf-8-sig", newline="") as f:
-        for row in csv.DictReader(f):
-            m = str(row.get("date",""))[:7]
-            if len(m) == 7:
-                out[m] = {k:(row.get(k,"") or "") for k in HEADERS}
-                out[m]["date"] = m
+    out={}
+    if DATA.exists():
+        with DATA.open("r",encoding="utf-8-sig",newline="") as fh:
+            for r in csv.DictReader(fh):
+                month=str(r.get("date",""))[:7]
+                if len(month)==7:
+                    out[month]={k:(v or "") for k,v in r.items()}
+                    out[month]["date"]=month
     return out
 
-def load_shiller(rows):
-    url = "https://firenum.com/data/shiller-monthly.csv"
-    text = fetch(url)
-    count = 0
-    for row in csv.DictReader(io.StringIO(text)):
-        try:
-            month = f'{int(row["year"]):04d}-{int(row["month"]):02d}'
-        except (KeyError, ValueError):
+def ensure_rows(rows):
+    for month in target_months():
+        item=rows.setdefault(month,{})
+        for field in HEADERS:
+            item.setdefault(field,"")
+        item["date"]=month
+    # Retain only the matrix window; source pre-periods are held in source maps below.
+    lo,hi=target_months()[0],target_months()[-1]
+    return {m:r for m,r in rows.items() if lo<=m<=hi}
+
+def load_csi_index_levels(rows):
+    """Load monthly last-observation levels for CSI 300 price and H00300 total return."""
+    text=fetch(URLS["csi_index_levels"])
+    monthly={}
+    for r in csv.DictReader(io.StringIO(text)):
+        dt=r.get("Date","")
+        if len(dt)<10:continue
+        month=dt[:7]
+        p,tr=num(r.get("CSI300")),num(r.get("CSI300_TR"))
+        if p is None or tr is None:continue
+        monthly[month]={"date":dt,"price":p,"total_return":tr}
+    if not monthly:raise RuntimeError("CSI index-level CSV contains no valid observations")
+    for month in rows:
+        obs=monthly.get(month)
+        if not obs:continue
+        item=rows[month]
+        item["csi300_price_index_cny"]=f'{obs["price"]:.8f}'
+        item["csi300_total_return_index_cny"]=f'{obs["total_return"]:.8f}'
+        item["csi300_period_status"]="complete"
+    last_month=max(monthly)
+    last=monthly[last_month]
+    try: day=int(last["date"][8:10])
+    except (ValueError,TypeError):day=0
+    # A latest-source observation well before calendar month-end is partial.
+    if day and day<20 and last_month in rows:
+        rows[last_month]["csi300_period_status"]="partial_source_cutoff"
+        rows[last_month]["csi300_price_return_pct"]=""
+        rows[last_month]["csi300_total_return_pct"]=""
+    # Calculate monthly returns from the raw source map, including Dec-2005 as a
+    # calculation-only predecessor for Jan-2006. Do not require that predecessor
+    # to appear as a matrix row.
+    for month,item in rows.items():
+        prev=monthly.get(prev_month(month));cur=monthly.get(month)
+        if not cur or not prev or item.get("csi300_period_status")=="partial_source_cutoff":
+            item["csi300_price_return_pct"]=""
+            item["csi300_total_return_pct"]=""
             continue
-        ret, cpi = num(row.get("nominalReturn")), num(row.get("cpi"))
-        if ret is None:
-            continue
-        item = rows.setdefault(month, {k:"" for k in HEADERS})
-        item["date"] = month
-        item["sp500_total_return_pct"] = f"{ret*100:.8f}"
-        if cpi is not None:
-            item["sp500_cpi_index"] = f"{cpi:.6f}"
-        count += 1
-    return count
+        item["csi300_price_return_pct"]=f'{(cur["price"]/prev["price"]-1)*100:.8f}'
+        item["csi300_total_return_pct"]=f'{(cur["total_return"]/prev["total_return"]-1)*100:.8f}'
+    return {"monthly_observations":len(monthly),"latest_observation":last["date"],
+            "last_source_month":last_month,"price_return_months":sum(bool(x.get("csi300_price_return_pct")) for x in rows.values()),
+            "total_return_months":sum(bool(x.get("csi300_total_return_pct")) for x in rows.values())}
+
+def load_sp500_total_return(rows):
+    """Load ^SP500TR adjusted monthly total-return index and derive monthly USD returns."""
+    payload=json.loads(fetch(URLS["sp500tr"]))
+    months=payload.get("months",[]);levels=payload.get("close",[])
+    source={m:num(v) for m,v in zip(months,levels) if num(v) is not None and num(v)>0}
+    if not source:raise RuntimeError("S&P 500 total-return source is empty")
+    for month,item in rows.items():
+        level=source.get(month);prior=source.get(prev_month(month))
+        if level is not None:item["sp500_total_return_index_usd"]=f"{level:.8f}"
+        if level is not None and prior is not None and prior>0:
+            item["sp500_total_return_pct"]=f"{(level/prior-1)*100:.8f}"
+    return {"monthly_index_observations":len(source),"coverage_start":min(source),"coverage_end":max(source)}
+
+def load_gold_monthly(rows):
+    """Load World Bank Pink Sheet monthly average gold price in USD/troy oz."""
+    source={}
+    for r in csv.DictReader(io.StringIO(fetch(URLS["gold"]))):
+        month=(r.get("Date") or "")[:7];price=num(r.get("Price"))
+        if len(month)==7 and price is not None and price>0:source[month]=price
+    if not source:raise RuntimeError("World Bank gold monthly source is empty")
+    for month,item in rows.items():
+        v=source.get(month)
+        if v is not None:item["gold_usd_oz"]=f"{v:.8f}"
+    return {"monthly_observations":len(source),"coverage_start":min(source),"coverage_end":max(source)}
+
+def load_shiller_validation(rows):
+    """Keep Shiller/Firenum total returns as an independent validation column."""
+    count=0
+    for r in csv.DictReader(io.StringIO(fetch(URLS["shiller"]))):
+        try:month=f'{int(r["year"]):04d}-{int(r["month"]):02d}'
+        except (KeyError,ValueError):continue
+        ret,cpi=num(r.get("nominalReturn")),num(r.get("cpi"))
+        if month not in rows:continue
+        if ret is not None:rows[month]["sp500_shiller_total_return_pct"]=f"{ret*100:.8f}"
+        if cpi is not None:rows[month]["sp500_shiller_cpi_index"]=f"{cpi:.8f}"
+        if ret is not None:count+=1
+    return {"observations":count,"role":"independent_cross_check_not_primary_series"}
 
 def load_fred(rows):
-    results = {}
-    for sid, field in FRED_MAP.items():
-        url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={quote(sid)}"
-        text = fetch(url)
-        parsed = {}
-        for row in csv.DictReader(io.StringIO(text)):
-            dt = row.get("observation_date") or row.get("DATE") or row.get("date")
-            if not dt or len(dt) < 7:
-                continue
-            # FRED returns one observation per day for daily series, and one per month otherwise.
-            value = num(row.get(sid))
-            if value is None:
-                continue
-            parsed[dt[:7]] = value
-        for month, value in parsed.items():
-            item = rows.setdefault(month, {k:"" for k in HEADERS})
-            item["date"] = month
-            item[field] = f"{value:.8f}"
-        results[sid] = len(parsed)
-        time.sleep(0.15)
+    results={}
+    for sid,field in FRED_MAP.items():
+        url=f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}"
+        parsed={}
+        for r in csv.DictReader(io.StringIO(fetch(url))):
+            dt=r.get("observation_date") or r.get("DATE") or r.get("date") or ""
+            value=num(r.get(sid))
+            if len(dt)<7 or value is None:continue
+            # Rows are chronologically ordered; overwrite each month with its final
+            # observation. EXCHUS/FEDFUNDS/CPIAUCSL are monthly source observations.
+            parsed[dt[:7]]=value
+        for month,value in parsed.items():
+            if month in rows:rows[month][field]=f"{value:.8f}"
+        results[sid]={"months":len(parsed),"start":min(parsed) if parsed else None,
+                      "end":max(parsed) if parsed else None}
+        time.sleep(.1)
     return results
 
-def load_csi300(rows):
-    daily = {}
-    for year in range(2005, TODAY.year + 1):
-        start = f"{year}-01-01"
-        if year == 2005:
-            start = "2005-04-01"
-        end = f"{year}-12-31" if year < TODAY.year else TODAY.isoformat()
-        param = f"sh000300,day,{start},{end},640,qfq"
-        url = "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=" + quote(param, safe=",")
-        payload = json.loads(fetch(url))
-        node = payload.get("data", {}).get("sh000300", {})
-        candles = node.get("qfqday") or node.get("day") or []
-        for item in candles:
-            if len(item) < 3:
-                continue
-            dt = str(item[0])
-            close = num(item[2])
-            if len(dt) == 10 and close is not None and close > 0:
-                daily[dt] = close
-        time.sleep(0.25)
-    month_end = {}
-    for dt, close in sorted(daily.items()):
-        month_end[dt[:7]] = (dt, close)
-    prev_close = None
-    count = 0
-    for month, (last_date, close) in sorted(month_end.items()):
-        item = rows.setdefault(month, {k:"" for k in HEADERS})
-        item["date"] = month
-        item["csi300_price_index_cny"] = f"{close:.3f}"
-        status = "complete"
-        ret = ""
-        # The current calendar month is partial until its final calendar day.
-        is_current_month = month == TODAY.strftime("%Y-%m")
-        if prev_close is None:
-            status = "partial_index_start"
-        elif is_current_month:
-            status = "partial_current_month"
+def derive_rmb_returns(rows):
+    for month,item in rows.items():
+        prior=rows.get(prev_month(month),{})
+        fx=num(item.get("usd_cny"));pfx=num(prior.get("usd_cny"))
+        sp=num(item.get("sp500_total_return_pct"))
+        gold=num(item.get("gold_usd_oz"));pgold=num(prior.get("gold_usd_oz"))
+        if fx is not None and pfx is not None and pfx>0:
+            item["usd_cny_change_pct"]=f"{(fx/pfx-1)*100:.8f}"
+        if sp is not None and fx is not None and pfx is not None and pfx>0:
+            item["sp500_total_return_cny_pct"]=f"{((1+sp/100)*(fx/pfx)-1)*100:.8f}"
         else:
-            ret = f"{(close/prev_close-1)*100:.8f}"
-        item["csi300_price_return_pct"] = ret
-        item["csi300_period_status"] = status
-        # For the next month's return, use this month's latest close.
-        prev_close = close
-        count += 1
-    return {"daily_observations":len(daily),"monthly_rows":count,
-            "latest_observation":max(daily) if daily else None}
+            item["sp500_total_return_cny_pct"]=""
+        if gold is not None and pgold is not None and pgold>0 and fx is not None and pfx is not None and pfx>0:
+            curr=gold*fx;prev=pgold*pfx
+            item["gold_cny_per_oz_monthly_avg"]=f"{curr:.8f}"
+            item["gold_cny_return_pct"]=f"{(curr/prev-1)*100:.8f}"
+        else:
+            item["gold_cny_per_oz_monthly_avg"]=f"{gold*fx:.8f}" if gold is not None and fx is not None else ""
+            item["gold_cny_return_pct"]=""
+        # Portfolio return is never manufactured from component proxies.
+        item.setdefault("portfolio_return_cny_pct","")
+
+def build_manifest(rows,source_stats,errors):
+    manifest={}
+    if MANIFEST.exists():
+        try:manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:manifest={}
+    coverage={}
+    for field in HEADERS[1:]:
+        valid=[m for m in sorted(rows) if num(rows[m].get(field)) is not None]
+        coverage[field]={"count":len(valid),"start":valid[0] if valid else None,
+                         "end":valid[-1] if valid else None}
+    manifest.update({
+        "dataset_version":"2.2.0",
+        "generated_at":datetime.utcnow().replace(microsecond=0).isoformat()+"Z",
+        "dataset_file":"data/investment-monthly.csv","frequency":"monthly",
+        "row_count":len(rows),"date_start":min(rows),"date_end":max(rows),
+        "coverage":coverage,
+        "refresh_sources":source_stats,"refresh_errors":errors,
+        "portfolio_return_ready":False,
+        "matrix_policy":[
+            "No forward-fill and no missing-as-zero.",
+            "Price returns and total returns remain separate.",
+            "USD/CNY uses the Federal Reserve G.5 monthly average EXCHUS series.",
+            "USD asset CNY return=(1+rUSD)*(FX_t/FX_t-1)-1.",
+            "Gold CNY monthly-average valuation=Gold USD monthly average*USD/CNY monthly average; it is an approximation.",
+            "Do not calculate a full 52/28/10/10 portfolio return while HSI TRI, ChinaBond wealth, cash total return or sub-asset target weights are missing."
+        ]
+    })
+    manifest["series"]=[{"field":f,**coverage[f]} for f in HEADERS[1:]]
+    # Keep the manually curated source list, gap explanations and rights notes from
+    # the committed manifest. Refresh only the numeric coverage fields above.
+    return manifest
 
 def main():
-    rows = read_existing()
-    errors = {}
-    stats = {}
-    for name, fn in (("shiller_firenum",load_shiller),("fred",load_fred),("csi300_tencent",load_csi300)):
-        try:
-            stats[name] = fn(rows)
+    rows=ensure_rows(read_existing())
+    source_stats,errors={},{}
+    loaders=[
+        ("csi300_h00300",lambda:load_csi_index_levels(rows)),
+        ("sp500_total_return",lambda:load_sp500_total_return(rows)),
+        ("world_bank_gold",lambda:load_gold_monthly(rows)),
+        ("fred_macro_and_fx",lambda:load_fred(rows)),
+        ("shiller_cross_check",lambda:load_shiller_validation(rows))
+    ]
+    for name,fn in loaders:
+        try:source_stats[name]=fn()
         except Exception as exc:
-            errors[name] = f"{type(exc).__name__}: {exc}"
-            print(f"[WARN] {name} refresh failed; existing observations retained: {errors[name]}")
-    if not rows:
-        raise RuntimeError("No monthly rows are available; refusing to write an empty dataset.")
-    months = sorted(rows)
-    DATA.parent.mkdir(parents=True, exist_ok=True)
-    with DATA.open("w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=HEADERS, extrasaction="ignore")
+            errors[name]=f"{type(exc).__name__}: {exc}"
+            print(f"[WARN] {name} refresh failed; retained existing observations: {errors[name]}")
+    derive_rmb_returns(rows)
+    if not rows:raise RuntimeError("No monthly rows; refusing to write empty dataset.")
+    months=sorted(rows)
+    with DATA.open("w",encoding="utf-8",newline="") as fh:
+        writer=csv.DictWriter(fh,fieldnames=HEADERS,extrasaction="ignore")
         writer.writeheader()
-        for month in months:
-            writer.writerow({k:rows[month].get(k,"") for k in HEADERS})
-    coverage = {}
-    for field in HEADERS[1:]:
-        valid = [m for m in months if num(rows[m].get(field)) is not None]
-        coverage[field] = {
-            "count":len(valid),
-            "start":valid[0] if valid else None,
-            "end":valid[-1] if valid else None
-        }
-    manifest = {}
-    if MANIFEST.exists():
-        try:
-            manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            manifest = {}
-    manifest.update({
-        "dataset_version":"2.1.0",
-        "generated_at":datetime.utcnow().replace(microsecond=0).isoformat()+"Z",
-        "dataset_file":"data/investment-monthly.csv",
-        "frequency":"monthly",
-        "row_count":len(months),
-        "date_start":months[0],
-        "date_end":months[-1],
-        "coverage":coverage,
-        "refresh_sources":stats,
-        "refresh_errors":errors,
-        "policy":["No forward-fill","No missing-as-zero","Price return and total return remain separate",
-                  "USD asset CNY return must be calculated with matched monthly FX observations"]
-    })
+        for m in months:writer.writerow({k:rows[m].get(k,"") for k in HEADERS})
+    manifest=build_manifest(rows,source_stats,errors)
     MANIFEST.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print(json.dumps({"rows":len(months),"coverage":coverage,"sources":stats,"errors":errors},ensure_ascii=False,indent=2))
-    if not any(stats.values()):
-        raise RuntimeError("All external refresh sources failed; no new observations were retrieved.")
+    counts={f:manifest["coverage"][f]["count"] for f in [
+        "csi300_price_return_pct","csi300_total_return_pct","sp500_total_return_pct",
+        "sp500_total_return_cny_pct","gold_cny_return_pct","usd_cny",
+        "hang_seng_total_return_pct","china_bond_wealth_return_cny_pct","cny_cash_return_pct",
+        "portfolio_return_cny_pct"
+    ]}
+    print(json.dumps({"rows":len(rows),"coverage":counts,"sources":source_stats,"errors":errors},ensure_ascii=False,indent=2))
+    if not source_stats:raise RuntimeError("All external refresh sources failed; no source observations retrieved.")
 
-if __name__ == "__main__":
+if __name__=="__main__":
     main()
