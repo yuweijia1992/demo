@@ -1,5 +1,5 @@
 {
-  "generatedAtUtc": "2026-11-08T08:35:14.551010+00:00",
+  "generatedAtUtc": "2026-11-08T08:35:52.435526+00:00",
   "masterCompanies": 49,
   "financialRecordsMatched": 49,
   "historyRecordsMatched": 49,
@@ -38,7 +38,7 @@
     }
   },
   "verification": {
-    "issuerReportCrossChecksPending": 49,
+    "issuerReportCrossChecksPending": 48,
     "currentFullyDilutedSharesVerified": 0,
     "dividendPerShareHistoryVerified": 0,
     "companySpecificScenarioVerified": 0,
@@ -53,5 +53,6 @@
     "Implied weighted-average diluted shares are not current fully diluted shares; per-share fair value remains blocked."
   ],
   "issuerEvidenceRecords": 1,
-  "issuerEvidenceCrossChecks": 0
+  "issuerEvidenceCrossChecks": 0,
+  "issuerReportCrossChecksPartial": 1
 }
