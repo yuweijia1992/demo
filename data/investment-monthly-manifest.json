@@ -60,14 +60,14 @@
       "end": null
     },
     "us_agg_etf_total_return_cny_pct": {
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     "fxi_china_largecap_etf_total_return_cny_pct": {
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     }
   },
   "series": [
@@ -295,51 +295,51 @@
     },
     {
       "field": "us_agg_etf_total_return_usd_pct",
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     {
       "field": "us_agg_etf_total_return_cny_pct",
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     {
       "field": "us_ief_7_10y_etf_total_return_usd_pct",
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     {
       "field": "us_ief_7_10y_etf_total_return_cny_pct",
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     {
       "field": "us_shy_1_3y_etf_total_return_usd_pct",
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     {
       "field": "us_shy_1_3y_etf_total_return_cny_pct",
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     {
       "field": "fxi_china_largecap_etf_total_return_usd_pct",
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     {
       "field": "fxi_china_largecap_etf_total_return_cny_pct",
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     }
   ],
   "notes": [
@@ -625,44 +625,44 @@
       "end": null
     },
     "us_agg_etf_total_return_usd_pct": {
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     "us_agg_etf_total_return_cny_pct": {
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     "us_ief_7_10y_etf_total_return_usd_pct": {
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     "us_ief_7_10y_etf_total_return_cny_pct": {
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     "us_shy_1_3y_etf_total_return_usd_pct": {
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     "us_shy_1_3y_etf_total_return_cny_pct": {
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     "fxi_china_largecap_etf_total_return_usd_pct": {
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     },
     "fxi_china_largecap_etf_total_return_cny_pct": {
-      "count": 250,
+      "count": 247,
       "start": "2006-01",
-      "end": "2026-10"
+      "end": "2026-07"
     }
   },
   "gaps": [
