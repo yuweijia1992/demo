@@ -66,6 +66,21 @@ def row_date(row):
   try:return datetime.strptime(s[:8],"%Y%m%d").date().isoformat(),f
   except ValueError:pass
  return None,f
+HK_ITEM_AUDIT = []
+def expand_rows(rows, company, statement, mode):
+ if not rows or "STD_ITEM_NAME" not in rows[0]: return rows
+ names={}
+ grouped={}
+ for raw in rows:
+  date=raw.get("REPORT_DATE") or raw.get("STD_REPORT_DATE")
+  name=clean(raw.get("STD_ITEM_NAME"))
+  if name: names[name]=raw.get("STD_ITEM_CODE")
+  if not date or not name: continue
+  key=str(date)[:10]
+  row=grouped.setdefault(key,{"REPORT_DATE":date,"STD_REPORT_DATE":raw.get("STD_REPORT_DATE"),"FISCAL_YEAR":raw.get("FISCAL_YEAR"),"DATE_TYPE_CODE":raw.get("DATE_TYPE_CODE")})
+  row[name]=raw.get("AMOUNT")
+ HK_ITEM_AUDIT.append({"company":company,"statement":statement,"periodMode":mode,"itemNames":[{"name":k,"itemCode":v} for k,v in sorted(names.items())]})
+ return list(grouped.values())
 def mapped(row, section, record):
  fields={}
  for key,aliases in MAP[section].items():
@@ -92,7 +107,7 @@ def main():
   if not stock:continue
   section={"利润表":"income","资产负债表":"balance","现金流量表":"cashflow"}.get(rec.get("statement"))
   if not section:continue
-  for raw in rec.get("rows") or []:
+  for raw in expand_rows(rec.get("rows") or [], rec.get("company"), rec.get("statement"), rec.get("period_mode")):
    item=mapped(raw,section,rec)
    if item["reportDate"]:grouped[stock["code"]][section].append(item)
  companies=[]; audit_rows=[]
@@ -135,5 +150,6 @@ def main():
  (OUT_DIR/"company-financials-2021-2025.json").write_text(json.dumps(output,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
  audit={"generatedAtUtc":output["generatedAtUtc"],"sourceArchive":output["sourceArchive"],"sourceArchiveSha256":archive_sha,"sourceRunId":payload.get("run_id"),"masterCompanies":len(stocks),"normalizedCompanies":len(companies),"annualCoverageByMetric":{"income":sum(x["coverage"]["annualIncomeYears"]==5 for x in companies),"balance":sum(x["coverage"]["annualBalanceYears"]==5 for x in companies),"cashflow":sum(x["coverage"]["annualCashflowYears"]==5 for x in companies)},"ttmDerived":sum(x["ttm"]["status"]=="derived" for x in companies),"ttmPartial":sum(x["ttm"]["status"]=="partial" for x in companies),"ttmPending":sum(x["ttm"]["status"]=="pending" for x in companies),"unitCaution":"No conversion performed; source units require validation before cross-company or per-share use.","companies":audit_rows}
  (OUT_DIR/"standardization-audit.json").write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding="utf-8")
+ (OUT_DIR/"hk-item-map-audit.json").write_text(json.dumps(HK_ITEM_AUDIT,ensure_ascii=False,indent=2),encoding="utf-8")
  print(json.dumps({k:v for k,v in audit.items() if k!="companies"},ensure_ascii=False,indent=2))
 if __name__=="__main__":main()
