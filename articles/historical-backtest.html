@@ -3,16 +3,17 @@
 </style></head><body><header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html">余暮<span> / Y.M.</span></a><nav><a href="investment-dashboard.html">仪表盘</a><a href="global-macro-model.html">宏观</a><a href="historical-backtest.html">回测</a><a href="risk-monitor.html">风险</a></nav><button id="themeToggle" class="theme-btn">◐</button></div></header>
 <main class="container wrap"><section class="hero2"><p class="eyebrow">INVESTMENT SYSTEM · 05 / HISTORICAL ENGINE V1.1 · STRATEGIC BASELINE 52/28/10/10</p><h1>历史回测：年度代理对照 + V2.1真实月度数据</h1><p class="lead">把历史收益、组合风险、滚动相关性、宏观状态代理、Campbell跨期对冲代理和历史相似环境统一接入。核心年度序列覆盖2006—2025完整年度，2026使用截至最新可得日期的YTD；缺失数据明确留空，不用估算值伪造连续历史。</p></section>
 <section class="section"><div class="panel">
-<h2>V2.1 · 真实月度数据层</h2>
-<p class="muted">以下结果直接读取共享月度CSV；每个序列单独统计覆盖。当前已落库沪深300月度价格指数，尚未含分红。其他资产只有完成真实数据导入后才会出现有效覆盖。</p>
+<h2>V2.2 · 人民币月度收益矩阵</h2>
+<p class="muted">所有数据使用YYYY-MM统一月份键，按资产分别显示覆盖范围。美元资产使用相邻月份USD/CNY月均值换算；价格回报、全收益回报和现金收益严格分列。完整52/28/10/10组合收益暂不计算，因为恒生全收益、中债财富、现金收益仍缺失，且股票/债券内部权重待明确。</p>
 <div class="grid" id="monthlyMetrics">
-<div class="metric"><span class="muted">月度数据库月份</span><div class="v" id="monthlyCount">读取中</div></div>
-<div class="metric"><span class="muted">沪深300月回报样本</span><div class="v" id="csiObs">—</div></div>
-<div class="metric"><span class="muted">沪深300月度价格CAGR</span><div class="v" id="csiCagr">—</div></div>
-<div class="metric"><span class="muted">沪深300最大月度回撤</span><div class="v" id="csiMdd">—</div></div>
+<div class="metric"><span class="muted">统一月份</span><div class="v" id="monthlyCount">读取中</div></div>
+<div class="metric"><span class="muted">沪深300全收益样本</span><div class="v" id="csiObs">—</div></div>
+<div class="metric"><span class="muted">S&P人民币总回报样本</span><div class="v" id="spObs">—</div></div>
+<div class="metric"><span class="muted">黄金人民币回报样本</span><div class="v" id="goldObs">—</div></div>
 </div>
-<div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>真实月度序列</th><th>字段</th><th>有效月份</th><th>覆盖区间</th><th>口径</th></tr></thead><tbody id="monthlyCoverageRows"></tbody></table></div>
-<p class="muted">注意：本页下方的六资产年度回测仍是旧年度代理对照，不能当作完整人民币月度组合回测。导入更多序列请前往 <a href="global-macro-model.html">宏观模型 / 共享数据中心</a>。</p>
+<div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>真实月度序列</th><th>有效月份</th><th>覆盖区间</th><th>收益/估值口径</th><th>年化/观察指标</th></tr></thead><tbody id="monthlyCoverageRows"></tbody></table></div>
+<div class="notice" style="margin-top:14px" id="matrixStatus">正在读取覆盖审计…</div>
+<p class="muted">当前不是完整战略组合回测。年度六资产代理仍保留在下方作为旧结果对照，禁止与这份月度矩阵混用。可下载 <a href="../data/investment-monthly.csv" download>月度矩阵CSV</a> 和 <a href="../data/investment-monthly-manifest.json" download>来源及覆盖审计JSON</a>。</p>
 </div></section><section class="panel"><div class="grid"><div class="metric"><span class="muted">完整年度窗口</span><div class="v">2006—2025</div></div><div class="metric"><span class="muted">2026状态</span><div class="v">YTD</div></div><div class="metric"><span class="muted">资产序列</span><div class="v">6</div></div><div class="metric"><span class="muted">组合本金</span><div class="v">¥400万</div></div></div></section>
 <section class="section"><div class="panel"><h2>六资产数据层</h2><div class="table-wrap"><table><thead><tr><th>资产</th><th>2006—2025 CAGR</th><th>年化波动</th><th>最大回撤</th><th>最差年份</th><th>2026 YTD</th></tr></thead><tbody id="assetStats"></tbody></table></div><p class="muted">注意：S&P 500为总回报；沪深300为价格回报；TLT为总回报；黄金为价格回报；美国1个月国债为收益率代理而非严格总回报；中国长期国债为总回报。口径差异已在数据层标注。</p></div></section>
 <section class="section"><div class="panel"><h2>400万元组合回测</h2><p class="muted">战略基准统一为股票52% / 债券28% / 黄金10% / 现金10%。为映射现有六条年度序列，本页暂以S&P 500与沪深300各26%、TLT与中国长期国债各14%构造研究代理；不含其他市场股票。原始序列存在美元/人民币、总回报/价格回报/收益率代理差异，且缺失年份会按可用资产重新归一。该结果仅用于检查旧数据与策略逻辑，不是完整全球组合的人民币正式回测。</p><div class="controls" id="weights"></div><div class="grid" id="portfolioMetrics"></div></div></section>
@@ -21,9 +22,9 @@
 <section class="section"><div class="panel"><h2>Campbell跨期对冲因子</h2><div class="grid"><div class="metric"><span class="muted">状态变量</span><div class="v">估值 + 利率 + 波动</div></div><div class="metric"><span class="muted">计算方式</span><div class="v">Δz<sub>t</sub></div></div><div class="metric"><span class="muted">用途</span><div class="v">跨期风险</div></div><div class="metric"><span class="muted">当前代理</span><div class="v" id="campbellNow">计算中</div></div></div><p class="muted">这里实现的是Campbell ICAPM思想的可解释代理，而非完整学术VAR估计：先把可观察的估值、利率和波动状态标准化为机会集状态z，再用状态变化Δz衡量“未来投资机会改变”的方向，并把该因子用于风险检查。下一版若接入完整月度数据，可进一步估计预测回归与长期风险价格。</p></div></section>
 <section class="section"><div class="panel"><h2>历史相似环境搜索</h2><p class="muted">以当前仪表盘状态为参照，使用近年资产收益向量寻找最相似历史年份。相似度只表示“统计形状相近”，不表示未来一定重复。</p><div id="analogs"></div></div></section>
 <section class="section"><div class="panel"><h2>压力阶段</h2><div id="stress"></div></div></section>
-<section class="section"><div class="panel"><h2>V2.0 月度数据接入器</h2><p class="muted">正式月度/日度数据库不再用手工填数。这里提供标准CSV入口：浏览器本地读取，不上传服务器。建议字段：date,sp500,csi300,us10y,real10y,dxy,vix,gold,brent,usdcny,china10y,fedfunds。价格/指数请先转换成月度总回报或月末水平；状态变量保留月末值。</p><input id="csvInput" type="file" accept=".csv,text/csv"><div id="csvStatus" class="muted" style="margin-top:12px">尚未导入CSV。</div><div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>窗口</th><th>S&P×CSI</th><th>S&P×Gold</th><th>S&P×TLT</th><th>CSI×Gold</th></tr></thead><tbody id="rolling10"></tbody></table></div></div></section>
+<section class="section"><div class="panel"><h2>V2.2 月度数据接入与质量控制</h2><p class="muted">正式月度/日度数据库不再用手工填数。这里提供标准CSV入口：浏览器本地读取，不上传服务器。建议字段：date,sp500,csi300,us10y,real10y,dxy,vix,gold,brent,usdcny,china10y,fedfunds。价格/指数请先转换成月度总回报或月末水平；状态变量保留月末值。</p><input id="csvInput" type="file" accept=".csv,text/csv"><div id="csvStatus" class="muted" style="margin-top:12px">尚未导入CSV。</div><div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>窗口</th><th>S&P×CSI</th><th>S&P×Gold</th><th>S&P×TLT</th><th>CSI×Gold</th></tr></thead><tbody id="rolling10"></tbody></table></div></div></section>
 <section class="section"><div class="panel"><h2>Campbell ICAPM正式估计框架</h2><p class="muted">V2.0采用可检验的预测回归：<br><b>r<sub>t+1</sub> − r<sub>f,t+1</sub> = α + β′z<sub>t</sub> + ε<sub>t+1</sub></b>；其中 z 为估值、利率、美元、波动、通胀/能源等机会集变量。跨期对冲需求再由状态变量变化 Δz 进入资产暴露分析。页面只在导入真实月度数据后计算 β、t 值、R² 和样本外预测，避免把年度代理冒充正式ICAPM结果。</p><div id="regressionStatus" class="grid"></div></div></section><section class="section"><div class="panel"><h2>数据完整性与来源</h2><p><span class="tag">2006—2025年度：已接入</span><span class="tag">2026 YTD：已接入</span><span class="tag">2023—2026部分月度：已接入</span><span class="tag">完整2006—2026日度：下一数据层</span></p><p class="muted">这一区分很重要：当前页面已经能真实计算长期年度回测，但还没有把所有资产2006—2026的逐日原始行情塞进静态站点，因此不会把“年度回测”包装成“完整日度回测”。</p><div id="sources"></div></div></section></main>
-<footer class="footer container"><span>© 2026 余暮 · Investment Lab</span><span><a href="investment-lab.html">← 返回实验室</a></span></footer>
+<footer class="footer container"><span>© 2026 余暮 · Investment Lab V2.2</span><span><a href="investment-lab.html">← 返回实验室</a></span></footer>
 <script src="../script.js"></script><script src="../assets/investment-config.js"></script><script src="../assets/investment-historical-data.js"></script><script>
 const D=YM_HISTORICAL, A=D.assets, Y=D.years;
 const pct=x=>x==null?"—":(x*100).toFixed(1)+"%";
@@ -50,25 +51,37 @@ document.getElementById("csvInput").addEventListener("change",async e=>{const f=
 </script><script src="../assets/investment-data-core.js"></script><script>
 (async function(){
  const C=window.YM_DATA_CORE,d=await C.load(),rows=d.rows;
- const pct=x=>x==null?"—":(x*100).toFixed(2)+"%";
- const m=C.stats(C.monthlyReturns(rows,"csi300_price_return_pct"));
- document.getElementById("monthlyCount").textContent=rows.length;
- const count=C.coverage(rows,"csi300_price_return_pct");
- document.getElementById("csiObs").textContent=count.count;
- document.getElementById("csiCagr").textContent=m.ready&&count.count>12?pct(m.cagr):"—";
- document.getElementById("csiMdd").textContent=m.ready&&count.count>12?pct(m.maxdd):"—";
+ const moneyPct=x=>x==null?"—":(x*100).toFixed(2)+"%";
+ const stats=f=>C.stats(C.monthlyReturns(rows,f));
  const defs=[
- ["沪深300价格回报","csi300_price_return_pct","价格回报，不含分红"],
- ["S&P 500总回报","sp500_total_return_pct","含股息再投资 / 美元"],
- ["恒生指数全收益","hang_seng_total_return_pct","全收益 / 港币"],
- ["中债总财富指数","china_bond_total_return_index_cny","总收益指数 / 人民币"],
- ["美国国债总回报","us_treasury_total_return_index_usd","总收益指数 / 美元"],
- ["黄金","gold_usd_oz","月均价 / 美元"],
- ["美元兑人民币","usd_cny","月末汇率"],
- ["人民币组合回报","portfolio_return_cny_pct","真实账户组合 / 人民币"]
+ ["沪深300价格回报","csi300_price_return_pct","价格指数回报 / CNY"],
+ ["沪深300全收益","csi300_total_return_pct","H00300全收益指数 / CNY"],
+ ["S&P 500总回报","sp500_total_return_pct","含股息再投资 / USD"],
+ ["S&P 500人民币总回报","sp500_total_return_cny_pct","美元总回报 + USD/CNY月均变化"],
+ ["黄金美元价格","gold_usd_oz","世界银行美元月均价 / 盎司"],
+ ["黄金人民币价格回报","gold_cny_return_pct","金价月均 × USD/CNY月均"],
+ ["USD/CNY月均汇率变化","usd_cny_change_pct","汇率变化，不作为资产收益"],
+ ["恒生指数全收益","hang_seng_total_return_pct","官方TR / HKD，待接入"],
+ ["中债财富指数","china_bond_wealth_return_cny_pct","财富指数 / CNY，待接入"],
+ ["美国国债总回报","us_treasury_7_10y_total_return_pct","7-10年总回报 / USD，待接入"],
+ ["人民币现金回报","cny_cash_return_pct","现金总回报 / CNY，待接入"],
+ ["完整人民币组合收益","portfolio_return_cny_pct","真实组合月收益 / CNY，待接入"]
  ];
- document.getElementById("monthlyCoverageRows").innerHTML=defs.map(([n,f,m])=>{
-  const c=C.coverage(rows,f);return '<tr><td>'+n+'</td><td><code>'+f+'</code></td><td>'+c.count+'</td><td>'+(c.first?c.first+" — "+c.last:"待接入")+'</td><td>'+m+'</td></tr>';
- }).join("");
+ const series=defs.map(([name,field,method])=>{
+  const c=C.coverage(rows,field),m=stats(field);
+  return {name,field,method,c,m};
+ });
+ document.getElementById("monthlyCount").textContent=rows.length;
+ const csi=C.coverage(rows,"csi300_total_return_pct");
+ const sp=C.coverage(rows,"sp500_total_return_cny_pct");
+ const gold=C.coverage(rows,"gold_cny_return_pct");
+ document.getElementById("csiObs").textContent=csi.count;
+ document.getElementById("spObs").textContent=sp.count;
+ document.getElementById("goldObs").textContent=gold.count;
+ document.getElementById("monthlyCoverageRows").innerHTML=series.map(x=>
+  '<tr><td>'+x.name+'<br><code>'+x.field+'</code></td><td>'+x.c.count+'</td><td>'+(x.c.first?x.c.first+" — "+x.c.last:"待接入")+'</td><td>'+x.method+'</td><td>'+(x.m.ready?moneyPct(x.m.cagr)+" / MDD "+moneyPct(x.m.maxdd):"不可计算")+'</td></tr>'
+ ).join("");
+ document.getElementById("matrixStatus").textContent=
+  "数据边界：沪深300全收益截至2026-08完整月；2026-09来源只到9月9日，故不生成该月收益。S&P 500人民币总回报截至2026-07；黄金人民币月均价回报与USD/CNY月均汇率截至2026-10。";
 })();
 </script></body></html>
