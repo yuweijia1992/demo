@@ -19,7 +19,7 @@ MAP = {
  "income": {
   "revenue": ("营业总收入", "营业收入", "营业额", "营运收入", "经营收入总额", "经营收入"),
   "operatingProfit": ("营业利润", "经营利润", "经营溢利", "除税前溢利"),
-  "netProfitParent": ("归属于母公司所有者的净利润", "归属于母公司股东的净利润", "归母净利润", "股东应占溢利", "本公司拥有人应占溢利"),
+  "netProfitParent": ("归属于母公司所有者的净利润", "归属于母公司股东的净利润", "归属于母公司的净利润", "归母净利润", "股东应占溢利", "本公司拥有人应占溢利"),
   "netProfit": ("净利润", "净利润(含少数股东损益)", "除税后溢利", "持续经营业务税后利润"),
   "basicEps": ("基本每股收益", "基本每股收益(元/股)", "每股基本盈利"),
   "dilutedEps": ("稀释每股收益", "稀释每股收益(元/股)", "每股摊薄盈利"),
@@ -29,7 +29,7 @@ MAP = {
   "totalAssets": ("资产总计", "资产总额", "资产合计", "总资产"),
   "totalLiabilities": ("负债合计", "负债总计", "总负债"),
   "totalEquity": ("所有者权益合计", "股东权益合计", "所有者权益总计", "总权益"),
-  "parentEquity": ("归属于母公司所有者权益合计", "归属于母公司股东权益合计", "归属于母公司所有者权益", "归属于母公司股东权益", "股东权益"),
+  "parentEquity": ("归属于母公司所有者权益合计", "归属于母公司股东权益合计", "归属于母公司的股东权益合计", "归属于母公司所有者权益", "归属于母公司股东权益", "股东权益"),
   "cash": ("货币资金", "现金及现金等价物", "现金及等价物"),
   "shortBorrowings": ("短期借款", "短期贷款", "银行贷款及透支"), "longBorrowings": ("长期借款", "长期贷款", "长期银行贷款"),
   "bondsPayable": ("应付债券", "债券", "已发行债券"), "leaseLiabilities": ("租赁负债",),
@@ -97,7 +97,7 @@ def mapped(row, section, record):
  return {"reportDate":date,"fiscalYear":clean(row.get("FISCAL_YEAR")),"dateField":date_field,"announcementDate":clean(ann),"currency":clean(cur),"reportedUnit":clean(unit),"fields":fields,"provider":record.get("provider"),"sourceUrl":record.get("source_url"),"periodMode":record.get("period_mode"),"sourceStatus":record.get("status")}
 def value(item,key):
  return (item or {}).get("fields",{}).get(key,{}).get("value")
-def listing_dataset(listing_code, sections):
+def listing_dataset(listing_code, sections, financial=False):
  market="HK" if listing_code.endswith(".HK") else "CN"
  annual_by_year={}; interim_by_date={}
  for section in ("income","balance","cashflow"):
@@ -124,7 +124,9 @@ def listing_dataset(listing_code, sections):
   dates=sorted(d for d in interim_by_date if d.startswith("2026-"))
   if dates:
    latest=dates[-1];prior="2025"+latest[4:];current=interim_by_date.get(latest,{});previous=interim_by_date.get(prior,{});fy=annual_by_year.get(2025,{})
-   formulas={"revenue":("income","revenue"),"netProfitParent":("income","netProfitParent"),"operatingCashFlow":("cashflow","operatingCashFlow"),"capex":("cashflow","capex")}
+   formulas={"revenue":("income","revenue"),"netProfitParent":("income","netProfitParent")}
+   if not financial:
+    formulas.update({"operatingCashFlow":("cashflow","operatingCashFlow"),"capex":("cashflow","capex")})
    ok=True
    for out_key,(section,key) in formulas.items():
     fyv=value(fy.get(section),key);cyv=value(current.get(section),key);pyv=value(previous.get(section),key)
@@ -132,7 +134,7 @@ def listing_dataset(listing_code, sections):
     ttm["fields"][out_key]={"value":result,"formula":"FY2025 + 2026 YTD - 2025 same-period YTD","inputs":{"FY2025":fyv,"currentYTD":cyv,"priorYTD":pyv},
       "sourceDates":{"FY2025":fy.get(section,{}).get("reportDate"),"currentYTD":current.get(section,{}).get("reportDate"),"priorYTD":previous.get(section,{}).get("reportDate")},"status":"derived" if result is not None else "pending"}
     if result is None:ok=False
-   ttm.update({"status":"derived" if ok else "partial","method":"FY2025 + 2026 YTD - 2025 same-period YTD","asOf":latest,"warning":"Confirm matching accounting scope, currency and cumulative-period basis before using TTM."})
+   ttm.update({"status":"derived" if ok else "partial","method":"FY2025 + 2026 YTD - 2025 same-period YTD","asOf":latest,"warning":"Confirm matching accounting scope, currency and cumulative-period basis before using TTM." if not financial else "Financial institution: TTM revenue and net profit only; ordinary-company FCF/EV cash-flow treatment is not applied."})
  else:ttm["warning"]="HK fiscal-year alignment not standardized; TTM left pending."
  all_items=[x for sec in sections.values() for x in sec]
  currencies=sorted({x["currency"] for x in all_items if x.get("currency")})
@@ -168,7 +170,8 @@ def main():
  for stock in stocks:
   code=stock.get("code","");primary=code.split("/")[0].strip()
   listing_map=grouped.get(code,{})
-  listing_data={k:listing_dataset(k,v) for k,v in listing_map.items()}
+  is_financial=any(term in (str(stock.get("industry",""))+str(stock.get("businessType",""))+str(stock.get("method",""))) for term in ("银行","保险","证券","券商","金融"))
+  listing_data={k:listing_dataset(k,v,is_financial) for k,v in listing_map.items()}
   chosen=listing_data.get(primary)
   if chosen is None and listing_data:
    chosen=listing_data[sorted(listing_data)[0]];primary=chosen["listingCode"]
