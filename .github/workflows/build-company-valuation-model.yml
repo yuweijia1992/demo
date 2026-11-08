@@ -66,15 +66,7 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             python scripts/build_valuation_model.py
-            python - <<'PY'
-          import json
-          p=json.load(open("data/valuation-model/valuation-model-49.json",encoding="utf-8"))
-          a=json.load(open("data/valuation-model/valuation-model-audit.json",encoding="utf-8"))
-          v=json.load(open("data/valuation-model/valuation-verification-register-49.json",encoding="utf-8"))
-          assert p["companyCount"] == 49 and len(p["companies"]) == 49
-          assert a["masterCompanies"] == 49
-          assert v["companyCount"] == 49 and len(v["records"]) == 49
-          PY
+            python -c 'import json; p=json.load(open("data/valuation-model/valuation-model-49.json",encoding="utf-8")); a=json.load(open("data/valuation-model/valuation-model-audit.json",encoding="utf-8")); v=json.load(open("data/valuation-model/valuation-verification-register-49.json",encoding="utf-8")); assert p["companyCount"] == 49 and len(p["companies"]) == 49; assert a["masterCompanies"] == 49; assert v["companyCount"] == 49 and len(v["records"]) == 49'
             git add data/valuation-model/valuation-model-49.json data/valuation-model/valuation-model-audit.json data/valuation-model/valuation-verification-register-49.json
             git diff --cached --quiet && exit 0
             git commit -m "Build audited 49-company valuation model"
