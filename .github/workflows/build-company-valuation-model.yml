@@ -21,6 +21,26 @@ jobs:
           python-version: "3.12"
       - name: Build auditable model data
         run: python scripts/build_valuation_model.py
+      - name: Validate valuation dashboard JavaScript syntax
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          class Scripts(HTMLParser):
+              def __init__(self):
+                  super().__init__(); self.active=False; self.parts=[]; self.current=[]
+              def handle_starttag(self, tag, attrs):
+                  if tag.lower()=="script": self.active=True; self.current=[]
+              def handle_data(self, data):
+                  if self.active: self.current.append(data)
+              def handle_endtag(self, tag):
+                  if tag.lower()=="script" and self.active:
+                      self.parts.append("".join(self.current)); self.active=False
+          p=Scripts(); p.feed(Path("articles/valuation-engine.html").read_text(encoding="utf-8"))
+          Path("/tmp/valuation-engine-inline.js").write_text("\\n".join(p.parts),encoding="utf-8")
+          assert p.parts, "No inline script found"
+          PY
+          node --check /tmp/valuation-engine-inline.js
       - name: Validate output and company count
         run: |
           python - <<'PY'
