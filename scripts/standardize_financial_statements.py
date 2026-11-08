@@ -125,7 +125,12 @@ def main():
   annual=[]
   for year in YEARS:
    sections=annual_by_year.get(year,{})
-   annual.append({"year":year,"income":sections.get("income"),"balance":sections.get("balance"),"cashflow":sections.get("cashflow"),"completeness":{s:bool(sections.get(s)) for s in ("income","balance","cashflow")}})
+   valid={
+    "income": all(value(sections.get("income"),k) is not None for k in ("revenue","netProfitParent")),
+    "balance": all(value(sections.get("balance"),k) is not None for k in ("totalAssets","parentEquity")),
+    "cashflow": all(value(sections.get("cashflow"),k) is not None for k in ("operatingCashFlow","capex"))
+   }
+   annual.append({"year":year,"income":sections.get("income"),"balance":sections.get("balance"),"cashflow":sections.get("cashflow"),"completeness":valid,"sourceRowsPresent":{s:bool(sections.get(s)) for s in ("income","balance","cashflow")}})
   ttm={"status":"pending","method":None,"asOf":None,"fields":{}}
   if market=="CN":
    dates=sorted(d for d in interim_by_date if d.startswith("2026-"))
@@ -142,7 +147,7 @@ def main():
   else:ttm["warning"]="HK fiscal-year alignment not standardized; TTM left pending."
   all_items=[x for section in groups.values() for x in section]
   currencies=sorted({x["currency"] for x in all_items if x.get("currency")}); units=sorted({x["reportedUnit"] for x in all_items if x.get("reportedUnit")})
-  coverage={"annualYears":{str(x["year"]):x["completeness"] for x in annual},"annualIncomeYears":sum(bool(x["income"]) for x in annual),"annualBalanceYears":sum(bool(x["balance"]) for x in annual),"annualCashflowYears":sum(bool(x["cashflow"]) for x in annual),"sourceRowCount":sum(len(v) for v in groups.values())}
+  coverage={"annualYears":{str(x["year"]):x["completeness"] for x in annual},"annualIncomeYears":sum(x["completeness"]["income"] for x in annual),"annualBalanceYears":sum(x["completeness"]["balance"] for x in annual),"annualCashflowYears":sum(x["completeness"]["cashflow"] for x in annual),"sourceRowCount":sum(len(v) for v in groups.values())}
   companies.append({"name":stock.get("name"),"code":code,"industry":stock.get("industry"),"businessType":stock.get("businessType"),"modelType":stock.get("method"),"market":market,"masterCurrency":stock.get("currency"),"sourceCurrencies":currencies,"reportedUnits":units,"unitPolicy":"Raw source values retained; unit is not inferred or converted.","annual":annual,"interim":{d:secs for d,secs in sorted(interim_by_date.items())},"ttm":ttm,"coverage":coverage,"sourcePolicy":"Sina Finance via AKShare (A-share) or Eastmoney HK via AKShare; raw archive retained separately."})
   audit_rows.append({"name":stock.get("name"),"code":code,"annualIncomeYears":coverage["annualIncomeYears"],"annualBalanceYears":coverage["annualBalanceYears"],"annualCashflowYears":coverage["annualCashflowYears"],"ttmStatus":ttm["status"],"ttmAsOf":ttm["asOf"],"sourceCurrencies":currencies,"reportedUnits":units})
  OUT_DIR.mkdir(parents=True,exist_ok=True)
