@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static validation for the Investment Lab V2.2 RMB monthly matrix and GitHub Pages modules."""
+"""Static validation for the Investment Lab V2.3 RMB monthly matrix with ETF proxies and GitHub Pages modules."""
 from __future__ import annotations
 import ast, csv, json, re, subprocess, tempfile
 from pathlib import Path
@@ -53,6 +53,17 @@ require(bool(october.get("gold_cny_return_pct")) and bool(october.get("usd_cny")
 require(manifest.get("coverage",{}).get("csi300_total_return_pct",{}).get("count")==sum(bool(r.get("csi300_total_return_pct")) for r in rows),"manifest CSI 300 TR coverage differs from matrix")
 require(manifest.get("coverage",{}).get("sp500_total_return_cny_pct",{}).get("count")==sum(bool(r.get("sp500_total_return_cny_pct")) for r in rows),"manifest S&P RMB coverage differs from matrix")
 require(manifest.get("coverage",{}).get("gold_cny_return_pct",{}).get("count")==sum(bool(r.get("gold_cny_return_pct")) for r in rows),"manifest gold RMB coverage differs from matrix")
+etf_fields=[
+ "us_agg_etf_total_return_usd_pct","us_agg_etf_total_return_cny_pct",
+ "us_ief_7_10y_etf_total_return_usd_pct","us_ief_7_10y_etf_total_return_cny_pct",
+ "us_shy_1_3y_etf_total_return_usd_pct","us_shy_1_3y_etf_total_return_cny_pct",
+ "fxi_china_largecap_etf_total_return_usd_pct","fxi_china_largecap_etf_total_return_cny_pct"
+]
+for field in etf_fields:
+    actual=sum(bool(r.get(field)) for r in rows)
+    cov=manifest.get("coverage",{}).get(field,{})
+    require(actual==247,f"{field} must contain 247 months from 2006-01 to 2026-07")
+    require(cov.get("count")==actual and cov.get("start")=="2006-01" and cov.get("end")=="2026-07",f"manifest ETF coverage incorrect for {field}")
 require(not any(r.get("portfolio_return_cny_pct") for r in rows),"full portfolio return must remain blank until all strategic sleeves are sourced")
 
 # Script syntax.
@@ -83,5 +94,5 @@ print(json.dumps({
     "status":"PASS","strategic_weights":weights,"monthly_rows":len(rows),
     "monthly_start":dates[0],"monthly_end":dates[-1],
     "csi300_full_month_return_observations":sum(bool(r.get("csi300_price_return_pct")) for r in rows),
-    "validated_pages":pages,"checks":["configuration","CSV chronology","250-month RMB matrix","partial CSI cutoff","manifest coverage consistency","portfolio-return gate","Python syntax","shared JS syntax","inline JS syntax","module wiring"]
+    "validated_pages":pages,"checks":["configuration","CSV chronology","250-month RMB matrix","partial CSI cutoff","manifest coverage consistency","ETF proxy month counts and ranges","portfolio-return gate","Python syntax","shared JS syntax","inline JS syntax","module wiring"]
 },ensure_ascii=False,indent=2))
