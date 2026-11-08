@@ -1,6 +1,6 @@
 <!doctype html><html lang="zh-CN"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>全球宏观模型 V2.2｜余暮投资实验室</title><link rel="stylesheet" href="../styles.css">
+<title>全球宏观模型 V2.3｜余暮投资实验室</title><link rel="stylesheet" href="../styles.css">
 <style>
 .wrap{max-width:1120px;margin:auto}.hero{padding:60px 0 36px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
 .panel,.metric{border:1px solid var(--line);background:var(--surface);padding:22px;box-shadow:var(--shadow)}
@@ -16,7 +16,7 @@ a.inline{border-bottom:1px solid var(--text)}
 </style></head><body>
 <header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html">余暮<span> / Y.M.</span></a><nav><a href="investment-lab.html">实验室</a><a href="investment-dashboard.html">配置</a><a href="risk-monitor.html">风险</a><a href="financial-independence-simulator.html">50年模拟</a></nav><button id="themeToggle" class="theme-btn">◐</button></div></header>
 <main class="container wrap">
-<section class="hero"><p class="eyebrow">INVESTMENT SYSTEM · 03 / V2.2 RMB MONTHLY DATA</p><h1>全球宏观模型</h1><p class="lead">宏观结论从统一月度数据层读取。每个指标显示自己的观测月份；缺失或过期数据不会被自动补值，也不会被包装成实时行情。</p></section>
+<section class="hero"><p class="eyebrow">INVESTMENT SYSTEM · 03 / V2.3 RMB MONTHLY DATA + ETF PROXIES</p><h1>全球宏观模型</h1><p class="lead">宏观结论从统一月度数据层读取。每个指标显示自己的观测月份；缺失或过期数据不会被自动补值，也不会被包装成实时行情。</p></section>
 <section class="section"><div class="grid">
 <div class="metric"><small>月度数据库行数</small><strong id="rowCount">读取中</strong><p class="muted" id="coverageRange">—</p></div>
 <div class="metric"><small>宏观指标覆盖</small><strong id="macroCoverage">—</strong><p class="muted">按字段统计有效月份</p></div>
@@ -40,10 +40,10 @@ a.inline{border-bottom:1px solid var(--text)}
 <p><strong>S&P 500：</strong>当前主矩阵接入^SP500TR月度股息调整总回报指数（USD），并按相邻月份USD/CNY月均汇率变化换算人民币。源序列目前覆盖至2026年7月；Firenum/Shiller月度总回报（CC BY 4.0）作为独立交叉验证源，尚未合并进主序列。</p>
 <p><strong>沪深300：</strong>已并列接入价格指数与H00300全收益指数，月收益由月末最后一个可用交易日指数水平计算。来源序列只到2026年9月9日，因此2026年9月是部分月份，不计算9月收益；2026年10月暂缺。</p>
 <p><strong>美元资产人民币回报：</strong>(1+r_USD)×(FX_t/FX_t-1)-1。本矩阵当前使用美联储G.5的USD/CNY月均值，因此股票和黄金人民币收益属于月均汇率换算代理，不是严格月末交易估值；黄金人民币价格层使用美元月均价×月均汇率。</p>
-<p><strong>债券：</strong>中债财富指数与美国国债总回报目前仍为空。中债官方网站区分全价、净价与财富指数；本系统只接受财富/全收益口径，不用国债收益率冒充债券收益。</p>
+<p><strong>债券：</strong>当前新增AGG、IEF、SHY三个美国债券ETF自动复权总回报代理，覆盖2006-01至2026-07，含分红并按月均USD/CNY换算。它们反映具体ETF持仓、费用和跟踪误差，不等于官方美国国债或综合债券指数；中债财富指数仍未接入。不能把国债收益率当作债券总回报。</p><p><strong>中国股票：</strong>FXI是离岸中国大型股ETF总回报代理（2006-01至2026-07），不是恒生指数全收益，也不替代A股全收益指数。</p><p><strong>数据授权：</strong>HerdingAI数据仓库的代码为MIT，但ETF价格与复权数据来自Yahoo Finance；再分发仍需遵守Yahoo相关条款，本系统保留来源与SHA，研究使用前请核对适用许可。</p>
 <p><strong>缺失值：</strong>不前值填充、不将缺失收益记作0、不对不同覆盖期悄悄归一化。2006-01至2026-10共250个月份；S&P、沪深300和黄金各自保留独立覆盖区间。</p><p><a href="../data/investment-monthly.csv" download>下载人民币月度收益矩阵CSV</a>　<a href="../data/investment-monthly-manifest.json" download>下载来源与覆盖审计JSON</a></p>
 </div></section>
-</main><footer class="footer container"><span>© 2026 余暮 · Investment Lab V2.2</span><span><a href="investment-lab.html">← 返回实验室</a></span></footer>
+</main><footer class="footer container"><span>© 2026 余暮 · Investment Lab V2.3</span><span><a href="investment-lab.html">← 返回实验室</a></span></footer>
 <script src="../script.js"></script><script src="../assets/investment-data-core.js"></script>
 <script>
 (async function(){
@@ -57,12 +57,25 @@ const ind=[
 ["汇率","usd_cny","USD/CNY","人民币/美元"],["黄金","gold_usd_oz","国际黄金月均价","美元/盎司"]
 ];
 const audit=[
-["沪深300价格指数","csi300_price_index_cny","点位 / 价格回报"],["S&P 500月度总回报","sp500_total_return_pct","含股息再投资 / 美元"],
-["恒生指数全收益","hang_seng_total_return_pct","全收益 / 港币"],["中债总财富指数","china_bond_total_return_index_cny","总收益指数 / 人民币"],
-["美国国债总回报","us_treasury_total_return_index_usd","总收益指数 / 美元"],["黄金","gold_usd_oz","月均价格 / 美元"],
-["美元兑人民币","usd_cny","月末汇率"],["美国10年期收益率","dgs10_pct","月末值"],["美国实际利率","dfii10_pct","月末值"],
-["美元指数","dxy_index","月末值"],["VIX","vix_index","月末值"],["中国CPI同比","china_cpi_yoy_pct","同比变化"],
-["人民币组合月收益","portfolio_return_cny_pct","实际组合收益，人民币口径"]
+["沪深300价格回报","csi300_price_return_pct","价格指数 / CNY"],
+["沪深300全收益","csi300_total_return_pct","H00300全收益 / CNY"],
+["S&P 500美元总回报","sp500_total_return_pct","含分红再投资 / USD"],
+["S&P 500人民币总回报","sp500_total_return_cny_pct","USD TR + 月均FX换算 / CNY"],
+["美国综合债券ETF AGG","us_agg_etf_total_return_cny_pct","Yahoo自动复权总回报代理 / CNY"],
+["美国7–10年国债ETF IEF","us_ief_7_10y_etf_total_return_cny_pct","Yahoo自动复权总回报代理 / CNY"],
+["美国1–3年国债ETF SHY","us_shy_1_3y_etf_total_return_cny_pct","Yahoo自动复权总回报代理 / CNY"],
+["中国大型股ETF FXI","fxi_china_largecap_etf_total_return_cny_pct","离岸中国股票ETF代理 / CNY；不是恒生TRI"],
+["黄金人民币价格回报","gold_cny_return_pct","世界银行USD月均金价 × USD/CNY月均"],
+["美元兑人民币月均汇率","usd_cny","G.5 EXCHUS / CNY per USD"],
+["恒生指数全收益","hang_seng_total_return_pct","官方TR / HKD，未取得历史序列"],
+["中债总财富指数","china_bond_wealth_return_cny_pct","财富指数 / CNY，未取得历史序列"],
+["美国国债官方总回报指数","us_treasury_7_10y_total_return_pct","7–10年TR / USD，官方指数月序列未接入"],
+["人民币现金回报","cny_cash_return_pct","现金总回报 / CNY，未接入"],
+["美国10年期收益率","dgs10_pct","宏观状态变量 / %"],
+["美国实际利率","dfii10_pct","宏观状态变量 / %"],
+["VIX","vix_index","风险状态变量"],
+["中国CPI同比","china_cpi_yoy_pct","同比变化"],
+["完整人民币组合月收益","portfolio_return_cny_pct","完整战略组合 / CNY，未生成"]
 ];
 const fmt=v=>Number(v).toLocaleString("zh-CN",{maximumFractionDigits:3});
 function render(d){
