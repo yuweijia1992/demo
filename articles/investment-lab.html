@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="余暮投资实验室：400万元长期投资系统、资产配置、估值、风险、回测与投资决策框架。">
+<meta name="description" content="余暮投资实验室 V2.0：以52/28/10/10战略基准统一全球股票、债券、黄金、现金配置，并提供本地持仓监控与决策检查。">
 <meta property="og:title" content="余暮投资实验室｜长期投资系统">
 <meta property="og:description" content="把投资从观点，变成一套可以执行、复盘和持续迭代的系统。">
 <title>余暮投资实验室｜长期投资系统</title>
@@ -39,6 +39,16 @@
 .dark .principle p{color:var(--muted)}
 @media(max-width:900px){.lab-grid,.alloc{grid-template-columns:1fr 1fr}}
 @media(max-width:680px){.lab-grid,.alloc{grid-template-columns:1fr}.lab-hero{padding-top:58px}.decision-item{grid-template-columns:48px 1fr}.principle{padding:32px}.principle h2{font-size:32px}}
+
+.home-v2-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:13px}
+.home-v2-table th,.home-v2-table td{padding:12px 8px;border-bottom:1px solid var(--line);text-align:left}
+.home-v2-table th{color:var(--muted);font-weight:500;font-size:11px}
+.home-v2-table td:last-child,.home-v2-table th:last-child{text-align:right}
+.home-v2-status{display:inline-block;padding:4px 8px;border:1px solid var(--line);border-radius:999px;font-size:10px}
+.home-v2-action{display:grid;grid-template-columns:1fr auto;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}
+.home-v2-action:last-child{border-bottom:0}
+@media(max-width:650px){.home-v2-table{font-size:11px}.home-v2-table th,.home-v2-table td{padding:9px 5px}}
+
 </style>
 </head>
 <body>
@@ -56,19 +66,36 @@
 <h1>余暮投资实验室<br><em>400万元投资决策中枢。</em></h1>
 <p class="lead">这里不是财经资讯，也不是观点收藏夹。它把你的400万元资产配置、宏观状态、估值、回测、风险和执行规则连接起来，让每天打开网站时，先知道组合处于什么状态，再决定是否行动。</p>
 <div class="cockpit" id="cockpit">
-<div>
 <div class="cockpit-main">
-<div class="cockpit-title"><div><h2>400万元投资驾驶舱</h2><p class="hub-note">目标组合：全球股票 38% · 中国核心+红利 18% · 卫星资产 8% · 债券/现金 18% · 黄金 10% · 其他/预留 8%</p></div><span class="status-badge" id="macroBadge">读取当前宏观状态…</span></div>
-<div class="metric-grid">
-<div class="metric"><small>组合规模</small><strong>¥400万</strong></div>
-<div class="metric"><small>核心权益</small><strong>56%</strong></div>
-<div class="metric"><small>防守资产</small><strong>28%</strong></div>
-<div class="metric"><small>黄金</small><strong>10%</strong></div>
+  <div class="cockpit-title">
+    <div><h2>400万元投资驾驶舱</h2><p class="hub-note">战略基准：全球股票 52% · 债券 28% · 黄金 10% · 现金 10%</p></div>
+    <span class="status-badge" id="homeDataStatus">正在读取本地数据</span>
+  </div>
+  <div class="metric-grid">
+    <div class="metric"><small>参考组合规模</small><strong id="homeCapitalValue">¥400万</strong></div>
+    <div class="metric"><small>股票目标权重</small><strong>52%</strong></div>
+    <div class="metric"><small>防守资产</small><strong>38%</strong></div>
+    <div class="metric"><small>再平衡检查阈值</small><strong>±5个百分点</strong></div>
+  </div>
+  <div class="action-card">
+    <h3>当前组合检查</h3>
+    <p id="homeAction" class="hub-note">尚未录入实际持仓；系统不会假设当前持仓等于目标配置。</p>
+    <div id="homeActionRows"></div>
+  </div>
+  <div class="hub-note">当前权重保存在本机浏览器。更换设备或清理浏览器数据前，请在驾驶舱导出备份。</div>
 </div>
-<div class="action-card"><h3>本月投资行动</h3><div class="action-row"><span>全球股票</span><span>38%</span><span class="decision-pill">HOLD</span><span>估值与宏观信号共同决定新增资金速度。</span></div><div class="action-row"><span>中国核心+红利</span><span>18%</span><span class="decision-pill">REBALANCE</span><span>围绕目标权重补足，不因短期行情追涨杀跌。</span></div><div class="action-row"><span>黄金</span><span>10%</span><span class="decision-pill">HOLD</span><span>作为组合对冲资产，避免因短期上涨而追高。</span></div><div class="action-row"><span>债券/现金</span><span>18%</span><span class="decision-pill">HOLD</span><span>保留再平衡弹药，优先服务于极端回撤时的行动能力。</span></div></div>
+<div class="cockpit-side">
+  <div class="eyebrow">CURRENT SYSTEM STATUS</div>
+  <h3 style="font-family:Georgia,'Songti SC',serif;font-size:27px;font-weight:500;margin:16px 0 8px" id="homeMacroTitle">宏观数据待更新</h3>
+  <p id="homeMacroText" class="hub-note">未接入经核验的最新宏观数据时，不输出市场状态或买卖信号。</p>
+  <div class="state-list">
+    <div class="state-row"><span>战略配置</span><span>52 / 28 / 10 / 10</span></div>
+    <div class="state-row"><span>实际持仓</span><span id="homeHoldingStatus">尚未录入</span></div>
+    <div class="state-row"><span>偏离监控</span><span id="homeDriftStatus">等待持仓数据</span></div>
+    <div class="state-row"><span>最后检查</span><span id="homeCheckDate">—</span></div>
+  </div>
+  <a href="investment-dashboard.html" style="display:inline-block;margin-top:18px;font-size:12px;border-bottom:1px solid var(--text)">进入可编辑投资驾驶舱 →</a>
 </div>
-</div>
-<div class="cockpit-side"><div class="eyebrow">CURRENT MARKET STATE</div><h3 style="font-family:Georgia,'Songti SC',serif;font-size:27px;font-weight:500;margin:16px 0 8px" id="macroState">等待驾驶舱数据</h3><p id="macroText" class="hub-note">页面会读取投资驾驶舱保存的宏观输入；如果尚未录入，则以“待更新”显示，不虚构实时数据。</p><div class="state-list"><div class="state-row"><span>美元 / 流动性</span><span>查看驾驶舱</span></div><div class="state-row"><span>长端利率 / 实际利率</span><span>查看驾驶舱</span></div><div class="state-row"><span>股票估值</span><span>查看驾驶舱</span></div><div class="state-row"><span>波动率 / 风险偏好</span><span>查看驾驶舱</span></div></div><a href="investment-dashboard.html" style="display:inline-block;margin-top:18px;font-size:12px;border-bottom:1px solid var(--text)">打开400万元投资驾驶舱 →</a></div>
 </div>
 <div class="lab-nav"><a href="investment-dashboard.html">400万元投资驾驶舱</a><a href="investment-system.html">投资总纲</a><a href="global-macro-model.html">全球宏观模型</a><a href="asset-research.html">资产研究库</a><a href="historical-backtest.html">历史回测</a><a href="dcf-valuation.html">DCF估值</a><a href="investment-log.html">投资日志</a><a href="risk-monitor.html">风险监控</a><a href="annual-review.html">年度复盘</a></div>
 </section>
@@ -93,10 +120,24 @@
 </section>
 
 <section class="section container" id="allocation">
-<div class="section-head"><span>02</span><div><h2>400万元战略配置</h2><p>统一母组合，所有研究与交易都围绕这一基准展开。</p></div></div>
-<div class="alloc"><div class="alloc-box"><div class="eyebrow">CORE PORTFOLIO · ¥4,000,000</div>
-<div class="alloc-row"><span>全球股票 / 核心增长</span><strong>38% · ¥152万</strong></div><div class="alloc-row"><span>中国核心 + 红利</span><strong>18% · ¥72万</strong></div><div class="alloc-row"><span>卫星资产</span><strong>8% · ¥32万</strong></div><div class="alloc-row"><span>债券 / 现金</span><strong>18% · ¥72万</strong></div><div class="alloc-row"><span>黄金</span><strong>10% · ¥40万</strong></div><div class="alloc-row"><span>其他 / 预留</span><strong>8% · ¥32万</strong></div></div><div class="alloc-box"><div class="eyebrow">DECISION RULES</div><div class="alloc-row"><span>核心资产</span><strong>长期持有</strong></div><div class="alloc-row"><span>估值过高</span><strong>降低新增</strong></div><div class="alloc-row"><span>回撤达到阈值</span><strong>分层加仓</strong></div><div class="alloc-row"><span>权重偏离</span><strong>再平衡</strong></div><div class="alloc-row"><span>逻辑破坏</span><strong>重新估值 / 减仓</strong></div><div class="alloc-row"><span>现金用途</span><strong>等待高赔率机会</strong></div></div></div>
-<p style="color:var(--muted);font-size:12px;margin-top:16px">注：这是当前母组合基准，不等于实时持仓。驾驶舱中的“当前权重”优先于这里的目标权重；偏离达到阈值后才触发再平衡。</p>
+<div class="section-head"><span>02</span><div><h2>400万元战略配置</h2><p>全系统唯一战略基准：52%股票、28%债券、10%黄金、10%现金。</p></div></div>
+<div class="alloc">
+  <div class="alloc-box">
+    <div class="eyebrow">STRATEGIC POLICY · ¥4,000,000</div>
+    <div id="homeAllocRows"></div>
+    <p class="hub-note">全球股票52%由A股、美国股票及其他市场构成。地区内部权重尚待估值、风险和数据研究确定，不预设未经验证的拆分。</p>
+  </div>
+  <div class="alloc-box">
+    <div class="eyebrow">DECISION RULES</div>
+    <div class="alloc-row"><span>日常目标</span><strong>围绕战略权重</strong></div>
+    <div class="alloc-row"><span>偏离达到±5个百分点</span><strong>触发检查</strong></div>
+    <div class="alloc-row"><span>估值与宏观数据不完整</span><strong>不生成买卖信号</strong></div>
+    <div class="alloc-row"><span>资产逻辑发生变化</span><strong>重新研究与评估</strong></div>
+    <div class="alloc-row"><span>组合发生重大变化</span><strong>记录理由并复盘</strong></div>
+    <div class="alloc-row"><span>持仓数据存储</span><strong>本地浏览器</strong></div>
+  </div>
+</div>
+<p class="hub-note">目标权重是长期政策，不等于当前持仓。没有录入真实持仓时，页面只展示目标，不默认当前组合已经达到目标。</p>
 </section>
 
 <section class="section container" id="history"><div class="section-head"><span>03A</span><div><h2>历史相似环境</h2><p>不要只问“现在是什么”，还要问“过去什么时候最像现在”。</p></div></div><div class="alloc"><div class="alloc-box"><div class="eyebrow">20 YEARS · REGIME MATCHING</div><div class="alloc-row"><span>当前宏观状态</span><strong id="labRegime">待更新</strong></div><div class="alloc-row"><span>历史样本</span><strong>2006—2026</strong></div><div class="alloc-row"><span>核心比较</span><strong>收益 / 回撤 / 恢复</strong></div><div class="alloc-row"><span>使用原则</span><strong>辅助决策，不预测未来</strong></div></div><div class="alloc-box"><div class="eyebrow">BACKTEST ENGINE</div><p class="hub-note">历史回测页面继续负责完整计算：CAGR、最大回撤、Sharpe、滚动相关性、宏观状态与历史相似环境。首页只展示结论入口，避免重复制造两套数据。</p><a href="historical-backtest.html" style="display:inline-block;margin-top:18px;border-bottom:1px solid var(--text);font-size:12px">打开历史回测引擎 →</a></div></div></section>
@@ -143,15 +184,55 @@
 <span>© 2026 余暮 · Investment Lab</span>
 <span><a href="../index.html">← 返回个人知识宇宙</a></span>
 </footer>
-<script src="../script.js"></script><script>
+<script src="../assets/investment-config.js"></script><script src="../script.js"></script>
+<script>
 (function(){
-  const s=localStorage;
-  const regime=s.getItem('ym_macro_regime')||s.getItem('ym_regime')||'待更新';
-  const signal=s.getItem('ym_macro_signal')||s.getItem('ym_signal')||'待更新';
-  const badge=document.getElementById('macroBadge'), state=document.getElementById('macroState'), text=document.getElementById('macroText'), labRegime=document.getElementById('labRegime');
-  if(regime!=='待更新'){badge.textContent=regime+' · '+signal;state.textContent=regime;text.textContent='投资驾驶舱已保存宏观状态。具体变量、评分和历史数据请进入驾驶舱核验。';}
-  else {badge.textContent='数据待更新';state.textContent='尚未录入当前宏观数据';}
+  const cfg = window.YM_INVESTMENT_CONFIG;
+  const fmtMoney = n => "¥" + Math.round(n).toLocaleString("zh-CN");
+  const target = cfg.allocation;
+  const readCurrent = id => {
+    const raw = localStorage.getItem("ym_v2_current_" + id);
+    if (raw === null || raw === "") return null;
+    const n = Number(raw);
+    return Number.isFinite(n) ? n : null;
+  };
+  const capital = Number(localStorage.getItem("ym_v2_capital")) || cfg.capitalDefault;
+  document.getElementById("homeCapitalValue").textContent = fmtMoney(capital);
+  document.getElementById("homeAllocRows").innerHTML = target.map(a =>
+    '<div class="alloc-row"><span>' + a.name + '</span><strong>' + a.weight + '% · ' + fmtMoney(capital*a.weight/100) + '</strong></div>'
+  ).join("");
+  const currents = target.map(a => ({...a,current:readCurrent(a.id)}));
+  const allEntered = currents.every(a => a.current !== null);
+  const total = currents.reduce((s,a)=>s+(a.current ?? 0),0);
+  const drifted = allEntered ? currents.filter(a=>Math.abs(a.current-a.weight)>=cfg.rebalanceThresholdPct) : [];
+  document.getElementById("homeAllocRows").insertAdjacentHTML("beforeend",
+    '<table class="home-v2-table"><thead><tr><th>资产</th><th>目标</th><th>当前</th><th>偏离</th></tr></thead><tbody>' +
+    currents.map(a=>{
+      const d = a.current===null ? null : a.current-a.weight;
+      return '<tr><td>'+a.name+'</td><td>'+a.weight+'%</td><td>'+(d===null?'待录入':a.current.toFixed(1)+'%')+'</td><td>'+(d===null?'—':(d>0?'+':'')+d.toFixed(1)+'个百分点')+'</td></tr>';
+    }).join("") + '</tbody></table>'
+  );
+  const holdingStatus = !currents.some(a=>a.current!==null) ? "尚未录入" : (!allEntered ? "部分录入" : Math.abs(total-100)<=0.5 ? "已完整录入" : "合计需校正");
+  document.getElementById("homeHoldingStatus").textContent = holdingStatus;
+  document.getElementById("homeDriftStatus").textContent = allEntered && Math.abs(total-100)<=0.5 ? (drifted.length ? drifted.length+"项需检查" : "未触发阈值") : "等待完整数据";
+  document.getElementById("homeAction").textContent =
+    !allEntered ? "当前持仓未完整录入。只展示战略目标，不假设现有持仓，也不产生买卖指令。" :
+    Math.abs(total-100)>0.5 ? "当前权重合计为"+total.toFixed(1)+"%，请先校正到100%，暂不判断偏离。" :
+    drifted.length ? "有"+drifted.length+"类资产偏离目标达到阈值，建议进入驾驶舱复核金额、税费和交易限制；这不是自动交易指令。" :
+    "当前持仓已录入，暂未触发±"+cfg.rebalanceThresholdPct+"个百分点的检查阈值。";
+  document.getElementById("homeActionRows").innerHTML = currents.map(a=>{
+    const d=a.current===null?null:a.current-a.weight;
+    const label=d===null?"待录入":Math.abs(d)>=cfg.rebalanceThresholdPct?"触发检查":"阈值内";
+    return '<div class="home-v2-action"><span>'+a.name+' · 目标 '+a.weight+'% / 当前 '+(d===null?'—':a.current.toFixed(1)+'%')+'</span><span class="home-v2-status">'+label+'</span></div>';
+  }).join("");
+  const macroDate = localStorage.getItem("ym_macro_snapshot_date");
+  document.getElementById("homeMacroTitle").textContent = macroDate ? "宏观输入已保存，需核验日期" : "宏观数据待更新";
+  document.getElementById("homeMacroText").textContent = macroDate ?
+    "发现本地宏观输入记录（日期标记："+macroDate+"）。请在宏观模型中核对来源与观测日期；没有完成核验前不把它当作实时信号。" :
+    "尚无宏观输入。不会把旧行情标成实时，也不会仅凭缺失数据生成市场判断。";
+  document.getElementById("homeDataStatus").textContent = allEntered && Math.abs(total-100)<=0.5 ? "持仓数据已录入" : "持仓数据待完善";
+  document.getElementById("homeCheckDate").textContent = new Date().toLocaleDateString("zh-CN");
+  if (document.getElementById("labRegime")) document.getElementById("labRegime").textContent = macroDate ? "需核验日期" : "待更新";
 })();
 </script>
-</body>
-</html>
+</body></html>
