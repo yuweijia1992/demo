@@ -373,6 +373,8 @@ function applyHistoryBand(){
  if(!selected){$('historyStatus').textContent='请先选择公司。';return}
  let code=primarySecurityCode(selected.code),metric=$('historyMetric').value;
  let band=historyBands[code]?.[metric];
+ const strictHistory=valuationModelByCode[code]?.history?.[metric];
+ if(strictHistory&&strictHistory.p5!==null&&strictHistory.p20!==null&&strictHistory.p50!==null&&strictHistory.p80!==null){band={metric,latest:strictHistory.latest,p5:strictHistory.p5,p10:strictHistory.p10,p20:strictHistory.p20,p50:strictHistory.p50,p80:strictHistory.p80,date:strictHistory.date,source:strictHistory.source||'公司级连续月度估值库'};}
  if(!band||band.p20===null||band.p50===null||band.p80===null){
   $('historyStatus').textContent='该公司该指标的5年历史样本不足或最新值无效，不能带入估值模型。';
   return;
