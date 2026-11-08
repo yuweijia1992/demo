@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static validation for the Investment Lab V2.1 GitHub Pages modules."""
+"""Static validation for the Investment Lab V2.2 RMB monthly matrix and GitHub Pages modules."""
 from __future__ import annotations
 import ast, csv, json, re, subprocess, tempfile
 from pathlib import Path
@@ -38,11 +38,22 @@ require(len(dates)==len(set(dates)),"duplicate monthly dates detected")
 require(all(re.fullmatch(r"\d{4}-(0[1-9]|1[0-2])",d or "") for d in dates),"invalid monthly date format")
 manifest=json.loads((ROOT/"data/investment-monthly-manifest.json").read_text(encoding="utf-8"))
 require(manifest.get("row_count")==len(rows),"manifest row_count differs from CSV")
-first=rows[0]; last=rows[-1]
-require(first.get("csi300_period_status")=="partial_index_start","first CSI 300 month must be marked partial")
-require(last.get("csi300_period_status") in {"partial_source_cutoff","partial_current_month"},"latest CSI 300 month must be marked partial")
-require(not first.get("csi300_price_return_pct"),"first partial month must not have a monthly return")
-require(not last.get("csi300_price_return_pct"),"latest partial month must not have a full monthly return")
+require(len(rows)==250,"matrix must contain 250 months from 2006-01 through 2026-10")
+require(dates[0]=="2006-01" and dates[-1]=="2026-10","matrix date window must be 2006-01 to 2026-10")
+by_month={r["date"]:r for r in rows}
+jan=by_month["2006-01"]
+sep=by_month["2026-09"]
+october=by_month["2026-10"]
+require(bool(jan.get("csi300_price_return_pct")),"Jan-2006 CSI 300 return must use Dec-2005 as calculation predecessor")
+require(bool(jan.get("csi300_total_return_pct")),"Jan-2006 CSI 300 total return must use Dec-2005 as calculation predecessor")
+require(sep.get("csi300_period_status")=="partial_source_cutoff","Sep-2026 CSI 300 source cutoff must be disclosed")
+require(not sep.get("csi300_price_return_pct") and not sep.get("csi300_total_return_pct"),"partial Sep-2026 CSI month returns must be blank")
+require(not october.get("csi300_price_index_cny") and not october.get("csi300_total_return_index_cny"),"Oct-2026 CSI 300 values must remain missing when source observations are unavailable")
+require(bool(october.get("gold_cny_return_pct")) and bool(october.get("usd_cny")),"Oct-2026 gold and FX values should be present")
+require(manifest.get("coverage",{}).get("csi300_total_return_pct",{}).get("count")==sum(bool(r.get("csi300_total_return_pct")) for r in rows),"manifest CSI 300 TR coverage differs from matrix")
+require(manifest.get("coverage",{}).get("sp500_total_return_cny_pct",{}).get("count")==sum(bool(r.get("sp500_total_return_cny_pct")) for r in rows),"manifest S&P RMB coverage differs from matrix")
+require(manifest.get("coverage",{}).get("gold_cny_return_pct",{}).get("count")==sum(bool(r.get("gold_cny_return_pct")) for r in rows),"manifest gold RMB coverage differs from matrix")
+require(not any(r.get("portfolio_return_cny_pct") for r in rows),"full portfolio return must remain blank until all strategic sleeves are sourced")
 
 # Script syntax.
 ast.parse((ROOT/"scripts/update_investment_monthly_data.py").read_text(encoding="utf-8"))
@@ -72,5 +83,5 @@ print(json.dumps({
     "status":"PASS","strategic_weights":weights,"monthly_rows":len(rows),
     "monthly_start":dates[0],"monthly_end":dates[-1],
     "csi300_full_month_return_observations":sum(bool(r.get("csi300_price_return_pct")) for r in rows),
-    "validated_pages":pages,"checks":["configuration","CSV chronology","partial-month boundaries","manifest","Python syntax","shared JS syntax","inline JS syntax","module wiring"]
+    "validated_pages":pages,"checks":["configuration","CSV chronology","250-month RMB matrix","partial CSI cutoff","manifest coverage consistency","portfolio-return gate","Python syntax","shared JS syntax","inline JS syntax","module wiring"]
 },ensure_ascii=False,indent=2))
