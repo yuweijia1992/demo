@@ -1,5 +1,5 @@
 {
-  "generatedAtUtc": "2026-11-08T08:24:15.362161+00:00",
+  "generatedAtUtc": "2026-11-08T08:28:06.547356+00:00",
   "masterCompanies": 49,
   "financialRecordsMatched": 49,
   "historyRecordsMatched": 49,
@@ -9,15 +9,16 @@
     "annualROE": 49,
     "annualFCF": 43,
     "annualNetDebt": 0,
+    "annualNetDebtKnownComponents": 43,
     "annualROIC": 0,
-    "annualDividendCashFlowOnly": 4,
+    "annualDividendCashFlowOnly": 0,
     "annualDilutedShareProxy": 0,
-    "annualShareCapital": 7,
-    "annualAcquisitions": 0,
-    "annualInvestments": 0,
+    "annualShareCapital": 46,
+    "annualAcquisitions": 30,
+    "annualInvestments": 5,
     "annualBuybacks": 0,
-    "annualDebtRepayments": 0,
-    "annualDividendsOnly": 4
+    "annualDebtRepayments": 40,
+    "annualDividendsOnly": 0
   },
   "historyCoverage": {
     "peTtm": {

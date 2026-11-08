@@ -1,0 +1,3535 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAtUtc": "2026-11-08T08:28:06.572303+00:00",
+  "companyCount": 49,
+  "records": [
+    {
+      "code": "600887.SH",
+      "name": "伊利股份",
+      "industry": "乳制品与营养",
+      "modelType": "quality_earnings_fcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
+        "market": "https://quote.cfi.cn/quote1587_600887.html"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.01184950107899696,
+        "recentThreeYearMedianNetMargin": 0.08264847998592326,
+        "recentThreeYearMedianCapexToRevenue": 3.436114720781622,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "002714.SZ",
+      "name": "牧原股份",
+      "industry": "生猪养殖",
+      "modelType": "normalized_cycle",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12510732&stockid=002714",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12510732&stockid=002714",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/002714/displaytype/4.phtml",
+        "market": "https://cn.investing.com/equities/muyuan-foodstuff-a-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12510732&stockid=002714",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.1626381209994634,
+        "recentThreeYearMedianNetMargin": 0.10743969596237243,
+        "recentThreeYearMedianCapexToRevenue": 8.974994380519224,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "603288.SH",
+      "name": "海天味业",
+      "industry": "调味品",
+      "modelType": "quality_earnings_fcf",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863&stockid=603288",
+        "fcf": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863&stockid=603288",
+        "bvps": "https://stock.quote.stockstar.com/finance/summary_603288.shtml",
+        "market": "https://quote.cfi.cn/quote_603288.html"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546863",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.036625531470272366,
+        "recentThreeYearMedianNetMargin": 0.23578302505653023,
+        "recentThreeYearMedianCapexToRevenue": 5.858607419297406,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "600398.SH",
+      "name": "海澜之家",
+      "industry": "大众服装",
+      "modelType": "quality_earnings_fcf",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12565315&stockid=600398",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12565315&stockid=600398",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/600398/displaytype/4.phtml",
+        "market": "https://www.lixinger.com/equity/company/detail/sh/600398/600398/fundamental/valuation/pe-ttm"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12565315&stockid=600398",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.017346238578550555,
+        "recentThreeYearMedianNetMargin": 0.10300388499346115,
+        "recentThreeYearMedianCapexToRevenue": 2.32748214049902,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "02313.HK",
+      "name": "申洲国际",
+      "industry": "纺织制造与运动服装供应链",
+      "modelType": "quality_earnings_fcf",
+      "sourceLinks": {
+        "financial": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2313",
+        "capex": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0928/2026092800507_c.pdf",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/02313/",
+        "market": "https://stockanalysis.com/quote/hkg/2313/history/"
+      },
+      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2313",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "official_regulatory_filing",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.06774884260231007,
+        "recentThreeYearMedianNetMargin": 0.18794967963199785,
+        "recentThreeYearMedianCapexToRevenue": 6.545511838318877,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "600690.SH",
+      "name": "海尔智家",
+      "industry": "家电与全球品牌",
+      "modelType": "quality_earnings_fcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563094&stockid=600690",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563095&stockid=600690",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563095&stockid=600690",
+        "market": "https://cn.investing.com/equities/qingdao-haier-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563094&stockid=600690",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.07416073598997808,
+        "recentThreeYearMedianNetMargin": 0.06467010486916092,
+        "recentThreeYearMedianCapexToRevenue": 3.524310584606055,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "000333.SZ",
+      "name": "美的集团",
+      "industry": "家电、工业技术与自动化",
+      "modelType": "quality_earnings_fcf",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572219&stockid=000333",
+        "capex": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-29/df25443f-d67a-4cc5-8bd6-6c3e681a9575.PDF",
+        "fcf": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-29/df25443f-d67a-4cc5-8bd6-6c3e681a9575.PDF",
+        "bvps": "https://www.stcn.com/quotes/index.html?stock_code=sz000333",
+        "market": "https://cn.investing.com/equities/midea-group-a-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572219&stockid=000333",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.07497340292793564,
+        "recentThreeYearMedianNetMargin": 0.0942036646307976,
+        "recentThreeYearMedianCapexToRevenue": 1.9163865862296448,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "000651.SZ",
+      "name": "格力电器",
+      "industry": "空调与家电",
+      "modelType": "quality_earnings_fcf",
+      "sourceLinks": {
+        "financial": "https://4g.stockstar.com/detail/SN2026082700006450",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
+        "market": "https://cn.investing.com/equities/gree-electric-a-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://4g.stockstar.com/detail/SN2026082700006450",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": -0.025384070614090315,
+        "recentThreeYearMedianNetMargin": 0.16935854010986748,
+        "recentThreeYearMedianCapexToRevenue": 1.736382248754097,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "002594.SZ",
+      "name": "比亚迪",
+      "industry": "新能源汽车与汽车产业链",
+      "modelType": "normalized_cycle",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572822&stockid=002594",
+        "capex": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-29/56e933c9-717e-42bd-8c21-3a0a11b8d2d0.PDF",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572791&stockid=002594",
+        "market": "https://cn.investing.com/equities/byd-a-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572822&stockid=002594",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.38875069755909375,
+        "recentThreeYearMedianNetMargin": 0.04987555240041249,
+        "recentThreeYearMedianCapexToRevenue": 19.504314390777218,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "600066.SH",
+      "name": "宇通客车",
+      "industry": "客车与商用交通",
+      "modelType": "quality_earnings_fcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12485740&stockid=600066",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12485740&stockid=600066",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/600066/displaytype/4.phtml",
+        "market": "https://cn.investing.com/equities/yutong-bus-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12485740&stockid=600066",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.15555392900897647,
+        "recentThreeYearMedianNetMargin": 0.11059810154508691,
+        "recentThreeYearMedianCapexToRevenue": 1.8694369203238823,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "601816.SH",
+      "name": "京沪高铁",
+      "industry": "铁路客运基础设施",
+      "modelType": "cashflow_dcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574755&stockid=601816",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574755&stockid=601816",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/601816/displaytype/4.phtml",
+        "market": "https://cn.investing.com/equities/shanghai-high-speed-railway-co-ltd-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574755&stockid=601816",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.10100435056740964,
+        "recentThreeYearMedianNetMargin": 0.3028739309296336,
+        "recentThreeYearMedianCapexToRevenue": 2.7985841038462396,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "002352.SZ",
+      "name": "顺丰控股",
+      "industry": "快递与综合物流",
+      "modelType": "quality_earnings_fcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570675&stockid=002352",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570675&stockid=002352",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/002352/displaytype/4.phtml",
+        "market": "https://www.hstong.com/quotes/30000-002352-SZ"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570675&stockid=002352",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.10440179785863868,
+        "recentThreeYearMedianNetMargin": 0.0357584729985588,
+        "recentThreeYearMedianCapexToRevenue": 3.2855523737866883,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "601919.SH",
+      "name": "中远海控",
+      "industry": "集装箱航运",
+      "modelType": "normalized_cycle",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571262&stockid=601919",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571262",
+        "fcf": null,
+        "bvps": "https://www.stcn.com/quotes/index/sh601919.html",
+        "market": "https://cn.investing.com/equities/china-cosco-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571262&stockid=601919",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": -0.0994176476560501,
+        "recentThreeYearMedianNetMargin": 0.14062693715064475,
+        "recentThreeYearMedianCapexToRevenue": 11.11742986582525,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "300760.SZ",
+      "name": "迈瑞医疗",
+      "industry": "医疗器械",
+      "modelType": "growth_dcf",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+        "market": "https://cn.investing.com/equities/shenzhen-mindray-bio-medical-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.07128090679351051,
+        "recentThreeYearMedianNetMargin": 0.31771951036014834,
+        "recentThreeYearMedianCapexToRevenue": 6.12263198509618,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "600276.SH",
+      "name": "恒瑞医药",
+      "industry": "创新药与制药",
+      "modelType": "growth_dcf",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+        "market": "https://cn.investing.com/equities/hengrui-medi-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.05117418948603736,
+        "recentThreeYearMedianNetMargin": 0.2264290290071161,
+        "recentThreeYearMedianCapexToRevenue": 7.036717022770933,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "603259.SH",
+      "name": "药明康德",
+      "industry": "医药研发与生产服务",
+      "modelType": "growth_dcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12475210&stockid=603259",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12475210&stockid=603259",
+        "fcf": null,
+        "bvps": "https://stock.quote.stockstar.com/finance/summary_603259.shtml",
+        "market": "https://cn.investing.com/equities/wuxi-apptec-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12475210&stockid=603259",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.18693796611193014,
+        "recentThreeYearMedianNetMargin": 0.24082476352893414,
+        "recentThreeYearMedianCapexToRevenue": 12.183497520342506,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "300015.SZ",
+      "name": "爱尔眼科",
+      "industry": "眼科医疗服务",
+      "modelType": "growth_dcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12561169&stockid=300015",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12561167&stockid=300015",
+        "fcf": null,
+        "bvps": "https://stock.quote.stockstar.com/finance/summary_300015.shtml",
+        "market": "https://cn.investing.com/equities/aier-eye-hospital-group-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12561169&stockid=300015",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.1048501044024226,
+        "recentThreeYearMedianNetMargin": 0.16491607438189299,
+        "recentThreeYearMedianCapexToRevenue": 8.721856555382889,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "600511.SH",
+      "name": "国药股份",
+      "industry": "医药流通",
+      "modelType": "quality_earnings_fcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12504833&stockid=600511",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12504833&stockid=600511",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/600511/displaytype/4.phtml",
+        "market": "https://www.laocaifu.com/stock/600511/"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12504833&stockid=600511",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.030823484839084703,
+        "recentThreeYearMedianNetMargin": 0.03953019276362482,
+        "recentThreeYearMedianCapexToRevenue": 0.25845646313490994,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "600900.SH",
+      "name": "长江电力",
+      "industry": "大型水电运营",
+      "modelType": "cashflow_dcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+        "market": "https://cn.investing.com/equities/yangtze-power-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.11575963593610106,
+        "recentThreeYearMedianNetMargin": 0.38460709404067384,
+        "recentThreeYearMedianCapexToRevenue": 17.320098316309224,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "600674.SH",
+      "name": "川投能源",
+      "industry": "水电投资与电力资产",
+      "modelType": "cashflow_dcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12495897&stockid=600674",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12495897&stockid=600674",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12495897&stockid=600674",
+        "market": "https://cn.investing.com/equities/chuantou-ener-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12495897&stockid=600674",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.07188218995735562,
+        "recentThreeYearMedianNetMargin": 2.850798772561599,
+        "recentThreeYearMedianCapexToRevenue": 57.20218912935208,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "601985.SH",
+      "name": "中国核电",
+      "industry": "核电运营",
+      "modelType": "cashflow_dcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572215&stockid=601985",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572215&stockid=601985",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572215&stockid=601985",
+        "market": "https://cn.investing.com/equities/china-national-nuclear-power-co-ltd-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572215&stockid=601985",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.06965824510829544,
+        "recentThreeYearMedianNetMargin": 0.11359011546604468,
+        "recentThreeYearMedianCapexToRevenue": 114.14325051041862,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "601088.SH",
+      "name": "中国神华",
+      "industry": "煤炭、电力、铁路与港口",
+      "modelType": "normalized_cycle",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572344&stockid=601088",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572344&stockid=601088",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572344&stockid=601088",
+        "market": "https://cn.investing.com/equities/china-shenhua"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572344&stockid=601088",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": -0.03181989172277144,
+        "recentThreeYearMedianNetMargin": 0.173997446615016,
+        "recentThreeYearMedianCapexToRevenue": 11.097507857840771,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "600406.SH",
+      "name": "国电南瑞",
+      "industry": "电网自动化与电力设备",
+      "modelType": "quality_earnings_fcf",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12543045",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12543058&stockid=600406",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12543058&stockid=600406",
+        "market": "https://data.cfi.cn/quote1752_600406.html"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12543045",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.11787267890056108,
+        "recentThreeYearMedianNetMargin": 0.13159855812433585,
+        "recentThreeYearMedianCapexToRevenue": 3.199370977843266,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "600941.SH / 00941.HK",
+      "name": "中国移动",
+      "industry": "通信网络、云与算力",
+      "modelType": "cashflow_dcf",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492473&stockid=",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492474&stockid=600941",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492474&stockid=600941",
+        "market": "https://data.cfi.cn/600941.html"
+      },
+      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492473&stockid=",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.05483533263215823,
+        "recentThreeYearMedianNetMargin": 0.13055070350110817,
+        "recentThreeYearMedianCapexToRevenue": 14.98704310988423,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "601728.SH / 00728.HK",
+      "name": "中国电信",
+      "industry": "通信、云与政企数字化",
+      "modelType": "cashflow_dcf",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910&stockid=601728",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910&stockid=601728",
+        "market": "https://cn.investing.com/equities/china-telecom-corp-historical-data"
+      },
+      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.04810521503121956,
+        "recentThreeYearMedianNetMargin": 0.06305200451028295,
+        "recentThreeYearMedianCapexToRevenue": 17.241539885669013,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "601668.SH",
+      "name": "中国建筑",
+      "industry": "建筑工程与基础设施",
+      "modelType": "quality_earnings_fcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12569505&stockid=601668",
+        "capex": "https://money.finance.sina.com.cn/corp/go.php/vFD_CashFlow/stockid/601668/ctrl/2026/displaytype/4.phtml",
+        "fcf": null,
+        "bvps": "https://stock.stockstar.com/notice/SN2026082800049566.shtml",
+        "market": "https://cn.investing.com/equities/china-state-co-ss-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12569505&stockid=601668",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.024133963563287786,
+        "recentThreeYearMedianNetMargin": 0.021118717104953753,
+        "recentThreeYearMedianCapexToRevenue": 1.2596029176035792,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "00700.HK",
+      "name": "腾讯控股",
+      "industry": "社交、游戏、广告与云",
+      "modelType": "growth_dcf",
+      "sourceLinks": {
+        "financial": "https://www.tencent.com/zh-cn/investors/financial-reports/",
+        "capex": null,
+        "fcf": null,
+        "bvps": null,
+        "market": "https://www.gurufocus.com/stock/HKSE%3A00700/data/summary"
+      },
+      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://www.tencent.com/zh-cn/investors/financial-reports/",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "pending",
+          "availableYears": 0,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "missing",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.07715434109834085,
+        "recentThreeYearMedianNetMargin": 0.2974307967227486,
+        "recentThreeYearMedianCapexToRevenue": 14.720045118912243,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "09988.HK / BABA",
+      "name": "阿里巴巴",
+      "industry": "电商、云与数字平台",
+      "modelType": "growth_dcf",
+      "sourceLinks": {
+        "financial": "https://ali-home.alibaba.com/document-2026456290057781248",
+        "capex": "https://ali-home.alibaba.com/document-2026456290057781248",
+        "fcf": null,
+        "bvps": null,
+        "market": "https://hk.investing.com/equities/alibaba-group-holding-hk-historical-data"
+      },
+      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://ali-home.alibaba.com/document-2026456290057781248",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.085623189912162,
+        "recentThreeYearMedianNetMargin": 0.08501032759294834,
+        "recentThreeYearMedianCapexToRevenue": 4.478483043950238,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "688981.SH / 00981.HK",
+      "name": "中芯国际",
+      "industry": "晶圆代工",
+      "modelType": "normalized_cycle",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12559855&stockid=688981",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12559855&stockid=688981",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/688981/index.html",
+        "market": "https://www.yyqyx.com/s/688981.SH"
+      },
+      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12559855&stockid=688981",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.17242558517062911,
+        "recentThreeYearMedianNetMargin": 0.07487366315013703,
+        "recentThreeYearMedianCapexToRevenue": 94.40046529517747,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "002371.SZ",
+      "name": "北方华创",
+      "industry": "半导体设备",
+      "modelType": "growth_dcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12534434&stockid=002371",
+        "capex": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501903.PDF",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/mobile/002371/companyn.html",
+        "market": "https://quote.cfi.cn/quote.aspx?client=pc&stockid=10802"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12534434&stockid=002371",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "official_regulatory_filing",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.41983189419125044,
+        "recentThreeYearMedianNetMargin": 0.17659264876873956,
+        "recentThreeYearMedianCapexToRevenue": 6.923282032848034,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "688041.SH",
+      "name": "海光信息",
+      "industry": "CPU与加速计算芯片",
+      "modelType": "growth_dcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492765&stockid=688041",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492765&stockid=688041",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/688041/",
+        "market": "https://cn.investing.com/equities/hygon-information-tech-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492765&stockid=688041",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.5794057689316909,
+        "recentThreeYearMedianNetMargin": 0.21010958289492113,
+        "recentThreeYearMedianCapexToRevenue": 10.316900480075947,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "300308.SZ",
+      "name": "中际旭创",
+      "industry": "光通信与高速光模块",
+      "modelType": "growth_dcf",
+      "sourceLinks": {
+        "financial": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491753.PDF",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518497&stockid=300308",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/300308/index.html",
+        "market": "https://www.lixinger.com/equity/company/detail/sz/300308/300308/fundamental/valuation/pe-ttm"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "official_regulatory_filing",
+          "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491753.PDF",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.4930399228618292,
+        "recentThreeYearMedianNetMargin": 0.21672329850069386,
+        "recentThreeYearMedianCapexToRevenue": 12.011307247060548,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "300750.SZ / 03750.HK",
+      "name": "宁德时代",
+      "industry": "动力电池与储能",
+      "modelType": "growth_dcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12462542&stockid=300750",
+        "capex": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-07-25/8e6750da-b178-4be9-a74a-4b1d8fc42c58.PDF",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12462543&stockid=300750",
+        "market": "https://data.cfi.cn/300750.html"
+      },
+      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12462542&stockid=300750",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.34271085255413336,
+        "recentThreeYearMedianNetMargin": 0.14017381839194448,
+        "recentThreeYearMedianCapexToRevenue": 8.612945229518202,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "300274.SZ",
+      "name": "阳光电源",
+      "industry": "逆变器与储能系统",
+      "modelType": "normalized_cycle",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570250&stockid=300274",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570250&stockid=300274",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/300274/",
+        "market": "https://www.yyqyx.com/s/300274.SZ"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570250&stockid=300274",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.3864466227499317,
+        "recentThreeYearMedianNetMargin": 0.14175069170590374,
+        "recentThreeYearMedianCapexToRevenue": 3.578296033797005,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "300124.SZ",
+      "name": "汇川技术",
+      "industry": "工业自动化与电驱",
+      "modelType": "growth_dcf",
+      "sourceLinks": {
+        "financial": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225524610.PDF",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12566577&stockid=300124",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/300124/index.html",
+        "market": "https://cn.investing.com/equities/shenzhen-inovance-tech-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "official_regulatory_filing",
+          "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225524610.PDF",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.2591587269372959,
+        "recentThreeYearMedianNetMargin": 0.11569609022604598,
+        "recentThreeYearMedianCapexToRevenue": 5.70246874456557,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "600036.SH / 03968.HK",
+      "name": "招商银行",
+      "industry": "零售银行与财富管理",
+      "modelType": "bank_pb_roe",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570089&stockid=600036",
+        "capex": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225530237.PDF",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570089&stockid=600036",
+        "market": "https://quote.cfi.cn/quote.aspx?stockcode=600036&zqlb=0"
+      },
+      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570089&stockid=600036",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "not_applicable_financial",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "official_regulatory_filing",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.004705507987726731,
+        "recentThreeYearMedianNetMargin": 0.4396926705542123,
+        "recentThreeYearMedianCapexToRevenue": 8.893823185098032,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "601398.SH",
+      "name": "工商银行",
+      "industry": "大型商业银行",
+      "modelType": "bank_pb_roe",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
+        "capex": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225530114.PDF",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
+        "market": "https://cn.investing.com/equities/icbc-ss-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "not_applicable_financial",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "official_regulatory_filing",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": -0.028941344420260307,
+        "recentThreeYearMedianNetMargin": 0.43966979612773927,
+        "recentThreeYearMedianCapexToRevenue": 4.330113177975744,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "601318.SH / 02318.HK",
+      "name": "中国平安",
+      "industry": "保险与综合金融",
+      "modelType": "insurance_ev",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12512669",
+        "capex": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225487480.PDF",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/601318/field.html",
+        "market": "https://quote.cfi.cn/quote.aspx?client=pc&lm=gsda&stockid=7143"
+      },
+      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12512669",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "not_applicable_financial",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "official_regulatory_filing",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": -0.028733774365474418,
+        "recentThreeYearMedianNetMargin": 0.12304784119347863,
+        "recentThreeYearMedianCapexToRevenue": 0.7953310119123546,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "601601.SH / 02601.HK",
+      "name": "中国太保",
+      "industry": "寿险与财险",
+      "modelType": "insurance_ev",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12558328&stockid=601601",
+        "capex": "https://stock.stockstar.com/notice/SN2026082700054843.shtml",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/72/02601/",
+        "market": "https://cn.investing.com/equities/china-pacific-historical-data"
+      },
+      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12558328&stockid=601601",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "not_applicable_financial",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": -0.0031277075763515017,
+        "recentThreeYearMedianNetMargin": 0.11126261788863344,
+        "recentThreeYearMedianCapexToRevenue": 0.9844745332708271,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "600030.SH / 06030.HK",
+      "name": "中信证券",
+      "industry": "证券与资本市场",
+      "modelType": "normalized_cycle",
+      "sourceLinks": {
+        "financial": "https://statics.citics.com/website/report/2026/web/e-book/web/index.html",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12511186&stockid=600030",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/600030/index.html",
+        "market": "https://cn.investing.com/equities/citic-historical-data"
+      },
+      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://statics.citics.com/website/report/2026/web/e-book/web/index.html",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "not_applicable_financial",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "pending",
+          "availableYears": 0,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": -0.005498886011062187,
+        "recentThreeYearMedianNetMargin": 0.37343545664215694,
+        "recentThreeYearMedianCapexToRevenue": 2.225350263942119,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "300059.SZ",
+      "name": "东方财富",
+      "industry": "互联网证券与金融信息",
+      "modelType": "normalized_cycle",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518817&stockid=300059",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518817&stockid=300059",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518811",
+        "market": "https://quote.cfi.cn/300059.html"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518817&stockid=300059",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "not_applicable_financial",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.052489963311630694,
+        "recentThreeYearMedianNetMargin": 0.7521029196017295,
+        "recentThreeYearMedianCapexToRevenue": 2.023496752686605,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "09618.HK / JD",
+      "name": "京东集团",
+      "industry": "电商、零售与物流",
+      "modelType": "growth_dcf",
+      "sourceLinks": {
+        "financial": "https://ir.jd.com/news-releases/news-release-details/jdcom-announces-second-quarter-and-interim-2026-results",
+        "capex": "https://ir.jd.com/news-releases/news-release-details/jdcom-announces-second-quarter-and-interim-2026-results",
+        "fcf": null,
+        "bvps": "https://ir.jd.com/system/files-encrypted/nasdaq_kms/assets/2026/08/13/18-03-06/JD.com%20Announces%20Second%20Quarter%20and%20Interim%202026%20Results.pdf",
+        "market": "https://hk.finance.yahoo.com/quote/9618.HK/history/"
+      },
+      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://ir.jd.com/news-releases/news-release-details/jdcom-announces-second-quarter-and-interim-2026-results",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "pending",
+          "availableYears": 0,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.08300201852203282,
+        "recentThreeYearMedianNetMargin": 0.02228067361076538,
+        "recentThreeYearMedianCapexToRevenue": 1.192507199139814,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "601888.SH",
+      "name": "中国中免",
+      "industry": "免税零售与旅游消费",
+      "modelType": "normalized_cycle",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12511941",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12511941&stockid=601888",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/601888/index.html",
+        "market": "https://cn.investing.com/equities/cits-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12511941",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": -0.05621581360543815,
+        "recentThreeYearMedianNetMargin": 0.0755590738383766,
+        "recentThreeYearMedianCapexToRevenue": 2.3709756166040075,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "600754.SH",
+      "name": "锦江酒店",
+      "industry": "酒店运营与管理",
+      "modelType": "normalized_cycle",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571973&stockid=600754",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571973&stockid=600754",
+        "fcf": null,
+        "bvps": "https://basic.10jqka.com.cn/600754/",
+        "market": "https://kr.investing.com/equities/jinjiang-hotel-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12571973&stockid=600754",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.04913650164054406,
+        "recentThreeYearMedianNetMargin": 0.06700978366861765,
+        "recentThreeYearMedianCapexToRevenue": 6.9797540075996904,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "002027.SZ",
+      "name": "分众传媒",
+      "industry": "楼宇广告",
+      "modelType": "normalized_cycle",
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12502839",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?CompanyCode=10001415&gather=1&id=12502843",
+        "fcf": null,
+        "bvps": null,
+        "market": "https://cn.investing.com/equities/hedy-holding-a-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12502839",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": -0.0370155468150426,
+        "recentThreeYearMedianNetMargin": 0.40551186719741694,
+        "recentThreeYearMedianCapexToRevenue": 2.2960190584059585,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "09626.HK / BILI",
+      "name": "哔哩哔哩",
+      "industry": "视频社区与内容",
+      "modelType": "growth_dcf",
+      "sourceLinks": {
+        "financial": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526371261/d434015dex991.htm",
+        "capex": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526400258/d163378dex991.pdf",
+        "fcf": null,
+        "bvps": "https://ebs.publicnow.com/view/538B27FB710054B314B89D3D1EA2365BFEC63FB5",
+        "market": "https://hk.investing.com/equities/bilibili-historical-data"
+      },
+      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "official_regulatory_filing",
+          "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1723690/000119312526371261/d434015dex991.htm",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "official_regulatory_filing",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.11859429850771619,
+        "recentThreeYearMedianNetMargin": -0.05019468703325659,
+        "recentThreeYearMedianCapexToRevenue": 6.0211977382453785,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "002607.SZ",
+      "name": "中公教育",
+      "industry": "职业培训与考试服务",
+      "modelType": "quality_earnings_fcf",
+      "sourceLinks": {
+        "financial": "https://data.eastmoney.com/notices/detail/002607/AN202608260006752169.html",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12554459&stockid=002607",
+        "fcf": null,
+        "bvps": null,
+        "market": "https://cn.investing.com/equities/yaxia-automobile-a-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://data.eastmoney.com/notices/detail/002607/AN202608260006752169.html",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": -0.24574777023162064,
+        "recentThreeYearMedianNetMargin": 0.02185643951857184,
+        "recentThreeYearMedianCapexToRevenue": 0.226107598273289,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "000598.SZ",
+      "name": "兴蓉环境",
+      "industry": "水务与环保运营",
+      "modelType": "cashflow_dcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12539476&stockid=000598",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12539479&stockid=000598",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12539479&stockid=000598",
+        "market": "https://hk.investing.com/equities/xingrong-invest-a-historical-data"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12539476&stockid=000598",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.07654482938195883,
+        "recentThreeYearMedianNetMargin": 0.22111741100832233,
+        "recentThreeYearMedianCapexToRevenue": 50.77806667137057,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    },
+    {
+      "code": "600323.SH",
+      "name": "瀚蓝环境",
+      "industry": "固废处理与环保运营",
+      "modelType": "cashflow_dcf",
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546824&stockid=600323",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546824&stockid=600323",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546824&stockid=600323",
+        "market": "https://hk.finance.yahoo.com/quote/600323.SS/history/"
+      },
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "verification": {
+        "officialReportCrossCheck": {
+          "status": "pending",
+          "sourceClass": "secondary_or_unclassified",
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546824&stockid=600323",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+        },
+        "roic": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+        },
+        "netDebt": {
+          "status": "pending_inputs",
+          "availableYears": 0,
+          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+        },
+        "shareCapital": {
+          "status": "raw_share_capital_only",
+          "availableYears": 5,
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+        },
+        "currentFullyDilutedShares": {
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+        },
+        "dividendPerShareHistory": {
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+        },
+        "capitalAllocation": {
+          "status": "partial_cashflow_fields_only",
+          "sourceClass": "secondary_or_unclassified",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+        },
+        "companySpecificForecast": {
+          "status": "mechanical_reference_only",
+          "required": "量价驱动、产能/门店/用户/订单、价格、毛利率、费用率、税率、再投资率及管理层指引"
+        },
+        "costOfCapital": {
+          "status": "pending",
+          "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
+        }
+      },
+      "companySpecificAssumptions": {
+        "historicalRevenueCagr": 0.043007435865569654,
+        "recentThreeYearMedianNetMargin": 0.13998547114564933,
+        "recentThreeYearMedianCapexToRevenue": 14.009500797912,
+        "sustainableROE": null,
+        "normalizedROIC": null,
+        "WACC": null,
+        "costOfEquity": null,
+        "terminalGrowth": null,
+        "currentFullyDilutedShares": null,
+        "fairValuePerShare": null,
+        "status": "historical_reference_only_until_official_crosscheck"
+      },
+      "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
+    }
+  ]
+}
