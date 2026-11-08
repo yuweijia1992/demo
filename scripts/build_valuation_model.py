@@ -150,7 +150,10 @@ def main():
             inc=(rec or {}).get("income") or {}
             bal=(rec or {}).get("balance") or {}
             cf=(rec or {}).get("cashflow") or {}
-            revenue=v(inc,"revenue"); profit=v(inc,"netProfitParent")
+            revenue_item=v(inc,"revenue"); total_operating_revenue=v(inc,"totalOperatingRevenue")
+            revenue=revenue_item if revenue_item is not None else (total_operating_revenue if financial else None)
+            revenue_basis="营业收入" if revenue_item is not None else ("营业总收入（金融企业回退）" if financial and total_operating_revenue is not None else None)
+            profit=v(inc,"netProfitParent")
             equity=v(bal,"parentEquity"); total_equity=v(bal,"totalEquity")
             assets=v(bal,"totalAssets"); current_liabilities=v(bal,"currentLiabilities")
             op=v(inc,"operatingProfit"); pbt=v(inc,"profitBeforeTax"); tax=v(inc,"incomeTax")
@@ -183,7 +186,7 @@ def main():
             amount_multiplier=unit_multiplier(inc)
             if profit is not None and diluted_eps not in (None,0) and amount_multiplier is not None:
                 implied_diluted_shares=profit*amount_multiplier/diluted_eps
-            annual.append({"year":yr,"revenue":revenue,"netProfitParent":profit,"operatingProfit":op,"profitBeforeTax":pbt,
+            annual.append({"year":yr,"revenue":revenue,"revenueBasis":revenue_basis,"totalOperatingRevenue":total_operating_revenue,"netProfitParent":profit,"operatingProfit":op,"profitBeforeTax":pbt,
                            "incomeTax":tax,"effectiveTaxRate":tax_rate,"nopat":nopat,"totalAssets":assets,
                            "currentLiabilities":current_liabilities,"parentEquity":equity,"totalEquity":total_equity,
                            "averageParentEquity":avg_equity,"roePct":roe,"operatingCashFlow":ocf,"capex":capex,
