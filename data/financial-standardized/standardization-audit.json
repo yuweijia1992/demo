@@ -1,0 +1,646 @@
+{
+  "generatedAtUtc": "2026-11-08T07:22:35.044375+00:00",
+  "sourceArchive": "data/raw-financials/company_statements_20261105T094248Z.json",
+  "sourceArchiveSha256": "e750ba0fcb25afb8d857a74bbbb8b151a2db4ffb94b874932eff06e66aca6c3f",
+  "sourceRunId": "20261105T094248Z",
+  "masterCompanies": 49,
+  "normalizedCompanies": 49,
+  "annualCoverageByMetric": {
+    "income": 48,
+    "balance": 48,
+    "cashflow": 48
+  },
+  "ttmDerived": 35,
+  "ttmPartial": 4,
+  "ttmPending": 10,
+  "unitCaution": "No conversion performed; source units require validation before cross-company or per-share use.",
+  "companies": [
+    {
+      "name": "伊利股份",
+      "code": "600887.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "牧原股份",
+      "code": "002714.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "海天味业",
+      "code": "603288.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "海澜之家",
+      "code": "600398.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "申洲国际",
+      "code": "02313.HK",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "pending",
+      "ttmAsOf": null,
+      "sourceCurrencies": [],
+      "reportedUnits": []
+    },
+    {
+      "name": "海尔智家",
+      "code": "600690.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "美的集团",
+      "code": "000333.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "格力电器",
+      "code": "000651.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "比亚迪",
+      "code": "002594.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "宇通客车",
+      "code": "600066.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "京沪高铁",
+      "code": "601816.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "顺丰控股",
+      "code": "002352.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "中远海控",
+      "code": "601919.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "迈瑞医疗",
+      "code": "300760.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "恒瑞医药",
+      "code": "600276.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "药明康德",
+      "code": "603259.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "爱尔眼科",
+      "code": "300015.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "国药股份",
+      "code": "600511.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "长江电力",
+      "code": "600900.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "川投能源",
+      "code": "600674.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "中国核电",
+      "code": "601985.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "中国神华",
+      "code": "601088.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "国电南瑞",
+      "code": "600406.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "中国移动",
+      "code": "600941.SH / 00941.HK",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "pending",
+      "ttmAsOf": null,
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "中国电信",
+      "code": "601728.SH / 00728.HK",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "pending",
+      "ttmAsOf": null,
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "中国建筑",
+      "code": "601668.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "腾讯控股",
+      "code": "00700.HK",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "pending",
+      "ttmAsOf": null,
+      "sourceCurrencies": [],
+      "reportedUnits": []
+    },
+    {
+      "name": "阿里巴巴",
+      "code": "09988.HK / BABA",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "partial",
+      "ttmAsOf": "2026-06-30",
+      "sourceCurrencies": [],
+      "reportedUnits": []
+    },
+    {
+      "name": "中芯国际",
+      "code": "688981.SH / 00981.HK",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "pending",
+      "ttmAsOf": null,
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "北方华创",
+      "code": "002371.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "海光信息",
+      "code": "688041.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "中际旭创",
+      "code": "300308.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "宁德时代",
+      "code": "300750.SZ / 03750.HK",
+      "annualIncomeYears": 4,
+      "annualBalanceYears": 4,
+      "annualCashflowYears": 4,
+      "ttmStatus": "pending",
+      "ttmAsOf": null,
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "阳光电源",
+      "code": "300274.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "汇川技术",
+      "code": "300124.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "招商银行",
+      "code": "600036.SH / 03968.HK",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "pending",
+      "ttmAsOf": null,
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "工商银行",
+      "code": "601398.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "partial",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "中国平安",
+      "code": "601318.SH / 02318.HK",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "pending",
+      "ttmAsOf": null,
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "中国太保",
+      "code": "601601.SH / 02601.HK",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "pending",
+      "ttmAsOf": null,
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "中信证券",
+      "code": "600030.SH / 06030.HK",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "pending",
+      "ttmAsOf": null,
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "东方财富",
+      "code": "300059.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "京东集团",
+      "code": "09618.HK / JD",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "partial",
+      "ttmAsOf": "2026-06-30",
+      "sourceCurrencies": [],
+      "reportedUnits": []
+    },
+    {
+      "name": "中国中免",
+      "code": "601888.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "锦江酒店",
+      "code": "600754.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "分众传媒",
+      "code": "002027.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "哔哩哔哩",
+      "code": "09626.HK / BILI",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "partial",
+      "ttmAsOf": "2026-06-30",
+      "sourceCurrencies": [],
+      "reportedUnits": []
+    },
+    {
+      "name": "中公教育",
+      "code": "002607.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "兴蓉环境",
+      "code": "000598.SZ",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    },
+    {
+      "name": "瀚蓝环境",
+      "code": "600323.SH",
+      "annualIncomeYears": 5,
+      "annualBalanceYears": 5,
+      "annualCashflowYears": 5,
+      "ttmStatus": "derived",
+      "ttmAsOf": "2026-09-30",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": []
+    }
+  ]
+}
