@@ -67,7 +67,7 @@ require("financial-independence-simulator.html" in home,"homepage does not link 
 risk=(ROOT/"articles/risk-monitor.html").read_text(encoding="utf-8")
 require("portfolio_return_cny_pct" in risk,"risk monitor must gate portfolio statistics on CNY portfolio returns")
 sim=(ROOT/"articles/financial-independence-simulator.html").read_text(encoding="utf-8")
-require("returns.length>=120" in sim,"block bootstrap must require at least 120 monthly portfolio observations")
+require("port.length>=120" in sim,"block bootstrap must require at least 120 monthly portfolio observations")
 print(json.dumps({
     "status":"PASS","strategic_weights":weights,"monthly_rows":len(rows),
     "monthly_start":dates[0],"monthly_end":dates[-1],
