@@ -121,3 +121,5 @@ def main():
     print(json.dumps({k:v for k,v in out.items() if k!="records"},ensure_ascii=False,indent=2))
 
 if __name__=="__main__": main()
+
+# Refresh official filing locator index after workflow installation.
