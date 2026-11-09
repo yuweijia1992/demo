@@ -71,7 +71,6 @@ ETF_RETURN_FIELDS={
     "FXI":("fxi_china_largecap_etf_total_return_usd_pct","fxi_china_largecap_etf_total_return_cny_pct"),
     "EFA":("efa_developed_markets_etf_total_return_usd_pct","efa_developed_markets_etf_total_return_cny_pct"),
     "EEM":("eem_emerging_markets_etf_total_return_usd_pct","eem_emerging_markets_etf_total_return_cny_pct"),
-    "2800.HK":("hang_seng_etf_2800_total_return_hkd_pct","hang_seng_etf_2800_total_return_cny_pct")
 }
 TODAY=date.today()
 
@@ -471,8 +470,8 @@ def main():
         ("csindex_h11025_cash",lambda:load_cash_h11025(rows)),
         ("yahoo_511010_china_treasury_etf",lambda:load_yahoo_511010(rows)),
         ("chinabond_aggregate_wealth",lambda:load_chinabond_wealth(rows)),
-        ("yahoo_2800_hk_total_return_proxy",lambda:load_hsi_2800_proxy(rows)),
         ("fred_macro_only",lambda:load_fred(rows)),
+        ("yahoo_2800_hk_total_return_proxy",lambda:load_hsi_2800_proxy(rows)),
         ("yahoo_etf_total_returns",lambda:load_yahoo_etf_monthly_returns(rows)),
         ("shiller_cross_check",lambda:load_shiller_validation(rows))
     ]
