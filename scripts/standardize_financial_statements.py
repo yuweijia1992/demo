@@ -62,7 +62,8 @@ MAP = {
   "shareBuybacksPaid": ("回购股份支付的现金", "购回股份支付的现金"),
   "debtRepayments": ("偿还债务支付的现金", "偿还借款支付的现金"),
   "interestPaid": ("偿付利息支付的现金", "已付利息"),
-  "equityRaised": ("吸收投资收到的现金", "发行股份所得款项")
+  "equityRaised": ("吸收投资收到的现金", "发行股份所得款项"),
+  "cashAndCashEquivalentsEnding": ("现金及现金等价物期末余额", "期末现金及现金等价物余额", "现金及现金等价物期末数")
  }
 }
 def clean(v):
