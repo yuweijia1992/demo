@@ -115,7 +115,7 @@ def unit_multiplier(item):
             "百万元":1e6,"人民币百万元":1e6,"百万港元":1e6,"百万美元":1e6,
             "亿元":1e8,"人民币亿元":1e8,"亿港元":1e8,"亿美元":1e8}.get(unit)
 def debt_components(balance):
-    return [v(balance,k) for k in ("shortBorrowings","longBorrowings","bondsPayable","currentLeaseLiabilities","leaseLiabilities")]
+    return [v(balance,k) for k in ("shortBorrowings","shortTermBonds","currentPortionLongTermDebt","longBorrowings","bondsPayable","currentLeaseLiabilities","leaseLiabilities")]
 
 def cash_equivalents_for_net_debt(balance,cashflow=None):
     # Do not net all "monetary funds": restricted deposits may not be freely available.
@@ -344,8 +344,9 @@ def main():
                            "averageParentEquity":avg_equity,"roePct":roe,"operatingCashFlow":ocf,"capex":capex,
                            "freeCashFlow":fcf,"capexToRevenuePct":capex_intensity,"cash":cash,"cashAndCashEquivalents":cash_equivalents,"cashFlowEndingCashAndCashEquivalents":v(cf,"cashAndCashEquivalentsEnding"),"cashDeductionBasis":cash_basis,"restrictedCash":restricted_cash,
                            "shortTermInvestments":short_invest,"longTermInvestments":long_invest,
-                           "interestBearingDebtComponents":{"shortBorrowings":debts[0],"longBorrowings":debts[1],
-                             "bondsPayable":debts[2],"currentLeaseLiabilities":debts[3],"leaseLiabilities":debts[4]},
+                           "interestBearingDebtComponents":{"shortBorrowings":debts[0],"shortTermBonds":debts[1],
+                             "currentPortionLongTermDebt":debts[2],"longBorrowings":debts[3],"bondsPayable":debts[4],
+                             "currentLeaseLiabilities":debts[5],"leaseLiabilities":debts[6]},
                            "grossDebt":gross_debt,"netDebt":net_debt,"netDebtKnownComponents":net_debt_known_components,
                            "knownDebtComponentCount":len(known_debt_values),"currentDebtIncludedInCurrentLiabilities":current_debt_detail,"nonInterestBearingCurrentLiabilities":(current_liabilities-current_debt_in_current_liabilities) if current_liabilities is not None and current_debt_in_current_liabilities is not None else None,"investedCapital":invested_capital,
                            "averageInvestedCapital":avg_invested,"roicPct":roic,"interestExpense":interest,
@@ -490,7 +491,7 @@ def main():
             "companyCount":len(results),
             "methodology":{"roe":"归母净利润 / 年初年末归母权益平均值；首年无上年权益时留空",
               "fcf":"经营活动现金流净额 - 购建固定资产、无形资产和其他长期资产支付的现金；简化FCF，不等于股权自由现金流",
-              "netDebt":"完整净债务=短期借款+长期借款+应付债券+流动及非流动租赁负债-单独识别的现金及现金等价物；不以含受限资金的货币资金总额抵扣。仅当全部债务分项与现金等价物均有值时计算。金融企业不适用。",
+              "netDebt":"完整净债务=短期借款+短期应付债券+一年内到期长期债务+长期借款+应付债券+流动及非流动租赁负债-单独识别的现金及现金等价物；不以含受限资金的货币资金总额抵扣。仅当全部债务分项与现金等价物均有值时计算。金融企业不适用。",
               "roic":"近似ROIC：NOPAT=营业利润*(1-所得税费用/利润总额)；投入资本=总资产-(流动负债-明确列示且包含于流动负债的短借/短期债券/一年内到期长期债务/流动租赁负债)-现金及现金等价物-短期投资-长期投资；ROIC=NOPAT/平均投入资本。长期借款、长期债券及非流动租赁负债不得重复加回。当前债务分项不完整、现金等价物未单独识别或投资项缺失时不计算。税率限定0%-50%。",
               "dilutedShares":"归母净利润/稀释EPS并按财报金额单位换算，只代表年度加权平均稀释股数代理，不代表估值日当前完全稀释股数；单位不明则留空。",
               "dividends":"单列现金股息支付字段才计算现金派息率；股利/利润与利息合并字段不视为纯股息。",
