@@ -56,6 +56,7 @@ const fmt=x=>x===null||x===undefined?'—':Number(x).toLocaleString('zh-CN',{max
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const tag=(s)=>'<span class="tag">'+s+'</span>';
 function statusText(s){
+ if(s==='issuer_report_verified')return '发行人年报已核验';
  if(s==='partial_report_text_crosscheck')return '部分报告文本交叉核对';
  if(s==='partial_official_pdf_crosscheck')return '官方PDF部分字段已核对';
  if(s==='partial_fy2025_official_pdf_verified_current_period_pending')return 'FY2025净债务已核验，最新期待更新';
@@ -88,12 +89,15 @@ function show(code){
  const v=x.verification||{},a=x.companySpecificAssumptions||{},source=x.sourceLinks||{},ev=x.manualEvidence||null;
  const checks=Object.entries(v).map(([k,z])=>'<div class="check"><strong>'+k+'：'+statusText(z.status)+'</strong><p>'+(z.required||'')+'</p>'+(z.verifiedFY2025!==undefined?'<p>FY2025官方核验净债务：'+fmt(z.verifiedFY2025)+'；有息债务总额：'+fmt(z.grossDebtFY2025)+'</p>':'')+(z.netOfTreasurySnapshot!==undefined?'<p>总股本：'+fmt(z.reportedSharesOutstandingSnapshot)+'；回购股份：'+fmt(z.treasurySharesSnapshot)+'；扣回购后股数：'+fmt(z.netOfTreasurySnapshot)+'</p>':'')+(z.availablePeriods?'<p>已核验/可用记录：'+z.availablePeriods.join('；')+'</p>':'')+(z.sourceUrl?'<a href="'+z.sourceUrl+'" target="_blank" rel="noopener">查看现有来源</a>':'')+'</div>').join('');
  const drivers=m?.valuationFramework?.companyDriverTemplate||[];
- const driverHtml='<h3>公司级估值假设输入模板（待来源支持）</h3><div style="overflow:auto"><table><thead><tr><th>驱动因素</th><th>单位</th><th>当前值</th><th>需要的公司证据</th><th>状态</th></tr></thead><tbody>'+drivers.map(d=>'<tr><td>'+d.label+'</td><td>'+d.unit+'</td><td>待填</td><td>'+d.sourceRequirement+'</td><td>'+statusText(d.status)+'</td></tr>').join('')+'</tbody></table></div>';
+ const driverHtml='<h3>公司级估值假设输入模板（待来源支持）</h3><div style="overflow:auto"><table><thead><tr><th>驱动因素</th><th>单位</th><th>当前值</th><th>需要的公司证据</th><th>状态</th></tr></thead><tbody>'+drivers.map(d=>'<tr><td>'+esc(d.label||d.key)+'</td><td>'+esc(d.unit||'—')+'</td><td>'+(d.value===null||d.value===undefined?'待填':(typeof d.value==='number'?fmt(d.value)+(d.unit==='%'?'%':''):esc(d.value)))+'</td><td>'+esc(d.sourceRequirement||d.note||d.source||'—')+(d.note?'<br><small>'+esc(d.note)+'</small>':'')+'</td><td>'+statusText(d.status)+'</td></tr>').join('')+'</tbody></table></div>';
  const official=x.officialReports||{};
+ const latestAnnual=official.annualLatest||null;
+ const latestAnnualHtml=latestAnnual?'<p><b>最新年度报告（'+esc(latestAnnual.fiscalYear||'最新财年')+'）：</b><a href="'+latestAnnual.pdfUrl+'" target="_blank" rel="noopener">'+esc(latestAnnual.title)+'</a>（'+esc(latestAnnual.announcementDate||'日期待核验')+'）</p>':'';
  const reportLinks='<h3>官方定期报告链接</h3>'+
   (official.annual2025?'<p><b>2025年年度报告：</b><a href="'+official.annual2025.pdfUrl+'" target="_blank" rel="noopener">'+esc(official.annual2025.title)+'</a>（'+(official.annual2025.announcementDate||'日期待核验')+'）</p>':'<p>2025年年报官方PDF链接尚未解析。</p>')+
   (official.interim2026?'<p><b>2026年半年度报告：</b><a href="'+official.interim2026.pdfUrl+'" target="_blank" rel="noopener">'+esc(official.interim2026.title)+'</a>（'+(official.interim2026.announcementDate||'日期待核验')+'）</p>':'<p>2026年半年报官方PDF链接尚未解析。</p>')+
   (official.quarterly2026Q3?'<p><b>2026年第三季度报告：</b><a href="'+official.quarterly2026Q3.pdfUrl+'" target="_blank" rel="noopener">'+esc(official.quarterly2026Q3.title)+'</a>（'+(official.quarterly2026Q3.announcementDate||'日期待核验')+'；未经审计）</p>':'<p>2026年三季报官方PDF链接尚未解析。</p>')+
+  latestAnnualHtml+
   '<p class="muted">报告链接定位成功不代表内容已逐项核验。</p>';
  const extraDocs=x.manualEvidence?.additionalOfficialDocuments||[];
  const extraDocsHtml=extraDocs.length?'<h3>补充官方核验文件</h3><ul>'+extraDocs.map(d=>'<li><a href="'+esc(d.url)+'" target="_blank" rel="noopener">'+esc(d.title)+'</a>（'+esc(d.date)+'）</li>').join('')+'</ul>':'';
