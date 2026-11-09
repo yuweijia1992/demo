@@ -64,12 +64,16 @@ etf_fields=[
 for field in etf_fields:
     actual=sum(bool(r.get(field)) for r in rows)
     cov=manifest.get("coverage",{}).get(field,{})
-    expected=246 if field.startswith(("efa_","eem_")) else 247
+    expected=247
     require(actual in (0,expected),f"{field} must be pending (0) or have {expected} verified monthly returns")
     require(cov.get("count")==actual,f"manifest ETF coverage count incorrect for {field}")
     if actual:
-        expected_start="2006-02" if field.startswith(("efa_","eem_")) else "2006-01"
+        expected_start="2006-01"
         require(cov.get("start")==expected_start and cov.get("end")=="2026-07",f"manifest ETF coverage range incorrect for {field}")
+cash_n=sum(bool(r.get("cny_cash_return_pct")) for r in rows)
+require(cash_n in (0,250),"H11025 cash total-return coverage must be pending or complete for 250 months")
+bond_n=sum(bool(r.get("china_treasury_etf_511010_total_return_cny_pct")) for r in rows)
+require(bond_n in (0,163),"511010 CNY Treasury ETF proxy must be pending or cover 163 months")
 require(not any(r.get("portfolio_return_cny_pct") for r in rows),"full portfolio return must remain blank until all strategic sleeves and policy weights are approved")
 require(all(f in headers for f in etf_fields),"EFA/EEM global equity proxy fields must exist in the unified matrix schema")
 
