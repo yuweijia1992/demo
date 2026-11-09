@@ -532,3 +532,5 @@ def main():
 if __name__=="__main__": main()
 
 # Rebuild after cash-equivalent and regression-test updates.
+
+# Rebuild after official annual/interim/Q3 report index refresh.
