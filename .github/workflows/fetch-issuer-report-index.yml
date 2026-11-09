@@ -1,0 +1,40 @@
+name: Fetch official issuer report index
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/fetch_issuer_report_index.py"
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Resolve official A-share annual and interim report links
+        run: python scripts/fetch_issuer_report_index.py
+      - name: Validate source index coverage
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open("data/valuation-model/issuer-report-index-49.json",encoding="utf-8"))
+          assert p["companyCount"] == 49
+          assert len(p["records"]) == 49
+          assert p["annual2025Resolved"] <= p["aShareCompanies"]
+          assert p["interim2026Resolved"] <= p["aShareCompanies"]
+          print("Source locator index:", p["annual2025Resolved"], "annual reports;", p["interim2026Resolved"], "interim reports;", p["hkexManualLookup"], "HKEX manual lookups")
+          PY
+      - name: Commit official report locator index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/valuation-model/issuer-report-index-49.json
+          git diff --cached --quiet || git commit -m "Index official issuer report links"
+          git push origin HEAD:main
