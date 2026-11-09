@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T07:59:47.599336+00:00",
+  "generatedAtUtc": "2026-11-09T08:00:34.849068+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -16,6 +16,7 @@
         "market": "https://quote.cfi.cn/quote1587_600887.html"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600887",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "partial_report_text_crosscheck",
@@ -322,6 +323,7 @@
         "market": "https://cn.investing.com/equities/muyuan-foodstuff-a-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002714",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -400,6 +402,7 @@
         "market": "https://quote.cfi.cn/quote_603288.html"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=603288",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -478,6 +481,7 @@
         "market": "https://www.lixinger.com/equity/company/detail/sh/600398/600398/fundamental/valuation/pe-ttm"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600398",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -556,6 +560,7 @@
         "market": "https://stockanalysis.com/quote/hkg/2313/history/"
       },
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -634,6 +639,7 @@
         "market": "https://cn.investing.com/equities/qingdao-haier-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600690",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -712,6 +718,7 @@
         "market": "https://cn.investing.com/equities/midea-group-a-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=000333",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -790,6 +797,7 @@
         "market": "https://cn.investing.com/equities/gree-electric-a-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=000651",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -868,6 +876,7 @@
         "market": "https://cn.investing.com/equities/byd-a-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002594",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -946,6 +955,7 @@
         "market": "https://cn.investing.com/equities/yutong-bus-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600066",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1024,6 +1034,7 @@
         "market": "https://cn.investing.com/equities/shanghai-high-speed-railway-co-ltd-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601816",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1102,6 +1113,7 @@
         "market": "https://www.hstong.com/quotes/30000-002352-SZ"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002352",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1180,6 +1192,7 @@
         "market": "https://cn.investing.com/equities/china-cosco-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601919",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1258,6 +1271,7 @@
         "market": "https://cn.investing.com/equities/shenzhen-mindray-bio-medical-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300760",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1336,6 +1350,7 @@
         "market": "https://cn.investing.com/equities/hengrui-medi-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600276",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1414,6 +1429,7 @@
         "market": "https://cn.investing.com/equities/wuxi-apptec-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=603259",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1492,6 +1508,7 @@
         "market": "https://cn.investing.com/equities/aier-eye-hospital-group-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300015",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1570,6 +1587,7 @@
         "market": "https://www.laocaifu.com/stock/600511/"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600511",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1648,6 +1666,7 @@
         "market": "https://cn.investing.com/equities/yangtze-power-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600900",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1726,6 +1745,7 @@
         "market": "https://cn.investing.com/equities/chuantou-ener-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600674",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1804,6 +1824,7 @@
         "market": "https://cn.investing.com/equities/china-national-nuclear-power-co-ltd-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601985",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1882,6 +1903,7 @@
         "market": "https://cn.investing.com/equities/china-shenhua"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601088",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1960,6 +1982,7 @@
         "market": "https://data.cfi.cn/quote1752_600406.html"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600406",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2038,6 +2061,7 @@
         "market": "https://data.cfi.cn/600941.html"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600941",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2116,6 +2140,7 @@
         "market": "https://cn.investing.com/equities/china-telecom-corp-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601728",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2194,6 +2219,7 @@
         "market": "https://cn.investing.com/equities/china-state-co-ss-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601668",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2272,6 +2298,7 @@
         "market": "https://www.gurufocus.com/stock/HKSE%3A00700/data/summary"
       },
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2350,6 +2377,7 @@
         "market": "https://hk.investing.com/equities/alibaba-group-holding-hk-historical-data"
       },
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2428,6 +2456,7 @@
         "market": "https://www.yyqyx.com/s/688981.SH"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=688981",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2506,6 +2535,7 @@
         "market": "https://quote.cfi.cn/quote.aspx?client=pc&stockid=10802"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002371",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2584,6 +2614,7 @@
         "market": "https://cn.investing.com/equities/hygon-information-tech-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=688041",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2662,6 +2693,7 @@
         "market": "https://www.lixinger.com/equity/company/detail/sz/300308/300308/fundamental/valuation/pe-ttm"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300308",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2740,6 +2772,7 @@
         "market": "https://data.cfi.cn/300750.html"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300750",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2818,6 +2851,7 @@
         "market": "https://www.yyqyx.com/s/300274.SZ"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300274",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2896,6 +2930,7 @@
         "market": "https://cn.investing.com/equities/shenzhen-inovance-tech-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300124",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2974,6 +3009,7 @@
         "market": "https://quote.cfi.cn/quote.aspx?stockcode=600036&zqlb=0"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600036",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3052,6 +3088,7 @@
         "market": "https://cn.investing.com/equities/icbc-ss-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601398",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3130,6 +3167,7 @@
         "market": "https://quote.cfi.cn/quote.aspx?client=pc&lm=gsda&stockid=7143"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601318",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3208,6 +3246,7 @@
         "market": "https://cn.investing.com/equities/china-pacific-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601601",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3286,6 +3325,7 @@
         "market": "https://cn.investing.com/equities/citic-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600030",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3364,6 +3404,7 @@
         "market": "https://quote.cfi.cn/300059.html"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300059",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3442,6 +3483,7 @@
         "market": "https://hk.finance.yahoo.com/quote/9618.HK/history/"
       },
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3520,6 +3562,7 @@
         "market": "https://cn.investing.com/equities/cits-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601888",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3598,6 +3641,7 @@
         "market": "https://kr.investing.com/equities/jinjiang-hotel-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600754",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3676,6 +3720,7 @@
         "market": "https://cn.investing.com/equities/hedy-holding-a-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002027",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3754,6 +3799,7 @@
         "market": "https://hk.investing.com/equities/bilibili-historical-data"
       },
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3832,6 +3878,7 @@
         "market": "https://cn.investing.com/equities/yaxia-automobile-a-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002607",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3910,6 +3957,7 @@
         "market": "https://hk.investing.com/equities/xingrong-invest-a-historical-data"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=000598",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3988,6 +4036,7 @@
         "market": "https://hk.finance.yahoo.com/quote/600323.SS/history/"
       },
       "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600323",
+      "officialReports": null,
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
