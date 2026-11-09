@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:27:41.127729+00:00",
+  "generatedAtUtc": "2026-11-09T08:28:58.265345+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -1569,28 +1569,55 @@
           "sourceClass": "issuer_official_pdf_crosschecked",
           "verifiedFY2025": -1027673000,
           "grossDebtFY2025": 67480997000,
-          "verifiedMethod": "67,480,997-68,508,670=-1,027,673（RMB'000）"
+          "verifiedMethod": "67,480,997-68,508,670=-1,027,673（RMB'000）",
+          "latestQuarterlyEvidence": {
+            "period": "2026Q3",
+            "date": "2026-10-30",
+            "auditStatus": "unaudited",
+            "officialPdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225645132.PDF",
+            "netDebtCNY": -20020442000,
+            "grossDebtCNY": 78114115000,
+            "cashAndCashEquivalentsCNY": 98134557000,
+            "operatingCashFlowYTD_CNY": 40187380000,
+            "capexYTD_CNY": 5052583000,
+            "simplifiedFCFYTD_CNY": 35134797000,
+            "revenueYTD_CNY": 367364936000,
+            "parentNetProfitYTD_CNY": 41393371000,
+            "adjustedNetProfitYTD_CNY": 28787970000,
+            "dilutedEPSYTD_CNY": 5.48,
+            "issuedShares": 7629934000,
+            "treasuryShares": 187650463,
+            "sharesOutstandingExTreasury": 7442283537,
+            "notes": [
+              "三季报未经审计；一年内到期非流动负债整体计入债务，租赁负债仅加非流动部分。",
+              "三季报披露其他权益工具1,079,497千元及应付债券6,520,208千元，需核查可转债/潜在稀释条款，不能将扣库存股股数当完全稀释股数。",
+              "2026年前三季度扣非归母净利润同比下降22.49%，需拆解汇率损失与衍生工具收益分类影响。"
+            ]
+          },
+          "latestQuarterlyStatus": "issuer_quarterly_report_verified_unaudited",
+          "latestQuarterlyNetDebt": -20020442000,
+          "latestQuarterlyDate": "2026-10-30"
         },
         "shareCapital": {
           "status": "reported_share_count_snapshot_not_fully_diluted",
           "availableYears": 5,
           "required": "这是特定日期扣除库存股后的在外股数快照，不等于估值日完全稀释股数；仍需核对后续回购注销、期权、股权激励及可转债",
           "sourceClass": "issuer_official_pdf_crosschecked",
-          "snapshotDate": "2026-06-26",
-          "totalShareCapital": 7613438907,
-          "treasuryShares": 142570872,
-          "netOfTreasuryShares": 7470868035,
-          "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-06-23/1225381921.PDF"
+          "snapshotDate": "2026-09-30",
+          "totalShareCapital": 7629934000,
+          "treasuryShares": 187650463,
+          "netOfTreasuryShares": 7442283537,
+          "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225645132.PDF"
         },
         "currentFullyDilutedShares": {
           "status": "historical_share_count_snapshot_not_current_fully_diluted",
           "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对",
-          "snapshotDate": "2026-06-26",
-          "reportedSharesOutstandingSnapshot": 7613438907,
-          "treasurySharesSnapshot": 142570872,
-          "netOfTreasurySnapshot": 7470868035,
+          "snapshotDate": "2026-09-30",
+          "reportedSharesOutstandingSnapshot": 7629934000,
+          "treasurySharesSnapshot": 187650463,
+          "netOfTreasurySnapshot": 7442283537,
           "noPotentialDilutiveSharesFY2025": null,
-          "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-06-23/1225381921.PDF"
+          "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225645132.PDF"
         },
         "dividendPerShareHistory": {
           "status": "partial_issuer_verified_dividend_per_share_records",
@@ -1622,7 +1649,15 @@
           "status": "partial_cashflow_fields_only",
           "sourceClass": "issuer_official_pdf_partial_crosscheck",
           "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对",
-          "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF"
+          "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF",
+          "latestQuarterlyEvidence": {
+            "period": "2026Q3",
+            "date": "2026-10-30",
+            "auditStatus": "unaudited",
+            "operatingCashFlowYTD_CNY": 40187380000,
+            "capexYTD_CNY": 5052583000,
+            "simplifiedFCFYTD_CNY": 35134797000
+          }
         },
         "companySpecificForecast": {
           "status": "mechanical_reference_only",
@@ -1890,16 +1925,80 @@
             "unit": "%",
             "basis": "研发费用占营业收入比例",
             "reportLines": "年报PDF第52页"
+          },
+          "netDebtFY2026Q3": {
+            "value": -20020442000,
+            "unit": "CNY",
+            "basis": "2026-09-30狭义净债务；三季报未经审计",
+            "method": "45,620,855+5,217,491+18,697,966+6,520,208+2,057,595-98,134,557=-20,020,442（RMB'000）",
+            "reportLines": "2026年三季报PDF第7页、第11页"
+          },
+          "grossInterestBearingDebtFY2026Q3": {
+            "value": 78114115000,
+            "unit": "CNY",
+            "basis": "短期借款+一年内到期非流动负债+长期借款+应付债券+非流动租赁负债",
+            "method": "45,620,855+5,217,491+18,697,966+6,520,208+2,057,595=78,114,115（RMB'000）",
+            "reportLines": "2026年三季报PDF第7页"
+          },
+          "cashAndCashEquivalentsFY2026Q3": {
+            "value": 98134557000,
+            "unit": "CNY",
+            "basis": "2026-09-30现金及现金等价物",
+            "reportLines": "2026年三季报PDF第11页"
+          },
+          "operatingCashFlowFY2026YTD": {
+            "value": 40187380000,
+            "unit": "CNY",
+            "basis": "2026年1-9月经营活动现金流净额；未经审计",
+            "reportLines": "2026年三季报PDF第10页"
+          },
+          "capexFY2026YTD": {
+            "value": 5052583000,
+            "unit": "CNY",
+            "basis": "2026年1-9月购建固定资产、无形资产和其他长期资产支付现金；未经审计",
+            "reportLines": "2026年三季报PDF第10页"
+          },
+          "simplifiedFCFFY2026YTD": {
+            "value": 35134797000,
+            "unit": "CNY",
+            "basis": "2026年1-9月简化FCF=经营现金流-资本开支；未经审计",
+            "method": "40,187,380-5,052,583=35,134,797（RMB'000）",
+            "reportLines": "2026年三季报PDF第10页"
+          },
+          "revenueFY2026YTD": {
+            "value": 367364936000,
+            "unit": "CNY",
+            "basis": "2026年1-9月营业收入；未经审计",
+            "reportLines": "2026年三季报PDF第2页"
+          },
+          "netProfitParentFY2026YTD": {
+            "value": 41393371000,
+            "unit": "CNY",
+            "basis": "2026年1-9月归母净利润；未经审计",
+            "reportLines": "2026年三季报PDF第2页"
+          },
+          "adjustedNetProfitFY2026YTD": {
+            "value": 28787970000,
+            "unit": "CNY",
+            "basis": "2026年1-9月扣非归母净利润；未经审计",
+            "reportLines": "2026年三季报PDF第2页"
+          },
+          "dilutedEPSFY2026YTD": {
+            "value": 5.48,
+            "unit": "CNY/share",
+            "basis": "2026年1-9月稀释每股收益；未经审计",
+            "reportLines": "2026年三季报PDF第2页、第9页"
           }
         },
         "shareCountSnapshot": {
-          "date": "2026-06-26",
-          "issuedShares": 7613438907,
-          "treasuryShares": 142570872,
-          "sharesOutstandingExTreasury": 7470868035,
+          "date": "2026-09-30",
+          "issuedShares": 7629934000,
+          "treasuryShares": 187650463,
+          "sharesOutstandingExTreasury": 7442283537,
           "unit": "shares",
-          "basis": "A股6,962,590,407股+H股650,848,500股；减回购专户142,570,872股。A/H双重上市同一发行人，股数不重复计入。",
-          "officialUrl": "https://static.cninfo.com.cn/finalpage/2026-06-23/1225381921.PDF"
+          "basis": "2026年三季报披露总股本7,629,934千股；回购专用证券账户187,650,463股；在外基本股数=总股本-回购专户。A/H股份合计。",
+          "officialUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225645132.PDF",
+          "auditStatus": "quarterly_unaudited"
         },
         "dividendPerShareHistory": [
           {
@@ -1987,12 +2086,41 @@
             "asOf": "FY2025",
             "source": "Annual Report 2025 p.1",
             "note": "应逐项建立收购后收入、EBIT、现金流、商誉与投入资本回报档案"
+          },
+          "revenueGrowthFY2026YTD": {
+            "value": 1.19,
+            "unit": "% YoY",
+            "status": "issuer_quarterly_report_verified_unaudited",
+            "asOf": "2026Q3",
+            "source": "2026Q3 report p.2"
+          },
+          "parentNetProfitGrowthFY2026YTD": {
+            "value": 9.27,
+            "unit": "% YoY",
+            "status": "issuer_quarterly_report_verified_unaudited",
+            "asOf": "2026Q3",
+            "source": "2026Q3 report p.2"
+          },
+          "adjustedNetProfitGrowthFY2026YTD": {
+            "value": -22.49,
+            "unit": "% YoY",
+            "status": "issuer_quarterly_report_verified_unaudited",
+            "asOf": "2026Q3",
+            "source": "2026Q3 report p.2",
+            "note": "扣非利润下降与汇率损失及衍生工具收益的经常性/非经常性分类相关，需单独拆解"
+          },
+          "buybackSharesAt2026Q3": {
+            "value": 187650463,
+            "unit": "shares",
+            "status": "issuer_quarterly_report_verified_unaudited",
+            "asOf": "2026-09-30",
+            "source": "2026Q3 report p.4"
           }
         },
         "unresolved": {
           "roic": "集团同时包含制造业、机器人医疗、消费金融/融资租赁等业务，且现金、定期存款、金融资产、商誉和金融子公司负债混合。合并ROIC需先剥离金融业务及非经营性资金，再统一NOPAT和投入资本口径；本次不以简单总资产公式伪造ROIC。",
-          "netDebt": "FY2025狭义有息净债务已核验为净现金10.28亿元；2024年末狭义净债务约311.36亿元。2025年货币资金总额85.25bn明显高于现金等价物68.51bn，净债务采用现金流量表现金等价物，未将所有定期存款/其他货币资金当可用现金。金融子公司吸收存款及同业存放134.20百万元另列，不混入狭义有息债务。",
-          "currentFullyDilutedShares": "FY2025稀释加权平均股数7.608132bn；2026-06-26已核验A/H总股本7.613439bn，扣回购专户后在外股数7.470868bn。仍需核对2026Q3后期权行权、限制性股票、回购注销及H股股本变化，故不将加权平均稀释股数当估值日当前完全稀释股数。",
+          "netDebt": "FY2025狭义有息净债务为净现金10.28亿元；2026Q3未经审计狭义净债务为净现金200.20亿元。Q3按短期借款+一年内到期非流动负债+长期借款+应付债券+非流动租赁负债-现金及现金等价物计算；后续需核对可转债分类、受限资金和金融子公司资金。",
+          "currentFullyDilutedShares": "2026-09-30总股本7,629,934,000股，回购专户187,650,463股，在外基本股数7,442,283,537股；但三季报显示其他权益工具1,079,497千元及应付债券6,520,208千元，需取得可转债条款、转股价和未行权股权激励数据后才能计算完全稀释股数。",
           "dividends": "FY2025 A股中期0.50元/股已派、末期3.80元/股已于2026-06-29派发。H股股息以港币派发，需独立核验港股实际每股股息与汇率。FY2026中期股息及后续变动待补。",
           "capitalAllocation": "FY2025资本开支11.14bn、收购现金净支出6.16bn、投资支付164.90bn与收回投资197.53bn、偿还债务112.06bn、回购/限制性股票支付11.70bn、租赁支付1.59bn；投资支付主要含金融投资，不能与经营资本开支混为一谈。股息及利息现金支付33.08bn为合并项目，不能当作纯现金股息。",
           "companySpecificForecast": "已核验海外收入、ToB收入、研发投入、全球研发/制造网络及并购标的。未来五年需拆分智能家居、工业技术、楼宇科技、机器人自动化、新能源、医疗及物流各分部收入/利润/ROIC，重点跟踪海外本地化、关税、汇率、KUKA/TLSC商誉、并购协同及资本开支。",
@@ -2019,9 +2147,40 @@
             "date": "2026-06-23",
             "title": "2025年度A股利润分配实施公告",
             "url": "https://static.cninfo.com.cn/finalpage/2026-06-23/1225381921.PDF"
+          },
+          {
+            "type": "quarterly_report",
+            "period": "2026Q3",
+            "date": "2026-10-30",
+            "title": "2026年第三季度报告（未经审计）",
+            "url": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225645132.PDF"
           }
         ],
-        "description": "美的集团FY2025年报、2025年中期及年度A股分红实施公告已部分交叉核验。FY2025狭义有息净债务为净现金10.28亿元，2024年末为净债务311.36亿元；2025年稀释加权平均股数7.608132bn；2026-06-26扣除回购专户后的A/H在外股数快照7.470868bn。FY2025中期及年度A股每股0.50/3.80元均已派。集团ROIC与估值日完全稀释股数仍待分部拆分及最新股本核验。"
+        "description": "美的集团FY2025年报、2025年中期及年度A股分红实施公告已部分交叉核验。FY2025狭义有息净债务为净现金10.28亿元，2024年末为净债务311.36亿元；2025年稀释加权平均股数7.608132bn；2026-06-26扣除回购专户后的A/H在外股数快照7.470868bn。FY2025中期及年度A股每股0.50/3.80元均已派。集团ROIC与估值日完全稀释股数仍待分部拆分及最新股本核验。 另已核验2026Q3未经审计报告：9月末狭义净现金约200.20亿元；扣除回购专户后的在外基本股数约74.423亿股；前三季度扣非归母净利润同比下降22.49%，需警惕汇率及衍生品损益分类影响。",
+        "latestQuarterlyEvidence": {
+          "period": "2026Q3",
+          "date": "2026-10-30",
+          "auditStatus": "unaudited",
+          "officialPdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225645132.PDF",
+          "netDebtCNY": -20020442000,
+          "grossDebtCNY": 78114115000,
+          "cashAndCashEquivalentsCNY": 98134557000,
+          "operatingCashFlowYTD_CNY": 40187380000,
+          "capexYTD_CNY": 5052583000,
+          "simplifiedFCFYTD_CNY": 35134797000,
+          "revenueYTD_CNY": 367364936000,
+          "parentNetProfitYTD_CNY": 41393371000,
+          "adjustedNetProfitYTD_CNY": 28787970000,
+          "dilutedEPSYTD_CNY": 5.48,
+          "issuedShares": 7629934000,
+          "treasuryShares": 187650463,
+          "sharesOutstandingExTreasury": 7442283537,
+          "notes": [
+            "三季报未经审计；一年内到期非流动负债整体计入债务，租赁负债仅加非流动部分。",
+            "三季报披露其他权益工具1,079,497千元及应付债券6,520,208千元，需核查可转债/潜在稀释条款，不能将扣库存股股数当完全稀释股数。",
+            "2026年前三季度扣非归母净利润同比下降22.49%，需拆解汇率损失与衍生工具收益分类影响。"
+          ]
+        }
       },
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.07543927372771542,
@@ -2039,6 +2198,30 @@
         "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck",
+        "latestQuarterlyEvidence": {
+          "period": "2026Q3",
+          "date": "2026-10-30",
+          "auditStatus": "unaudited",
+          "officialPdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225645132.PDF",
+          "netDebtCNY": -20020442000,
+          "grossDebtCNY": 78114115000,
+          "cashAndCashEquivalentsCNY": 98134557000,
+          "operatingCashFlowYTD_CNY": 40187380000,
+          "capexYTD_CNY": 5052583000,
+          "simplifiedFCFYTD_CNY": 35134797000,
+          "revenueYTD_CNY": 367364936000,
+          "parentNetProfitYTD_CNY": 41393371000,
+          "adjustedNetProfitYTD_CNY": 28787970000,
+          "dilutedEPSYTD_CNY": 5.48,
+          "issuedShares": 7629934000,
+          "treasuryShares": 187650463,
+          "sharesOutstandingExTreasury": 7442283537,
+          "notes": [
+            "三季报未经审计；一年内到期非流动负债整体计入债务，租赁负债仅加非流动部分。",
+            "三季报披露其他权益工具1,079,497千元及应付债券6,520,208千元，需核查可转债/潜在稀释条款，不能将扣库存股股数当完全稀释股数。",
+            "2026年前三季度扣非归母净利润同比下降22.49%，需拆解汇率损失与衍生工具收益分类影响。"
+          ]
+        },
         "issuerReportEvidence": {
           "overseasRevenue": {
             "value": 195900000000,
@@ -2107,6 +2290,35 @@
             "asOf": "FY2025",
             "source": "Annual Report 2025 p.1",
             "note": "应逐项建立收购后收入、EBIT、现金流、商誉与投入资本回报档案"
+          },
+          "revenueGrowthFY2026YTD": {
+            "value": 1.19,
+            "unit": "% YoY",
+            "status": "issuer_quarterly_report_verified_unaudited",
+            "asOf": "2026Q3",
+            "source": "2026Q3 report p.2"
+          },
+          "parentNetProfitGrowthFY2026YTD": {
+            "value": 9.27,
+            "unit": "% YoY",
+            "status": "issuer_quarterly_report_verified_unaudited",
+            "asOf": "2026Q3",
+            "source": "2026Q3 report p.2"
+          },
+          "adjustedNetProfitGrowthFY2026YTD": {
+            "value": -22.49,
+            "unit": "% YoY",
+            "status": "issuer_quarterly_report_verified_unaudited",
+            "asOf": "2026Q3",
+            "source": "2026Q3 report p.2",
+            "note": "扣非利润下降与汇率损失及衍生工具收益的经常性/非经常性分类相关，需单独拆解"
+          },
+          "buybackSharesAt2026Q3": {
+            "value": 187650463,
+            "unit": "shares",
+            "status": "issuer_quarterly_report_verified_unaudited",
+            "asOf": "2026-09-30",
+            "source": "2026Q3 report p.4"
           }
         },
         "verifiedDividendPerShareHistory": [
@@ -2128,13 +2340,14 @@
           }
         ],
         "shareCountSnapshot": {
-          "date": "2026-06-26",
-          "issuedShares": 7613438907,
-          "treasuryShares": 142570872,
-          "sharesOutstandingExTreasury": 7470868035,
+          "date": "2026-09-30",
+          "issuedShares": 7629934000,
+          "treasuryShares": 187650463,
+          "sharesOutstandingExTreasury": 7442283537,
           "unit": "shares",
-          "basis": "A股6,962,590,407股+H股650,848,500股；减回购专户142,570,872股。A/H双重上市同一发行人，股数不重复计入。",
-          "officialUrl": "https://static.cninfo.com.cn/finalpage/2026-06-23/1225381921.PDF"
+          "basis": "2026年三季报披露总股本7,629,934千股；回购专用证券账户187,650,463股；在外基本股数=总股本-回购专户。A/H股份合计。",
+          "officialUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225645132.PDF",
+          "auditStatus": "quarterly_unaudited"
         }
       },
       "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
