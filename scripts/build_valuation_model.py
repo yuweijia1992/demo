@@ -490,25 +490,51 @@ def main():
                         annual_row["issuerVerifiedNetDebtFY2025"]=debt_value
                         annual_row["issuerVerifiedGrossDebtFY2025"]=verified.get("grossInterestBearingDebtFY2025",{}).get("value")
                         annual_row["issuerNetDebtEvidenceStatus"]="partial_official_pdf_crosscheck"
-            if verified.get("paidFY2025InterimDividendPerShare") or verified.get("paidFY2025FinalDividendPerShare"):
-                company["verification"]["register"]["dividendPerShareHistory"]["status"]="partial_paid_fy2025_and_proposed_fy2026_dividends"
-                company["verification"]["register"]["dividendPerShareHistory"]["availablePeriods"]=["FY2025 interim 0.48元/股（已派）","FY2025 final 0.90元/股（已派）","FY2026 interim 0.42元/股（预案，待实施）"]
-                company["verification"]["register"]["dividendPerShareHistory"]["required"]="仍需补齐至少五年历史、特别股息、除权/支付日期及估值日股数口径"
-            if verified.get("sharesOutstandingNetOfTreasuryAsOf2026_11_02"):
-                company["verification"]["register"]["shareCapital"]["status"]="reported_share_count_less_buyback_snapshot_not_fully_diluted"
-                company["verification"]["register"]["shareCapital"]["sourceClass"]="issuer_official_pdf_crosschecked"
-                company["verification"]["register"]["shareCapital"]["snapshotDate"]="2026-11-02"
-                company["verification"]["register"]["shareCapital"]["totalShareCapital"]=verified.get("totalShareCapitalAt2026Q3",{}).get("value")
-                company["verification"]["register"]["shareCapital"]["treasuryShares"]=verified.get("sharesRepurchasedAsOf2026_11_02",{}).get("value")
-                company["verification"]["register"]["shareCapital"]["netOfTreasuryShares"]=verified["sharesOutstandingNetOfTreasuryAsOf2026_11_02"].get("value")
-                company["verification"]["register"]["shareCapital"]["required"]="这是扣除已回购股份后的在外股数快照，不等于完全稀释股数；仍需核对回购注销、期权、股权激励和后续股本变化"
-                company["verification"]["register"]["currentFullyDilutedShares"]["reportedSharesOutstandingSnapshot"]=verified.get("totalShareCapitalAt2026Q3",{}).get("value")
-                company["verification"]["register"]["currentFullyDilutedShares"]["treasurySharesSnapshot"]=verified.get("sharesRepurchasedAsOf2026_11_02",{}).get("value")
-                company["verification"]["register"]["currentFullyDilutedShares"]["netOfTreasurySnapshot"]=verified["sharesOutstandingNetOfTreasuryAsOf2026_11_02"].get("value")
-                company["verification"]["register"]["currentFullyDilutedShares"]["status"]="reported_share_count_snapshot_not_fully_diluted"
+            dividend_records=ev.get("dividendPerShareHistory") or []
+            if dividend_records:
+                reg=company["verification"]["register"]["dividendPerShareHistory"]
+                reg["status"]="partial_issuer_verified_dividend_per_share_records"
+                reg["verifiedPeriods"]=dividend_records
+                reg["availablePeriods"]=[str(x.get("period"))+" "+str(x.get("value"))+" "+str(x.get("unit"))+" ("+str(x.get("status"))+", "+str(x.get("paymentDate") or "payment date pending")+")" for x in dividend_records]
+                reg["required"]="仍需补齐至少五年每股股息、特别股息、除权日和派付日，并与派息公告逐年核对"
+            share_snapshot=ev.get("shareCountSnapshot") or {}
+            if share_snapshot.get("sharesOutstandingExTreasury") is not None:
+                share_reg=company["verification"]["register"]["shareCapital"]
+                share_reg["status"]="reported_share_count_snapshot_not_fully_diluted"
+                share_reg["sourceClass"]="issuer_official_pdf_crosschecked"
+                share_reg["snapshotDate"]=share_snapshot.get("date")
+                share_reg["totalShareCapital"]=share_snapshot.get("issuedShares")
+                share_reg["treasuryShares"]=share_snapshot.get("treasuryShares")
+                share_reg["netOfTreasuryShares"]=share_snapshot.get("sharesOutstandingExTreasury")
+                share_reg["sourceUrl"]=share_snapshot.get("officialUrl")
+                share_reg["required"]="这是特定日期扣除库存股后的在外股数快照，不等于估值日完全稀释股数；仍需核对后续回购注销、期权、股权激励及可转债"
+                fd=company["verification"]["register"]["currentFullyDilutedShares"]
+                fd["status"]="historical_share_count_snapshot_not_current_fully_diluted"
+                fd["snapshotDate"]=share_snapshot.get("date")
+                fd["reportedSharesOutstandingSnapshot"]=share_snapshot.get("issuedShares")
+                fd["treasurySharesSnapshot"]=share_snapshot.get("treasuryShares")
+                fd["netOfTreasurySnapshot"]=share_snapshot.get("sharesOutstandingExTreasury")
+                fd["noPotentialDilutiveSharesFY2025"]=(verified.get("noPotentialDilutiveOrdinarySharesFY2025") or {}).get("value")
+                fd["sourceUrl"]=share_snapshot.get("officialUrl")
+            drivers=ev.get("companySpecificDrivers") or {}
+            template=company["valuationFramework"].get("companyDriverTemplate") or []
+            known={x.get("key"):x for x in template}
+            for key,detail in drivers.items():
+                if key in known:
+                    known[key].update(detail)
+                    known[key]["note"]=detail.get("note") or detail.get("source")
+                else:
+                    template.append({"key":key,"label":key,"unit":detail.get("unit"),"value":detail.get("value"),
+                                     "status":detail.get("status","issuer_report_verified"),
+                                     "template":"issuer_report_evidence","sourceRequirement":detail.get("source"),
+                                     "note":detail.get("note")})
+            company["valuationFramework"]["companyDriverTemplate"]=template
+            company["valuationFramework"]["companySpecificAssumptions"]["issuerReportEvidence"]=drivers
+            company["valuationFramework"]["companySpecificAssumptions"]["verifiedDividendPerShareHistory"]=dividend_records
+            company["valuationFramework"]["companySpecificAssumptions"]["shareCountSnapshot"]=share_snapshot
     audit["verification"]["issuerVerifiedNetDebtCompanies"]=sum(1 for x in manual_evidence.get("records",[]) if (x.get("verifiedFields") or {}).get("netDebtFY2025",{}).get("value") is not None)
-    audit["verification"]["issuerVerifiedShareCountSnapshots"]=sum(1 for x in manual_evidence.get("records",[]) if (x.get("verifiedFields") or {}).get("sharesOutstandingNetOfTreasuryAsOf2026_11_02",{}).get("value") is not None)
-    audit["verification"]["issuerPartialDividendHistoryRecords"]=sum(1 for x in manual_evidence.get("records",[]) if (x.get("verifiedFields") or {}).get("paidFY2025FinalDividendPerShare",{}).get("value") is not None)
+    audit["verification"]["issuerVerifiedShareCountSnapshots"]=sum(1 for x in manual_evidence.get("records",[]) if (x.get("shareCountSnapshot") or {}).get("sharesOutstandingExTreasury") is not None or (x.get("verifiedFields") or {}).get("sharesOutstandingNetOfTreasuryAsOf2026_11_02",{}).get("value") is not None)
+    audit["verification"]["issuerPartialDividendHistoryRecords"]=sum(1 for x in manual_evidence.get("records",[]) if (x.get("dividendPerShareHistory") or (x.get("verifiedFields") or {}).get("paidFY2025FinalDividendPerShare",{}).get("value") is not None))
     audit["issuerEvidenceRecords"]=len(evidence_by_code)
     audit["issuerEvidenceCrossChecks"]=sum(1 for x in manual_evidence.get("records",[]) if x.get("status")=="fully_crosschecked")
     audit["issuerReportCrossChecksPartial"]=sum(1 for x in manual_evidence.get("records",[]) if x.get("status") in ("partial_report_text_crosscheck","partial_official_pdf_crosscheck"))
