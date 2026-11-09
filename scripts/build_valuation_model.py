@@ -463,6 +463,15 @@ def main():
             company["verification"]["register"]["officialReportCrossCheck"]["status"]=ev.get("status","partial_report_text_crosscheck")
             company["verification"]["register"]["officialReportCrossCheck"]["issuerIRUrl"]=ev.get("issuerIRUrl")
             company["verification"]["register"]["officialReportCrossCheck"]["reportTextUrl"]=ev.get("reportTextUrl")
+            verified=ev.get("verifiedFields") or {}
+            if verified.get("proposedFY2025DividendPerShare"):
+                company["verification"]["register"]["dividendPerShareHistory"]["status"]="partial_fy2025_proposed_dividend_only"
+                company["verification"]["register"]["dividendPerShareHistory"]["availablePeriods"]=["FY2025 proposed annual dividend"]
+                company["verification"]["register"]["dividendPerShareHistory"]["required"]="补齐至少五年已实施派息、特别股息、除权日、币种及估值日股数口径；董事会预案不得当作已派发股息"
+            if verified.get("sharesOutstandingAt2026Q1End"):
+                company["verification"]["register"]["shareCapital"]["status"]="reported_total_shares_snapshot_only"
+                company["verification"]["register"]["shareCapital"]["snapshotDate"]="2026-03-31"
+                company["verification"]["register"]["shareCapital"]["required"]="此为报告日总股数快照，仍需核验库存股、股权激励、可转债、增发回购及估值日后股本变动"
     audit["issuerEvidenceRecords"]=len(evidence_by_code)
     audit["issuerEvidenceCrossChecks"]=sum(1 for x in manual_evidence.get("records",[]) if x.get("status")=="fully_crosschecked")
     audit["issuerReportCrossChecksPartial"]=sum(1 for x in manual_evidence.get("records",[]) if x.get("status")=="partial_report_text_crosscheck")
