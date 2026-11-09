@@ -99,6 +99,16 @@ def current_interest_bearing_debt(balance):
     if all(x is not None for x in vals):
         return sum(vals), dict(zip(keys,vals))
     return None, dict(zip(keys,vals))
+def calc_invested_capital(total_assets,current_liabilities,current_interest_debt,cash_equivalents,short_investments,long_investments):
+    values=(total_assets,current_liabilities,current_interest_debt,cash_equivalents,short_investments,long_investments)
+    if any(x is None for x in values):
+        return None
+    non_interest_current_liabilities=current_liabilities-current_interest_debt
+    if non_interest_current_liabilities<0:
+        return None
+    result=total_assets-non_interest_current_liabilities-cash_equivalents-short_investments-long_investments
+    return result if result>0 else None
+
 def calc_effective_tax_rate(income):
     pbt,tax=v(income,"profitBeforeTax"),v(income,"incomeTax")
     if pbt is None or tax is None or pbt<=0:return None
@@ -260,16 +270,9 @@ def main():
             roe=profit/avg_equity*100 if profit is not None and avg_equity else None
             tax_rate=calc_effective_tax_rate(inc)
             nopat=op*(1-tax_rate) if (not financial and op is not None and tax_rate is not None) else None
-            invested_capital=None
             current_debt_in_current_liabilities,current_debt_detail=current_interest_bearing_debt(bal)
-            # Operating invested capital = assets - non-interest-bearing current liabilities
-            # - cash equivalents - non-operating financial investments.
-            # Long-term debt is NOT added again: it is already represented in the funding
-            # side of assets and adding it here would double count the financing claim.
-            if not financial and all(x is not None for x in (assets,current_liabilities,current_debt_in_current_liabilities,cash_equivalents,short_invest,long_invest)):
-                non_interest_current_liabilities=current_liabilities-current_debt_in_current_liabilities
-                if non_interest_current_liabilities>=0:
-                    invested_capital=assets-non_interest_current_liabilities-cash_equivalents-short_invest-long_invest
+            # Long-term debt is not added again: it is already represented in assets/funding.
+            invested_capital=calc_invested_capital(assets,current_liabilities,current_debt_in_current_liabilities,cash_equivalents,short_invest,long_invest) if not financial else None
             avg_invested=(invested_capital+prior_invested_capital)/2 if invested_capital is not None and prior_invested_capital is not None and invested_capital>0 and prior_invested_capital>0 else None
             roic=(nopat/avg_invested*100) if (nopat is not None and avg_invested is not None and avg_invested>0) else None
             fcf=ocf-capex if (not financial and ocf is not None and capex is not None) else None
