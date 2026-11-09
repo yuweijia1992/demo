@@ -503,6 +503,7 @@ def main():
                 roic_reg["status"]="provisional_issuer_report_derived_method_dependent"
                 roic_reg["provisionalValueFY2025Pct"]=float(roic_evidence["value"])
                 roic_reg["sensitivityValueFY2025Pct"]=(verified.get("roicFY2025SensitivityIncludingResidualOtherIncome") or {}).get("value")
+                roic_reg["taxStressValueFY2025Pct"]=(verified.get("roicFY2025SensitivityTax25Pct") or {}).get("value")
                 roic_reg["availableYears"]=1
                 roic_reg["sourceClass"]="issuer_audited_report_derived_not_reported_metric"
                 roic_reg["method"]=roic_evidence.get("method")
