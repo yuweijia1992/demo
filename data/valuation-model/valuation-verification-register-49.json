@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T07:53:54.503077+00:00",
+  "generatedAtUtc": "2026-11-09T07:54:36.324666+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -15,7 +15,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
         "market": "https://quote.cfi.cn/quote1587_600887.html"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600887",
       "verification": {
         "officialReportCrossCheck": {
           "status": "partial_report_text_crosscheck",
@@ -296,6 +296,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -313,7 +317,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/002714/displaytype/4.phtml",
         "market": "https://cn.investing.com/equities/muyuan-foodstuff-a-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002714",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -370,6 +374,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -387,7 +395,7 @@
         "bvps": "https://stock.quote.stockstar.com/finance/summary_603288.shtml",
         "market": "https://quote.cfi.cn/quote_603288.html"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=603288",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -444,6 +452,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -461,7 +473,7 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/600398/displaytype/4.phtml",
         "market": "https://www.lixinger.com/equity/company/detail/sh/600398/600398/fundamental/valuation/pe-ttm"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600398",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -518,6 +530,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -535,7 +551,7 @@
         "bvps": "https://basic.10jqka.com.cn/02313/",
         "market": "https://stockanalysis.com/quote/hkg/2313/history/"
       },
-      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -592,6 +608,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -609,7 +629,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563095&stockid=600690",
         "market": "https://cn.investing.com/equities/qingdao-haier-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600690",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -666,6 +686,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -683,7 +707,7 @@
         "bvps": "https://www.stcn.com/quotes/index.html?stock_code=sz000333",
         "market": "https://cn.investing.com/equities/midea-group-a-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=000333",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -740,6 +764,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -757,7 +785,7 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
         "market": "https://cn.investing.com/equities/gree-electric-a-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=000651",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -814,6 +842,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -831,7 +863,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572791&stockid=002594",
         "market": "https://cn.investing.com/equities/byd-a-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002594",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -888,6 +920,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -905,7 +941,7 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/600066/displaytype/4.phtml",
         "market": "https://cn.investing.com/equities/yutong-bus-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600066",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -962,6 +998,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -979,7 +1019,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/601816/displaytype/4.phtml",
         "market": "https://cn.investing.com/equities/shanghai-high-speed-railway-co-ltd-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601816",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1036,6 +1076,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -1053,7 +1097,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/002352/displaytype/4.phtml",
         "market": "https://www.hstong.com/quotes/30000-002352-SZ"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002352",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1110,6 +1154,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -1127,7 +1175,7 @@
         "bvps": "https://www.stcn.com/quotes/index/sh601919.html",
         "market": "https://cn.investing.com/equities/china-cosco-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601919",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1184,6 +1232,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -1201,7 +1253,7 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
         "market": "https://cn.investing.com/equities/shenzhen-mindray-bio-medical-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300760",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1258,6 +1310,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -1275,7 +1331,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
         "market": "https://cn.investing.com/equities/hengrui-medi-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600276",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1332,6 +1388,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -1349,7 +1409,7 @@
         "bvps": "https://stock.quote.stockstar.com/finance/summary_603259.shtml",
         "market": "https://cn.investing.com/equities/wuxi-apptec-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=603259",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1406,6 +1466,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -1423,7 +1487,7 @@
         "bvps": "https://stock.quote.stockstar.com/finance/summary_300015.shtml",
         "market": "https://cn.investing.com/equities/aier-eye-hospital-group-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300015",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1480,6 +1544,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -1497,7 +1565,7 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/600511/displaytype/4.phtml",
         "market": "https://www.laocaifu.com/stock/600511/"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600511",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1554,6 +1622,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -1571,7 +1643,7 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
         "market": "https://cn.investing.com/equities/yangtze-power-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600900",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1628,6 +1700,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -1645,7 +1721,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12495897&stockid=600674",
         "market": "https://cn.investing.com/equities/chuantou-ener-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600674",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1702,6 +1778,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -1719,7 +1799,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572215&stockid=601985",
         "market": "https://cn.investing.com/equities/china-national-nuclear-power-co-ltd-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601985",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1776,6 +1856,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -1793,7 +1877,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572344&stockid=601088",
         "market": "https://cn.investing.com/equities/china-shenhua"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601088",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1850,6 +1934,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -1867,7 +1955,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12543058&stockid=600406",
         "market": "https://data.cfi.cn/quote1752_600406.html"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600406",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1924,6 +2012,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -1941,7 +2033,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492474&stockid=600941",
         "market": "https://data.cfi.cn/600941.html"
       },
-      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600941",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1998,6 +2090,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -2015,7 +2111,7 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910&stockid=601728",
         "market": "https://cn.investing.com/equities/china-telecom-corp-historical-data"
       },
-      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601728",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2072,6 +2168,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -2089,7 +2189,7 @@
         "bvps": "https://stock.stockstar.com/notice/SN2026082800049566.shtml",
         "market": "https://cn.investing.com/equities/china-state-co-ss-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601668",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2146,6 +2246,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -2163,7 +2267,7 @@
         "bvps": null,
         "market": "https://www.gurufocus.com/stock/HKSE%3A00700/data/summary"
       },
-      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2220,6 +2324,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -2237,7 +2345,7 @@
         "bvps": null,
         "market": "https://hk.investing.com/equities/alibaba-group-holding-hk-historical-data"
       },
-      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2294,6 +2402,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -2311,7 +2423,7 @@
         "bvps": "https://basic.10jqka.com.cn/688981/index.html",
         "market": "https://www.yyqyx.com/s/688981.SH"
       },
-      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=688981",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2368,6 +2480,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -2385,7 +2501,7 @@
         "bvps": "https://basic.10jqka.com.cn/mobile/002371/companyn.html",
         "market": "https://quote.cfi.cn/quote.aspx?client=pc&stockid=10802"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002371",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2442,6 +2558,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -2459,7 +2579,7 @@
         "bvps": "https://basic.10jqka.com.cn/688041/",
         "market": "https://cn.investing.com/equities/hygon-information-tech-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=688041",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2516,6 +2636,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -2533,7 +2657,7 @@
         "bvps": "https://basic.10jqka.com.cn/300308/index.html",
         "market": "https://www.lixinger.com/equity/company/detail/sz/300308/300308/fundamental/valuation/pe-ttm"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300308",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2590,6 +2714,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -2607,7 +2735,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12462543&stockid=300750",
         "market": "https://data.cfi.cn/300750.html"
       },
-      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300750",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2664,6 +2792,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -2681,7 +2813,7 @@
         "bvps": "https://basic.10jqka.com.cn/300274/",
         "market": "https://www.yyqyx.com/s/300274.SZ"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300274",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2738,6 +2870,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -2755,7 +2891,7 @@
         "bvps": "https://basic.10jqka.com.cn/300124/index.html",
         "market": "https://cn.investing.com/equities/shenzhen-inovance-tech-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300124",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2812,6 +2948,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -2829,7 +2969,7 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570089&stockid=600036",
         "market": "https://quote.cfi.cn/quote.aspx?stockcode=600036&zqlb=0"
       },
-      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600036",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2886,6 +3026,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -2903,7 +3047,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
         "market": "https://cn.investing.com/equities/icbc-ss-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601398",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2960,6 +3104,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -2977,7 +3125,7 @@
         "bvps": "https://basic.10jqka.com.cn/601318/field.html",
         "market": "https://quote.cfi.cn/quote.aspx?client=pc&lm=gsda&stockid=7143"
       },
-      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601318",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3034,6 +3182,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -3051,7 +3203,7 @@
         "bvps": "https://basic.10jqka.com.cn/72/02601/",
         "market": "https://cn.investing.com/equities/china-pacific-historical-data"
       },
-      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601601",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3108,6 +3260,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -3125,7 +3281,7 @@
         "bvps": "https://basic.10jqka.com.cn/600030/index.html",
         "market": "https://cn.investing.com/equities/citic-historical-data"
       },
-      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600030",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3182,6 +3338,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -3199,7 +3359,7 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518811",
         "market": "https://quote.cfi.cn/300059.html"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300059",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3256,6 +3416,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -3273,7 +3437,7 @@
         "bvps": "https://ir.jd.com/system/files-encrypted/nasdaq_kms/assets/2026/08/13/18-03-06/JD.com%20Announces%20Second%20Quarter%20and%20Interim%202026%20Results.pdf",
         "market": "https://hk.finance.yahoo.com/quote/9618.HK/history/"
       },
-      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3330,6 +3494,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -3347,7 +3515,7 @@
         "bvps": "https://basic.10jqka.com.cn/601888/index.html",
         "market": "https://cn.investing.com/equities/cits-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601888",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3404,6 +3572,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -3421,7 +3593,7 @@
         "bvps": "https://basic.10jqka.com.cn/600754/",
         "market": "https://kr.investing.com/equities/jinjiang-hotel-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600754",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3478,6 +3650,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -3495,7 +3671,7 @@
         "bvps": null,
         "market": "https://cn.investing.com/equities/hedy-holding-a-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002027",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3552,6 +3728,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -3569,7 +3749,7 @@
         "bvps": "https://ebs.publicnow.com/view/538B27FB710054B314B89D3D1EA2365BFEC63FB5",
         "market": "https://hk.investing.com/equities/bilibili-historical-data"
       },
-      "officialSearchUrl": "https://www.hkexnews.hk/index.htm?sc_lang=en",
+      "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3626,6 +3806,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -3643,7 +3827,7 @@
         "bvps": null,
         "market": "https://cn.investing.com/equities/yaxia-automobile-a-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002607",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3700,6 +3884,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -3717,7 +3905,7 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12539479&stockid=000598",
         "market": "https://hk.investing.com/equities/xingrong-invest-a-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=000598",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3774,6 +3962,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
@@ -3791,7 +3983,7 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546824&stockid=600323",
         "market": "https://hk.finance.yahoo.com/quote/600323.SS/history/"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/index",
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600323",
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3848,6 +4040,10 @@
         "costOfEquity": null,
         "terminalGrowth": null,
         "currentFullyDilutedShares": null,
+        "dividendPerShareHistory": null,
+        "maintenanceCapex": null,
+        "growthCapex": null,
+        "costOfEquityInputs": null,
         "fairValuePerShare": null,
         "status": "historical_reference_only_until_official_crosscheck"
       },
