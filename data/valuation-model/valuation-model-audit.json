@@ -1,5 +1,5 @@
 {
-  "generatedAtUtc": "2026-11-09T08:10:18.794220+00:00",
+  "generatedAtUtc": "2026-11-09T08:10:34.998821+00:00",
   "masterCompanies": 49,
   "financialRecordsMatched": 49,
   "historyRecordsMatched": 49,
@@ -42,7 +42,8 @@
     "currentFullyDilutedSharesVerified": 0,
     "dividendPerShareHistoryVerified": 0,
     "companySpecificScenarioVerified": 0,
-    "costOfCapitalVerified": 0
+    "costOfCapitalVerified": 0,
+    "issuerVerifiedNetDebtCompanies": 1
   },
   "warnings": [
     "Provider fields are not independently issuer-report verified merely because they were retrieved.",

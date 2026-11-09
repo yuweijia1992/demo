@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:10:18.818378+00:00",
+  "generatedAtUtc": "2026-11-09T08:10:35.022607+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -54,10 +54,13 @@
           "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
         },
         "netDebt": {
-          "status": "pending_inputs",
+          "status": "partial_fy2025_official_pdf_verified_current_period_pending",
           "availableYears": 0,
           "knownComponentsYears": 5,
-          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+          "required": "FY2025已按官方年报核验；仍需核对FY2026半年报/三季报债务、现金及估值日后变动",
+          "verifiedFY2025": 45772991551.52,
+          "grossDebtFY2025": 63450579472.06,
+          "verifiedMethod": "63,450,579,472.06 - 17,677,587,920.54"
         },
         "shareCapital": {
           "status": "reported_total_shares_snapshot_only",
