@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:24:11.085054+00:00",
+  "generatedAtUtc": "2026-11-09T08:25:02.550833+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -872,10 +872,13 @@
       },
       "verification": {
         "officialReportCrossCheck": {
-          "status": "pending",
-          "sourceClass": "secondary_or_unclassified",
-          "sourceUrl": "https://www.etnet.com.hk/www/tc/stocks/realtime/quote_ci_pl.php?code=2313",
-          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对"
+          "status": "partial_official_pdf_crosscheck",
+          "sourceClass": "issuer_official_pdf_partial_crosscheck",
+          "sourceUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf",
+          "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对",
+          "officialPdfUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf",
+          "issuerIRUrl": "https://www.shenzhouintl.com/",
+          "reportTextUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf"
         },
         "roic": {
           "status": "pending_inputs",
@@ -883,10 +886,14 @@
           "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
         },
         "netDebt": {
-          "status": "pending_inputs",
+          "status": "partial_fy2025_official_pdf_verified_current_period_pending",
           "availableYears": 0,
           "knownComponentsYears": 5,
-          "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
+          "required": "FY2025已按官方年报核验；仍需核对FY2026半年报/三季报债务、现金及估值日后变动",
+          "sourceClass": "issuer_official_pdf_crosschecked",
+          "verifiedFY2025": -541383000,
+          "grossDebtFY2025": 14869471000,
+          "verifiedMethod": "14,799,497+69,974-15,410,854=-541,383（RMB'000）"
         },
         "shareCapital": {
           "status": "raw_share_capital_only",
@@ -898,13 +905,19 @@
           "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
         },
         "dividendPerShareHistory": {
-          "status": "pending",
-          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+          "status": "partial_paid_fy2025_and_proposed_fy2026_dividends",
+          "required": "仍需补齐至少五年历史、特别股息、除权/支付日期及估值日股数口径",
+          "availablePeriods": [
+            "FY2025 interim 0.48元/股（已派）",
+            "FY2025 final 0.90元/股（已派）",
+            "FY2026 interim 0.42元/股（预案，待实施）"
+          ]
         },
         "capitalAllocation": {
           "status": "partial_cashflow_fields_only",
-          "sourceClass": "official_regulatory_filing",
-          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+          "sourceClass": "issuer_official_pdf_partial_crosscheck",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对",
+          "sourceUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf"
         },
         "companySpecificForecast": {
           "status": "mechanical_reference_only",
@@ -915,7 +928,351 @@
           "required": "估值日无风险利率、Beta估计窗口、股权风险溢价、债务成本、税率和目标资本结构"
         }
       },
-      "manualEvidence": null,
+      "manualEvidence": {
+        "code": "02313.HK",
+        "name": "申洲国际",
+        "period": "FY2025",
+        "status": "partial_official_pdf_crosscheck",
+        "issuerIRUrl": "https://www.shenzhouintl.com/",
+        "reportTextUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf",
+        "officialPdfUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf",
+        "reportDate": "2026-04-23",
+        "auditOpinion": "无保留审计意见（安永；HKFRS）",
+        "reportingCurrency": "CNY",
+        "reportingUnit": "人民币千元（RMB'000）",
+        "verifiedFields": {
+          "revenueFY2025": {
+            "value": 30993732,
+            "unit": "RMB'000",
+            "basis": "2025年度销售收入；五年财务摘要",
+            "reportLines": "年报PDF第5页"
+          },
+          "revenueFY2024": {
+            "value": 28662938,
+            "unit": "RMB'000",
+            "basis": "2024年度销售收入",
+            "reportLines": "年报PDF第5页"
+          },
+          "revenueFY2023": {
+            "value": 24969792,
+            "unit": "RMB'000",
+            "basis": "2023年度销售收入",
+            "reportLines": "年报PDF第5页"
+          },
+          "revenueFY2022": {
+            "value": 27781412,
+            "unit": "RMB'000",
+            "basis": "2022年度销售收入",
+            "reportLines": "年报PDF第5页"
+          },
+          "revenueFY2021": {
+            "value": 23845006,
+            "unit": "RMB'000",
+            "basis": "2021年度销售收入",
+            "reportLines": "年报PDF第5页"
+          },
+          "netProfitParentFY2025": {
+            "value": 5825262,
+            "unit": "RMB'000",
+            "basis": "归属于母公司拥有人溢利",
+            "reportLines": "年报PDF第5页、第121页"
+          },
+          "profitBeforeTaxFY2025": {
+            "value": 6665775,
+            "unit": "RMB'000",
+            "basis": "除税前溢利",
+            "reportLines": "年报PDF第47页"
+          },
+          "incomeTaxFY2025": {
+            "value": 840513,
+            "unit": "RMB'000",
+            "basis": "所得税费用",
+            "reportLines": "年报PDF第47页"
+          },
+          "totalAssetsFY2025": {
+            "value": 56942995,
+            "unit": "RMB'000",
+            "basis": "合并资产总额",
+            "reportLines": "年报PDF第5页、第49页"
+          },
+          "currentLiabilitiesFY2025": {
+            "value": 18843543,
+            "unit": "RMB'000",
+            "basis": "合并流动负债",
+            "reportLines": "年报PDF第5页、第49页"
+          },
+          "totalEquityFY2025": {
+            "value": 37491918,
+            "unit": "RMB'000",
+            "basis": "合并权益总额",
+            "reportLines": "年报PDF第5页、第49页"
+          },
+          "cashAndCashEquivalentsFY2025": {
+            "value": 15410854,
+            "unit": "RMB'000",
+            "basis": "现金及现金等价物",
+            "reportLines": "年报PDF第5页、第53页"
+          },
+          "interestBearingBankBorrowingsFY2025": {
+            "value": 14799497,
+            "unit": "RMB'000",
+            "basis": "银行借款",
+            "reportLines": "年报PDF第49页、第118页"
+          },
+          "leaseLiabilitiesFY2025": {
+            "value": 69974,
+            "unit": "RMB'000",
+            "basis": "流动与非流动租赁负债",
+            "reportLines": "年报PDF第49页、第118页"
+          },
+          "grossInterestBearingDebtFY2025": {
+            "value": 14869471000,
+            "unit": "CNY",
+            "basis": "银行借款14,799,497千元+租赁负债69,974千元",
+            "reportLines": "年报PDF第49页、第118页"
+          },
+          "netDebtFY2025": {
+            "value": -541383000,
+            "unit": "CNY",
+            "basis": "狭义净债务=银行借款+租赁负债-现金及现金等价物；负值代表净现金",
+            "method": "14,799,497+69,974-15,410,854=-541,383（RMB'000）",
+            "reportLines": "年报PDF第49页、第53页、第118页"
+          },
+          "companyDefinedNetDebtFY2025": {
+            "value": 1505823000,
+            "unit": "CNY",
+            "basis": "公司资本管理口径，另含贸易应付款、其他应付款及关联方应付款",
+            "method": "14,799,497+69,974+1,382,544+602,128+62,534-15,410,854=1,505,823（RMB'000）",
+            "reportLines": "年报PDF第118页"
+          },
+          "operatingCashFlowFY2025": {
+            "value": 5549401000,
+            "unit": "CNY",
+            "basis": "经营活动产生的现金流量净额",
+            "reportLines": "年报PDF第52页"
+          },
+          "capexPpeFY2025": {
+            "value": 2442502000,
+            "unit": "CNY",
+            "basis": "购置物业、厂房及设备",
+            "reportLines": "年报PDF第53页"
+          },
+          "capexIntangibleFY2025": {
+            "value": 17911000,
+            "unit": "CNY",
+            "basis": "购置无形资产",
+            "reportLines": "年报PDF第53页"
+          },
+          "leaseAssetPrepaymentsFY2025": {
+            "value": 278569000,
+            "unit": "CNY",
+            "basis": "使用权资产预付款，另列",
+            "reportLines": "年报PDF第53页"
+          },
+          "simpleFCFExcludingLeasePrepaymentsFY2025": {
+            "value": 3088988000,
+            "unit": "CNY",
+            "basis": "经营现金流-PPE采购-无形资产采购",
+            "method": "5,549,401-2,442,502-17,911=3,088,988（RMB'000）",
+            "reportLines": "年报PDF第52-53页"
+          },
+          "extendedFCFIncludingLeasePrepaymentsFY2025": {
+            "value": 2810419000,
+            "unit": "CNY",
+            "basis": "简化FCF进一步扣除使用权资产预付款",
+            "method": "5,549,401-2,442,502-17,911-278,569=2,810,419（RMB'000）",
+            "reportLines": "年报PDF第52-53页"
+          },
+          "dividendsPaidCashflowFY2025": {
+            "value": 3673635000,
+            "unit": "CNY",
+            "basis": "当年支付给母公司拥有人股息；支付期与宣告期不完全一致",
+            "reportLines": "年报PDF第53页"
+          },
+          "newBankLoansFY2025": {
+            "value": 19895405000,
+            "unit": "CNY",
+            "basis": "当年新增银行借款",
+            "reportLines": "年报PDF第53页"
+          },
+          "bankLoanRepaymentsFY2025": {
+            "value": 17728334000,
+            "unit": "CNY",
+            "basis": "当年偿还银行借款",
+            "reportLines": "年报PDF第53页"
+          },
+          "leasePrincipalPaymentsFY2025": {
+            "value": 49233000,
+            "unit": "CNY",
+            "basis": "租赁本金支付",
+            "reportLines": "年报PDF第53页"
+          },
+          "investmentInFVTPLFY2025": {
+            "value": 400000000,
+            "unit": "CNY",
+            "basis": "购入以公允价值计量且其变动计入损益的金融资产",
+            "reportLines": "年报PDF第53页"
+          },
+          "investmentInAssociatesFY2025": {
+            "value": 7380000,
+            "unit": "CNY",
+            "basis": "对联营公司投资",
+            "reportLines": "年报PDF第53页"
+          },
+          "grossMarginFY2025": {
+            "value": 26.3,
+            "unit": "%",
+            "basis": "年报披露毛利率",
+            "reportLines": "年报PDF第5页"
+          },
+          "netMarginFY2025": {
+            "value": 18.8,
+            "unit": "%",
+            "basis": "年报披露净利率",
+            "reportLines": "年报PDF第5页"
+          },
+          "sharesIssuedFY2025": {
+            "value": 1503222397,
+            "unit": "shares",
+            "basis": "已发行及缴足普通股，每股面值HKD0.10",
+            "reportLines": "年报PDF第107页"
+          },
+          "weightedAverageSharesFY2025": {
+            "value": 1503222397,
+            "unit": "shares",
+            "basis": "FY2025基本及摊薄EPS加权平均普通股数",
+            "reportLines": "年报PDF第90页"
+          },
+          "noPotentialDilutiveOrdinarySharesFY2025": {
+            "value": true,
+            "unit": "boolean",
+            "basis": "FY2025及FY2024均无潜在摊薄普通股",
+            "reportLines": "年报PDF第90页"
+          },
+          "paidFY2025InterimDividendPerShare": {
+            "value": 1.38,
+            "unit": "HKD/share",
+            "basis": "FY2025中期股息，2025-09-26已派",
+            "reportLines": "年报PDF第32页"
+          },
+          "paidFY2025FinalDividendPerShare": {
+            "value": 1.2,
+            "unit": "HKD/share",
+            "basis": "FY2025末期股息，2026-05-27批准，2026-06-23支付",
+            "reportLines": "年报PDF第90页；股东大会/派息公告第3页"
+          }
+        },
+        "shareCountSnapshot": {
+          "date": "2026-05-27",
+          "issuedShares": 1503222397,
+          "treasuryShares": 386400,
+          "sharesOutstandingExTreasury": 1502835997,
+          "unit": "shares",
+          "basis": "股东周年大会公告披露；扣除库存股后的在外股数",
+          "officialUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0527/2026052700588.pdf"
+        },
+        "dividendPerShareHistory": [
+          {
+            "period": "FY2025 interim",
+            "value": 1.38,
+            "unit": "HKD/share",
+            "status": "paid",
+            "paymentDate": "2025-09-26",
+            "officialUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf"
+          },
+          {
+            "period": "FY2025 final",
+            "value": 1.2,
+            "unit": "HKD/share",
+            "status": "paid",
+            "paymentDate": "2026-06-23",
+            "officialUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0527/2026052700588.pdf"
+          }
+        ],
+        "companySpecificDrivers": {
+          "grossMargin": {
+            "value": 26.3,
+            "unit": "%",
+            "status": "issuer_report_verified",
+            "asOf": "FY2025",
+            "source": "Annual Report 2025 p.5",
+            "note": "FY2025毛利率；五年序列为24.3%、22.1%、24.3%、28.1%、26.3%，不等同长期正常化毛利率"
+          },
+          "workingCapitalDays": {
+            "value": "应收账款周转期77天；存货周转期109天",
+            "unit": "days",
+            "status": "issuer_report_verified",
+            "asOf": "FY2025",
+            "source": "Annual Report 2025 p.5",
+            "note": "历史经营效率指标，不能直接作为未来假设"
+          },
+          "productMix": {
+            "value": "运动服67.7%；休闲服27.1%；内衣4.5%；其他针织品0.7%",
+            "unit": "% of revenue",
+            "status": "issuer_report_verified",
+            "asOf": "FY2025",
+            "source": "Annual Report 2025 p.6"
+          },
+          "internationalSalesShare": {
+            "value": 76.2,
+            "unit": "%",
+            "status": "issuer_report_verified",
+            "asOf": "FY2025",
+            "source": "Annual Report 2025 p.6",
+            "note": "国际市场销售占比；存在外汇和关税敏感性"
+          },
+          "annualCapacity": {
+            "value": "面料28万吨/年；成衣6亿件/年",
+            "unit": "capacity",
+            "status": "issuer_report_verified",
+            "asOf": "FY2025",
+            "source": "Annual Report 2025 p.2",
+            "note": "产能披露不等于实际产量或利用率"
+          },
+          "receivablesConcentration": {
+            "value": "最大客户42%；前五大客户93%",
+            "unit": "% of trade receivables",
+            "status": "issuer_report_verified",
+            "asOf": "FY2025",
+            "source": "Annual Report 2025 p.116",
+            "note": "这是应收账款集中度，不是营业收入客户集中度"
+          },
+          "reportedEffectiveTaxRate": {
+            "value": 12.61,
+            "unit": "%",
+            "status": "issuer_report_verified",
+            "asOf": "FY2025",
+            "source": "Annual Report 2025 p.47",
+            "note": "FY2025实际税率，仅为单年值，不是正常化税率"
+          }
+        },
+        "unresolved": {
+          "roic": "FY2025报告未直接列示营业利润单项；ROIC还需跨期统一非经营性投资、营运资金及平均投入资本口径，暂不标记为正式ROIC。",
+          "netDebt": "FY2025狭义有息净债务为净现金5.41亿元；公司资本管理口径净债务为正15.06亿元，因定义纳入经营性应付款项。2026Q3完整净债务尚未核验。",
+          "currentFullyDilutedShares": "FY2025无潜在摊薄普通股；2026-05-27扣除库存股后的在外股数1,502,835,997股。仍需跟踪2026年11月最新月度股本、潜在可转换证券及股权激励。",
+          "dividends": "FY2025中期每股HKD1.38及末期每股HKD1.20均已支付；仍需补齐更早五年每股股息及特别股息历史。",
+          "capitalAllocation": "已核验PPE/无形资产购置、使用权资产预付款、金融资产投资、联营投资、银行借款新增与偿还、租赁本金和股息现金流。维护性与扩张性资本开支、并购现金支出、股份回购仍需独立拆分。",
+          "companySpecificForecast": "已提取FY2025五年收入、利润率、产品结构、国际市场占比、产能及应收集中度。尚缺实际产量/利用率、产品单价、客户订单、人工成本、汇率敏感性和未来产能投放计划。",
+          "costOfCapital": "尚需估值日港元无风险利率、港股ERP、Beta窗口、债务成本及目标资本结构。"
+        },
+        "additionalOfficialDocuments": [
+          {
+            "type": "annual_report",
+            "period": "FY2025",
+            "date": "2026-04-23",
+            "title": "2025年年度报告（经审计）",
+            "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf"
+          },
+          {
+            "type": "agm_dividend",
+            "period": "FY2025 final",
+            "date": "2026-05-27",
+            "title": "股东周年大会投票结果及末期股息派付公告",
+            "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0527/2026052700588.pdf"
+          }
+        ],
+        "description": "申洲国际FY2025经审计年报与2026-05-27股东周年大会公告已交叉核验。狭义有息净债务为净现金5.41亿元；公司资本管理口径净债务为15.06亿元，因定义纳入经营性应付款项。FY2025每股中期/末期股息HKD1.38/HKD1.20均已支付；2026-05-27在外股数扣除库存股为1,502,835,997股。ROIC、最新股数、维护/扩张资本开支和完整公司级预测仍未完成。"
+      },
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.06774884260231007,
         "recentThreeYearMedianNetMargin": 0.18794967963199785,
