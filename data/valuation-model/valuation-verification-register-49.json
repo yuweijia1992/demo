@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:29:57.091724+00:00",
+  "generatedAtUtc": "2026-11-09T08:30:28.292320+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -63,11 +63,12 @@
         },
         "netDebt": {
           "status": "partial_fy2025_official_pdf_verified_current_period_pending",
-          "availableYears": 0,
+          "availableYears": 1,
           "knownComponentsYears": 5,
           "required": "FY2025已按官方年报核验；仍需核对FY2026半年报/三季报债务、现金及估值日后变动",
           "sourceClass": "issuer_official_pdf_crosschecked",
           "verifiedFY2025": 45772991551.52,
+          "verifiedSnapshots": 1,
           "grossDebtFY2025": 63450579472.06,
           "verifiedMethod": "63,450,579,472.06 - 17,677,587,920.54"
         },
@@ -877,11 +878,12 @@
         },
         "netDebt": {
           "status": "partial_fy2025_official_pdf_verified_current_period_pending",
-          "availableYears": 0,
+          "availableYears": 1,
           "knownComponentsYears": 5,
           "required": "FY2025已按官方年报核验；仍需核对FY2026半年报/三季报债务、现金及估值日后变动",
           "sourceClass": "issuer_official_pdf_crosschecked",
           "verifiedFY2025": -541383000,
+          "verifiedSnapshots": 1,
           "grossDebtFY2025": 14869471000,
           "verifiedMethod": "14,799,497+69,974-15,410,854=-541,383（RMB'000）"
         },
@@ -1563,11 +1565,12 @@
         },
         "netDebt": {
           "status": "partial_fy2025_official_pdf_verified_current_period_pending",
-          "availableYears": 0,
+          "availableYears": 1,
           "knownComponentsYears": 5,
           "required": "FY2025已按官方年报核验；仍需核对FY2026半年报/三季报债务、现金及估值日后变动",
           "sourceClass": "issuer_official_pdf_crosschecked",
           "verifiedFY2025": -1027673000,
+          "verifiedSnapshots": 1,
           "grossDebtFY2025": 67480997000,
           "verifiedMethod": "67,480,997-68,508,670=-1,027,673（RMB'000）",
           "latestQuarterlyEvidence": {
