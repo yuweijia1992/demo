@@ -9,6 +9,7 @@ on:
       - "articles/valuation-engine.html"
       - "articles/company-verification.html"
       - "data/valuation-model/issuer-verification-evidence.json"
+      - "data/valuation-model/issuer-report-index-49.json"
       - "data/china-stocks-financial-valuation.json"
       - "data/financial-standardized/**"
       - "data/valuation-history/generated/valuation-monthly.csv"
