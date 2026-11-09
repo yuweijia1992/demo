@@ -497,6 +497,21 @@ def main():
                         if verified_ocf is not None: annual_row["issuerVerifiedOperatingCashFlowFY2025"]=verified_ocf
                         if verified_capex is not None: annual_row["issuerVerifiedCapexFY2025"]=verified_capex
                         if verified_fcf is not None: annual_row["issuerVerifiedFreeCashFlowFY2025"]=verified_fcf
+            roic_evidence=verified.get("roicFY2025Conservative") or {}
+            if isinstance(roic_evidence.get("value"),(int,float)):
+                roic_reg=company["verification"]["register"]["roic"]
+                roic_reg["status"]="provisional_issuer_report_derived_method_dependent"
+                roic_reg["provisionalValueFY2025Pct"]=float(roic_evidence["value"])
+                roic_reg["sensitivityValueFY2025Pct"]=(verified.get("roicFY2025SensitivityIncludingResidualOtherIncome") or {}).get("value")
+                roic_reg["availableYears"]=1
+                roic_reg["sourceClass"]="issuer_audited_report_derived_not_reported_metric"
+                roic_reg["method"]=roic_evidence.get("method")
+                roic_reg["basis"]=roic_evidence.get("basis")
+                roic_reg["required"]="这是基于发行人经审计年报派生的暂定ROIC，须复核税率正常化、其他收入分类、投入资本定义和跨年可比性后才能用于估值"
+                for annual_row in company.get("annual",[]):
+                    if annual_row.get("year")==2025:
+                        annual_row["issuerVerifiedProvisionalROICFY2025"]=float(roic_evidence["value"])
+                        annual_row["issuerROICEvidenceStatus"]="provisional_issuer_report_derived_method_dependent"
             if verified.get("netDebtFY2025"):
                 debt_value=verified["netDebtFY2025"].get("value")
                 company["verification"]["register"]["netDebt"]["status"]="partial_fy2025_official_pdf_verified_current_period_pending"
@@ -564,6 +579,7 @@ def main():
             company["valuationFramework"]["companySpecificAssumptions"]["issuerReportEvidence"]=drivers
             company["valuationFramework"]["companySpecificAssumptions"]["verifiedDividendPerShareHistory"]=dividend_records
             company["valuationFramework"]["companySpecificAssumptions"]["shareCountSnapshot"]=share_snapshot
+    audit["verification"]["issuerDerivedProvisionalROICCompanies"]=sum(1 for x in manual_evidence.get("records",[]) if (x.get("verifiedFields") or {}).get("roicFY2025Conservative",{}).get("value") is not None)
     audit["verification"]["issuerVerifiedNetDebtCompanies"]=sum(1 for x in manual_evidence.get("records",[]) if (x.get("verifiedFields") or {}).get("netDebtFY2025",{}).get("value") is not None)
     audit["verification"]["issuerVerifiedShareCountSnapshots"]=sum(1 for x in manual_evidence.get("records",[]) if (x.get("shareCountSnapshot") or {}).get("sharesOutstandingExTreasury") is not None or (x.get("verifiedFields") or {}).get("sharesOutstandingNetOfTreasuryAsOf2026_11_02",{}).get("value") is not None)
     audit["verification"]["issuerPartialDividendHistoryRecords"]=sum(1 for x in manual_evidence.get("records",[]) if (x.get("dividendPerShareHistory") or (x.get("verifiedFields") or {}).get("paidFY2025FinalDividendPerShare",{}).get("value") is not None))
