@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:25:02.550833+00:00",
+  "generatedAtUtc": "2026-11-09T08:25:26.914848+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -72,30 +72,17 @@
           "verifiedMethod": "63,450,579,472.06 - 17,677,587,920.54"
         },
         "shareCapital": {
-          "status": "reported_share_count_less_buyback_snapshot_not_fully_diluted",
+          "status": "raw_share_capital_only",
           "availableYears": 5,
-          "required": "这是扣除已回购股份后的在外股数快照，不等于完全稀释股数；仍需核对回购注销、期权、股权激励和后续股本变化",
-          "sourceClass": "issuer_official_pdf_crosschecked",
-          "snapshotDate": "2026-11-02",
-          "totalShareCapital": 6325360667,
-          "treasuryShares": 3480600,
-          "netOfTreasuryShares": 6321880067
+          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
         },
         "currentFullyDilutedShares": {
-          "status": "reported_share_count_snapshot_not_fully_diluted",
-          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对",
-          "reportedSharesOutstandingSnapshot": 6325360667,
-          "treasurySharesSnapshot": 3480600,
-          "netOfTreasurySnapshot": 6321880067
+          "status": "pending",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
         },
         "dividendPerShareHistory": {
-          "status": "partial_paid_fy2025_and_proposed_fy2026_dividends",
-          "required": "仍需补齐至少五年历史、特别股息、除权/支付日期及估值日股数口径",
-          "availablePeriods": [
-            "FY2025 interim 0.48元/股（已派）",
-            "FY2025 final 0.90元/股（已派）",
-            "FY2026 interim 0.42元/股（预案，待实施）"
-          ]
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
         },
         "capitalAllocation": {
           "status": "partial_cashflow_fields_only",
@@ -511,7 +498,10 @@
         "growthCapex": null,
         "costOfEquityInputs": null,
         "fairValuePerShare": null,
-        "status": "historical_reference_only_until_official_crosscheck"
+        "status": "historical_reference_only_until_official_crosscheck",
+        "issuerReportEvidence": {},
+        "verifiedDividendPerShareHistory": [],
+        "shareCountSnapshot": {}
       },
       "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
     },
@@ -896,21 +886,50 @@
           "verifiedMethod": "14,799,497+69,974-15,410,854=-541,383（RMB'000）"
         },
         "shareCapital": {
-          "status": "raw_share_capital_only",
+          "status": "reported_share_count_snapshot_not_fully_diluted",
           "availableYears": 5,
-          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+          "required": "这是特定日期扣除库存股后的在外股数快照，不等于估值日完全稀释股数；仍需核对后续回购注销、期权、股权激励及可转债",
+          "sourceClass": "issuer_official_pdf_crosschecked",
+          "snapshotDate": "2026-05-27",
+          "totalShareCapital": 1503222397,
+          "treasuryShares": 386400,
+          "netOfTreasuryShares": 1502835997,
+          "sourceUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0527/2026052700588.pdf"
         },
         "currentFullyDilutedShares": {
-          "status": "pending",
-          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+          "status": "historical_share_count_snapshot_not_current_fully_diluted",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对",
+          "snapshotDate": "2026-05-27",
+          "reportedSharesOutstandingSnapshot": 1503222397,
+          "treasurySharesSnapshot": 386400,
+          "netOfTreasurySnapshot": 1502835997,
+          "noPotentialDilutiveSharesFY2025": true,
+          "sourceUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0527/2026052700588.pdf"
         },
         "dividendPerShareHistory": {
-          "status": "partial_paid_fy2025_and_proposed_fy2026_dividends",
-          "required": "仍需补齐至少五年历史、特别股息、除权/支付日期及估值日股数口径",
+          "status": "partial_issuer_verified_dividend_per_share_records",
+          "required": "仍需补齐至少五年每股股息、特别股息、除权日和派付日，并与派息公告逐年核对",
+          "verifiedPeriods": [
+            {
+              "period": "FY2025 interim",
+              "value": 1.38,
+              "unit": "HKD/share",
+              "status": "paid",
+              "paymentDate": "2025-09-26",
+              "officialUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf"
+            },
+            {
+              "period": "FY2025 final",
+              "value": 1.2,
+              "unit": "HKD/share",
+              "status": "paid",
+              "paymentDate": "2026-06-23",
+              "officialUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0527/2026052700588.pdf"
+            }
+          ],
           "availablePeriods": [
-            "FY2025 interim 0.48元/股（已派）",
-            "FY2025 final 0.90元/股（已派）",
-            "FY2026 interim 0.42元/股（预案，待实施）"
+            "FY2025 interim 1.38 HKD/share (paid, 2025-09-26)",
+            "FY2025 final 1.2 HKD/share (paid, 2026-06-23)"
           ]
         },
         "capitalAllocation": {
@@ -1288,7 +1307,91 @@
         "growthCapex": null,
         "costOfEquityInputs": null,
         "fairValuePerShare": null,
-        "status": "historical_reference_only_until_official_crosscheck"
+        "status": "historical_reference_only_until_official_crosscheck",
+        "issuerReportEvidence": {
+          "grossMargin": {
+            "value": 26.3,
+            "unit": "%",
+            "status": "issuer_report_verified",
+            "asOf": "FY2025",
+            "source": "Annual Report 2025 p.5",
+            "note": "FY2025毛利率；五年序列为24.3%、22.1%、24.3%、28.1%、26.3%，不等同长期正常化毛利率"
+          },
+          "workingCapitalDays": {
+            "value": "应收账款周转期77天；存货周转期109天",
+            "unit": "days",
+            "status": "issuer_report_verified",
+            "asOf": "FY2025",
+            "source": "Annual Report 2025 p.5",
+            "note": "历史经营效率指标，不能直接作为未来假设"
+          },
+          "productMix": {
+            "value": "运动服67.7%；休闲服27.1%；内衣4.5%；其他针织品0.7%",
+            "unit": "% of revenue",
+            "status": "issuer_report_verified",
+            "asOf": "FY2025",
+            "source": "Annual Report 2025 p.6"
+          },
+          "internationalSalesShare": {
+            "value": 76.2,
+            "unit": "%",
+            "status": "issuer_report_verified",
+            "asOf": "FY2025",
+            "source": "Annual Report 2025 p.6",
+            "note": "国际市场销售占比；存在外汇和关税敏感性"
+          },
+          "annualCapacity": {
+            "value": "面料28万吨/年；成衣6亿件/年",
+            "unit": "capacity",
+            "status": "issuer_report_verified",
+            "asOf": "FY2025",
+            "source": "Annual Report 2025 p.2",
+            "note": "产能披露不等于实际产量或利用率"
+          },
+          "receivablesConcentration": {
+            "value": "最大客户42%；前五大客户93%",
+            "unit": "% of trade receivables",
+            "status": "issuer_report_verified",
+            "asOf": "FY2025",
+            "source": "Annual Report 2025 p.116",
+            "note": "这是应收账款集中度，不是营业收入客户集中度"
+          },
+          "reportedEffectiveTaxRate": {
+            "value": 12.61,
+            "unit": "%",
+            "status": "issuer_report_verified",
+            "asOf": "FY2025",
+            "source": "Annual Report 2025 p.47",
+            "note": "FY2025实际税率，仅为单年值，不是正常化税率"
+          }
+        },
+        "verifiedDividendPerShareHistory": [
+          {
+            "period": "FY2025 interim",
+            "value": 1.38,
+            "unit": "HKD/share",
+            "status": "paid",
+            "paymentDate": "2025-09-26",
+            "officialUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf"
+          },
+          {
+            "period": "FY2025 final",
+            "value": 1.2,
+            "unit": "HKD/share",
+            "status": "paid",
+            "paymentDate": "2026-06-23",
+            "officialUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0527/2026052700588.pdf"
+          }
+        ],
+        "shareCountSnapshot": {
+          "date": "2026-05-27",
+          "issuedShares": 1503222397,
+          "treasuryShares": 386400,
+          "sharesOutstandingExTreasury": 1502835997,
+          "unit": "shares",
+          "basis": "股东周年大会公告披露；扣除库存股后的在外股数",
+          "officialUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0527/2026052700588.pdf"
+        }
       },
       "valuationOutputStatus": "blocked_no_verified_per_share_fair_value"
     },

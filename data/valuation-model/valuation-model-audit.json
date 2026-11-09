@@ -1,5 +1,5 @@
 {
-  "generatedAtUtc": "2026-11-09T08:25:02.516454+00:00",
+  "generatedAtUtc": "2026-11-09T08:25:26.876954+00:00",
   "masterCompanies": 49,
   "financialRecordsMatched": 49,
   "historyRecordsMatched": 49,
@@ -44,7 +44,7 @@
     "companySpecificScenarioVerified": 0,
     "costOfCapitalVerified": 0,
     "issuerVerifiedNetDebtCompanies": 2,
-    "issuerVerifiedShareCountSnapshots": 1,
+    "issuerVerifiedShareCountSnapshots": 2,
     "issuerPartialDividendHistoryRecords": 2
   },
   "warnings": [
