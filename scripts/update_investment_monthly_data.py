@@ -47,7 +47,6 @@ HEADERS = [
 # EXCHUS is the Federal Reserve's monthly-average Chinese yuan per U.S. dollar rate.
 # Daily FRED macro series are represented by the final available observation in each month.
 FRED_MAP = {
-    "EXCHUS":"usd_cny",
     "DGS10":"dgs10_pct","DFII10":"dfii10_pct","DTWEXBGS":"dxy_index",
     "VIXCLS":"vix_index","CPIAUCSL":"us_cpi_index","FEDFUNDS":"fedfunds_pct",
     "DCOILBRENTEU":"brent_usd_bbl"
@@ -57,6 +56,7 @@ URLS = {
     "sp500tr":"https://raw.githubusercontent.com/vanexymx/sp500-historical-analysis/main/data/SP500TR_monthly.json",
     "gold":"https://raw.githubusercontent.com/datasets/gold-prices/main/data/monthly.csv",
     "shiller":"https://firenum.com/data/shiller-monthly.csv",
+    "exchange_rates_monthly":"https://raw.githubusercontent.com/datasets/exchange-rates/main/data/monthly.csv",
     "yahoo_etf_monthly_returns":"https://raw.githubusercontent.com/HerdingAI/stock-price-returns/main/output/monthly_returns_by_ticker.csv"
 }
 USER_AGENT="InvestmentLabMonthlyData/2.5 (research; source attribution in manifest)"
@@ -92,7 +92,7 @@ def target_months():
     y,m=TODAY.year,TODAY.month-1
     if m==0:y,m=y-1,12
     start=2006*12
-    stop=y*12+m
+    stop=y*12+(m-1)
     return [f"{n//12:04d}-{n%12+1:02d}" for n in range(start,stop+1)]
 
 def read_existing():
@@ -213,6 +213,20 @@ def load_shiller_validation(rows):
         if ret is not None:count+=1
     return {"observations":count,"role":"independent_cross_check_not_primary_series"}
 
+def load_monthly_fx(rows):
+    """Load monthly-average CNY per USD, including Dec-2005 predecessor, from the archived Fed G.5 panel."""
+    source={}
+    for r in csv.DictReader(io.StringIO(fetch(URLS["exchange_rates_monthly"],timeout=90))):
+        if (r.get("Country") or "").strip()!="China":continue
+        dt=r.get("Date") or ""
+        value=num(r.get("Exchange rate"))
+        if len(dt)>=7 and value is not None and value>0:source[dt[:7]]=value
+    if not source:raise RuntimeError("monthly USD/CNY archive contains no China observations")
+    for month in rows:
+        if month in source:rows[month]["usd_cny"]=f"{source[month]:.8f}"
+    return {"months":len(source),"coverage_start":min(source),"coverage_end":max(source),
+            "source":"datasets/exchange-rates monthly.csv; China, CNY per USD; Fed G.5 monthly average"}
+    
 def load_fred(rows):
     results={}
     for sid,field in FRED_MAP.items():
@@ -313,7 +327,8 @@ def main():
         ("csi300_h00300",lambda:load_csi_index_levels(rows)),
         ("sp500_total_return",lambda:load_sp500_total_return(rows)),
         ("world_bank_gold",lambda:load_gold_monthly(rows)),
-        ("fred_macro_and_fx",lambda:load_fred(rows)),
+        ("monthly_usd_cny",lambda:load_monthly_fx(rows)),
+        ("fred_macro_only",lambda:load_fred(rows)),
         ("yahoo_etf_total_returns",lambda:load_yahoo_etf_monthly_returns(rows)),
         ("shiller_cross_check",lambda:load_shiller_validation(rows))
     ]
