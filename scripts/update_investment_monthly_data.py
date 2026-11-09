@@ -30,6 +30,7 @@ HEADERS = [
     "gold_usd_oz","gold_cny_per_oz_monthly_avg","gold_cny_return_pct",
     "usd_cny","usd_cny_change_pct",
     "hang_seng_total_return_index_hkd","hang_seng_total_return_pct","hang_seng_total_return_cny_pct",
+    "hang_seng_etf_2800_total_return_index_hkd","hang_seng_etf_2800_total_return_hkd_pct","hang_seng_etf_2800_total_return_cny_pct","hkd_per_usd",
     "china_bond_wealth_index_cny","china_bond_wealth_return_cny_pct",
     "cny_cash_index_h11025","china_treasury_etf_511010_adj_total_return_index_cny","china_treasury_etf_511010_total_return_cny_pct",
     "us_treasury_7_10y_total_return_index_usd","us_treasury_7_10y_total_return_pct","us_treasury_7_10y_total_return_cny_pct",
@@ -48,6 +49,7 @@ HEADERS = [
 # EXCHUS is the Federal Reserve's monthly-average Chinese yuan per U.S. dollar rate.
 # Daily FRED macro series are represented by the final available observation in each month.
 FRED_MAP = {
+    "DEXHKUS":"hkd_per_usd",
     "DGS10":"dgs10_pct","DFII10":"dfii10_pct","DTWEXBGS":"dxy_index",
     "VIXCLS":"vix_index","CPIAUCSL":"us_cpi_index","FEDFUNDS":"fedfunds_pct",
     "DCOILBRENTEU":"brent_usd_bbl"
@@ -67,7 +69,8 @@ ETF_RETURN_FIELDS={
     "SHY":("us_shy_1_3y_etf_total_return_usd_pct","us_shy_1_3y_etf_total_return_cny_pct"),
     "FXI":("fxi_china_largecap_etf_total_return_usd_pct","fxi_china_largecap_etf_total_return_cny_pct"),
     "EFA":("efa_developed_markets_etf_total_return_usd_pct","efa_developed_markets_etf_total_return_cny_pct"),
-    "EEM":("eem_emerging_markets_etf_total_return_usd_pct","eem_emerging_markets_etf_total_return_cny_pct")
+    "EEM":("eem_emerging_markets_etf_total_return_usd_pct","eem_emerging_markets_etf_total_return_cny_pct"),
+    "2800.HK":("hang_seng_etf_2800_total_return_hkd_pct","hang_seng_etf_2800_total_return_cny_pct")
 }
 TODAY=date.today()
 
@@ -232,7 +235,8 @@ def load_cash_h11025(rows):
     """Official CSI money-market fund total-return index; historical values are backfilled to its base date."""
     source={}
     headers={"User-Agent":USER_AGENT,"Referer":"https://www.csindex.com.cn/","X-Requested-With":"XMLHttpRequest","Accept":"application/json, text/javascript, */*; q=0.01"}
-    windows=[("20051230","20151231"),("20160101",TODAY.strftime("%Y%m%d"))]
+    windows=[(f"{year}0101",f"{year}1231") for year in range(2006,TODAY.year+1)]
+    windows[0]=("20051230",windows[0][1])
     for start,end in windows:
         url=f"https://www.csindex.com.cn/csindex-home/perf/index-perf?indexCode=H11025&startDate={start}&endDate={end}"
         req=Request(url,headers=headers)
@@ -253,6 +257,9 @@ def load_cash_h11025(rows):
     if not source:raise RuntimeError("CSIndex H11025 API returned no valid daily levels")
     for month,item in rows.items():
         if month in source:item["cny_cash_index_h11025"]=f"{source[month][1]:.8f}"
+    # H11025 base date is 2005-12-30 with base value 100; calculation predecessor only.
+    first=prev_month(target_months()[0])
+    if first in rows and first not in source:rows[first]["cny_cash_index_h11025"]="100.00000000"
     for month,item in rows.items():
         prior=rows.get(prev_month(month),{})
         cur=num(item.get("cny_cash_index_h11025"));prev=num(prior.get("cny_cash_index_h11025"))
@@ -287,6 +294,64 @@ def load_yahoo_511010(rows):
     return {"ticker":"511010.SS","months":len(monthly),"coverage_start":min(monthly),"coverage_end":max(monthly),
             "source":"Yahoo Finance adjusted close; CNY-listed 5-year China government bond ETF; ETF proxy, not ChinaBond wealth index"}
 
+def load_hsi_2800_proxy(rows):
+    """Tracker Fund of Hong Kong (2800.HK) adjusted-close proxy for HSI dividends reinvested."""
+    period2=int(datetime(TODAY.year,TODAY.month,TODAY.day).timestamp())+86400
+    url=("https://query1.finance.yahoo.com/v8/finance/chart/2800.HK"
+         f"?period1=915148800&period2={period2}&interval=1d&events=div%2Csplits")
+    payload=json.loads(fetch(url,timeout=90))
+    result=(payload.get("chart") or {}).get("result") or []
+    if not result:raise RuntimeError("Yahoo Finance returned no 2800.HK chart data")
+    item=result[0];timestamps=item.get("timestamp") or []
+    adj=((item.get("indicators") or {}).get("adjclose") or [{}])[0].get("adjclose") or []
+    monthly={}
+    for ts,value in zip(timestamps,adj):
+        level=num(value)
+        if level is None or level<=0:continue
+        dt=datetime.utcfromtimestamp(ts).strftime("%Y-%m-%d");month=dt[:7]
+        if month not in monthly or dt>monthly[month][0]:monthly[month]=(dt,level)
+    if not monthly:raise RuntimeError("Yahoo 2800.HK adjusted-close series is empty")
+    for month,row in rows.items():
+        if month in monthly:row["hang_seng_etf_2800_total_return_index_hkd"]=f"{monthly[month][1]:.8f}"
+    for month,row in rows.items():
+        prev=rows.get(prev_month(month),{})
+        cur=num(row.get("hang_seng_etf_2800_total_return_index_hkd"))
+        old=num(prev.get("hang_seng_etf_2800_total_return_index_hkd"))
+        row["hang_seng_etf_2800_total_return_hkd_pct"]=f"{(cur/old-1)*100:.8f}" if cur is not None and old is not None and old>0 else ""
+        hret=num(row.get("hang_seng_etf_2800_total_return_hkd_pct"))
+        hkfx=num(row.get("hkd_per_usd"));phkfx=num(prev.get("hkd_per_usd"))
+        usd=num(row.get("usd_cny"));pusd=num(prev.get("usd_cny"))
+        if hret is not None and hkfx is not None and phkfx is not None and phkfx>0 and usd is not None and pusd is not None and pusd>0:
+            row["hang_seng_etf_2800_total_return_cny_pct"]=f"{((1+hret/100)*(pusd/usd)*(hkfx/phkfx)-1)*100:.8f}"
+        else:row["hang_seng_etf_2800_total_return_cny_pct"]=""
+    return {"ticker":"2800.HK","months":len(monthly),"coverage_start":min(monthly),"coverage_end":max(monthly),
+            "source":"Yahoo Finance adjusted close; Tracker Fund of Hong Kong; HKD total-return ETF proxy, not official Hang Seng TRI"}
+
+def load_chinabond_wealth(rows):
+    """Official ChinaBond Aggregate Wealth (Total Value) index CBA00201 via ChinaBond public index endpoint."""
+    params={"indexid":"2c90818811afed8d0111c0c672b31578","qxlxt":"00","ltcslx":"","zslxt":"CFZS","zslxt1":"CFZS","lx":"1","locale":"zh_CN"}
+    url="https://yield.chinabond.com.cn/cbweb-mn/indices/singleIndexQueryResult?"+urlencode(params)
+    headers={"User-Agent":USER_AGENT,"Referer":"https://yield.chinabond.com.cn/cbweb-mn/indices/single_index_query?locale=zh_CN","Accept":"application/json, text/plain, */*"}
+    req=Request(url,headers=headers)
+    payload=json.loads(urlopen(req,timeout=120).read().decode("utf-8-sig"))
+    key="CFZS_00";series=payload.get(key)
+    if not isinstance(series,dict) or not series:raise RuntimeError(f"ChinaBond CBA00201 endpoint missing {key}; keys={list(payload)[:10]}")
+    monthly={}
+    for stamp,value in series.items():
+        level=num(value)
+        if level is None or level<=0:continue
+        try:dt=datetime.fromtimestamp(float(stamp)/1000,timezone.utc).astimezone(timezone(timedelta(hours=8))).strftime("%Y-%m-%d")
+        except Exception:continue
+        month=dt[:7]
+        if month not in monthly or dt>monthly[month][0]:monthly[month]=(dt,level)
+    if not monthly:raise RuntimeError("ChinaBond CBA00201 response contained no valid daily index levels")
+    for month,row in rows.items():
+        if month in monthly:row["china_bond_wealth_index_cny"]=f"{monthly[month][1]:.8f}"
+    for month,row in rows.items():
+        prev=rows.get(prev_month(month),{});cur=num(row.get("china_bond_wealth_index_cny"));old=num(prev.get("china_bond_wealth_index_cny"))
+        row["china_bond_wealth_return_cny_pct"]=f"{(cur/old-1)*100:.8f}" if cur is not None and old is not None and old>0 else ""
+    return {"index_code":"CBA00201","index_name":"中债-综合财富（总值）指数","months":len(monthly),"coverage_start":min(monthly),"coverage_end":max(monthly),
+            "source":"ChinaBond official CFZS_00 daily total-wealth index, sampled at final trading day each month"}
 def load_fred(rows):
     results={}
     for sid,field in FRED_MAP.items():
@@ -350,7 +415,7 @@ def build_manifest(rows,source_stats,errors):
         "dataset_file":"data/investment-monthly.csv","frequency":"monthly",
         "row_count":len(rows),"date_start":min(rows),"date_end":max(rows),
         "coverage":coverage,
-        "coverage_audit":{k:v for k,v in coverage.items() if k in ["csi300_price_return_pct","csi300_total_return_pct","sp500_total_return_cny_pct","gold_cny_return_pct","usd_cny","hang_seng_total_return_pct","china_bond_wealth_return_cny_pct","cny_cash_return_pct","portfolio_return_cny_pct","efa_developed_markets_etf_total_return_cny_pct","eem_emerging_markets_etf_total_return_cny_pct","china_treasury_etf_511010_total_return_cny_pct"]},
+        "coverage_audit":{k:v for k,v in coverage.items() if k in ["csi300_price_return_pct","csi300_total_return_pct","sp500_total_return_cny_pct","gold_cny_return_pct","usd_cny","hang_seng_total_return_pct","hang_seng_etf_2800_total_return_cny_pct","china_bond_wealth_return_cny_pct","cny_cash_return_pct","portfolio_return_cny_pct","efa_developed_markets_etf_total_return_cny_pct","eem_emerging_markets_etf_total_return_cny_pct","china_treasury_etf_511010_total_return_cny_pct","hkd_per_usd"]},
         "refresh_sources":source_stats,"refresh_errors":errors,
         "portfolio_return_ready":False,
         "matrix_policy":[
@@ -359,11 +424,14 @@ def build_manifest(rows,source_stats,errors):
             "EFA is a developed-markets ex-US/Canada ETF proxy; EEM is an emerging-markets ETF proxy. Both are Yahoo auto-adjusted ETF total-return proxies, not official MSCI net/gross index returns.",
             "EEM country holdings include China and Taiwan; do not add EEM to A-share/HK exposures without country/issuer overlap review.",
             "USD/CNY uses the Federal Reserve G.5 monthly average EXCHUS series via the archived datasets/exchange-rates monthly panel.",
+            "HKD/CNY conversion uses monthly-average DEXHKUS (HKD per USD) and USD/CNY: (1+rHKD)*(USD/CNY_t/USD/CNY_prev)*(HKDUSD_prev/HKDUSD_t)-1.",
             "CNY cash proxy uses official CSIndex H11025 money-market fund total-return index; base date 2005-12-30, publication date 2016-08-31; pre-publication history is backfilled.",
             "China government-bond investable proxy uses Yahoo auto-adjusted 511010.SS ETF close; CNY denominated, starts 2013; separate from official ChinaBond wealth index.",
             "USD asset CNY return=(1+rUSD)*(FX_t/FX_t-1)-1.",
             "Gold CNY monthly-average valuation=Gold USD monthly average*USD/CNY monthly average; it is an approximation.",
-            "Do not calculate a full 52/28/10/10 portfolio return while HSI TRI, ChinaBond wealth, cash total return or sub-asset target weights are missing."
+            "Official HSI gross TRI (HSIDV) remains separate from 2800.HK adjusted ETF proxy; 2800.HK includes fund fees and tracking difference.",
+            "ChinaBond CBA00201 is the official aggregate total-wealth index; confirm vendor terms before redistributing source observations.",
+            "Do not calculate a full 52/28/10/10 portfolio return while official HSI TRI or approved regional weights are missing."
         ]
     })
     manifest["series"]=[{"field":f,**coverage[f]} for f in HEADERS[1:]]
@@ -383,6 +451,10 @@ def build_manifest(rows,source_stats,errors):
         })
     if not any("H11025" in str(x.get("name","")) for x in sources):
         sources.append({"series":["cny_cash_index_h11025","cny_cash_return_pct"],"name":"中证货币基金指数 H11025","source":"中证指数有限公司","url":"https://www.csindex.com.cn/","data_url":"https://www.csindex.com.cn/csindex-home/perf/index-perf?indexCode=H11025","factsheet":"https://oss-ch.csindex.com.cn/static/html/csindex/public/uploads/indices/detail/files/zh_CN/H11025factsheet.pdf","method":"每日官方全收益指数水平取月末值；月收益=本月末指数/上月末指数-1","caveat":"指数发布日期2016-08-31，基日2005-12-30；发布日期前属于回溯历史，不等于当时可投资的实时指数产品。"})
+    if not any("CBA00201" in str(x.get("name","")) for x in sources):
+        sources.append({"series":["china_bond_wealth_index_cny","china_bond_wealth_return_cny_pct"],"name":"中债-综合财富（总值）指数 CBA00201","source":"中债金融估值中心 / 中国债券信息网","url":"https://yield.chinabond.com.cn/cbweb-mn/indices/single_index_query?locale=zh_CN","data_url":"https://yield.chinabond.com.cn/cbweb-mn/indices/singleIndexQueryResult","method":"官方CFZS_00日度财富指数水平取每月最后交易日；月收益=本月末/上月末-1","caveat":"指数数据再分发和作为业绩基准使用受中债授权条款约束；须核实许可。"});
+    if not any("2800.HK" in str(x.get("name","")) for x in sources):
+        sources.append({"series":["hang_seng_etf_2800_total_return_index_hkd","hang_seng_etf_2800_total_return_hkd_pct","hang_seng_etf_2800_total_return_cny_pct"],"name":"Tracker Fund of Hong Kong 2800.HK","source":"Yahoo Finance adjusted close","url":"https://finance.yahoo.com/quote/2800.HK/history/","method":"月末adjusted close构造含分红再投资ETF回报，再按HKD/CNY换算","caveat":"可投资ETF代理，不是恒生官方HSIDV总股息累计指数；包含基金费用、跟踪误差及Yahoo数据源风险。"});
     if not any("511010.SS" in str(x.get("name","")) for x in sources):
         sources.append({"series":["china_treasury_etf_511010_adj_total_return_index_cny","china_treasury_etf_511010_total_return_cny_pct"],"name":"国泰上证5年期国债ETF 511010","source":"Yahoo Finance adjusted close","url":"https://finance.yahoo.com/quote/511010.SS/history/","method":"Yahoo auto-adjusted daily close (dividends/splits adjusted), resampled to last trading day each month","caveat":"2013年成立，单只5年期国债ETF代理；不等于中债综合财富指数，数据源可能修订。"})
     return manifest
@@ -397,6 +469,8 @@ def main():
         ("monthly_usd_cny",lambda:load_monthly_fx(rows)),
         ("csindex_h11025_cash",lambda:load_cash_h11025(rows)),
         ("yahoo_511010_china_treasury_etf",lambda:load_yahoo_511010(rows)),
+        ("chinabond_aggregate_wealth",lambda:load_chinabond_wealth(rows)),
+        ("yahoo_2800_hk_total_return_proxy",lambda:load_hsi_2800_proxy(rows)),
         ("fred_macro_only",lambda:load_fred(rows)),
         ("yahoo_etf_total_returns",lambda:load_yahoo_etf_monthly_returns(rows)),
         ("shiller_cross_check",lambda:load_shiller_validation(rows))
