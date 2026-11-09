@@ -6,7 +6,7 @@
 - `data/china-stocks-financial-valuation.json`：公司主证券、行业分类与基础信息。
 - `data/financial-standardized/company-financials-2021-2025.json`：2021—2025年标准化财务数据。
 - `data/valuation-history/generated/valuation-monthly.csv`：月度PE/PB/PS历史估值。
-- `data/valuation-model/issuer-report-index-49.json`：A股官方年报/半年报PDF链接索引，港股提供HKEX检索入口。
+- `data/valuation-model/issuer-report-index-49.json`：49/49家公司已定位官方年度报告入口（48家FY2025年报、阿里巴巴FY2026年报）；半年报和三季报另行记录，报告链接定位不等于内容核验。
 - `data/valuation-model/issuer-verification-evidence.json`：逐项人工报告核验档案。
 
 ## 输出
@@ -28,10 +28,10 @@
 10. 不输出每股内在价值或买入评级，除非币种、金额单位、完全稀释股数、报告期和估值日股价经过独立核验。缺失值保持null。
 
 ## 当前核验状态
-接口抓取、字段映射和公式计算不等于发行人年报核验。当前已有伊利股份2025年报的官方CNINFO PDF部分字段交叉核验；其余公司须逐家核对报告正文、审计意见、合并范围、币种单位、债务、股本、股息和资本配置。A股报告链接定位成功率与报告内容核验率分开统计；港股报告需通过HKEXnews逐份定位和核对。
+接口抓取、字段映射和公式计算不等于发行人年报核验。当前已有伊利股份、申洲国际两家公司官方年度报告的部分字段交叉核验。申洲国际另核验了2026-05-27股东周年大会/末期股息公告。其余47家公司仍须逐家核对报告正文、审计意见、合并范围、币种单位、债务、股本、股息和资本配置。官方报告链接定位率为49/49；报告内容部分核验率为2/49，二者严格分开。
 
 ## 官方报告来源
-A股报告链接由巨潮资讯公告检索接口定位，记录2025年报、2026年半年报和2026年三季报的公告标题、披露日期、详情页和PDF直链。港股提供HKEXnews官方披露检索入口。官方链接只证明来源可追溯，不代表字段已经逐项核验。
+A股报告链接由巨潮资讯公告检索接口定位；港股报告链接来自HKEXnews、发行人投资者关系网站或SEC/20-F法定文件。官方链接只证明来源可追溯，不代表字段已经逐项核验。
 
 ## 自动化
 - `.github/workflows/build-company-valuation-model.yml`：重建模型并运行公式/页面检查。
