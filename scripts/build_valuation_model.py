@@ -444,3 +444,5 @@ def main():
     print(json.dumps(audit,ensure_ascii=False,indent=2))
 
 if __name__=="__main__": main()
+
+# Rebuild after cash-equivalent and regression-test updates.
