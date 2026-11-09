@@ -469,12 +469,18 @@ def main():
             company["verification"]["manualEvidence"]=ev
             company["verification"]["financialSourceCrossCheck"]=ev.get("status","partial_report_text_crosscheck")
             company["verification"]["register"]["officialReportCrossCheck"]["status"]=ev.get("status","partial_report_text_crosscheck")
+            company["verification"]["register"]["officialReportCrossCheck"]["sourceClass"]="issuer_official_pdf_partial_crosscheck"
+            company["verification"]["register"]["officialReportCrossCheck"]["sourceUrl"]=ev.get("officialPdfUrl")
+            company["verification"]["register"]["officialReportCrossCheck"]["officialPdfUrl"]=ev.get("officialPdfUrl")
             company["verification"]["register"]["officialReportCrossCheck"]["issuerIRUrl"]=ev.get("issuerIRUrl")
             company["verification"]["register"]["officialReportCrossCheck"]["reportTextUrl"]=ev.get("reportTextUrl")
+            company["verification"]["register"]["capitalAllocation"]["sourceClass"]="issuer_official_pdf_partial_crosscheck"
+            company["verification"]["register"]["capitalAllocation"]["sourceUrl"]=ev.get("officialPdfUrl")
             verified=ev.get("verifiedFields") or {}
             if verified.get("netDebtFY2025"):
                 debt_value=verified["netDebtFY2025"].get("value")
                 company["verification"]["register"]["netDebt"]["status"]="partial_fy2025_official_pdf_verified_current_period_pending"
+                company["verification"]["register"]["netDebt"]["sourceClass"]="issuer_official_pdf_crosschecked"
                 company["verification"]["register"]["netDebt"]["verifiedFY2025"]=debt_value
                 company["verification"]["register"]["netDebt"]["grossDebtFY2025"]=verified.get("grossInterestBearingDebtFY2025",{}).get("value")
                 company["verification"]["register"]["netDebt"]["verifiedMethod"]=verified["netDebtFY2025"].get("method")
@@ -490,6 +496,7 @@ def main():
                 company["verification"]["register"]["dividendPerShareHistory"]["required"]="仍需补齐至少五年历史、特别股息、除权/支付日期及估值日股数口径"
             if verified.get("sharesOutstandingNetOfTreasuryAsOf2026_11_02"):
                 company["verification"]["register"]["shareCapital"]["status"]="reported_share_count_less_buyback_snapshot_not_fully_diluted"
+                company["verification"]["register"]["shareCapital"]["sourceClass"]="issuer_official_pdf_crosschecked"
                 company["verification"]["register"]["shareCapital"]["snapshotDate"]="2026-11-02"
                 company["verification"]["register"]["shareCapital"]["totalShareCapital"]=verified.get("totalShareCapitalAt2026Q3",{}).get("value")
                 company["verification"]["register"]["shareCapital"]["treasuryShares"]=verified.get("sharesRepurchasedAsOf2026_11_02",{}).get("value")
