@@ -472,6 +472,18 @@ def main():
             company["verification"]["register"]["officialReportCrossCheck"]["issuerIRUrl"]=ev.get("issuerIRUrl")
             company["verification"]["register"]["officialReportCrossCheck"]["reportTextUrl"]=ev.get("reportTextUrl")
             verified=ev.get("verifiedFields") or {}
+            if verified.get("netDebtFY2025"):
+                debt_value=verified["netDebtFY2025"].get("value")
+                company["verification"]["register"]["netDebt"]["status"]="partial_fy2025_official_pdf_verified_current_period_pending"
+                company["verification"]["register"]["netDebt"]["verifiedFY2025"]=debt_value
+                company["verification"]["register"]["netDebt"]["grossDebtFY2025"]=verified.get("grossInterestBearingDebtFY2025",{}).get("value")
+                company["verification"]["register"]["netDebt"]["verifiedMethod"]=verified["netDebtFY2025"].get("method")
+                company["verification"]["register"]["netDebt"]["required"]="FY2025已按官方年报核验；仍需核对FY2026半年报/三季报债务、现金及估值日后变动"
+                for annual_row in company.get("annual",[]):
+                    if annual_row.get("year")==2025:
+                        annual_row["issuerVerifiedNetDebtFY2025"]=debt_value
+                        annual_row["issuerVerifiedGrossDebtFY2025"]=verified.get("grossInterestBearingDebtFY2025",{}).get("value")
+                        annual_row["issuerNetDebtEvidenceStatus"]="partial_official_pdf_crosscheck"
             if verified.get("proposedFY2025DividendPerShare"):
                 company["verification"]["register"]["dividendPerShareHistory"]["status"]="partial_fy2025_proposed_dividend_only"
                 company["verification"]["register"]["dividendPerShareHistory"]["availablePeriods"]=["FY2025 proposed annual dividend"]
@@ -480,6 +492,7 @@ def main():
                 company["verification"]["register"]["shareCapital"]["status"]="reported_total_shares_snapshot_only"
                 company["verification"]["register"]["shareCapital"]["snapshotDate"]="2026-03-31"
                 company["verification"]["register"]["shareCapital"]["required"]="此为报告日总股数快照，仍需核验库存股、股权激励、可转债、增发回购及估值日后股本变动"
+    audit["verification"]["issuerVerifiedNetDebtCompanies"]=sum(1 for x in manual_evidence.get("records",[]) if (x.get("verifiedFields") or {}).get("netDebtFY2025",{}).get("value") is not None)
     audit["issuerEvidenceRecords"]=len(evidence_by_code)
     audit["issuerEvidenceCrossChecks"]=sum(1 for x in manual_evidence.get("records",[]) if x.get("status")=="fully_crosschecked")
     audit["issuerReportCrossChecksPartial"]=sum(1 for x in manual_evidence.get("records",[]) if x.get("status") in ("partial_report_text_crosscheck","partial_official_pdf_crosscheck"))
