@@ -5,6 +5,7 @@ This creates source locators only. It does not claim report-content verification
 from __future__ import annotations
 import json, re, time
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from http.cookiejar import CookieJar
 from pathlib import Path
 from urllib.parse import urlencode
@@ -58,7 +59,7 @@ def pdf_url(path):
 
 def normalize_announcement(a,code,org):
     ms=int(a.get("announcementTime") or 0)
-    date=datetime.fromtimestamp(ms/1000,timezone.utc).astimezone().date().isoformat() if ms else None
+    date=datetime.fromtimestamp(ms/1000,timezone.utc).astimezone(ZoneInfo("Asia/Shanghai")).date().isoformat() if ms else None
     ann_id=str(a.get("announcementId") or "")
     title=re.sub(r"<[^>]+>","",str(a.get("announcementTitle") or a.get("title") or ""))
     return {"title":title,"announcementDate":date,"announcementId":ann_id,
