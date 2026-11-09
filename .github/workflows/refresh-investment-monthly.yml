@@ -1,6 +1,10 @@
 name: Refresh Investment Lab monthly data
 
 on:
+  push:
+    paths:
+      - 'scripts/update_investment_monthly_data.py'
+      - '.github/workflows/refresh-investment-monthly.yml'
   workflow_dispatch:
   schedule:
     - cron: "17 3 20 * *"
