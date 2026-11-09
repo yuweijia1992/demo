@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Refresh the auditable RMB monthly matrix for Investment Lab V2.2.
+"""Refresh the auditable RMB monthly matrix for Investment Lab V2.5.
 
 Canonical return series:
 - CSI 300 price and total-return index levels from a public copy that documents
@@ -40,7 +40,9 @@ HEADERS = [
     "us_agg_etf_total_return_usd_pct","us_agg_etf_total_return_cny_pct",
     "us_ief_7_10y_etf_total_return_usd_pct","us_ief_7_10y_etf_total_return_cny_pct",
     "us_shy_1_3y_etf_total_return_usd_pct","us_shy_1_3y_etf_total_return_cny_pct",
-    "fxi_china_largecap_etf_total_return_usd_pct","fxi_china_largecap_etf_total_return_cny_pct"
+    "fxi_china_largecap_etf_total_return_usd_pct","fxi_china_largecap_etf_total_return_cny_pct",
+    "efa_developed_markets_etf_total_return_usd_pct","efa_developed_markets_etf_total_return_cny_pct",
+    "eem_emerging_markets_etf_total_return_usd_pct","eem_emerging_markets_etf_total_return_cny_pct"
 ]
 # EXCHUS is the Federal Reserve's monthly-average Chinese yuan per U.S. dollar rate.
 # Daily FRED macro series are represented by the final available observation in each month.
@@ -57,12 +59,14 @@ URLS = {
     "shiller":"https://firenum.com/data/shiller-monthly.csv",
     "yahoo_etf_monthly_returns":"https://raw.githubusercontent.com/HerdingAI/stock-price-returns/main/output/monthly_returns_by_ticker.csv"
 }
-USER_AGENT="InvestmentLabMonthlyData/2.3 (research; source attribution in manifest)"
+USER_AGENT="InvestmentLabMonthlyData/2.5 (research; source attribution in manifest)"
 ETF_RETURN_FIELDS={
     "AGG":("us_agg_etf_total_return_usd_pct","us_agg_etf_total_return_cny_pct"),
     "IEF":("us_ief_7_10y_etf_total_return_usd_pct","us_ief_7_10y_etf_total_return_cny_pct"),
     "SHY":("us_shy_1_3y_etf_total_return_usd_pct","us_shy_1_3y_etf_total_return_cny_pct"),
-    "FXI":("fxi_china_largecap_etf_total_return_usd_pct","fxi_china_largecap_etf_total_return_cny_pct")
+    "FXI":("fxi_china_largecap_etf_total_return_usd_pct","fxi_china_largecap_etf_total_return_cny_pct"),
+    "EFA":("efa_developed_markets_etf_total_return_usd_pct","efa_developed_markets_etf_total_return_cny_pct"),
+    "EEM":("eem_emerging_markets_etf_total_return_usd_pct","eem_emerging_markets_etf_total_return_cny_pct")
 }
 TODAY=date.today()
 
@@ -267,7 +271,7 @@ def build_manifest(rows,source_stats,errors):
         coverage[field]={"count":len(valid),"start":valid[0] if valid else None,
                          "end":valid[-1] if valid else None}
     manifest.update({
-        "dataset_version":"2.2.0",
+        "dataset_version":"2.5.0",
         "generated_at":datetime.utcnow().replace(microsecond=0).isoformat()+"Z",
         "dataset_file":"data/investment-monthly.csv","frequency":"monthly",
         "row_count":len(rows),"date_start":min(rows),"date_end":max(rows),
@@ -277,6 +281,8 @@ def build_manifest(rows,source_stats,errors):
         "matrix_policy":[
             "No forward-fill and no missing-as-zero.",
             "Price returns and total returns remain separate.",
+            "EFA is a developed-markets ex-US/Canada ETF proxy; EEM is an emerging-markets ETF proxy. Both are Yahoo auto-adjusted ETF total-return proxies, not official MSCI net/gross index returns.",
+            "EEM country holdings include China and Taiwan; do not add EEM to A-share/HK exposures without country/issuer overlap review.",
             "USD/CNY uses the Federal Reserve G.5 monthly average EXCHUS series.",
             "USD asset CNY return=(1+rUSD)*(FX_t/FX_t-1)-1.",
             "Gold CNY monthly-average valuation=Gold USD monthly average*USD/CNY monthly average; it is an approximation.",
