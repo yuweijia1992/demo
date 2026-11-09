@@ -502,6 +502,8 @@ def main():
                 company["verification"]["register"]["netDebt"]["status"]="partial_fy2025_official_pdf_verified_current_period_pending"
                 company["verification"]["register"]["netDebt"]["sourceClass"]="issuer_official_pdf_crosschecked"
                 company["verification"]["register"]["netDebt"]["verifiedFY2025"]=debt_value
+                company["verification"]["register"]["netDebt"]["availableYears"]=max(int(company["verification"]["register"]["netDebt"].get("availableYears") or 0),1)
+                company["verification"]["register"]["netDebt"]["verifiedSnapshots"]=int(company["verification"]["register"]["netDebt"].get("verifiedSnapshots") or 0)+1
                 company["verification"]["register"]["netDebt"]["grossDebtFY2025"]=verified.get("grossInterestBearingDebtFY2025",{}).get("value")
                 company["verification"]["register"]["netDebt"]["verifiedMethod"]=verified["netDebtFY2025"].get("method")
                 company["verification"]["register"]["netDebt"]["required"]="FY2025已按官方年报核验；仍需核对FY2026半年报/三季报债务、现金及估值日后变动"
