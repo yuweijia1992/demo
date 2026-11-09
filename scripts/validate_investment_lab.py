@@ -71,7 +71,8 @@ for field in etf_fields:
         expected_start="2006-01"
         require(cov.get("start")==expected_start and cov.get("end")=="2026-07",f"manifest ETF coverage range incorrect for {field}")
 cash_n=sum(bool(r.get("cny_cash_return_pct")) for r in rows)
-require(cash_n in (0,250),"H11025 cash total-return coverage must be pending or complete for 250 months")
+require(0<cash_n<=250,"H11025 cash total-return coverage must be positive and no greater than 250 months")
+require(manifest.get("coverage",{}).get("cny_cash_return_pct",{}).get("count")==cash_n,"H11025 cash coverage differs from manifest")
 bond_n=sum(bool(r.get("china_treasury_etf_511010_total_return_cny_pct")) for r in rows)
 require(bond_n in (0,163),"511010 CNY Treasury ETF proxy must be pending or cover 163 months")
 require(not any(r.get("portfolio_return_cny_pct") for r in rows),"full portfolio return must remain blank until all strategic sleeves and policy weights are approved")
