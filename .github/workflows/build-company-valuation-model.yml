@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "scripts/build_valuation_model.py"
+      - "scripts/test_valuation_model.py"
       - "articles/valuation-engine.html"
       - "articles/company-verification.html"
       - "data/valuation-model/issuer-verification-evidence.json"
