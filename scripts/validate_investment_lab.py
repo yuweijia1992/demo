@@ -76,6 +76,8 @@ bond_n=sum(bool(r.get("china_treasury_etf_511010_total_return_cny_pct")) for r i
 require(bond_n in (0,163),"511010 CNY Treasury ETF proxy must be pending or cover 163 months")
 require(not any(r.get("portfolio_return_cny_pct") for r in rows),"full portfolio return must remain blank until all strategic sleeves and policy weights are approved")
 require(all(f in headers for f in etf_fields),"EFA/EEM global equity proxy fields must exist in the unified matrix schema")
+require("hang_seng_etf_2800_total_return_cny_pct" in headers and "hkd_per_usd" in headers,"Hang Seng ETF proxy fields missing")
+require("china_bond_wealth_return_cny_pct" in headers,"ChinaBond wealth field missing")
 
 # Script syntax.
 ast.parse((ROOT/"scripts/update_investment_monthly_data.py").read_text(encoding="utf-8"))
