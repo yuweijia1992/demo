@@ -235,8 +235,7 @@ def load_cash_h11025(rows):
     """Official CSI money-market fund total-return index; historical values are backfilled to its base date."""
     source={}
     headers={"User-Agent":USER_AGENT,"Referer":"https://www.csindex.com.cn/","X-Requested-With":"XMLHttpRequest","Accept":"application/json, text/javascript, */*; q=0.01"}
-    windows=[(f"{year}0101",f"{year}1231") for year in range(2006,TODAY.year+1)]
-    windows[0]=("20051230",windows[0][1])
+    windows=[("20051230","20151231"),("20160101",TODAY.strftime("%Y%m%d")),("20160901","20170331")]
     for start,end in windows:
         url=f"https://www.csindex.com.cn/csindex-home/perf/index-perf?indexCode=H11025&startDate={start}&endDate={end}"
         req=Request(url,headers=headers)
