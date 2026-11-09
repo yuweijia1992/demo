@@ -1,6 +1,6 @@
 {
   "dataset_version": "2.5.0",
-  "generated_at": "2026-11-09T08:47:39Z",
+  "generated_at": "2026-11-09T08:50:27Z",
   "dataset_file": "data/investment-monthly.csv",
   "frequency": "monthly",
   "row_count": 250,
@@ -44,10 +44,15 @@
       "start": null,
       "end": null
     },
+    "china_treasury_etf_511010_total_return_cny_pct": {
+      "count": 163,
+      "start": "2013-04",
+      "end": "2026-10"
+    },
     "cny_cash_return_pct": {
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 243,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     "portfolio_return_cny_pct": {
       "count": 0,
@@ -175,6 +180,24 @@
       "end": null
     },
     {
+      "field": "cny_cash_index_h11025",
+      "count": 244,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    {
+      "field": "china_treasury_etf_511010_adj_total_return_index_cny",
+      "count": 164,
+      "start": "2013-03",
+      "end": "2026-10"
+    },
+    {
+      "field": "china_treasury_etf_511010_total_return_cny_pct",
+      "count": 163,
+      "start": "2013-04",
+      "end": "2026-10"
+    },
+    {
       "field": "us_treasury_7_10y_total_return_index_usd",
       "count": 0,
       "start": null,
@@ -200,9 +223,9 @@
     },
     {
       "field": "cny_cash_return_pct",
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 243,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     {
       "field": "us_tbill_1m_return_pct",
@@ -387,7 +410,9 @@
     "Price returns and total returns remain separate.",
     "EFA is a developed-markets ex-US/Canada ETF proxy; EEM is an emerging-markets ETF proxy. Both are Yahoo auto-adjusted ETF total-return proxies, not official MSCI net/gross index returns.",
     "EEM country holdings include China and Taiwan; do not add EEM to A-share/HK exposures without country/issuer overlap review.",
-    "USD/CNY uses the Federal Reserve G.5 monthly average EXCHUS series.",
+    "USD/CNY uses the Federal Reserve G.5 monthly average EXCHUS series via the archived datasets/exchange-rates monthly panel.",
+    "CNY cash proxy uses official CSIndex H11025 money-market fund total-return index; base date 2005-12-30, publication date 2016-08-31; pre-publication history is backfilled.",
+    "China government-bond investable proxy uses Yahoo auto-adjusted 511010.SS ETF close; CNY denominated, starts 2013; separate from official ChinaBond wealth index.",
     "USD asset CNY return=(1+rUSD)*(FX_t/FX_t-1)-1.",
     "Gold CNY monthly-average valuation=Gold USD monthly average*USD/CNY monthly average; it is an approximation.",
     "Do not calculate a full 52/28/10/10 portfolio return while HSI TRI, ChinaBond wealth, cash total return or sub-asset target weights are missing."
@@ -469,6 +494,30 @@
         "FXI": "iShares China Large-Cap ETF — offshore China large-cap equity proxy, not Hang Seng TRI"
       },
       "caveat": "ETF adjusted total returns include distributions and reflect fund fees/tracking; these are investable ETF proxies, not official ChinaBond/Hang Seng index returns. Data source is Yahoo Finance via a third-party collector; the repository code is MIT-licensed, but Yahoo data redistribution rights are subject to Yahoo's terms and are not independently confirmed."
+    },
+    {
+      "series": [
+        "cny_cash_index_h11025",
+        "cny_cash_return_pct"
+      ],
+      "name": "中证货币基金指数 H11025",
+      "source": "中证指数有限公司",
+      "url": "https://www.csindex.com.cn/",
+      "data_url": "https://www.csindex.com.cn/csindex-home/perf/index-perf?indexCode=H11025",
+      "factsheet": "https://oss-ch.csindex.com.cn/static/html/csindex/public/uploads/indices/detail/files/zh_CN/H11025factsheet.pdf",
+      "method": "每日官方全收益指数水平取月末值；月收益=本月末指数/上月末指数-1",
+      "caveat": "指数发布日期2016-08-31，基日2005-12-30；发布日期前属于回溯历史，不等于当时可投资的实时指数产品。"
+    },
+    {
+      "series": [
+        "china_treasury_etf_511010_adj_total_return_index_cny",
+        "china_treasury_etf_511010_total_return_cny_pct"
+      ],
+      "name": "国泰上证5年期国债ETF 511010",
+      "source": "Yahoo Finance adjusted close",
+      "url": "https://finance.yahoo.com/quote/511010.SS/history/",
+      "method": "Yahoo auto-adjusted daily close (dividends/splits adjusted), resampled to last trading day each month",
+      "caveat": "2013年成立，单只5年期国债ETF代理；不等于中债综合财富指数，数据源可能修订。"
     }
   ],
   "coverage": {
@@ -562,6 +611,21 @@
       "start": null,
       "end": null
     },
+    "cny_cash_index_h11025": {
+      "count": 244,
+      "start": "2006-01",
+      "end": "2026-10"
+    },
+    "china_treasury_etf_511010_adj_total_return_index_cny": {
+      "count": 164,
+      "start": "2013-03",
+      "end": "2026-10"
+    },
+    "china_treasury_etf_511010_total_return_cny_pct": {
+      "count": 163,
+      "start": "2013-04",
+      "end": "2026-10"
+    },
     "us_treasury_7_10y_total_return_index_usd": {
       "count": 0,
       "start": null,
@@ -583,9 +647,9 @@
       "end": null
     },
     "cny_cash_return_pct": {
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 243,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     "us_tbill_1m_return_pct": {
       "count": 0,
@@ -745,11 +809,6 @@
       "reason": "Safe Rate 7-10年美国国债总回报公开数据存在，但本矩阵尚未获得月度指数水平CSV"
     },
     {
-      "field": "cny_cash_return_pct",
-      "status": "missing",
-      "reason": "人民币现金投资回报序列尚未核实；不得将存款利率直接当作月度收益"
-    },
-    {
       "field": "portfolio_return_cny_pct",
       "status": "missing",
       "reason": "完整多资产月度回报缺失，且52%股票与28%债券内部权重未确定"
@@ -763,22 +822,8 @@
       "reason": "Official ChinaBond total wealth historical monthly data not yet obtained with usable provenance and permission."
     },
     {
-      "field": "cny_cash_return_pct",
-      "reason": "A 2006-2026 RMB cash total-return series is not yet available; SHY is a USD Treasury ETF and must not be used as CNY cash."
-    },
-    {
       "field": "portfolio_return_cny_pct",
       "reason": "Full strategic portfolio requires bond/cash series and sub-asset weights; no portfolio return is calculated."
-    },
-    {
-      "field": "efa_developed_markets_etf_total_return_cny_pct",
-      "status": "pending_refresh",
-      "reason": "V2.5新增接入；待GitHub Actions刷新并核验实际覆盖。"
-    },
-    {
-      "field": "eem_emerging_markets_etf_total_return_cny_pct",
-      "status": "pending_refresh",
-      "reason": "V2.5新增接入；待GitHub Actions刷新并核验实际覆盖。"
     }
   ],
   "quality_checks": {
@@ -823,6 +868,19 @@
       "coverage_start": "1981-01",
       "coverage_end": "2026-10",
       "source": "datasets/exchange-rates monthly.csv; China, CNY per USD; Fed G.5 monthly average"
+    },
+    "csindex_h11025_cash": {
+      "months": 246,
+      "coverage_start": "2005-12",
+      "coverage_end": "2026-11",
+      "source": "CSIndex H11025 official daily total-return index; base 2005-12-30; published 2016-08-31"
+    },
+    "yahoo_511010_china_treasury_etf": {
+      "ticker": "511010.SS",
+      "months": 165,
+      "coverage_start": "2013-03",
+      "coverage_end": "2026-11",
+      "source": "Yahoo Finance adjusted close; CNY-listed 5-year China government bond ETF; ETF proxy, not ChinaBond wealth index"
     },
     "yahoo_etf_total_returns": {
       "ticker_months": {
