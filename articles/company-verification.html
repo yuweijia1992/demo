@@ -59,6 +59,8 @@ function statusText(s){
  if(s==='partial_report_text_crosscheck')return '部分报告文本交叉核对';
  if(s==='partial_official_pdf_crosscheck')return '官方PDF部分字段已核对';
  if(s==='partial_fy2025_official_pdf_verified_current_period_pending')return 'FY2025净债务已核验，最新期待更新';
+ if(s==='partial_paid_fy2025_and_proposed_fy2026_dividends')return '已核验FY2025两次派息及FY2026中期预案，历史未齐';
+ if(s==='reported_share_count_less_buyback_snapshot_not_fully_diluted'||s==='reported_share_count_snapshot_not_fully_diluted')return '已核验总股数扣回购快照，非完全稀释';
  if(s==='calculated_not_independently_verified')return '已计算·待核验';
  if(s==='raw_share_capital_only')return '仅股本字段';
  if(s==='partial_cashflow_fields_only')return '部分现金流字段';
@@ -84,7 +86,7 @@ function show(code){
  const x=register.find(z=>z.code===code),m=models[code];if(!x)return;
  $('detailTitle').textContent=x.name+'（'+x.code+'）';
  const v=x.verification||{},a=x.companySpecificAssumptions||{},source=x.sourceLinks||{},ev=x.manualEvidence||null;
- const checks=Object.entries(v).map(([k,z])=>'<div class="check"><strong>'+k+'：'+statusText(z.status)+'</strong><p>'+(z.required||'')+'</p>'+(z.verifiedFY2025!==undefined?'<p>FY2025官方核验净债务：'+fmt(z.verifiedFY2025)+'；有息债务总额：'+fmt(z.grossDebtFY2025)+'</p>':'')+(z.sourceUrl?'<a href="'+z.sourceUrl+'" target="_blank" rel="noopener">查看现有来源</a>':'')+'</div>').join('');
+ const checks=Object.entries(v).map(([k,z])=>'<div class="check"><strong>'+k+'：'+statusText(z.status)+'</strong><p>'+(z.required||'')+'</p>'+(z.verifiedFY2025!==undefined?'<p>FY2025官方核验净债务：'+fmt(z.verifiedFY2025)+'；有息债务总额：'+fmt(z.grossDebtFY2025)+'</p>':'')+(z.netOfTreasurySnapshot!==undefined?'<p>总股本：'+fmt(z.reportedSharesOutstandingSnapshot)+'；回购股份：'+fmt(z.treasurySharesSnapshot)+'；扣回购后股数：'+fmt(z.netOfTreasurySnapshot)+'</p>':'')+(z.availablePeriods?'<p>已核验/可用记录：'+z.availablePeriods.join('；')+'</p>':'')+(z.sourceUrl?'<a href="'+z.sourceUrl+'" target="_blank" rel="noopener">查看现有来源</a>':'')+'</div>').join('');
  const drivers=m?.valuationFramework?.companyDriverTemplate||[];
  const driverHtml='<h3>公司级估值假设输入模板（待来源支持）</h3><div style="overflow:auto"><table><thead><tr><th>驱动因素</th><th>单位</th><th>当前值</th><th>需要的公司证据</th><th>状态</th></tr></thead><tbody>'+drivers.map(d=>'<tr><td>'+d.label+'</td><td>'+d.unit+'</td><td>待填</td><td>'+d.sourceRequirement+'</td><td>'+statusText(d.status)+'</td></tr>').join('')+'</tbody></table></div>';
  const official=x.officialReports||{};
