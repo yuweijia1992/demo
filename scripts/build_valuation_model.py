@@ -29,6 +29,25 @@ def unit_multiplier(item):
             "亿元":1e8,"人民币亿元":1e8,"亿港元":1e8,"亿美元":1e8}.get(unit)
 def debt_components(balance):
     return [v(balance,k) for k in ("shortBorrowings","longBorrowings","bondsPayable","currentLeaseLiabilities","leaseLiabilities")]
+
+def cash_equivalents_for_net_debt(balance):
+    # Do not net all "monetary funds": restricted deposits may not be freely available.
+    ce = v(balance,"cashAndCashEquivalents")
+    if ce is not None:
+        return ce, "cash_and_cash_equivalents"
+    cash_field = field(balance,"cash")
+    source_name = str(cash_field.get("sourceField") or "").strip()
+    if source_name in ("现金及现金等价物","现金和现金等价物","现金及等价物"):
+        return cash_field.get("value"), "cash_field_explicitly_cash_equivalents"
+    return None, "cash_equivalents_not_separately_identified"
+
+def current_interest_bearing_debt(balance):
+    # Only add back debt demonstrably included in current liabilities.
+    keys = ("shortBorrowings","shortTermBonds","currentPortionLongTermDebt","currentLeaseLiabilities")
+    vals = [v(balance,k) for k in keys]
+    if all(x is not None for x in vals):
+        return sum(vals), dict(zip(keys,vals))
+    return None, dict(zip(keys,vals))
 def calc_effective_tax_rate(income):
     pbt,tax=v(income,"profitBeforeTax"),v(income,"incomeTax")
     if pbt is None or tax is None or pbt<=0:return None
@@ -164,19 +183,28 @@ def main():
             acquisitions_paid=v(cf,"acquisitionsPaid"); investments_purchased=v(cf,"investmentsPurchased")
             investments_disposed=v(cf,"investmentsDisposed"); buybacks_paid=v(cf,"shareBuybacksPaid")
             debt_repayments=v(cf,"debtRepayments"); interest_paid=v(cf,"interestPaid"); equity_raised=v(cf,"equityRaised")
-            cash=v(bal,"cash"); short_invest=v(bal,"shortTermInvestments"); long_invest=v(bal,"longTermInvestments")
+            cash=v(bal,"cash"); cash_equivalents,cash_basis=cash_equivalents_for_net_debt(bal)
+            restricted_cash=v(bal,"restrictedCash")
+            short_invest=v(bal,"shortTermInvestments"); long_invest=v(bal,"longTermInvestments")
             debts=debt_components(bal)
             gross_debt=sum(debts) if all(x is not None for x in debts) else None
-            net_debt=(gross_debt-cash) if (not financial and gross_debt is not None and cash is not None) else None
+            net_debt=(gross_debt-cash_equivalents) if (not financial and gross_debt is not None and cash_equivalents is not None) else None
             known_debt_values=[x for x in debts if x is not None]
-            net_debt_known_components=(sum(known_debt_values)-cash) if (not financial and known_debt_values and cash is not None) else None
+            net_debt_known_components=(sum(known_debt_values)-cash_equivalents) if (not financial and known_debt_values and cash_equivalents is not None) else None
             avg_equity=(equity+prior_equity)/2 if equity is not None and prior_equity is not None and (equity+prior_equity)>0 else None
             roe=profit/avg_equity*100 if profit is not None and avg_equity else None
             tax_rate=calc_effective_tax_rate(inc)
             nopat=op*(1-tax_rate) if (not financial and op is not None and tax_rate is not None) else None
             invested_capital=None
-            if not financial and all(x is not None for x in (assets,current_liabilities,cash,short_invest,long_invest,*debts)):
-                invested_capital=assets-current_liabilities+gross_debt-cash-short_invest-long_invest
+            current_debt_in_current_liabilities,current_debt_detail=current_interest_bearing_debt(bal)
+            # Operating invested capital = assets - non-interest-bearing current liabilities
+            # - cash equivalents - non-operating financial investments.
+            # Long-term debt is NOT added again: it is already represented in the funding
+            # side of assets and adding it here would double count the financing claim.
+            if not financial and all(x is not None for x in (assets,current_liabilities,current_debt_in_current_liabilities,cash_equivalents,short_invest,long_invest)):
+                non_interest_current_liabilities=current_liabilities-current_debt_in_current_liabilities
+                if non_interest_current_liabilities>=0:
+                    invested_capital=assets-non_interest_current_liabilities-cash_equivalents-short_invest-long_invest
             avg_invested=(invested_capital+prior_invested_capital)/2 if invested_capital is not None and prior_invested_capital is not None and invested_capital>0 and prior_invested_capital>0 else None
             roic=(nopat/avg_invested*100) if (nopat is not None and avg_invested is not None and avg_invested>0) else None
             fcf=ocf-capex if (not financial and ocf is not None and capex is not None) else None
@@ -190,12 +218,12 @@ def main():
                            "incomeTax":tax,"effectiveTaxRate":tax_rate,"nopat":nopat,"totalAssets":assets,
                            "currentLiabilities":current_liabilities,"parentEquity":equity,"totalEquity":total_equity,
                            "averageParentEquity":avg_equity,"roePct":roe,"operatingCashFlow":ocf,"capex":capex,
-                           "freeCashFlow":fcf,"capexToRevenuePct":capex_intensity,"cash":cash,
+                           "freeCashFlow":fcf,"capexToRevenuePct":capex_intensity,"cash":cash,"cashAndCashEquivalents":cash_equivalents,"cashDeductionBasis":cash_basis,"restrictedCash":restricted_cash,
                            "shortTermInvestments":short_invest,"longTermInvestments":long_invest,
                            "interestBearingDebtComponents":{"shortBorrowings":debts[0],"longBorrowings":debts[1],
                              "bondsPayable":debts[2],"currentLeaseLiabilities":debts[3],"leaseLiabilities":debts[4]},
                            "grossDebt":gross_debt,"netDebt":net_debt,"netDebtKnownComponents":net_debt_known_components,
-                           "knownDebtComponentCount":len(known_debt_values),"investedCapital":invested_capital,
+                           "knownDebtComponentCount":len(known_debt_values),"currentDebtIncludedInCurrentLiabilities":current_debt_detail,"nonInterestBearingCurrentLiabilities":(current_liabilities-current_debt_in_current_liabilities) if current_liabilities is not None and current_debt_in_current_liabilities is not None else None,"investedCapital":invested_capital,
                            "averageInvestedCapital":avg_invested,"roicPct":roic,"interestExpense":interest,
                            "basicEps":v(inc,"basicEps"),"dilutedEps":diluted_eps,
                            "impliedWeightedAverageDilutedShares":implied_diluted_shares,"shareCapitalRaw":share_capital,
@@ -327,8 +355,8 @@ def main():
             "companyCount":len(results),
             "methodology":{"roe":"归母净利润 / 年初年末归母权益平均值；首年无上年权益时留空",
               "fcf":"经营活动现金流净额 - 购建固定资产、无形资产和其他长期资产支付的现金；简化FCF，不等于股权自由现金流",
-              "netDebt":"完整净债务=短期借款+长期借款+应付债券+流动及非流动租赁负债-现金；仅当全部债务分项与现金均有值时计算。另列已识别债务项净额，仅作不完整分项汇总，不得称为完整净债务；不扣短/长期投资；金融企业不适用",
-              "roic":"NOPAT=营业利润*(1-所得税费用/利润总额)；投入资本=总资产-流动负债+全部已映射有息债务(短借+长借+债券+流动租赁负债+非流动租赁负债)-现金-短期投资-长期投资；ROIC=NOPAT/平均投入资本；税率限定0%-50%，缺项留空。该口径为近似值，需逐项核验。不得只加回短借和流动租赁负债。",
+              "netDebt":"完整净债务=短期借款+长期借款+应付债券+流动及非流动租赁负债-单独识别的现金及现金等价物；不以含受限资金的货币资金总额抵扣。仅当全部债务分项与现金等价物均有值时计算。金融企业不适用。",
+              "roic":"近似ROIC：NOPAT=营业利润*(1-所得税费用/利润总额)；投入资本=总资产-(流动负债-明确列示且包含于流动负债的短借/短期债券/一年内到期长期债务/流动租赁负债)-现金及现金等价物-短期投资-长期投资；ROIC=NOPAT/平均投入资本。长期借款、长期债券及非流动租赁负债不得重复加回。当前债务分项不完整、现金等价物未单独识别或投资项缺失时不计算。税率限定0%-50%。",
               "dilutedShares":"归母净利润/稀释EPS并按财报金额单位换算，只代表年度加权平均稀释股数代理，不代表估值日当前完全稀释股数；单位不明则留空。",
               "dividends":"单列现金股息支付字段才计算现金派息率；股利/利润与利息合并字段不视为纯股息。",
               "forecast":"历史收入CAGR及最近三年净利率中位数的机械情景，不是公司指引或分析师预测。"},
