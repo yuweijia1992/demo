@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static validation for the Investment Lab V2.3 RMB monthly matrix with ETF proxies and GitHub Pages modules."""
+"""Static validation for the Investment Lab V2.5 RMB monthly matrix with ETF proxies and GitHub Pages modules."""
 from __future__ import annotations
 import ast, csv, json, re, subprocess, tempfile
 from pathlib import Path
@@ -57,14 +57,17 @@ etf_fields=[
  "us_agg_etf_total_return_usd_pct","us_agg_etf_total_return_cny_pct",
  "us_ief_7_10y_etf_total_return_usd_pct","us_ief_7_10y_etf_total_return_cny_pct",
  "us_shy_1_3y_etf_total_return_usd_pct","us_shy_1_3y_etf_total_return_cny_pct",
- "fxi_china_largecap_etf_total_return_usd_pct","fxi_china_largecap_etf_total_return_cny_pct"
+ "fxi_china_largecap_etf_total_return_usd_pct","fxi_china_largecap_etf_total_return_cny_pct",
+ "efa_developed_markets_etf_total_return_usd_pct","efa_developed_markets_etf_total_return_cny_pct",
+ "eem_emerging_markets_etf_total_return_usd_pct","eem_emerging_markets_etf_total_return_cny_pct"
 ]
 for field in etf_fields:
     actual=sum(bool(r.get(field)) for r in rows)
     cov=manifest.get("coverage",{}).get(field,{})
     require(actual==247,f"{field} must contain 247 months from 2006-01 to 2026-07")
     require(cov.get("count")==actual and cov.get("start")=="2006-01" and cov.get("end")=="2026-07",f"manifest ETF coverage incorrect for {field}")
-require(not any(r.get("portfolio_return_cny_pct") for r in rows),"full portfolio return must remain blank until all strategic sleeves are sourced")
+require(not any(r.get("portfolio_return_cny_pct") for r in rows),"full portfolio return must remain blank until all strategic sleeves and policy weights are approved")
+require(all(f in headers for f in etf_fields),"EFA/EEM global equity proxy fields must exist in the unified matrix schema")
 
 # Script syntax.
 ast.parse((ROOT/"scripts/update_investment_monthly_data.py").read_text(encoding="utf-8"))
