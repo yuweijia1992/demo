@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:11:18.824756+00:00",
+  "generatedAtUtc": "2026-11-09T08:12:33.988113+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -73,11 +73,8 @@
           "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
         },
         "dividendPerShareHistory": {
-          "status": "partial_fy2025_proposed_dividend_only",
-          "required": "补齐至少五年已实施派息、特别股息、除权日、币种及估值日股数口径；董事会预案不得当作已派发股息",
-          "availablePeriods": [
-            "FY2025 proposed annual dividend"
-          ]
+          "status": "pending",
+          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
         },
         "capitalAllocation": {
           "status": "partial_cashflow_fields_only",
@@ -249,12 +246,6 @@
             "basis": "年报利润分配预案按截至2026-03-31总股本计算",
             "reportLines": "CNINFO 2025年报PDF利润分配预案，PDF文本行39-41"
           },
-          "proposedFY2025DividendPerShare": {
-            "value": 0.9,
-            "unit": "CNY/share",
-            "basis": "董事会拟向全体股东每股派发现金红利0.90元（含税）；属于预案",
-            "reportLines": "CNINFO 2025年报PDF利润分配预案，PDF文本行39-41"
-          },
           "cashAndCashEquivalentsEnding": {
             "value": 17677587920.54,
             "unit": "CNY",
@@ -338,16 +329,47 @@
             "reportLines": "由上述有息债务分项合计减现金及现金等价物17,677,587,920.54元；CNINFO PDF第209-211页",
             "method": "63,450,579,472.06 - 17,677,587,920.54",
             "status": "cross_checked_against_official_pdf"
+          },
+          "paidFY2025InterimDividendPerShare": {
+            "value": 0.48,
+            "reportLines": "CNINFO 2025年中期权益分派实施公告，公告日期2025-12-09；2025-12-17现金红利发放日",
+            "status": "cross_checked_against_official_pdf"
+          },
+          "paidFY2025FinalDividendPerShare": {
+            "value": 0.9,
+            "reportLines": "CNINFO 2025年度权益分派实施公告，公告日期2026-05-29；2026-06-05现金红利发放日",
+            "status": "cross_checked_against_official_pdf"
+          },
+          "proposedFY2026InterimDividendPerShare": {
+            "value": 0.42,
+            "reportLines": "CNINFO 2026年中期利润分配预案公告，2026-10-30；以实施权益分派股权登记日总股本扣除回购专户股份数为基数，尚待实施",
+            "status": "cross_checked_against_official_pdf"
+          },
+          "totalShareCapitalAt2026Q3": {
+            "value": 6325360667,
+            "reportLines": "CNINFO 2026年第三季度报告，2026-09-30合并资产负债表，PDF文本行286",
+            "status": "cross_checked_against_official_pdf"
+          },
+          "sharesRepurchasedAsOf2026_11_02": {
+            "value": 3480600,
+            "reportLines": "CNINFO 2026-11-03股份回购进展公告，累计回购3,480,600股",
+            "status": "cross_checked_against_official_pdf"
+          },
+          "sharesOutstandingNetOfTreasuryAsOf2026_11_02": {
+            "value": 6321880067,
+            "reportLines": "6,325,360,667股总股本 - 3,480,600股已回购股份；基于2026-11-03官方回购进展公告计算，未视为完全稀释股数",
+            "status": "derived_from_official_disclosures"
           }
         },
         "unresolved": {
           "fullNetDebt": "FY2025年末完整净债务已按官方年报债务变动表、短期债券、长期借款及租赁附注逐项重建：有息债务63.451bn，现金及现金等价物17.678bn，净债务45.773bn。仍待核验2026H1/2026Q3报告的最新债务与现金，并检查估值日后借款/偿债变化。",
           "roic": "FY2025年末流动负债中的有息债务组成已拆分，但ROIC仍需对FY2024期初投入资本、非经营性投资分类、商誉/少数股东权益及平均资本口径完成跨期一致性核验，暂不输出ROIC。",
-          "currentFullyDilutedShares": "报告披露2026-03-31总股本6,325,360,667股，且2025年末库存股余额为零；但估值日为2026-11-09，仍需核对2026年回购/注销、股权激励、潜在稀释和报告期后股本变化。",
+          "currentFullyDilutedShares": "已核验2026-09-30总股本6,325,360,667股；截至2026-11-02累计回购3,480,600股，扣除回购专户后流通/在外股数代理6,321,880,067股。该值不是完全稀释股数；仍需核对回购注销进度、股权激励、员工持股计划、潜在可转债/期权及估值日后变化。",
           "dividends": "2025年度每股0.90元为董事会利润分配预案；2025年中期已派现金3.036bn，年报披露全年现金分红总额8.729bn、派息率75.48%。仍需补齐每年除权日、股权登记日和逐年每股股息序列。",
           "capitalAllocation": "投资支付36.13bn属于金融/股权投资等投资现金流，不等于经营资本开支；维护性与扩张性资本开支仍需附注拆分。",
           "officialPDF": "发行人投资者关系页面明确列示2025年年报并提供PDF下载；本轮通过年报全文文本镜像逐项对照，未成功直接读取官方PDF文件字节，状态保留为部分交叉核验。",
-          "roeMethod": "模型简单平均归母权益ROE与年报披露加权平均ROE并非同一计算方法；页面必须同时标注公式口径，不能将两者当作数据错报。"
+          "roeMethod": "模型简单平均归母权益ROE与年报披露加权平均ROE并非同一计算方法；页面必须同时标注公式口径，不能将两者当作数据错报。",
+          "dividendPerShareHistory": "已核验FY2025中期每股0.48元（2025-12-17已派）、FY2025年度每股0.90元（2026-06-05已派）、FY2026中期每股0.42元（2026-10-30预案，尚待实施）。仍需补齐至少五年历史、特别股息和除权/支付日期。"
         },
         "importantCorrections": [
           "此前标准化的revenue取值115,931,105,774.99实际是营业总收入，不是营业收入；两者差额294,874,524.94为利息收入。非金融企业收入应采用营业收入。",
@@ -357,7 +379,7 @@
           "年报披露加权平均ROE为20.87%；模型用期初期末归母权益简单平均计算，口径不同，不能直接要求两者相等。"
         ],
         "officialPdfUrl": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20260429/899f521e9fb64cc6ab2c426a24580445.PDF",
-        "description": "伊利股份FY2025关键财务、债务、现金、股本、股息及资本配置项目已与巨潮资讯官方年度报告PDF交叉核对。FY2025净债务已重建；当前完全稀释股数、FY2026最新净债务、五年每股股息历史、维护性/扩张性资本开支和ROIC仍未完成。"
+        "description": "伊利股份FY2025关键财务、债务、现金、资本配置及股息项目已与巨潮资讯官方年度报告和分红公告交叉核对；FY2025净债务已重建。股数更新至2026-11-02回购进展，股息记录含FY2025两次已派股息及FY2026中期预案；完全稀释股数和五年以上股息历史仍未完成。"
       },
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.01223950948578545,
