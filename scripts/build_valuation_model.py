@@ -247,10 +247,13 @@ def company_driver_template(stock):
              "sourceRequirement":source,
              "note":"不允许以行业均值或模型猜测填入公司实际值"} for k,label,unit,source in rows]
 
-def issuer_search_url(stock):
+def issuer_search_url(stock,official_reports=None):
     code=str(stock.get("code") or "").split("/")[0].strip()
     base=code.split(".")[0]
     if code.endswith((".SH",".SZ")):
+        org=(official_reports or {}).get("orgId")
+        if org:
+            return "https://www.cninfo.com.cn/new/disclosure/stock?orgId="+str(org)+"&stockCode="+base
         return "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord="+base
     return "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
 
@@ -427,7 +430,7 @@ def main():
                         "industry":stock.get("industry"),"businessType":stock.get("businessType"),"modelType":stock.get("method"),
                         "isFinancialInstitution":financial,"currency":stock.get("currency"),
                         "sourceCurrencies":fdata.get("sourceCurrencies",[]),"reportedUnits":fdata.get("reportedUnits",[]),
-                        "sourceLinks":source_audit.get("source",{}),"officialSearchUrl":issuer_search_url(stock),"officialReports":official_reports,"annual":annual,"history":h,"forecast5Y":forecast,
+                        "sourceLinks":source_audit.get("source",{}),"officialSearchUrl":issuer_search_url(stock,official_reports),"officialReports":official_reports,"annual":annual,"history":h,"forecast5Y":forecast,
                         "valuationFramework":{"method":stock.get("method"),"requiredInputs":stock.get("requiredMetrics",[]),
                           "status":"pending_company_specific_assumptions_and_independent_verification",
                           "companySpecificAssumptions":{"historicalRevenueCagr":growth,"recentThreeYearMedianNetMargin":median(margins),"recentThreeYearMedianCapexToRevenue":median(capex_ratios),"sustainableROE":None,"normalizedROIC":median([x["roicPct"] for x in annual if x["roicPct"] is not None]),"WACC":None,"costOfEquity":None,"terminalGrowth":None,"currentFullyDilutedShares":None,"dividendPerShareHistory":None,"maintenanceCapex":None,"growthCapex":None,"costOfEquityInputs":None,"fairValuePerShare":None,"status":"historical_reference_only_until_official_crosscheck"},
