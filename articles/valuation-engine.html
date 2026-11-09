@@ -42,7 +42,7 @@
 <div class="ve-metric"><small>至少1年ROE可计算</small><strong id="integratedRoeCoverage">—</strong><p>49家公司覆盖审计</p></div>
 <div class="ve-metric"><small>至少1年简化FCF可计算</small><strong id="integratedFcfCoverage">—</strong><p>不等同股权自由现金流</p></div>
 <div class="ve-metric"><small>至少1年净债务可计算</small><strong id="integratedDebtCoverage">—</strong><p>缺项不按零处理</p></div>
-<div class="ve-metric"><small>ROIC</small><strong id="integratedRoicCoverage">暂不计算</strong><p>待核验：NOPAT/投入资本口径</p></div>
+<div class="ve-metric"><small>至少1年ROIC近似值</small><strong id="integratedRoicCoverage">暂不计算</strong><p>待核验：NOPAT/投入资本口径</p></div>
 </div>
 <div class="ve-note" id="integratedModelStatus">正在读取公司级模型数据……</div>
 <h3>2021—2025关键财务指标</h3>
@@ -423,7 +423,7 @@ function renderIntegratedModel(){
  $('integratedAnnualRows').innerHTML=annual.map(x=>'<tr><td>'+x.year+'</td><td>'+fmtRaw(x.revenue)+'</td><td>'+fmtRaw(x.netProfitParent)+'</td><td>'+(x.roePct===null?'—':fmt(x.roePct,2)+'%')+'</td><td>'+fmtRaw(x.operatingCashFlow)+'</td><td>'+fmtRaw(x.capex)+'</td><td>'+fmtRaw(x.freeCashFlow)+'</td><td>'+fmtRaw(x.netDebt)+'</td></tr>').join('');
  $('integratedHistoryRows').innerHTML=['peTtm','pb','psTtm'].map(k=>{let x=(c.history||{})[k]||{};return '<tr><td>'+k+'</td><td>'+fmtHistory(x.latest)+'</td><td>'+(x.date||'—')+'</td><td>'+(x.p5===null?'样本不足':fmtHistory(x.p5,1)+'%')+'</td><td>'+(x.p10===null?'样本不足':fmtHistory(x.p10,1)+'%')+'</td><td>'+(x.n5??0)+' / '+(x.n10??0)+'</td><td>'+(x.status||'missing')+'</td></tr>'}).join('');
  const q=c.quality||{},f=c.forecast5Y||{};
- $('integratedModelStatus').textContent='公司：'+c.name+'（'+c.code+'）；财务历史匹配：'+(q.financialHistoryMatched?'是':'否')+'；收入/利润/ROE/FCF/净债务可计算年度：'+[q.annualRevenueYears,q.annualProfitYears,q.annualROEYears,q.annualFCFYears,q.annualNetDebtYears].join(' / ')+'；币种：'+(c.currency||'待核验')+'；源报告币种/单位：'+((c.sourceCurrencies||[]).join('、')||'未标明')+' / '+((c.reportedUnits||[]).join('、')||'未标明')+'。金额保留源单位，不跨公司比较。';
+ $('integratedModelStatus').textContent='公司：'+c.name+'（'+c.code+'）；财务历史匹配：'+(q.financialHistoryMatched?'是':'否')+'；收入/利润/ROE/ROIC/FCF/净债务可计算年度：'+[q.annualRevenueYears,q.annualProfitYears,q.annualROEYears,q.annualROICYears,q.annualFCFYears,q.annualNetDebtYears].join(' / ')+'；币种：'+(c.currency||'待核验')+'；源报告币种/单位：'+((c.sourceCurrencies||[]).join('、')||'未标明')+' / '+((c.reportedUnits||[]).join('、')||'未标明')+'。金额保留源单位，不跨公司比较。';
  const scenarios=f.scenarios||{},base=scenarios.base,bear=scenarios.bear,bull=scenarios.bull;
  $('integratedForecastNote').textContent=f.status==='reference_only'?'机械情景（estimated，不是公司指引/分析师预测）。历史收入CAGR：'+(f.baseRevenueCagr===null?'—':fmt(f.baseRevenueCagr*100,2)+'%')+'；近三年净利率中位数：'+(f.baseNetMargin===null?'—':fmt(f.baseNetMargin*100,2)+'%')+'；基准情景第五年收入/净利润：'+(base?fmtRaw(base.years[4].revenue)+' / '+fmtRaw(base.years[4].netProfit):'—')+'；悲观/乐观第五年收入：'+(bear?fmtRaw(bear.years[4].revenue):'—')+' / '+(bull?fmtRaw(bull.years[4].revenue):'—')+'。未考虑并购、股本稀释、营运资本、宏观冲击和资本周期。': '历史序列不足，无法建立机械五年预测。';
 }
@@ -438,6 +438,7 @@ async function loadValuationModel(){
   $('integratedRoeCoverage').textContent=(m.annualROE||0)+'/49';
   $('integratedFcfCoverage').textContent=(m.annualFCF||0)+'/49';
   $('integratedDebtCoverage').textContent=(m.annualNetDebt||0)+'/49';
+  $('integratedRoicCoverage').textContent=(m.annualROIC||0)+'/49';
   $('integratedModelStatus').textContent='公司级模型数据已载入：'+valuationModelDb.companyCount+' 家；历史估值最新值覆盖 PE/PB/PS：'+['peTtm','pb','psTtm'].map(k=>audit.historyCoverage[k].latest).join(' / ')+'；严格连续5年覆盖：'+['peTtm','pb','psTtm'].map(k=>audit.historyCoverage[k]['5Y']).join(' / ')+'；严格连续10年覆盖：'+['peTtm','pb','psTtm'].map(k=>audit.historyCoverage[k]['10Y']).join(' / ')+ '。';
   renderIntegratedModel();
  }catch(e){$('integratedModelStatus').textContent='公司级模型数据库未载入：'+e.message+'。请确认自动生成工作流已成功运行。'}
