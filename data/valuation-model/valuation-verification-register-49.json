@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:19:24.821563+00:00",
+  "generatedAtUtc": "2026-11-09T08:20:22.866166+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -49,9 +49,10 @@
       "verification": {
         "officialReportCrossCheck": {
           "status": "partial_official_pdf_crosscheck",
-          "sourceClass": "secondary_or_unclassified",
-          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
+          "sourceClass": "issuer_official_pdf_partial_crosscheck",
+          "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225259562.PDF",
           "required": "发行人/交易所正式年报、审计意见、合并范围、币种单位及关键科目逐项核对",
+          "officialPdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225259562.PDF",
           "issuerIRUrl": "https://www.yili.com/investors",
           "reportTextUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12279896&stockid=600887"
         },
@@ -65,6 +66,7 @@
           "availableYears": 0,
           "knownComponentsYears": 5,
           "required": "FY2025已按官方年报核验；仍需核对FY2026半年报/三季报债务、现金及估值日后变动",
+          "sourceClass": "issuer_official_pdf_crosschecked",
           "verifiedFY2025": 45772991551.52,
           "grossDebtFY2025": 63450579472.06,
           "verifiedMethod": "63,450,579,472.06 - 17,677,587,920.54"
@@ -73,6 +75,7 @@
           "status": "reported_share_count_less_buyback_snapshot_not_fully_diluted",
           "availableYears": 5,
           "required": "这是扣除已回购股份后的在外股数快照，不等于完全稀释股数；仍需核对回购注销、期权、股权激励和后续股本变化",
+          "sourceClass": "issuer_official_pdf_crosschecked",
           "snapshotDate": "2026-11-02",
           "totalShareCapital": 6325360667,
           "treasuryShares": 3480600,
@@ -96,8 +99,9 @@
         },
         "capitalAllocation": {
           "status": "partial_cashflow_fields_only",
-          "sourceClass": "secondary_or_unclassified",
-          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对"
+          "sourceClass": "issuer_official_pdf_partial_crosscheck",
+          "required": "维护/扩张资本开支、并购、投资、分红、回购、偿债和股权融资逐项核对",
+          "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225259562.PDF"
         },
         "companySpecificForecast": {
           "status": "mechanical_reference_only",
