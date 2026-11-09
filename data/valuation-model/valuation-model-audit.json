@@ -1,5 +1,5 @@
 {
-  "generatedAtUtc": "2026-11-09T07:56:02.599600+00:00",
+  "generatedAtUtc": "2026-11-09T07:57:30.258765+00:00",
   "masterCompanies": 49,
   "financialRecordsMatched": 49,
   "historyRecordsMatched": 49,
@@ -9,7 +9,7 @@
     "annualROE": 49,
     "annualFCF": 43,
     "annualNetDebt": 0,
-    "annualNetDebtKnownComponents": 5,
+    "annualNetDebtKnownComponents": 43,
     "annualROIC": 0,
     "annualDividendCashFlowOnly": 0,
     "annualDilutedShareProxy": 0,
@@ -47,8 +47,8 @@
   "warnings": [
     "Provider fields are not independently issuer-report verified merely because they were retrieved.",
     "Reported currency and unit are not inferred; no cross-company comparison is permitted without normalization.",
-    "ROIC is a derived approximation only where operating profit, pretax profit, tax, current liabilities, debt, cash and investments are complete.",
-    "Net debt is gross interest-bearing debt less cash; short/long investments are not netted.",
+    "ROIC is an approximate derived metric and remains null unless NOPAT, non-interest-bearing current liabilities, separately identified cash equivalents and non-operating investments are complete and comparable.",
+    "Net debt is gross interest-bearing debt less separately identified cash and cash equivalents; total monetary funds containing restricted deposits are not automatically deducted.",
     "DividendsPaidCombinedWithInterest is not a dividend-only field and is never used as a payout ratio.",
     "Implied weighted-average diluted shares are not current fully diluted shares; per-share fair value remains blocked."
   ],
