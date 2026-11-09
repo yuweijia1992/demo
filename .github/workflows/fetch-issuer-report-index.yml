@@ -5,6 +5,9 @@ on:
     branches: [main]
     paths:
       - "scripts/fetch_issuer_report_index.py"
+concurrency:
+  group: official-report-index-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
   fetch:
     runs-on: ubuntu-latest
