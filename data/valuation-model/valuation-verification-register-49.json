@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:07:47.922822+00:00",
+  "generatedAtUtc": "2026-11-09T08:10:18.818378+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -293,11 +293,53 @@
             "unit": "CNY",
             "basis": "other monetary funds; includes statutory reserve 1,760,784,462.61 and other deposits",
             "reportLines": "CNINFO 2025年报PDF货币资金附注，PDF文本行9077-9099；其中法定存款准备金1,760,784,462.61元、担保保证金40,396,263.17元，不能将全部其他货币资金简单等同于可用现金"
+          },
+          "shortTermBonds": {
+            "value": 9043394520.53,
+            "reportLines": "CNINFO PDF第82页、注释44，PDF文本行7130-7135",
+            "method": "其他流动负债中的短期应付债券",
+            "status": "cross_checked_against_official_pdf"
+          },
+          "currentPortionLongTermLoans": {
+            "value": 4263076679.33,
+            "reportLines": "CNINFO PDF第209页，PDF文本行7798-7800；长期借款及一年内到期长期借款合计4,735,556,312.05元，减非流动长期借款472,479,632.72元",
+            "method": "4,735,556,312.05 - 472,479,632.72",
+            "status": "cross_checked_against_official_pdf"
+          },
+          "currentPortionBonds": {
+            "value": 3600851765.96,
+            "reportLines": "CNINFO PDF第209页，PDF文本行7801-7803",
+            "method": "应付债券及一年内到期应付债券",
+            "status": "cross_checked_against_official_pdf"
+          },
+          "currentPortionLeaseLiabilities": {
+            "value": 151630797.19,
+            "reportLines": "CNINFO PDF第192页，PDF文本行7211-7212",
+            "method": "一年内到期租赁负债",
+            "status": "cross_checked_against_official_pdf"
+          },
+          "totalLeaseLiabilities": {
+            "value": 440150845.69,
+            "reportLines": "CNINFO PDF第192页，PDF文本行7211-7212",
+            "method": "应付租赁款总额，含一年内到期部分",
+            "status": "cross_checked_against_official_pdf"
+          },
+          "grossInterestBearingDebtFY2025": {
+            "value": 63450579472.06,
+            "reportLines": "由短期借款、短期应付债券、一年内到期长期借款、长期借款、一年内到期应付债券及租赁负债分项加总；CNINFO PDF第82、189、192、209页",
+            "method": "45,630,626,027.83 + 9,043,394,520.53 + 4,263,076,679.33 + 472,479,632.72 + 3,600,851,765.96 + 440,150,845.69",
+            "status": "cross_checked_against_official_pdf"
+          },
+          "netDebtFY2025": {
+            "value": 45772991551.52,
+            "reportLines": "由上述有息债务分项合计减现金及现金等价物17,677,587,920.54元；CNINFO PDF第209-211页",
+            "method": "63,450,579,472.06 - 17,677,587,920.54",
+            "status": "cross_checked_against_official_pdf"
           }
         },
         "unresolved": {
-          "fullNetDebt": "仍不计算完整净债务。年报确认短期借款45.631bn、长期借款0.472bn、非流动租赁负债0.289bn、现金及现金等价物17.678bn；但流动负债中一年内到期非流动负债4.415bn的借款/租赁拆分尚未完成，短期债务证券也需核对。货币资金附注中的其他货币资金1.807bn含法定存款准备金1.761bn及担保保证金等，不能当作自由现金抵扣。",
-          "roic": "仍不计算ROIC。需要把一年内到期非流动负债4.415bn拆分为有息债务与非付息负债，并核实短期/长期投资是否经营性、现金可用性及平均投入资本；不能把合并流动负债整体视为经营性负债。",
+          "fullNetDebt": "FY2025年末完整净债务已按官方年报债务变动表、短期债券、长期借款及租赁附注逐项重建：有息债务63.451bn，现金及现金等价物17.678bn，净债务45.773bn。仍待核验2026H1/2026Q3报告的最新债务与现金，并检查估值日后借款/偿债变化。",
+          "roic": "FY2025年末流动负债中的有息债务组成已拆分，但ROIC仍需对FY2024期初投入资本、非经营性投资分类、商誉/少数股东权益及平均资本口径完成跨期一致性核验，暂不输出ROIC。",
           "currentFullyDilutedShares": "报告披露2026-03-31总股本6,325,360,667股，且2025年末库存股余额为零；但估值日为2026-11-09，仍需核对2026年回购/注销、股权激励、潜在稀释和报告期后股本变化。",
           "dividends": "2025年度每股0.90元为董事会利润分配预案；2025年中期已派现金3.036bn，年报披露全年现金分红总额8.729bn、派息率75.48%。仍需补齐每年除权日、股权登记日和逐年每股股息序列。",
           "capitalAllocation": "投资支付36.13bn属于金融/股权投资等投资现金流，不等于经营资本开支；维护性与扩张性资本开支仍需附注拆分。",
@@ -311,7 +353,8 @@
           "货币资金19.495bn包含其他货币资金1.807bn，其中法定存款准备金1.761bn；现金流量表期末现金及现金等价物为17.678bn，净债务应优先采用可用现金口径并进一步核对受限资金。",
           "年报披露加权平均ROE为20.87%；模型用期初期末归母权益简单平均计算，口径不同，不能直接要求两者相等。"
         ],
-        "officialPdfUrl": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20260429/899f521e9fb64cc6ab2c426a24580445.PDF"
+        "officialPdfUrl": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20260429/899f521e9fb64cc6ab2c426a24580445.PDF",
+        "description": "伊利股份FY2025关键财务、债务、现金、股本、股息及资本配置项目已与巨潮资讯官方年度报告PDF交叉核对。FY2025净债务已重建；当前完全稀释股数、FY2026最新净债务、五年每股股息历史、维护性/扩张性资本开支和ROIC仍未完成。"
       },
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.01223950948578545,
