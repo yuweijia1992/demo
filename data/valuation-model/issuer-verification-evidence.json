@@ -730,7 +730,397 @@
         }
       ],
       "description": "申洲国际FY2025经审计年报与2026-05-27股东周年大会公告已交叉核验。狭义有息净债务为净现金5.41亿元；公司资本管理口径净债务为15.06亿元，因定义纳入经营性应付款项。FY2025每股中期/末期股息HKD1.38/HKD1.20均已支付；2026-05-27在外股数扣除库存股为1,502,835,997股。ROIC、最新股数、维护/扩张资本开支和完整公司级预测仍未完成。"
+    },
+    {
+      "code": "000333.SZ",
+      "name": "美的集团",
+      "period": "FY2025",
+      "status": "partial_official_pdf_crosscheck",
+      "issuerIRUrl": "https://www.midea.com/",
+      "reportTextUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF",
+      "officialPdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF",
+      "reportDate": "2026-03-31",
+      "auditOpinion": "标准无保留意见（普华永道中天；中国企业会计准则）",
+      "reportingCurrency": "CNY",
+      "reportingUnit": "人民币千元（RMB'000）",
+      "verifiedFields": {
+        "revenueFY2025": {
+          "value": 456451731,
+          "unit": "RMB'000",
+          "basis": "合并营业收入",
+          "reportLines": "年报PDF第8页及第134页"
+        },
+        "revenueFY2024": {
+          "value": 407149600,
+          "unit": "RMB'000",
+          "basis": "合并营业收入",
+          "reportLines": "年报PDF第8页"
+        },
+        "netProfitParentFY2025": {
+          "value": 43945411,
+          "unit": "RMB'000",
+          "basis": "归属于母公司股东的净利润",
+          "reportLines": "年报PDF第8页及第134页"
+        },
+        "operatingProfitFY2025": {
+          "value": 52978773,
+          "unit": "RMB'000",
+          "basis": "合并利润表营业利润",
+          "reportLines": "年报PDF第134页"
+        },
+        "profitBeforeTaxFY2025": {
+          "value": 53085343,
+          "unit": "RMB'000",
+          "basis": "合并利润表利润总额",
+          "reportLines": "年报PDF第134页"
+        },
+        "incomeTaxFY2025": {
+          "value": 8565147,
+          "unit": "RMB'000",
+          "basis": "所得税费用",
+          "reportLines": "年报PDF第134页"
+        },
+        "totalAssetsFY2025": {
+          "value": 608791766,
+          "unit": "RMB'000",
+          "basis": "合并资产总额",
+          "reportLines": "年报PDF第9页、第132页"
+        },
+        "currentLiabilitiesFY2025": {
+          "value": 343383700,
+          "unit": "RMB'000",
+          "basis": "合并流动负债合计",
+          "reportLines": "年报PDF第132页"
+        },
+        "parentEquityFY2025": {
+          "value": 223221305,
+          "unit": "RMB'000",
+          "basis": "归属于母公司股东的净资产",
+          "reportLines": "年报PDF第9页"
+        },
+        "operatingCashFlowFY2025": {
+          "value": 53345930,
+          "unit": "RMB'000",
+          "basis": "经营活动产生的现金流量净额",
+          "reportLines": "年报PDF第8页、第136页"
+        },
+        "capexFY2025": {
+          "value": 11141889,
+          "unit": "RMB'000",
+          "basis": "购建固定资产、无形资产和其他长期资产支付的现金",
+          "reportLines": "年报PDF第136页"
+        },
+        "simplifiedFCFFY2025": {
+          "value": 42204041,
+          "unit": "RMB'000",
+          "basis": "经营现金流减长期资产购建支出；简化FCF",
+          "method": "53,345,930-11,141,889=42,204,041（RMB'000）",
+          "reportLines": "年报PDF第136页"
+        },
+        "cashAndCashEquivalentsFY2025": {
+          "value": 68508670,
+          "unit": "RMB'000",
+          "basis": "现金流量表年末现金及现金等价物；不以货币资金总额代替",
+          "reportLines": "年报PDF第136页"
+        },
+        "cashAndCashEquivalentsFY2024": {
+          "value": 55118728,
+          "unit": "RMB'000",
+          "basis": "现金流量表年末现金及现金等价物",
+          "reportLines": "年报PDF第136页"
+        },
+        "shortBorrowingsFY2025": {
+          "value": 43904550,
+          "unit": "RMB'000",
+          "basis": "短期借款",
+          "reportLines": "年报PDF第210页"
+        },
+        "currentPortionLongTermLoansFY2025": {
+          "value": 4426471,
+          "unit": "RMB'000",
+          "basis": "一年内到期长期借款",
+          "reportLines": "年报PDF第213页"
+        },
+        "longBorrowingsFY2025": {
+          "value": 12658843,
+          "unit": "RMB'000",
+          "basis": "非流动长期借款",
+          "reportLines": "年报PDF第213页"
+        },
+        "bondsPayableFY2025": {
+          "value": 3194774,
+          "unit": "RMB'000",
+          "basis": "应付债券",
+          "reportLines": "年报PDF第215页"
+        },
+        "totalLeaseLiabilitiesFY2025": {
+          "value": 3296359,
+          "unit": "RMB'000",
+          "basis": "租赁负债总额，含一年内到期部分",
+          "reportLines": "年报PDF第216页"
+        },
+        "grossInterestBearingDebtFY2025": {
+          "value": 67480997000,
+          "unit": "CNY",
+          "basis": "短借+一年内到期长期借款+长期借款+应付债券+租赁负债",
+          "method": "43,904,550+4,426,471+12,658,843+3,194,774+3,296,359=67,480,997（RMB'000）",
+          "reportLines": "年报PDF第210、213、215、216页"
+        },
+        "netDebtFY2025": {
+          "value": -1027673000,
+          "unit": "CNY",
+          "basis": "狭义净债务=有息借款+债券+租赁负债-现金及现金等价物；负值代表净现金",
+          "method": "67,480,997-68,508,670=-1,027,673（RMB'000）",
+          "reportLines": "年报PDF第136页、第210、213、215、216页"
+        },
+        "grossInterestBearingDebtFY2024": {
+          "value": 86255072000,
+          "unit": "CNY",
+          "basis": "2024年末短借+一年内到期长期借款+长期借款+应付债券+租赁负债",
+          "method": "31,008,549+38,540,625+10,491,757+3,266,775+2,947,366=86,255,072（RMB'000）",
+          "reportLines": "年报PDF第210、213、215、216页"
+        },
+        "netDebtFY2024": {
+          "value": 31136344000,
+          "unit": "CNY",
+          "basis": "2024年末狭义净债务=有息债务-现金及现金等价物",
+          "method": "86,255,072-55,118,728=31,136,344（RMB'000）",
+          "reportLines": "年报PDF第136、210、213、215、216页"
+        },
+        "dilutedEPSFY2025": {
+          "value": 5.76,
+          "unit": "CNY/share",
+          "basis": "稀释每股收益",
+          "reportLines": "年报PDF第9页、第135页、第230页"
+        },
+        "weightedAverageDilutedSharesFY2025": {
+          "value": 7608132000,
+          "unit": "shares",
+          "basis": "稀释后发行在外普通股加权平均数；含股份支付稀释影响",
+          "reportLines": "年报PDF第230页"
+        },
+        "weightedAverageDilutedSharesFY2024": {
+          "value": 7113194000,
+          "unit": "shares",
+          "basis": "稀释后发行在外普通股加权平均数",
+          "reportLines": "年报PDF第230页"
+        },
+        "issuedSharesFY2025YearEnd": {
+          "value": 7597145346,
+          "unit": "shares",
+          "basis": "2025-12-31总股本；A股6,946,296,846股+H股650,848,500股",
+          "reportLines": "年报PDF第143页"
+        },
+        "treasuryStockBookValueFY2025": {
+          "value": 8151117,
+          "unit": "RMB'000",
+          "basis": "资产负债表库存股账面金额，不是库存股股数",
+          "reportLines": "年报PDF第132页、第139页"
+        },
+        "dividendsPaidFY2025InterimPerShare": {
+          "value": 0.5,
+          "unit": "CNY/A-share",
+          "basis": "2025年中期A股股息，每股0.50元，2025-11-18已派",
+          "reportLines": "2025年中期A股利润分配实施公告"
+        },
+        "dividendsPaidFY2025FinalPerShare": {
+          "value": 3.8,
+          "unit": "CNY/A-share",
+          "basis": "2025年度末期A股股息，每股3.80元，2026-06-29已派",
+          "reportLines": "2025年度A股利润分配实施公告"
+        },
+        "acquisitionsPaidFY2025": {
+          "value": 6155136,
+          "unit": "RMB'000",
+          "basis": "取得子公司及其他营业单位支付的现金净额",
+          "reportLines": "年报PDF第136页"
+        },
+        "investmentsPurchasedFY2025": {
+          "value": 164904908,
+          "unit": "RMB'000",
+          "basis": "投资支付的现金；主要是投资活动，不等同经营资本开支",
+          "reportLines": "年报PDF第136页"
+        },
+        "investmentsRecoveredFY2025": {
+          "value": 197531961,
+          "unit": "RMB'000",
+          "basis": "收回投资收到的现金",
+          "reportLines": "年报PDF第136页"
+        },
+        "debtRepaymentsFY2025": {
+          "value": 112064327,
+          "unit": "RMB'000",
+          "basis": "偿还债务支付的现金",
+          "reportLines": "年报PDF第136页"
+        },
+        "dividendsAndInterestPaidCombinedFY2025": {
+          "value": 33080135,
+          "unit": "RMB'000",
+          "basis": "分配股利、利润或偿付利息支付的现金；不拆分为纯股息",
+          "reportLines": "年报PDF第136页"
+        },
+        "shareRepurchaseAndRestrictedStockPaymentsFY2025": {
+          "value": 11698700,
+          "unit": "RMB'000",
+          "basis": "流通股及限制性股票回购款",
+          "reportLines": "年报PDF第232页"
+        },
+        "leasePaymentsFY2025": {
+          "value": 1587045,
+          "unit": "RMB'000",
+          "basis": "租赁负债付款",
+          "reportLines": "年报PDF第232页"
+        },
+        "purchaseMinorityInterestsFY2025": {
+          "value": 142865,
+          "unit": "RMB'000",
+          "basis": "购买少数股东股权支付现金",
+          "reportLines": "年报PDF第232页"
+        },
+        "researchAndDevelopmentFY2025": {
+          "value": 17787624,
+          "unit": "RMB'000",
+          "basis": "研发费用",
+          "reportLines": "年报PDF第52页"
+        },
+        "researchAndDevelopmentRatioFY2025": {
+          "value": 3.9,
+          "unit": "%",
+          "basis": "研发费用占营业收入比例",
+          "reportLines": "年报PDF第52页"
+        }
+      },
+      "shareCountSnapshot": {
+        "date": "2026-06-26",
+        "issuedShares": 7613438907,
+        "treasuryShares": 142570872,
+        "sharesOutstandingExTreasury": 7470868035,
+        "unit": "shares",
+        "basis": "A股6,962,590,407股+H股650,848,500股；减回购专户142,570,872股。A/H双重上市同一发行人，股数不重复计入。",
+        "officialUrl": "https://static.cninfo.com.cn/finalpage/2026-06-23/1225381921.PDF"
+      },
+      "dividendPerShareHistory": [
+        {
+          "period": "FY2025 interim A-share",
+          "value": 0.5,
+          "unit": "CNY/share",
+          "status": "paid",
+          "paymentDate": "2025-11-18",
+          "officialUrl": "https://static.cninfo.com.cn/finalpage/2025-11-12/1224799414.PDF"
+        },
+        {
+          "period": "FY2025 final A-share",
+          "value": 3.8,
+          "unit": "CNY/share",
+          "status": "paid",
+          "paymentDate": "2026-06-29",
+          "officialUrl": "https://static.cninfo.com.cn/finalpage/2026-06-23/1225381921.PDF"
+        }
+      ],
+      "companySpecificDrivers": {
+        "overseasRevenue": {
+          "value": 195900000000,
+          "unit": "CNY",
+          "status": "issuer_report_verified",
+          "asOf": "FY2025",
+          "source": "Annual Report 2025 p.1",
+          "note": "海外收入约1,959亿元，同比+16%；海外市场汇率、关税、本地化制造是关键驱动"
+        },
+        "toBRevenue": {
+          "value": 122800000000,
+          "unit": "CNY",
+          "status": "issuer_report_verified",
+          "asOf": "FY2025",
+          "source": "Annual Report 2025 p.1",
+          "note": "ToB收入约1,228亿元，同比+17.5%；ToC/ToB双引擎结构"
+        },
+        "researchAndDevelopmentRatio": {
+          "value": 3.9,
+          "unit": "%",
+          "status": "issuer_report_verified",
+          "asOf": "FY2025",
+          "source": "Annual Report 2025 p.52"
+        },
+        "overseasRDCenters": {
+          "value": 29,
+          "unit": "centers",
+          "status": "issuer_report_verified",
+          "asOf": "FY2025",
+          "source": "Annual Report 2025 p.1"
+        },
+        "overseasManufacturingBases": {
+          "value": 43,
+          "unit": "bases",
+          "status": "issuer_report_verified",
+          "asOf": "FY2025",
+          "source": "Annual Report 2025 p.1"
+        },
+        "goodwillKUKA": {
+          "value": 23435302,
+          "unit": "RMB'000",
+          "status": "issuer_report_verified",
+          "asOf": "FY2025",
+          "source": "Annual Report 2025 auditor's key audit matters p.127",
+          "note": "KUKA相关商誉；商誉减值是估值与并购回报跟踪重点"
+        },
+        "goodwillTLSC": {
+          "value": 2085854,
+          "unit": "RMB'000",
+          "status": "issuer_report_verified",
+          "asOf": "FY2025",
+          "source": "Annual Report 2025 auditor's key audit matters p.127",
+          "note": "东芝生活电器相关商誉"
+        },
+        "goodwillImpairmentKeyAssumptions": {
+          "value": "收入增长率、毛利率、永续增长率、税前折现率",
+          "unit": "key valuation drivers",
+          "status": "issuer_report_verified",
+          "asOf": "FY2025",
+          "source": "Annual Report 2025 auditor's key audit matters p.127"
+        },
+        "acquisitionsFY2025": {
+          "value": "Arbonia、东芝电梯中国业务、Carestream美国以外部分业务资产",
+          "unit": "acquisitions",
+          "status": "issuer_report_verified",
+          "asOf": "FY2025",
+          "source": "Annual Report 2025 p.1",
+          "note": "应逐项建立收购后收入、EBIT、现金流、商誉与投入资本回报档案"
+        }
+      },
+      "unresolved": {
+        "roic": "集团同时包含制造业、机器人医疗、消费金融/融资租赁等业务，且现金、定期存款、金融资产、商誉和金融子公司负债混合。合并ROIC需先剥离金融业务及非经营性资金，再统一NOPAT和投入资本口径；本次不以简单总资产公式伪造ROIC。",
+        "netDebt": "FY2025狭义有息净债务已核验为净现金10.28亿元；2024年末狭义净债务约311.36亿元。2025年货币资金总额85.25bn明显高于现金等价物68.51bn，净债务采用现金流量表现金等价物，未将所有定期存款/其他货币资金当可用现金。金融子公司吸收存款及同业存放134.20百万元另列，不混入狭义有息债务。",
+        "currentFullyDilutedShares": "FY2025稀释加权平均股数7.608132bn；2026-06-26已核验A/H总股本7.613439bn，扣回购专户后在外股数7.470868bn。仍需核对2026Q3后期权行权、限制性股票、回购注销及H股股本变化，故不将加权平均稀释股数当估值日当前完全稀释股数。",
+        "dividends": "FY2025 A股中期0.50元/股已派、末期3.80元/股已于2026-06-29派发。H股股息以港币派发，需独立核验港股实际每股股息与汇率。FY2026中期股息及后续变动待补。",
+        "capitalAllocation": "FY2025资本开支11.14bn、收购现金净支出6.16bn、投资支付164.90bn与收回投资197.53bn、偿还债务112.06bn、回购/限制性股票支付11.70bn、租赁支付1.59bn；投资支付主要含金融投资，不能与经营资本开支混为一谈。股息及利息现金支付33.08bn为合并项目，不能当作纯现金股息。",
+        "companySpecificForecast": "已核验海外收入、ToB收入、研发投入、全球研发/制造网络及并购标的。未来五年需拆分智能家居、工业技术、楼宇科技、机器人自动化、新能源、医疗及物流各分部收入/利润/ROIC，重点跟踪海外本地化、关税、汇率、KUKA/TLSC商誉、并购协同及资本开支。",
+        "costOfCapital": "仍需估值日A/H股适用无风险利率、ERP、Beta、债务成本和目标资本结构；A股/H股估值货币和每股价值需分别输出。"
+      },
+      "additionalOfficialDocuments": [
+        {
+          "type": "annual_report",
+          "period": "FY2025",
+          "date": "2026-03-31",
+          "title": "2025年年度报告全文",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF"
+        },
+        {
+          "type": "dividend_implementation",
+          "period": "FY2025 interim A-share",
+          "date": "2025-11-12",
+          "title": "2025年中期A股利润分配实施公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2025-11-12/1224799414.PDF"
+        },
+        {
+          "type": "dividend_implementation",
+          "period": "FY2025 final A-share",
+          "date": "2026-06-23",
+          "title": "2025年度A股利润分配实施公告",
+          "url": "https://static.cninfo.com.cn/finalpage/2026-06-23/1225381921.PDF"
+        }
+      ],
+      "description": "美的集团FY2025年报、2025年中期及年度A股分红实施公告已部分交叉核验。FY2025狭义有息净债务为净现金10.28亿元，2024年末为净债务311.36亿元；2025年稀释加权平均股数7.608132bn；2026-06-26扣除回购专户后的A/H在外股数快照7.470868bn。FY2025中期及年度A股每股0.50/3.80元均已派。集团ROIC与估值日完全稀释股数仍待分部拆分及最新股本核验。"
     }
   ],
-  "generatedAtUtc": "2026-11-09T08:30:00Z"
+  "generatedAtUtc": "2026-11-09T08:45:00Z"
 }
