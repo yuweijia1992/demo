@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:12:33.988113+00:00",
+  "generatedAtUtc": "2026-11-09T08:12:58.378590+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -63,18 +63,29 @@
           "verifiedMethod": "63,450,579,472.06 - 17,677,587,920.54"
         },
         "shareCapital": {
-          "status": "reported_total_shares_snapshot_only",
+          "status": "reported_share_count_less_buyback_snapshot_not_fully_diluted",
           "availableYears": 5,
-          "required": "此为报告日总股数快照，仍需核验库存股、股权激励、可转债、增发回购及估值日后股本变动",
-          "snapshotDate": "2026-03-31"
+          "required": "这是扣除已回购股份后的在外股数快照，不等于完全稀释股数；仍需核对回购注销、期权、股权激励和后续股本变化",
+          "snapshotDate": "2026-11-02",
+          "totalShareCapital": 6325360667,
+          "treasuryShares": 3480600,
+          "netOfTreasuryShares": 6321880067
         },
         "currentFullyDilutedShares": {
-          "status": "pending",
-          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
+          "status": "reported_share_count_snapshot_not_fully_diluted",
+          "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对",
+          "reportedSharesOutstandingSnapshot": 6325360667,
+          "treasurySharesSnapshot": 3480600,
+          "netOfTreasurySnapshot": 6321880067
         },
         "dividendPerShareHistory": {
-          "status": "pending",
-          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+          "status": "partial_paid_fy2025_and_proposed_fy2026_dividends",
+          "required": "仍需补齐至少五年历史、特别股息、除权/支付日期及估值日股数口径",
+          "availablePeriods": [
+            "FY2025 interim 0.48元/股（已派）",
+            "FY2025 final 0.90元/股（已派）",
+            "FY2026 interim 0.42元/股（预案，待实施）"
+          ]
         },
         "capitalAllocation": {
           "status": "partial_cashflow_fields_only",
