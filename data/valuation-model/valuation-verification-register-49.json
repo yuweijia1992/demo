@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:17:09.705106+00:00",
+  "generatedAtUtc": "2026-11-09T08:18:26.597598+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -34,6 +34,13 @@
           "announcementId": "1225511409",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225511409.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600887&announcementId=1225511409&orgId=gssh0600887&announcementTime=2026-08-27"
+        },
+        "quarterly2026Q3": {
+          "title": "内蒙古伊利实业集团股份有限公司2026年第三季度报告",
+          "announcementDate": "2026-10-30",
+          "announcementId": "1225644500",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225644500.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600887&announcementId=1225644500&orgId=gssh0600887&announcementTime=2026-10-30"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -379,7 +386,7 @@
           }
         },
         "unresolved": {
-          "fullNetDebt": "FY2025年末完整净债务已按官方年报债务变动表、短期债券、长期借款及租赁附注逐项重建：有息债务63.451bn，现金及现金等价物17.678bn，净债务45.773bn。仍待核验2026H1/2026Q3报告的最新债务与现金，并检查估值日后借款/偿债变化。",
+          "fullNetDebt": "FY2025年末完整净债务已核验为457.73亿元。2026Q3已识别短期借款、长期借款和非流动租赁负债，扣现金等价物后已识别项目净额465.77亿元；另有1.81亿元一年内到期非流动负债未拆分，其他流动融资项目未完全核验，暂不称为完整2026Q3净债务。",
           "roic": "FY2025年末流动负债中的有息债务组成已拆分，但ROIC仍需对FY2024期初投入资本、非经营性投资分类、商誉/少数股东权益及平均资本口径完成跨期一致性核验，暂不输出ROIC。",
           "currentFullyDilutedShares": "已核验2026-09-30总股本6,325,360,667股；截至2026-10月底累计回购3,480,600股，扣除回购专户后的在外股数代理6,321,880,067股。回购用途为注销减少注册资本，但尚需跟踪实际注销完成；仍需核对股权激励、员工持股计划、潜在可转债/期权及估值日后股本变化，因此不称为完全稀释股数。",
           "dividends": "FY2025中期每股0.48元于2025-12-17已派，FY2025年度每股0.90元于2026-06-05已派；FY2026中期每股0.42元为2026-10-30预案，待实施。仍需补齐至少五年每股股息、特别股息和除权/支付日期。",
@@ -396,7 +403,7 @@
           "年报披露加权平均ROE为20.87%；模型用期初期末归母权益简单平均计算，口径不同，不能直接要求两者相等。"
         ],
         "officialPdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225259562.PDF",
-        "description": "伊利股份FY2025关键财务、债务、现金、资本配置及股息项目已与巨潮资讯官方年报和分红公告交叉核对；FY2025净债务已重建。股数更新至2026-10月底回购进展，股息记录含FY2025两次已派股息及FY2026中期预案；完全稀释股数和五年以上股息历史仍未完成。",
+        "description": "伊利股份FY2025年报与FY2026Q3未经审计报告已交叉核验。FY2025净债务完整重建；FY2026Q3已更新收入、利润、现金流、资本开支、现金和部分债务。股息记录包括FY2025两次已派股息及FY2026中期预案；完全稀释股数、五年以上股息历史、FY2026Q3完整净债务和ROIC仍未完成。",
         "additionalOfficialDocuments": [
           {
             "type": "annual_report",
@@ -440,7 +447,50 @@
             "title": "关于股份回购进展公告（累计回购3,480,600股）",
             "url": "https://static.cninfo.com.cn/finalpage/2026-11-03/1225653072.PDF"
           }
-        ]
+        ],
+        "latestFinancialsFY2026Q3": {
+          "reportDate": "2026-10-30",
+          "periodEnd": "2026-09-30",
+          "auditStatus": "unaudited",
+          "currency": "CNY",
+          "unit": "元",
+          "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225644500.PDF",
+          "sourcePages": "2026Q3 PDF第5-10页；合并利润表/资产负债表/现金流量表",
+          "currentPeriod": {
+            "totalOperatingRevenue9M": 93813317667.45,
+            "operatingRevenue9M": 93581518865.47,
+            "netProfitParent9M": 8803770151.52,
+            "operatingCashFlow9M": 15441464454.51,
+            "capex9M": 2118420324.67,
+            "freeCashFlow9M": 13323024129.84,
+            "cashAndCashEquivalentsEnding": 14187284421.84,
+            "totalAssets": 157051584640.01,
+            "parentEquity": 56839805025.77,
+            "currentLiabilities": 93979529452.37,
+            "shortBorrowings": 59876820716.12,
+            "longBorrowings": 607700455.91,
+            "noncurrentLeaseLiabilities": 279412713.36,
+            "currentMaturitiesUnclassified": 181472214.76
+          },
+          "ttm": {
+            "formula": "FY2025 + 2026 1-9M - 2025 1-9M",
+            "totalOperatingRevenue": 119180806917.32,
+            "operatingRevenue": 118877201997.33,
+            "netProfitParent": 9942834032.29,
+            "operatingCashFlow": 20385521602.21,
+            "capex": 2932054324.28,
+            "simplifiedFreeCashFlow": 17453467277.93
+          },
+          "debt": {
+            "knownGrossDebtComponents": 60763933885.39,
+            "cashAndCashEquivalents": 14187284421.84,
+            "knownComponentsNetDebt": 46576649463.55,
+            "unclassifiedCurrentMaturities": 181472214.76,
+            "netDebtIncludingMaturitiesIfAllInterestBearing": 46758121678.31,
+            "status": "partial_components_only_not_full_net_debt",
+            "note": "已加总短期借款、长期借款和非流动租赁负债；一年内到期非流动负债18,147万元未拆分，其他流动负债及潜在短期融资项目未完整核验，故46.58亿元仅为已识别项目净额，不是完整净债务。"
+          }
+        }
       },
       "companySpecificAssumptions": {
         "historicalRevenueCagr": 0.01223950948578545,
@@ -492,6 +542,13 @@
           "announcementId": "1225485220",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225485220.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002714&announcementId=1225485220&orgId=9900022995&announcementTime=2026-08-21"
+        },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-30",
+          "announcementId": "1225639870",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225639870.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002714&announcementId=1225639870&orgId=9900022995&announcementTime=2026-10-30"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -594,6 +651,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225510979.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603288&announcementId=1225510979&orgId=9900023228&announcementTime=2026-08-27"
         },
+        "quarterly2026Q3": {
+          "title": "海天味业2026年第三季度报告",
+          "announcementDate": "2026-10-30",
+          "announcementId": "1225642742",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225642742.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603288&announcementId=1225642742&orgId=9900023228&announcementTime=2026-10-30"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "9900023228"
@@ -695,6 +759,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225524444.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600398&announcementId=1225524444&orgId=gssh0600398&announcementTime=2026-08-29"
         },
+        "quarterly2026Q3": {
+          "title": "海澜之家集团股份有限公司2026年第三季度报告",
+          "announcementDate": "2026-10-31",
+          "announcementId": "1225646526",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225646526.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600398&announcementId=1225646526&orgId=gssh0600398&announcementTime=2026-10-31"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "gssh0600398"
@@ -784,6 +855,7 @@
         "primaryListing": "02313.HK",
         "annual2025": null,
         "interim2026": null,
+        "quarterly2026Q3": null,
         "status": "hkex_manual_lookup_required",
         "verificationStatus": "official_hkex_search_link_only_not_content_verified",
         "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
@@ -884,6 +956,13 @@
           "announcementId": "1225522691",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522691.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600690&announcementId=1225522691&orgId=gssh0600690&announcementTime=2026-08-28"
+        },
+        "quarterly2026Q3": {
+          "title": "海尔智家股份有限公司2026年第三季度报告",
+          "announcementDate": "2026-10-30",
+          "announcementId": "1225641263",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225641263.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600690&announcementId=1225641263&orgId=gssh0600690&announcementTime=2026-10-30"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -986,6 +1065,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531404.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000333&announcementId=1225531404&orgId=9900005965&announcementTime=2026-08-29"
         },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-30",
+          "announcementId": "1225645132",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225645132.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000333&announcementId=1225645132&orgId=9900005965&announcementTime=2026-10-30"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "9900005965"
@@ -1086,6 +1172,13 @@
           "announcementId": "1225515004",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225515004.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000651&announcementId=1225515004&orgId=gssz0000651&announcementTime=2026-08-27"
+        },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-27",
+          "announcementId": "1225627217",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225627217.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000651&announcementId=1225627217&orgId=gssz0000651&announcementTime=2026-10-27"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -1188,6 +1281,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531835.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002594&announcementId=1225531835&orgId=gshk0001211&announcementTime=2026-08-29"
         },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-30",
+          "announcementId": "1225641442",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225641442.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002594&announcementId=1225641442&orgId=gshk0001211&announcementTime=2026-10-30"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "gshk0001211"
@@ -1289,6 +1389,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-11/1225466147.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600066&announcementId=1225466147&orgId=gssh0600066&announcementTime=2026-08-11"
         },
+        "quarterly2026Q3": {
+          "title": "2026年第三季度报告",
+          "announcementDate": "2026-10-15",
+          "announcementId": "1225604484",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-15/1225604484.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600066&announcementId=1225604484&orgId=gssh0600066&announcementTime=2026-10-15"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "gssh0600066"
@@ -1383,6 +1490,13 @@
           "announcementId": "1225534682",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534682.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601816&announcementId=1225534682&orgId=9900041360&announcementTime=2026-08-31"
+        },
+        "quarterly2026Q3": {
+          "title": "京沪高速铁路股份有限公司2026年第三季度报告",
+          "announcementDate": "2026-10-31",
+          "announcementId": "1225646489",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225646489.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601816&announcementId=1225646489&orgId=9900041360&announcementTime=2026-10-31"
         },
         "status": "partial",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -1485,6 +1599,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225528421.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002352&announcementId=1225528421&orgId=9900010448&announcementTime=2026-08-29"
         },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-30",
+          "announcementId": "1225645731",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225645731.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002352&announcementId=1225645731&orgId=9900010448&announcementTime=2026-10-30"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "9900010448"
@@ -1585,6 +1706,13 @@
           "announcementId": "1225531118",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531118.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601919&announcementId=1225531118&orgId=9900003201&announcementTime=2026-08-29"
+        },
+        "quarterly2026Q3": {
+          "title": "中远海控2026年第三季度报告",
+          "announcementDate": "2026-10-30",
+          "announcementId": "1225642417",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225642417.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601919&announcementId=1225642417&orgId=9900003201&announcementTime=2026-10-30"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -1687,6 +1815,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225529856.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300760&announcementId=1225529856&orgId=9900035304&announcementTime=2026-08-29"
         },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-30",
+          "announcementId": "1225641895",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225641895.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300760&announcementId=1225641895&orgId=9900035304&announcementTime=2026-10-30"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "9900035304"
@@ -1787,6 +1922,13 @@
           "announcementId": "1225483600",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225483600.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600276&announcementId=1225483600&orgId=gssh0600276&announcementTime=2026-08-20"
+        },
+        "quarterly2026Q3": {
+          "title": "恒瑞医药2026年第三季度报告",
+          "announcementDate": "2026-10-28",
+          "announcementId": "1225629197",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225629197.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600276&announcementId=1225629197&orgId=gssh0600276&announcementTime=2026-10-28"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -1889,6 +2031,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-04/1225455027.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603259&announcementId=1225455027&orgId=9900035584&announcementTime=2026-08-04"
         },
+        "quarterly2026Q3": {
+          "title": "2026年第三季度报告",
+          "announcementDate": "2026-10-27",
+          "announcementId": "1225624435",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225624435.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603259&announcementId=1225624435&orgId=9900035584&announcementTime=2026-10-27"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "9900035584"
@@ -1989,6 +2138,13 @@
           "announcementId": "1225519615",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300015&announcementId=1225519615&orgId=9900008390&announcementTime=2026-08-28"
+        },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-30",
+          "announcementId": "1225640332",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225640332.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300015&announcementId=1225640332&orgId=9900008390&announcementTime=2026-10-30"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -2091,6 +2247,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225481668.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600511&announcementId=1225481668&orgId=gssh0600511&announcementTime=2026-08-20"
         },
+        "quarterly2026Q3": {
+          "title": "国药股份2026年第三季度报告",
+          "announcementDate": "2026-10-21",
+          "announcementId": "1225611966",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-21/1225611966.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600511&announcementId=1225611966&orgId=gssh0600511&announcementTime=2026-10-21"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "gssh0600511"
@@ -2191,6 +2354,13 @@
           "announcementId": "1225534923",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534923.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600900&announcementId=1225534923&orgId=gssh0600900&announcementTime=2026-08-31"
+        },
+        "quarterly2026Q3": {
+          "title": "长江电力2026年第三季度报告",
+          "announcementDate": "2026-10-31",
+          "announcementId": "1225648852",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225648852.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600900&announcementId=1225648852&orgId=gssh0600900&announcementTime=2026-10-31"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -2293,6 +2463,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225475192.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600674&announcementId=1225475192&orgId=gssh0600674&announcementTime=2026-08-15"
         },
+        "quarterly2026Q3": {
+          "title": "四川川投能源股份有限公司2026年第三季度报告",
+          "announcementDate": "2026-10-14",
+          "announcementId": "1225603574",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-14/1225603574.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600674&announcementId=1225603574&orgId=gssh0600674&announcementTime=2026-10-14"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "gssh0600674"
@@ -2393,6 +2570,13 @@
           "announcementId": "1225531682",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531682.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601985&announcementId=1225531682&orgId=9900022188&announcementTime=2026-08-29"
+        },
+        "quarterly2026Q3": {
+          "title": "中国核电2026年第三季度报告",
+          "announcementDate": "2026-10-28",
+          "announcementId": "1225630598",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225630598.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601985&announcementId=1225630598&orgId=9900022188&announcementTime=2026-10-28"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -2495,6 +2679,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531759.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601088&announcementId=1225531759&orgId=9900003701&announcementTime=2026-08-29"
         },
+        "quarterly2026Q3": {
+          "title": "中国神华2026年第三季度报告",
+          "announcementDate": "2026-10-24",
+          "announcementId": "1225620903",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-24/1225620903.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601088&announcementId=1225620903&orgId=9900003701&announcementTime=2026-10-24"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "9900003701"
@@ -2595,6 +2786,13 @@
           "announcementId": "1225508099",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508099.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600406&announcementId=1225508099&orgId=gssh0600406&announcementTime=2026-08-27"
+        },
+        "quarterly2026Q3": {
+          "title": "国电南瑞2026年第三季度报告",
+          "announcementDate": "2026-10-29",
+          "announcementId": "1225635689",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-29/1225635689.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600406&announcementId=1225635689&orgId=gssh0600406&announcementTime=2026-10-29"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -2697,6 +2895,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-14/1225472195.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600941&announcementId=1225472195&orgId=gshk0000941&announcementTime=2026-08-14"
         },
+        "quarterly2026Q3": {
+          "title": "中国移动：2026年第三季度报告",
+          "announcementDate": "2026-10-21",
+          "announcementId": "1225613028",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-21/1225613028.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600941&announcementId=1225613028&orgId=gshk0000941&announcementTime=2026-10-21"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "gshk0000941"
@@ -2797,6 +3002,13 @@
           "announcementId": "1225484689",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225484689.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601728&announcementId=1225484689&orgId=gshk0000728&announcementTime=2026-08-21"
+        },
+        "quarterly2026Q3": {
+          "title": "中国电信股份有限公司2026年第三季度报告",
+          "announcementDate": "2026-10-23",
+          "announcementId": "1225617197",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-23/1225617197.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601728&announcementId=1225617197&orgId=gshk0000728&announcementTime=2026-10-23"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -2899,6 +3111,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225529574.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601668&announcementId=1225529574&orgId=9900005970&announcementTime=2026-08-29"
         },
+        "quarterly2026Q3": {
+          "title": "中国建筑2026年第三季度报告",
+          "announcementDate": "2026-10-31",
+          "announcementId": "1225650391",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225650391.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601668&announcementId=1225650391&orgId=9900005970&announcementTime=2026-10-31"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "9900005970"
@@ -2988,6 +3207,7 @@
         "primaryListing": "00700.HK",
         "annual2025": null,
         "interim2026": null,
+        "quarterly2026Q3": null,
         "status": "hkex_manual_lookup_required",
         "verificationStatus": "official_hkex_search_link_only_not_content_verified",
         "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
@@ -3077,6 +3297,7 @@
         "primaryListing": "09988.HK",
         "annual2025": null,
         "interim2026": null,
+        "quarterly2026Q3": null,
         "status": "hkex_manual_lookup_required",
         "verificationStatus": "official_hkex_search_link_only_not_content_verified",
         "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
@@ -3178,7 +3399,8 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225520297.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688981&announcementId=1225520297&orgId=gshk0000981&announcementTime=2026-08-28"
         },
-        "status": "resolved",
+        "quarterly2026Q3": null,
+        "status": "partial",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "gshk0000981"
       },
@@ -3278,6 +3500,13 @@
           "announcementId": "1225501903",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501903.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002371&announcementId=1225501903&orgId=9900006137&announcementTime=2026-08-26"
+        },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-30",
+          "announcementId": "1225641389",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225641389.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002371&announcementId=1225641389&orgId=9900006137&announcementTime=2026-10-30"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -3380,6 +3609,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-14/1225472510.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688041&announcementId=1225472510&orgId=9900048365&announcementTime=2026-08-14"
         },
+        "quarterly2026Q3": {
+          "title": "海光信息技术股份有限公司2026年第三季度报告",
+          "announcementDate": "2026-10-20",
+          "announcementId": "1225611145",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-20/1225611145.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688041&announcementId=1225611145&orgId=9900048365&announcementTime=2026-10-20"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "9900048365"
@@ -3480,6 +3716,13 @@
           "announcementId": "1225491753",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491753.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1225491753&orgId=9900022016&announcementTime=2026-08-22"
+        },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-30",
+          "announcementId": "1225643953",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225643953.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1225643953&orgId=9900022016&announcementTime=2026-10-30"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -3582,6 +3825,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300750&announcementId=1225441586&orgId=GD165627&announcementTime=2026-07-25"
         },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-21",
+          "announcementId": "1225613175",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-21/1225613175.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300750&announcementId=1225613175&orgId=GD165627&announcementTime=2026-10-21"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "GD165627"
@@ -3682,6 +3932,13 @@
           "announcementId": "1225526948",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225526948.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300274&announcementId=1225526948&orgId=9900021300&announcementTime=2026-08-29"
+        },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-31",
+          "announcementId": "1225646130",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225646130.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300274&announcementId=1225646130&orgId=9900021300&announcementTime=2026-10-31"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -3784,6 +4041,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225524610.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300124&announcementId=1225524610&orgId=9900012527&announcementTime=2026-08-29"
         },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-27",
+          "announcementId": "1225623209",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225623209.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300124&announcementId=1225623209&orgId=9900012527&announcementTime=2026-10-27"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "9900012527"
@@ -3884,6 +4148,13 @@
           "announcementId": "1225530237",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225530237.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1225530237&orgId=gssh0600036&announcementTime=2026-08-29"
+        },
+        "quarterly2026Q3": {
+          "title": "招商银行股份有限公司2026年第三季度报告",
+          "announcementDate": "2026-10-31",
+          "announcementId": "1225649239",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225649239.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1225649239&orgId=gssh0600036&announcementTime=2026-10-31"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -3986,6 +4257,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225526043.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601398&announcementId=1225526043&orgId=jjxt0000019&announcementTime=2026-08-29"
         },
+        "quarterly2026Q3": {
+          "title": "工商银行H股公告-2026年第三季度报告",
+          "announcementDate": "2026-10-31",
+          "announcementId": "1225648840",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225648840.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601398&announcementId=1225648840&orgId=jjxt0000019&announcementTime=2026-10-31"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "jjxt0000019"
@@ -4081,6 +4359,13 @@
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1225038263&orgId=9900002221&announcementTime=2026-03-27"
         },
         "interim2026": null,
+        "quarterly2026Q3": {
+          "title": "中国平安2026年第三季度报告",
+          "announcementDate": "2026-10-29",
+          "announcementId": "1225637017",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-29/1225637017.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1225637017&orgId=9900002221&announcementTime=2026-10-29"
+        },
         "status": "partial",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "9900002221"
@@ -4181,6 +4466,13 @@
           "announcementId": "1225518250",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225518250.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601601&announcementId=1225518250&orgId=9900004003&announcementTime=2026-08-28"
+        },
+        "quarterly2026Q3": {
+          "title": "中国太保2026年第三季度报告",
+          "announcementDate": "2026-10-29",
+          "announcementId": "1225634088",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-29/1225634088.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601601&announcementId=1225634088&orgId=9900004003&announcementTime=2026-10-29"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -4283,6 +4575,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225486473.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600030&announcementId=1225486473&orgId=gssh0600030&announcementTime=2026-08-21"
         },
+        "quarterly2026Q3": {
+          "title": "中信证券股份有限公司2026年第三季度报告",
+          "announcementDate": "2026-10-27",
+          "announcementId": "1225625003",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225625003.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600030&announcementId=1225625003&orgId=gssh0600030&announcementTime=2026-10-27"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "gssh0600030"
@@ -4384,6 +4683,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491769.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300059&announcementId=1225491769&orgId=9900010488&announcementTime=2026-08-22"
         },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-24",
+          "announcementId": "1225620147",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-24/1225620147.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300059&announcementId=1225620147&orgId=9900010488&announcementTime=2026-10-24"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "9900010488"
@@ -4473,6 +4779,7 @@
         "primaryListing": "09618.HK",
         "annual2025": null,
         "interim2026": null,
+        "quarterly2026Q3": null,
         "status": "hkex_manual_lookup_required",
         "verificationStatus": "official_hkex_search_link_only_not_content_verified",
         "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
@@ -4574,6 +4881,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225486965.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601888&announcementId=1225486965&orgId=9900008313&announcementTime=2026-08-21"
         },
+        "quarterly2026Q3": {
+          "title": "中国旅游集团中免股份有限公司2026年第三季度报告",
+          "announcementDate": "2026-10-31",
+          "announcementId": "1225649333",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225649333.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601888&announcementId=1225649333&orgId=9900008313&announcementTime=2026-10-31"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "9900008313"
@@ -4668,6 +4982,13 @@
           "announcementId": "1225531633",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531633.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600754&announcementId=1225531633&orgId=gssh0600754&announcementTime=2026-08-29"
+        },
+        "quarterly2026Q3": {
+          "title": "锦江酒店2026年第三季度报告",
+          "announcementDate": "2026-10-31",
+          "announcementId": "1225648607",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225648607.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600754&announcementId=1225648607&orgId=gssh0600754&announcementTime=2026-10-31"
         },
         "status": "partial",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -4770,6 +5091,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-19/1225480000.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002027&announcementId=1225480000&orgId=gssz0002027&announcementTime=2026-08-19"
         },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-28",
+          "announcementId": "1225628192",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225628192.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002027&announcementId=1225628192&orgId=gssz0002027&announcementTime=2026-10-28"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "gssz0002027"
@@ -4859,6 +5187,7 @@
         "primaryListing": "09626.HK",
         "annual2025": null,
         "interim2026": null,
+        "quarterly2026Q3": null,
         "status": "hkex_manual_lookup_required",
         "verificationStatus": "official_hkex_search_link_only_not_content_verified",
         "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
@@ -4959,6 +5288,13 @@
           "announcementId": "1225515479",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225515479.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002607&announcementId=1225515479&orgId=9900021221&announcementTime=2026-08-27"
+        },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-27",
+          "announcementId": "1225627192",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225627192.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002607&announcementId=1225627192&orgId=9900021221&announcementTime=2026-10-27"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
@@ -5061,6 +5397,13 @@
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506544.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000598&announcementId=1225506544&orgId=gssz0000598&announcementTime=2026-08-26"
         },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-28",
+          "announcementId": "1225630991",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225630991.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000598&announcementId=1225630991&orgId=gssz0000598&announcementTime=2026-10-28"
+        },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
         "orgId": "gssz0000598"
@@ -5161,6 +5504,13 @@
           "announcementId": "1225510953",
           "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225510953.PDF",
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600323&announcementId=1225510953&orgId=gssh0600323&announcementTime=2026-08-27"
+        },
+        "quarterly2026Q3": {
+          "title": "2026年第三季度报告",
+          "announcementDate": "2026-10-28",
+          "announcementId": "1225631618",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-28/1225631618.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600323&announcementId=1225631618&orgId=gssh0600323&announcementTime=2026-10-28"
         },
         "status": "resolved",
         "verificationStatus": "official_link_only_not_content_verified",
