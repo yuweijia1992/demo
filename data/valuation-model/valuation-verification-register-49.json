@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:20:40.417875+00:00",
+  "generatedAtUtc": "2026-11-09T08:24:11.085054+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -857,11 +857,17 @@
         "name": "申洲国际",
         "industry": "纺织制造与运动服装供应链",
         "primaryListing": "02313.HK",
-        "annual2025": null,
+        "annual2025": {
+          "title": "Annual Report 2025",
+          "announcementDate": "2026-04-23",
+          "announcementId": "2026042300646",
+          "pdfUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf",
+          "detailUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf"
+        },
         "interim2026": null,
         "quarterly2026Q3": null,
-        "status": "hkex_manual_lookup_required",
-        "verificationStatus": "official_hkex_search_link_only_not_content_verified",
+        "status": "partial",
+        "verificationStatus": "official_annual_report_pdf_content_partially_crosschecked",
         "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
       },
       "verification": {
@@ -3209,11 +3215,16 @@
         "name": "腾讯控股",
         "industry": "社交、游戏、广告与云",
         "primaryListing": "00700.HK",
-        "annual2025": null,
+        "annual2025": {
+          "title": "2025 Annual Report",
+          "announcementDate": "2026-04-09",
+          "pdfUrl": "https://static.www.tencent.com/uploads/2026/04/09/62d786fcf3d3c8cb7e54791ee95439ac.pdf",
+          "detailUrl": "https://www.tencent.com/investors/financial-reports/"
+        },
         "interim2026": null,
         "quarterly2026Q3": null,
-        "status": "hkex_manual_lookup_required",
-        "verificationStatus": "official_hkex_search_link_only_not_content_verified",
+        "status": "partial",
+        "verificationStatus": "official_annual_report_pdf_link_resolved_content_not_crosschecked",
         "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
       },
       "verification": {
@@ -3302,9 +3313,16 @@
         "annual2025": null,
         "interim2026": null,
         "quarterly2026Q3": null,
-        "status": "hkex_manual_lookup_required",
-        "verificationStatus": "official_hkex_search_link_only_not_content_verified",
-        "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
+        "status": "partial",
+        "verificationStatus": "official_FY2026_annual_report_pdf_link_resolved_content_not_crosschecked",
+        "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
+        "annualLatest": {
+          "title": "Fiscal Year 2026 Annual Report",
+          "fiscalYear": "FY2026",
+          "announcementDate": "2026-06-18",
+          "pdfUrl": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061800844.pdf",
+          "detailUrl": "https://home.alibabagroup.com/zh-HK/document-2003564382071554048"
+        }
       },
       "verification": {
         "officialReportCrossCheck": {
@@ -4781,11 +4799,16 @@
         "name": "京东集团",
         "industry": "电商、零售与物流",
         "primaryListing": "09618.HK",
-        "annual2025": null,
+        "annual2025": {
+          "title": "2025 Annual Report / Form 20-F",
+          "announcementDate": "2026-04-16",
+          "pdfUrl": "https://ir.jd.com/system/files-encrypted/nasdaq_kms/assets/2026/04/17/11-33-24/Form%2020-F%20for%20JD%20filed%2004162026.pdf",
+          "detailUrl": "https://ir.jd.com/annual-reports"
+        },
         "interim2026": null,
         "quarterly2026Q3": null,
-        "status": "hkex_manual_lookup_required",
-        "verificationStatus": "official_hkex_search_link_only_not_content_verified",
+        "status": "partial",
+        "verificationStatus": "official_annual_report_pdf_link_resolved_content_not_crosschecked",
         "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
       },
       "verification": {
@@ -5189,11 +5212,17 @@
         "name": "哔哩哔哩",
         "industry": "视频社区与内容",
         "primaryListing": "09626.HK",
-        "annual2025": null,
+        "annual2025": {
+          "title": "2025 Annual Report",
+          "announcementDate": "2026-04-16",
+          "announcementId": "2026041601346",
+          "pdfUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0416/2026041601346.pdf",
+          "detailUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&lang=EN&market=SEHK&stockId=1000087784"
+        },
         "interim2026": null,
         "quarterly2026Q3": null,
-        "status": "hkex_manual_lookup_required",
-        "verificationStatus": "official_hkex_search_link_only_not_content_verified",
+        "status": "partial",
+        "verificationStatus": "official_annual_report_pdf_link_resolved_content_not_crosschecked",
         "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
       },
       "verification": {
