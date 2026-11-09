@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T07:58:36.425723+00:00",
+  "generatedAtUtc": "2026-11-09T07:59:34.743194+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -37,17 +37,21 @@
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
-          "status": "raw_share_capital_only",
+          "status": "reported_total_shares_snapshot_only",
           "availableYears": 5,
-          "required": "期末股本、股数、面值、送转、增发、回购、库存股及A/H/ADR换算"
+          "required": "此为报告日总股数快照，仍需核验库存股、股权激励、可转债、增发回购及估值日后股本变动",
+          "snapshotDate": "2026-03-31"
         },
         "currentFullyDilutedShares": {
           "status": "pending",
           "required": "估值日已发行股数+期权/限制股/可转债等潜在稀释，需与公告及股权激励文件核对"
         },
         "dividendPerShareHistory": {
-          "status": "pending",
-          "required": "逐年每股股息、特别股息、除权日、派息币种及股息再投资口径"
+          "status": "partial_fy2025_proposed_dividend_only",
+          "required": "补齐至少五年已实施派息、特别股息、除权日、币种及估值日股数口径；董事会预案不得当作已派发股息",
+          "availablePeriods": [
+            "FY2025 proposed annual dividend"
+          ]
         },
         "capitalAllocation": {
           "status": "partial_cashflow_fields_only",
