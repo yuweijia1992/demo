@@ -72,7 +72,7 @@ def choose(rows,pattern):
         x=normalize_announcement(a,"","")
         if re.search(pattern,x["title"],re.I) and x["pdfUrl"] and not re.search(r"摘要|英文版|英文|取消|更正前",x["title"]):
             good.append(x)
-    return sorted(good,key=lambda x:x.get("announcementDate") or "",reverse=True)[0] if good else None
+    return sorted(good,key=lambda x:(x.get("announcementDate") or "","更正后" in x.get("title","")),reverse=True)[0] if good else None
 
 def main():
     stocks=json.loads(MASTER.read_text(encoding="utf-8")).get("stocks",[])
