@@ -1,11 +1,11 @@
 {
   "dataset_version": "2.5.0",
-  "generated_at": "2026-11-08",
+  "generated_at": "2026-11-09T08:45:51Z",
   "dataset_file": "data/investment-monthly.csv",
   "frequency": "monthly",
-  "row_count": 250,
+  "row_count": 251,
   "date_start": "2006-01",
-  "date_end": "2026-10",
+  "date_end": "2026-11",
   "latest_csi300_observation": "2026-09-09",
   "latest_complete_csi300_month": "2026-08",
   "coverage_audit": {
@@ -20,21 +20,16 @@
       "end": "2026-08"
     },
     "sp500_total_return_cny_pct": {
-      "count": 247,
-      "start": "2006-01",
+      "count": 246,
+      "start": "2006-02",
       "end": "2026-07"
     },
     "gold_cny_return_pct": {
-      "count": 250,
-      "start": "2006-01",
+      "count": 249,
+      "start": "2006-02",
       "end": "2026-10"
     },
     "usd_cny": {
-      "count": 250,
-      "start": "2006-01",
-      "end": "2026-10"
-    },
-    "usd_cny_change_pct": {
       "count": 250,
       "start": "2006-01",
       "end": "2026-10"
@@ -59,14 +54,14 @@
       "start": null,
       "end": null
     },
-    "us_agg_etf_total_return_cny_pct": {
-      "count": 247,
-      "start": "2006-01",
+    "efa_developed_markets_etf_total_return_cny_pct": {
+      "count": 246,
+      "start": "2006-02",
       "end": "2026-07"
     },
-    "fxi_china_largecap_etf_total_return_cny_pct": {
-      "count": 247,
-      "start": "2006-01",
+    "eem_emerging_markets_etf_total_return_cny_pct": {
+      "count": 246,
+      "start": "2006-02",
       "end": "2026-07"
     }
   },
@@ -97,9 +92,9 @@
     },
     {
       "field": "csi300_period_status",
-      "count": 249,
-      "start": "2006-01",
-      "end": "2026-09"
+      "count": 0,
+      "start": null,
+      "end": null
     },
     {
       "field": "sp500_total_return_index_usd",
@@ -115,8 +110,8 @@
     },
     {
       "field": "sp500_total_return_cny_pct",
-      "count": 247,
-      "start": "2006-01",
+      "count": 246,
+      "start": "2006-02",
       "end": "2026-07"
     },
     {
@@ -133,8 +128,8 @@
     },
     {
       "field": "gold_cny_return_pct",
-      "count": 250,
-      "start": "2006-01",
+      "count": 249,
+      "start": "2006-02",
       "end": "2026-10"
     },
     {
@@ -294,6 +289,18 @@
       "end": null
     },
     {
+      "field": "sp500_shiller_total_return_pct",
+      "count": 249,
+      "start": "2006-01",
+      "end": "2026-09"
+    },
+    {
+      "field": "sp500_shiller_cpi_index",
+      "count": 249,
+      "start": "2006-01",
+      "end": "2026-09"
+    },
+    {
       "field": "us_agg_etf_total_return_usd_pct",
       "count": 247,
       "start": "2006-01",
@@ -301,8 +308,8 @@
     },
     {
       "field": "us_agg_etf_total_return_cny_pct",
-      "count": 247,
-      "start": "2006-01",
+      "count": 246,
+      "start": "2006-02",
       "end": "2026-07"
     },
     {
@@ -313,8 +320,8 @@
     },
     {
       "field": "us_ief_7_10y_etf_total_return_cny_pct",
-      "count": 247,
-      "start": "2006-01",
+      "count": 246,
+      "start": "2006-02",
       "end": "2026-07"
     },
     {
@@ -325,8 +332,8 @@
     },
     {
       "field": "us_shy_1_3y_etf_total_return_cny_pct",
-      "count": 247,
-      "start": "2006-01",
+      "count": 246,
+      "start": "2006-02",
       "end": "2026-07"
     },
     {
@@ -337,33 +344,33 @@
     },
     {
       "field": "fxi_china_largecap_etf_total_return_cny_pct",
+      "count": 246,
+      "start": "2006-02",
+      "end": "2026-07"
+    },
+    {
+      "field": "efa_developed_markets_etf_total_return_usd_pct",
       "count": 247,
       "start": "2006-01",
       "end": "2026-07"
     },
     {
-      "field": "efa_developed_markets_etf_total_return_usd_pct",
-      "count": 0,
-      "start": null,
-      "end": null
-    },
-    {
       "field": "efa_developed_markets_etf_total_return_cny_pct",
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 246,
+      "start": "2006-02",
+      "end": "2026-07"
     },
     {
       "field": "eem_emerging_markets_etf_total_return_usd_pct",
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 247,
+      "start": "2006-01",
+      "end": "2026-07"
     },
     {
       "field": "eem_emerging_markets_etf_total_return_cny_pct",
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 246,
+      "start": "2006-02",
+      "end": "2026-07"
     }
   ],
   "notes": [
@@ -376,14 +383,14 @@
     "EEM includes emerging-market exposure to China and Taiwan. Regional portfolio weights remain unapproved; no full 52/28/10/10 portfolio return is calculated."
   ],
   "matrix_policy": [
-    "统一月份键YYYY-MM，2006-01至2026-10共250个月份；不填补缺失值、不将缺失收益记为0。",
-    "沪深300的CSI300列为价格指数，CSI300_TR列为全收益指数；按每月最后一个可用交易日指数水平计算月收益。数据源最后观察为2026-09-09，2026-09属于部分月份，因此该月收益留空，2026-10尚无沪深300数据。",
-    "S&P 500总回报指数来自^SP500TR月度股息调整水平，计算USD总回报；再按相邻月份Federal Reserve G.5月均USD/CNY换算人民币。",
-    "黄金来自世界银行Pink Sheet月均美元/盎司价格；人民币月均估值代理=美元金价月均×USD/CNY月均值。此回报不是日度配对FX后实际持有收益。",
-    "美元汇率EXCHUS为月均汇率（CNY per USD），不是月末即期汇率。",
-    "恒生全收益、中债财富、美国国债总回报、人民币现金和完整组合月收益仍为空值。不得以价格指数、国债收益率或短期利率直接替代全收益指数。",
-    "52%股票和28%债券内部地区/久期权重待后续确定，因此当前不生成完整52/28/10/10组合月度回报或其历史统计。",
-    "V2.3 adds AGG, IEF, SHY and FXI Yahoo monthly auto-adjusted ETF total-return proxies, in both USD and CNY. These are separate investable ETF series and must not be represented as official ChinaBond or Hang Seng total-return indexes."
+    "No forward-fill and no missing-as-zero.",
+    "Price returns and total returns remain separate.",
+    "EFA is a developed-markets ex-US/Canada ETF proxy; EEM is an emerging-markets ETF proxy. Both are Yahoo auto-adjusted ETF total-return proxies, not official MSCI net/gross index returns.",
+    "EEM country holdings include China and Taiwan; do not add EEM to A-share/HK exposures without country/issuer overlap review.",
+    "USD/CNY uses the Federal Reserve G.5 monthly average EXCHUS series.",
+    "USD asset CNY return=(1+rUSD)*(FX_t/FX_t-1)-1.",
+    "Gold CNY monthly-average valuation=Gold USD monthly average*USD/CNY monthly average; it is an approximation.",
+    "Do not calculate a full 52/28/10/10 portfolio return while HSI TRI, ChinaBond wealth, cash total return or sub-asset target weights are missing."
   ],
   "sources": [
     {
@@ -486,9 +493,9 @@
       "end": "2026-08"
     },
     "csi300_period_status": {
-      "count": 249,
-      "start": "2006-01",
-      "end": "2026-09"
+      "count": 0,
+      "start": null,
+      "end": null
     },
     "sp500_total_return_index_usd": {
       "count": 247,
@@ -501,8 +508,8 @@
       "end": "2026-07"
     },
     "sp500_total_return_cny_pct": {
-      "count": 247,
-      "start": "2006-01",
+      "count": 246,
+      "start": "2006-02",
       "end": "2026-07"
     },
     "gold_usd_oz": {
@@ -516,8 +523,8 @@
       "end": "2026-10"
     },
     "gold_cny_return_pct": {
-      "count": 250,
-      "start": "2006-01",
+      "count": 249,
+      "start": "2006-02",
       "end": "2026-10"
     },
     "usd_cny": {
@@ -650,14 +657,24 @@
       "start": null,
       "end": null
     },
+    "sp500_shiller_total_return_pct": {
+      "count": 249,
+      "start": "2006-01",
+      "end": "2026-09"
+    },
+    "sp500_shiller_cpi_index": {
+      "count": 249,
+      "start": "2006-01",
+      "end": "2026-09"
+    },
     "us_agg_etf_total_return_usd_pct": {
       "count": 247,
       "start": "2006-01",
       "end": "2026-07"
     },
     "us_agg_etf_total_return_cny_pct": {
-      "count": 247,
-      "start": "2006-01",
+      "count": 246,
+      "start": "2006-02",
       "end": "2026-07"
     },
     "us_ief_7_10y_etf_total_return_usd_pct": {
@@ -666,8 +683,8 @@
       "end": "2026-07"
     },
     "us_ief_7_10y_etf_total_return_cny_pct": {
-      "count": 247,
-      "start": "2006-01",
+      "count": 246,
+      "start": "2006-02",
       "end": "2026-07"
     },
     "us_shy_1_3y_etf_total_return_usd_pct": {
@@ -676,8 +693,8 @@
       "end": "2026-07"
     },
     "us_shy_1_3y_etf_total_return_cny_pct": {
-      "count": 247,
-      "start": "2006-01",
+      "count": 246,
+      "start": "2006-02",
       "end": "2026-07"
     },
     "fxi_china_largecap_etf_total_return_usd_pct": {
@@ -686,29 +703,29 @@
       "end": "2026-07"
     },
     "fxi_china_largecap_etf_total_return_cny_pct": {
+      "count": 246,
+      "start": "2006-02",
+      "end": "2026-07"
+    },
+    "efa_developed_markets_etf_total_return_usd_pct": {
       "count": 247,
       "start": "2006-01",
       "end": "2026-07"
     },
-    "efa_developed_markets_etf_total_return_usd_pct": {
-      "count": 0,
-      "start": null,
-      "end": null
-    },
     "efa_developed_markets_etf_total_return_cny_pct": {
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 246,
+      "start": "2006-02",
+      "end": "2026-07"
     },
     "eem_emerging_markets_etf_total_return_usd_pct": {
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 247,
+      "start": "2006-01",
+      "end": "2026-07"
     },
     "eem_emerging_markets_etf_total_return_cny_pct": {
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 246,
+      "start": "2006-02",
+      "end": "2026-07"
     }
   },
   "gaps": [
@@ -782,5 +799,43 @@
       "SHY": 247,
       "FXI": 247
     }
-  }
+  },
+  "refresh_sources": {
+    "csi300_h00300": {
+      "monthly_observations": 253,
+      "latest_observation": "2026-09-09",
+      "last_source_month": "2026-09",
+      "price_return_months": 249,
+      "total_return_months": 249
+    },
+    "sp500_total_return": {
+      "monthly_index_observations": 463,
+      "coverage_start": "1988-01",
+      "coverage_end": "2026-07"
+    },
+    "world_bank_gold": {
+      "monthly_observations": 2326,
+      "coverage_start": "1833-01",
+      "coverage_end": "2026-10"
+    },
+    "yahoo_etf_total_returns": {
+      "ticker_months": {
+        "AGG": 248,
+        "IEF": 248,
+        "SHY": 248,
+        "FXI": 248,
+        "EFA": 248,
+        "EEM": 248
+      },
+      "source": "Yahoo Finance monthly auto-adjusted ETF total returns via HerdingAI dataset"
+    },
+    "shiller_cross_check": {
+      "observations": 250,
+      "role": "independent_cross_check_not_primary_series"
+    }
+  },
+  "refresh_errors": {
+    "fred_macro_and_fx": "TimeoutError: The read operation timed out"
+  },
+  "portfolio_return_ready": false
 }
