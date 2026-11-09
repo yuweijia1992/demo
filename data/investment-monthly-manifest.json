@@ -1,5 +1,5 @@
 {
-  "dataset_version": "2.3.0",
+  "dataset_version": "2.5.0",
   "generated_at": "2026-11-08",
   "dataset_file": "data/investment-monthly.csv",
   "frequency": "monthly",
@@ -340,6 +340,30 @@
       "count": 247,
       "start": "2006-01",
       "end": "2026-07"
+    },
+    {
+      "field": "efa_developed_markets_etf_total_return_usd_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "efa_developed_markets_etf_total_return_cny_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "eem_emerging_markets_etf_total_return_usd_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "eem_emerging_markets_etf_total_return_cny_pct",
+      "count": 0,
+      "start": null,
+      "end": null
     }
   ],
   "notes": [
@@ -347,7 +371,9 @@
     "美国资产转人民币收益需同时使用美元资产总回报与USD/CNY汇率： (1+r_USD)*(FX_t/FX_t-1)-1。",
     "现金利率年化百分数需按月计息/复利规则转换为月回报；不能直接把年利率当作月收益。",
     "股票/债券价格指数必须与全收益指数分开标记，不能在同一策略回测中悄悄混用。",
-    "目前只有沪深300月度价格指数序列完成数据落库；其余序列仍待导入/验证，因此尚不能计算完整52/28/10/10月度正式回测。"
+    "目前只有沪深300月度价格指数序列完成数据落库；其余序列仍待导入/验证，因此尚不能计算完整52/28/10/10月度正式回测。",
+    "V2.5 adds EFA and EEM monthly auto-adjusted ETF total-return proxies; the refresh workflow pulls them from the existing Yahoo/HerdingAI monthly return panel and converts USD returns to CNY using adjacent monthly-average USD/CNY. These are proxies, not official MSCI index total-return series.",
+    "EEM includes emerging-market exposure to China and Taiwan. Regional portfolio weights remain unapproved; no full 52/28/10/10 portfolio return is calculated."
   ],
   "matrix_policy": [
     "统一月份键YYYY-MM，2006-01至2026-10共250个月份；不填补缺失值、不将缺失收益记为0。",
@@ -663,6 +689,26 @@
       "count": 247,
       "start": "2006-01",
       "end": "2026-07"
+    },
+    "efa_developed_markets_etf_total_return_usd_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "efa_developed_markets_etf_total_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "eem_emerging_markets_etf_total_return_usd_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "eem_emerging_markets_etf_total_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
     }
   },
   "gaps": [
@@ -706,6 +752,16 @@
     {
       "field": "portfolio_return_cny_pct",
       "reason": "Full strategic portfolio requires bond/cash series and sub-asset weights; no portfolio return is calculated."
+    },
+    {
+      "field": "efa_developed_markets_etf_total_return_cny_pct",
+      "status": "pending_refresh",
+      "reason": "V2.5新增接入；待GitHub Actions刷新并核验实际覆盖。"
+    },
+    {
+      "field": "eem_emerging_markets_etf_total_return_cny_pct",
+      "status": "pending_refresh",
+      "reason": "V2.5新增接入；待GitHub Actions刷新并核验实际覆盖。"
     }
   ],
   "quality_checks": {
