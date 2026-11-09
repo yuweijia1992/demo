@@ -1,4 +1,4 @@
-/* Shared monthly data layer for Investment Lab V2.1.
+/* Shared monthly data layer for Investment Lab V2.5 — canonical source for macro, risk, backtest and FIRE.
    Policy: no zero-filling, no forward-fill, and no price/total-return substitution. */
 (function(){
   "use strict";
@@ -15,6 +15,8 @@
     "us_ief_7_10y_etf_total_return_usd_pct","us_ief_7_10y_etf_total_return_cny_pct",
     "us_shy_1_3y_etf_total_return_usd_pct","us_shy_1_3y_etf_total_return_cny_pct",
     "fxi_china_largecap_etf_total_return_usd_pct","fxi_china_largecap_etf_total_return_cny_pct",
+    "efa_developed_markets_etf_total_return_usd_pct","efa_developed_markets_etf_total_return_cny_pct",
+    "eem_emerging_markets_etf_total_return_usd_pct","eem_emerging_markets_etf_total_return_cny_pct",
     "dgs10_pct","dfii10_pct","dxy_index",
     "vix_index","brent_usd_bbl","fedfunds_pct","china10y_pct",
     "cn_pmi","us_pmi","us_unemployment_pct","credit_spread_pct",
@@ -141,5 +143,5 @@
     return {count:x.length,ready:true,cagr,vol,maxdd,worst,wealth};
   }
   function portfolioReturns(rows){return monthlyReturns(rows,"portfolio_return_cny_pct");}
-  window.YM_DATA_CORE={version:"2.1.0",fields,load,parseCSV,inspect,importCSV,coverage,latest,monthlyReturns,deriveLevelReturns,stats,portfolioReturns};
+  window.YM_DATA_CORE={version:"2.5.0",fields,load,parseCSV,inspect,importCSV,coverage,latest,monthlyReturns,deriveLevelReturns,stats,portfolioReturns};
 })();
