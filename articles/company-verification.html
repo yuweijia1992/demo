@@ -84,7 +84,7 @@ function show(code){
  const x=register.find(z=>z.code===code),m=models[code];if(!x)return;
  $('detailTitle').textContent=x.name+'（'+x.code+'）';
  const v=x.verification||{},a=x.companySpecificAssumptions||{},source=x.sourceLinks||{},ev=x.manualEvidence||null;
- const checks=Object.entries(v).map(([k,z])=>'<div class="check"><strong>'+k+'：'+statusText(z.status)+'</strong><p>'+(z.required||'')+'</p>'+(z.sourceUrl?'<a href="'+z.sourceUrl+'" target="_blank" rel="noopener">查看现有来源</a>':'')+'</div>').join('');
+ const checks=Object.entries(v).map(([k,z])=>'<div class="check"><strong>'+k+'：'+statusText(z.status)+'</strong><p>'+(z.required||'')+'</p>'+(z.verifiedFY2025!==undefined?'<p>FY2025官方核验净债务：'+fmt(z.verifiedFY2025)+'；有息债务总额：'+fmt(z.grossDebtFY2025)+'</p>':'')+(z.sourceUrl?'<a href="'+z.sourceUrl+'" target="_blank" rel="noopener">查看现有来源</a>':'')+'</div>').join('');
  const drivers=m?.valuationFramework?.companyDriverTemplate||[];
  const driverHtml='<h3>公司级估值假设输入模板（待来源支持）</h3><div style="overflow:auto"><table><thead><tr><th>驱动因素</th><th>单位</th><th>当前值</th><th>需要的公司证据</th><th>状态</th></tr></thead><tbody>'+drivers.map(d=>'<tr><td>'+d.label+'</td><td>'+d.unit+'</td><td>待填</td><td>'+d.sourceRequirement+'</td><td>'+statusText(d.status)+'</td></tr>').join('')+'</tbody></table></div>';
  const official=x.officialReports||{};
