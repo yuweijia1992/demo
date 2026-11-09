@@ -516,6 +516,16 @@ def main():
                 fd["netOfTreasurySnapshot"]=share_snapshot.get("sharesOutstandingExTreasury")
                 fd["noPotentialDilutiveSharesFY2025"]=(verified.get("noPotentialDilutiveOrdinarySharesFY2025") or {}).get("value")
                 fd["sourceUrl"]=share_snapshot.get("officialUrl")
+            quarterly=ev.get("latestQuarterlyEvidence") or {}
+            if quarterly:
+                netdebt_reg=company["verification"]["register"]["netDebt"]
+                netdebt_reg["latestQuarterlyEvidence"]=quarterly
+                netdebt_reg["latestQuarterlyStatus"]="issuer_quarterly_report_verified_unaudited"
+                netdebt_reg["latestQuarterlyNetDebt"]=quarterly.get("netDebtCNY")
+                netdebt_reg["latestQuarterlyDate"]=quarterly.get("date")
+                capital_reg=company["verification"]["register"]["capitalAllocation"]
+                capital_reg["latestQuarterlyEvidence"]={k:quarterly.get(k) for k in ("period","date","auditStatus","operatingCashFlowYTD_CNY","capexYTD_CNY","simplifiedFCFYTD_CNY")}
+                company["valuationFramework"]["companySpecificAssumptions"]["latestQuarterlyEvidence"]=quarterly
             drivers=ev.get("companySpecificDrivers") or {}
             template=company["valuationFramework"].get("companyDriverTemplate") or []
             known={x.get("key"):x for x in template}
