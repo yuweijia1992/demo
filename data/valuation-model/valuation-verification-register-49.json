@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-08T08:35:52.468757+00:00",
+  "generatedAtUtc": "2026-11-09T07:53:54.503077+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -33,7 +33,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -329,7 +329,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -403,7 +403,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -477,7 +477,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -625,7 +625,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -699,7 +699,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -773,7 +773,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -847,7 +847,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -921,7 +921,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -995,7 +995,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -1069,7 +1069,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -1143,7 +1143,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -1217,7 +1217,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -1291,7 +1291,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -1365,7 +1365,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -1439,7 +1439,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -1513,7 +1513,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -1587,7 +1587,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -1661,7 +1661,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -1735,7 +1735,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -1809,7 +1809,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -1883,7 +1883,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -1957,7 +1957,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -2031,7 +2031,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -2105,7 +2105,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -2327,7 +2327,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -2401,7 +2401,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -2475,7 +2475,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -2549,7 +2549,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -2623,7 +2623,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -2697,7 +2697,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -2771,7 +2771,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -3363,7 +3363,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -3437,7 +3437,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -3511,7 +3511,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -3659,7 +3659,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -3733,7 +3733,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {
@@ -3807,7 +3807,7 @@
         "netDebt": {
           "status": "pending_inputs",
           "availableYears": 0,
-          "knownComponentsYears": 5,
+          "knownComponentsYears": 0,
           "required": "短借、长借、债券、流动/非流动租赁负债、现金逐项勾稽；若部分债项缺失，只报告已识别债务项净额，不称为完整净债务"
         },
         "shareCapital": {

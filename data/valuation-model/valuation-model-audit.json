@@ -1,5 +1,5 @@
 {
-  "generatedAtUtc": "2026-11-08T08:35:52.435526+00:00",
+  "generatedAtUtc": "2026-11-09T07:53:54.483797+00:00",
   "masterCompanies": 49,
   "financialRecordsMatched": 49,
   "historyRecordsMatched": 49,
@@ -9,7 +9,7 @@
     "annualROE": 49,
     "annualFCF": 43,
     "annualNetDebt": 0,
-    "annualNetDebtKnownComponents": 43,
+    "annualNetDebtKnownComponents": 5,
     "annualROIC": 0,
     "annualDividendCashFlowOnly": 0,
     "annualDilutedShareProxy": 0,
