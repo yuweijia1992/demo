@@ -1,6 +1,6 @@
 {
   "dataset_version": "2.5.0",
-  "generated_at": "2026-11-09T08:50:27Z",
+  "generated_at": "2026-11-09T09:23:24Z",
   "dataset_file": "data/investment-monthly.csv",
   "frequency": "monthly",
   "row_count": 250,
@@ -39,6 +39,16 @@
       "start": null,
       "end": null
     },
+    "hang_seng_etf_2800_total_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "hkd_per_usd": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
     "china_bond_wealth_return_cny_pct": {
       "count": 0,
       "start": null,
@@ -50,7 +60,7 @@
       "end": "2026-10"
     },
     "cny_cash_return_pct": {
-      "count": 243,
+      "count": 244,
       "start": "2006-01",
       "end": "2026-10"
     },
@@ -68,16 +78,6 @@
       "count": 247,
       "start": "2006-01",
       "end": "2026-07"
-    },
-    "hang_seng_etf_2800_total_return_cny_pct": {
-      "count": 0,
-      "start": null,
-      "end": null
-    },
-    "hkd_per_usd": {
-      "count": 0,
-      "start": null,
-      "end": null
     }
   },
   "series": [
@@ -178,6 +178,30 @@
       "end": null
     },
     {
+      "field": "hang_seng_etf_2800_total_return_index_hkd",
+      "count": 226,
+      "start": "2008-01",
+      "end": "2026-10"
+    },
+    {
+      "field": "hang_seng_etf_2800_total_return_hkd_pct",
+      "count": 225,
+      "start": "2008-02",
+      "end": "2026-10"
+    },
+    {
+      "field": "hang_seng_etf_2800_total_return_cny_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "hkd_per_usd",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
       "field": "china_bond_wealth_index_cny",
       "count": 0,
       "start": null,
@@ -191,7 +215,7 @@
     },
     {
       "field": "cny_cash_index_h11025",
-      "count": 244,
+      "count": 245,
       "start": "2006-01",
       "end": "2026-10"
     },
@@ -233,7 +257,7 @@
     },
     {
       "field": "cny_cash_return_pct",
-      "count": 243,
+      "count": 244,
       "start": "2006-01",
       "end": "2026-10"
     },
@@ -404,30 +428,6 @@
       "count": 247,
       "start": "2006-01",
       "end": "2026-07"
-    },
-    {
-      "field": "hang_seng_etf_2800_total_return_index_hkd",
-      "count": 0,
-      "start": null,
-      "end": null
-    },
-    {
-      "field": "hang_seng_etf_2800_total_return_hkd_pct",
-      "count": 0,
-      "start": null,
-      "end": null
-    },
-    {
-      "field": "hang_seng_etf_2800_total_return_cny_pct",
-      "count": 0,
-      "start": null,
-      "end": null
-    },
-    {
-      "field": "hkd_per_usd",
-      "count": 0,
-      "start": null,
-      "end": null
     }
   ],
   "notes": [
@@ -445,11 +445,14 @@
     "EFA is a developed-markets ex-US/Canada ETF proxy; EEM is an emerging-markets ETF proxy. Both are Yahoo auto-adjusted ETF total-return proxies, not official MSCI net/gross index returns.",
     "EEM country holdings include China and Taiwan; do not add EEM to A-share/HK exposures without country/issuer overlap review.",
     "USD/CNY uses the Federal Reserve G.5 monthly average EXCHUS series via the archived datasets/exchange-rates monthly panel.",
+    "HKD/CNY conversion uses monthly-average DEXHKUS (HKD per USD) and USD/CNY: (1+rHKD)*(USD/CNY_t/USD/CNY_prev)*(HKDUSD_prev/HKDUSD_t)-1.",
     "CNY cash proxy uses official CSIndex H11025 money-market fund total-return index; base date 2005-12-30, publication date 2016-08-31; pre-publication history is backfilled.",
     "China government-bond investable proxy uses Yahoo auto-adjusted 511010.SS ETF close; CNY denominated, starts 2013; separate from official ChinaBond wealth index.",
     "USD asset CNY return=(1+rUSD)*(FX_t/FX_t-1)-1.",
     "Gold CNY monthly-average valuation=Gold USD monthly average*USD/CNY monthly average; it is an approximation.",
-    "Do not calculate a full 52/28/10/10 portfolio return while HSI TRI, ChinaBond wealth, cash total return or sub-asset target weights are missing."
+    "Official HSI gross TRI (HSIDV) remains separate from 2800.HK adjusted ETF proxy; 2800.HK includes fund fees and tracking difference.",
+    "ChinaBond CBA00201 is the official aggregate total-wealth index; confirm vendor terms before redistributing source observations.",
+    "Do not calculate a full 52/28/10/10 portfolio return while official HSI TRI or approved regional weights are missing."
   ],
   "sources": [
     {
@@ -552,6 +555,41 @@
       "url": "https://finance.yahoo.com/quote/511010.SS/history/",
       "method": "Yahoo auto-adjusted daily close (dividends/splits adjusted), resampled to last trading day each month",
       "caveat": "2013年成立，单只5年期国债ETF代理；不等于中债综合财富指数，数据源可能修订。"
+    },
+    {
+      "series": [
+        "china_bond_wealth_index_cny",
+        "china_bond_wealth_return_cny_pct"
+      ],
+      "name": "中债-综合财富（总值）指数 CBA00201",
+      "source": "中债金融估值中心 / 中国债券信息网",
+      "url": "https://yield.chinabond.com.cn/cbweb-mn/indices/single_index_query?locale=zh_CN",
+      "data_url": "https://yield.chinabond.com.cn/cbweb-mn/indices/singleIndexQueryResult",
+      "method": "官方CFZS_00日度财富指数水平取每月最后交易日；月收益=本月末/上月末-1",
+      "caveat": "指数数据再分发和作为业绩基准使用受中债授权条款约束；须核实许可。"
+    },
+    {
+      "series": [
+        "hang_seng_etf_2800_total_return_index_hkd",
+        "hang_seng_etf_2800_total_return_hkd_pct",
+        "hang_seng_etf_2800_total_return_cny_pct"
+      ],
+      "name": "Tracker Fund of Hong Kong 2800.HK",
+      "source": "Yahoo Finance adjusted close",
+      "url": "https://finance.yahoo.com/quote/2800.HK/history/",
+      "method": "月末adjusted close构造含分红再投资ETF回报，再按HKD/CNY换算",
+      "caveat": "可投资ETF代理，不是恒生官方HSIDV总股息累计指数；包含基金费用、跟踪误差及Yahoo数据源风险。"
+    },
+    {
+      "series": [
+        "china_treasury_etf_511010_adj_total_return_index_cny",
+        "china_treasury_etf_511010_total_return_cny_pct"
+      ],
+      "name": "国泰上证5年期国债ETF 511010",
+      "source": "Yahoo Finance adjusted close",
+      "url": "https://finance.yahoo.com/quote/511010.SS/history/",
+      "method": "Yahoo auto-adjusted daily close (dividends/splits adjusted), resampled to last trading day each month",
+      "caveat": "2013年成立，单只5年期国债ETF代理；不等于中债综合财富指数，数据源可能修订。"
     }
   ],
   "coverage": {
@@ -635,6 +673,26 @@
       "start": null,
       "end": null
     },
+    "hang_seng_etf_2800_total_return_index_hkd": {
+      "count": 226,
+      "start": "2008-01",
+      "end": "2026-10"
+    },
+    "hang_seng_etf_2800_total_return_hkd_pct": {
+      "count": 225,
+      "start": "2008-02",
+      "end": "2026-10"
+    },
+    "hang_seng_etf_2800_total_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "hkd_per_usd": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
     "china_bond_wealth_index_cny": {
       "count": 0,
       "start": null,
@@ -646,7 +704,7 @@
       "end": null
     },
     "cny_cash_index_h11025": {
-      "count": 244,
+      "count": 245,
       "start": "2006-01",
       "end": "2026-10"
     },
@@ -681,7 +739,7 @@
       "end": null
     },
     "cny_cash_return_pct": {
-      "count": 243,
+      "count": 244,
       "start": "2006-01",
       "end": "2026-10"
     },
@@ -824,26 +882,6 @@
       "count": 247,
       "start": "2006-01",
       "end": "2026-07"
-    },
-    "hang_seng_etf_2800_total_return_index_hkd": {
-      "count": 0,
-      "start": null,
-      "end": null
-    },
-    "hang_seng_etf_2800_total_return_hkd_pct": {
-      "count": 0,
-      "start": null,
-      "end": null
-    },
-    "hang_seng_etf_2800_total_return_cny_pct": {
-      "count": 0,
-      "start": null,
-      "end": null
-    },
-    "hkd_per_usd": {
-      "count": 0,
-      "start": null,
-      "end": null
     }
   },
   "gaps": [
@@ -924,7 +962,7 @@
       "source": "datasets/exchange-rates monthly.csv; China, CNY per USD; Fed G.5 monthly average"
     },
     "csindex_h11025_cash": {
-      "months": 246,
+      "months": 247,
       "coverage_start": "2005-12",
       "coverage_end": "2026-11",
       "source": "CSIndex H11025 official daily total-return index; base 2005-12-30; published 2016-08-31"
@@ -935,6 +973,13 @@
       "coverage_start": "2013-03",
       "coverage_end": "2026-11",
       "source": "Yahoo Finance adjusted close; CNY-listed 5-year China government bond ETF; ETF proxy, not ChinaBond wealth index"
+    },
+    "yahoo_2800_hk_total_return_proxy": {
+      "ticker": "2800.HK",
+      "months": 227,
+      "coverage_start": "2008-01",
+      "coverage_end": "2026-11",
+      "source": "Yahoo Finance adjusted close; Tracker Fund of Hong Kong; HKD total-return ETF proxy, not official Hang Seng TRI"
     },
     "yahoo_etf_total_returns": {
       "ticker_months": {
@@ -953,6 +998,7 @@
     }
   },
   "refresh_errors": {
+    "chinabond_aggregate_wealth": "HTTPError: HTTP Error 405: ",
     "fred_macro_only": "TimeoutError: The read operation timed out"
   },
   "portfolio_return_ready": false
