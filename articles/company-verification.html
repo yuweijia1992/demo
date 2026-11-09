@@ -118,7 +118,7 @@ async function init(){
  if(!r.ok||!m.ok)throw Error('模型数据尚未部署');
  const rd=await r.json(),md=await m.json();register=rd.records||[];md.companies.forEach(x=>models[x.code]=x);
  $('nTotal').textContent=rd.companyCount;$('nRoic').textContent=register.filter(x=>x.verification?.roic?.provisionalValueFY2025Pct!==undefined||models[x.code]?.quality.annualROICYears>0).length;
- $('nDebt').textContent=md.companies.filter(x=>x.quality.annualNetDebtYears>0).length;$('nKnownDebt').textContent=md.companies.filter(x=>x.quality.annualNetDebtKnownComponentsYears>0).length;
+ $('nDebt').textContent=register.filter(x=>x.verification?.netDebt?.verifiedFY2025!==undefined||models[x.code]?.quality.annualNetDebtYears>0).length;$('nKnownDebt').textContent=md.companies.filter(x=>x.quality.annualNetDebtKnownComponentsYears>0).length;
  $('nIssuer').textContent=register.filter(x=>x.manualEvidence&&x.manualEvidence.status).length;$('nShares').textContent='0';$('nFair').textContent='0';
  [...new Set(register.map(x=>x.industry).filter(Boolean))].sort().forEach(x=>{const o=document.createElement('option');o.value=x;o.textContent=x;$('industry').appendChild(o)});
  ['search','status','industry'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));render();
