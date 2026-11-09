@@ -477,6 +477,26 @@ def main():
             company["verification"]["register"]["capitalAllocation"]["sourceClass"]="issuer_official_pdf_partial_crosscheck"
             company["verification"]["register"]["capitalAllocation"]["sourceUrl"]=ev.get("officialPdfUrl")
             verified=ev.get("verifiedFields") or {}
+            def evidence_cny(key):
+                item=verified.get(key) or {}
+                value=item.get("value")
+                if not isinstance(value,(int,float)): return None
+                unit=str(item.get("unit") or "").lower()
+                return float(value)*1000 if "rmb'000" in unit or "rmb’000" in unit else float(value)
+            if verified:
+                verified_ocf=evidence_cny("operatingCashFlowFY2025")
+                verified_capex=evidence_cny("capexFY2025")
+                if verified_capex is None:
+                    ppe=evidence_cny("capexPpeFY2025")
+                    intangible=evidence_cny("capexIntangibleFY2025")
+                    verified_capex=(ppe+intangible) if ppe is not None and intangible is not None else None
+                verified_fcf=evidence_cny("simplifiedFCFFY2025")
+                if verified_fcf is None: verified_fcf=evidence_cny("simpleFCFExcludingLeasePrepaymentsFY2025")
+                for annual_row in company.get("annual",[]):
+                    if annual_row.get("year")==2025:
+                        if verified_ocf is not None: annual_row["issuerVerifiedOperatingCashFlowFY2025"]=verified_ocf
+                        if verified_capex is not None: annual_row["issuerVerifiedCapexFY2025"]=verified_capex
+                        if verified_fcf is not None: annual_row["issuerVerifiedFreeCashFlowFY2025"]=verified_fcf
             if verified.get("netDebtFY2025"):
                 debt_value=verified["netDebtFY2025"].get("value")
                 company["verification"]["register"]["netDebt"]["status"]="partial_fy2025_official_pdf_verified_current_period_pending"
