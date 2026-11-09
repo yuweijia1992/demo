@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:25:41.332152+00:00",
+  "generatedAtUtc": "2026-11-09T08:26:04.996018+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -1953,7 +1953,13 @@
         "name": "京沪高铁",
         "industry": "铁路客运基础设施",
         "primaryListing": "601816.SH",
-        "annual2025": null,
+        "annual2025": {
+          "title": "京沪高速铁路股份有限公司2025年年度报告",
+          "announcementDate": "2026-04-21",
+          "announcementId": "1225132016",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-21/1225132016.PDF",
+          "detailUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12124321&stockid=601816"
+        },
         "interim2026": {
           "title": "京沪高速铁路股份有限公司2026年半年度报告",
           "announcementDate": "2026-08-31",
@@ -1969,7 +1975,7 @@
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601816&announcementId=1225646489&orgId=9900041360&announcementTime=2026-10-31"
         },
         "status": "partial",
-        "verificationStatus": "official_link_only_not_content_verified",
+        "verificationStatus": "official_annual_report_pdf_link_resolved_content_not_crosschecked",
         "orgId": "9900041360"
       },
       "verification": {
@@ -5462,7 +5468,13 @@
         "name": "锦江酒店",
         "industry": "酒店运营与管理",
         "primaryListing": "600754.SH",
-        "annual2025": null,
+        "annual2025": {
+          "title": "上海锦江国际酒店股份有限公司2025年年度报告",
+          "announcementDate": "2026-03-28",
+          "announcementId": "1225048147",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225048147.PDF",
+          "detailUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12031019&stockid=600754"
+        },
         "interim2026": {
           "title": "锦江酒店2026年半年度报告",
           "announcementDate": "2026-08-29",
@@ -5478,7 +5490,7 @@
           "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600754&announcementId=1225648607&orgId=gssh0600754&announcementTime=2026-10-31"
         },
         "status": "partial",
-        "verificationStatus": "official_link_only_not_content_verified",
+        "verificationStatus": "official_annual_report_pdf_link_resolved_content_not_crosschecked",
         "orgId": "gssh0600754"
       },
       "verification": {
