@@ -39,7 +39,7 @@ class ValuationMethodTests(unittest.TestCase):
         }}
         value, basis = cash_equivalents_for_net_debt(balance)
         self.assertEqual(value, 300)
-        self.assertEqual(basis, "cash_and_cash_equivalents")
+        self.assertEqual(basis, "balance_sheet_cash_and_cash_equivalents")
 
     def test_money_funds_without_cash_equivalent_breakdown_are_not_deducted(self):
         balance = {"fields": {"cash": {"value": 500, "sourceField": "货币资金"}}}
