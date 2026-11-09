@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:32:52.711680+00:00",
+  "generatedAtUtc": "2026-11-09T08:33:06.088523+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -872,9 +872,14 @@
           "reportTextUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf"
         },
         "roic": {
-          "status": "pending_inputs",
-          "availableYears": 0,
-          "required": "NOPAT税基、全部有息债务、现金、投资、商誉、租赁口径及平均投入资本"
+          "status": "provisional_issuer_report_derived_method_dependent",
+          "availableYears": 1,
+          "required": "这是基于发行人经审计年报派生的暂定ROIC，须复核税率正常化、其他收入分类、投入资本定义和跨年可比性后才能用于估值",
+          "provisionalValueFY2025Pct": 21.4772289656,
+          "sensitivityValueFY2025Pct": 22.593842712,
+          "sourceClass": "issuer_audited_report_derived_not_reported_metric",
+          "method": "NOPAT 5,085,928.63 / 平均投入资本23,680,562.5 =21.4772%",
+          "basis": "保守核心ROIC；非年报直接披露值，按年报科目派生"
         },
         "netDebt": {
           "status": "partial_fy2025_official_pdf_verified_current_period_pending",
