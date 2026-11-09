@@ -57,6 +57,7 @@ const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const tag=(s)=>'<span class="tag">'+s+'</span>';
 function statusText(s){
  if(s==='issuer_report_verified')return '发行人年报已核验';
+ if(s==='issuer_report_derived_provisional')return '年报字段派生的暂定值';
  if(s==='partial_report_text_crosscheck')return '部分报告文本交叉核对';
  if(s==='partial_official_pdf_crosscheck')return '官方PDF部分字段已核对';
  if(s==='partial_fy2025_official_pdf_verified_current_period_pending')return 'FY2025净债务已核验，最新期待更新';
