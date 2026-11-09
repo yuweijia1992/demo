@@ -56,7 +56,8 @@ const fmt=x=>x===null||x===undefined?'—':Number(x).toLocaleString('zh-CN',{max
 const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const tag=(s)=>'<span class="tag">'+s+'</span>';
 function statusText(s){
- if(s==='partial_report_text_crosscheck')return '部分报告交叉核对';
+ if(s==='partial_report_text_crosscheck')return '部分报告文本交叉核对';
+ if(s==='partial_official_pdf_crosscheck')return '官方PDF部分字段已核对';
  if(s==='calculated_not_independently_verified')return '已计算·待核验';
  if(s==='raw_share_capital_only')return '仅股本字段';
  if(s==='partial_cashflow_fields_only')return '部分现金流字段';
