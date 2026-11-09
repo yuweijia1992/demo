@@ -56,6 +56,41 @@ MODEL_DRIVER_TEMPLATES = {
   ("creditCost","信用成本","%","不良生成率、核销、拨备覆盖"),
   ("capitalAdequacy","核心一级资本充足率","%","监管披露和资本规划"),
   ("assetQuality","不良率/关注类贷款率","%","五级分类、逾期及重组贷款")],
+ "broker_pb_roe": [
+  ("normalizedROE","正常化ROE","%","至少一个完整市场周期的平均ROE及投资损益拆分"),
+  ("netAssetsPerShare","每股净资产","currency/share","归母权益、期末股数、库存股与股本变化"),
+  ("investmentIncomeNormalized","正常化投资收益","currency/year","自营投资收益、OCI、公允价值变动和减值"),
+  ("commissionRate","经纪/投行/资管费率","%","业务收入、成交额、承销规模和管理规模"),
+  ("capitalAdequacy","净资本及风险覆盖率","%","监管资本、风险资本准备和流动性指标"),
+  ("creditRisk","两融/股票质押风险","currency","融资融券余额、担保品折扣、减值与追偿"),
+  ("costOfEquity","股权资本成本","%","估值日无风险利率、Beta、ERP"),
+  ("payoutRatio","可持续分红率","%","现金分红、资本补充和监管要求")],
+ "semiconductor_growth_dcf": [
+  ("waferShipments","出货量/设备交付量","units/year","产能、订单、交付、客户验证与库存"),
+  ("yieldAndUtilization","良率/产能利用率","%","制程节点、产品良率、稼动率和爬坡周期"),
+  ("productMixASP","产品结构与平均售价","currency/unit","先进制程/成熟制程、产品组合及价格"),
+  ("backlog","在手订单/客户资本开支","currency","客户订单、交期、取消条款及资本开支周期"),
+  ("grossMargin","毛利率路径","%","折旧、良率、产品组合与供应链成本"),
+  ("rdIntensity","研发费用率","%","研发费用、资本化政策、核心产品路线图"),
+  ("capexAndDepreciation","资本开支与折旧","currency/year","厂房设备投入、折旧年限、产能投放"),
+  ("exportControls","出口管制/供应链限制","scenario","许可、客户集中度、关键设备和替代能力")],
+ "pharma_medtech_growth_dcf": [
+  ("pipelineMilestones","研发管线/注册里程碑","milestones","临床阶段、成功概率、注册审批和适应症"),
+  ("launchRevenue","新产品收入贡献","currency/year","已上市产品销售、渗透率、医保与渠道"),
+  ("volumeAndPricing","销量与价格","units and currency","终端量、集采、医保谈判和价格变化"),
+  ("grossMargin","毛利率路径","%","产品结构、自产比例和产能利用率"),
+  ("rdIntensity","研发费用率","%","研发费用、临床投入和资本化政策"),
+  ("salesEfficiency","销售费用率/渠道效率","%","销售队伍、医院覆盖、经销商库存"),
+  ("patentAndCompetition","专利期限与竞争格局","scenario","专利到期、仿制药、竞品和替代技术")],
+ "digital_platform_growth_dcf": [
+  ("activeUsers","活跃用户/客户数","users","MAU/DAU、付费用户、留存与获客成本"),
+  ("monetization","ARPU/广告变现率","currency/user","广告加载率、付费率、客单价和变现"),
+  ("takeRate","平台抽佣率/变现率","%","GMV、平台收入、商家结构和佣金政策"),
+  ("cloudOrNewBusinessGrowth","云/新业务增长率","%","分部收入、订单、客户数和毛利"),
+  ("grossMargin","分部毛利率","%","业务组合、履约成本和内容成本"),
+  ("contentAndRAndD","内容/研发投入","currency/year","内容采购、研发费用和资本化"),
+  ("regulatoryAndCompetition","监管与竞争情景","scenario","监管政策、反垄断、竞争强度和用户迁移"),
+  ("dilution","年度股本稀释率","%","股权激励、可转债、增发及回购")],
  "insurance_ev": [
   ("nbvGrowth","新业务价值增长率","%","NBV/VNB、价值率、代理人和银保渠道"),
   ("csmRelease","CSM释放率","%","合同服务边际及释放节奏"),
@@ -192,10 +227,22 @@ def classify_source(url):
     if any(d in u for d in ("cninfo.com.cn","hkexnews.hk","sec.gov")):return "official_regulatory_filing"
     return "secondary_or_unclassified"
 
-def company_driver_template(model_type):
-    rows=MODEL_DRIVER_TEMPLATES.get(model_type,MODEL_DRIVER_TEMPLATES["quality_earnings_fcf"])
+def company_driver_template(stock):
+    model_type=stock.get("method")
+    industry=" ".join(str(stock.get(k) or "") for k in ("industry","businessType","name"))
+    if any(x in industry for x in ("证券","券商")):
+        template="broker_pb_roe"
+    elif any(x in industry for x in ("半导体","芯片","光模块","光通信")):
+        template="semiconductor_growth_dcf"
+    elif any(x in industry for x in ("医药","医疗器械","创新药","眼科医疗")):
+        template="pharma_medtech_growth_dcf"
+    elif any(x in industry for x in ("平台","电商","社交","视频社区","互联网","云与算力")):
+        template="digital_platform_growth_dcf"
+    else:
+        template=model_type if model_type in MODEL_DRIVER_TEMPLATES else "quality_earnings_fcf"
+    rows=MODEL_DRIVER_TEMPLATES[template]
     return [{"key":k,"label":label,"unit":unit,"value":None,
-             "status":"needs_company_specific_source",
+             "status":"needs_company_specific_source","template":template,
              "sourceRequirement":source,
              "note":"不允许以行业均值或模型猜测填入公司实际值"} for k,label,unit,source in rows]
 
@@ -383,7 +430,7 @@ def main():
                           "requiredAssumptions":["normalized earnings / sustainable ROE","forecast revenue and margin drivers",
                             "reinvestment and maintenance capex","cost of equity or WACC with dated inputs",
                             "terminal growth or exit multiple","current fully diluted shares","dividend and buyback policy"],
-                          "companyDriverTemplate":company_driver_template(stock.get("method")),
+                          "companyDriverTemplate":company_driver_template(stock),
                           "valuationOutputStatus":"blocked_no_verified_per_share_fair_value"},
                         "verification":{"financialSourceCrossCheck":"pending_official_issuer_report","register":verification_register,"shareCount":"pending_current_fully_diluted_shares",
                           "dividendHistory":"pending_per_share_and_ex_date_history","capitalAllocation":"pending_capex_mna_dividend_buyback_reconciliation",
