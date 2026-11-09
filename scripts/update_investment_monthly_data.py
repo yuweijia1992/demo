@@ -276,6 +276,7 @@ def build_manifest(rows,source_stats,errors):
         "dataset_file":"data/investment-monthly.csv","frequency":"monthly",
         "row_count":len(rows),"date_start":min(rows),"date_end":max(rows),
         "coverage":coverage,
+        "coverage_audit":{k:v for k,v in coverage.items() if k in ["csi300_price_return_pct","csi300_total_return_pct","sp500_total_return_cny_pct","gold_cny_return_pct","usd_cny","hang_seng_total_return_pct","china_bond_wealth_return_cny_pct","cny_cash_return_pct","portfolio_return_cny_pct","efa_developed_markets_etf_total_return_cny_pct","eem_emerging_markets_etf_total_return_cny_pct"]},
         "refresh_sources":source_stats,"refresh_errors":errors,
         "portfolio_return_ready":False,
         "matrix_policy":[
