@@ -280,7 +280,7 @@
         }
       },
       "unresolved": {
-        "fullNetDebt": "FY2025年末完整净债务已按官方年报债务变动表、短期债券、长期借款及租赁附注逐项重建：有息债务63.451bn，现金及现金等价物17.678bn，净债务45.773bn。仍待核验2026H1/2026Q3报告的最新债务与现金，并检查估值日后借款/偿债变化。",
+        "fullNetDebt": "FY2025年末完整净债务已核验为457.73亿元。2026Q3已识别短期借款、长期借款和非流动租赁负债，扣现金等价物后已识别项目净额465.77亿元；另有1.81亿元一年内到期非流动负债未拆分，其他流动融资项目未完全核验，暂不称为完整2026Q3净债务。",
         "roic": "FY2025年末流动负债中的有息债务组成已拆分，但ROIC仍需对FY2024期初投入资本、非经营性投资分类、商誉/少数股东权益及平均资本口径完成跨期一致性核验，暂不输出ROIC。",
         "currentFullyDilutedShares": "已核验2026-09-30总股本6,325,360,667股；截至2026-10月底累计回购3,480,600股，扣除回购专户后的在外股数代理6,321,880,067股。回购用途为注销减少注册资本，但尚需跟踪实际注销完成；仍需核对股权激励、员工持股计划、潜在可转债/期权及估值日后股本变化，因此不称为完全稀释股数。",
         "dividends": "FY2025中期每股0.48元于2025-12-17已派，FY2025年度每股0.90元于2026-06-05已派；FY2026中期每股0.42元为2026-10-30预案，待实施。仍需补齐至少五年每股股息、特别股息和除权/支付日期。",
@@ -297,7 +297,7 @@
         "年报披露加权平均ROE为20.87%；模型用期初期末归母权益简单平均计算，口径不同，不能直接要求两者相等。"
       ],
       "officialPdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225259562.PDF",
-      "description": "伊利股份FY2025关键财务、债务、现金、资本配置及股息项目已与巨潮资讯官方年报和分红公告交叉核对；FY2025净债务已重建。股数更新至2026-10月底回购进展，股息记录含FY2025两次已派股息及FY2026中期预案；完全稀释股数和五年以上股息历史仍未完成。",
+      "description": "伊利股份FY2025年报与FY2026Q3未经审计报告已交叉核验。FY2025净债务完整重建；FY2026Q3已更新收入、利润、现金流、资本开支、现金和部分债务。股息记录包括FY2025两次已派股息及FY2026中期预案；完全稀释股数、五年以上股息历史、FY2026Q3完整净债务和ROIC仍未完成。",
       "additionalOfficialDocuments": [
         {
           "type": "annual_report",
@@ -341,7 +341,50 @@
           "title": "关于股份回购进展公告（累计回购3,480,600股）",
           "url": "https://static.cninfo.com.cn/finalpage/2026-11-03/1225653072.PDF"
         }
-      ]
+      ],
+      "latestFinancialsFY2026Q3": {
+        "reportDate": "2026-10-30",
+        "periodEnd": "2026-09-30",
+        "auditStatus": "unaudited",
+        "currency": "CNY",
+        "unit": "元",
+        "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225644500.PDF",
+        "sourcePages": "2026Q3 PDF第5-10页；合并利润表/资产负债表/现金流量表",
+        "currentPeriod": {
+          "totalOperatingRevenue9M": 93813317667.45,
+          "operatingRevenue9M": 93581518865.47,
+          "netProfitParent9M": 8803770151.52,
+          "operatingCashFlow9M": 15441464454.51,
+          "capex9M": 2118420324.67,
+          "freeCashFlow9M": 13323024129.84,
+          "cashAndCashEquivalentsEnding": 14187284421.84,
+          "totalAssets": 157051584640.01,
+          "parentEquity": 56839805025.77,
+          "currentLiabilities": 93979529452.37,
+          "shortBorrowings": 59876820716.12,
+          "longBorrowings": 607700455.91,
+          "noncurrentLeaseLiabilities": 279412713.36,
+          "currentMaturitiesUnclassified": 181472214.76
+        },
+        "ttm": {
+          "formula": "FY2025 + 2026 1-9M - 2025 1-9M",
+          "totalOperatingRevenue": 119180806917.32,
+          "operatingRevenue": 118877201997.33,
+          "netProfitParent": 9942834032.29,
+          "operatingCashFlow": 20385521602.21,
+          "capex": 2932054324.28,
+          "simplifiedFreeCashFlow": 17453467277.93
+        },
+        "debt": {
+          "knownGrossDebtComponents": 60763933885.39,
+          "cashAndCashEquivalents": 14187284421.84,
+          "knownComponentsNetDebt": 46576649463.55,
+          "unclassifiedCurrentMaturities": 181472214.76,
+          "netDebtIncludingMaturitiesIfAllInterestBearing": 46758121678.31,
+          "status": "partial_components_only_not_full_net_debt",
+          "note": "已加总短期借款、长期借款和非流动租赁负债；一年内到期非流动负债18,147万元未拆分，其他流动负债及潜在短期融资项目未完整核验，故46.58亿元仅为已识别项目净额，不是完整净债务。"
+        }
+      }
     }
   ]
 }
