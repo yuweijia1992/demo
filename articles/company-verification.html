@@ -63,6 +63,9 @@ function statusText(s){
  if(s==='not_applicable_financial')return '金融企业不适用';
  if(s==='pending_inputs')return '缺输入';
  if(s==='pending')return '待核验';
+ if(s==='needs_company_specific_source')return '待公司特定来源';
+ if(s==='partial_fy2025_proposed_dividend_only')return '仅有年度股息预案';
+ if(s==='reported_total_shares_snapshot_only')return '仅有报告日总股数快照';
  return s||'待核验';
 }
 function render(){
