@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:05:16.831227+00:00",
+  "generatedAtUtc": "2026-11-09T08:07:47.922822+00:00",
   "companyCount": 49,
   "records": [
     {
@@ -15,8 +15,30 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12547482&stockid=600887",
         "market": "https://quote.cfi.cn/quote1587_600887.html"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600887",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600887&stockCode=600887",
+      "officialReports": {
+        "code": "600887.SH",
+        "name": "伊利股份",
+        "industry": "乳制品与营养",
+        "primaryListing": "600887.SH",
+        "annual2025": {
+          "title": "内蒙古伊利实业集团股份有限公司2025年年度报告",
+          "announcementDate": "2026-04-30",
+          "announcementId": "1225259562",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225259562.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600887&announcementId=1225259562&orgId=gssh0600887&announcementTime=2026-04-30"
+        },
+        "interim2026": {
+          "title": "内蒙古伊利实业集团股份有限公司2026年半年度报告",
+          "announcementDate": "2026-08-27",
+          "announcementId": "1225511409",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225511409.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600887&announcementId=1225511409&orgId=gssh0600887&announcementTime=2026-08-27"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600887"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "partial_official_pdf_crosscheck",
@@ -236,12 +258,6 @@
             "basis": "cash flow statement ending cash and cash equivalents",
             "reportLines": "CNINFO 2025年报PDF合并现金流量表，PDF文本行5924-5930"
           },
-          "restrictedMonetaryFunds": {
-            "value": 1806734061.15,
-            "unit": "CNY",
-            "basis": "other monetary funds; includes statutory reserve 1,760,784,462.61 and other deposits",
-            "reportLines": "CNINFO 2025年报PDF货币资金附注，PDF文本行9077；受限性质详见后续说明"
-          },
           "fy2025InterimDividendPaid": {
             "value": 3036173120.16,
             "unit": "CNY",
@@ -271,10 +287,16 @@
             "unit": "CNY",
             "basis": "现金流量表现金及现金等价物期末余额",
             "reportLines": "CNINFO 2025年报PDF合并现金流量表，PDF文本行5928-5930"
+          },
+          "otherMonetaryFunds": {
+            "value": 1806734061.15,
+            "unit": "CNY",
+            "basis": "other monetary funds; includes statutory reserve 1,760,784,462.61 and other deposits",
+            "reportLines": "CNINFO 2025年报PDF货币资金附注，PDF文本行9077-9099；其中法定存款准备金1,760,784,462.61元、担保保证金40,396,263.17元，不能将全部其他货币资金简单等同于可用现金"
           }
         },
         "unresolved": {
-          "fullNetDebt": "仍不计算完整净债务。年报确认短期借款45.631bn、长期借款0.472bn、非流动租赁负债0.289bn、现金及现金等价物17.678bn；但流动负债中一年内到期非流动负债4.415bn的借款/租赁拆分尚未完成，且短期债务证券、受限资金及集团财务公司资金可用性需逐项判断。",
+          "fullNetDebt": "仍不计算完整净债务。年报确认短期借款45.631bn、长期借款0.472bn、非流动租赁负债0.289bn、现金及现金等价物17.678bn；但流动负债中一年内到期非流动负债4.415bn的借款/租赁拆分尚未完成，短期债务证券也需核对。货币资金附注中的其他货币资金1.807bn含法定存款准备金1.761bn及担保保证金等，不能当作自由现金抵扣。",
           "roic": "仍不计算ROIC。需要把一年内到期非流动负债4.415bn拆分为有息债务与非付息负债，并核实短期/长期投资是否经营性、现金可用性及平均投入资本；不能把合并流动负债整体视为经营性负债。",
           "currentFullyDilutedShares": "报告披露2026-03-31总股本6,325,360,667股，且2025年末库存股余额为零；但估值日为2026-11-09，仍需核对2026年回购/注销、股权激励、潜在稀释和报告期后股本变化。",
           "dividends": "2025年度每股0.90元为董事会利润分配预案；2025年中期已派现金3.036bn，年报披露全年现金分红总额8.729bn、派息率75.48%。仍需补齐每年除权日、股权登记日和逐年每股股息序列。",
@@ -322,8 +344,30 @@
         "bvps": "https://money.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/002714/displaytype/4.phtml",
         "market": "https://cn.investing.com/equities/muyuan-foodstuff-a-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002714",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900022995&stockCode=002714",
+      "officialReports": {
+        "code": "002714.SZ",
+        "name": "牧原股份",
+        "industry": "生猪养殖",
+        "primaryListing": "002714.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-28",
+          "announcementId": "1225042507",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042507.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002714&announcementId=1225042507&orgId=9900022995&announcementTime=2026-03-28"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-21",
+          "announcementId": "1225485220",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225485220.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002714&announcementId=1225485220&orgId=9900022995&announcementTime=2026-08-21"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900022995"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -401,8 +445,30 @@
         "bvps": "https://stock.quote.stockstar.com/finance/summary_603288.shtml",
         "market": "https://quote.cfi.cn/quote_603288.html"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=603288",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900023228&stockCode=603288",
+      "officialReports": {
+        "code": "603288.SH",
+        "name": "海天味业",
+        "industry": "调味品",
+        "primaryListing": "603288.SH",
+        "annual2025": {
+          "title": "海天味业2025年年度报告",
+          "announcementDate": "2026-03-27",
+          "announcementId": "1225038237",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038237.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603288&announcementId=1225038237&orgId=9900023228&announcementTime=2026-03-27"
+        },
+        "interim2026": {
+          "title": "海天味业2026年半年度报告",
+          "announcementDate": "2026-08-27",
+          "announcementId": "1225510979",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225510979.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603288&announcementId=1225510979&orgId=9900023228&announcementTime=2026-08-27"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900023228"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -480,8 +546,30 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/600398/displaytype/4.phtml",
         "market": "https://www.lixinger.com/equity/company/detail/sh/600398/600398/fundamental/valuation/pe-ttm"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600398",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600398&stockCode=600398",
+      "officialReports": {
+        "code": "600398.SH",
+        "name": "海澜之家",
+        "industry": "大众服装",
+        "primaryListing": "600398.SH",
+        "annual2025": {
+          "title": "海澜之家集团股份有限公司2025年年度报告",
+          "announcementDate": "2026-03-28",
+          "announcementId": "1225042739",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042739.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600398&announcementId=1225042739&orgId=gssh0600398&announcementTime=2026-03-28"
+        },
+        "interim2026": {
+          "title": "海澜之家集团股份有限公司2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225524444",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225524444.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600398&announcementId=1225524444&orgId=gssh0600398&announcementTime=2026-08-29"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600398"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -560,7 +648,17 @@
         "market": "https://stockanalysis.com/quote/hkg/2313/history/"
       },
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
-      "officialReports": null,
+      "officialReports": {
+        "code": "02313.HK",
+        "name": "申洲国际",
+        "industry": "纺织制造与运动服装供应链",
+        "primaryListing": "02313.HK",
+        "annual2025": null,
+        "interim2026": null,
+        "status": "hkex_manual_lookup_required",
+        "verificationStatus": "official_hkex_search_link_only_not_content_verified",
+        "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -638,8 +736,30 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563095&stockid=600690",
         "market": "https://cn.investing.com/equities/qingdao-haier-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600690",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600690&stockCode=600690",
+      "officialReports": {
+        "code": "600690.SH",
+        "name": "海尔智家",
+        "industry": "家电与全球品牌",
+        "primaryListing": "600690.SH",
+        "annual2025": {
+          "title": "海尔智家股份有限公司2025年年度报告",
+          "announcementDate": "2026-03-27",
+          "announcementId": "1225038336",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038336.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600690&announcementId=1225038336&orgId=gssh0600690&announcementTime=2026-03-27"
+        },
+        "interim2026": {
+          "title": "海尔智家股份有限公司2026年半年度报告",
+          "announcementDate": "2026-08-28",
+          "announcementId": "1225522691",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522691.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600690&announcementId=1225522691&orgId=gssh0600690&announcementTime=2026-08-28"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600690"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -717,8 +837,30 @@
         "bvps": "https://www.stcn.com/quotes/index.html?stock_code=sz000333",
         "market": "https://cn.investing.com/equities/midea-group-a-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=000333",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900005965&stockCode=000333",
+      "officialReports": {
+        "code": "000333.SZ",
+        "name": "美的集团",
+        "industry": "家电、工业技术与自动化",
+        "primaryListing": "000333.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225065145",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000333&announcementId=1225065145&orgId=9900005965&announcementTime=2026-03-31"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225531404",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531404.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000333&announcementId=1225531404&orgId=9900005965&announcementTime=2026-08-29"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900005965"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -796,8 +938,30 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
         "market": "https://cn.investing.com/equities/gree-electric-a-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=000651",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssz0000651&stockCode=000651",
+      "officialReports": {
+        "code": "000651.SZ",
+        "name": "格力电器",
+        "industry": "空调与家电",
+        "primaryListing": "000651.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-29",
+          "announcementId": "1225250396",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225250396.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000651&announcementId=1225250396&orgId=gssz0000651&announcementTime=2026-04-29"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-27",
+          "announcementId": "1225515004",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225515004.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000651&announcementId=1225515004&orgId=gssz0000651&announcementTime=2026-08-27"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssz0000651"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -875,8 +1039,30 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572791&stockid=002594",
         "market": "https://cn.investing.com/equities/byd-a-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002594",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gshk0001211&stockCode=002594",
+      "officialReports": {
+        "code": "002594.SZ",
+        "name": "比亚迪",
+        "industry": "新能源汽车与汽车产业链",
+        "primaryListing": "002594.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-28",
+          "announcementId": "1225045351",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045351.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002594&announcementId=1225045351&orgId=gshk0001211&announcementTime=2026-03-28"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225531835",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531835.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002594&announcementId=1225531835&orgId=gshk0001211&announcementTime=2026-08-29"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gshk0001211"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -954,8 +1140,30 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/600066/displaytype/4.phtml",
         "market": "https://cn.investing.com/equities/yutong-bus-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600066",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600066&stockCode=600066",
+      "officialReports": {
+        "code": "600066.SH",
+        "name": "宇通客车",
+        "industry": "客车与商用交通",
+        "primaryListing": "600066.SH",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225050742",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225050742.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600066&announcementId=1225050742&orgId=gssh0600066&announcementTime=2026-03-31"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-11",
+          "announcementId": "1225466147",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-11/1225466147.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600066&announcementId=1225466147&orgId=gssh0600066&announcementTime=2026-08-11"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600066"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1033,8 +1241,24 @@
         "bvps": "https://money.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/601816/displaytype/4.phtml",
         "market": "https://cn.investing.com/equities/shanghai-high-speed-railway-co-ltd-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601816",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900041360&stockCode=601816",
+      "officialReports": {
+        "code": "601816.SH",
+        "name": "京沪高铁",
+        "industry": "铁路客运基础设施",
+        "primaryListing": "601816.SH",
+        "annual2025": null,
+        "interim2026": {
+          "title": "京沪高速铁路股份有限公司2026年半年度报告",
+          "announcementDate": "2026-08-31",
+          "announcementId": "1225534682",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534682.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601816&announcementId=1225534682&orgId=9900041360&announcementTime=2026-08-31"
+        },
+        "status": "partial",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900041360"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1112,8 +1336,30 @@
         "bvps": "https://money.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/002352/displaytype/4.phtml",
         "market": "https://www.hstong.com/quotes/30000-002352-SZ"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002352",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900010448&stockCode=002352",
+      "officialReports": {
+        "code": "002352.SZ",
+        "name": "顺丰控股",
+        "industry": "快递与综合物流",
+        "primaryListing": "002352.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225057387",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225057387.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002352&announcementId=1225057387&orgId=9900010448&announcementTime=2026-03-31"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225528421",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225528421.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002352&announcementId=1225528421&orgId=9900010448&announcementTime=2026-08-29"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900010448"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1191,8 +1437,30 @@
         "bvps": "https://www.stcn.com/quotes/index/sh601919.html",
         "market": "https://cn.investing.com/equities/china-cosco-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601919",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900003201&stockCode=601919",
+      "officialReports": {
+        "code": "601919.SH",
+        "name": "中远海控",
+        "industry": "集装箱航运",
+        "primaryListing": "601919.SH",
+        "annual2025": {
+          "title": "中远海控2025年年度报告",
+          "announcementDate": "2026-03-20",
+          "announcementId": "1225019947",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-20/1225019947.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601919&announcementId=1225019947&orgId=9900003201&announcementTime=2026-03-20"
+        },
+        "interim2026": {
+          "title": "中远海控2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225531118",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531118.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601919&announcementId=1225531118&orgId=9900003201&announcementTime=2026-08-29"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900003201"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1270,8 +1538,30 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570586&stockid=300760",
         "market": "https://cn.investing.com/equities/shenzhen-mindray-bio-medical-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300760",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900035304&stockCode=300760",
+      "officialReports": {
+        "code": "300760.SZ",
+        "name": "迈瑞医疗",
+        "industry": "医疗器械",
+        "primaryListing": "300760.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225059012",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225059012.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300760&announcementId=1225059012&orgId=9900035304&announcementTime=2026-03-31"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225529856",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225529856.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300760&announcementId=1225529856&orgId=9900035304&announcementTime=2026-08-29"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900035304"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1349,8 +1639,30 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12506905&stockid=600276",
         "market": "https://cn.investing.com/equities/hengrui-medi-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600276",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600276&stockCode=600276",
+      "officialReports": {
+        "code": "600276.SH",
+        "name": "恒瑞医药",
+        "industry": "创新药与制药",
+        "primaryListing": "600276.SH",
+        "annual2025": {
+          "title": "恒瑞医药2025年年度报告",
+          "announcementDate": "2026-03-26",
+          "announcementId": "1225032585",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-26/1225032585.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600276&announcementId=1225032585&orgId=gssh0600276&announcementTime=2026-03-26"
+        },
+        "interim2026": {
+          "title": "恒瑞医药2026年半年度报告",
+          "announcementDate": "2026-08-20",
+          "announcementId": "1225483600",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225483600.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600276&announcementId=1225483600&orgId=gssh0600276&announcementTime=2026-08-20"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600276"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1428,8 +1740,30 @@
         "bvps": "https://stock.quote.stockstar.com/finance/summary_603259.shtml",
         "market": "https://cn.investing.com/equities/wuxi-apptec-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=603259",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900035584&stockCode=603259",
+      "officialReports": {
+        "code": "603259.SH",
+        "name": "药明康德",
+        "industry": "医药研发与生产服务",
+        "primaryListing": "603259.SH",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-24",
+          "announcementId": "1225025225",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-24/1225025225.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603259&announcementId=1225025225&orgId=9900035584&announcementTime=2026-03-24"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-04",
+          "announcementId": "1225455027",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-04/1225455027.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603259&announcementId=1225455027&orgId=9900035584&announcementTime=2026-08-04"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900035584"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1507,8 +1841,30 @@
         "bvps": "https://stock.quote.stockstar.com/finance/summary_300015.shtml",
         "market": "https://cn.investing.com/equities/aier-eye-hospital-group-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300015",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900008390&stockCode=300015",
+      "officialReports": {
+        "code": "300015.SZ",
+        "name": "爱尔眼科",
+        "industry": "眼科医疗服务",
+        "primaryListing": "300015.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-24",
+          "announcementId": "1225174505",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225174505.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300015&announcementId=1225174505&orgId=9900008390&announcementTime=2026-04-24"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-28",
+          "announcementId": "1225519615",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225519615.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300015&announcementId=1225519615&orgId=9900008390&announcementTime=2026-08-28"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900008390"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1586,8 +1942,30 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinancialGuideLine/stockid/600511/displaytype/4.phtml",
         "market": "https://www.laocaifu.com/stock/600511/"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600511",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600511&stockCode=600511",
+      "officialReports": {
+        "code": "600511.SH",
+        "name": "国药股份",
+        "industry": "医药流通",
+        "primaryListing": "600511.SH",
+        "annual2025": {
+          "title": "国药股份2025年年度报告",
+          "announcementDate": "2026-03-20",
+          "announcementId": "1225018998",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-20/1225018998.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600511&announcementId=1225018998&orgId=gssh0600511&announcementTime=2026-03-20"
+        },
+        "interim2026": {
+          "title": "国药股份2026年半年度报告",
+          "announcementDate": "2026-08-20",
+          "announcementId": "1225481668",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225481668.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600511&announcementId=1225481668&orgId=gssh0600511&announcementTime=2026-08-20"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600511"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1665,8 +2043,30 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
         "market": "https://cn.investing.com/equities/yangtze-power-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600900",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600900&stockCode=600900",
+      "officialReports": {
+        "code": "600900.SH",
+        "name": "长江电力",
+        "industry": "大型水电运营",
+        "primaryListing": "600900.SH",
+        "annual2025": {
+          "title": "长江电力2025年年度报告",
+          "announcementDate": "2026-04-30",
+          "announcementId": "1225262036",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225262036.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600900&announcementId=1225262036&orgId=gssh0600900&announcementTime=2026-04-30"
+        },
+        "interim2026": {
+          "title": "长江电力2026年半年度报告",
+          "announcementDate": "2026-08-31",
+          "announcementId": "1225534923",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534923.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600900&announcementId=1225534923&orgId=gssh0600900&announcementTime=2026-08-31"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600900"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1744,8 +2144,30 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12495897&stockid=600674",
         "market": "https://cn.investing.com/equities/chuantou-ener-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600674",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600674&stockCode=600674",
+      "officialReports": {
+        "code": "600674.SH",
+        "name": "川投能源",
+        "industry": "水电投资与电力资产",
+        "primaryListing": "600674.SH",
+        "annual2025": {
+          "title": "四川川投能源股份有限公司2025年年度报告",
+          "announcementDate": "2026-04-18",
+          "announcementId": "1225117474",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-18/1225117474.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600674&announcementId=1225117474&orgId=gssh0600674&announcementTime=2026-04-18"
+        },
+        "interim2026": {
+          "title": "四川川投能源股份有限公司2026年半年度报告",
+          "announcementDate": "2026-08-15",
+          "announcementId": "1225475192",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-15/1225475192.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600674&announcementId=1225475192&orgId=gssh0600674&announcementTime=2026-08-15"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600674"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1823,8 +2245,30 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572215&stockid=601985",
         "market": "https://cn.investing.com/equities/china-national-nuclear-power-co-ltd-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601985",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900022188&stockCode=601985",
+      "officialReports": {
+        "code": "601985.SH",
+        "name": "中国核电",
+        "industry": "核电运营",
+        "primaryListing": "601985.SH",
+        "annual2025": {
+          "title": "中国核电2025年年度报告",
+          "announcementDate": "2026-04-30",
+          "announcementId": "1225257680",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225257680.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601985&announcementId=1225257680&orgId=9900022188&announcementTime=2026-04-30"
+        },
+        "interim2026": {
+          "title": "中国核电2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225531682",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531682.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601985&announcementId=1225531682&orgId=9900022188&announcementTime=2026-08-29"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900022188"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1902,8 +2346,30 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572344&stockid=601088",
         "market": "https://cn.investing.com/equities/china-shenhua"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601088",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900003701&stockCode=601088",
+      "officialReports": {
+        "code": "601088.SH",
+        "name": "中国神华",
+        "industry": "煤炭、电力、铁路与港口",
+        "primaryListing": "601088.SH",
+        "annual2025": {
+          "title": "中国神华2025年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225064293",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225064293.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601088&announcementId=1225064293&orgId=9900003701&announcementTime=2026-03-31"
+        },
+        "interim2026": {
+          "title": "中国神华2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225531759",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531759.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601088&announcementId=1225531759&orgId=9900003701&announcementTime=2026-08-29"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900003701"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -1981,8 +2447,30 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12543058&stockid=600406",
         "market": "https://data.cfi.cn/quote1752_600406.html"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600406",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600406&stockCode=600406",
+      "officialReports": {
+        "code": "600406.SH",
+        "name": "国电南瑞",
+        "industry": "电网自动化与电力设备",
+        "primaryListing": "600406.SH",
+        "annual2025": {
+          "title": "国电南瑞2025年年度报告",
+          "announcementDate": "2026-04-30",
+          "announcementId": "1225257886",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225257886.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600406&announcementId=1225257886&orgId=gssh0600406&announcementTime=2026-04-30"
+        },
+        "interim2026": {
+          "title": "国电南瑞2026年半年度报告",
+          "announcementDate": "2026-08-27",
+          "announcementId": "1225508099",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225508099.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600406&announcementId=1225508099&orgId=gssh0600406&announcementTime=2026-08-27"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600406"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2060,8 +2548,30 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12492474&stockid=600941",
         "market": "https://data.cfi.cn/600941.html"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600941",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gshk0000941&stockCode=600941",
+      "officialReports": {
+        "code": "600941.SH / 00941.HK",
+        "name": "中国移动",
+        "industry": "通信网络、云与算力",
+        "primaryListing": "600941.SH",
+        "annual2025": {
+          "title": "中国移动：2025年年度报告",
+          "announcementDate": "2026-03-27",
+          "announcementId": "1225036280",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225036280.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600941&announcementId=1225036280&orgId=gshk0000941&announcementTime=2026-03-27"
+        },
+        "interim2026": {
+          "title": "中国移动：2026年半年度报告",
+          "announcementDate": "2026-08-14",
+          "announcementId": "1225472195",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-14/1225472195.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600941&announcementId=1225472195&orgId=gshk0000941&announcementTime=2026-08-14"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gshk0000941"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2139,8 +2649,30 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12508910&stockid=601728",
         "market": "https://cn.investing.com/equities/china-telecom-corp-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601728",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gshk0000728&stockCode=601728",
+      "officialReports": {
+        "code": "601728.SH / 00728.HK",
+        "name": "中国电信",
+        "industry": "通信、云与政企数字化",
+        "primaryListing": "601728.SH",
+        "annual2025": {
+          "title": "中国电信股份有限公司2025年年度报告",
+          "announcementDate": "2026-03-25",
+          "announcementId": "1225027302",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-25/1225027302.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601728&announcementId=1225027302&orgId=gshk0000728&announcementTime=2026-03-25"
+        },
+        "interim2026": {
+          "title": "中国电信股份有限公司2026年半年度报告",
+          "announcementDate": "2026-08-21",
+          "announcementId": "1225484689",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225484689.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601728&announcementId=1225484689&orgId=gshk0000728&announcementTime=2026-08-21"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gshk0000728"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2218,8 +2750,30 @@
         "bvps": "https://stock.stockstar.com/notice/SN2026082800049566.shtml",
         "market": "https://cn.investing.com/equities/china-state-co-ss-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601668",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900005970&stockCode=601668",
+      "officialReports": {
+        "code": "601668.SH",
+        "name": "中国建筑",
+        "industry": "建筑工程与基础设施",
+        "primaryListing": "601668.SH",
+        "annual2025": {
+          "title": "中国建筑股份有限公司2025年年度报告",
+          "announcementDate": "2026-04-18",
+          "announcementId": "1225123321",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-18/1225123321.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601668&announcementId=1225123321&orgId=9900005970&announcementTime=2026-04-18"
+        },
+        "interim2026": {
+          "title": "中国建筑股份有限公司2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225529574",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225529574.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601668&announcementId=1225529574&orgId=9900005970&announcementTime=2026-08-29"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900005970"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2298,7 +2852,17 @@
         "market": "https://www.gurufocus.com/stock/HKSE%3A00700/data/summary"
       },
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
-      "officialReports": null,
+      "officialReports": {
+        "code": "00700.HK",
+        "name": "腾讯控股",
+        "industry": "社交、游戏、广告与云",
+        "primaryListing": "00700.HK",
+        "annual2025": null,
+        "interim2026": null,
+        "status": "hkex_manual_lookup_required",
+        "verificationStatus": "official_hkex_search_link_only_not_content_verified",
+        "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2377,7 +2941,17 @@
         "market": "https://hk.investing.com/equities/alibaba-group-holding-hk-historical-data"
       },
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
-      "officialReports": null,
+      "officialReports": {
+        "code": "09988.HK / BABA",
+        "name": "阿里巴巴",
+        "industry": "电商、云与数字平台",
+        "primaryListing": "09988.HK",
+        "annual2025": null,
+        "interim2026": null,
+        "status": "hkex_manual_lookup_required",
+        "verificationStatus": "official_hkex_search_link_only_not_content_verified",
+        "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2455,8 +3029,30 @@
         "bvps": "https://basic.10jqka.com.cn/688981/index.html",
         "market": "https://www.yyqyx.com/s/688981.SH"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=688981",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gshk0000981&stockCode=688981",
+      "officialReports": {
+        "code": "688981.SH / 00981.HK",
+        "name": "中芯国际",
+        "industry": "晶圆代工",
+        "primaryListing": "688981.SH",
+        "annual2025": {
+          "title": "港股公告：2025年年报",
+          "announcementDate": "2026-04-09",
+          "announcementId": "1225084819",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-09/1225084819.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688981&announcementId=1225084819&orgId=gshk0000981&announcementTime=2026-04-09"
+        },
+        "interim2026": {
+          "title": "中芯国际2026年半年度报告",
+          "announcementDate": "2026-08-28",
+          "announcementId": "1225520297",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225520297.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688981&announcementId=1225520297&orgId=gshk0000981&announcementTime=2026-08-28"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gshk0000981"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2534,8 +3130,30 @@
         "bvps": "https://basic.10jqka.com.cn/mobile/002371/companyn.html",
         "market": "https://quote.cfi.cn/quote.aspx?client=pc&stockid=10802"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002371",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900006137&stockCode=002371",
+      "officialReports": {
+        "code": "002371.SZ",
+        "name": "北方华创",
+        "industry": "半导体设备",
+        "primaryListing": "002371.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-18",
+          "announcementId": "1225122918",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-18/1225122918.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002371&announcementId=1225122918&orgId=9900006137&announcementTime=2026-04-18"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-26",
+          "announcementId": "1225501903",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225501903.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002371&announcementId=1225501903&orgId=9900006137&announcementTime=2026-08-26"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900006137"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2613,8 +3231,30 @@
         "bvps": "https://basic.10jqka.com.cn/688041/",
         "market": "https://cn.investing.com/equities/hygon-information-tech-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=688041",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900048365&stockCode=688041",
+      "officialReports": {
+        "code": "688041.SH",
+        "name": "海光信息",
+        "industry": "CPU与加速计算芯片",
+        "primaryListing": "688041.SH",
+        "annual2025": {
+          "title": "海光信息技术股份有限公司2025年年度报告",
+          "announcementDate": "2026-04-08",
+          "announcementId": "1225083088",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-08/1225083088.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688041&announcementId=1225083088&orgId=9900048365&announcementTime=2026-04-08"
+        },
+        "interim2026": {
+          "title": "海光信息技术股份有限公司2026年半年度报告",
+          "announcementDate": "2026-08-14",
+          "announcementId": "1225472510",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-14/1225472510.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688041&announcementId=1225472510&orgId=9900048365&announcementTime=2026-08-14"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900048365"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2692,8 +3332,30 @@
         "bvps": "https://basic.10jqka.com.cn/300308/index.html",
         "market": "https://www.lixinger.com/equity/company/detail/sz/300308/300308/fundamental/valuation/pe-ttm"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300308",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900022016&stockCode=300308",
+      "officialReports": {
+        "code": "300308.SZ",
+        "name": "中际旭创",
+        "industry": "光通信与高速光模块",
+        "primaryListing": "300308.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225056459",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225056459.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1225056459&orgId=9900022016&announcementTime=2026-03-31"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-22",
+          "announcementId": "1225491753",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491753.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1225491753&orgId=9900022016&announcementTime=2026-08-22"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900022016"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2771,8 +3433,30 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12462543&stockid=300750",
         "market": "https://data.cfi.cn/300750.html"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300750",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=GD165627&stockCode=300750",
+      "officialReports": {
+        "code": "300750.SZ / 03750.HK",
+        "name": "宁德时代",
+        "industry": "动力电池与储能",
+        "primaryListing": "300750.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-10",
+          "announcementId": "1225002214",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-10/1225002214.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300750&announcementId=1225002214&orgId=GD165627&announcementTime=2026-03-10"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-07-25",
+          "announcementId": "1225441586",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-07-25/1225441586.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300750&announcementId=1225441586&orgId=GD165627&announcementTime=2026-07-25"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "GD165627"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2850,8 +3534,30 @@
         "bvps": "https://basic.10jqka.com.cn/300274/",
         "market": "https://www.yyqyx.com/s/300274.SZ"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300274",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900021300&stockCode=300274",
+      "officialReports": {
+        "code": "300274.SZ",
+        "name": "阳光电源",
+        "industry": "逆变器与储能系统",
+        "primaryListing": "300274.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-01",
+          "announcementId": "1225066678",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-01/1225066678.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300274&announcementId=1225066678&orgId=9900021300&announcementTime=2026-04-01"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225526948",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225526948.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300274&announcementId=1225526948&orgId=9900021300&announcementTime=2026-08-29"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900021300"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -2929,8 +3635,30 @@
         "bvps": "https://basic.10jqka.com.cn/300124/index.html",
         "market": "https://cn.investing.com/equities/shenzhen-inovance-tech-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300124",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900012527&stockCode=300124",
+      "officialReports": {
+        "code": "300124.SZ",
+        "name": "汇川技术",
+        "industry": "工业自动化与电驱",
+        "primaryListing": "300124.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-28",
+          "announcementId": "1225208488",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225208488.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300124&announcementId=1225208488&orgId=9900012527&announcementTime=2026-04-28"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225524610",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225524610.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300124&announcementId=1225524610&orgId=9900012527&announcementTime=2026-08-29"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900012527"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3008,8 +3736,30 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570089&stockid=600036",
         "market": "https://quote.cfi.cn/quote.aspx?stockcode=600036&zqlb=0"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600036",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600036&stockCode=600036",
+      "officialReports": {
+        "code": "600036.SH / 03968.HK",
+        "name": "招商银行",
+        "industry": "零售银行与财富管理",
+        "primaryListing": "600036.SH",
+        "annual2025": {
+          "title": "招商银行股份有限公司2025年度报告",
+          "announcementDate": "2026-03-28",
+          "announcementId": "1225047590",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225047590.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1225047590&orgId=gssh0600036&announcementTime=2026-03-28"
+        },
+        "interim2026": {
+          "title": "招商银行股份有限公司2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225530237",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225530237.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1225530237&orgId=gssh0600036&announcementTime=2026-08-29"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600036"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3087,8 +3837,30 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12567199&stockid=601398",
         "market": "https://cn.investing.com/equities/icbc-ss-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601398",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=jjxt0000019&stockCode=601398",
+      "officialReports": {
+        "code": "601398.SH",
+        "name": "工商银行",
+        "industry": "大型商业银行",
+        "primaryListing": "601398.SH",
+        "annual2025": {
+          "title": "工商银行2025年度报告",
+          "announcementDate": "2026-03-28",
+          "announcementId": "1225047240",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225047240.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601398&announcementId=1225047240&orgId=jjxt0000019&announcementTime=2026-03-28"
+        },
+        "interim2026": {
+          "title": "工商银行2026半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225526043",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225526043.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601398&announcementId=1225526043&orgId=jjxt0000019&announcementTime=2026-08-29"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "jjxt0000019"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3166,8 +3938,24 @@
         "bvps": "https://basic.10jqka.com.cn/601318/field.html",
         "market": "https://quote.cfi.cn/quote.aspx?client=pc&lm=gsda&stockid=7143"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601318",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900002221&stockCode=601318",
+      "officialReports": {
+        "code": "601318.SH / 02318.HK",
+        "name": "中国平安",
+        "industry": "保险与综合金融",
+        "primaryListing": "601318.SH",
+        "annual2025": {
+          "title": "中国平安2025年年度报告",
+          "announcementDate": "2026-03-27",
+          "announcementId": "1225038263",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038263.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1225038263&orgId=9900002221&announcementTime=2026-03-27"
+        },
+        "interim2026": null,
+        "status": "partial",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900002221"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3245,8 +4033,30 @@
         "bvps": "https://basic.10jqka.com.cn/72/02601/",
         "market": "https://cn.investing.com/equities/china-pacific-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601601",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900004003&stockCode=601601",
+      "officialReports": {
+        "code": "601601.SH / 02601.HK",
+        "name": "中国太保",
+        "industry": "寿险与财险",
+        "primaryListing": "601601.SH",
+        "annual2025": {
+          "title": "中国太保2025年年度报告",
+          "announcementDate": "2026-03-27",
+          "announcementId": "1225035569",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225035569.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601601&announcementId=1225035569&orgId=9900004003&announcementTime=2026-03-27"
+        },
+        "interim2026": {
+          "title": "中国太保2026年半年度报告",
+          "announcementDate": "2026-08-28",
+          "announcementId": "1225518250",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225518250.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601601&announcementId=1225518250&orgId=9900004003&announcementTime=2026-08-28"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900004003"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3324,8 +4134,30 @@
         "bvps": "https://basic.10jqka.com.cn/600030/index.html",
         "market": "https://cn.investing.com/equities/citic-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600030",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600030&stockCode=600030",
+      "officialReports": {
+        "code": "600030.SH / 06030.HK",
+        "name": "中信证券",
+        "industry": "证券与资本市场",
+        "primaryListing": "600030.SH",
+        "annual2025": {
+          "title": "中信证券股份有限公司2025年年度报告",
+          "announcementDate": "2026-03-27",
+          "announcementId": "1225036081",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225036081.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600030&announcementId=1225036081&orgId=gssh0600030&announcementTime=2026-03-27"
+        },
+        "interim2026": {
+          "title": "中信证券股份有限公司2026年半年度报告",
+          "announcementDate": "2026-08-21",
+          "announcementId": "1225486473",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225486473.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600030&announcementId=1225486473&orgId=gssh0600030&announcementTime=2026-08-21"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600030"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3403,8 +4235,30 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12518811",
         "market": "https://quote.cfi.cn/300059.html"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=300059",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900010488&stockCode=300059",
+      "officialReports": {
+        "code": "300059.SZ",
+        "name": "东方财富",
+        "industry": "互联网证券与金融信息",
+        "primaryListing": "300059.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-20",
+          "announcementId": "1225019509",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-20/1225019509.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300059&announcementId=1225019509&orgId=9900010488&announcementTime=2026-03-20"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-22",
+          "announcementId": "1225491769",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-22/1225491769.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300059&announcementId=1225491769&orgId=9900010488&announcementTime=2026-08-22"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900010488"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3483,7 +4337,17 @@
         "market": "https://hk.finance.yahoo.com/quote/9618.HK/history/"
       },
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
-      "officialReports": null,
+      "officialReports": {
+        "code": "09618.HK / JD",
+        "name": "京东集团",
+        "industry": "电商、零售与物流",
+        "primaryListing": "09618.HK",
+        "annual2025": null,
+        "interim2026": null,
+        "status": "hkex_manual_lookup_required",
+        "verificationStatus": "official_hkex_search_link_only_not_content_verified",
+        "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3561,8 +4425,30 @@
         "bvps": "https://basic.10jqka.com.cn/601888/index.html",
         "market": "https://cn.investing.com/equities/cits-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=601888",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900008313&stockCode=601888",
+      "officialReports": {
+        "code": "601888.SH",
+        "name": "中国中免",
+        "industry": "免税零售与旅游消费",
+        "primaryListing": "601888.SH",
+        "annual2025": {
+          "title": "中国旅游集团中免股份有限公司2025年年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225063442",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225063442.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601888&announcementId=1225063442&orgId=9900008313&announcementTime=2026-03-31"
+        },
+        "interim2026": {
+          "title": "中国旅游集团中免股份有限公司2026年半年度报告",
+          "announcementDate": "2026-08-21",
+          "announcementId": "1225486965",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-21/1225486965.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601888&announcementId=1225486965&orgId=9900008313&announcementTime=2026-08-21"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900008313"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3640,8 +4526,24 @@
         "bvps": "https://basic.10jqka.com.cn/600754/",
         "market": "https://kr.investing.com/equities/jinjiang-hotel-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600754",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600754&stockCode=600754",
+      "officialReports": {
+        "code": "600754.SH",
+        "name": "锦江酒店",
+        "industry": "酒店运营与管理",
+        "primaryListing": "600754.SH",
+        "annual2025": null,
+        "interim2026": {
+          "title": "锦江酒店2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225531633",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531633.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600754&announcementId=1225531633&orgId=gssh0600754&announcementTime=2026-08-29"
+        },
+        "status": "partial",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600754"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3719,8 +4621,30 @@
         "bvps": null,
         "market": "https://cn.investing.com/equities/hedy-holding-a-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002027",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssz0002027&stockCode=002027",
+      "officialReports": {
+        "code": "002027.SZ",
+        "name": "分众传媒",
+        "industry": "楼宇广告",
+        "primaryListing": "002027.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-29",
+          "announcementId": "1225251512",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225251512.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002027&announcementId=1225251512&orgId=gssz0002027&announcementTime=2026-04-29"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-19",
+          "announcementId": "1225480000",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-19/1225480000.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002027&announcementId=1225480000&orgId=gssz0002027&announcementTime=2026-08-19"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssz0002027"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3799,7 +4723,17 @@
         "market": "https://hk.investing.com/equities/bilibili-historical-data"
       },
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
-      "officialReports": null,
+      "officialReports": {
+        "code": "09626.HK / BILI",
+        "name": "哔哩哔哩",
+        "industry": "视频社区与内容",
+        "primaryListing": "09626.HK",
+        "annual2025": null,
+        "interim2026": null,
+        "status": "hkex_manual_lookup_required",
+        "verificationStatus": "official_hkex_search_link_only_not_content_verified",
+        "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3877,8 +4811,30 @@
         "bvps": null,
         "market": "https://cn.investing.com/equities/yaxia-automobile-a-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=002607",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=9900021221&stockCode=002607",
+      "officialReports": {
+        "code": "002607.SZ",
+        "name": "中公教育",
+        "industry": "职业培训与考试服务",
+        "primaryListing": "002607.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-29",
+          "announcementId": "1225251198",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225251198.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002607&announcementId=1225251198&orgId=9900021221&announcementTime=2026-04-29"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-27",
+          "announcementId": "1225515479",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225515479.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002607&announcementId=1225515479&orgId=9900021221&announcementTime=2026-08-27"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900021221"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -3956,8 +4912,30 @@
         "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12539479&stockid=000598",
         "market": "https://hk.investing.com/equities/xingrong-invest-a-historical-data"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=000598",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssz0000598&stockCode=000598",
+      "officialReports": {
+        "code": "000598.SZ",
+        "name": "兴蓉环境",
+        "industry": "水务与环保运营",
+        "primaryListing": "000598.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-28",
+          "announcementId": "1225212058",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225212058.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000598&announcementId=1225212058&orgId=gssz0000598&announcementTime=2026-04-28"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-26",
+          "announcementId": "1225506544",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-26/1225506544.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000598&announcementId=1225506544&orgId=gssz0000598&announcementTime=2026-08-26"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssz0000598"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
@@ -4035,8 +5013,30 @@
         "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12546824&stockid=600323",
         "market": "https://hk.finance.yahoo.com/quote/600323.SS/history/"
       },
-      "officialSearchUrl": "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord=600323",
-      "officialReports": null,
+      "officialSearchUrl": "https://www.cninfo.com.cn/new/disclosure/stock?orgId=gssh0600323&stockCode=600323",
+      "officialReports": {
+        "code": "600323.SH",
+        "name": "瀚蓝环境",
+        "industry": "固废处理与环保运营",
+        "primaryListing": "600323.SH",
+        "annual2025": {
+          "title": "瀚蓝环境股份有限公司2025年年度报告",
+          "announcementDate": "2026-04-24",
+          "announcementId": "1225167256",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225167256.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600323&announcementId=1225167256&orgId=gssh0600323&announcementTime=2026-04-24"
+        },
+        "interim2026": {
+          "title": "瀚蓝环境股份有限公司2026年半年度报告",
+          "announcementDate": "2026-08-27",
+          "announcementId": "1225510953",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225510953.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600323&announcementId=1225510953&orgId=gssh0600323&announcementTime=2026-08-27"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600323"
+      },
       "verification": {
         "officialReportCrossCheck": {
           "status": "pending",
