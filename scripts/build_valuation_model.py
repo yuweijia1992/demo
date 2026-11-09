@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MASTER = ROOT / "data/china-stocks-financial-valuation.json"
 FIN = ROOT / "data/financial-standardized/company-financials-2021-2025.json"
 HISTORY = ROOT / "data/valuation-history/generated/valuation-monthly.csv"
+REPORT_INDEX = ROOT / "data/valuation-model/issuer-report-index-49.json"
 OUT = ROOT / "data/valuation-model"
 YEARS = list(range(2021, 2026))
 METRICS = ("peTtm", "pb", "psTtm")
@@ -262,6 +263,8 @@ def main():
     fin=json.loads(FIN.read_text(encoding="utf-8"))
     audit_path=ROOT/"data/valuation-inputs/valuation-input-audit-49.json"
     input_audit=json.loads(audit_path.read_text(encoding="utf-8")) if audit_path.exists() else {"records":[]}
+    report_index=json.loads(REPORT_INDEX.read_text(encoding="utf-8")) if REPORT_INDEX.exists() else {"records":[]}
+    reports_by_code={x["code"]:x for x in report_index.get("records",[])}
     audit_by_code={x["code"]:x for x in input_audit.get("records",[])}
     financial_by_code={x["code"]:x for x in fin.get("companies",[])}
     history=load_history()
@@ -406,6 +409,7 @@ def main():
         for k,cond in checks:
             if any(cond(x) for x in annual):audit["metrics"][k]+=1
         source_audit=audit_by_code.get(stock["code"]) or audit_by_code.get(code) or {}
+        official_reports=reports_by_code.get(stock["code"]) or reports_by_code.get(code)
         fin_source=source_audit.get("source",{}).get("financial")
         capex_source=source_audit.get("source",{}).get("capex")
         verification_register={
@@ -423,7 +427,7 @@ def main():
                         "industry":stock.get("industry"),"businessType":stock.get("businessType"),"modelType":stock.get("method"),
                         "isFinancialInstitution":financial,"currency":stock.get("currency"),
                         "sourceCurrencies":fdata.get("sourceCurrencies",[]),"reportedUnits":fdata.get("reportedUnits",[]),
-                        "sourceLinks":source_audit.get("source",{}),"officialSearchUrl":issuer_search_url(stock),"annual":annual,"history":h,"forecast5Y":forecast,
+                        "sourceLinks":source_audit.get("source",{}),"officialSearchUrl":issuer_search_url(stock),"officialReports":official_reports,"annual":annual,"history":h,"forecast5Y":forecast,
                         "valuationFramework":{"method":stock.get("method"),"requiredInputs":stock.get("requiredMetrics",[]),
                           "status":"pending_company_specific_assumptions_and_independent_verification",
                           "companySpecificAssumptions":{"historicalRevenueCagr":growth,"recentThreeYearMedianNetMargin":median(margins),"recentThreeYearMedianCapexToRevenue":median(capex_ratios),"sustainableROE":None,"normalizedROIC":median([x["roicPct"] for x in annual if x["roicPct"] is not None]),"WACC":None,"costOfEquity":None,"terminalGrowth":None,"currentFullyDilutedShares":None,"dividendPerShareHistory":None,"maintenanceCapex":None,"growthCapex":None,"costOfEquityInputs":None,"fairValuePerShare":None,"status":"historical_reference_only_until_official_crosscheck"},
@@ -479,7 +483,7 @@ def main():
     OUT.mkdir(parents=True,exist_ok=True)
     output={"schemaVersion":"1.1.0","generatedAtUtc":datetime.now(timezone.utc).isoformat(),
             "sourceFiles":{"master":str(MASTER.relative_to(ROOT)),"financial":str(FIN.relative_to(ROOT)),
-                           "history":str(HISTORY.relative_to(ROOT)),"inputAudit":str(audit_path.relative_to(ROOT))},
+                           "history":str(HISTORY.relative_to(ROOT)),"inputAudit":str(audit_path.relative_to(ROOT)),"officialReportIndex":str(REPORT_INDEX.relative_to(ROOT)) if REPORT_INDEX.exists() else None},
             "companyCount":len(results),
             "methodology":{"roe":"归母净利润 / 年初年末归母权益平均值；首年无上年权益时留空",
               "fcf":"经营活动现金流净额 - 购建固定资产、无形资产和其他长期资产支付的现金；简化FCF，不等于股权自由现金流",
@@ -492,7 +496,7 @@ def main():
     (OUT/"valuation-model-49.json").write_text(json.dumps(output,ensure_ascii=False,separators=(",",":")),encoding="utf-8")
     register={"schemaVersion":"1.0.0","generatedAtUtc":datetime.now(timezone.utc).isoformat(),
               "companyCount":len(results),"records":[{"code":x["code"],"name":x["name"],"industry":x["industry"],
-              "modelType":x["modelType"],"sourceLinks":x["sourceLinks"],"officialSearchUrl":x["officialSearchUrl"],"verification":x["verification"]["register"],"manualEvidence":x["verification"].get("manualEvidence"),
+              "modelType":x["modelType"],"sourceLinks":x["sourceLinks"],"officialSearchUrl":x["officialSearchUrl"],"officialReports":x.get("officialReports"),"verification":x["verification"]["register"],"manualEvidence":x["verification"].get("manualEvidence"),
               "companySpecificAssumptions":x["valuationFramework"]["companySpecificAssumptions"],
               "valuationOutputStatus":x["valuationFramework"]["valuationOutputStatus"]} for x in results]}
     (OUT/"valuation-verification-register-49.json").write_text(json.dumps(register,ensure_ascii=False,indent=2),encoding="utf-8")
