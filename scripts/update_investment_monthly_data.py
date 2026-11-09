@@ -15,9 +15,10 @@ months remain marked partial and their monthly return is blank.
 from __future__ import annotations
 import csv, io, json, math, time
 from calendar import monthrange
-from datetime import date, datetime
+from datetime import date, datetime, timezone, timedelta
 from pathlib import Path
 from urllib.request import Request, urlopen
+from urllib.parse import urlencode
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "investment-monthly.csv"
@@ -322,7 +323,7 @@ def load_hsi_2800_proxy(rows):
         hkfx=num(row.get("hkd_per_usd"));phkfx=num(prev.get("hkd_per_usd"))
         usd=num(row.get("usd_cny"));pusd=num(prev.get("usd_cny"))
         if hret is not None and hkfx is not None and phkfx is not None and phkfx>0 and usd is not None and pusd is not None and pusd>0:
-            row["hang_seng_etf_2800_total_return_cny_pct"]=f"{((1+hret/100)*(pusd/usd)*(hkfx/phkfx)-1)*100:.8f}"
+            row["hang_seng_etf_2800_total_return_cny_pct"]=f"{((1+hret/100)*(usd/pusd)*(phkfx/hkfx)-1)*100:.8f}"
         else:row["hang_seng_etf_2800_total_return_cny_pct"]=""
     return {"ticker":"2800.HK","months":len(monthly),"coverage_start":min(monthly),"coverage_end":max(monthly),
             "source":"Yahoo Finance adjusted close; Tracker Fund of Hong Kong; HKD total-return ETF proxy, not official Hang Seng TRI"}
