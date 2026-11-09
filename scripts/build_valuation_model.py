@@ -15,6 +15,57 @@ OUT = ROOT / "data/valuation-model"
 YEARS = list(range(2021, 2026))
 METRICS = ("peTtm", "pb", "psTtm")
 
+MODEL_DRIVER_TEMPLATES = {
+ "quality_earnings_fcf": [
+  ("volumeGrowth","销量/业务量增长率","%","销量、出货量、客户数或门店数的历史与指引"),
+  ("priceMixGrowth","价格与产品结构变化","%","ASP、产品结构、提价与折扣"),
+  ("grossMargin","毛利率","%","产品结构、原材料成本、产能利用率"),
+  ("opexRatio","销售及管理研发费用率","%","分项费用率和经营杠杆"),
+  ("workingCapitalDays","营运资本周转天数","days","应收、存货、应付及合同负债"),
+  ("maintenanceCapex","维护性资本开支","currency/year","维持现有产能所需资本开支"),
+  ("growthCapex","扩张性资本开支","currency/year","新增产能、产线、门店和项目投资"),
+  ("normalizedTaxRate","正常化税率","%","所得税调节表及优惠到期时间")],
+ "normalized_cycle": [
+  ("midCyclePrice","中周期产品价格","currency/unit","至少一个完整行业周期的价格与成本"),
+  ("midCycleVolume","中周期销量/产能利用率","units or %","产能、产量、库存和利用率"),
+  ("midCycleUnitCost","中周期单位成本","currency/unit","成本曲线、原料和能源成本"),
+  ("normalizedMargin","正常化利润率","%","跨周期毛利率和费用率"),
+  ("replacementCapex","维持性资本开支","currency/year","设备更新与环保安全投入"),
+  ("cycleLength","行业周期长度","years","历史供需周期证据")],
+ "growth_dcf": [
+  ("addressableMarket","可服务市场规模","currency","可核验市场规模及统计口径"),
+  ("marketShare","市场份额","%","公司收入/同口径市场规模"),
+  ("volumeGrowth","销量/用户/订单增长率","%","出货量、用户、订单、产能爬坡"),
+  ("aspArpuGrowth","ASP/ARPU增长率","%","价格、产品组合或用户变现"),
+  ("grossMargin","毛利率路径","%","规模效应、产品结构与竞争"),
+  ("reinvestmentRate","再投资率","%","研发、资本开支、营运资本及并购"),
+  ("dilution","年度股本稀释率","%","股权激励、可转债、增发及回购")],
+ "cashflow_dcf": [
+  ("regulatedVolume","业务量/发电量/客流","units/year","发电量、客流、处理量、利用小时"),
+  ("tariffPrice","核准价格/单位收入","currency/unit","监管核价、合同价格与调价机制"),
+  ("utilization","产能利用率","%","可用率、利用小时、产能"),
+  ("maintenanceCapex","维护性资本开支","currency/year","检修、更新改造与安全环保"),
+  ("growthCapex","扩张性资本开支","currency/year","在建工程、项目预算和投产时间"),
+  ("concessionLife","特许经营/资产剩余期限","years","特许经营权、项目协议及到期安排"),
+  ("netDebtSchedule","债务偿还与融资成本","currency/year","债务期限、利率、再融资安排")],
+ "bank_pb_roe": [
+  ("sustainableROE","可持续ROE","%","五至十年ROE、拨备周期和资本约束"),
+  ("costOfEquity","股权资本成本","%","估值日无风险利率、Beta、ERP"),
+  ("bookValueGrowth","每股净资产增长率","%","留存收益、分红、增发及回购"),
+  ("payoutRatio","可持续分红率","%","现金分红、资本补充和监管要求"),
+  ("creditCost","信用成本","%","不良生成率、核销、拨备覆盖"),
+  ("capitalAdequacy","核心一级资本充足率","%","监管披露和资本规划"),
+  ("assetQuality","不良率/关注类贷款率","%","五级分类、逾期及重组贷款")],
+ "insurance_ev": [
+  ("nbvGrowth","新业务价值增长率","%","NBV/VNB、价值率、代理人和银保渠道"),
+  ("csmRelease","CSM释放率","%","合同服务边际及释放节奏"),
+  ("investmentReturn","投资收益率","%","总/综合投资收益率及资产配置"),
+  ("solvency","偿付能力充足率","%","核心/综合偿付能力与资本补充"),
+  ("sustainableROE","可持续ROE","%","保险服务结果、投资结果和资本"),
+  ("costOfEquity","股权资本成本","%","估值日无风险利率、Beta、ERP"),
+  ("dividendCapacity","可分配现金与分红能力","currency/year","偿付能力、现金流及分红约束")]
+}
+
 def field(item, key):
     return (((item or {}).get("fields") or {}).get(key) or {})
 def v(item, key):
@@ -127,6 +178,20 @@ def classify_source(url):
     if not u:return "missing"
     if any(d in u for d in ("cninfo.com.cn","hkexnews.hk","sec.gov")):return "official_regulatory_filing"
     return "secondary_or_unclassified"
+
+def company_driver_template(model_type):
+    rows=MODEL_DRIVER_TEMPLATES.get(model_type,MODEL_DRIVER_TEMPLATES["quality_earnings_fcf"])
+    return [{"key":k,"label":label,"unit":unit,"value":None,
+             "status":"needs_company_specific_source",
+             "sourceRequirement":source,
+             "note":"不允许以行业均值或模型猜测填入公司实际值"} for k,label,unit,source in rows]
+
+def issuer_search_url(stock):
+    code=str(stock.get("code") or "").split("/")[0].strip()
+    base=code.split(".")[0]
+    if code.endswith((".SH",".SZ")):
+        return "https://www.cninfo.com.cn/new/fulltextSearch?notautosubmit=&keyWord="+base
+    return "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
 
 def is_financial(stock):
     s = " ".join(str(stock.get(k) or "") for k in ("industry","businessType","method"))
@@ -305,13 +370,14 @@ def main():
                         "industry":stock.get("industry"),"businessType":stock.get("businessType"),"modelType":stock.get("method"),
                         "isFinancialInstitution":financial,"currency":stock.get("currency"),
                         "sourceCurrencies":fdata.get("sourceCurrencies",[]),"reportedUnits":fdata.get("reportedUnits",[]),
-                        "sourceLinks":source_audit.get("source",{}),"officialSearchUrl":"https://www.cninfo.com.cn/new/index" if stock.get("code","").split("/")[0].endswith((".SH",".SZ")) else "https://www.hkexnews.hk/index.htm?sc_lang=en","annual":annual,"history":h,"forecast5Y":forecast,
+                        "sourceLinks":source_audit.get("source",{}),"officialSearchUrl":issuer_search_url(stock),"annual":annual,"history":h,"forecast5Y":forecast,
                         "valuationFramework":{"method":stock.get("method"),"requiredInputs":stock.get("requiredMetrics",[]),
                           "status":"pending_company_specific_assumptions_and_independent_verification",
-                          "companySpecificAssumptions":{"historicalRevenueCagr":growth,"recentThreeYearMedianNetMargin":median(margins),"recentThreeYearMedianCapexToRevenue":median(capex_ratios),"sustainableROE":None,"normalizedROIC":median([x["roicPct"] for x in annual if x["roicPct"] is not None]),"WACC":None,"costOfEquity":None,"terminalGrowth":None,"currentFullyDilutedShares":None,"fairValuePerShare":None,"status":"historical_reference_only_until_official_crosscheck"},
+                          "companySpecificAssumptions":{"historicalRevenueCagr":growth,"recentThreeYearMedianNetMargin":median(margins),"recentThreeYearMedianCapexToRevenue":median(capex_ratios),"sustainableROE":None,"normalizedROIC":median([x["roicPct"] for x in annual if x["roicPct"] is not None]),"WACC":None,"costOfEquity":None,"terminalGrowth":None,"currentFullyDilutedShares":None,"dividendPerShareHistory":None,"maintenanceCapex":None,"growthCapex":None,"costOfEquityInputs":None,"fairValuePerShare":None,"status":"historical_reference_only_until_official_crosscheck"},
                           "requiredAssumptions":["normalized earnings / sustainable ROE","forecast revenue and margin drivers",
                             "reinvestment and maintenance capex","cost of equity or WACC with dated inputs",
                             "terminal growth or exit multiple","current fully diluted shares","dividend and buyback policy"],
+                          "companyDriverTemplate":company_driver_template(stock.get("method")),
                           "valuationOutputStatus":"blocked_no_verified_per_share_fair_value"},
                         "verification":{"financialSourceCrossCheck":"pending_official_issuer_report","register":verification_register,"shareCount":"pending_current_fully_diluted_shares",
                           "dividendHistory":"pending_per_share_and_ex_date_history","capitalAllocation":"pending_capex_mna_dividend_buyback_reconciliation",
