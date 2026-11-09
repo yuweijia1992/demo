@@ -81,11 +81,14 @@ def unit_multiplier(item):
 def debt_components(balance):
     return [v(balance,k) for k in ("shortBorrowings","longBorrowings","bondsPayable","currentLeaseLiabilities","leaseLiabilities")]
 
-def cash_equivalents_for_net_debt(balance):
+def cash_equivalents_for_net_debt(balance,cashflow=None):
     # Do not net all "monetary funds": restricted deposits may not be freely available.
     ce = v(balance,"cashAndCashEquivalents")
     if ce is not None:
-        return ce, "cash_and_cash_equivalents"
+        return ce, "balance_sheet_cash_and_cash_equivalents"
+    ce_end = v(cashflow,"cashAndCashEquivalentsEnding")
+    if ce_end is not None:
+        return ce_end, "cash_flow_statement_ending_cash_equivalents"
     cash_field = field(balance,"cash")
     source_name = str(cash_field.get("sourceField") or "").strip()
     if source_name in ("现金及现金等价物","现金和现金等价物","现金及等价物"):
@@ -227,8 +230,8 @@ def main():
                            "costOfCapitalVerified":0},
            "warnings":["Provider fields are not independently issuer-report verified merely because they were retrieved.",
                        "Reported currency and unit are not inferred; no cross-company comparison is permitted without normalization.",
-                       "ROIC is a derived approximation only where operating profit, pretax profit, tax, current liabilities, debt, cash and investments are complete.",
-                       "Net debt is gross interest-bearing debt less cash; short/long investments are not netted.",
+                       "ROIC is an approximate derived metric and remains null unless NOPAT, non-interest-bearing current liabilities, separately identified cash equivalents and non-operating investments are complete and comparable.",
+                       "Net debt is gross interest-bearing debt less separately identified cash and cash equivalents; total monetary funds containing restricted deposits are not automatically deducted.",
                        "DividendsPaidCombinedWithInterest is not a dividend-only field and is never used as a payout ratio.",
                        "Implied weighted-average diluted shares are not current fully diluted shares; per-share fair value remains blocked."]}
     for stock in master.get("stocks",[]):
@@ -258,7 +261,7 @@ def main():
             acquisitions_paid=v(cf,"acquisitionsPaid"); investments_purchased=v(cf,"investmentsPurchased")
             investments_disposed=v(cf,"investmentsDisposed"); buybacks_paid=v(cf,"shareBuybacksPaid")
             debt_repayments=v(cf,"debtRepayments"); interest_paid=v(cf,"interestPaid"); equity_raised=v(cf,"equityRaised")
-            cash=v(bal,"cash"); cash_equivalents,cash_basis=cash_equivalents_for_net_debt(bal)
+            cash=v(bal,"cash"); cash_equivalents,cash_basis=cash_equivalents_for_net_debt(bal,cf)
             restricted_cash=v(bal,"restrictedCash")
             short_invest=v(bal,"shortTermInvestments"); long_invest=v(bal,"longTermInvestments")
             debts=debt_components(bal)
@@ -286,7 +289,7 @@ def main():
                            "incomeTax":tax,"effectiveTaxRate":tax_rate,"nopat":nopat,"totalAssets":assets,
                            "currentLiabilities":current_liabilities,"parentEquity":equity,"totalEquity":total_equity,
                            "averageParentEquity":avg_equity,"roePct":roe,"operatingCashFlow":ocf,"capex":capex,
-                           "freeCashFlow":fcf,"capexToRevenuePct":capex_intensity,"cash":cash,"cashAndCashEquivalents":cash_equivalents,"cashDeductionBasis":cash_basis,"restrictedCash":restricted_cash,
+                           "freeCashFlow":fcf,"capexToRevenuePct":capex_intensity,"cash":cash,"cashAndCashEquivalents":cash_equivalents,"cashFlowEndingCashAndCashEquivalents":v(cf,"cashAndCashEquivalentsEnding"),"cashDeductionBasis":cash_basis,"restrictedCash":restricted_cash,
                            "shortTermInvestments":short_invest,"longTermInvestments":long_invest,
                            "interestBearingDebtComponents":{"shortBorrowings":debts[0],"longBorrowings":debts[1],
                              "bondsPayable":debts[2],"currentLeaseLiabilities":debts[3],"leaseLiabilities":debts[4]},
