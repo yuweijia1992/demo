@@ -68,6 +68,16 @@
       "count": 247,
       "start": "2006-01",
       "end": "2026-07"
+    },
+    "hang_seng_etf_2800_total_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "hkd_per_usd": {
+      "count": 0,
+      "start": null,
+      "end": null
     }
   },
   "series": [
@@ -394,6 +404,30 @@
       "count": 247,
       "start": "2006-01",
       "end": "2026-07"
+    },
+    {
+      "field": "hang_seng_etf_2800_total_return_index_hkd",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "hang_seng_etf_2800_total_return_hkd_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "hang_seng_etf_2800_total_return_cny_pct",
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    {
+      "field": "hkd_per_usd",
+      "count": 0,
+      "start": null,
+      "end": null
     }
   ],
   "notes": [
@@ -790,6 +824,26 @@
       "count": 247,
       "start": "2006-01",
       "end": "2026-07"
+    },
+    "hang_seng_etf_2800_total_return_index_hkd": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "hang_seng_etf_2800_total_return_hkd_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "hang_seng_etf_2800_total_return_cny_pct": {
+      "count": 0,
+      "start": null,
+      "end": null
+    },
+    "hkd_per_usd": {
+      "count": 0,
+      "start": null,
+      "end": null
     }
   },
   "gaps": [
