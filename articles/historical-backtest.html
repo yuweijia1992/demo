@@ -22,7 +22,7 @@
 <section class="section"><div class="panel"><h2>Campbell跨期对冲因子</h2><div class="grid"><div class="metric"><span class="muted">状态变量</span><div class="v">估值 + 利率 + 波动</div></div><div class="metric"><span class="muted">计算方式</span><div class="v">Δz<sub>t</sub></div></div><div class="metric"><span class="muted">用途</span><div class="v">跨期风险</div></div><div class="metric"><span class="muted">当前代理</span><div class="v" id="campbellNow">计算中</div></div></div><p class="muted">这里实现的是Campbell ICAPM思想的可解释代理，而非完整学术VAR估计：先把可观察的估值、利率和波动状态标准化为机会集状态z，再用状态变化Δz衡量“未来投资机会改变”的方向，并把该因子用于风险检查。下一版若接入完整月度数据，可进一步估计预测回归与长期风险价格。</p></div></section>
 <section class="section"><div class="panel"><h2>历史相似环境搜索</h2><p class="muted">以当前仪表盘状态为参照，使用近年资产收益向量寻找最相似历史年份。相似度只表示“统计形状相近”，不表示未来一定重复。</p><div id="analogs"></div></div></section>
 <section class="section"><div class="panel"><h2>压力阶段</h2><div id="stress"></div></div></section>
-<section class="section"><div class="panel"><h2>V2.2 月度数据接入与质量控制</h2><p class="muted">正式月度/日度数据库不再用手工填数。这里提供标准CSV入口：浏览器本地读取，不上传服务器。建议字段：date,sp500,csi300,us10y,real10y,dxy,vix,gold,brent,usdcny,china10y,fedfunds。价格/指数请先转换成月度总回报或月末水平；状态变量保留月末值。</p><input id="csvInput" type="file" accept=".csv,text/csv"><div id="csvStatus" class="muted" style="margin-top:12px">尚未导入CSV。</div><div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>窗口</th><th>S&P×CSI</th><th>S&P×Gold</th><th>S&P×TLT</th><th>CSI×Gold</th></tr></thead><tbody id="rolling10"></tbody></table></div></div></section>
+<section class="section"><div class="panel"><h2>V2.5 全球资产月度数据与统一回测</h2><p class="muted">正式月度/日度数据库不再用手工填数。这里提供标准CSV入口：浏览器本地读取，不上传服务器。建议字段：date,sp500,csi300,us10y,real10y,dxy,vix,gold,brent,usdcny,china10y,fedfunds。价格/指数请先转换成月度总回报或月末水平；状态变量保留月末值。</p><input id="csvInput" type="file" accept=".csv,text/csv"><div id="csvStatus" class="muted" style="margin-top:12px">尚未导入CSV。</div><div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>窗口</th><th>S&P×CSI</th><th>S&P×Gold</th><th>S&P×TLT</th><th>CSI×Gold</th></tr></thead><tbody id="rolling10"></tbody></table></div></div></section>
 <section class="section"><div class="panel"><h2>Campbell ICAPM正式估计框架</h2><p class="muted">V2.0采用可检验的预测回归：<br><b>r<sub>t+1</sub> − r<sub>f,t+1</sub> = α + β′z<sub>t</sub> + ε<sub>t+1</sub></b>；其中 z 为估值、利率、美元、波动、通胀/能源等机会集变量。跨期对冲需求再由状态变量变化 Δz 进入资产暴露分析。页面只在导入真实月度数据后计算 β、t 值、R² 和样本外预测，避免把年度代理冒充正式ICAPM结果。</p><div id="regressionStatus" class="grid"></div></div></section><section class="section"><div class="panel"><h2>数据完整性与来源</h2><p><span class="tag">2006—2025年度：已接入</span><span class="tag">2026 YTD：已接入</span><span class="tag">2023—2026部分月度：已接入</span><span class="tag">完整2006—2026日度：下一数据层</span></p><p class="muted">这一区分很重要：当前页面已经能真实计算长期年度回测，但还没有把所有资产2006—2026的逐日原始行情塞进静态站点，因此不会把“年度回测”包装成“完整日度回测”。</p><div id="sources"></div></div></section></main>
 <footer class="footer container"><span>© 2026 余暮 · Investment Lab V2.3</span><span><a href="investment-lab.html">← 返回实验室</a></span></footer>
 <script src="../script.js"></script><script src="../assets/investment-config.js"></script><script src="../assets/investment-historical-data.js"></script><script>
@@ -58,7 +58,11 @@ document.getElementById("csvInput").addEventListener("change",async e=>{const f=
  ["沪深300全收益","csi300_total_return_pct","H00300全收益指数 / CNY"],
  ["S&P 500总回报","sp500_total_return_pct","含股息再投资 / USD"],
  ["S&P 500人民币总回报","sp500_total_return_cny_pct","USD总回报 + USD/CNY月均换算 / CNY"],
- ["美国综合债券ETF AGG","us_agg_etf_total_return_usd_pct","ETF自动复权总回报 / USD"],
+ ["发达市场股票ETF EFA","efa_developed_markets_etf_total_return_usd_pct","美国、加拿大以外发达市场 / USD，Yahoo自动复权ETF代理"],
+  ["发达市场股票ETF EFA（人民币）","efa_developed_markets_etf_total_return_cny_pct","ETF总回报 + USD/CNY / CNY"],
+  ["新兴市场股票ETF EEM","eem_emerging_markets_etf_total_return_usd_pct","新兴市场ETF，含中国与台湾 / USD，Yahoo自动复权ETF代理"],
+  ["新兴市场股票ETF EEM（人民币）","eem_emerging_markets_etf_total_return_cny_pct","ETF总回报 + USD/CNY / CNY"],
+  ["美国综合债券ETF AGG","us_agg_etf_total_return_usd_pct","ETF自动复权总回报 / USD"],
  ["美国综合债券ETF AGG（人民币）","us_agg_etf_total_return_cny_pct","ETF自动复权总回报 + FX / CNY"],
  ["美国7–10年国债ETF IEF","us_ief_7_10y_etf_total_return_usd_pct","ETF自动复权总回报 / USD"],
  ["美国7–10年国债ETF IEF（人民币）","us_ief_7_10y_etf_total_return_cny_pct","ETF自动复权总回报 + FX / CNY"],
@@ -73,7 +77,8 @@ document.getElementById("csvInput").addEventListener("change",async e=>{const f=
  ["中债财富指数","china_bond_wealth_return_cny_pct","财富指数 / CNY，待接入"],
  ["美国国债官方总回报指数","us_treasury_7_10y_total_return_pct","7–10年官方总回报 / USD，待接入"],
  ["人民币现金回报","cny_cash_return_pct","现金总回报 / CNY，待接入"],
- ["完整人民币组合收益","portfolio_return_cny_pct","真实组合月收益 / CNY，待接入"]
+ ["人民币现金回报","cny_cash_return_pct","人民币现金总回报 / CNY，待接入；不以SHY替代"],
+  ["完整人民币组合收益","portfolio_return_cny_pct","真实组合月收益 / CNY，待接入"]
  ];
  const series=defs.map(([name,field,method])=>{
   const c=C.coverage(rows,field),m=stats(field);
@@ -90,6 +95,6 @@ document.getElementById("csvInput").addEventListener("change",async e=>{const f=
   '<tr><td>'+x.name+'<br><code>'+x.field+'</code></td><td>'+x.c.count+'</td><td>'+(x.c.first?x.c.first+" — "+x.c.last:"待接入")+'</td><td>'+x.method+'</td><td>'+(x.m.ready?moneyPct(x.m.cagr)+" / MDD "+moneyPct(x.m.maxdd):"不可计算")+'</td></tr>'
  ).join("");
  document.getElementById("matrixStatus").textContent=
-  "数据边界：沪深300全收益截至2026-08完整月；2026-09来源只到9月9日，故不生成该月收益。S&P 500人民币总回报截至2026-07；黄金人民币月均价回报与USD/CNY月均汇率截至2026-10。";
+  "数据边界：沪深300全收益截至2026-08完整月；2026-09来源只到9月9日，故不生成该月收益。S&P 500人民币总回报截至2026-07；EFA/EEM为全球股票ETF代理；黄金人民币月均价回报与USD/CNY月均汇率截至2026-10。";
 })();
 </script></body></html>
