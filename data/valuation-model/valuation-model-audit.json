@@ -1,5 +1,5 @@
 {
-  "generatedAtUtc": "2026-11-09T08:26:04.958224+00:00",
+  "generatedAtUtc": "2026-11-09T08:27:41.100680+00:00",
   "masterCompanies": 49,
   "financialRecordsMatched": 49,
   "historyRecordsMatched": 49,
@@ -38,14 +38,14 @@
     }
   },
   "verification": {
-    "issuerReportCrossChecksPending": 47,
+    "issuerReportCrossChecksPending": 46,
     "currentFullyDilutedSharesVerified": 0,
     "dividendPerShareHistoryVerified": 0,
     "companySpecificScenarioVerified": 0,
     "costOfCapitalVerified": 0,
-    "issuerVerifiedNetDebtCompanies": 2,
-    "issuerVerifiedShareCountSnapshots": 2,
-    "issuerPartialDividendHistoryRecords": 2
+    "issuerVerifiedNetDebtCompanies": 3,
+    "issuerVerifiedShareCountSnapshots": 3,
+    "issuerPartialDividendHistoryRecords": 3
   },
   "warnings": [
     "Provider fields are not independently issuer-report verified merely because they were retrieved.",
@@ -55,7 +55,7 @@
     "DividendsPaidCombinedWithInterest is not a dividend-only field and is never used as a payout ratio.",
     "Implied weighted-average diluted shares are not current fully diluted shares; per-share fair value remains blocked."
   ],
-  "issuerEvidenceRecords": 2,
+  "issuerEvidenceRecords": 3,
   "issuerEvidenceCrossChecks": 0,
-  "issuerReportCrossChecksPartial": 2
+  "issuerReportCrossChecksPartial": 3
 }
