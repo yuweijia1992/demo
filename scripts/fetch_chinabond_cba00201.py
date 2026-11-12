@@ -101,7 +101,7 @@ def main():
                 if item.get("field") in stats:
                     v=stats[item["field"]]
                     item.update({"count":v["count"],"start":v["start"],"end":v["end"]})
-            manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+            manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
         if audit_path.exists():
             with audit_path.open("r",encoding="utf-8-sig",newline="") as f:
                 audit_rows=list(csv.DictReader(f))
