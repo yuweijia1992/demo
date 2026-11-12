@@ -1,6 +1,6 @@
 {
-  "dataset_version": "2.6.0",
-  "generated_at": "2026-11-12T09:00:00Z",
+  "dataset_version": "2.7.0",
+  "generated_at": "2026-11-12T09:20:00Z",
   "dataset_file": "data/investment-monthly.csv",
   "frequency": "monthly",
   "row_count": 250,
@@ -50,9 +50,9 @@
       "end": "2026-10"
     },
     "china_bond_wealth_return_cny_pct": {
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     "china_treasury_etf_511010_total_return_cny_pct": {
       "count": 163,
@@ -78,6 +78,11 @@
       "count": 247,
       "start": "2006-01",
       "end": "2026-07"
+    },
+    "china_bond_wealth_index_cny": {
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     }
   },
   "series": [
@@ -203,15 +208,15 @@
     },
     {
       "field": "china_bond_wealth_index_cny",
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     {
       "field": "china_bond_wealth_return_cny_pct",
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     {
       "field": "cny_cash_index_h11025",
@@ -437,7 +442,8 @@
     "股票/债券价格指数必须与全收益指数分开标记，不能在同一策略回测中悄悄混用。",
     "目前只有沪深300月度价格指数序列完成数据落库；其余序列仍待导入/验证，因此尚不能计算完整52/28/10/10月度正式回测。",
     "V2.5 adds EFA and EEM monthly auto-adjusted ETF total-return proxies; the refresh workflow pulls them from the existing Yahoo/HerdingAI monthly return panel and converts USD returns to CNY using adjacent monthly-average USD/CNY. These are proxies, not official MSCI index total-return series.",
-    "EEM includes emerging-market exposure to China and Taiwan. Regional portfolio weights remain unapproved; no full 52/28/10/10 portfolio return is calculated."
+    "EEM includes emerging-market exposure to China and Taiwan. Regional portfolio weights remain unapproved; no full 52/28/10/10 portfolio return is calculated.",
+    "ChinaBond CBA00201 endpoint fetch succeeded on 2026-11-12; raw monthly source contains 2002-01 to 2026-11 (299 rows). Main 2006-01 to 2026-10 matrix has 250 monthly levels and returns. Index identity and data-use/redistribution permission remain subject to direct ChinaBond verification."
   ],
   "matrix_policy": [
     "No forward-fill and no missing-as-zero.",
