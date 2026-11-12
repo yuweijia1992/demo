@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'scripts/run_investment_research.py'
+      - 'scripts/fetch_chinabond_cba00201.py'
       - '.github/workflows/run-investment-research.yml'
       - 'data/investment-monthly.csv'
   workflow_dispatch:
@@ -26,6 +27,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Fetch official ChinaBond composite wealth index (best effort)
+        run: python scripts/fetch_chinabond_cba00201.py
       - name: Run reproducible backtest and withdrawal simulations
         run: python scripts/run_investment_research.py
       - name: Commit research outputs
