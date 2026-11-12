@@ -4157,5 +4157,299 @@
       "status": "requires_reconciliation_before_time_series_join",
       "note": "报告版本间存在约6.23亿元差异；待追查会计政策、合并范围、追溯调整及比较数重分类。"
     }
+  },
+  "oneShotHistoricalReportAudit": {
+    "generatedAt": "2026-11-12",
+    "status": "historical_report_register_and_total_assets_reconciled_partially; full_line_item_annual_report_audit_not_complete",
+    "scope": "2021-2025四家非金融企业；招商银行另按银行监管口径",
+    "basis": "合并口径；金额均为人民币元；各报告版本原值单独保留，不对差异做静默覆盖",
+    "annualReportRegister": [
+      {
+        "company": "美的集团",
+        "code": "000333.SZ",
+        "reports": [
+          {
+            "year": 2021,
+            "url": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213264815.PDF",
+            "status": "official_annual_report"
+          },
+          {
+            "year": 2022,
+            "url": "https://static.cninfo.com.cn/finalpage/2023-04-29/1216695045.PDF",
+            "status": "official_annual_report"
+          },
+          {
+            "year": 2023,
+            "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9907818&stockid=000333",
+            "status": "annual_report_fulltext_mirror"
+          },
+          {
+            "year": 2024,
+            "url": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2025-03-29/0239dbe8-ee73-4c87-af3f-3e3ec40bcb0b.PDF",
+            "status": "official_annual_report"
+          },
+          {
+            "year": 2025,
+            "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12048854&stockid=000333",
+            "status": "annual_report_fulltext_mirror"
+          }
+        ]
+      },
+      {
+        "company": "海尔智家",
+        "code": "600690.SH",
+        "reports": [
+          {
+            "year": 2021,
+            "url": "https://static.cninfo.com.cn/finalpage/2022-03-31/1212758373.PDF",
+            "status": "official_annual_report"
+          },
+          {
+            "year": 2022,
+            "url": "https://static.cninfo.com.cn/finalpage/2023-03-31/1216294609.PDF",
+            "status": "official_annual_report"
+          },
+          {
+            "year": 2023,
+            "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9905878&stockid=600690",
+            "status": "annual_report_fulltext_mirror"
+          },
+          {
+            "year": 2024,
+            "url": "https://smart-home.haier.com/cn/gpxx/yjbg/P020250409506977469534.pdf",
+            "status": "issuer_annual_report"
+          },
+          {
+            "year": 2025,
+            "url": "https://pdf.dfcfw.com/pdf/H2_AN202603261820776754_1.pdf",
+            "status": "annual_report_fulltext_mirror"
+          }
+        ]
+      },
+      {
+        "company": "长江电力",
+        "code": "600900.SH",
+        "reports": [
+          {
+            "year": 2021,
+            "url": "https://www.cypc.com.cn/eportal/fileDir/cypcweb/cypc/accessory/20220129110749.pdf",
+            "status": "2021年业绩快报；not annual report; use only as non-audited cross-check"
+          },
+          {
+            "year": 2022,
+            "url": "https://money.finance.sina.com.cn/corp/go.php/vCB_Bulletin/stockid/600900/page_type/ndbg.phtml",
+            "status": "annual-report-index; exact document link not yet resolved"
+          },
+          {
+            "year": 2023,
+            "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/c/new/2024-04-30/600900_20240430_MEWP.pdf",
+            "status": "official_annual_report"
+          },
+          {
+            "year": 2024,
+            "url": "https://static.sse.com.cn/disclosure/bond/announcement/company/c/new/2025-04-30/185241_20250430_YVDL.pdf",
+            "status": "official_annual_report"
+          },
+          {
+            "year": 2025,
+            "url": "https://pdf.dfcfw.com/pdf/H2_AN202604291821763631_1.pdf",
+            "status": "annual_report_fulltext_mirror"
+          }
+        ]
+      },
+      {
+        "company": "格力电器",
+        "code": "000651.SZ",
+        "reports": [
+          {
+            "year": 2021,
+            "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8055310&stockid=000651",
+            "status": "annual_report_fulltext_mirror; exact issuer file pending"
+          },
+          {
+            "year": 2022,
+            "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9152221&stockid=000651",
+            "status": "annual_report_fulltext_mirror; exact issuer file pending"
+          },
+          {
+            "year": 2023,
+            "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=10176425&stockid=000651",
+            "status": "annual_report_fulltext_mirror"
+          },
+          {
+            "year": 2024,
+            "url": "https://static.cninfo.com.cn/finalpage/2025-04-28/1223330631.PDF",
+            "status": "official_annual_report"
+          },
+          {
+            "year": 2025,
+            "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12270401&stockid=000651",
+            "status": "annual_report_fulltext_mirror"
+          }
+        ]
+      }
+    ],
+    "totalAssetsAudit": [
+      {
+        "company": "美的集团",
+        "unit": "CNY",
+        "series": [
+          {
+            "year": 2021,
+            "value": 387946104000,
+            "sourceYear": 2021,
+            "status": "reported"
+          },
+          {
+            "year": 2022,
+            "value": 422555267000,
+            "sourceYear": 2023,
+            "status": "2023年报比较数"
+          },
+          {
+            "year": 2023,
+            "value": 486038184000,
+            "sourceYear": 2023,
+            "status": "2023年报"
+          },
+          {
+            "year": 2024,
+            "value": 604351853000,
+            "sourceYear": 2024,
+            "status": "2024年报"
+          },
+          {
+            "year": 2025,
+            "value": 608791766000,
+            "sourceYear": 2025,
+            "status": "2025年报"
+          }
+        ],
+        "note": "2024、2025年报的资产负债表原始金额单位为人民币千元；本序列统一换算为元，保留报告原单位于来源登记。"
+      },
+      {
+        "company": "海尔智家",
+        "unit": "CNY",
+        "series": [
+          {
+            "year": 2021,
+            "value": 217741133577.31,
+            "sourceYear": 2023,
+            "status": "2023年报披露"
+          },
+          {
+            "year": 2022,
+            "value": 236017821177.5,
+            "sourceYear": 2022,
+            "status": "2022年报/后续比较数"
+          },
+          {
+            "year": 2023,
+            "value": 253379859977.97,
+            "sourceYear": 2023,
+            "status": "2023年报"
+          },
+          {
+            "year": 2023,
+            "value": 261067684897.49,
+            "sourceYear": 2024,
+            "status": "2024年报比较数; unresolved difference vs 2023 report"
+          },
+          {
+            "year": 2024,
+            "value": 290113822824.61,
+            "sourceYear": 2024,
+            "status": "2024年报"
+          },
+          {
+            "year": 2024,
+            "value": 290736357978.75,
+            "sourceYear": 2025,
+            "status": "2025年报比较数; unresolved difference vs 2024 report"
+          },
+          {
+            "year": 2025,
+            "value": 295795068591.57,
+            "sourceYear": 2025,
+            "status": "2025年报"
+          }
+        ],
+        "note": "2023两版相差76.88亿元；2024两版相差6.23亿元。未取得附注级重述说明前，禁止拼成单一连续序列。"
+      },
+      {
+        "company": "长江电力",
+        "unit": "CNY",
+        "series": [
+          {
+            "year": 2023,
+            "value": 572938869543.08,
+            "sourceYear": 2024,
+            "status": "2024年报比较数"
+          },
+          {
+            "year": 2024,
+            "value": 566071979792.34,
+            "sourceYear": 2024,
+            "status": "2024年报"
+          },
+          {
+            "year": 2024,
+            "value": 566585128973.81,
+            "sourceYear": 2025,
+            "status": "2025年报比较数; same-control combination retrospective adjustment"
+          },
+          {
+            "year": 2025,
+            "value": 559208340046.84,
+            "sourceYear": 2025,
+            "status": "2025年报"
+          }
+        ],
+        "note": "2024两版差异5.13亿元；2025年报涉及同一控制下企业合并追溯调整。2021/2022正式年报总资产值尚未完成年报原表复核。"
+      },
+      {
+        "company": "格力电器",
+        "unit": "CNY",
+        "series": [
+          {
+            "year": 2021,
+            "value": 319598183780.38,
+            "sourceYear": 2023,
+            "status": "2023年报列示2021年末"
+          },
+          {
+            "year": 2022,
+            "value": 355024758878.82,
+            "sourceYear": 2023,
+            "status": "2023年报列示2022年末"
+          },
+          {
+            "year": 2023,
+            "value": 368053902576.37,
+            "sourceYear": 2023,
+            "status": "2023年报"
+          },
+          {
+            "year": 2024,
+            "value": 368031704522.86,
+            "sourceYear": 2024,
+            "status": "2024年报"
+          },
+          {
+            "year": 2025,
+            "value": null,
+            "sourceYear": 2025,
+            "status": "2025年报总资产值待从完整资产负债表字段核对"
+          }
+        ],
+        "note": "2023年报明确2022年末资产总额有2023年1月1日会计调整差异；应以对应年度报告表内数为准。"
+      }
+    ],
+    "auditBoundary": [
+      "本轮完成的是年报来源登记与资产总额跨报告版本差异登记，不等同于全部资产负债表科目逐项核验。",
+      "美的、海尔、长江电力、格力各年资产负债表详细字段仍需逐项记录原报告页码、附注号、金额单位、合并范围与重述标志。",
+      "ROIC/EVA计算必须等现金、金融资产、经营性无息负债、租赁负债、少数股东权益、商誉及NOPAT口径完成核验后执行。",
+      "招商银行不纳入非金融企业投入资本矩阵；应独立完成ROAE、RAROC、净息差、信用成本、资本充足率及RWA口径审计。"
+    ]
   }
 }
