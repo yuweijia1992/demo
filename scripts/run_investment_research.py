@@ -228,14 +228,14 @@ def allocation_sensitivity():
   item["ChinaBond_CBA00201"]=number(r.get("china_bond_wealth_return_cny_pct",""))
   parsed.append(item)
  equity_names=tuple(equity_fields)
- usable=[r for r in parsed if all(r[n] is not None for n in equity_names) and
-  all(r[n] is not None for n in (("ChinaBond_CBA00201","US_aggregate_bonds_AGG") if has_chinabond else ("US_aggregate_bonds_AGG",))) and
-  all(r[n] is not None for n in ("Gold_proxy","CNY_cash_H11025"))]
- if len(usable)<120: raise SystemExit(f"Only {len(usable)} complete HK proxy months; minimum 120 required.")
  base_mix=(0.08,0.02,0.25,0.11,0.06)
  mix_total=sum(base_mix)
  has_chinabond=sum(r["ChinaBond_CBA00201"] is not None for r in parsed)>=100
  bond_names=("ChinaBond_CBA00201","US_aggregate_bonds_AGG") if has_chinabond else ("US_aggregate_bonds_AGG",)
+ usable=[r for r in parsed if all(r[n] is not None for n in equity_names) and
+  all(r[n] is not None for n in bond_names) and
+  all(r[n] is not None for n in ("Gold_proxy","CNY_cash_H11025"))]
+ if len(usable)<120: raise SystemExit(f"Only {len(usable)} complete HK proxy months; minimum 120 required.")
  scenarios={}
  for eq in (0.52,0.45,0.42,0.38,0.35,0.30,0.25,0.20):
   w={n:eq*x/mix_total for n,x in zip(equity_names,base_mix)}
@@ -273,7 +273,7 @@ def allocation_sensitivity():
       res=bootstrap("annual",usable,w,block,spend,infl,crash)
       res["allocation"]=label
       res["equity_weight"]=sum(w[n] for n in equity_names)
-      res["bond_proxy_weight"]=w["US_aggregate_bonds_AGG"]
+      res["bond_proxy_weight"]=sum(w[n] for n in bond_names)
       boot.append(res)
  with (OUT/"equity_allocation_withdrawal_comparison.csv").open("w",encoding="utf-8-sig",newline="") as f:
   wri=csv.DictWriter(f,fieldnames=list(boot[0]));wri.writeheader();wri.writerows(boot)
