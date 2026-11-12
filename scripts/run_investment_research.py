@@ -222,7 +222,7 @@ def allocation_sensitivity():
  equity_mix=(0.20,0.12,0.10,0.10)
  mix_total=sum(equity_mix)
  scenarios={}
- for eq in (0.52,0.45,0.42):
+ for eq in (0.52,0.45,0.42,0.38,0.35,0.30,0.25,0.20):
   w={n:eq*x/mix_total for n,x in zip(equity_names,equity_mix)}
   w["US_aggregate_bonds_AGG"]=1-eq-0.10-0.10
   w["Gold_proxy"]=0.10
