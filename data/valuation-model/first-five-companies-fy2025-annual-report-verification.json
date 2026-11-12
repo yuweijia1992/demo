@@ -197,5 +197,88 @@
     "四家非金融企业逐项核对资产负债表经营资产、经营负债、超额现金、金融资产、计息债务、租赁负债、商誉和少数股东权益。",
     "从附注拆分分红与利息合并支付项目，避免把筹资现金流合并科目误记为现金股息。",
     "计算NOPAT、平均投入资本、ROIC、增量ROIC、EVA；招商银行改用ROAE、RAROC、核心一级资本和超额资本框架。"
+  ],
+  "derivedMetricsFY2025": {
+    "unit": "亿元人民币",
+    "formula": {
+      "simpleFcf": "经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金",
+      "fcfMargin": "简化FCF/营业收入",
+      "fcfToNetProfit": "简化FCF/归母净利润"
+    },
+    "companies": [
+      {
+        "name": "美的集团",
+        "revenue": 4564.51731,
+        "netProfitParent": 439.45411,
+        "operatingCashFlow": 533.4593,
+        "capex": 111.41889,
+        "simpleFcf": 422.04041,
+        "fcfMarginPct": 9.25,
+        "fcfToNetProfitPct": 96.04,
+        "revenueYoYPct": 12.11,
+        "netProfitYoYPct": 14.03,
+        "operatingCashFlowYoYPct": -11.84,
+        "acquisitionCashPaid": 61.55136,
+        "dividendProfitInterestCombinedPaid": 330.80135
+      },
+      {
+        "name": "海尔智家",
+        "revenue": 3023.467839183,
+        "netProfitParent": 195.5279822285,
+        "operatingCashFlow": 260.0294196992,
+        "capex": 88.5156394089,
+        "simpleFcf": 171.51378,
+        "fcfMarginPct": 5.67,
+        "fcfToNetProfitPct": 87.72,
+        "revenueYoYPct": 5.71,
+        "netProfitYoYPct": 4.39,
+        "operatingCashFlowYoYPct": -1.2,
+        "acquisitionCashPaid": 44.0933629158,
+        "dividendProfitInterestCombinedPaid": 138.7342869071
+      },
+      {
+        "name": "长江电力",
+        "revenue": 862.419402222,
+        "netProfitParent": 345.0280917639,
+        "operatingCashFlow": 605.6292557041,
+        "capex": 184.8846685929,
+        "simpleFcf": 420.744587,
+        "fcfMarginPct": 48.79,
+        "fcfToNetProfitPct": 121.95,
+        "revenueYoYPct": 2.07,
+        "netProfitYoYPct": 6.17,
+        "operatingCashFlowYoYPct": 1.53,
+        "acquisitionCashPaid": 16.2122697784,
+        "dividendProfitInterestCombinedPaid": 341.911206933
+      },
+      {
+        "name": "格力电器",
+        "revenue": 1704.4705853357,
+        "netProfitParent": 290.0310341166,
+        "operatingCashFlow": 463.8311475402,
+        "capex": 17.173110681,
+        "simpleFcf": 446.658037,
+        "fcfMarginPct": 26.21,
+        "fcfToNetProfitPct": 154,
+        "revenueYoYPct": -9.89,
+        "netProfitYoYPct": -9.89,
+        "operatingCashFlowYoYPct": 57.93,
+        "acquisitionCashPaid": 2.0944484548,
+        "dividendProfitInterestCombinedPaid": 181.7124107996
+      }
+    ]
+  },
+  "crossCompanyInterpretation": [
+    "美的：简化FCF约422.04亿元，约为归母净利润的96.0%；经营现金流同比下降11.84%，并购现金支出61.55亿元，营运资本变化需进一步分解。",
+    "海尔：简化FCF约171.51亿元，约为归母净利润的87.7%；并购现金支出44.09亿元，投资支付53.98亿元，金融投资与经营资本开支必须分开。",
+    "长江电力：简化FCF约420.74亿元，约为归母净利润的122.0%；资本开支184.88亿元，需进一步区分维持性检修、设备更新和扩张性工程。",
+    "格力：简化FCF约446.66亿元，约为归母净利润的154.0%，但经营现金流中存在金融业务、财务公司和其他经营现金项目影响；不能据此直接推断经营现金转化质量优于同行。投资支付及其他投资活动现金支出远高于固定资产资本开支。",
+    "招商银行：不计算工业企业简化FCF或FCF转化率；应以净利息收入、信用成本、资本充足率、ROAE、分红率和风险加权资产增量分析。"
+  ],
+  "importantCaveats": [
+    "现金流量表中的‘分配股利、利润或偿付利息支付的现金’是混合科目，不得直接视为现金分红。",
+    "简化FCF未扣除并购现金支出、租赁本金、股息，也未区分维持性与扩张性资本开支。",
+    "同一公司货币资金、现金及现金等价物、受限资金和金融业务存放款项可能差异显著，净现金/净债务必须按附注拆分。",
+    "本轮仅完成2025年年报部分科目的内容核验；尚未完成2021—2025五年资产负债表重建、ROIC、增量ROIC、EVA。"
   ]
 }
