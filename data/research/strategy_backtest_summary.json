@@ -27,7 +27,7 @@
     "annual": "rebalance each January",
     "threshold": "rebalance when any sleeve differs by more than 5 percentage points",
     "costs": "0/10/30 basis points per one-way RMB turnover; applied to half-L1 turnover",
-    "block_bootstrap": "circular 12/24/36-month blocks, 1,000 paths, 600 months",
+    "block_bootstrap": "circular 12/24/36-month blocks, 1,000 paths, 600 months; 2%/4% inflation and immediate 30% crash sensitivity for every spend and strategy",
     "limitations": [
       "CSI300 total-return series is an index proxy, not an investable fund",
       "AGG is a US aggregate bond ETF proxy, not Chinese government/bond wealth index",
