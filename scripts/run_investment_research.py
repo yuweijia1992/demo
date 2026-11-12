@@ -12,7 +12,7 @@ DATA=ROOT/"data"/"investment-monthly.csv"
 OUT=ROOT/"data"/"research"
 OUT.mkdir(parents=True,exist_ok=True)
 SEED=20261113
-N_PATHS=100
+N_PATHS=500
 CAPITAL=4_000_000
 SPENDS=(80_000,90_000,100_000)
 YEARS=50
@@ -164,7 +164,7 @@ def main():
    "methodology":{"buy_hold":"drift, no rebalance","annual":"rebalance each January",
     "threshold":"rebalance when any sleeve differs by more than 5 percentage points",
     "costs":"0/10/30 basis points per one-way RMB turnover; applied to half-L1 turnover",
-    "block_bootstrap":"circular 12/24/36-month blocks sampled from joint asset-return vectors; each synthetic path reruns its own buy-hold/annual/threshold rebalance rule, 1,000 paths, 600 months; 2%/4% inflation and immediate 30% crash sensitivity for every spend and strategy",
+    "block_bootstrap":"circular 12/24/36-month blocks sampled from joint asset-return vectors; each synthetic path reruns its own buy-hold/annual/threshold rebalance rule, 500 paths, 600 months; 2%/4% inflation and immediate 30% crash sensitivity for every spend and strategy",
     "limitations":["CSI300 total-return series is an index proxy, not an investable fund",
     "AGG is a US aggregate bond ETF proxy, not Chinese government/bond wealth index",
     "EEM includes China and Taiwan exposure; overlap with A-share sleeve must be reviewed",
