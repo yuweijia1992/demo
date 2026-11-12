@@ -16,5 +16,7 @@
     "china_bond_wealth_index_cny",
     "china_bond_wealth_return_cny_pct"
   ],
-  "limitation": "Verify index identity/code and permitted use with ChinaBond before redistribution or benchmark/product use."
+  "limitation": "Verify index identity/code and permitted use with ChinaBond before redistribution or benchmark/product use.",
+  "latest_month_is_partial": true,
+  "latest_month_note": "2026-11 is month-to-date through 2026-11-11, not a completed month-end; main research matrix intentionally ends at 2026-10."
 }
