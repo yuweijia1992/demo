@@ -191,15 +191,15 @@
     },
     {
       "field": "hang_seng_etf_2800_total_return_cny_pct",
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 225,
+      "start": "2008-02",
+      "end": "2026-10"
     },
     {
       "field": "hkd_per_usd",
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     {
       "field": "china_bond_wealth_index_cny",
