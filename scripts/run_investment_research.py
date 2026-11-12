@@ -120,7 +120,7 @@ def withdraw_path(returns,spend,inflation,crash=0.0):
  return {"survived":ruin is None and len(returns)>=YEARS*12,
   "ending_balance":bal,"depletion_month":ruin,
   "depletion_year":(ruin/12 if ruin else None)}
-def bootstrap(history,block,spend,inflation,crash=0.0):
+def bootstrap(strategy,history,block,spend,inflation,crash=0.0):
  rng=random.Random(SEED+block+spend+int(inflation*10000)+int(crash*100))
  finals=[];ruins=0;ruin_years=[]
  for _ in range(N_PATHS):
@@ -132,7 +132,7 @@ def bootstrap(history,block,spend,inflation,crash=0.0):
    if r["depletion_year"] is not None:ruin_years.append(r["depletion_year"])
  finals.sort()
  q=lambda p:finals[min(len(finals)-1,int((len(finals)-1)*p))]
- return {"block_months":block,"spend_first_year":spend,"inflation":inflation,"early_crash":crash,
+ return {"strategy":strategy,"block_months":block,"spend_first_year":spend,"inflation":inflation,"early_crash":crash,
   "paths":N_PATHS,"survival_rate":1-ruins/N_PATHS,"ending_balance_median":q(.5),
   "ending_balance_p10":q(.1),"ending_balance_p90":q(.9),
   "depletion_year_median":statistics.median(ruin_years) if ruin_years else None}
@@ -165,7 +165,7 @@ def main():
    "methodology":{"buy_hold":"drift, no rebalance","annual":"rebalance each January",
     "threshold":"rebalance when any sleeve differs by more than 5 percentage points",
     "costs":"0/10/30 basis points per one-way RMB turnover; applied to half-L1 turnover",
-    "block_bootstrap":"circular 12/24/36-month blocks, 1,000 paths, 600 months",
+    "block_bootstrap":"circular 12/24/36-month blocks, 1,000 paths, 600 months; 2%/4% inflation and immediate 30% crash sensitivity for every spend and strategy",
     "limitations":["CSI300 total-return series is an index proxy, not an investable fund",
     "AGG is a US aggregate bond ETF proxy, not Chinese government/bond wealth index",
     "EEM includes China and Taiwan exposure; overlap with A-share sleeve must be reviewed",
@@ -178,9 +178,8 @@ def main():
   for block in (12,24,36):
    for spend in SPENDS:
     for infl in (0.02,0.04):
-     boot.append(bootstrap(history,block,spend,infl,0.0))
-     if block==12 and spend==90_000 and infl==0.04:
-      boot.append(bootstrap(history,block,spend,infl,0.30))
+     boot.append(bootstrap(mode,history,block,spend,infl,0.0))
+     boot.append(bootstrap(mode,history,block,spend,infl,0.30))
  with (OUT/"withdrawal_bootstrap_results.csv").open("w",encoding="utf-8-sig",newline="") as f:
   w=csv.DictWriter(f,fieldnames=list(boot[0]));w.writeheader();w.writerows(boot)
  # Deterministic annual paths for 8/9/10w at low/base/high real-return assumptions.
