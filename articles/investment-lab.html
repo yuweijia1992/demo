@@ -160,28 +160,16 @@
 <section class="section container" id="data-audit">
 <div class="section-head"><span>02A</span><div><h2>全球资产数据底座与质量审计</h2><p>所有回测先过数据验收：总回报、币种、月份、分红和缺失值必须可追溯。</p></div></div>
 <div class="data-audit-grid">
-  <div class="data-audit-kpi"><small>月度矩阵</small><strong>250个月</strong><small>2006-01 — 2026-10</small></div>
+  <div class="data-audit-kpi"><small>月度矩阵</small><strong id="labMatrixMonths">读取中</strong><small id="labMatrixDates">从数据清单读取</small></div>
   <div class="data-audit-kpi"><small>已覆盖资产/指标列</small><strong>部分完成</strong><small>不可视为完整全球组合</small></div>
-  <div class="data-audit-kpi"><small>正式组合月收益</small><strong>0个月</strong><small>尚未达到组合回测条件</small></div>
-  <div class="data-audit-kpi"><small>数据版本</small><strong>V2.3</strong><small>清单生成：2026-11-08</small></div>
+  <div class="data-audit-kpi"><small>正式组合月收益</small><strong id="labPortfolioMonths">读取中</strong><small>只在真实人民币组合收益存在时更新</small></div>
+  <div class="data-audit-kpi"><small>数据版本</small><strong id="labDatasetVersion">V2.5</strong><small id="labManifestDate">读取数据清单时间</small></div>
 </div>
 <div class="alloc-box">
   <div class="eyebrow">COVERAGE AUDIT · VERIFIED FROM CURRENT MANIFEST</div>
   <table class="audit-table">
   <thead><tr><th>资产序列</th><th>覆盖月份</th><th>当前状态</th><th>用途与限制</th></tr></thead>
-  <tbody>
-  <tr><td>沪深300全收益</td><td>248 · 2006-01至2026-08</td><td><span class="audit-status">已接入</span></td><td>中国股票核心代理；2026-09为不完整源月份，不计算该月收益</td></tr>
-  <tr><td>标普500美元/人民币总回报</td><td>247 · 2006-01至2026-07</td><td><span class="audit-status">已接入</span></td><td>美元总回报已换算人民币；现有换算使用月均汇率，正式可投资回测仍需月末汇率复核</td></tr>
-  <tr><td>黄金人民币价格收益</td><td>250 · 2006-01至2026-10</td><td><span class="audit-status">已接入</span></td><td>世界银行月均金价与月均汇率构造的估值代理，不等同于日度实际持仓回报</td></tr>
-  <tr><td>美元兑人民币</td><td>250 · 2006-01至2026-10</td><td><span class="audit-status">已接入</span></td><td>当前主序列为月均汇率；需增加月末汇率供ETF总回报换算</td></tr>
-  <tr><td>AGG / IEF / SHY / FXI</td><td>各247 · 2006-01至2026-07</td><td><span class="audit-status">ETF代理已接入</span></td><td>Yahoo自动复权收益代理；不是中债财富指数或恒生全收益指数</td></tr>
-  <tr><td>EFA / EEM</td><td>0</td><td><span class="audit-status">待接入</span></td><td>补充美国以外发达市场和新兴市场；接入前审计中国股票重叠</td></tr>
-  <tr><td>恒生全收益指数</td><td>0</td><td><span class="audit-status">待接入</span></td><td>优先采用恒生股息累计指数；净股息指数另作税后口径对照</td></tr>
-  <tr><td>中债综合财富指数</td><td>0</td><td><span class="audit-status">待接入</span></td><td>人民币债券首选基准；不得用到期收益率或价格指数冒充总财富收益</td></tr>
-  <tr><td>511010 国债ETF</td><td>0（尚未入矩阵）</td><td><span class="audit-status">待导入</span></td><td>2013-03成立；需按复权/分红再投资口径重建历史总回报</td></tr>
-  <tr><td>人民币现金 H11025</td><td>0</td><td><span class="audit-status">待接入</span></td><td>基日2005-12-30、发布日期2016-08-31；早期部分属于回溯历史数据</td></tr>
-  <tr><td>52/28/10/10正式组合</td><td>0</td><td><span class="audit-status">未生成</span></td><td>股票、债券内部权重与共同样本未通过验收前，不展示收益、回撤或夏普</td></tr>
-  </tbody></table>
+  <tbody id="investmentCoverageRows"><tr><td colspan="4">正在读取数据覆盖清单…</td></tr></tbody></table>
   <p class="hub-note">审计口径：以上覆盖数字来自当前数据清单，不代表所有序列都已达到正式回测质量。缺失值保持空白，不前值填充、不把缺失收益记作0，也不把价格收益替代总回报。</p>
   <div class="lab-nav">
     <a href="../data/investment-monthly.csv">下载月度原始矩阵 CSV</a>
@@ -293,4 +281,48 @@
   if (document.getElementById("labRegime")) document.getElementById("labRegime").textContent = macroDate ? "需核验日期" : "待更新";
 })();
 </script>
+
+<script>
+(async function(){
+  const $ = id => document.getElementById(id);
+  const rows = [
+    ["沪深300全收益","csi300_total_return_pct","中国股票宽基总回报；2026年不完整月份不计入收益"],
+    ["标普500人民币总回报","sp500_total_return_cny_pct","美元总回报换算人民币；当前使用月均汇率口径"],
+    ["黄金人民币收益","gold_cny_return_pct","世界银行月均金价×月均汇率构造的估值代理"],
+    ["美元兑人民币","usd_cny","Federal Reserve G.5月均汇率；非月末可成交汇率"],
+    ["美国债券ETF AGG / IEF / SHY（人民币）","us_agg_etf_total_return_cny_pct","ETF自动复权总回报代理；具体期限另见原始矩阵"],
+    ["发达市场 EFA / 新兴市场 EEM（人民币）","efa_developed_markets_etf_total_return_cny_pct","ETF代理；EEM含中国与台湾敞口，须审计重复暴露"],
+    ["恒生官方总股息累计指数 HSIDV","hang_seng_total_return_pct","官方指数序列；与2800.HK ETF代理严格区分"],
+    ["香港盈富基金 2800.HK（人民币）","hang_seng_etf_2800_total_return_cny_pct","含分红调整ETF代理；需月均HKD/USD与USD/CNY汇率"],
+    ["中债综合财富指数 CBA00201","china_bond_wealth_return_cny_pct","中债官方财富指数；源数据使用与再分发须遵守授权条款"],
+    ["511010 国债ETF总回报","china_treasury_etf_511010_total_return_cny_pct","Yahoo自动复权ETF代理，2013年后；不是中债综合财富指数"],
+    ["人民币现金 H11025","cny_cash_return_pct","中证货币基金全收益指数；2016-08前为回溯历史"],
+    ["52/28/10/10组合收益","portfolio_return_cny_pct","内部子权重和共同样本验收前不生成正式组合回报"]
+  ];
+  const fmt = x => x && x.count ? x.count+"个月 · "+x.start+"至"+x.end : "0个月";
+  try {
+    const res = await fetch("../data/investment-monthly-manifest.json",{cache:"no-store"});
+    if(!res.ok) throw new Error("HTTP "+res.status);
+    const m = await res.json();
+    const cov = m.coverage || {};
+    const audit = m.coverage_audit || {};
+    $("labMatrixMonths").textContent = (m.row_count || "—")+"个月";
+    $("labMatrixDates").textContent = (m.date_start || "—")+" — "+(m.date_end || "—");
+    $("labPortfolioMonths").textContent = fmt(cov.portfolio_return_cny_pct);
+    $("labDatasetVersion").textContent = "V"+(m.dataset_version || "—");
+    $("labManifestDate").textContent = "清单生成："+(m.generated_at || "未知");
+    $("investmentCoverageRows").innerHTML = rows.map(([name,field,note])=>{
+      const v = audit[field] || cov[field] || {count:0,start:null,end:null};
+      const ok = Number(v.count)>0;
+      const status = field==="portfolio_return_cny_pct" ? (ok?"已生成，待核验":"未生成") : (ok?"有真实观测":"待补齐");
+      return "<tr><td>"+name+"</td><td>"+fmt(v)+"</td><td><span class='audit-status'>"+status+"</span></td><td>"+note+"</td></tr>";
+    }).join("");
+    const note = document.querySelector("#data-audit .hub-note");
+    if(note) note.textContent = "审计口径：本表由 "+(m.dataset_file || "数据清单")+" 的 manifest 自动生成，时间 "+(m.generated_at || "未知")+"。缺失值保持空白，不前值填充、不把缺失收益记作0；ETF代理不冒充官方指数。";
+  } catch(e) {
+    $("investmentCoverageRows").innerHTML = "<tr><td colspan='4'>数据清单读取失败："+String(e.message)+"。请直接查看下方 JSON 清单。</td></tr>";
+  }
+})();
+</script>
+
 </body></html>
