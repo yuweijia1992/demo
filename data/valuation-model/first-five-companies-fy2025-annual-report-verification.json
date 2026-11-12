@@ -4160,7 +4160,7 @@
   },
   "oneShotHistoricalReportAudit": {
     "generatedAt": "2026-11-12",
-    "status": "historical_report_register_and_total_assets_reconciled_partially; full_line_item_annual_report_audit_not_complete",
+    "status": "annual_report_source_register_complete_for_four_companies; total_assets_series_partially_reconciled; full_balance_sheet_line_item_audit_pending",
     "scope": "2021-2025四家非金融企业；招商银行另按银行监管口径",
     "basis": "合并口径；金额均为人民币元；各报告版本原值单独保留，不对差异做静默覆盖",
     "annualReportRegister": [
@@ -4232,13 +4232,13 @@
         "reports": [
           {
             "year": 2021,
-            "url": "https://www.cypc.com.cn/eportal/fileDir/cypcweb/cypc/accessory/20220129110749.pdf",
-            "status": "2021年业绩快报；not annual report; use only as non-audited cross-check"
+            "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8179151&stockid=600900",
+            "status": "2021年报全文镜像；审计报表已打开"
           },
           {
             "year": 2022,
-            "url": "https://money.finance.sina.com.cn/corp/go.php/vCB_Bulletin/stockid/600900/page_type/ndbg.phtml",
-            "status": "annual-report-index; exact document link not yet resolved"
+            "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9137305&stockid=600900",
+            "status": "2022年报全文镜像；审计报表已打开"
           },
           {
             "year": 2023,
@@ -4381,31 +4381,55 @@
         "unit": "CNY",
         "series": [
           {
+            "year": 2021,
+            "value": 328563281639.2,
+            "sourceYear": 2022,
+            "status": "2022年报披露的2021年末审计数"
+          },
+          {
+            "year": 2022,
+            "value": 327268285047.33,
+            "sourceYear": 2022,
+            "status": "2022年报原始审计数；收购前报告版本"
+          },
+          {
+            "year": 2022,
+            "value": 578453569418.28,
+            "sourceYear": 2023,
+            "status": "2023年报追溯重述比较数；同一控制下合并口径"
+          },
+          {
+            "year": 2023,
+            "value": 571942544909.29,
+            "sourceYear": 2023,
+            "status": "2023年报审计数"
+          },
+          {
             "year": 2023,
             "value": 572938869543.08,
             "sourceYear": 2024,
-            "status": "2024年报比较数"
+            "status": "2024年报比较数；与2023报告差异待查"
           },
           {
             "year": 2024,
             "value": 566071979792.34,
             "sourceYear": 2024,
-            "status": "2024年报"
+            "status": "2024年报审计数"
           },
           {
             "year": 2024,
             "value": 566585128973.81,
             "sourceYear": 2025,
-            "status": "2025年报比较数; same-control combination retrospective adjustment"
+            "status": "2025年报比较数；同一控制下合并追溯调整需核实"
           },
           {
             "year": 2025,
             "value": 559208340046.84,
             "sourceYear": 2025,
-            "status": "2025年报"
+            "status": "2025年报审计数"
           }
         ],
-        "note": "2024两版差异5.13亿元；2025年报涉及同一控制下企业合并追溯调整。2021/2022正式年报总资产值尚未完成年报原表复核。"
+        "note": "长江电力2022年报原始资产总额3272.68亿元，2023年报对2022比较数追溯为5784.54亿元，差异来自重大同一控制下收购/合并范围追溯，不能把原始数与追溯数混接。2023年报2023资产总额5719.43亿元，2024年报比较数5729.39亿元，仍有9.96亿元差异待查。2024年报与2025年报2024比较数相差5.13亿元。"
       },
       {
         "company": "格力电器",
@@ -4437,19 +4461,20 @@
           },
           {
             "year": 2025,
-            "value": null,
+            "value": 391371999819.49,
             "sourceYear": 2025,
-            "status": "2025年报总资产值待从完整资产负债表字段核对"
+            "status": "V2标准化底稿已取到；需以2025年报资产负债表页码复核"
           }
         ],
-        "note": "2023年报明确2022年末资产总额有2023年1月1日会计调整差异；应以对应年度报告表内数为准。"
+        "note": "2025年资产总额3913.72亿元来自V2标准化数据底稿，已补数但仍需对照2025年报原表完成逐项审计。2022年3550.71亿元与2023年报比较口径3550.25亿元存在小额差异，按报告版本分别保存。"
       }
     ],
     "auditBoundary": [
       "本轮完成的是年报来源登记与资产总额跨报告版本差异登记，不等同于全部资产负债表科目逐项核验。",
       "美的、海尔、长江电力、格力各年资产负债表详细字段仍需逐项记录原报告页码、附注号、金额单位、合并范围与重述标志。",
       "ROIC/EVA计算必须等现金、金融资产、经营性无息负债、租赁负债、少数股东权益、商誉及NOPAT口径完成核验后执行。",
-      "招商银行不纳入非金融企业投入资本矩阵；应独立完成ROAE、RAROC、净息差、信用成本、资本充足率及RWA口径审计。"
+      "招商银行不纳入非金融企业投入资本矩阵；应独立完成ROAE、RAROC、净息差、信用成本、资本充足率及RWA口径审计。",
+      "长江电力2022年报原始总资产3272.68亿元，而2023年报追溯比较数5784.54亿元；属于重大合并范围/同一控制下合并口径变更，不可直接拼接。"
     ]
   }
 }
