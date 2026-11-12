@@ -800,11 +800,18 @@
       "name": "阿里巴巴",
       "industry": "电商、云与数字平台",
       "primaryListing": "09988.HK",
-      "annual2025": null,
+      "annual2025": {
+        "title": "FY2025 Annual Report (fiscal year ended March 31, 2025)",
+        "announcementDate": "2025-06-26",
+        "announcementId": null,
+        "pdfUrl": "https://home.alibabagroup.com/en-US/ir-financial-reports-financial-results",
+        "detailUrl": "https://home.alibabagroup.com/en-US/ir-financial-reports-financial-results",
+        "sourceNote": "Alibaba official investor-relations financial reports page lists FY2025 Annual Report; this is a report-index page, not a direct PDF URL."
+      },
       "interim2026": null,
       "quarterly2026Q3": null,
       "status": "partial",
-      "verificationStatus": "official_FY2026_annual_report_pdf_link_resolved_content_not_crosschecked",
+      "verificationStatus": "official_ir_report_index_link_only_not_content_verified",
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
       "annualLatest": {
         "title": "Fiscal Year 2026 Annual Report",
