@@ -1954,7 +1954,12 @@
       },
       "capitalEfficiencyStatus": "ROIC_not_calculable_until_NCI_equity_operating_liabilities_excess_cash_and_nonoperating_investments_are_verified",
       "netDebtStatus": "not_final_until_cash_equivalents_restricted_cash_and_short_term_investment_classification_verified",
-      "capitalAllocationStatus": "cashflow_has_combined_dividend_interest_line; dividend_only_and_buyback_fields_missing_or_unverified; acquisition_paid_not_complete"
+      "capitalAllocationStatus": "cashflow_has_combined_dividend_interest_line; dividend_only_and_buyback_fields_missing_or_unverified; acquisition_paid_not_complete",
+      "annualReport2025": {
+        "title": "2025年年度报告",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038336.PDF",
+        "sourceType": "official_cninfo"
+      }
     },
     {
       "name": "美的集团",
@@ -3878,7 +3883,12 @@
       },
       "capitalEfficiencyStatus": "ROIC_not_calculable_until_NCI_equity_operating_liabilities_excess_cash_and_nonoperating_investments_are_verified",
       "netDebtStatus": "not_final_until_cash_equivalents_restricted_cash_and_short_term_investment_classification_verified",
-      "capitalAllocationStatus": "cashflow_has_combined_dividend_interest_line; dividend_only_and_buyback_fields_missing_or_unverified; acquisition_paid_not_complete"
+      "capitalAllocationStatus": "cashflow_has_combined_dividend_interest_line; dividend_only_and_buyback_fields_missing_or_unverified; acquisition_paid_not_complete",
+      "annualReport2025": {
+        "title": "2025年年度报告全文",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225058110.PDF",
+        "sourceType": "official_cninfo"
+      }
     },
     {
       "name": "格力电器",
@@ -5802,7 +5812,12 @@
       },
       "capitalEfficiencyStatus": "ROIC_not_calculable_until_NCI_equity_operating_liabilities_excess_cash_and_nonoperating_investments_are_verified",
       "netDebtStatus": "not_final_until_cash_equivalents_restricted_cash_and_short_term_investment_classification_verified",
-      "capitalAllocationStatus": "cashflow_has_combined_dividend_interest_line; dividend_only_and_buyback_fields_missing_or_unverified; acquisition_paid_not_complete"
+      "capitalAllocationStatus": "cashflow_has_combined_dividend_interest_line; dividend_only_and_buyback_fields_missing_or_unverified; acquisition_paid_not_complete",
+      "annualReport2025": {
+        "title": "2025年年度报告全文",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225250396.PDF",
+        "sourceType": "official_cninfo"
+      }
     },
     {
       "name": "长江电力",
@@ -7726,7 +7741,12 @@
       },
       "capitalEfficiencyStatus": "ROIC_not_calculable_until_NCI_equity_operating_liabilities_excess_cash_and_nonoperating_investments_are_verified",
       "netDebtStatus": "not_final_until_cash_equivalents_restricted_cash_and_short_term_investment_classification_verified",
-      "capitalAllocationStatus": "cashflow_has_combined_dividend_interest_line; dividend_only_and_buyback_fields_missing_or_unverified; acquisition_paid_not_complete"
+      "capitalAllocationStatus": "cashflow_has_combined_dividend_interest_line; dividend_only_and_buyback_fields_missing_or_unverified; acquisition_paid_not_complete",
+      "annualReport2025": {
+        "title": "2025年年度报告",
+        "url": "https://www.cypc.com.cn/cypc/attachDir/2026/05/2026051815345898336.pdf",
+        "sourceType": "company_official"
+      }
     },
     {
       "name": "招商银行",
@@ -9650,7 +9670,13 @@
       },
       "capitalEfficiencyStatus": "bank_specific_metrics_required",
       "netDebtStatus": "not_final_until_cash_equivalents_restricted_cash_and_short_term_investment_classification_verified",
-      "capitalAllocationStatus": "cashflow_has_combined_dividend_interest_line; dividend_only_and_buyback_fields_missing_or_unverified; acquisition_paid_not_complete"
+      "capitalAllocationStatus": "cashflow_has_combined_dividend_interest_line; dividend_only_and_buyback_fields_missing_or_unverified; acquisition_paid_not_complete",
+      "annualReport2025": {
+        "title": "2025年度报告",
+        "url": "https://www.chinamoney.com.cn/chinese/cwbg/20260401/3308334.html",
+        "sourceType": "official_report_host"
+      }
     }
-  ]
+  ],
+  "officialSourceStatus": "已为五家公司补充2025年度报告公开入口；本次尚未完成2021—2025每一年度每一字段逐项与年报原文勾稽。"
 }
