@@ -1,5 +1,5 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>50年财务自由模拟器 V2.2｜余暮投资实验室</title><link rel="stylesheet" href="../styles.css">
+<title>50年财务自由模拟器 V2.5｜余暮投资实验室</title><link rel="stylesheet" href="../styles.css">
 <style>
 .wrap{max-width:1120px;margin:auto}.hero{padding:60px 0 36px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .panel,.metric{border:1px solid var(--line);background:var(--surface);padding:22px;box-shadow:var(--shadow)}
@@ -14,7 +14,7 @@ th{font-size:11px;color:var(--muted);font-weight:500}.table-wrap{overflow:auto}.
 </style></head><body>
 <header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html">余暮<span> / Y.M.</span></a><nav><a href="investment-lab.html">实验室</a><a href="investment-dashboard.html">配置</a><a href="global-macro-model.html">宏观</a><a href="risk-monitor.html">风险</a></nav><button id="themeToggle" class="theme-btn">◐</button></div></header>
 <main class="container wrap">
-<section class="hero"><p class="eyebrow">INVESTMENT SYSTEM · 06 / V2.2 RMB MONTHLY DATA</p><h1>400万元 × 50年</h1><p class="lead">从40岁到90岁，逐月模拟支出、通胀、收益顺序和早期市场冲击。当前月度矩阵已接入沪深300全收益、S&P 500人民币总回报和黄金人民币价格回报；由于债券、现金和地区权重尚未齐备，完整人民币组合区块抽样仍保持关闭。</p></section>
+<section class="hero"><p class="eyebrow">INVESTMENT SYSTEM · 06 / V2.5 RMB MONTHLY DATA</p><h1>400万元 × 50年</h1><p class="lead">从40岁到90岁，逐月模拟支出、通胀、收益顺序和早期市场冲击。当前矩阵已接入沪深300、S&P 500、黄金、AGG、EFA、EEM和H11025等人民币代理序列。页面同时提供独立研究回测文件；研究组合采用明确标注的临时权重，不代表最终个人配置。</p></section>
 <section class="section"><div class="panel">
 <h2>模拟参数</h2>
 <div class="inputs">
@@ -46,16 +46,16 @@ th{font-size:11px;color:var(--muted);font-weight:500}.table-wrap{overflow:auto}.
 </section>
 <section class="section"><div class="section-head"><span>03</span><div><h2>历史区块抽样</h2><p>从真实人民币组合月收益中抽取连续12、24、36个月区块，保留收益的时间聚集性。</p></div></div>
 <div class="panel">
-<div id="bootstrapStatus" class="notice">检查共享数据层中 portfolio_return_cny_pct 字段…</div>
+<div id="bootstrapStatus" class="notice">正式组合收益字段尚未写入统一矩阵。请先查看研究版回测结果；其代理组合不等于个人最终组合。</div>
 <div class="table-wrap" style="margin-top:15px"><table><thead><tr><th>区块长度</th><th>样本数</th><th>50年存活率</th><th>末值中位数</th><th>末值第10百分位</th><th>耗尽年份中位数</th></tr></thead><tbody id="bootstrapRows"></tbody></table></div>
-<p class="muted">当前数据库只包含沪深300价格回报月度种子，不是完整人民币投资组合序列。因此不会把单一指数当作组合来抽样。完成全资产数据和汇率换算后，再启用正式区块抽样。</p>
+<p class="muted">研究版采用CSI300、S&P 500、EFA、EEM、AGG、黄金和现金的共同完整样本，并对12/24/36个月连续区块抽样。注意：这是临时代理组合，EEM含中国敞口，债券以美国AGG代理，不能视为中债完整组合。</p>
 </div></section>
-<section class="section"><div class="panel"><h2>模型边界</h2>
+<section class="section"><div class="panel"><h2>可复现研究结果</h2><p>研究引擎会自动生成逐列覆盖审计、策略对比、交易成本敏感性、12/24/36个月区块抽样和50年提款压力测试。</p><ul><li><a href="../data/research/research_manifest.json">研究结果清单</a></li><li><a href="../data/research/monthly_coverage_audit.csv">逐列缺失审计 CSV</a></li><li><a href="../data/research/strategy_backtest_summary.json">策略与交易成本结果 JSON</a></li><li><a href="../data/research/withdrawal_bootstrap_results.csv">50年区块抽样 CSV</a></li><li><a href="../data/research/deterministic_withdrawal_scenarios.csv">确定性压力情景 CSV</a></li></ul><p class="muted">以上研究版结果须以生成清单中的样本起止日期和限制说明为准；不将ETF代理或回溯指数历史冒充真实可投资历史。</p></div></section><section class="section"><div class="panel"><h2>模型边界</h2>
 <p>本模型先用确定性收益假设展示提款、通胀和早期回撤对财富的影响；它不包含税费、租金现金流变化、社保/养老金、医疗支出突增、遗产目标和资产类别内部的动态再平衡。</p>
 <p>正式历史抽样要求：每个月均有组合层面的人民币总回报，资产分红已计入，汇率换算完成，数据口径一致，至少10年有效月度样本。12/24/36个月区块抽样仍是历史情景，不等于未来概率。</p>
 <p>月度数据导入：<a href="global-macro-model.html">进入宏观模型与数据中心 →</a>。</p>
 </div></section>
-</main><footer class="footer container"><span>© 2026 余暮 · Investment Lab V2.3</span><span><a href="investment-lab.html">← 返回实验室</a></span></footer>
+</main><footer class="footer container"><span>© 2026 · Investment Lab V2.5</span><span><a href="investment-lab.html">← 返回实验室</a></span></footer>
 <script src="../assets/investment-data-core.js"></script><script src="../script.js"></script>
 <script>
 (async function(){
