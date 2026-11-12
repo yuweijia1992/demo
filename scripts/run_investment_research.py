@@ -225,17 +225,26 @@ def allocation_sensitivity():
   for name,field in equity_fields.items(): item[name]=number(r.get(field,""))
   for name,(field,_) in ASSETS.items():
    if name not in item: item[name]=number(r.get(field,""))
+  item["ChinaBond_CBA00201"]=number(r.get("china_bond_wealth_return_cny_pct",""))
   parsed.append(item)
  equity_names=tuple(equity_fields)
  usable=[r for r in parsed if all(r[n] is not None for n in equity_names) and
-  all(r[n] is not None for n in ("US_aggregate_bonds_AGG","Gold_proxy","CNY_cash_H11025"))]
+  all(r[n] is not None for n in (("ChinaBond_CBA00201","US_aggregate_bonds_AGG") if has_chinabond else ("US_aggregate_bonds_AGG",))) and
+  all(r[n] is not None for n in ("Gold_proxy","CNY_cash_H11025"))]
  if len(usable)<120: raise SystemExit(f"Only {len(usable)} complete HK proxy months; minimum 120 required.")
  base_mix=(0.08,0.02,0.25,0.11,0.06)
  mix_total=sum(base_mix)
+ has_chinabond=sum(r["ChinaBond_CBA00201"] is not None for r in parsed)>=100
+ bond_names=("ChinaBond_CBA00201","US_aggregate_bonds_AGG") if has_chinabond else ("US_aggregate_bonds_AGG",)
  scenarios={}
  for eq in (0.52,0.45,0.42,0.38,0.35,0.30,0.25,0.20):
   w={n:eq*x/mix_total for n,x in zip(equity_names,base_mix)}
-  w["US_aggregate_bonds_AGG"]=1-eq-0.10-0.10
+  bond_weight=1-eq-0.10-0.10
+  if has_chinabond:
+   w["ChinaBond_CBA00201"]=bond_weight*(23/28)
+   w["US_aggregate_bonds_AGG"]=bond_weight*(5/28)
+  else:
+   w["US_aggregate_bonds_AGG"]=bond_weight
   w["Gold_proxy"]=0.10
   w["CNY_cash_H11025"]=0.10
   scenarios[f"equity_{int(eq*100)}"]=w
@@ -245,7 +254,7 @@ def allocation_sensitivity():
    vals,turn=run_strategy(usable,w,mode,0.001)
    st=stats(vals)
    st.update({"allocation":label,"equity_weight":sum(w[n] for n in equity_names),
-    "bond_proxy_weight":w["US_aggregate_bonds_AGG"],"gold_weight":w["Gold_proxy"],
+    "bond_proxy_weight":sum(w[n] for n in bond_names),"china_bond_weight":w.get("ChinaBond_CBA00201",0.0),"offshore_bond_proxy_weight":w["US_aggregate_bonds_AGG"],"gold_weight":w["Gold_proxy"],
     "cash_weight":w["CNY_cash_H11025"],"strategy":mode,"one_way_cost":0.001,
     "average_annual_turnover":statistics.mean(turn)*12 if turn else 0,
     "worst_12m":rolling_worst(vals,12),"worst_36m":rolling_worst(vals,36),
@@ -271,11 +280,11 @@ def allocation_sensitivity():
  with (OUT/"equity_allocation_comparison_manifest.json").open("w",encoding="utf-8") as f:
   json.dump({"status":"PROVISIONAL_RESEARCH_PROXY","sample_start":usable[0]["date"],
    "sample_end":usable[-1]["date"],"common_months":len(usable),"paths_per_case":N_PATHS,
-   "allocations":scenarios,"equity_proxy_mix":dict(zip(equity_names,base_mix)),
+   "allocations":scenarios,"equity_proxy_mix":dict(zip(equity_names,base_mix)),"bond_proxy_mode":"ChinaBond CBA00201 23/28 + AGG 5/28" if has_chinabond else "AGG only; ChinaBond data unavailable",
    "method":"Same monthly asset-return rows, same 10bp one-way trading cost, same 12/24/36-month circular block bootstrap; equity sleeve uses the strategic regional mix (A 8, HK 2, US 25, developed ex-US 11, emerging 6 percentage points at 52% equity) scaled proportionally; bonds absorb the equity-weight difference; gold and cash fixed at 10% each.",
    "important_limitations":["This is not a fully investable portfolio backtest.",
    "The Hong Kong sleeve uses 2800.HK adjusted ETF total-return proxy converted to RMB, not the official Hang Seng gross total-return index .HSIDV/HSIRH; available sample starts 2008-02.",
-   "The bond sleeve is proxied entirely by US AGG ETF RMB total return, not the intended CNY government/policy-bank bond portfolio or ChinaBond CBA00201.",
+   "When CBA00201 is available, 23/28 of the bond sleeve uses ChinaBond Composite Wealth and 5/28 uses unhedged US AGG as a rough offshore-bond proxy; the latter is not the intended RMB-hedged foreign bond sleeve. If CBA00201 fetch fails, the entire bond sleeve falls back to AGG and the manifest records that fact.",
    "EEM includes China, so exposure overlaps the A-share and Hong Kong sleeves; no clean ex-China emerging-market proxy is included.",
    "Gold is a monthly-average spot valuation proxy; cash history includes backfilled index observations.",
    "No complete investable fund histories, taxes, personal tax status, rent growth or future contributions.",
