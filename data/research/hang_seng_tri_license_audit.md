@@ -48,7 +48,7 @@
 
 **路径B：直接向恒生指数公司询价**
 - 官方数据订阅/数据许可入口：https://www.hsi.com.hk/solutions/data-analytics/
-- 恒生官方使用指引所列直接联系号码：+852 2198 3200。
+- 恒生当前数据与分析页面公布的联系号码：+852 2877 0704；邮箱：info@hsi.com.hk。
 - 询价邮件主题建议：Historical HSI Gross Total Return Index Data (2006-01 to 2026-10) – Personal Research and Website Display Licence
 - 询价内容：确认Reuters .HSIDV / Bloomberg HSIRH是否为当前对应代码；报价日频/月底数据；确认HK$1,000 / 连续5年报价单位的适用性、最小订购区间、交付格式、历史修订、内部研究与公开再分发的分别许可费用。
 
@@ -90,3 +90,14 @@ Investment Research Project
 | 公开展示/再分发许可 | 未申请、未确认 | 不得默认允许 |
 
 **审计结论：**官方数据的获取路径已经明确为Index360订阅、恒生指数公司直接询价、HKEX Data Marketplace三条路径。当前阻塞点是确认目标Gross TRI的历史交付范围、价格和许可范围。拿到样例与书面许可后，再入库、做逐月缺失审计并替换2800.HK代理。
+
+
+## 7. 官方可用性与联系方式复核（2026-11-12）
+
+恒生《Notes on Data Availability》（生效日2025-11-07）第8页“Gross Total Return Index”部分，明确列示：
+- Hang Seng Index：Daily Close data available from 11 Oct 2004；
+- 同表标价：HK$1,000 / consecutive 5 years；
+- 因而2006-01至2026-10的目标区间在官方标注的数据可用起点之后，按连续5年计费需要至少覆盖四个连续5年区段及最后不足5年的区段，实际如何计价必须向恒生确认，不能自行推算最终报价。
+- Reuters .HSIDV / Bloomberg HSIRH仍是待恒生确认的vendor代码，不是该可用性文件中的官方产品代码。
+
+当前官方联系信息以恒生数据与分析页面为准：+852 2877 0704，info@hsi.com.hk；服务时间为香港时间周一至周五08:45–18:00（公众假期除外）。数据订阅页面将历史数据订阅与数据传播许可分列，采购时必须分别核对内部研究和公开展示许可。
