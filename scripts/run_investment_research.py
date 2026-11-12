@@ -73,9 +73,8 @@ def run_strategy(data,weights,mode,cost):
  names=list(weights); target=[weights[n] for n in names]
  current=target[:]; wealth=1; output=[]; turnovers=[]
  for i,row in enumerate(data):
-  if mode=="annual" and i>0 and row["date"][5:7]=="01":
-   pass
-  rebalance=(mode=="annual" and i>0 and i%12==0)
+  # Calendar-year rebalance: use January observations, not every 12th row.
+  rebalance=(mode=="annual" and i>0 and row["date"][5:7]=="01")
   if mode=="threshold" and i>0:
    drift=[x/sum(current) for x in current]
    rebalance=any(abs(d-t)>THRESHOLD for d,t in zip(drift,target))
@@ -111,11 +110,12 @@ def withdraw_path(returns,spend,inflation,crash=0.0):
  bal=CAPITAL;ruin=None
  for m,r in enumerate(returns):
   year=m//12
+  # Apply the explicitly immediate initial shock before the first withdrawal.
+  if m==0 and crash: bal*=1-crash
   monthly_spend=spend*((1+inflation)**year)/12
   bal-=monthly_spend
   if bal<=0:
    bal=0;ruin=m+1;break
-  if m==0 and crash: bal*=1-crash
   bal*=1+r
  return {"survived":ruin is None and len(returns)>=YEARS*12,
   "ending_balance":bal,"depletion_month":ruin,
