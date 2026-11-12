@@ -1,0 +1,180 @@
+{
+  "schema": "yumu-investment-decision-card-v1",
+  "version": "1.0.0",
+  "asOf": "2026-11-12",
+  "universePolicy": "严格沿用估值引擎现有49家主证券名单；首批六家公司名单与49家主表不一致时先审计差异，不擅自新增、删除或替换公司。",
+  "statusPolicy": {
+    "verified": "原始来源已核验且计算可复算",
+    "partial": "存在可用数据但关键字段缺失或口径未完成",
+    "pending": "尚无足够证据或计算输入",
+    "conflict": "与主证券清单或其他来源存在冲突"
+  },
+  "scoreModel": {
+    "status": "provisional_not_calibrated",
+    "weights": {
+      "businessModelAndMoat": 20,
+      "financialQualityAndCapitalEfficiency": 20,
+      "fiveYearOutlook": 15,
+      "managementAndCapitalAllocation": 10,
+      "valuationAndMarginOfSafety": 25,
+      "riskAndUncertainty": 10
+    },
+    "gates": [
+      "重大财务造假证据",
+      "偿债或持续经营重大风险",
+      "核心业务竞争力实质丧失"
+    ],
+    "rule": "缺失数据不记零分；评分未完成校准前只作研究组织工具，不生成自动买入评级。"
+  },
+  "commonSections": [
+    "企业质量与商业模式",
+    "护城河与竞争格局",
+    "财务质量与资本效率（ROIC、EVA、增量ROIC、FCF）",
+    "管理层与资本配置",
+    "2026—2030悲观/基准/乐观经营预测",
+    "行业适配估值与反向DCF",
+    "买入区间、仓位与停止买入条件",
+    "持有、减仓、退出条件与反证清单"
+  ],
+  "valuationRules": {
+    "industrialEnterprise": "EV/FCFF或股权DCF；明确净债务、少数股东权益、非经营资产和完全稀释股数",
+    "bank": "PB-ROE/剩余收益模型；不套用工业企业净债务公式",
+    "insurance": "EV/NBV + VNB；检查NBV是否已包含未来新业务价值",
+    "utility": "股息折现与现金流DCF；拆分维持性/扩张性资本开支",
+    "cyclical": "跨周期正常化盈利与资产负债表压力测试"
+  },
+  "firstBatch": [
+    {
+      "name": "贵州茅台",
+      "code": null,
+      "market": "A股",
+      "currency": "CNY",
+      "model": "quality",
+      "status": "conflict",
+      "note": "当前估值引擎49家公司主证券JSON未找到贵州茅台记录；需与原始49家名单核对，不擅自插入或替换。",
+      "focus": [
+        "品牌与渠道价格体系",
+        "销量、产品结构与提价能力",
+        "正常化利润与自由现金流",
+        "渠道库存及批价变化"
+      ]
+    },
+    {
+      "name": "美的集团",
+      "code": "000333.SZ",
+      "market": "A股",
+      "currency": "CNY",
+      "model": "quality",
+      "status": "partial",
+      "note": "现有主表有记录；历史行情快照与关键估值字段仍需更新/核验。",
+      "focus": [
+        "全球业务利润率与市场份额",
+        "ROIC及商誉/并购回报",
+        "营运资本与自由现金流",
+        "回购、分红及资本配置"
+      ]
+    },
+    {
+      "name": "海尔智家",
+      "code": "600690.SH",
+      "market": "A股",
+      "currency": "CNY",
+      "model": "quality",
+      "status": "partial",
+      "note": "现有主表有记录；历史行情快照与关键估值字段仍需更新/核验。",
+      "focus": [
+        "海外业务盈利与品牌组合",
+        "并购整合及投后回报",
+        "ROIC与营运资本",
+        "高端化和全球化增长质量"
+      ]
+    },
+    {
+      "name": "长江电力",
+      "code": "600900.SH",
+      "market": "A股",
+      "currency": "CNY",
+      "model": "utility",
+      "status": "partial",
+      "note": "现有主表有记录；需拆分来水周期、维护性资本开支与债务。",
+      "focus": [
+        "来水与发电量周期",
+        "电价与资产利用率",
+        "维护性/扩张性资本开支",
+        "净债务、股息与自由现金流"
+      ]
+    },
+    {
+      "name": "招商银行",
+      "code": "600036.SH",
+      "market": "A股",
+      "currency": "CNY",
+      "model": "bank",
+      "status": "partial",
+      "note": "现有主表有A股及H股代码；本卡默认A股主证券，H股独立币种与每股口径。",
+      "focus": [
+        "净息差与负债成本",
+        "不良生成率、拨备与资产质量",
+        "可持续ROE与资本充足率",
+        "PB-ROE及股息可持续性"
+      ]
+    },
+    {
+      "name": "格力电器",
+      "code": "000651.SZ",
+      "market": "A股",
+      "currency": "CNY",
+      "model": "quality",
+      "status": "partial",
+      "note": "现有主表有记录；需补齐估值、分红/回购与渠道库存历史。",
+      "focus": [
+        "空调主业竞争力与渠道库存",
+        "产品结构及多元化业务",
+        "现金流、资本开支与ROIC",
+        "分红回购和治理质量"
+      ]
+    }
+  ],
+  "dataContract": {
+    "eachMetric": [
+      "value",
+      "unit",
+      "currency",
+      "period",
+      "sourceUrl",
+      "publishedAt",
+      "verifiedAt",
+      "calculationMethod",
+      "status",
+      "notes"
+    ],
+    "valuationInputs": [
+      "price",
+      "priceDate",
+      "tradingCurrency",
+      "financialPeriod",
+      "basicShares",
+      "dilutedShares",
+      "enterpriseValue",
+      "netDebt",
+      "minorityInterest",
+      "nonOperatingAssets"
+    ],
+    "forecastScenarios": [
+      "bear",
+      "base",
+      "bull"
+    ],
+    "priceDecision": [
+      "intrinsicValueLow",
+      "intrinsicValueBase",
+      "intrinsicValueHigh",
+      "buyStart",
+      "addLevel1",
+      "addLevel2",
+      "stopBuyingConditions",
+      "trimConditions",
+      "exitConditions"
+    ]
+  }
+}
