@@ -78,5 +78,49 @@
     "monthly_matrix": "../investment-monthly.csv",
     "manifest": "../investment-monthly-manifest.json",
     "coverage_audit": "../research/monthly_coverage_audit.csv"
-  }
+  },
+  "data_gaps": [
+    {
+      "series": "china_bond_wealth_return_cny_pct",
+      "status": "NOT_LOADED",
+      "priority": "P0",
+      "note": "中债综合财富指数CBA00201；正式债券历史回测前必须补齐，并核实再分发许可。"
+    },
+    {
+      "series": "hang_seng_total_return_cny_pct",
+      "status": "NOT_LOADED",
+      "priority": "P0",
+      "note": "官方恒生全收益指数HSIDV；2800.HK仅为ETF代理，不能替代官方指数。"
+    },
+    {
+      "series": "hkd_per_usd",
+      "status": "SOURCE_VERIFIED_REFRESH_PENDING",
+      "priority": "P1",
+      "note": "FRED/Federal Reserve G.5 EXHKUS为月均HKD per USD序列，已验证存在；尚未成功写入矩阵。"
+    },
+    {
+      "series": "hang_seng_etf_2800_total_return_cny_pct",
+      "status": "NOT_LOADED",
+      "priority": "P1",
+      "note": "已有2800.HK港币总回报代理，但人民币转换依赖EXHKUS。"
+    },
+    {
+      "series": "china_treasury_etf_511010_total_return_cny_pct",
+      "status": "PARTIAL_PROXY",
+      "priority": "P2",
+      "note": "仅2013年后，不能代替完整中债财富指数。"
+    },
+    {
+      "series": "portfolio_return_cny_pct",
+      "status": "DISABLED",
+      "priority": "P0",
+      "note": "正式内部权重及成分数据未获批准，禁止自动计算正式组合收益。"
+    }
+  ],
+  "data_acceptance_rules": [
+    "基准指数层与可投资产品层分离；历史指数回测不等于基金实际业绩。",
+    "正式产品必须有交易代码、交易场所、费用、规模、价差、跟踪误差、分红与税务信息。",
+    "正式组合回测仅使用成分资产同月完整的人民币总回报序列。",
+    "正式组合收益必须由已批准的权重版本计算，并保存版本号和计算时间。"
+  ]
 }
