@@ -285,6 +285,40 @@
         "roicStatus": "not_calculable_missing_invested_capital",
         "netDebtStatus": "not_calculable_incomplete_debt_cash_components",
         "dividendStatus": "not_separately_identified"
+      },
+      "annualReportVerification": {
+        "status": "partial_content_verified",
+        "reportDate": "2026-03-27",
+        "auditor": "和信会计师事务所（特殊普通合伙）",
+        "reportUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038336.PDF",
+        "reportMirror": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12024960&stockid=600690",
+        "currency": "CNY",
+        "sourceUnit": "人民币元",
+        "verifiedYears": [
+          2024,
+          2025
+        ],
+        "verifiedFigures": {
+          "2024": {
+            "revenue": 286015294936.52,
+            "netProfitParent": 18731046273.17,
+            "operatingCashFlow": 26318091311.95
+          },
+          "2025": {
+            "revenue": 302346783918.3,
+            "netProfitParent": 19552798222.85,
+            "operatingCashFlow": 26002941969.92
+          }
+        },
+        "payout": {
+          "status": "board_proposal",
+          "detail": "2025年末拟每10股派8.867元；加上已派发中期股息，全年现金分红拟占归母净利润55.0%"
+        },
+        "notes": [
+          "报告披露2025年收入同比增长5.71%，归母净利润同比增长4.39%，经营现金流同比下降1.20%。",
+          "2025年报告附有2024年比较数据；2021—2023年仍需追溯核验。",
+          "并购现金流、租赁负债、现金及非经营性金融资产仍需按附注拆分。"
+        ]
       }
     },
     {
@@ -532,6 +566,46 @@
         "roicStatus": "not_calculable_missing_invested_capital",
         "netDebtStatus": "not_calculable_incomplete_debt_cash_components",
         "dividendStatus": "not_separately_identified"
+      },
+      "annualReportVerification": {
+        "status": "partial_content_verified",
+        "reportDate": "2026-03-31",
+        "auditor": "普华永道中天会计师事务所（特殊普通合伙）及罗兵咸永道会计师事务所",
+        "reportUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225058110.PDF",
+        "reportMirror": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12048854&stockid=000333",
+        "currency": "CNY",
+        "sourceUnit": "主要财务指标摘要表以千元列示；本底稿换算为元（×1,000）；附注需按其原表单位分别核对",
+        "verifiedYears": [
+          2023,
+          2024,
+          2025
+        ],
+        "verifiedFigures": {
+          "2023": {
+            "revenue": 372037280000,
+            "netProfitParent": 33719935000,
+            "operatingCashFlow": 57902611000
+          },
+          "2024": {
+            "revenue": 407149600000,
+            "netProfitParent": 38537237000,
+            "operatingCashFlow": 60511572000
+          },
+          "2025": {
+            "revenue": 456451731000,
+            "netProfitParent": 43945411000,
+            "operatingCashFlow": 53345930000
+          }
+        },
+        "payout": {
+          "status": "board_proposal",
+          "detail": "2025年度拟每10股派43元，其中中期已派5元、年末拟派38元，年末方案待股东会及实施核验"
+        },
+        "notes": [
+          "2025报告列示海外收入1,959.48亿元、同比增长15.92%；ToB商业及工业解决方案收入1,227.53亿元、同比增长17.47%。",
+          "现金流补充资料显示2025年经营性应收项目增加约81.12亿元、经营性应付项目增加约113.17亿元，营运资本对经营现金流影响显著。",
+          "尚未逐项核验2021—2022年；投入资本及平均投入资本未重建。"
+        ]
       }
     },
     {
@@ -779,6 +853,41 @@
         "roicStatus": "not_calculable_missing_invested_capital",
         "netDebtStatus": "not_calculable_incomplete_debt_cash_components",
         "dividendStatus": "not_separately_identified"
+      },
+      "annualReportVerification": {
+        "status": "partial_content_verified",
+        "reportDate": "2026-04-29",
+        "auditor": "中审众环会计师事务所（特殊普通合伙）",
+        "reportUrl": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225250396.PDF",
+        "reportMirror": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12270401&stockid=000651",
+        "currency": "CNY",
+        "sourceUnit": "人民币元",
+        "verifiedYears": [
+          2024,
+          2025
+        ],
+        "verifiedFigures": {
+          "2024": {
+            "revenue": 189163654064.64,
+            "netProfitParent": 32184570372.28,
+            "operatingCashFlow": 29369250570.66
+          },
+          "2025": {
+            "revenue": 170447058533.57,
+            "netProfitParent": 29003103411.66,
+            "operatingCashFlow": 46383114754.02
+          }
+        },
+        "payout": {
+          "status": "board_proposal",
+          "detail": "2025年度拟每10股派20元；以扣除回购专户股份后的享有利润分配权股份数为基数，方案待实施核验"
+        },
+        "notes": [
+          "2025年营业收入1704.47亿元，同比下降9.89%；归母净利润290.03亿元，同比下降9.89%；经营现金流463.83亿元，同比增长57.93%。",
+          "资产负债表显示货币资金1,105.53亿元、交易性金融资产313.36亿元、短期借款679.57亿元、长期借款31.35亿元、租赁负债6.53亿元；须识别财务公司/金融业务及受限资金后再计算净现金或净债务。",
+          "格力2025年财务费用为负40.86亿元，利息收入高于利息费用；不能简单把利润表利息收入全部计入经营NOPAT。",
+          "2021—2023年仍需逐份年报核验。"
+        ]
       }
     },
     {
@@ -1026,6 +1135,46 @@
         "roicStatus": "not_calculable_missing_invested_capital",
         "netDebtStatus": "not_calculable_incomplete_debt_cash_components",
         "dividendStatus": "not_separately_identified"
+      },
+      "annualReportVerification": {
+        "status": "partial_content_verified",
+        "reportDate": "2026-04-30",
+        "auditor": "信永中和会计师事务所（特殊普通合伙）",
+        "reportUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225262036.PDF",
+        "reportMirror": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12283277&stockid=600900",
+        "currency": "CNY",
+        "sourceUnit": "人民币元",
+        "verifiedYears": [
+          2023,
+          2024,
+          2025
+        ],
+        "verifiedFigures": {
+          "2023": {
+            "revenue": 78143535736.1,
+            "netProfitParent": 27244616815.27,
+            "operatingCashFlow": 64749448288.66
+          },
+          "2024": {
+            "revenue": 84491870566.52,
+            "netProfitParent": 32496172808.65,
+            "operatingCashFlow": 59648468284.22
+          },
+          "2025": {
+            "revenue": 86241940222.2,
+            "netProfitParent": 34502809176.39,
+            "operatingCashFlow": 60562925570.41
+          }
+        },
+        "payout": {
+          "status": "board_proposal",
+          "detail": "以2025年末总股本24,468,217,716股为基数，拟每10股派10元，现金股利约244.68亿元"
+        },
+        "notes": [
+          "2025年归母净利润345.03亿元、经营现金流605.63亿元，数据与本底稿一致。",
+          "2025年购建固定资产等长期资产支付现金约184.88亿元，简化FCF约420.74亿元；仍需区分维持性与扩张性资本开支。",
+          "集团债务规模较大且并表结构复杂，不能只用短期借款和长期借款两栏代表全部有息负债；2021—2022年待核验。"
+        ]
       }
     },
     {
@@ -1273,7 +1422,62 @@
         "roicStatus": "not_calculable_missing_invested_capital",
         "netDebtStatus": "not_calculable_incomplete_debt_cash_components",
         "dividendStatus": "not_separately_identified"
+      },
+      "annualReportVerification": {
+        "status": "partial_content_verified",
+        "reportDate": "2026-03-28",
+        "auditor": "安永华明会计师事务所（特殊普通合伙）及安永会计师事务所",
+        "reportUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12032896&stockid=600036",
+        "officialSummary": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0327/2026032703380_c.pdf",
+        "currency": "CNY",
+        "sourceUnit": "人民币元；部分摘要按亿元列示",
+        "verifiedYears": [
+          2024,
+          2025
+        ],
+        "verifiedFigures": {
+          "2024": {
+            "revenue": 337488000000,
+            "netProfitParent": 148391000000
+          },
+          "2025": {
+            "revenue": 337532000000,
+            "netProfitParent": 150181000000,
+            "roePct": 13.44
+          }
+        },
+        "payout": {
+          "status": "board_proposal",
+          "detail": "2025年度全年每股现金股息拟为2.016元（含中期）；年末拟派1.003元/股，尚需股东会批准"
+        },
+        "bankMetrics": {
+          "2025": {
+            "roaePct": 13.44,
+            "nplRatioPct": 0.94,
+            "provisionCoveragePct": 391.79,
+            "loanBalanceYi": 72580.58,
+            "customerDepositsYi": 98361.3
+          }
+        },
+        "notes": [
+          "2025年营业收入同比增长0.01%，归母净利润同比增长1.21%；平均净资产收益率（ROAE）13.44%。",
+          "不计算工业企业ROIC、FCF；改用净息差、信用成本、不良率、拨备覆盖率、核心一级资本充足率、ROAE及资本分配分析。",
+          "数据库中的roePct=12.02与年报ROAE=13.44口径不一致，必须追溯其分母/平均口径后再保留；不得混用。",
+          "银行现金流量表中的经营现金流不代表普通制造业经营现金流，现金余额和有息负债也不按制造业净债务口径处理。"
+        ]
       }
     }
-  ]
+  ],
+  "updatedAtUtc": "2026-11-12",
+  "verificationPolicy": {
+    "statusDefinitions": {
+      "partial_content_verified": "指定年度报告的公开披露内容已核对部分关键财务数据；不代表2021—2025五年全序列全部字段完成审计。",
+      "link_only": "仅确认官方报告链接存在，尚未对内容逐项核对。",
+      "pending": "尚未完成原文核对。"
+    },
+    "scopeNote": "本轮优先核验各公司最新2025年度报告及其可比年度；五年全序列的资产负债表项目、现金流项目和资本配置项目仍须逐年逐项核验。",
+    "unitPolicy": "统一以人民币元存储；原报告若以千元或亿元列示，须记录原始单位和换算因子。不得将原始单位空缺视为默认人民币元。",
+    "cagrPolicy": "2021—2025 CAGR必须在2021和2025同口径、同币种、同单位并确认追溯调整后计算；FCF端点出现负值时不计算普通CAGR。",
+    "roicPolicy": "NOPAT须剔除非经营收益并统一税率口径；投入资本必须以经营性资产减无息经营负债构建，并单列现金、金融投资、租赁负债、商誉及少数股东权益。"
+  }
 }
