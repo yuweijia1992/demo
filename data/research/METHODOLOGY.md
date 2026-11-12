@@ -28,7 +28,7 @@
 | 511010国债ETF | [Yahoo Finance 511010.SS](https://finance.yahoo.com/quote/511010.SS/history/) | 自动复权日收盘价取月末；2013年后代理，不等于中债财富指数 |
 | 2800.HK盈富基金 | [Yahoo Finance 2800.HK](https://finance.yahoo.com/quote/2800.HK/history/) | 自动复权ETF总回报代理；不等于恒生官方HSIDV总股息累计指数 |
 | 中债综合财富指数CBA00201 | [中国债券信息网](https://www.chinabond.com.cn/) | 公开接口当前返回HTTP 405，未落库；数据授权和再分发权限仍需确认 |
-| 港元兑美元 | [FRED EXHKUS](https://fred.stlouisfed.org/series/EXHKUS) | G.5月均 HKD per USD；当前抓取超时，未落库 |
+| 港元兑美元 | [FRED EXHKUS](https://fred.stlouisfed.org/data/EXHKUS) | 美联储G.5月均 HKD per USD；2006-01至2026-10共250个月，原始序列存于 `data/sources/fred-exhkus-monthly.csv` |
 
 ## 3. 指数水平到月收益
 
@@ -49,7 +49,7 @@
 `Gold_CNY,t = Gold_USD_oz,t × USD/CNY_t`
 `r_Gold_CNY,t = Gold_CNY,t ÷ Gold_CNY,(t-1) - 1`
 
-港元资产人民币收益（待EXHKUS序列可用）：
+港元资产人民币收益（本轮已用于2800.HK代理）：
 `r_CNY,t = (1 + r_HKD,t) × (USD/CNY_t ÷ USD/CNY_(t-1)) × (HKD/USD_(t-1) ÷ HKD/USD_t) - 1`
 
 注意 EXHKUS 单位为 HKD per USD，不能误用倒数方向。
@@ -74,10 +74,16 @@
 
 ## 7. 当前不可验收为正式投资决策的缺口
 
-1. CBA00201中债综合财富指数尚未成功落库。
+1. CBA00201中债综合财富指数尚未成功落库；官方查询入口可选择财富/全价/净价，历史数据下载权限与可再分发范围需核实。
 2. 官方恒生HSIDV完整历史序列尚未落库；2800.HK只是ETF代理。
-3. EXHKUS港元月均汇率未落库，2800.HK人民币收益因此缺失。
+3. 恒生官方HSIDV完整历史序列仍未落库；目前已补齐EXHKUS月均汇率，并将2800.HK自动复权ETF港元总回报代理换算为人民币收益（2008-02起）。ETF代理不等于恒生官方全收益指数。
 4. H11025发布前回溯历史不能当成当时真实可投资业绩。
 5. 511010仅2013年后；不适合单独支撑2006年以来的完整中国债券回测。
 6. 股票52%和债券28%的内部地区/工具权重仍须最终确认；EEM与A股存在地域重叠。
 7. 本研究尚未纳入租金增长、税费、养老金、医疗支出冲击及个人新增收入/现金流。
+
+## 8. 2026-11-12 数据补齐记录
+
+- 新增 FRED EXHKUS 月均港元/美元汇率 250 个月（2006-01至2026-10）。该序列单位为 HKD per USD。
+- 使用 `r_CNY = (1+r_HKD) × (USD/CNY_t ÷ USD/CNY_(t-1)) × (HKD/USD_(t-1) ÷ HKD/USD_t) - 1` 将 2800.HK 自动复权ETF月收益转换为人民币口径。该序列从2008-02开始有收益观察；不得冒充恒生官方全收益指数。
+- 官方HSI TRI仍待数据授权/历史文件；中债CBA00201财富指数仍待官方历史下载或授权数据源。
