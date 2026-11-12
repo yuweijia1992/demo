@@ -1,6 +1,6 @@
 {
-  "dataset_version": "2.5.0",
-  "generated_at": "2026-11-09T09:23:24Z",
+  "dataset_version": "2.6.0",
+  "generated_at": "2026-11-12T09:00:00Z",
   "dataset_file": "data/investment-monthly.csv",
   "frequency": "monthly",
   "row_count": 250,
@@ -40,14 +40,14 @@
       "end": null
     },
     "hang_seng_etf_2800_total_return_cny_pct": {
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 225,
+      "start": "2008-02",
+      "end": "2026-10"
     },
     "hkd_per_usd": {
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     "china_bond_wealth_return_cny_pct": {
       "count": 0,
@@ -1001,5 +1001,17 @@
     "chinabond_aggregate_wealth": "HTTPError: HTTP Error 405: ",
     "fred_macro_only": "TimeoutError: The read operation timed out"
   },
-  "portfolio_return_ready": false
+  "portfolio_return_ready": false,
+  "source_additions": {
+    "hkd_per_usd": {
+      "source": "Federal Reserve Board G.5 via FRED EXHKUS",
+      "frequency": "monthly average",
+      "start": "2006-01",
+      "end": "2026-10",
+      "observations": 250,
+      "raw_file": "data/sources/fred-exhkus-monthly.csv",
+      "units": "HKD per USD",
+      "note": "Converted Hang Seng ETF 2800.HK HKD total-return proxy to CNY using monthly USD/CNY and HKD/USD cross rates; not the official Hang Seng TRI."
+    }
+  }
 }
