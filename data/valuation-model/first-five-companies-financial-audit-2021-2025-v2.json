@@ -9964,5 +9964,111 @@
     "annualReportYear": 2025,
     "status": "partial",
     "note": "2025年报已经核验各公司部分关键指标。2021—2025全序列尚未全部核验；特别是资产负债表投入资本构成、分红拆分、债务和非经营资产仍未完成。招商银行不套用工业企业FCF/ROIC。"
-  }
+  },
+  "reportVersionReconciliation": [
+    {
+      "company": "长江电力",
+      "code": "600900.SH",
+      "period": "2022-12-31",
+      "field": "合并资产总计",
+      "currency": "CNY",
+      "unit": "元",
+      "reportVersions": [
+        {
+          "reportYear": 2022,
+          "value": 327268285047.33,
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9137305&stockid=600900",
+          "basis": "2022年报原始审计报表"
+        },
+        {
+          "reportYear": 2023,
+          "value": 578453569418.28,
+          "sourceUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/c/new/2024-04-30/600900_20240430_MEWP.pdf",
+          "basis": "2023年报追溯重述的2022年比较数"
+        }
+      ],
+      "difference": 251185284370.95,
+      "differencePctOfOriginal": 76.751,
+      "cause": "2022年度收购云川公司等重大同一控制下合并/合并范围变更，2023年报对比较期追溯重述；需以购买资产交割及合并附注为最终口径依据。",
+      "requiredTreatment": "ROIC历史序列应优先使用2023年报追溯后的2022期初/期末口径，同时单独保留原始法定报告版本；2022年不能与2021原始合并范围数据直接计算增长。"
+    },
+    {
+      "company": "海尔智家",
+      "code": "600690.SH",
+      "period": "2023-12-31",
+      "field": "合并资产总计",
+      "currency": "CNY",
+      "unit": "元",
+      "reportVersions": [
+        {
+          "reportYear": 2023,
+          "value": 253379859977.97,
+          "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9905878&stockid=600690",
+          "basis": "2023年报"
+        },
+        {
+          "reportYear": 2024,
+          "value": 261067684897.49,
+          "sourceUrl": "https://smart-home.haier.com/cn/gpxx/yjbg/P020250409506977469534.pdf",
+          "basis": "2024年报2023比较数"
+        }
+      ],
+      "difference": 7687824919.52,
+      "differencePctOfOriginal": 3.033,
+      "cause": "可能涉及会计政策、合并范围或比较数重分类；尚未从附注中确定。",
+      "requiredTreatment": "在取得重述说明前，两版本分开保存，不生成单一2023资产总额序列。"
+    },
+    {
+      "company": "海尔智家",
+      "code": "600690.SH",
+      "period": "2024-12-31",
+      "field": "合并资产总计",
+      "currency": "CNY",
+      "unit": "元",
+      "reportVersions": [
+        {
+          "reportYear": 2024,
+          "value": 290113822824.61,
+          "sourceUrl": "https://smart-home.haier.com/cn/gpxx/yjbg/P020250409506977469534.pdf",
+          "basis": "2024年报"
+        },
+        {
+          "reportYear": 2025,
+          "value": 290736357978.75,
+          "sourceUrl": "https://pdf.dfcfw.com/pdf/H2_AN202603261820776754_1.pdf",
+          "basis": "2025年报2024比较数"
+        }
+      ],
+      "difference": 622535154.14,
+      "differencePctOfOriginal": 0.2146,
+      "cause": "会计政策、合并范围或比较数重分类尚待附注核对。",
+      "requiredTreatment": "不静默覆盖；ROIC敏感性测试应保留两种资产口径，等待核实。"
+    },
+    {
+      "company": "长江电力",
+      "code": "600900.SH",
+      "period": "2023-12-31",
+      "field": "合并资产总计",
+      "currency": "CNY",
+      "unit": "元",
+      "reportVersions": [
+        {
+          "reportYear": 2023,
+          "value": 571942544909.29,
+          "sourceUrl": "https://www.sse.com.cn/disclosure/listedinfo/announcement/c/new/2024-04-30/600900_20240430_MEWP.pdf",
+          "basis": "2023年报"
+        },
+        {
+          "reportYear": 2024,
+          "value": 572938869543.08,
+          "sourceUrl": "https://static.sse.com.cn/disclosure/bond/announcement/company/c/new/2025-04-30/185241_20250430_YVDL.pdf",
+          "basis": "2024年报2023比较数"
+        }
+      ],
+      "difference": 996324633.79,
+      "differencePctOfOriginal": 0.1742,
+      "cause": "待核查比较数追溯调整和合并范围变化。",
+      "requiredTreatment": "单独保留两版，不把差异误作经营资产增长。"
+    }
+  ]
 }
