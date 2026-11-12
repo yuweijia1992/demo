@@ -1,0 +1,1279 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAtUtc": "2026-11-12",
+  "title": "首批五家A股公司2021—2025标准化财务与资本配置审计底稿",
+  "scope": {
+    "companies": 5,
+    "years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "excludedFromThisFile": [
+      {
+        "name": "贵州茅台",
+        "reason": "当前49家公司主表及本轮49家公司标准化财务文件中未找到该公司；不擅自扩充母集或伪造历史数据"
+      }
+    ]
+  },
+  "sourceFiles": [
+    "data/financial-standardized/company-financials-2021-2025.json",
+    "data/valuation-model/valuation-model-49.json",
+    "data/raw-financials/coverage_audit.json"
+  ],
+  "evidenceLimitations": [
+    "源文件记录的sourceStatus=retrieved仅代表数据抓取成功；sourceVerification=pending，不能视为已与年报原文逐项核对。",
+    "source financial file reportedUnits为空且reportedUnit为null；币种字段多为CNY，但金额单位尚未核验，故本底稿保留原始数值，不自行换算成亿元。",
+    "投入资本、平均投入资本、ROIC在所选公司历史序列中均为空；净债务字段因债务分项或现金等价物识别不完整而为空。",
+    "现金分红单列字段dividendsPaidOnly为空；现金流量表中的股利与利息合并项目不得直接当作现金股息。",
+    "招商银行为银行，经营现金流与资本开支不适用工业企业FCF逻辑；不计算工业ROIC。",
+    "历史财务模型中的预测字段如存在，只是机械外推，不代表公司指引或独立研究预测。"
+  ],
+  "methodology": {
+    "revenueCagr": "(2025收入/2021收入)^(1/4)-1，仅在两端均为正且口径可比时计算。",
+    "netProfitCagr": "(2025归母净利润/2021归母净利润)^(1/4)-1，仅在两端均为正时计算；不替代利润质量分析。",
+    "freeCashFlow": "经营活动现金流净额-购建固定资产、无形资产和其他长期资产支付的现金；简化FCF，不等于股权自由现金流。",
+    "roic": "NOPAT/平均投入资本。投入资本需要完整识别经营性资产、无息经营负债、现金及金融投资、计息债务和租赁负债；任一关键项缺失则留空。",
+    "incrementalRoic": "ΔNOPAT/Δ平均投入资本；需先完成投入资本可比序列。",
+    "bankMetrics": "招商银行改用ROE、核心一级资本充足率、风险成本、净息差、分红和超额资本等银行专属指标。"
+  },
+  "companies": [
+    {
+      "name": "海尔智家",
+      "code": "600690.SH",
+      "industry": "家电与全球品牌",
+      "financialInstitution": false,
+      "currency": "CNY",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": [],
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563094&stockid=600690",
+        "capex": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563095&stockid=600690",
+        "fcf": null,
+        "bvps": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12563095&stockid=600690",
+        "market": "https://cn.investing.com/equities/qingdao-haier-historical-data"
+      },
+      "officialReports": {
+        "code": "600690.SH",
+        "name": "海尔智家",
+        "industry": "家电与全球品牌",
+        "primaryListing": "600690.SH",
+        "annual2025": {
+          "title": "海尔智家股份有限公司2025年年度报告",
+          "announcementDate": "2026-03-27",
+          "announcementId": "1225038336",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038336.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600690&announcementId=1225038336&orgId=gssh0600690&announcementTime=2026-03-27"
+        },
+        "interim2026": {
+          "title": "海尔智家股份有限公司2026年半年度报告",
+          "announcementDate": "2026-08-28",
+          "announcementId": "1225522691",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-28/1225522691.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600690&announcementId=1225522691&orgId=gssh0600690&announcementTime=2026-08-28"
+        },
+        "quarterly2026Q3": {
+          "title": "海尔智家股份有限公司2026年第三季度报告",
+          "announcementDate": "2026-10-30",
+          "announcementId": "1225641263",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225641263.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600690&announcementId=1225641263&orgId=gssh0600690&announcementTime=2026-10-30"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600690"
+      },
+      "annual": [
+        {
+          "year": 2021,
+          "revenue": 227105817641.68997,
+          "netProfitParent": 13078840517.1,
+          "operatingProfit": 15897695146.67,
+          "nopat": 13199200062.587294,
+          "operatingCashFlow": 23235380690.95,
+          "capex": 7372428832.38,
+          "freeCashFlow": 15862951858.57,
+          "cashAndCashEquivalents": 45197664411.15,
+          "shortBorrowings": 11226212134.39,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 3038573824.53,
+          "bondsPayable": 334730048.82,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 1960894981.47,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": null,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 4036372354.42,
+          "acquisitionsPaid": null,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 4
+        },
+        {
+          "year": 2022,
+          "revenue": 243578924958.47,
+          "netProfitParent": 14712054763.24,
+          "operatingProfit": 17845247433.18,
+          "nopat": 14778124204.846436,
+          "operatingCashFlow": 20256557145.86,
+          "capex": 8209786230.64,
+          "freeCashFlow": 12046770915.220001,
+          "cashAndCashEquivalents": 53392209857.41,
+          "shortBorrowings": 9672223522.36,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 13590866873.43,
+          "bondsPayable": null,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 2824477670.61,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 16.964564696471687,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 5153227150.11,
+          "acquisitionsPaid": 40026037.55,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 3
+        },
+        {
+          "year": 2023,
+          "revenue": 274204520847.96997,
+          "netProfitParent": 16596615045.87,
+          "operatingProfit": 20380991449.18,
+          "nopat": 17231660127.662457,
+          "operatingCashFlow": 26535780568.36,
+          "capex": 10541562038.81,
+          "freeCashFlow": 15994218529.550001,
+          "cashAndCashEquivalents": 56683006209.32,
+          "shortBorrowings": 10895076014.86,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 18365302925.77,
+          "bondsPayable": null,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 3429765203.81,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 17.046171828583226,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 7256095863.08,
+          "acquisitionsPaid": 156312111.87,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 3
+        },
+        {
+          "year": 2024,
+          "revenue": 286015294936.52,
+          "netProfitParent": 18731046273.17,
+          "operatingProfit": 22901640821.04,
+          "nopat": 19719600765.40629,
+          "operatingCashFlow": 26318091311.95,
+          "capex": 10080067313.04,
+          "freeCashFlow": 16238023998.91,
+          "cashAndCashEquivalents": 54994595280.18,
+          "shortBorrowings": 13784367443.93,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 9665074313.67,
+          "bondsPayable": null,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 4480895997.36,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 17.58413351418575,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 10091640214.86,
+          "acquisitionsPaid": 4409336291.58,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 3
+        },
+        {
+          "year": 2025,
+          "revenue": 302346783918.30005,
+          "netProfitParent": 19552798222.85,
+          "operatingProfit": 23725492973.35,
+          "nopat": 20374996990.01099,
+          "operatingCashFlow": 26002941969.92,
+          "capex": 8851563940.89,
+          "freeCashFlow": 17151378029.029999,
+          "cashAndCashEquivalents": 46267687864.46,
+          "shortBorrowings": 17420784420.86,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 11165886169.09,
+          "bondsPayable": 3500000000,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 4551410567.84,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 16.967224315213723,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 13873428690.71,
+          "acquisitionsPaid": null,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 4
+        }
+      ],
+      "derivedAudit": {
+        "revenueCagr2021to2025": 0.0742,
+        "netProfitCagr2021to2025": 0.1058,
+        "fcfCagr2021to2025": 0.0197,
+        "fcfToNetProfitByYear": [
+          {
+            "year": 2021,
+            "ratio": 1.2129
+          },
+          {
+            "year": 2022,
+            "ratio": 0.8188
+          },
+          {
+            "year": 2023,
+            "ratio": 0.9637
+          },
+          {
+            "year": 2024,
+            "ratio": 0.8669
+          },
+          {
+            "year": 2025,
+            "ratio": 0.8772
+          }
+        ],
+        "roePctByYear": [
+          {
+            "year": 2021,
+            "value": null
+          },
+          {
+            "year": 2022,
+            "value": 16.964564696471687
+          },
+          {
+            "year": 2023,
+            "value": 17.046171828583226
+          },
+          {
+            "year": 2024,
+            "value": 17.58413351418575
+          },
+          {
+            "year": 2025,
+            "value": 16.967224315213723
+          }
+        ],
+        "roicStatus": "not_calculable_missing_invested_capital",
+        "netDebtStatus": "not_calculable_incomplete_debt_cash_components",
+        "dividendStatus": "not_separately_identified"
+      }
+    },
+    {
+      "name": "美的集团",
+      "code": "000333.SZ",
+      "industry": "家电、工业技术与自动化",
+      "financialInstitution": false,
+      "currency": "CNY",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": [],
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12572219&stockid=000333",
+        "capex": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-29/df25443f-d67a-4cc5-8bd6-6c3e681a9575.PDF",
+        "fcf": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-08-29/df25443f-d67a-4cc5-8bd6-6c3e681a9575.PDF",
+        "bvps": "https://www.stcn.com/quotes/index.html?stock_code=sz000333",
+        "market": "https://cn.investing.com/equities/midea-group-a-historical-data"
+      },
+      "officialReports": {
+        "code": "000333.SZ",
+        "name": "美的集团",
+        "industry": "家电、工业技术与自动化",
+        "primaryListing": "000333.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225065145",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000333&announcementId=1225065145&orgId=9900005965&announcementTime=2026-03-31"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225531404",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531404.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000333&announcementId=1225531404&orgId=9900005965&announcementTime=2026-08-29"
+        },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-30",
+          "announcementId": "1225645132",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225645132.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000333&announcementId=1225645132&orgId=9900005965&announcementTime=2026-10-30"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "9900005965"
+      },
+      "annual": [
+        {
+          "year": 2021,
+          "revenue": 341233208000,
+          "netProfitParent": 28573650000,
+          "operatingProfit": 33281195000,
+          "nopat": 28639879187.35481,
+          "operatingCashFlow": 35091704000,
+          "capex": 6825357000,
+          "freeCashFlow": 28266347000,
+          "cashAndCashEquivalents": 40550039000,
+          "shortBorrowings": 5381623000,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 19734020000,
+          "bondsPayable": null,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 1533552000,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": null,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 12894125000,
+          "acquisitionsPaid": 2028912000,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 3
+        },
+        {
+          "year": 2022,
+          "revenue": 343917531000,
+          "netProfitParent": 29553507000,
+          "operatingProfit": 34763272000,
+          "nopat": 29645932435.20912,
+          "operatingCashFlow": 34657828000,
+          "capex": 7352115000,
+          "freeCashFlow": 27305713000,
+          "cashAndCashEquivalents": 51131968000,
+          "shortBorrowings": 5169480000,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 50685948000,
+          "bondsPayable": 3163616000,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 1507480000,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 22.07105019145391,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 13740037000,
+          "acquisitionsPaid": 962148000,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 4
+        },
+        {
+          "year": 2023,
+          "revenue": 372037280000,
+          "netProfitParent": 33719935000,
+          "operatingProfit": 40317441000,
+          "nopat": 33779098053.26239,
+          "operatingCashFlow": 57902611000,
+          "capex": 6314051000,
+          "freeCashFlow": 51588560000,
+          "cashAndCashEquivalents": 59887260000,
+          "shortBorrowings": 8819176000,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 46138736000,
+          "bondsPayable": 3217969000,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 2047319000,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 22.05257331185959,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 19643828000,
+          "acquisitionsPaid": 712000,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 4
+        },
+        {
+          "year": 2024,
+          "revenue": 407149600000,
+          "netProfitParent": 38537237000,
+          "operatingProfit": 46393752000,
+          "nopat": 38511509026.56288,
+          "operatingCashFlow": 60511572000,
+          "capex": 7839636000,
+          "freeCashFlow": 52671936000,
+          "cashAndCashEquivalents": 55118728000,
+          "shortBorrowings": 31008549000,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 10491757000,
+          "bondsPayable": 3266775000,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 1825258000,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 20.302584353948074,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 22821861000,
+          "acquisitionsPaid": null,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 4
+        },
+        {
+          "year": 2025,
+          "revenue": 456451731000,
+          "netProfitParent": 43945411000,
+          "operatingProfit": 52978773000,
+          "nopat": 44430820722.01188,
+          "operatingCashFlow": 53345930000,
+          "capex": 11141889000,
+          "freeCashFlow": 42204041000,
+          "cashAndCashEquivalents": 68508670000,
+          "shortBorrowings": 43904550000,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 12658843000,
+          "bondsPayable": 3194774000,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 1901053000,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 19.976487015079858,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 33080135000,
+          "acquisitionsPaid": 6155136000,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 4
+        }
+      ],
+      "derivedAudit": {
+        "revenueCagr2021to2025": 0.0754,
+        "netProfitCagr2021to2025": 0.1136,
+        "fcfCagr2021to2025": 0.1054,
+        "fcfToNetProfitByYear": [
+          {
+            "year": 2021,
+            "ratio": 0.9892
+          },
+          {
+            "year": 2022,
+            "ratio": 0.9239
+          },
+          {
+            "year": 2023,
+            "ratio": 1.5299
+          },
+          {
+            "year": 2024,
+            "ratio": 1.3668
+          },
+          {
+            "year": 2025,
+            "ratio": 0.9604
+          }
+        ],
+        "roePctByYear": [
+          {
+            "year": 2021,
+            "value": null
+          },
+          {
+            "year": 2022,
+            "value": 22.07105019145391
+          },
+          {
+            "year": 2023,
+            "value": 22.05257331185959
+          },
+          {
+            "year": 2024,
+            "value": 20.302584353948074
+          },
+          {
+            "year": 2025,
+            "value": 19.976487015079858
+          }
+        ],
+        "roicStatus": "not_calculable_missing_invested_capital",
+        "netDebtStatus": "not_calculable_incomplete_debt_cash_components",
+        "dividendStatus": "not_separately_identified"
+      }
+    },
+    {
+      "name": "格力电器",
+      "code": "000651.SZ",
+      "industry": "空调与家电",
+      "financialInstitution": false,
+      "currency": "CNY",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": [],
+      "sourceLinks": {
+        "financial": "https://4g.stockstar.com/detail/SN2026082700006450",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12553937&stockid=000651",
+        "market": "https://cn.investing.com/equities/gree-electric-a-historical-data"
+      },
+      "officialReports": {
+        "code": "000651.SZ",
+        "name": "格力电器",
+        "industry": "空调与家电",
+        "primaryListing": "000651.SZ",
+        "annual2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-29",
+          "announcementId": "1225250396",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225250396.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000651&announcementId=1225250396&orgId=gssz0000651&announcementTime=2026-04-29"
+        },
+        "interim2026": {
+          "title": "2026年半年度报告",
+          "announcementDate": "2026-08-27",
+          "announcementId": "1225515004",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-27/1225515004.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000651&announcementId=1225515004&orgId=gssz0000651&announcementTime=2026-08-27"
+        },
+        "quarterly2026Q3": {
+          "title": "2026年三季度报告",
+          "announcementDate": "2026-10-27",
+          "announcementId": "1225627217",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225627217.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000651&announcementId=1225627217&orgId=gssz0000651&announcementTime=2026-10-27"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssz0000651"
+      },
+      "annual": [
+        {
+          "year": 2021,
+          "revenue": 187868874892.71002,
+          "netProfitParent": 23063732372.62,
+          "operatingProfit": 26677365292,
+          "nopat": 22724671479.898342,
+          "operatingCashFlow": 1894363258.72,
+          "capex": 5727074800.44,
+          "freeCashFlow": -3832711541.7199993,
+          "cashAndCashEquivalents": 29951743758,
+          "shortBorrowings": 27617920548.11,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 8960864258.3,
+          "bondsPayable": null,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 3313452.52,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": null,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 17546695095,
+          "acquisitionsPaid": 1747336403.99,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 3
+        },
+        {
+          "year": 2022,
+          "revenue": 188988382706.68,
+          "netProfitParent": 24506623782.46,
+          "operatingProfit": 27284097086.18,
+          "nopat": 23067747215.406837,
+          "operatingCashFlow": 28668435921.27,
+          "capex": 6036136315.75,
+          "freeCashFlow": 22632299605.52,
+          "cashAndCashEquivalents": 31754656695.61,
+          "shortBorrowings": 52895851287.92,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 30784241211.21,
+          "bondsPayable": null,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 146836620.66,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 24.456440451580065,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 18469103441.58,
+          "acquisitionsPaid": 2031361368.42,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 3
+        },
+        {
+          "year": 2023,
+          "revenue": 203979266387.09,
+          "netProfitParent": 29017387604.18,
+          "operatingProfit": 32864780357.76,
+          "nopat": 27760477248.294743,
+          "operatingCashFlow": 56398426354.17,
+          "capex": 5425734302.92,
+          "freeCashFlow": 50972692051.25,
+          "cashAndCashEquivalents": 30914196186.41,
+          "shortBorrowings": 26443476388.52,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 39035742535.09,
+          "bondsPayable": null,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 767007951.92,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 27.175888142601963,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 13811350664.09,
+          "acquisitionsPaid": 239342398.39,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 3
+        },
+        {
+          "year": 2024,
+          "revenue": 189163654064.64,
+          "netProfitParent": 32184570372.28,
+          "operatingProfit": 36988437925.6,
+          "nopat": 32452174264.20571,
+          "operatingCashFlow": 29369250570.66,
+          "capex": 3299787341.22,
+          "freeCashFlow": 26069463229.44,
+          "cashAndCashEquivalents": 21140958080.12,
+          "shortBorrowings": 39009527273.22,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 18229817922.13,
+          "bondsPayable": null,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 711291189.69,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 25.32118524317134,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 15133493514.47,
+          "acquisitionsPaid": 209444845.48,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 3
+        },
+        {
+          "year": 2025,
+          "revenue": 170447058533.56998,
+          "netProfitParent": 29003103411.66,
+          "operatingProfit": 34681293552.28,
+          "nopat": 28893266599.15019,
+          "operatingCashFlow": 46383114754.02,
+          "capex": 1717311068.1,
+          "freeCashFlow": 44665803685.92,
+          "cashAndCashEquivalents": 27566460949.51,
+          "shortBorrowings": 67956629538.51,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 3134980571.73,
+          "bondsPayable": null,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 652797306.31,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 20.471849450803003,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 18171241079.96,
+          "acquisitionsPaid": null,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 3
+        }
+      ],
+      "derivedAudit": {
+        "revenueCagr2021to2025": -0.024,
+        "netProfitCagr2021to2025": 0.059,
+        "fcfCagr2021to2025": null,
+        "fcfToNetProfitByYear": [
+          {
+            "year": 2021,
+            "ratio": -0.1662
+          },
+          {
+            "year": 2022,
+            "ratio": 0.9235
+          },
+          {
+            "year": 2023,
+            "ratio": 1.7566
+          },
+          {
+            "year": 2024,
+            "ratio": 0.81
+          },
+          {
+            "year": 2025,
+            "ratio": 1.54
+          }
+        ],
+        "roePctByYear": [
+          {
+            "year": 2021,
+            "value": null
+          },
+          {
+            "year": 2022,
+            "value": 24.456440451580065
+          },
+          {
+            "year": 2023,
+            "value": 27.175888142601963
+          },
+          {
+            "year": 2024,
+            "value": 25.32118524317134
+          },
+          {
+            "year": 2025,
+            "value": 20.471849450803003
+          }
+        ],
+        "roicStatus": "not_calculable_missing_invested_capital",
+        "netDebtStatus": "not_calculable_incomplete_debt_cash_components",
+        "dividendStatus": "not_separately_identified"
+      }
+    },
+    {
+      "name": "长江电力",
+      "code": "600900.SH",
+      "industry": "大型水电运营",
+      "financialInstitution": false,
+      "currency": "CNY",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": [],
+      "sourceLinks": {
+        "financial": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+        "capex": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12574728&stockid=600900",
+        "market": "https://cn.investing.com/equities/yangtze-power-historical-data"
+      },
+      "officialReports": {
+        "code": "600900.SH",
+        "name": "长江电力",
+        "industry": "大型水电运营",
+        "primaryListing": "600900.SH",
+        "annual2025": {
+          "title": "长江电力2025年年度报告",
+          "announcementDate": "2026-04-30",
+          "announcementId": "1225262036",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225262036.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600900&announcementId=1225262036&orgId=gssh0600900&announcementTime=2026-04-30"
+        },
+        "interim2026": {
+          "title": "长江电力2026年半年度报告",
+          "announcementDate": "2026-08-31",
+          "announcementId": "1225534923",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-31/1225534923.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600900&announcementId=1225534923&orgId=gssh0600900&announcementTime=2026-08-31"
+        },
+        "quarterly2026Q3": {
+          "title": "长江电力2026年第三季度报告",
+          "announcementDate": "2026-10-31",
+          "announcementId": "1225648852",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225648852.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600900&announcementId=1225648852&orgId=gssh0600900&announcementTime=2026-10-31"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600900"
+      },
+      "annual": [
+        {
+          "year": 2021,
+          "revenue": 55646253991.83,
+          "netProfitParent": 26272998503.24,
+          "operatingProfit": 32876174031.58,
+          "nopat": 26866944823.10008,
+          "operatingCashFlow": 35732461733.26,
+          "capex": 3473877431.53,
+          "freeCashFlow": 32258584301.730003,
+          "cashAndCashEquivalents": 9924779599.67,
+          "shortBorrowings": 12315812640,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 36439373166.26,
+          "bondsPayable": 33978897510.99,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 639176461.52,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": null,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 20007782816.36,
+          "acquisitionsPaid": null,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 4
+        },
+        {
+          "year": 2022,
+          "revenue": 68863128424.25,
+          "netProfitParent": 23725915960.71,
+          "operatingProfit": 30388024085.68,
+          "nopat": 25626422721.707386,
+          "operatingCashFlow": 43476502138.14,
+          "capex": 12469721762.97,
+          "freeCashFlow": 31006780375.17,
+          "cashAndCashEquivalents": 10628364964.92,
+          "shortBorrowings": 26752360688.1,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 190246706722.4,
+          "bondsPayable": 37620231630.91,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 620996116.15,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 11.609393392822835,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 34646322332.41,
+          "acquisitionsPaid": null,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 4
+        },
+        {
+          "year": 2023,
+          "revenue": 78143535736.1,
+          "netProfitParent": 27244616815.27,
+          "operatingProfit": 33231355746.56,
+          "nopat": 28663817318.233395,
+          "operatingCashFlow": 64749448288.66,
+          "capex": 12417112224.11,
+          "freeCashFlow": 52332336064.55,
+          "cashAndCashEquivalents": 7811570259.5,
+          "shortBorrowings": 53985432819.58,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 187007685859.59003,
+          "bondsPayable": 25835606999.89,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 592017629.31,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 12.697722155787472,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 35678935583.57,
+          "acquisitionsPaid": 601993748.44,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 4
+        },
+        {
+          "year": 2024,
+          "revenue": 84491870566.52,
+          "netProfitParent": 32496172808.65,
+          "operatingProfit": 39645363016.09,
+          "nopat": 33593665300.27391,
+          "operatingCashFlow": 59648468284.22,
+          "capex": 14634075051.41,
+          "freeCashFlow": 45014393232.81,
+          "cashAndCashEquivalents": 6525546969.61,
+          "shortBorrowings": 69692431511.49,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 158815759451.94,
+          "bondsPayable": 21740804827.43,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 582895188.73,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 15.782416370653099,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 31633479332.54,
+          "acquisitionsPaid": 1101820343.21,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 4
+        },
+        {
+          "year": 2025,
+          "revenue": 86241940222.2,
+          "netProfitParent": 34502809176.39,
+          "operatingProfit": 42599375047.39,
+          "nopat": 35668969802.920364,
+          "operatingCashFlow": 60562925570.41,
+          "capex": 18488466859.29,
+          "freeCashFlow": 42074458711.12,
+          "cashAndCashEquivalents": 4534864386.02,
+          "shortBorrowings": 15181107941.81,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": 172310624303.31003,
+          "bondsPayable": 29780996027.99,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 508976801.84,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 15.985107472625376,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 34191120693.3,
+          "acquisitionsPaid": 1621226977.84,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 4
+        }
+      ],
+      "derivedAudit": {
+        "revenueCagr2021to2025": 0.1158,
+        "netProfitCagr2021to2025": 0.0705,
+        "fcfCagr2021to2025": 0.0687,
+        "fcfToNetProfitByYear": [
+          {
+            "year": 2021,
+            "ratio": 1.2278
+          },
+          {
+            "year": 2022,
+            "ratio": 1.3069
+          },
+          {
+            "year": 2023,
+            "ratio": 1.9208
+          },
+          {
+            "year": 2024,
+            "ratio": 1.3852
+          },
+          {
+            "year": 2025,
+            "ratio": 1.2195
+          }
+        ],
+        "roePctByYear": [
+          {
+            "year": 2021,
+            "value": null
+          },
+          {
+            "year": 2022,
+            "value": 11.609393392822835
+          },
+          {
+            "year": 2023,
+            "value": 12.697722155787472
+          },
+          {
+            "year": 2024,
+            "value": 15.782416370653099
+          },
+          {
+            "year": 2025,
+            "value": 15.985107472625376
+          }
+        ],
+        "roicStatus": "not_calculable_missing_invested_capital",
+        "netDebtStatus": "not_calculable_incomplete_debt_cash_components",
+        "dividendStatus": "not_separately_identified"
+      }
+    },
+    {
+      "name": "招商银行",
+      "code": "600036.SH / 03968.HK",
+      "industry": "零售银行与财富管理",
+      "financialInstitution": true,
+      "currency": "CNY",
+      "sourceCurrencies": [
+        "CNY"
+      ],
+      "reportedUnits": [],
+      "sourceLinks": {
+        "financial": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570089&stockid=600036",
+        "capex": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225530237.PDF",
+        "fcf": null,
+        "bvps": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12570089&stockid=600036",
+        "market": "https://quote.cfi.cn/quote.aspx?stockcode=600036&zqlb=0"
+      },
+      "officialReports": {
+        "code": "600036.SH / 03968.HK",
+        "name": "招商银行",
+        "industry": "零售银行与财富管理",
+        "primaryListing": "600036.SH",
+        "annual2025": {
+          "title": "招商银行股份有限公司2025年度报告",
+          "announcementDate": "2026-03-28",
+          "announcementId": "1225047590",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225047590.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1225047590&orgId=gssh0600036&announcementTime=2026-03-28"
+        },
+        "interim2026": {
+          "title": "招商银行股份有限公司2026年半年度报告",
+          "announcementDate": "2026-08-29",
+          "announcementId": "1225530237",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225530237.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1225530237&orgId=gssh0600036&announcementTime=2026-08-29"
+        },
+        "quarterly2026Q3": {
+          "title": "招商银行股份有限公司2026年第三季度报告",
+          "announcementDate": "2026-10-31",
+          "announcementId": "1225649239",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-10-31/1225649239.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1225649239&orgId=gssh0600036&announcementTime=2026-10-31"
+        },
+        "status": "resolved",
+        "verificationStatus": "official_link_only_not_content_verified",
+        "orgId": "gssh0600036"
+      },
+      "annual": [
+        {
+          "year": 2021,
+          "revenue": 331253000000,
+          "netProfitParent": 119922000000,
+          "operatingProfit": 148019000000,
+          "nopat": null,
+          "operatingCashFlow": 182048000000,
+          "capex": 24160000000,
+          "freeCashFlow": null,
+          "cashAndCashEquivalents": 801754000000,
+          "shortBorrowings": null,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": null,
+          "bondsPayable": 446645000000,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 13812000000,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": null,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 47083000000,
+          "acquisitionsPaid": 5342000000,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 2
+        },
+        {
+          "year": 2022,
+          "revenue": 344783000000,
+          "netProfitParent": 138012000000,
+          "operatingProfit": 165156000000,
+          "nopat": null,
+          "operatingCashFlow": 570143000000,
+          "capex": 34892000000,
+          "freeCashFlow": null,
+          "cashAndCashEquivalents": 567198000000,
+          "shortBorrowings": null,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": null,
+          "bondsPayable": 223821000000,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 13013000000,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 15.298562060204585,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 56503000000,
+          "acquisitionsPaid": 484000000,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 2
+        },
+        {
+          "year": 2023,
+          "revenue": 339123000000,
+          "netProfitParent": 146602000000,
+          "operatingProfit": 176663000000,
+          "nopat": null,
+          "operatingCashFlow": 357753000000,
+          "capex": 30161000000,
+          "freeCashFlow": null,
+          "cashAndCashEquivalents": 599019000000,
+          "shortBorrowings": null,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": null,
+          "bondsPayable": 176578000000,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 12675000000,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 14.501603216423584,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 56342000000,
+          "acquisitionsPaid": 39000000,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 2
+        },
+        {
+          "year": 2024,
+          "revenue": 337488000000,
+          "netProfitParent": 148391000000,
+          "operatingProfit": 179019000000,
+          "nopat": null,
+          "operatingCashFlow": 447023000000,
+          "capex": 34930000000,
+          "freeCashFlow": null,
+          "cashAndCashEquivalents": 756527000000,
+          "shortBorrowings": null,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": null,
+          "bondsPayable": 222921000000,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 12778000000,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 12.89020424047422,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 61031000000,
+          "acquisitionsPaid": 571000000,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 2
+        },
+        {
+          "year": 2025,
+          "revenue": 337532000000,
+          "netProfitParent": 150181000000,
+          "operatingProfit": 179252000000,
+          "nopat": null,
+          "operatingCashFlow": 451457000000,
+          "capex": 28141000000,
+          "freeCashFlow": null,
+          "cashAndCashEquivalents": 709822000000,
+          "shortBorrowings": null,
+          "shortTermBonds": null,
+          "currentPortionLongTermDebt": null,
+          "longBorrowings": null,
+          "bondsPayable": 143487000000,
+          "currentLeaseLiabilities": null,
+          "leaseLiabilities": 11253000000,
+          "investedCapital": null,
+          "averageInvestedCapital": null,
+          "roicPct": null,
+          "roePct": 12.019821608722916,
+          "dividendsPaidOnly": null,
+          "dividendsPaidCombinedWithInterest": 61752000000,
+          "acquisitionsPaid": 951000000,
+          "shareBuybacksPaid": null,
+          "grossDebt": null,
+          "netDebt": null,
+          "knownDebtComponentCount": 2
+        }
+      ],
+      "derivedAudit": {
+        "revenueCagr2021to2025": 0.0047,
+        "netProfitCagr2021to2025": 0.0579,
+        "fcfCagr2021to2025": null,
+        "fcfToNetProfitByYear": [
+          {
+            "year": 2021,
+            "ratio": 0
+          },
+          {
+            "year": 2022,
+            "ratio": 0
+          },
+          {
+            "year": 2023,
+            "ratio": 0
+          },
+          {
+            "year": 2024,
+            "ratio": 0
+          },
+          {
+            "year": 2025,
+            "ratio": 0
+          }
+        ],
+        "roePctByYear": [
+          {
+            "year": 2021,
+            "value": null
+          },
+          {
+            "year": 2022,
+            "value": 15.298562060204585
+          },
+          {
+            "year": 2023,
+            "value": 14.501603216423584
+          },
+          {
+            "year": 2024,
+            "value": 12.89020424047422
+          },
+          {
+            "year": 2025,
+            "value": 12.019821608722916
+          }
+        ],
+        "roicStatus": "not_calculable_missing_invested_capital",
+        "netDebtStatus": "not_calculable_incomplete_debt_cash_components",
+        "dividendStatus": "not_separately_identified"
+      }
+    }
+  ]
+}
