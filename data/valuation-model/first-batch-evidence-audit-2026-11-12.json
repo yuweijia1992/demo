@@ -1,0 +1,316 @@
+{
+  "schema": "first-batch-evidence-audit-v1",
+  "asOf": "2026-11-12",
+  "financialCutoff": "2026-09-30",
+  "sourcePolicy": "优先采用交易所/巨潮资讯网/公司官网披露；季度报告未经审计，累计同比不得直接视为全年增长率。",
+  "companies": [
+    {
+      "name": "贵州茅台",
+      "code": "600519.SH",
+      "currency": "CNY",
+      "report": "2026年第三季度报告",
+      "reportDate": "2026-10-31",
+      "source": "https://www.moutai.com.cn/mtgf/tzzgx/cwbg/index.html",
+      "mirror": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12685262&stockid=600519",
+      "ytd": {
+        "revenue": {
+          "value": 130970743649.04,
+          "unit": "CNY",
+          "yoyPct": 1.96
+        },
+        "netProfitParent": {
+          "value": 64467425981.95,
+          "unit": "CNY",
+          "yoyPct": -0.25
+        },
+        "netProfitAdjusted": {
+          "value": 64324824599.18,
+          "unit": "CNY",
+          "yoyPct": -0.55
+        },
+        "operatingCashFlow": {
+          "value": 84058979832.29,
+          "unit": "CNY",
+          "yoyPct": 120.07
+        },
+        "basicEPS": {
+          "value": 51.53,
+          "unit": "CNY/share",
+          "yoyPct": 0
+        }
+      },
+      "interpretation": [
+        "收入与利润近乎停滞，需检查产品结构、批价、渠道库存和直营/经销结构。",
+        "经营现金流同比大增，须与合同负债、预收款、应收票据、采购付款和税费支付变动对账。"
+      ],
+      "roicStatus": "待取得完整资产负债表与税项、现金及经营性负债拆分后计算",
+      "capitalAllocationStatus": "待逐年核验分红、回购、在建工程、投资及现金管理",
+      "forecastStatus": "待建立销量×吨价/产品结构×毛利率三情景",
+      "valuationStatus": "待以正常化FCFF/DCF及PE交叉估值；不得以当前静态PE替代内在价值"
+    },
+    {
+      "name": "美的集团",
+      "code": "000333.SZ",
+      "currency": "CNY",
+      "report": "2026年第三季度报告",
+      "reportDate": "2026-10-30",
+      "source": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12680652&stockid=000333",
+      "mirror": "https://paper.cnstock.com/html/2026-10/30/content_2284178.htm",
+      "ytd": {
+        "revenue": {
+          "value": 367364936000,
+          "unit": "CNY",
+          "yoyPct": 1.19
+        },
+        "netProfitParent": {
+          "value": 41393371000,
+          "unit": "CNY",
+          "yoyPct": 9.27
+        },
+        "netProfitAdjusted": {
+          "value": 28787970000,
+          "unit": "CNY",
+          "yoyPct": -22.49
+        },
+        "operatingCashFlow": {
+          "value": 40187380000,
+          "unit": "CNY",
+          "yoyPct": -29.58
+        },
+        "basicEPS": {
+          "value": 5.54,
+          "unit": "CNY/share",
+          "yoyPct": 11.24
+        },
+        "dilutedEPS": {
+          "value": 5.48,
+          "unit": "CNY/share",
+          "yoyPct": 10.26
+        }
+      },
+      "interpretation": [
+        "归母净利润增长与扣非净利润下降显著背离。",
+        "公司披露汇率损失计入经常性损益、对冲衍生工具收益列入非经常性损益；需将汇兑与套保按经济实质配对分析。",
+        "经营现金流下降需分解应收、存货、应付及票据变化。"
+      ],
+      "roicStatus": "待拆分金融业务、经营性现金和商誉后计算投入资本与NOPAT",
+      "capitalAllocationStatus": "重点审计KUKA及其他并购的投后现金回报、分红回购和资本开支",
+      "forecastStatus": "按家电、暖通、机器人与自动化、海外业务分部建模",
+      "valuationStatus": "DCF/EV-EBIT交叉估值；反向DCF待输入最新股价及稀释股数"
+    },
+    {
+      "name": "海尔智家",
+      "code": "600690.SH",
+      "currency": "CNY",
+      "report": "2026年第三季度报告",
+      "reportDate": "2026-10-30",
+      "source": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12676833&stockid=600690",
+      "officialPDF": "https://static.cninfo.com.cn/finalpage/2026-10-30/1225641263.PDF",
+      "ytd": {
+        "revenue": {
+          "value": 221819239428.57,
+          "unit": "CNY",
+          "yoyPct": -5.23
+        },
+        "netProfitParent": {
+          "value": 14998662832.75,
+          "unit": "CNY",
+          "yoyPct": -13.67
+        },
+        "netProfitAdjusted": {
+          "value": 12818956256.09,
+          "unit": "CNY",
+          "yoyPct": -24.11
+        },
+        "operatingCashFlow": {
+          "value": 10670049767.62,
+          "unit": "CNY",
+          "yoyPct": -39
+        },
+        "basicEPS": {
+          "value": 1.64,
+          "unit": "CNY/share",
+          "yoyPct": -13.23
+        },
+        "dilutedEPS": {
+          "value": 1.62,
+          "unit": "CNY/share",
+          "yoyPct": -13.37
+        }
+      },
+      "interpretation": [
+        "收入、扣非利润和经营现金流同时下降，盈利质量与营运资本需重点核验。",
+        "按国内、北美、欧洲、南亚及其他地区拆分销量、收入、利润率、汇率和库存。"
+      ],
+      "roicStatus": "待拆分商誉、租赁、经营性负债和地区资产后计算",
+      "capitalAllocationStatus": "需审计海外品牌收购、商誉减值、并购后ROIC与股息",
+      "forecastStatus": "按区域×品类×品牌建立五年预测",
+      "valuationStatus": "DCF/EV-EBIT与分部估值交叉验证"
+    },
+    {
+      "name": "长江电力",
+      "code": "600900.SH",
+      "currency": "CNY",
+      "report": "2026年第三季度报告",
+      "reportDate": "2026-10-31",
+      "source": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12684388&stockid=600900",
+      "mirror": "https://paper.cnstock.com/html/2026-10/31/content_2285433.htm",
+      "ytd": {
+        "revenue": {
+          "value": 63056214868.25,
+          "unit": "CNY",
+          "yoyPct": -4.08
+        },
+        "netProfitParent": {
+          "value": 26343828523.43,
+          "unit": "CNY",
+          "yoyPct": -6.56
+        },
+        "netProfitAdjusted": {
+          "value": 26363462872.22,
+          "unit": "CNY",
+          "yoyPct": -6.53
+        },
+        "operatingCashFlow": {
+          "value": 40343091061.95,
+          "unit": "CNY",
+          "yoyPct": -5.95
+        },
+        "basicEPS": {
+          "value": 1.0767,
+          "unit": "CNY/share",
+          "yoyPct": -6.56
+        }
+      },
+      "interpretation": [
+        "收入与利润回落需要与来水、发电量、上网电价、梯级水库调度及并表范围对应。",
+        "经营现金流与利润比值较高，但不能忽略大坝维护、机组更新、资本化支出和债务偿付。"
+      ],
+      "roicStatus": "需用平均经营资产与税后经营利润计算；长期水电资产折旧与资本开支需统一",
+      "capitalAllocationStatus": "重点核验资本开支计划、债务期限、分红与扩张项目回报",
+      "forecastStatus": "按水文情景、利用小时、电价、折旧、融资成本建模",
+      "valuationStatus": "股息折现与DCF并用，按正常来水和极端枯水压力测试"
+    },
+    {
+      "name": "招商银行",
+      "code": "600036.SH",
+      "currency": "CNY",
+      "report": "2026年第三季度报告（A股）",
+      "reportDate": "2026-10-30",
+      "source": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12684722&stockid=600036",
+      "ytd": {
+        "revenue": {
+          "value": 264852000000,
+          "unit": "CNY",
+          "yoyPct": 5.34
+        },
+        "netProfitParent": {
+          "value": 116476000000,
+          "unit": "CNY",
+          "yoyPct": 2.38
+        },
+        "netProfitAdjusted": {
+          "value": 116348000000,
+          "unit": "CNY",
+          "yoyPct": 2.34
+        },
+        "operatingCashFlow": {
+          "value": 146188000000,
+          "unit": "CNY",
+          "yoyPct": -17
+        },
+        "basicEPS": {
+          "value": 4.57,
+          "unit": "CNY/share",
+          "yoyPct": 3.16
+        },
+        "dilutedEPS": {
+          "value": 4.57,
+          "unit": "CNY/share",
+          "yoyPct": 3.16
+        },
+        "commonEquityPerShare": {
+          "value": 46.87,
+          "unit": "CNY/share",
+          "date": "2026-09-30"
+        },
+        "coreTier1CapitalRatio": {
+          "value": 14.39,
+          "unit": "%",
+          "date": "2026-09-30"
+        }
+      },
+      "interpretation": [
+        "收入增长快于利润增长，需分析净息差、非息收入、信用成本和费用率。",
+        "银行经营现金流受存贷款及金融资产负债变动影响，不作为普通企业FCF。",
+        "A/H股分别建模；本卡以A股为主证券。"
+      ],
+      "roicStatus": "不计算工业口径ROIC；使用ROE、RAROC、资本充足率与剩余收益模型",
+      "capitalAllocationStatus": "审计普通股分红、资本补充、风险加权资产增长与留存收益回报",
+      "forecastStatus": "按净息差、贷款增长、非息收入、信用成本、成本收入比建模",
+      "valuationStatus": "PB-ROE/剩余收益模型；必须显式设定可持续ROE与股权成本"
+    },
+    {
+      "name": "格力电器",
+      "code": "000651.SZ",
+      "currency": "CNY",
+      "report": "2026年第三季度报告",
+      "reportDate": "2026-10-27",
+      "source": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225627217.PDF",
+      "mirror": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12663748&stockid=000651",
+      "ytd": {
+        "revenue": {
+          "value": 126075079046.57,
+          "unit": "CNY",
+          "yoyPct": -8.1
+        },
+        "netProfitParent": {
+          "value": 17273815437.66,
+          "unit": "CNY",
+          "yoyPct": -19.51
+        },
+        "netProfitAdjusted": {
+          "value": 16402876911.93,
+          "unit": "CNY",
+          "yoyPct": -20.32
+        },
+        "operatingCashFlow": {
+          "value": 24062864126.5,
+          "unit": "CNY",
+          "yoyPct": -47.38
+        },
+        "basicEPS": {
+          "value": 3.09,
+          "unit": "CNY/share",
+          "yoyPct": -19.95
+        },
+        "dilutedEPS": {
+          "value": 3.09,
+          "unit": "CNY/share",
+          "yoyPct": -19.95
+        }
+      },
+      "interpretation": [
+        "公司解释经营现金流同比下降中，票据、保函保证金等受限资金变动造成136.17亿元同比减少；剔除此影响后经营现金流仍下降24.71%。",
+        "前三季度消费电器需求与原材料成本承压，需分别评估空调主业份额、价格、渠道库存和海外业务。"
+      ],
+      "roicStatus": "需拆分金融资产/现金、经营性负债与主业NOPAT",
+      "capitalAllocationStatus": "核验中期分红、回购注销/库存股、理财资产和投资支出",
+      "forecastStatus": "按空调销量、均价、毛利率、原材料成本、海外收入和多元业务建模",
+      "valuationStatus": "正常化盈利DCF/PE交叉估值；剥离非经营性金融资产"
+    }
+  ],
+  "formulas": {
+    "roic": "NOPAT / 平均投入资本；NOPAT=EBIT×(1-调整后经营税率)。投入资本需统一处理超额现金、经营性负债、商誉、租赁负债及金融业务。",
+    "incrementalROIC": "ΔNOPAT / Δ平均投入资本；需跨年度、同口径，避免单年噪声。",
+    "fcf": "经营活动现金流-购建固定资产、无形资产及其他长期资产支付的现金；并单列并购现金支出、租赁本金及处置收益。",
+    "bankValuation": "银行不套用工业企业ROIC/FCF；采用PB-ROE、剩余收益和RAROC框架。",
+    "scenario": "五年预测需披露销量/价格/份额/产品组合/毛利率/费用率/税率/资本开支/营运资本等驱动，不从历史CAGR机械外推。"
+  },
+  "limitations": [
+    "本文件记录三季报累计披露事实及后续核验计划，不等于六家公司完整投资研究完成。",
+    "三季报未经审计；2026年前三季度数据不能直接年化为全年。",
+    "本轮未生成ROIC、五年预测目标价或买入价格，因为所需分部数据、平均投入资本、税率、净债务调整、稀释股数、当前行情及资本成本尚未全部完成核验。",
+    "贵州茅台不在当前估值引擎49家公司主证券JSON中，需审计原始49家公司名单与第一批优先名单的差异。"
+  ]
+}
