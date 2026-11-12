@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "portfolio_name": "个人长期投资组合｜正式执行政策登记簿",
+  "status": "BLOCKED_PENDING_POLICY_APPROVAL",
+  "as_of": "2026-11-12",
+  "base_currency": "CNY",
+  "reference_capital_cny": 4000000,
+  "capital_is_reference_only": true,
+  "strategic_allocation": [
+    {
+      "asset_class": "equity",
+      "name": "全球股票",
+      "target_weight": 0.52,
+      "target_amount_cny": 2080000,
+      "approval_status": "USER_CONFIRMED"
+    },
+    {
+      "asset_class": "fixed_income",
+      "name": "债券",
+      "target_weight": 0.28,
+      "target_amount_cny": 1120000,
+      "approval_status": "USER_CONFIRMED"
+    },
+    {
+      "asset_class": "gold",
+      "name": "黄金",
+      "target_weight": 0.1,
+      "target_amount_cny": 400000,
+      "approval_status": "USER_CONFIRMED"
+    },
+    {
+      "asset_class": "cash",
+      "name": "现金",
+      "target_weight": 0.1,
+      "target_amount_cny": 400000,
+      "approval_status": "USER_CONFIRMED"
+    }
+  ],
+  "unresolved_policy": [
+    {
+      "id": "EQ_REGION_WEIGHTS",
+      "description": "52%股票内部地区与市场权重（A股、港股、美国、发达市场其他地区、新兴市场）",
+      "status": "REQUIRES_USER_APPROVAL"
+    },
+    {
+      "id": "FI_COUNTRY_DURATION_WEIGHTS",
+      "description": "28%债券内部国家/币种、主权/信用、久期与汇率对冲权重",
+      "status": "REQUIRES_USER_APPROVAL"
+    },
+    {
+      "id": "IMPLEMENTATION_VEHICLES",
+      "description": "每个资产袖套的实际ETF/指数基金/场内外产品、交易市场与账户适配",
+      "status": "REQUIRES_DUE_DILIGENCE"
+    },
+    {
+      "id": "REBALANCE_POLICY",
+      "description": "年度或阈值再平衡、容忍带、现金流优先再平衡",
+      "status": "REQUIRES_USER_APPROVAL"
+    },
+    {
+      "id": "EXECUTION_COSTS",
+      "description": "佣金、印花税、基金费率、申赎费、汇兑点差、托管与税务",
+      "status": "REQUIRES_ACCOUNT_AND_PRODUCT_DATA"
+    }
+  ],
+  "non_negotiable_controls": [
+    "总权重必须严格等于100%；股票52%、债券28%、黄金10%、现金10%。",
+    "禁止把52%股票总权重与其内部子项重复相加。",
+    "未批准的内部权重保持null，不得自动填补或按比例推定。",
+    "研究代理（AGG/EFA/EEM/2800.HK/511010）不得自动转为正式持仓。",
+    "指数回测与实际基金净值/ETF复权回报分开存储。",
+    "缺失数据不以前值填充、不将缺失收益视为0。",
+    "所有外币资产必须完成对应月度汇率转换及汇兑成本评估。",
+    "交易执行前检查产品可购买性、账户权限、投资者适当性、流动性、费用和税务。"
+  ],
+  "research_proxy_policy": "V2.5研究组合仅用于方法验证，不是本政策的正式成分或目标权重。",
+  "data_sources": {
+    "monthly_matrix": "../investment-monthly.csv",
+    "manifest": "../investment-monthly-manifest.json",
+    "coverage_audit": "../research/monthly_coverage_audit.csv"
+  }
+}
