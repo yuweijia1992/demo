@@ -62,15 +62,20 @@ def main():
         for field in ("china_bond_wealth_index_cny","china_bond_wealth_return_cny_pct"):
             if field not in fields: fields.append(field)
         prior=by_month.get("2005-12")
+        prior_month="2005-12"
         for row in rows:
             month=row["date"]
             level=by_month.get(month)
             row["china_bond_wealth_index_cny"]="" if level is None else f"{level:.8f}"
-            if level is None or prior is None:
+            y,m=map(int,month.split("-"))
+            expected_prev=f"{y-1}-12" if m==1 else f"{y}-{m-1:02d}"
+            if level is None or prior is None or prior_month!=expected_prev:
                 row["china_bond_wealth_return_cny_pct"]=""
             else:
                 row["china_bond_wealth_return_cny_pct"]=f"{(level/prior-1)*100:.8f}"
-            if level is not None: prior=level
+            if level is not None:
+                prior=level
+                prior_month=month
         with MATRIX.open("w",encoding="utf-8-sig",newline="") as f:
             w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(rows)
         status={"status":"SUCCESS","index_code":"CBA00201","index_name":"ChinaBond Composite Wealth Total Value Index",
