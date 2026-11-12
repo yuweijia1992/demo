@@ -5,10 +5,10 @@
 <style>
 .hero{padding:56px 0 30px;border-bottom:1px solid var(--line)}h1{font:500 clamp(34px,5vw,56px)/1.15 Georgia,"Songti SC",serif;max-width:900px}.lead{font-size:17px;line-height:1.8;max-width:850px}.section{padding:28px 0;border-bottom:1px solid var(--line)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.metric,.panel{border:1px solid var(--line);border-radius:14px;padding:16px}.metric strong{display:block;font-size:26px;margin:8px 0}.muted{color:var(--muted)}.warning{border:1px solid #b8792f;background:rgba(184,121,47,.08);border-radius:12px;padding:16px}.wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:600px}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line)}.num{text-align:right;white-space:nowrap}.note{font-size:14px;line-height:1.8}.links a{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:8px 11px;margin:4px 6px 4px 0;text-decoration:none}
 </style></head><body>
-<header class="container hero"><p class="muted">INVESTMENT LAB / RESEARCH NOTE · 2026-11-12</p><h1>股票比例敏感性回测</h1><p class="lead">比较52%、45%、42%股票权重对收益、波动、最大回撤与50年提款的影响，并进一步测试更低股票比例能否接近20%回撤目标。</p><p><a href="portfolio-final-plan.html">← 返回400万元组合方案</a></p></header>
+<header class="container hero"><p class="muted">INVESTMENT LAB / RESEARCH NOTE · 2026-11-12</p><h1>股票比例敏感性回测</h1><p class="lead">按A股、港股、美国、美国以外发达市场、新兴市场五个股票袖套，重跑20%至52%八档权益比例；补齐港元换算，并尝试接入中债官方财富指数。</p><p><a href="portfolio-final-plan.html">← 返回400万元组合方案</a></p></header>
 <main class="container">
-<section class="section"><div class="warning"><b>研究状态：PROVISIONAL_RESEARCH_PROXY。</b><p class="note">这不是正式可投资产品的完整历史回测。样本共同区间为2006-01至2026-07，共241个月。债券袖套全部使用美国AGG ETF人民币回报代理；股票代理包含沪深300、标普500、EFA和EEM；黄金为现货估值代理，现金序列含回填历史。缺少官方恒生全收益、中债综合财富指数、完整产品净值与税费。</p></div></section>
-<section class="section"><h2>一、年度再平衡结果</h2><div class="grid">
+<section class="section"><div class="warning"><b>研究状态：PROVISIONAL_RESEARCH_PROXY / 新口径计算中。</b><p class="note">已补齐FRED港元/美元月均汇率250个月（2006-01至2026-10），并将2800.HK自动复权ETF收益换算为人民币，225个月（2008-02至2026-10）。这仍是港股ETF代理，不是恒生官方全收益指数。已加入中债CBA00201财富指数官方接口抓取器；CI已执行抓取步骤，但需等状态文件确认是否真正取得数据。新一轮八档回测按战略股票地区权重构造，并在中债数据可用时以中债占债券袖套23/28、AGG占5/28；若抓取失败则记录AGG回退口径。</p><p class="note">官方恒生总收益指数仍未入库；黄金仍为现货估值代理，现金指数发布前历史为回溯数据。当前所有回测仍不能称为完整可投资产品组合历史。</p></div></section><section class="section"><h2>数据补齐进度</h2><div class="wrap"><table><thead><tr><th>序列</th><th>覆盖</th><th>状态</th></tr></thead><tbody><tr><td>HKD/USD 月均汇率</td><td>250个月，2006-01至2026-10</td><td>已入库</td></tr><tr><td>2800.HK 人民币总回报代理</td><td>225个月，2008-02至2026-10</td><td>已入库，非官方指数</td></tr><tr><td>恒生官方总股息累计指数 .HSIDV</td><td>尚未入库</td><td>需官方/授权历史数据</td></tr><tr><td>中债综合财富 CBA00201</td><td>抓取器已加入，结果待核验</td><td>CI抓取状态待确认</td></tr></tbody></table></div><div class="links"><a href="../data/sources/fred-exhkus-monthly.csv">FRED港元汇率原始CSV</a><a href="../data/research/index_data_acquisition_status.csv">数据获取审计表</a><a href="../data/research/METHODOLOGY.md">数据与回测方法</a></div></section>
+<section class="section"><h2>一、第一轮旧口径年度再平衡结果（已被新口径取代）</h2><p class="note"><b>注意：</b>下表基于旧地区袖套和2006-01至2026-07共同样本，不含港股人民币收益，也没有中国债券财富指数。仅作历史研究记录，不应与正在运行的新口径八档结果混用。</p><div class="grid">
 <div class="metric"><span>52%股票</span><strong>7.79%</strong><span class="muted">年化收益 / -34.41%最大回撤</span></div>
 <div class="metric"><span>45%股票</span><strong>7.29%</strong><span class="muted">年化收益 / -30.77%最大回撤</span></div>
 <div class="metric"><span>42%股票</span><strong>7.06%</strong><span class="muted">年化收益 / -29.19%最大回撤</span></div>
@@ -19,20 +19,20 @@
 <tr><td>最差单月</td><td class="num">-9.84%</td><td class="num">-8.58%</td><td class="num">-8.06%</td></tr>
 <tr><td>最差滚动12个月</td><td class="num">-33.95%</td><td class="num">-30.58%</td><td class="num">-29.11%</td></tr>
 </tbody></table></div><p class="note">单边交易成本假设10bp，年度再平衡。52%方案历史收益较高，42%方案波动与回撤较低，但三种方案均未达到20%最大回撤目标。</p><p class="note"><b>口径差异：</b>回测股票代理袖套按沪深300/标普500/EFA/EEM = 20/12/10/10个百分点同比例缩放；它并不等于组合设计中的A股/港股/美国/美国以外发达/剔除中国新兴市场 = 8/2/25/11/6个百分点。金额表按后者计算。因此回测是股票总比例敏感性研究，不是最终地区权重的精确产品级回测。</p></section>
-<section class="section"><h2>二、50年提款压力测试</h2><p>首年支出9万元、通胀4%、组合开始后立即下跌30%，年度再平衡的历史区块重采样存活率：</p><div class="wrap"><table><thead><tr><th>联合收益区块</th><th class="num">52%股票</th><th class="num">45%股票</th><th class="num">42%股票</th></tr></thead><tbody>
+<section class="section"><h2>二、第一轮旧口径50年提款压力测试（已被新口径取代）</h2><p>首年支出9万元、通胀4%、组合开始后立即下跌30%，年度再平衡的历史区块重采样存活率：</p><div class="wrap"><table><thead><tr><th>联合收益区块</th><th class="num">52%股票</th><th class="num">45%股票</th><th class="num">42%股票</th></tr></thead><tbody>
 <tr><td>12个月</td><td class="num">69.8%</td><td class="num">65.3%</td><td class="num">62.5%</td></tr>
 <tr><td>24个月</td><td class="num">73.9%</td><td class="num">67.7%</td><td class="num">64.0%</td></tr>
 <tr><td>36个月</td><td class="num">76.6%</td><td class="num">68.5%</td><td class="num">65.3%</td></tr>
 </tbody></table></div><p class="note">较高股票比例在该压力场景下存活率反而较高，体现长期增长与短期回撤之间的权衡。以上是历史重采样频率，不是未来真实概率；区块长度不同，结果会变化。</p></section>
-<section class="section"><h2>三、阶段性判断</h2><ul>
+<section class="section"><h2>三、旧口径阶段性判断（不作为最终推荐）</h2><ul>
 <li><b>52%：</b>增长优先，历史最大回撤约34%，不符合20%风险目标。</li>
 <li><b>45%：</b>收益与风险折中，适合作为当前候选方案，但不等于风险达标。</li>
 <li><b>42%：</b>波动最低，但最大回撤仍约29%，不能据此宣称稳健满足20%约束。</li>
-</ul><p>当前不把任何一档标记为最终批准配置。下一步扩展20%、25%、30%、35%、38%等低股票比例，检验更低风险配置的回撤、收益和提款结果，再结合人民币债券真实财富指数重做结论。</p></section>
+</ul><p>当前不把任何一档标记为最终批准配置。新一轮会输出20%、25%、30%、35%、38%、42%、45%、52%八档结果；如果CBA00201数据成功接入，样本将按港股代理共同完整区间重新计算。正式恒生TRI与人民币对冲海外债券数据仍需补齐。</p></section>
 <section class="section"><h2>四、下载原始结果与审计文件</h2><div class="links">
 <a href="../data/research/equity_allocation_comparison.csv">配置收益与回撤 CSV</a>
 <a href="../data/research/equity_allocation_withdrawal_comparison.csv">50年提款模拟 CSV</a>
 <a href="../data/research/equity_allocation_comparison_manifest.json">方法与局限 Manifest</a>
-<a href="../data/portfolio/equity_allocation_target_amounts.csv">400万元分配金额表</a>
+<a href="../data/portfolio/equity_allocation_target_amounts.csv">400万元分配金额表</a><a href="../data/research/index_data_acquisition_status.csv">官方数据缺口审计</a>
 </div><p class="note muted">金额表按各股票权重同比例缩放地区权益袖套，债券吸收股票权重变化；黄金与现金固定各10%。六个月投入金额为机械等额拆分参考，不是买入指令。</p></section>
 </main><footer class="container section muted">Investment Lab · Allocation Sensitivity · Research only, not an order instruction.</footer></body></html>
