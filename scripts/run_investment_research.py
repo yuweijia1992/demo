@@ -11,7 +11,7 @@ ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"data"/"investment-monthly.csv"
 OUT=ROOT/"data"/"research"
 OUT.mkdir(parents=True,exist_ok=True)
-SEED=20261112
+SEED=20261113
 N_PATHS=1000
 CAPITAL=4_000_000
 SPENDS=(80_000,90_000,100_000)
