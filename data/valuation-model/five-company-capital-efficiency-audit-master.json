@@ -335,9 +335,9 @@
         "industry": "电商、云与数字平台",
         "primaryListing": "09988.HK",
         "modelType": "operating_company",
-        "annual2025Report": null,
-        "annual2025Title": null,
-        "annual2025LinkStatus": "missing",
+        "annual2025Report": "https://home.alibabagroup.com/en-US/ir-financial-reports-financial-results",
+        "annual2025Title": "FY2025 Annual Report (fiscal year ended March 31, 2025)",
+        "annual2025LinkStatus": "official_ir_index_page_not_direct_pdf_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
         "hkPrimaryListing": true
       },
@@ -9796,7 +9796,7 @@
       "期初期末投入资本勾稽",
       "重大合并范围/追溯调整处理"
     ],
-    "currentConclusion": "范围已扩展至全部49家公司；49家公司2025年年报官方链接已登记，但仅为链接登记，尚未逐页核验。2021—2024历史年报、页码、附注和逐项数据仍待补齐。所有未核验值保留null。银行、保险、券商采用专属模型。"
+    "currentConclusion": "审计范围覆盖全部49家公司；已登记49家公司FY2025年报官方来源入口，其中阿里巴巴使用官方投资者关系财报索引页（非直链PDF），其余公司链接亦仍需内容级核验。2021—2024历史报告、页码、附注及逐项数据仍待补齐。所有未核验数值保留null。"
   },
   "sourceAuditStatus": {
     "historicalReportRegister": "annual_report_source_register_complete_for_four_companies; total_assets_series_partially_reconciled; full_balance_sheet_line_item_audit_pending",
@@ -9806,9 +9806,9 @@
   },
   "companyUniverseAudit": {
     "sourceFile": "data/valuation-model/issuer-report-index-49.json",
-    "sourceSha": "ec212e91d722c64ab3e2160d084ec69fded52a9f",
+    "sourceSha": "751ea1230916f25c2628a7d29891bbd23fc80564",
     "companyCount": 49,
-    "annual2025OfficialLinks": 48,
+    "annual2025OfficialLinks": 49,
     "historicalAnnualReports2021to2024": "pending",
     "officialLinkDoesNotEqualContentVerification": true
   },
