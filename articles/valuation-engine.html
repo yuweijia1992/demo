@@ -141,6 +141,16 @@
 <section class="ve-panel" id="firstBatchDecisionCards">
 <h2>05 / 首批六家公司：统一投资决策卡</h2>
 <p class="muted">本模块将企业质量、经营趋势、资本效率、估值和买入/持有决策固化为统一结构。卡片自动读取49家公司主表；没有进入主表的公司显示清单冲突，不自动新增。价格仅展示来源数据库快照，不代表实时行情。完整字段标准：<a href="../data/valuation-model/investment-decision-cards-v1.json" target="_blank" rel="noopener">investment-decision-cards-v1.json</a>。</p>
+
+<div class="ve-table-wrap" id="q3EvidenceTable" style="margin-top:16px"><table><thead><tr><th>公司</th><th>营业收入（亿元）</th><th>归母净利润（亿元）</th><th>扣非净利润（亿元）</th><th>经营现金流（亿元）</th><th>同比变化（收入/归母/扣非/现金流）</th></tr></thead><tbody>
+<tr><td>贵州茅台</td><td>1,309.71</td><td>644.67</td><td>643.25</td><td>840.59</td><td>+1.96% / -0.25% / -0.55% / +120.07%</td></tr>
+<tr><td>美的集团</td><td>3,673.65</td><td>413.93</td><td>287.88</td><td>401.87</td><td>+1.19% / +9.27% / -22.49% / -29.58%</td></tr>
+<tr><td>海尔智家</td><td>2,218.19</td><td>149.99</td><td>128.19</td><td>106.70</td><td>-5.23% / -13.67% / -24.11% / -39.00%</td></tr>
+<tr><td>长江电力</td><td>630.56</td><td>263.44</td><td>263.63</td><td>403.43</td><td>-4.08% / -6.56% / -6.53% / -5.95%</td></tr>
+<tr><td>招商银行</td><td>2,648.52</td><td>1,164.76</td><td>1,163.48</td><td>1,461.88</td><td>+5.34% / +2.38% / +2.34% / -17.00%</td></tr>
+<tr><td>格力电器</td><td>1,260.75</td><td>172.74</td><td>164.03</td><td>240.63</td><td>-8.10% / -19.51% / -20.32% / -47.38%</td></tr>
+</tbody></table></div>
+<p class="ve-note">以上为2026年1—9月累计数据，单位亿元，取自各公司2026年三季报，报告未经审计；招商银行经营现金流受银行资产负债业务影响，不与制造业公司直接横向比较。格力经营现金流受票据、保函保证金等受限资金变动影响；美的扣非利润受到汇兑及衍生工具损益分类影响。<a href="../data/valuation-model/first-batch-evidence-audit-2026-11-12.json" target="_blank" rel="noopener">查看原始数值、来源和核验任务</a>。</p>
 <div class="ve-note" id="firstBatchAudit">正在核对首批名单与49家公司主表……</div>
 <div class="first-batch-grid" id="firstBatchCards"><div class="first-batch-card">正在读取公司数据库……</div></div>
 <p class="ve-note">每张卡必须完成：商业模式/护城河证据、五年三情景假设、ROIC与资本配置、行业适配估值、反向DCF、买入/停止买入/减仓/退出规则。缺少证据的字段保持“待核验”，不自动生成评分或目标价。</p>
