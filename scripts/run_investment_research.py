@@ -12,7 +12,7 @@ DATA=ROOT/"data"/"investment-monthly.csv"
 OUT=ROOT/"data"/"research"
 OUT.mkdir(parents=True,exist_ok=True)
 SEED=20261113
-N_PATHS=500
+N_PATHS=250
 CAPITAL=4_000_000
 SPENDS=(80_000,90_000,100_000)
 YEARS=50
@@ -210,20 +210,31 @@ def main():
 
 
 def allocation_sensitivity():
- """Paired 52/45/42 equity sleeve comparison using the same proxy return rows."""
+ """Eight equity-weight scenarios using the strategic regional mix and HKD-to-CNY ETF proxy."""
  rows,_=read_data()
  parsed=[]
+ equity_fields={
+  "A_shares_CSI300":"csi300_total_return_pct",
+  "HK_equity_2800_proxy":"hang_seng_etf_2800_total_return_cny_pct",
+  "US_equity_SP500":"sp500_total_return_cny_pct",
+  "Developed_exUS_EFA":"efa_developed_markets_etf_total_return_cny_pct",
+  "Emerging_EEM":"eem_emerging_markets_etf_total_return_cny_pct",
+ }
  for r in rows:
   item={"date":r["date"]}
-  for name,(field,_) in ASSETS.items(): item[name]=number(r.get(field,""))
+  for name,field in equity_fields.items(): item[name]=number(r.get(field,""))
+  for name,(field,_) in ASSETS.items():
+   if name not in item: item[name]=number(r.get(field,""))
   parsed.append(item)
- usable=[r for r in parsed if all(r[n] is not None for n in ASSETS)]
- equity_names=("A_shares_CSI300","US_equity_SP500","Developed_exUS_EFA","Emerging_EEM")
- equity_mix=(0.20,0.12,0.10,0.10)
- mix_total=sum(equity_mix)
+ equity_names=tuple(equity_fields)
+ usable=[r for r in parsed if all(r[n] is not None for n in equity_names) and
+  all(r[n] is not None for n in ("US_aggregate_bonds_AGG","Gold_proxy","CNY_cash_H11025"))]
+ if len(usable)<120: raise SystemExit(f"Only {len(usable)} complete HK proxy months; minimum 120 required.")
+ base_mix=(0.08,0.02,0.25,0.11,0.06)
+ mix_total=sum(base_mix)
  scenarios={}
  for eq in (0.52,0.45,0.42,0.38,0.35,0.30,0.25,0.20):
-  w={n:eq*x/mix_total for n,x in zip(equity_names,equity_mix)}
+  w={n:eq*x/mix_total for n,x in zip(equity_names,base_mix)}
   w["US_aggregate_bonds_AGG"]=1-eq-0.10-0.10
   w["Gold_proxy"]=0.10
   w["CNY_cash_H11025"]=0.10
@@ -242,7 +253,8 @@ def allocation_sensitivity():
    summary.append(st)
  with (OUT/"equity_allocation_comparison.csv").open("w",encoding="utf-8-sig",newline="") as f:
   wri=csv.DictWriter(f,fieldnames=list(summary[0]));wri.writeheader();wri.writerows(summary)
- # Paired block bootstrap: annual rebalancing only, same sampled asset paths for all allocations.
+ # Paired bootstrap: bootstrap() resets to identical seed for each allocation in a case,
+ # so each allocation sees the same sampled joint asset-return paths.
  boot=[]
  for block in (12,24,36):
   for spend in SPENDS:
@@ -259,14 +271,17 @@ def allocation_sensitivity():
  with (OUT/"equity_allocation_comparison_manifest.json").open("w",encoding="utf-8") as f:
   json.dump({"status":"PROVISIONAL_RESEARCH_PROXY","sample_start":usable[0]["date"],
    "sample_end":usable[-1]["date"],"common_months":len(usable),"paths_per_case":N_PATHS,
-   "allocations":scenarios,"method":"Same monthly asset-return rows, same 10bp one-way trading cost, same 12/24/36-month circular block bootstrap; equity sleeve mix held proportional to the 52% draft; bonds absorb the equity-weight difference; gold and cash fixed at 10% each.",
+   "allocations":scenarios,"equity_proxy_mix":dict(zip(equity_names,base_mix)),
+   "method":"Same monthly asset-return rows, same 10bp one-way trading cost, same 12/24/36-month circular block bootstrap; equity sleeve uses the strategic regional mix (A 8, HK 2, US 25, developed ex-US 11, emerging 6 percentage points at 52% equity) scaled proportionally; bonds absorb the equity-weight difference; gold and cash fixed at 10% each.",
    "important_limitations":["This is not a fully investable portfolio backtest.",
-   "The 28/35/38% bond sleeve is proxied entirely by US AGG ETF RMB total return, not the intended CNY government/policy-bank bond portfolio.",
-   "The equity proxies include CSI300, S&P500, EFA and EEM; EEM includes China, so exposure overlaps the China sleeves.",
+   "The Hong Kong sleeve uses 2800.HK adjusted ETF total-return proxy converted to RMB, not the official Hang Seng gross total-return index .HSIDV/HSIRH; available sample starts 2008-02.",
+   "The bond sleeve is proxied entirely by US AGG ETF RMB total return, not the intended CNY government/policy-bank bond portfolio or ChinaBond CBA00201.",
+   "EEM includes China, so exposure overlaps the A-share and Hong Kong sleeves; no clean ex-China emerging-market proxy is included.",
    "Gold is a monthly-average spot valuation proxy; cash history includes backfilled index observations.",
-   "No official Hang Seng total-return index, complete investable fund histories, taxes, personal tax status, rent growth or future contributions.",
+   "No complete investable fund histories, taxes, personal tax status, rent growth or future contributions.",
    "Bootstrap survival rates are empirical resampling frequencies, not objective real-world probabilities."]},f,ensure_ascii=False,indent=2)
- print(json.dumps({"allocation_sensitivity":"PASS","rows":len(summary),"withdrawal_rows":len(boot)},ensure_ascii=False))
+ print(json.dumps({"allocation_sensitivity":"PASS","rows":len(summary),"withdrawal_rows":len(boot),
+  "common_months":len(usable),"sample_start":usable[0]["date"],"sample_end":usable[-1]["date"]},ensure_ascii=False))
 
 if __name__=="__main__":
  main()
