@@ -736,7 +736,8 @@
     "verifiedSourceNotes": [
       "2021—2023 values appear together in the 2023 annual report summary; 2024 value appears in the 2024 annual report summary.",
       "Do not splice company-only capital adequacy ratios with group ratios.",
-      "Capital rules changed in 2024; advanced-method and risk-weighted-method series should be kept separate."
+      "Capital rules changed in 2024; advanced-method and risk-weighted-method series should be kept separate.",
+      "2025 annual report: group advanced-method core Tier 1 ratio 14.16%, Tier 1 ratio 16.51%, total capital ratio 18.24%; group/company pre-tax RAROC 23.63%/23.64%. 2025 group core Tier 1 capital net CNY 1,067,560 million, total capital net CNY 1,375,031 million and RWA CNY 7,540,202 million."
     ],
     "rarocPreTaxCompanyPct": {
       "2022": 29.62,
@@ -753,6 +754,80 @@
       "2021—2025 core Tier 1, Tier 1 and total capital ratios under both advanced and standardized approaches",
       "2021—2025 capital net amount, core Tier 1 capital net amount and RWA",
       "2021—2025 credit cost, NPL, provision coverage and dividend retention"
+    ],
+    "verified2025CapitalAmountsGroupCNYMillion": {
+      "coreTier1CapitalNet": 1067560,
+      "tier1CapitalNet": 1245017,
+      "totalCapitalNet": 1375031,
+      "riskWeightedAssets": 7540202,
+      "coreTier1RatioPct": 14.16,
+      "tier1RatioPct": 16.51,
+      "totalCapitalRatioPct": 18.24
+    },
+    "annualReportSources": [
+      {
+        "year": 2022,
+        "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8911370&stockid=600036",
+        "coverage": "2021-2022 capital adequacy and 2022 company RAROC"
+      },
+      {
+        "year": 2023,
+        "url": "https://www.sse.com.cn/disclosure/listedinfo/announcement/c/new/2024-03-26/600036_20240326_R3AO.pdf",
+        "coverage": "2021-2023 advanced-method group capital adequacy"
+      },
+      {
+        "year": 2024,
+        "url": "https://www.chinamoney.com.cn/dqs/cm-s-notice-query/fileDownLoad.do?contentId=3083104&mode=open&priority=0",
+        "coverage": "2023-2024 capital amounts and ratios"
+      },
+      {
+        "year": 2025,
+        "url": "https://stockmc.xueqiu.com/202603/600036_20260328_F53J.pdf",
+        "coverage": "2024-2025 capital amounts, RWA and RAROC group/company"
+      }
+    ]
+  },
+  "historicalTotalAssetsAudit": {
+    "unit": "CNY 100 million (亿元); consolidated total assets; values are transcribed from named annual-report balance sheets",
+    "companies": [
+      {
+        "name": "美的集团",
+        "values": {
+          "2021": 3879.46104,
+          "2022": 4225.55267,
+          "2023": 4860.38184,
+          "2024": 6043.51853,
+          "2025": 6087.91766
+        },
+        "sourceBasis": "2021/2022 annual reports for 2021-2022; 2024 annual report provides 2023-2024; 2025 annual report provides 2025.",
+        "status": "annual_report_values_located; balance-sheet line-item classification still pending"
+      },
+      {
+        "name": "海尔智家",
+        "values": {
+          "2021": 2177.4113357731,
+          "2022_report_adjusted": 2360.178211775,
+          "2023_report": 2533.7985997797,
+          "2023_report_2022_adjusted": 2360.178211775,
+          "2024_report_2023_comparative": 2610.6768489749,
+          "2024_report_2024": 2901.1382282461,
+          "2025_report_2024_comparative": 2907.3635797875,
+          "2025_report_2025": 2957.9506859157
+        },
+        "status": "multiple_report_versions_need_reconciliation",
+        "note": "2023年度报告摘要中的2023总资产与2024年度报告中2023比较数不同；2024年末总资产在2024报告与2025报告比较数之间也有差异。不要拼接这些值构造时间序列，需核对追溯调整、合并范围、重分类和报告版本。"
+      },
+      {
+        "name": "长江电力",
+        "values": {
+          "2023_reported_in_2024_AR": 5729.3886954308,
+          "2024_reported_in_2024_AR": 5660.7197979234,
+          "2024_reported_in_2025_AR": 5665.8512897381,
+          "2025_reported_in_2025_AR": 5592.0834004684
+        },
+        "status": "2024_comparative_reconciliation_required",
+        "note": "2024年度报告给出的2024年末总资产与2025年度报告中的2024比较数存在差异；2025年度报告提及同一控制下企业合并追溯调整，需确认比较数重述基础。"
+      }
     ]
   }
 }
