@@ -75,7 +75,7 @@ def run_strategy(data,weights,mode,cost):
  for i,row in enumerate(data):
   if mode=="annual" and i>0 and row["date"][5:7]=="01":
    pass
-  rebalance=(mode=="annual" and i>0 and row["date"][5:7]=="01")
+  rebalance=(mode=="annual" and i>0 and i%12==0)
   if mode=="threshold" and i>0:
    drift=[x/sum(current) for x in current]
    rebalance=any(abs(d-t)>THRESHOLD for d,t in zip(drift,target))
@@ -120,11 +120,12 @@ def withdraw_path(returns,spend,inflation,crash=0.0):
  return {"survived":ruin is None and len(returns)>=YEARS*12,
   "ending_balance":bal,"depletion_month":ruin,
   "depletion_year":(ruin/12 if ruin else None)}
-def bootstrap(strategy,history,block,spend,inflation,crash=0.0):
+def bootstrap(strategy,history_rows,weights,block,spend,inflation,crash=0.0):
  rng=random.Random(SEED+block+spend+int(inflation*10000)+int(crash*100))
  finals=[];ruins=0;ruin_years=[]
  for _ in range(N_PATHS):
-  path=block_path(history,block,YEARS*12,rng)
+  asset_path=block_path(history_rows,block,YEARS*12,rng)
+  path,_=run_strategy(asset_path,weights,strategy,0.001)
   r=withdraw_path(path,spend,inflation,crash)
   finals.append(r["ending_balance"])
   if not r["survived"]:
@@ -147,7 +148,6 @@ def main():
  usable=[r for r in parsed if all(r[n] is not None for n in ASSETS)]
  if len(usable)<120: raise SystemExit(f"Only {len(usable)} complete common months; minimum 120 required.")
  weights={k:v[1] for k,v in ASSETS.items()}
- scenarios={}
  summaries=[]
  for mode in ("buy_hold","annual","threshold"):
   for cost in COSTS:
@@ -157,7 +157,6 @@ def main():
     "worst_12m":rolling_worst(vals,12),"worst_36m":rolling_worst(vals,36),
     "worst_60m":rolling_worst(vals,60),"worst_120m":rolling_worst(vals,120)})
    summaries.append(s)
-   if cost==0.001: scenarios[mode]=vals
  with (OUT/"strategy_backtest_summary.json").open("w",encoding="utf-8") as f:
   json.dump({"status":"PROVISIONAL_RESEARCH_PROXY","sample_start":usable[0]["date"],
    "sample_end":usable[-1]["date"],"common_months":len(usable),"seed":SEED,
@@ -165,7 +164,7 @@ def main():
    "methodology":{"buy_hold":"drift, no rebalance","annual":"rebalance each January",
     "threshold":"rebalance when any sleeve differs by more than 5 percentage points",
     "costs":"0/10/30 basis points per one-way RMB turnover; applied to half-L1 turnover",
-    "block_bootstrap":"circular 12/24/36-month blocks, 1,000 paths, 600 months; 2%/4% inflation and immediate 30% crash sensitivity for every spend and strategy",
+    "block_bootstrap":"circular 12/24/36-month blocks sampled from joint asset-return vectors; each synthetic path reruns its own buy-hold/annual/threshold rebalance rule, 1,000 paths, 600 months; 2%/4% inflation and immediate 30% crash sensitivity for every spend and strategy",
     "limitations":["CSI300 total-return series is an index proxy, not an investable fund",
     "AGG is a US aggregate bond ETF proxy, not Chinese government/bond wealth index",
     "EEM includes China and Taiwan exposure; overlap with A-share sleeve must be reviewed",
@@ -174,12 +173,12 @@ def main():
     "no rent growth, tax, pension, healthcare shock or personal cashflow additions"]},
    "strategies":summaries},f,ensure_ascii=False,indent=2)
  boot=[]
- for mode,history in scenarios.items():
+ for mode in ("buy_hold","annual","threshold"):
   for block in (12,24,36):
    for spend in SPENDS:
     for infl in (0.02,0.04):
-     boot.append(bootstrap(mode,history,block,spend,infl,0.0))
-     boot.append(bootstrap(mode,history,block,spend,infl,0.30))
+     boot.append(bootstrap(mode,usable,weights,block,spend,infl,0.0))
+     boot.append(bootstrap(mode,usable,weights,block,spend,infl,0.30))
  with (OUT/"withdrawal_bootstrap_results.csv").open("w",encoding="utf-8-sig",newline="") as f:
   w=csv.DictWriter(f,fieldnames=list(boot[0]));w.writeheader();w.writerows(boot)
  # Deterministic annual paths for 8/9/10w at low/base/high real-return assumptions.
