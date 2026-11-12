@@ -6,6 +6,18 @@
 @media print{header,.lab-actions,button,.ve-controls input,.ve-controls select,.ve-controls textarea{display:none!important}.ve-panel{break-inside:avoid;border:1px solid #bbb!important;background:#fff!important;color:#111!important}.ve-note,.muted{color:#333!important}body{background:#fff!important;color:#111!important}}
 .ve-field textarea{width:100%;min-width:0;min-height:88px;resize:vertical;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:11px;font:inherit;line-height:1.65}
 @media print{header,.lab-actions,button,.ve-controls input,.ve-controls select,.ve-controls textarea{display:none!important}.ve-panel{break-inside:avoid;border:1px solid #bbb!important;background:#fff!important;color:#111!important}.ve-note,.muted{color:#333!important}body{background:#fff!important;color:#111!important}}
+
+/* Unified investment decision cards */
+.first-batch-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.first-batch-card{border:1px solid var(--line);border-radius:14px;padding:18px;background:var(--bg);min-width:0}
+.first-batch-card h3{margin:0 0 5px;font-size:18px}
+.first-batch-card .fb-meta{font-size:11px;color:var(--muted);line-height:1.7}
+.first-batch-card .fb-status{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 8px;font-size:10px;margin:8px 0}
+.first-batch-card ul{padding-left:18px;margin:8px 0;font-size:12px;line-height:1.8;color:var(--muted)}
+.first-batch-card .fb-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+.first-batch-card .fb-cell{border:1px solid var(--line);border-radius:9px;padding:9px;font-size:11px;line-height:1.6}
+.first-batch-card .fb-cell b{display:block;font-size:10px;color:var(--muted);font-weight:500}
+@media(max-width:760px){.first-batch-grid{grid-template-columns:1fr}}
 </style></head><body><main class="container">
 <header class="ve-hero"><span class="eyebrow">YUMU · INVESTMENT LAB / 2026</span><h1>49 家公司<br>估值决策引擎</h1><p>从可追溯财务数据到行业适配估值，再到安全边际与分批买入。缺失的市场数据不会被伪造；模型假设由使用者显式输入，所有结果可复算、可导出。</p><div class="ve-status" id="loadStatus">正在读取财务数据库……</div></header>
 <section class="ve-panel"><h2>实时数据覆盖审计</h2><div class="ve-metrics"><div class="ve-metric"><small>公司数</small><strong id="auditCompanies">—</strong><p>研究池规模</p></div><div class="ve-metric"><small>有价格</small><strong id="auditPrices">—</strong><p id="auditPricePct">覆盖率 —</p></div><div class="ve-metric"><small>有 PE / PB / PS</small><strong id="auditMultiples">—</strong><p>分别统计字段非空数量</p></div><div class="ve-metric"><small>历史分位</small><strong id="auditPercentiles">—</strong><p>5年 / 10年已入库数量</p></div></div><p class="ve-note" id="auditWarnings">正在审计数据质量……</p></section><section class="ve-panel"><h2>01 / 公司筛选与数据状态</h2><div class="ve-controls">
@@ -125,7 +137,15 @@
 <section class="ve-panel"><h2>05 / 估值模型与质量控制规则</h2><div class="ve-table-wrap"><table><thead><tr><th>行业</th><th>主模型</th><th>必须核验的变量</th><th>禁止的简化</th></tr></thead><tbody>
 <tr><td>银行</td><td>PB–ROE、股利折现</td><td>核心一级资本、不良率、拨备覆盖、净息差、可持续ROE</td><td>直接套普通企业PE/FCF</td></tr><tr><td>保险</td><td>EV/NBV、内含价值分部估值</td><td>内含价值、新业务价值、偿付能力、投资收益假设</td><td>将IFRS净利润直接当作长期经营利润</td></tr><tr><td>周期</td><td>正常化盈利、EV/EBITDA、资产价值</td><td>完整价格周期、单位成本、产能、净债务</td><td>用景气顶点/谷底利润单年PE</td></tr><tr><td>成长 / 科技</td><td>多阶段DCF、SOTP、情景PE</td><td>收入增速、利润率、研发、稀释、资本开支、终值</td><td>把高增长永久外推</td></tr><tr><td>成熟消费 / 制造</td><td>正常化EPS、FCF收益率、DCF</td><td>ROIC、现金转化、竞争格局、分红回购</td><td>忽略非经常性损益和营运资本</td></tr><tr><td>公用事业</td><td>股息折现、DCF</td><td>资本开支、债务、监管、电价、资源禀赋</td><td>把经营现金流当自由现金流</td></tr><tr><td>券商</td><td>PB–ROE + 分部/周期盈利</td><td>净资本、杠杆、自营风险、两融、经纪/投行/资管业务结构与周期利润</td><td>把券商当普通制造企业套用FCF或单年PE</td></tr></tbody></table></div><h3 style="margin-top:22px">历史估值分位如何转换为买入价格</h3><div class="ve-table-wrap"><table><thead><tr><th>公司类型</th><th>可使用的历史分位</th><th>价格区间映射</th><th>不可省略的校验</th></tr></thead><tbody><tr><td>成熟消费 / 质量制造</td><td>PE-TTM P20 / P50 / P80</td><td>正常化EPS × 历史PE阈值 × (1 - 安全边际)</td><td>确认TTM/正常化EPS为正，盈利质量与ROIC未发生结构变化</td></tr><tr><td>银行 / 券商</td><td>PB P20 / P50 / P80</td><td>BVPS × 历史PB阈值 × (1 - 安全边际)</td><td>用可持续ROE、股权资本成本、资产质量与资本约束调整合理PB</td></tr><tr><td>成长科技</td><td>PE或PS仅作交叉检查</td><td>主买入价来自多阶段DCF / SOTP；历史倍数仅核对预期是否过高</td><td>增长、利润率、研发、稀释、资本开支和终值假设</td></tr><tr><td>周期行业</td><td>历史PE不自动映射；PB可作资产价值辅助</td><td>正常化EPS × 独立设定的中周期倍数，或EV/EBITDA与资产价值</td><td>完整周期价格、单位成本、产能、净债务；警惕PE反周期特征</td></tr><tr><td>保险</td><td>普通PE/PB只作观察</td><td>每股内含价值 / NBV × 合理EV/NBV倍数</td><td>EV、NBV、偿付能力、投资收益与风险贴现假设</td></tr><tr><td>公用事业</td><td>PE/PB仅作合理性校验</td><td>可持续DPS/(股权成本 - 长期增长) 或现金流DCF</td><td>净债务、资本开支、大修周期、监管与电价</td></tr></tbody></table></div><p class="ve-note">历史分位不是内在价值。5年P20/P50/P80只用于形成估值倍数参照，随后还要经过商业质量、财务结构和安全边际调整。当前计算器仅对成熟质量企业的PE、银行/券商的PB提供自动带入；其他类型遵循上表保留专属模型，不强行套用普通倍数。</p><p class="ve-note">历史估值分位必须基于同口径、复权/未复权一致的时间序列计算；本工具不会在没有历史数据时伪造 5 年或 10 年分位。正式发布买入评级前，需补齐数据日期、来源、模型假设、反证条件及风险提示。</p>
 <div class="ve-note" style="border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:16px"><b>49家公司研究完成度（截至2026-11-01）</b><br>49家公司定性研究卡片和行业模型分类已经建立；三大报表原始档案采集为210/210条请求、49/49家公司有记录，A股44家中43家报告到2026年三季报，中芯国际截至2026年半年报。该状态代表原始材料已回收，不代表五年历史财务表已标准化。当前仍有0/49家完成可比五年标准化盈利、0/49家完整ROIC、0/49家有来源支撑的资本成本与三情景参数；因此不生成看似精确的公司目标价和分批买入数字。分红/股本逐年历史、TTM FCF、商誉/租赁调整、潜在稀释与公司级情景假设仍须逐项审计。<br><a href="china-stocks-six-layers.html">打开49家公司总表和财务档案 ↗</a> · <a href="../data/raw-financials/coverage_audit.json">查看210组报表采集审计 ↗</a></div></section>
-<section class="ve-panel" id="decisionJournal"><h2>06 / 投资决策档案</h2>
+
+<section class="ve-panel" id="firstBatchDecisionCards">
+<h2>05 / 首批六家公司：统一投资决策卡</h2>
+<p class="muted">本模块将企业质量、经营趋势、资本效率、估值和买入/持有决策固化为统一结构。卡片自动读取49家公司主表；没有进入主表的公司显示清单冲突，不自动新增。价格仅展示来源数据库快照，不代表实时行情。完整字段标准：<a href="../data/valuation-model/investment-decision-cards-v1.json" target="_blank" rel="noopener">investment-decision-cards-v1.json</a>。</p>
+<div class="ve-note" id="firstBatchAudit">正在核对首批名单与49家公司主表……</div>
+<div class="first-batch-grid" id="firstBatchCards"><div class="first-batch-card">正在读取公司数据库……</div></div>
+<p class="ve-note">每张卡必须完成：商业模式/护城河证据、五年三情景假设、ROIC与资本配置、行业适配估值、反向DCF、买入/停止买入/减仓/退出规则。缺少证据的字段保持“待核验”，不自动生成评分或目标价。</p>
+</section>
+\n<section class="ve-panel" id="decisionJournal"><h2>06 / 投资决策档案</h2>
 <p class="muted">把估值结果变成可复核的投资记录。每家公司可保存一份当前决策快照，包括估值模型、关键输入、三档价值与买入线、数据日期、投资逻辑和反证条件。记录只保存在当前浏览器，不会上传服务器；可导出JSON备份或打印。</p>
 <div class="ve-controls">
 <div class="ve-field"><label>投资逻辑 / 买入理由</label><textarea id="decisionThesis" rows="3" placeholder="为什么这家公司值得研究？竞争优势、资本回报、估值依据……"></textarea></div>
@@ -443,7 +463,36 @@ async function loadValuationModel(){
   renderIntegratedModel();
  }catch(e){$('integratedModelStatus').textContent='公司级模型数据库未载入：'+e.message+'。请确认自动生成工作流已成功运行。'}
 }
-async function init(){try{let res=await fetch(DB);if(!res.ok)throw Error('HTTP '+res.status);db=await res.json();updateAudit();$('loadStatus').textContent='数据库加载成功：'+db.stocks.length+' 家公司｜基准日期 '+db.asOf+'｜缺失字段保留空值';$('company').innerHTML=db.stocks.map(s=>'<option value="'+s.code+'">'+s.name+'（'+s.code+'）</option>').join('');render();loadSelected();await loadFinancialData();loadSiteHistory();loadSiteCoverageAudit();await loadValuationModel()}catch(e){$('loadStatus').textContent='数据库加载失败：'+e.message+'。请通过 GitHub Pages 打开此页，勿直接 file:// 打开。'}}
+
+const FIRST_BATCH=[
+{name:'贵州茅台',code:null,model:'成熟消费 / DCF + 正常化PE',focus:['品牌与渠道价格体系','销量、产品结构与提价能力','正常化利润与自由现金流','渠道库存及批价变化']},
+{name:'美的集团',code:'000333.SZ',model:'成熟制造 / DCF + EV/EBIT',focus:['全球业务利润率与市场份额','ROIC及商誉/并购回报','营运资本与自由现金流','回购、分红及资本配置']},
+{name:'海尔智家',code:'600690.SH',model:'成熟制造 / DCF + EV/EBIT',focus:['海外业务盈利与品牌组合','并购整合及投后回报','ROIC与营运资本','高端化和全球化增长质量']},
+{name:'长江电力',code:'600900.SH',model:'公用事业 / 股息折现 + DCF',focus:['来水与发电量周期','电价与资产利用率','维护性/扩张性资本开支','净债务、股息与自由现金流']},
+{name:'招商银行',code:'600036.SH',model:'银行 / PB-ROE',focus:['净息差与负债成本','不良生成率、拨备与资产质量','可持续ROE与资本充足率','PB-ROE及股息可持续性']},
+{name:'格力电器',code:'000651.SZ',model:'成熟制造 / DCF + 正常化PE',focus:['空调主业竞争力与渠道库存','产品结构及多元化业务','现金流、资本开支与ROIC','分红回购和治理质量']}
+];
+function fbEsc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function renderFirstBatchCards(){
+ if(!db||!$('firstBatchCards'))return;
+ const cards=FIRST_BATCH.map(x=>{
+  const stock=x.code?db.stocks.find(s=>primarySecurityCode(s.code)===primarySecurityCode(x.code)):null;
+  const model=stock?(valuationModelByCode[primarySecurityCode(stock.code)]||null):null;
+  const price=stock?.price!==null&&stock?.price!==undefined?fmtRaw(stock.price)+' '+(stock.currency||'币种待核验'):'待核验';
+  const status=!stock?'主表缺失 / 名单冲突':(stock.price!==null&&stock.price!==undefined?'部分数据可用':'财务/估值字段待核验');
+  const period=stock?.financialPeriod||'待核验';
+  const priceDate=stock?.priceDate||'无价格日期';
+  const source=stock?.sourceUrl?'<a href="'+fbEsc(stock.sourceUrl)+'" target="_blank" rel="noopener">打开现有财报来源</a>':'尚无匹配来源';
+  const focus=x.focus.map(v=>'<li>'+fbEsc(v)+'</li>').join('');
+  const alerts=(stock?.qualityAlerts||[]);
+  const modelQuality=model?.quality||{};
+  return '<article class="first-batch-card"><h3>'+fbEsc(x.name)+'</h3><div class="fb-meta">'+fbEsc(x.code||'证券代码待核对')+' · '+fbEsc(x.model)+'</div><span class="fb-status">'+fbEsc(status)+'</span><div class="fb-grid"><div class="fb-cell"><b>现有价格快照</b>'+fbEsc(price)+'<br><small>'+fbEsc(priceDate)+'；非实时行情</small></div><div class="fb-cell"><b>最新财报期间</b>'+fbEsc(period)+'</div><div class="fb-cell"><b>ROIC / 净债务</b>待完成口径核验</div><div class="fb-cell"><b>五年预测 / 合理价值</b>待补齐可审计假设</div></div><p class="fb-meta" style="margin-top:10px">'+source+(alerts.length?' · 数据提醒：'+fbEsc(alerts.join('；')):'')+'</p><b style="font-size:11px">专项核验重点</b><ul>'+focus+'</ul><p class="fb-meta">决策结论：暂不自动评级。必须完成原始证据、三情景预测、反向DCF和买入/退出条件后才能形成正式结论。</p></article>';
+ }).join('');
+ $('firstBatchCards').innerHTML=cards;
+ const missing=FIRST_BATCH.filter(x=>!x.code||!db.stocks.some(s=>primarySecurityCode(s.code)===primarySecurityCode(x.code))).map(x=>x.name);
+ $('firstBatchAudit').textContent='首批目标 6 家；当前49家公司主表匹配 '+(6-missing.length)+'/6。'+(missing.length?'名单冲突：'+missing.join('、')+' 未在主证券JSON中找到。请核对原始49家清单后再决定是否纳入，不能静默改成50家或替换其他公司。':'六家公司均匹配主证券清单。')+' 数据库基准日：'+(db.asOf||'未标注')+'；价格快照按各公司priceDate单独展示。';
+}
+\nasync function init(){try{let res=await fetch(DB);if(!res.ok)throw Error('HTTP '+res.status);db=await res.json();updateAudit();$('loadStatus').textContent='数据库加载成功：'+db.stocks.length+' 家公司｜基准日期 '+db.asOf+'｜缺失字段保留空值';$('company').innerHTML=db.stocks.map(s=>'<option value="'+s.code+'">'+s.name+'（'+s.code+'）</option>').join('');render();loadSelected();await loadFinancialData();loadSiteHistory();loadSiteCoverageAudit();await loadValuationModel();renderFirstBatchCards()}catch(e){$('loadStatus').textContent='数据库加载失败：'+e.message+'。请通过 GitHub Pages 打开此页，勿直接 file:// 打开。'}}
 $('saveDecision').onclick=saveDecisionRecord;$('loadDecision').onclick=()=>loadDecisionRecord(selected?.code);$('exportDecisions').onclick=exportDecisionRecords;$('printDecision').onclick=printDecisionReport;renderDecisionRows();
 ['search','modelFilter','statusFilter','sort'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));$('company').onchange=loadSelected;forecastInputIds.forEach(id=>$(id)?.addEventListener('input',()=>{saveForecastInputs();if(financialDb)renderForecast(financialByCode[selected?.code])}));$('loadSiteHistory').onclick=loadSiteHistory;$('loadCoverageAudit').onclick=loadSiteCoverageAudit;$('calc').onclick=calculate;$('calcHistory').onclick=calculateHistory;$('applyHistoryBand').onclick=applyHistoryBand;$('downloadHistory').onclick=exportHistory;$('historyMetric').onchange=()=>{historyResults=[];historyBands={};$('historyRows').innerHTML='<tr><td colspan="11">指标已更改，正在重新计算……</td></tr>';if(importedHistoryText)processHistoryText(importedHistoryText,historySourceLabel)};$('loadData').onclick=loadData;$('export').onclick=()=>db&&exportCSV();$('reset').onclick=()=>{let fs=forecastStore();if(selected)delete fs[selected.code];localStorage.setItem(FORECAST_STORE,JSON.stringify(fs));['eps','bvps','roe','embedded','dps','modelShares','investmentBudget','forecastNetMarginLow','forecastNetMarginBase','forecastNetMarginHigh','growthLow','growthBase','growthHigh','fcfMarginLow','fcfMarginBase','fcfMarginHigh','roeLow','roeBase','roeHigh','vnbPerShare','vnbMultiple','cycleEpsLow','cycleEpsBase','cycleEpsHigh'].forEach(id=>$(id).value='');$('lowMult').value=12;$('baseMult').value=16;$('highMult').value=20;$('margin').value=25;$('discount').value=10;$('growthRate').value=3;loadSelected()};init();
 </script></body></html>
