@@ -207,4 +207,67 @@ def main():
  print(json.dumps({"status":"PASS","common_months":len(usable),"start":usable[0]["date"],
   "end":usable[-1]["date"],"audited_fields":len(audits),"strategy_rows":len(summaries),
   "bootstrap_rows":len(boot),"deterministic_rows":len(deterministic)},ensure_ascii=False))
-if __name__=="__main__": main()
+
+
+def allocation_sensitivity():
+ """Paired 52/45/42 equity sleeve comparison using the same proxy return rows."""
+ rows,_=read_data()
+ parsed=[]
+ for r in rows:
+  item={"date":r["date"]}
+  for name,(field,_) in ASSETS.items(): item[name]=number(r.get(field,""))
+  parsed.append(item)
+ usable=[r for r in parsed if all(r[n] is not None for n in ASSETS)]
+ equity_names=("A_shares_CSI300","US_equity_SP500","Developed_exUS_EFA","Emerging_EEM")
+ equity_mix=(0.20,0.12,0.10,0.10)
+ mix_total=sum(equity_mix)
+ scenarios={}
+ for eq in (0.52,0.45,0.42):
+  w={n:eq*x/mix_total for n,x in zip(equity_names,equity_mix)}
+  w["US_aggregate_bonds_AGG"]=1-eq-0.10-0.10
+  w["Gold_proxy"]=0.10
+  w["CNY_cash_H11025"]=0.10
+  scenarios[f"equity_{int(eq*100)}"]=w
+ summary=[]
+ for label,w in scenarios.items():
+  for mode in ("buy_hold","annual","threshold"):
+   vals,turn=run_strategy(usable,w,mode,0.001)
+   st=stats(vals)
+   st.update({"allocation":label,"equity_weight":sum(w[n] for n in equity_names),
+    "bond_proxy_weight":w["US_aggregate_bonds_AGG"],"gold_weight":w["Gold_proxy"],
+    "cash_weight":w["CNY_cash_H11025"],"strategy":mode,"one_way_cost":0.001,
+    "average_annual_turnover":statistics.mean(turn)*12 if turn else 0,
+    "worst_12m":rolling_worst(vals,12),"worst_36m":rolling_worst(vals,36),
+    "worst_60m":rolling_worst(vals,60),"worst_120m":rolling_worst(vals,120)})
+   summary.append(st)
+ with (OUT/"equity_allocation_comparison.csv").open("w",encoding="utf-8-sig",newline="") as f:
+  wri=csv.DictWriter(f,fieldnames=list(summary[0]));wri.writeheader();wri.writerows(summary)
+ # Paired block bootstrap: annual rebalancing only, same sampled asset paths for all allocations.
+ boot=[]
+ for block in (12,24,36):
+  for spend in SPENDS:
+   for infl in (0.02,0.04):
+    for crash in (0.0,0.30):
+     for label,w in scenarios.items():
+      res=bootstrap("annual",usable,w,block,spend,infl,crash)
+      res["allocation"]=label
+      res["equity_weight"]=sum(w[n] for n in equity_names)
+      res["bond_proxy_weight"]=w["US_aggregate_bonds_AGG"]
+      boot.append(res)
+ with (OUT/"equity_allocation_withdrawal_comparison.csv").open("w",encoding="utf-8-sig",newline="") as f:
+  wri=csv.DictWriter(f,fieldnames=list(boot[0]));wri.writeheader();wri.writerows(boot)
+ with (OUT/"equity_allocation_comparison_manifest.json").open("w",encoding="utf-8") as f:
+  json.dump({"status":"PROVISIONAL_RESEARCH_PROXY","sample_start":usable[0]["date"],
+   "sample_end":usable[-1]["date"],"common_months":len(usable),"paths_per_case":N_PATHS,
+   "allocations":scenarios,"method":"Same monthly asset-return rows, same 10bp one-way trading cost, same 12/24/36-month circular block bootstrap; equity sleeve mix held proportional to the 52% draft; bonds absorb the equity-weight difference; gold and cash fixed at 10% each.",
+   "important_limitations":["This is not a fully investable portfolio backtest.",
+   "The 28/35/38% bond sleeve is proxied entirely by US AGG ETF RMB total return, not the intended CNY government/policy-bank bond portfolio.",
+   "The equity proxies include CSI300, S&P500, EFA and EEM; EEM includes China, so exposure overlaps the China sleeves.",
+   "Gold is a monthly-average spot valuation proxy; cash history includes backfilled index observations.",
+   "No official Hang Seng total-return index, complete investable fund histories, taxes, personal tax status, rent growth or future contributions.",
+   "Bootstrap survival rates are empirical resampling frequencies, not objective real-world probabilities."]},f,ensure_ascii=False,indent=2)
+ print(json.dumps({"allocation_sensitivity":"PASS","rows":len(summary),"withdrawal_rows":len(boot)},ensure_ascii=False))
+
+if __name__=="__main__":
+ main()
+ allocation_sensitivity()
