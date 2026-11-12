@@ -1,0 +1,45 @@
+{
+  "status": "PROVISIONAL_RESEARCH_PROXY",
+  "sample_start": "2006-01",
+  "sample_end": "2026-07",
+  "common_months": 241,
+  "paths_per_case": 1000,
+  "allocations": {
+    "equity_52": {
+      "A_shares_CSI300": 0.2,
+      "US_equity_SP500": 0.12,
+      "Developed_exUS_EFA": 0.1,
+      "Emerging_EEM": 0.1,
+      "US_aggregate_bonds_AGG": 0.28,
+      "Gold_proxy": 0.1,
+      "CNY_cash_H11025": 0.1
+    },
+    "equity_45": {
+      "A_shares_CSI300": 0.1730769230769231,
+      "US_equity_SP500": 0.10384615384615384,
+      "Developed_exUS_EFA": 0.08653846153846155,
+      "Emerging_EEM": 0.08653846153846155,
+      "US_aggregate_bonds_AGG": 0.3500000000000001,
+      "Gold_proxy": 0.1,
+      "CNY_cash_H11025": 0.1
+    },
+    "equity_42": {
+      "A_shares_CSI300": 0.16153846153846155,
+      "US_equity_SP500": 0.0969230769230769,
+      "Developed_exUS_EFA": 0.08076923076923077,
+      "Emerging_EEM": 0.08076923076923077,
+      "US_aggregate_bonds_AGG": 0.3800000000000001,
+      "Gold_proxy": 0.1,
+      "CNY_cash_H11025": 0.1
+    }
+  },
+  "method": "Same monthly asset-return rows, same 10bp one-way trading cost, same 12/24/36-month circular block bootstrap; equity sleeve mix held proportional to the 52% draft; bonds absorb the equity-weight difference; gold and cash fixed at 10% each.",
+  "important_limitations": [
+    "This is not a fully investable portfolio backtest.",
+    "The 28/35/38% bond sleeve is proxied entirely by US AGG ETF RMB total return, not the intended CNY government/policy-bank bond portfolio.",
+    "The equity proxies include CSI300, S&P500, EFA and EEM; EEM includes China, so exposure overlaps the China sleeves.",
+    "Gold is a monthly-average spot valuation proxy; cash history includes backfilled index observations.",
+    "No official Hang Seng total-return index, complete investable fund histories, taxes, personal tax status, rent growth or future contributions.",
+    "Bootstrap survival rates are empirical resampling frequencies, not objective real-world probabilities."
+  ]
+}
