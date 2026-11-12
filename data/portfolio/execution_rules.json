@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "status": "PROPOSED_NOT_APPROVED",
+  "rebalance_review_frequency": "monthly_monitoring",
+  "candidate_rebalance_rules": [
+    {
+      "id": "ANNUAL",
+      "description": "每年固定月份恢复战略目标权重",
+      "status": "REQUIRES_USER_APPROVAL"
+    },
+    {
+      "id": "THRESHOLD_5PP",
+      "description": "任一资产类别偏离目标权重超过5个百分点触发",
+      "status": "RESEARCH_ONLY_NOT_APPROVED"
+    },
+    {
+      "id": "CASHFLOW_FIRST",
+      "description": "优先用新增资金/提款方向现金流纠偏，减少卖出",
+      "status": "REQUIRES_USER_APPROVAL"
+    }
+  ],
+  "execution_gates": [
+    "产品代码与交易场所核验",
+    "产品费率、规模、流动性、跟踪误差核验",
+    "账户是否可交易与交易单位核验",
+    "税费、汇兑、申赎限制核验",
+    "目标权重及金额经用户批准",
+    "下单前复核最新净值/价格与偏离度"
+  ],
+  "order_sizing": "目标金额=经批准的组合净资产×目标权重；买入金额=目标金额-当前持仓市值；扣除费用、现金缓冲与最小交易单位后生成订单草案。"
+}
