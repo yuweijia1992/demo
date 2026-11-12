@@ -8,6 +8,10 @@ on:
       - 'data/investment-monthly.csv'
   workflow_dispatch:
 
+concurrency:
+  group: investment-research-backtest
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
