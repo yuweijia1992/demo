@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "generatedAt": "2026-11-12",
   "title": "49家公司2021—2025资本效率统一审计主档",
-  "status": "49_company_universe_registered; official_FY2025_report_links_indexed; historical_2021_2024_and_note_level_reconstruction_pending",
+  "status": "49_company_universe_registered; FY2025_official_report_links_indexed; 2021_2024_history_and_content_audit_pending",
   "scope": {
     "companies": [
       {
@@ -15,7 +15,7 @@
         "annual2025Title": "内蒙古伊利实业集团股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "牧原股份",
@@ -27,7 +27,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "海天味业",
@@ -39,7 +39,7 @@
         "annual2025Title": "海天味业2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "海澜之家",
@@ -51,7 +51,7 @@
         "annual2025Title": "海澜之家集团股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "申洲国际",
@@ -63,7 +63,7 @@
         "annual2025Title": "Annual Report 2025",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": true
+        "hkPrimaryListing": true
       },
       {
         "name": "海尔智家",
@@ -75,7 +75,7 @@
         "annual2025Title": "海尔智家股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "美的集团",
@@ -87,7 +87,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "格力电器",
@@ -99,7 +99,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "比亚迪",
@@ -111,7 +111,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "宇通客车",
@@ -123,7 +123,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "京沪高铁",
@@ -135,7 +135,7 @@
         "annual2025Title": "京沪高速铁路股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "顺丰控股",
@@ -147,7 +147,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中远海控",
@@ -159,7 +159,7 @@
         "annual2025Title": "中远海控2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "迈瑞医疗",
@@ -171,7 +171,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "恒瑞医药",
@@ -183,7 +183,7 @@
         "annual2025Title": "恒瑞医药2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "药明康德",
@@ -195,7 +195,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "爱尔眼科",
@@ -207,7 +207,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "国药股份",
@@ -219,7 +219,7 @@
         "annual2025Title": "国药股份2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "长江电力",
@@ -231,7 +231,7 @@
         "annual2025Title": "长江电力2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "川投能源",
@@ -243,7 +243,7 @@
         "annual2025Title": "四川川投能源股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中国核电",
@@ -255,7 +255,7 @@
         "annual2025Title": "中国核电2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中国神华",
@@ -267,7 +267,7 @@
         "annual2025Title": "中国神华2025年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "国电南瑞",
@@ -279,7 +279,7 @@
         "annual2025Title": "国电南瑞2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中国移动",
@@ -291,7 +291,7 @@
         "annual2025Title": "中国移动：2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中国电信",
@@ -303,7 +303,7 @@
         "annual2025Title": "中国电信股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中国建筑",
@@ -315,7 +315,7 @@
         "annual2025Title": "中国建筑股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "腾讯控股",
@@ -327,7 +327,7 @@
         "annual2025Title": "2025 Annual Report",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": true
+        "hkPrimaryListing": true
       },
       {
         "name": "阿里巴巴",
@@ -339,7 +339,7 @@
         "annual2025Title": null,
         "annual2025LinkStatus": "missing",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": true
+        "hkPrimaryListing": true
       },
       {
         "name": "中芯国际",
@@ -351,7 +351,7 @@
         "annual2025Title": "港股公告：2025年年报",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "北方华创",
@@ -363,7 +363,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "海光信息",
@@ -375,7 +375,7 @@
         "annual2025Title": "海光信息技术股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中际旭创",
@@ -387,7 +387,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "宁德时代",
@@ -399,7 +399,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "阳光电源",
@@ -411,7 +411,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "汇川技术",
@@ -423,7 +423,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "招商银行",
@@ -435,7 +435,7 @@
         "annual2025Title": "招商银行股份有限公司2025年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "工商银行",
@@ -447,7 +447,7 @@
         "annual2025Title": "工商银行2025年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中国平安",
@@ -459,7 +459,7 @@
         "annual2025Title": "中国平安2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中国太保",
@@ -471,7 +471,7 @@
         "annual2025Title": "中国太保2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中信证券",
@@ -483,7 +483,7 @@
         "annual2025Title": "中信证券股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "东方财富",
@@ -495,7 +495,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "京东集团",
@@ -507,7 +507,7 @@
         "annual2025Title": "2025 Annual Report / Form 20-F",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": true
+        "hkPrimaryListing": true
       },
       {
         "name": "中国中免",
@@ -519,7 +519,7 @@
         "annual2025Title": "中国旅游集团中免股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "锦江酒店",
@@ -531,7 +531,7 @@
         "annual2025Title": "上海锦江国际酒店股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "分众传媒",
@@ -543,7 +543,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "哔哩哔哩",
@@ -555,7 +555,7 @@
         "annual2025Title": "2025 Annual Report",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": true
+        "hkPrimaryListing": true
       },
       {
         "name": "中公教育",
@@ -567,7 +567,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "兴蓉环境",
@@ -579,7 +579,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "瀚蓝环境",
@@ -591,7 +591,7 @@
         "annual2025Title": "瀚蓝环境股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       }
     ],
     "consolidation": "合并报表优先；集团/本公司口径分开",
@@ -87958,6 +87958,7 @@
     "outputs": [
       {
         "company": "伊利股份",
+        "code": "600887.SH",
         "annual": [
           {
             "year": 2021,
@@ -88078,6 +88079,7 @@
       },
       {
         "company": "牧原股份",
+        "code": "002714.SZ",
         "annual": [
           {
             "year": 2021,
@@ -88198,6 +88200,7 @@
       },
       {
         "company": "海天味业",
+        "code": "603288.SH",
         "annual": [
           {
             "year": 2021,
@@ -88318,6 +88321,7 @@
       },
       {
         "company": "海澜之家",
+        "code": "600398.SH",
         "annual": [
           {
             "year": 2021,
@@ -88438,6 +88442,7 @@
       },
       {
         "company": "申洲国际",
+        "code": "02313.HK",
         "annual": [
           {
             "year": 2021,
@@ -88558,6 +88563,7 @@
       },
       {
         "company": "海尔智家",
+        "code": "600690.SH",
         "annual": [
           {
             "year": 2021,
@@ -88678,6 +88684,7 @@
       },
       {
         "company": "美的集团",
+        "code": "000333.SZ",
         "annual": [
           {
             "year": 2021,
@@ -88798,6 +88805,7 @@
       },
       {
         "company": "格力电器",
+        "code": "000651.SZ",
         "annual": [
           {
             "year": 2021,
@@ -88918,6 +88926,7 @@
       },
       {
         "company": "比亚迪",
+        "code": "002594.SZ",
         "annual": [
           {
             "year": 2021,
@@ -89038,6 +89047,7 @@
       },
       {
         "company": "宇通客车",
+        "code": "600066.SH",
         "annual": [
           {
             "year": 2021,
@@ -89158,6 +89168,7 @@
       },
       {
         "company": "京沪高铁",
+        "code": "601816.SH",
         "annual": [
           {
             "year": 2021,
@@ -89278,6 +89289,7 @@
       },
       {
         "company": "顺丰控股",
+        "code": "002352.SZ",
         "annual": [
           {
             "year": 2021,
@@ -89398,6 +89410,7 @@
       },
       {
         "company": "中远海控",
+        "code": "601919.SH",
         "annual": [
           {
             "year": 2021,
@@ -89518,6 +89531,7 @@
       },
       {
         "company": "迈瑞医疗",
+        "code": "300760.SZ",
         "annual": [
           {
             "year": 2021,
@@ -89638,6 +89652,7 @@
       },
       {
         "company": "恒瑞医药",
+        "code": "600276.SH",
         "annual": [
           {
             "year": 2021,
@@ -89758,6 +89773,7 @@
       },
       {
         "company": "药明康德",
+        "code": "603259.SH",
         "annual": [
           {
             "year": 2021,
@@ -89878,6 +89894,7 @@
       },
       {
         "company": "爱尔眼科",
+        "code": "300015.SZ",
         "annual": [
           {
             "year": 2021,
@@ -89998,6 +90015,7 @@
       },
       {
         "company": "国药股份",
+        "code": "600511.SH",
         "annual": [
           {
             "year": 2021,
@@ -90118,6 +90136,7 @@
       },
       {
         "company": "长江电力",
+        "code": "600900.SH",
         "annual": [
           {
             "year": 2021,
@@ -90238,6 +90257,7 @@
       },
       {
         "company": "川投能源",
+        "code": "600674.SH",
         "annual": [
           {
             "year": 2021,
@@ -90358,6 +90378,7 @@
       },
       {
         "company": "中国核电",
+        "code": "601985.SH",
         "annual": [
           {
             "year": 2021,
@@ -90478,6 +90499,7 @@
       },
       {
         "company": "中国神华",
+        "code": "601088.SH",
         "annual": [
           {
             "year": 2021,
@@ -90598,6 +90620,7 @@
       },
       {
         "company": "国电南瑞",
+        "code": "600406.SH",
         "annual": [
           {
             "year": 2021,
@@ -90718,6 +90741,7 @@
       },
       {
         "company": "中国移动",
+        "code": "600941.SH / 00941.HK",
         "annual": [
           {
             "year": 2021,
@@ -90838,6 +90862,7 @@
       },
       {
         "company": "中国电信",
+        "code": "601728.SH / 00728.HK",
         "annual": [
           {
             "year": 2021,
@@ -90958,6 +90983,7 @@
       },
       {
         "company": "中国建筑",
+        "code": "601668.SH",
         "annual": [
           {
             "year": 2021,
@@ -91078,6 +91104,7 @@
       },
       {
         "company": "腾讯控股",
+        "code": "00700.HK",
         "annual": [
           {
             "year": 2021,
@@ -91198,6 +91225,7 @@
       },
       {
         "company": "阿里巴巴",
+        "code": "09988.HK / BABA",
         "annual": [
           {
             "year": 2021,
@@ -91318,6 +91346,7 @@
       },
       {
         "company": "中芯国际",
+        "code": "688981.SH / 00981.HK",
         "annual": [
           {
             "year": 2021,
@@ -91438,6 +91467,7 @@
       },
       {
         "company": "北方华创",
+        "code": "002371.SZ",
         "annual": [
           {
             "year": 2021,
@@ -91558,6 +91588,7 @@
       },
       {
         "company": "海光信息",
+        "code": "688041.SH",
         "annual": [
           {
             "year": 2021,
@@ -91678,6 +91709,7 @@
       },
       {
         "company": "中际旭创",
+        "code": "300308.SZ",
         "annual": [
           {
             "year": 2021,
@@ -91798,6 +91830,7 @@
       },
       {
         "company": "宁德时代",
+        "code": "300750.SZ / 03750.HK",
         "annual": [
           {
             "year": 2021,
@@ -91918,6 +91951,7 @@
       },
       {
         "company": "阳光电源",
+        "code": "300274.SZ",
         "annual": [
           {
             "year": 2021,
@@ -92038,6 +92072,7 @@
       },
       {
         "company": "汇川技术",
+        "code": "300124.SZ",
         "annual": [
           {
             "year": 2021,
@@ -92158,6 +92193,7 @@
       },
       {
         "company": "京东集团",
+        "code": "09618.HK / JD",
         "annual": [
           {
             "year": 2021,
@@ -92278,6 +92314,7 @@
       },
       {
         "company": "中国中免",
+        "code": "601888.SH",
         "annual": [
           {
             "year": 2021,
@@ -92398,6 +92435,7 @@
       },
       {
         "company": "锦江酒店",
+        "code": "600754.SH",
         "annual": [
           {
             "year": 2021,
@@ -92518,6 +92556,7 @@
       },
       {
         "company": "分众传媒",
+        "code": "002027.SZ",
         "annual": [
           {
             "year": 2021,
@@ -92638,6 +92677,7 @@
       },
       {
         "company": "哔哩哔哩",
+        "code": "09626.HK / BILI",
         "annual": [
           {
             "year": 2021,
@@ -92758,6 +92798,7 @@
       },
       {
         "company": "中公教育",
+        "code": "002607.SZ",
         "annual": [
           {
             "year": 2021,
@@ -92878,6 +92919,7 @@
       },
       {
         "company": "兴蓉环境",
+        "code": "000598.SZ",
         "annual": [
           {
             "year": 2021,
@@ -92998,6 +93040,7 @@
       },
       {
         "company": "瀚蓝环境",
+        "code": "600323.SH",
         "annual": [
           {
             "year": 2021,
@@ -93273,7 +93316,7 @@
       "期初期末投入资本勾稽",
       "重大合并范围/追溯调整处理"
     ],
-    "currentConclusion": "审计范围已扩展至估值研究池全部49家公司。已登记49家公司2025年年报官方PDF链接（仅链接登记，尚未完成内容级核验）；2021—2024年历史年报来源、报表页码、附注和逐项数据仍待补齐。所有未核验数值均保留null。银行、保险和券商采用独立行业指标，不套用工业企业ROIC。"
+    "currentConclusion": "审计范围扩展至全部49家公司。49家公司FY2025年报官方链接已登记（链接登记不等于报告内容核验）；2021—2024年历史报告、页码、附注及逐项报表数据仍待补齐。未核验数值全部保留null。银行、保险和券商采用独立行业框架，不套用工业企业ROIC。"
   },
   "sourceAuditStatus": {
     "historicalReportRegister": "annual_report_source_register_complete_for_four_companies; total_assets_series_partially_reconciled; full_balance_sheet_line_item_audit_pending",
@@ -93286,7 +93329,7 @@
     "sourceSha": "ec212e91d722c64ab3e2160d084ec69fded52a9f",
     "companyCount": 49,
     "annual2025OfficialLinks": 48,
-    "annual2021To2024HistoricalReportLinks": 0,
+    "historicalAnnualReports2021to2024": "not_yet_registered",
     "officialLinkDoesNotEqualContentVerification": true,
     "companies": [
       {
@@ -93299,7 +93342,7 @@
         "annual2025Title": "内蒙古伊利实业集团股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "牧原股份",
@@ -93311,7 +93354,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "海天味业",
@@ -93323,7 +93366,7 @@
         "annual2025Title": "海天味业2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "海澜之家",
@@ -93335,7 +93378,7 @@
         "annual2025Title": "海澜之家集团股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "申洲国际",
@@ -93347,7 +93390,7 @@
         "annual2025Title": "Annual Report 2025",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": true
+        "hkPrimaryListing": true
       },
       {
         "name": "海尔智家",
@@ -93359,7 +93402,7 @@
         "annual2025Title": "海尔智家股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "美的集团",
@@ -93371,7 +93414,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "格力电器",
@@ -93383,7 +93426,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "比亚迪",
@@ -93395,7 +93438,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "宇通客车",
@@ -93407,7 +93450,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "京沪高铁",
@@ -93419,7 +93462,7 @@
         "annual2025Title": "京沪高速铁路股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "顺丰控股",
@@ -93431,7 +93474,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中远海控",
@@ -93443,7 +93486,7 @@
         "annual2025Title": "中远海控2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "迈瑞医疗",
@@ -93455,7 +93498,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "恒瑞医药",
@@ -93467,7 +93510,7 @@
         "annual2025Title": "恒瑞医药2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "药明康德",
@@ -93479,7 +93522,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "爱尔眼科",
@@ -93491,7 +93534,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "国药股份",
@@ -93503,7 +93546,7 @@
         "annual2025Title": "国药股份2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "长江电力",
@@ -93515,7 +93558,7 @@
         "annual2025Title": "长江电力2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "川投能源",
@@ -93527,7 +93570,7 @@
         "annual2025Title": "四川川投能源股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中国核电",
@@ -93539,7 +93582,7 @@
         "annual2025Title": "中国核电2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中国神华",
@@ -93551,7 +93594,7 @@
         "annual2025Title": "中国神华2025年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "国电南瑞",
@@ -93563,7 +93606,7 @@
         "annual2025Title": "国电南瑞2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中国移动",
@@ -93575,7 +93618,7 @@
         "annual2025Title": "中国移动：2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中国电信",
@@ -93587,7 +93630,7 @@
         "annual2025Title": "中国电信股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中国建筑",
@@ -93599,7 +93642,7 @@
         "annual2025Title": "中国建筑股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "腾讯控股",
@@ -93611,7 +93654,7 @@
         "annual2025Title": "2025 Annual Report",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": true
+        "hkPrimaryListing": true
       },
       {
         "name": "阿里巴巴",
@@ -93623,7 +93666,7 @@
         "annual2025Title": null,
         "annual2025LinkStatus": "missing",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": true
+        "hkPrimaryListing": true
       },
       {
         "name": "中芯国际",
@@ -93635,7 +93678,7 @@
         "annual2025Title": "港股公告：2025年年报",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "北方华创",
@@ -93647,7 +93690,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "海光信息",
@@ -93659,7 +93702,7 @@
         "annual2025Title": "海光信息技术股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中际旭创",
@@ -93671,7 +93714,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "宁德时代",
@@ -93683,7 +93726,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "阳光电源",
@@ -93695,7 +93738,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "汇川技术",
@@ -93707,7 +93750,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "招商银行",
@@ -93719,7 +93762,7 @@
         "annual2025Title": "招商银行股份有限公司2025年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "工商银行",
@@ -93731,7 +93774,7 @@
         "annual2025Title": "工商银行2025年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中国平安",
@@ -93743,7 +93786,7 @@
         "annual2025Title": "中国平安2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中国太保",
@@ -93755,7 +93798,7 @@
         "annual2025Title": "中国太保2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "中信证券",
@@ -93767,7 +93810,7 @@
         "annual2025Title": "中信证券股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "东方财富",
@@ -93779,7 +93822,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "京东集团",
@@ -93791,7 +93834,7 @@
         "annual2025Title": "2025 Annual Report / Form 20-F",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": true
+        "hkPrimaryListing": true
       },
       {
         "name": "中国中免",
@@ -93803,7 +93846,7 @@
         "annual2025Title": "中国旅游集团中免股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "锦江酒店",
@@ -93815,7 +93858,7 @@
         "annual2025Title": "上海锦江国际酒店股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "分众传媒",
@@ -93827,7 +93870,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "哔哩哔哩",
@@ -93839,7 +93882,7 @@
         "annual2025Title": "2025 Annual Report",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": true
+        "hkPrimaryListing": true
       },
       {
         "name": "中公教育",
@@ -93851,7 +93894,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "兴蓉环境",
@@ -93863,7 +93906,7 @@
         "annual2025Title": "2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       },
       {
         "name": "瀚蓝环境",
@@ -93875,7 +93918,7 @@
         "annual2025Title": "瀚蓝环境股份有限公司2025年年度报告",
         "annual2025LinkStatus": "official_link_only_not_content_verified",
         "historicalAnnualReportsStatus": "2021-2024_report_links_and_content_audit_pending",
-        "hkListing": false
+        "hkPrimaryListing": false
       }
     ]
   },
