@@ -829,5 +829,3228 @@
         "note": "2024年度报告给出的2024年末总资产与2025年度报告中的2024比较数存在差异；2025年度报告提及同一控制下企业合并追溯调整，需确认比较数重述基础。"
       }
     ]
+  },
+  "candidateInvestedCapitalInputMatrix": {
+    "title": "四家非金融企业2021—2025投入资本原始输入矩阵（候选底稿）",
+    "generatedAt": "2026-11-12",
+    "status": "raw_matrix_extracted_not_yet_annual_report_reconciled",
+    "scope": [
+      "美的集团",
+      "海尔智家",
+      "长江电力",
+      "格力电器"
+    ],
+    "methodology": {
+      "source": "现有V2标准化财务审计底稿的合并资产负债表映射字段",
+      "unit": "CNY字段原始数值；底层reportedUnit为空时不做单位换算",
+      "noPrematureCalculation": "本矩阵不计算投入资本、ROIC或EVA。必须先核验现金及受限资金、金融资产、经营性无息负债、租赁负债、少数股东权益和商誉分类",
+      "comparability": "海尔和长江电力存在跨年报比较数差异，必须优先统一报告版本与追溯调整口径",
+      "mappingCaution": "交易性金融资产字段仅是标准化接口映射；长期股权投资不能自动认定为非经营性金融资产"
+    },
+    "fields": [
+      {
+        "key": "totalAssets",
+        "label": "资产总计"
+      },
+      {
+        "key": "totalLiabilities",
+        "label": "负债合计"
+      },
+      {
+        "key": "currentLiabilities",
+        "label": "流动负债合计"
+      },
+      {
+        "key": "parentEquity",
+        "label": "归母股东权益"
+      },
+      {
+        "key": "cash",
+        "label": "货币资金"
+      },
+      {
+        "key": "cashAndCashEquivalents",
+        "label": "现金及现金等价物"
+      },
+      {
+        "key": "restrictedCash",
+        "label": "受限资金"
+      },
+      {
+        "key": "shortBorrowings",
+        "label": "短期借款"
+      },
+      {
+        "key": "longBorrowings",
+        "label": "长期借款"
+      },
+      {
+        "key": "bondsPayable",
+        "label": "应付债券"
+      },
+      {
+        "key": "leaseLiabilities",
+        "label": "租赁负债"
+      },
+      {
+        "key": "goodwill",
+        "label": "商誉"
+      },
+      {
+        "key": "shortTermInvestments",
+        "label": "交易性金融资产/短期投资映射"
+      },
+      {
+        "key": "longTermInvestments",
+        "label": "长期股权投资"
+      },
+      {
+        "key": "accountsReceivable",
+        "label": "应收账款"
+      },
+      {
+        "key": "inventory",
+        "label": "存货"
+      },
+      {
+        "key": "shareCapital",
+        "label": "股本"
+      }
+    ],
+    "companies": [
+      {
+        "company": "美的集团",
+        "code": "000333.SZ",
+        "period": "2021-2025",
+        "basis": "原始标准化财务数据接口映射值；尚未逐项与年报资产负债表核对",
+        "unitPolicy": "原样保留源数值；reportedUnit缺失，不换算亿元",
+        "rows": [
+          {
+            "year": 2021,
+            "reportDate": "2021-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/000333/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 14,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 387946104000,
+                "rawValue": "387946104000.0",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 253121028000,
+                "rawValue": "253121028000.0",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 222851476000,
+                "rawValue": "222851476000.0",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 124868124000,
+                "rawValue": "124868124000.0",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 71875556000,
+                "rawValue": "71875556000.0",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 5381623000,
+                "rawValue": "5381623000.0",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 19734020000,
+                "rawValue": "19734020000.0",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 1533552000,
+                "rawValue": "1533552000.0",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 27874752000,
+                "rawValue": "27874752000.0",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": 5879202000,
+                "rawValue": "5879202000.0",
+                "sourceField": "交易性金融资产",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 3796705000,
+                "rawValue": "3796705000.0",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 24636440000,
+                "rawValue": "24636440000.0",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 45924439000,
+                "rawValue": "45924439000.0",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 6986564000,
+                "rawValue": "6986564000.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2022,
+            "reportDate": "2022-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/000333/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 15,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 422555267000,
+                "rawValue": "422555267000.0",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 270631465000,
+                "rawValue": "270631465000.0",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 206341741000,
+                "rawValue": "206341741000.0",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 142935236000,
+                "rawValue": "142935236000.0",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 55270099000,
+                "rawValue": "55270099000.0",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 5169480000,
+                "rawValue": "5169480000.0",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 50685948000,
+                "rawValue": "50685948000.0",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": 3163616000,
+                "rawValue": "3163616000.0",
+                "sourceField": "应付债券",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 1507480000,
+                "rawValue": "1507480000.0",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 28548653000,
+                "rawValue": "28548653000.0",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": 3284593000,
+                "rawValue": "3284593000.0",
+                "sourceField": "交易性金融资产",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 5188817000,
+                "rawValue": "5188817000.0",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 28237973000,
+                "rawValue": "28237973000.0",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 46044897000,
+                "rawValue": "46044897000.0",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 6997273000,
+                "rawValue": "6997273000.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2023,
+            "reportDate": "2023-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/000333/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 15,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 486038184000,
+                "rawValue": "486038184000.0",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 311738535000,
+                "rawValue": "311738535000.0",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 251245721000,
+                "rawValue": "251245721000.0",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 162878825000,
+                "rawValue": "162878825000.0",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 81673846000,
+                "rawValue": "81673846000.0",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 8819176000,
+                "rawValue": "8819176000.0",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 46138736000,
+                "rawValue": "46138736000.0",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": 3217969000,
+                "rawValue": "3217969000.0",
+                "sourceField": "应付债券",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 2047319000,
+                "rawValue": "2047319000.0",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 30858237000,
+                "rawValue": "30858237000.0",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": 1790588000,
+                "rawValue": "1790588000.0",
+                "sourceField": "交易性金融资产",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 4976109000,
+                "rawValue": "4976109000.0",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 32884739000,
+                "rawValue": "32884739000.0",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 47339255000,
+                "rawValue": "47339255000.0",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 7025769000,
+                "rawValue": "7025769000.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2024,
+            "reportDate": "2024-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/000333/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 15,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 604351853000,
+                "rawValue": "604351853000.0",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 376684462000,
+                "rawValue": "376684462000.0",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 351819806000,
+                "rawValue": "351819806000.0",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 216750057000,
+                "rawValue": "216750057000.0",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 140410308000,
+                "rawValue": "140410308000.0",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 31008549000,
+                "rawValue": "31008549000.0",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 10491757000,
+                "rawValue": "10491757000.0",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": 3266775000,
+                "rawValue": "3266775000.0",
+                "sourceField": "应付债券",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 1825258000,
+                "rawValue": "1825258000.0",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 29581014000,
+                "rawValue": "29581014000.0",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": 6936113000,
+                "rawValue": "6936113000.0",
+                "sourceField": "交易性金融资产",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 5223478000,
+                "rawValue": "5223478000.0",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 35798974000,
+                "rawValue": "35798974000.0",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 63339188000,
+                "rawValue": "63339188000.0",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 7655956000,
+                "rawValue": "7655956000.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2025,
+            "reportDate": "2025-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/000333/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 15,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 608791766000,
+                "rawValue": "608791766000.0",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 372367543000,
+                "rawValue": "372367543000.0",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 343383700000,
+                "rawValue": "343383700000.0",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 223221305000,
+                "rawValue": "223221305000.0",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 85247150000,
+                "rawValue": "85247150000.0",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 43904550000,
+                "rawValue": "43904550000.0",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 12658843000,
+                "rawValue": "12658843000.0",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": 3194774000,
+                "rawValue": "3194774000.0",
+                "sourceField": "应付债券",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 1901053000,
+                "rawValue": "1901053000.0",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 34256859000,
+                "rawValue": "34256859000.0",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": 710717000,
+                "rawValue": "710717000.0",
+                "sourceField": "交易性金融资产",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 4775044000,
+                "rawValue": "4775044000.0",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 40450097000,
+                "rawValue": "40450097000.0",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 64628834000,
+                "rawValue": "64628834000.0",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 7597145000,
+                "rawValue": "7597145000.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "company": "海尔智家",
+        "code": "600690.SH",
+        "period": "2021-2025",
+        "basis": "原始标准化财务数据接口映射值；尚未逐项与年报资产负债表核对",
+        "unitPolicy": "原样保留源数值；reportedUnit缺失，不换算亿元",
+        "rows": [
+          {
+            "year": 2021,
+            "reportDate": "2021-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/600690/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 15,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 217741133577.31003,
+                "rawValue": "217741133577.31003",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 136466540240.53,
+                "rawValue": "136466540240.53",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 124886962014.27,
+                "rawValue": "124886962014.27",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 79985092528.06,
+                "rawValue": "79985092528.06",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 46097333903.45,
+                "rawValue": "46097333903.45",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 11226212134.39,
+                "rawValue": "11226212134.39",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 3038573824.53,
+                "rawValue": "3038573824.53",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": 334730048.82,
+                "rawValue": "334730048.82",
+                "sourceField": "应付债券",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 1960894981.47,
+                "rawValue": "1960894981.47",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 21827103060.76,
+                "rawValue": "21827103060.76",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": 2786075529.09,
+                "rawValue": "2786075529.09",
+                "sourceField": "交易性金融资产",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 23200884340.57,
+                "rawValue": "23200884340.57",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 14625260856.04,
+                "rawValue": "14625260856.04",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 39913949898.86,
+                "rawValue": "39913949898.86",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 9398704530,
+                "rawValue": "9398704530.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2022,
+            "reportDate": "2022-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/600690/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 14,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 236017821177.5,
+                "rawValue": "236017821177.5",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 141267488530.61,
+                "rawValue": "141267488530.61",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 118771199681.81,
+                "rawValue": "118771199681.81",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 93459437602.44,
+                "rawValue": "93459437602.44",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 54162212155.31,
+                "rawValue": "54162212155.31",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 9672223522.36,
+                "rawValue": "9672223522.36",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 13590866873.43,
+                "rawValue": "13590866873.43",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 2824477670.61,
+                "rawValue": "2824477670.61",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 23643595643.87,
+                "rawValue": "23643595643.87",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": 519912880.91,
+                "rawValue": "519912880.91",
+                "sourceField": "交易性金融资产",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 24527800290.84,
+                "rawValue": "24527800290.84",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 15886748811.81,
+                "rawValue": "15886748811.81",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 41587786307.53,
+                "rawValue": "41587786307.53",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 9446598493,
+                "rawValue": "9446598493.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2023,
+            "reportDate": "2023-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/600690/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 14,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 261067684897.49,
+                "rawValue": "261067684897.49",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 153537344924.15002,
+                "rawValue": "153537344924.15002",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 123814278403.38,
+                "rawValue": "123814278403.38",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 101265984771.17,
+                "rawValue": "101265984771.17",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 57255962206.24,
+                "rawValue": "57255962206.24",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 10895076014.86,
+                "rawValue": "10895076014.86",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 18365302925.77,
+                "rawValue": "18365302925.77",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 3429765203.81,
+                "rawValue": "3429765203.81",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 24482559414.46,
+                "rawValue": "24482559414.46",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": 956995543.83,
+                "rawValue": "956995543.83",
+                "sourceField": "交易性金融资产",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 20196199306.57,
+                "rawValue": "20196199306.57",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 22682921254.25,
+                "rawValue": "22682921254.25",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 39524006616.33,
+                "rawValue": "39524006616.33",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 9438114893,
+                "rawValue": "9438114893.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2024,
+            "reportDate": "2024-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/600690/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 14,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 290736357978.75,
+                "rawValue": "290736357978.75",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 171934636793.11002,
+                "rawValue": "171934636793.11002",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 149754960133.74,
+                "rawValue": "149754960133.74",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 111778874767.22,
+                "rawValue": "111778874767.22",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 55597554622.83,
+                "rawValue": "55597554622.83",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 13784367443.93,
+                "rawValue": "13784367443.93",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 9665074313.67,
+                "rawValue": "9665074313.67",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 4480895997.36,
+                "rawValue": "4480895997.36",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 27384007599.06,
+                "rawValue": "27384007599.06",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": 1236017839.53,
+                "rawValue": "1236017839.53",
+                "sourceField": "交易性金融资产",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 20932439255.93,
+                "rawValue": "20932439255.93",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 26494845510.56,
+                "rawValue": "26494845510.56",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 43189855697.96,
+                "rawValue": "43189855697.96",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 9382913334,
+                "rawValue": "9382913334.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2025,
+            "reportDate": "2025-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/600690/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 15,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 295795068591.57,
+                "rawValue": "295795068591.57",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 169818067276.46,
+                "rawValue": "169818067276.46",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 142346283620.95,
+                "rawValue": "142346283620.95",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 118698401416.58,
+                "rawValue": "118698401416.58",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 47621657441.3,
+                "rawValue": "47621657441.3",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 17420784420.86,
+                "rawValue": "17420784420.86",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 11165886169.09,
+                "rawValue": "11165886169.09",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": 3500000000,
+                "rawValue": "3500000000.0",
+                "sourceField": "应付债券",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 4551410567.84,
+                "rawValue": "4551410567.84",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 27300229637.37,
+                "rawValue": "27300229637.37",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": 2034270761.53,
+                "rawValue": "2034270761.53",
+                "sourceField": "交易性金融资产",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 21756902299.19,
+                "rawValue": "21756902299.19",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 27065839108.45,
+                "rawValue": "27065839108.45",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 46848790687.12,
+                "rawValue": "46848790687.12",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 9377629650,
+                "rawValue": "9377629650.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "company": "长江电力",
+        "code": "600900.SH",
+        "period": "2021-2025",
+        "basis": "原始标准化财务数据接口映射值；尚未逐项与年报资产负债表核对",
+        "unitPolicy": "原样保留源数值；reportedUnit缺失，不换算亿元",
+        "rows": [
+          {
+            "year": 2021,
+            "reportDate": "2021-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/600900/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 14,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 328563281639.2,
+                "rawValue": "328563281639.2",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 138275058750.5,
+                "rawValue": "138275058750.5",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 53406216174.22,
+                "rawValue": "53406216174.22",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 181063819486.27002,
+                "rawValue": "181063819486.27002",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 9929980061.69,
+                "rawValue": "9929980061.69",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 12315812640,
+                "rawValue": "12315812640.0",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 36439373166.26,
+                "rawValue": "36439373166.26",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": 33978897510.99,
+                "rawValue": "33978897510.99",
+                "sourceField": "应付债券",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 639176461.52,
+                "rawValue": "639176461.52",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 987246902.63,
+                "rawValue": "987246902.63",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 60716844608.7,
+                "rawValue": "60716844608.7",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 3768258804.36,
+                "rawValue": "3768258804.36",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 470031320.31,
+                "rawValue": "470031320.31",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 22741859230,
+                "rawValue": "22741859230.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2022,
+            "reportDate": "2022-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/600900/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 14,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 578453569418.2799,
+                "rawValue": "578453569418.2799",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 322436160281.08997,
+                "rawValue": "322436160281.08997",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 91751118323.71,
+                "rawValue": "91751118323.71",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 227672712353.16,
+                "rawValue": "227672712353.16",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 10638044864.92,
+                "rawValue": "10638044864.92",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 26752360688.1,
+                "rawValue": "26752360688.1",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 190246706722.4,
+                "rawValue": "190246706722.4",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": 37620231630.91,
+                "rawValue": "37620231630.91",
+                "sourceField": "应付债券",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 620996116.15,
+                "rawValue": "620996116.15",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 1081106204,
+                "rawValue": "1081106204.0",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 67166066218.63,
+                "rawValue": "67166066218.63",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 15227668604.93,
+                "rawValue": "15227668604.93",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 567385580.82,
+                "rawValue": "567385580.82",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 22741859230,
+                "rawValue": "22741859230.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2023,
+            "reportDate": "2023-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/600900/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 14,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 572938869543.08,
+                "rawValue": "572938869543.08",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 360398263726.57996,
+                "rawValue": "360398263726.57996",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 144293106325.26,
+                "rawValue": "144293106325.26",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 201453338461.43002,
+                "rawValue": "201453338461.43002",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 7823650159.5,
+                "rawValue": "7823650159.5",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 53985432819.58,
+                "rawValue": "53985432819.58",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 187007685859.59003,
+                "rawValue": "187007685859.59003",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": 25835606999.89,
+                "rawValue": "25835606999.89",
+                "sourceField": "应付债券",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 592017629.31,
+                "rawValue": "592017629.31",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 1136419113.59,
+                "rawValue": "1136419113.59",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 71684283644.31,
+                "rawValue": "71684283644.31",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 8514603738.09,
+                "rawValue": "8514603738.09",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 586548003.46,
+                "rawValue": "586548003.46",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 24468217716,
+                "rawValue": "24468217716.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2024,
+            "reportDate": "2024-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/600900/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 14,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 566585128973.8099,
+                "rawValue": "566585128973.8099",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 344501035260.05,
+                "rawValue": "344501035260.05",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 159713419903.54,
+                "rawValue": "159713419903.54",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 210348910895.96997,
+                "rawValue": "210348910895.96997",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 6572724404.32,
+                "rawValue": "6572724404.32",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 69692431511.49,
+                "rawValue": "69692431511.49",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 158815759451.94,
+                "rawValue": "158815759451.94",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": 21740804827.43,
+                "rawValue": "21740804827.43",
+                "sourceField": "应付债券",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 582895188.73,
+                "rawValue": "582895188.73",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 1152786257.22,
+                "rawValue": "1152786257.22",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 73319357743.59,
+                "rawValue": "73319357743.59",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 9326624055.45,
+                "rawValue": "9326624055.45",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 641979948.58,
+                "rawValue": "641979948.58",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 24468217716,
+                "rawValue": "24468217716.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2025,
+            "reportDate": "2025-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/600900/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 14,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 559208340046.84,
+                "rawValue": "559208340046.84",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 325847678729.19,
+                "rawValue": "325847678729.19",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 118939692466.15,
+                "rawValue": "118939692466.15",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 221338010639.92,
+                "rawValue": "221338010639.92",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 4585856068.06,
+                "rawValue": "4585856068.06",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 15181107941.81,
+                "rawValue": "15181107941.81",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 172310624303.31003,
+                "rawValue": "172310624303.31003",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": 29780996027.99,
+                "rawValue": "29780996027.99",
+                "sourceField": "应付债券",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 508976801.84,
+                "rawValue": "508976801.84",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 1116546264.67,
+                "rawValue": "1116546264.67",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 74936308441.59,
+                "rawValue": "74936308441.59",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 7251847539.23,
+                "rawValue": "7251847539.23",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 836598890.26,
+                "rawValue": "836598890.26",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 24468217716,
+                "rawValue": "24468217716.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "company": "格力电器",
+        "code": "000651.SZ",
+        "period": "2021-2025",
+        "basis": "原始标准化财务数据接口映射值；尚未逐项与年报资产负债表核对",
+        "unitPolicy": "原样保留源数值；reportedUnit缺失，不换算亿元",
+        "rows": [
+          {
+            "year": 2021,
+            "reportDate": "2021-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/000651/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 13,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 319598183780.38,
+                "rawValue": "319598183780.38",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 211672732613.87003,
+                "rawValue": "211672732613.87003",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 197101385428.56,
+                "rawValue": "197101385428.56",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 103651654599.87,
+                "rawValue": "103651654599.87",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 116939298776.87,
+                "rawValue": "116939298776.87",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 27617920548.11,
+                "rawValue": "27617920548.11",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 8960864258.3,
+                "rawValue": "8960864258.3",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 3313452.52,
+                "rawValue": "3313452.52",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 707629136.24,
+                "rawValue": "707629136.24",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 10337008014.57,
+                "rawValue": "10337008014.57",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 13840898802.76,
+                "rawValue": "13840898802.76",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 42765598328.01,
+                "rawValue": "42765598328.01",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 5914469040,
+                "rawValue": "5914469040.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2022,
+            "reportDate": "2022-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/000651/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 14,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 355070769579.69995,
+                "rawValue": "355070769579.69995",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 253194721565.51,
+                "rawValue": "253194721565.51",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 216371936815.59003,
+                "rawValue": "216371936815.59003",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 96758734892.25,
+                "rawValue": "96758734892.25",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 157484332251.39,
+                "rawValue": "157484332251.39",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 52895851287.92,
+                "rawValue": "52895851287.92",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 30784241211.21,
+                "rawValue": "30784241211.21",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 146836620.66,
+                "rawValue": "146836620.66",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 1659358399.03,
+                "rawValue": "1659358399.03",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": 3867203363.52,
+                "rawValue": "3867203363.52",
+                "sourceField": "交易性金融资产",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 5892290568.81,
+                "rawValue": "5892290568.81",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 14824742623.45,
+                "rawValue": "14824742623.45",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 38314176763.9,
+                "rawValue": "38314176763.9",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 5631405741,
+                "rawValue": "5631405741.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2023,
+            "reportDate": "2023-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/000651/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 14,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 368053902576.37,
+                "rawValue": "368053902576.37",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 247407749159.93,
+                "rawValue": "247407749159.93",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 200983299755.92,
+                "rawValue": "200983299755.92",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 116793716103.39,
+                "rawValue": "116793716103.39",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 124104987289.62,
+                "rawValue": "124104987289.62",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 26443476388.52,
+                "rawValue": "26443476388.52",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 39035742535.09,
+                "rawValue": "39035742535.09",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 767007951.92,
+                "rawValue": "767007951.92",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 1452496852.11,
+                "rawValue": "1452496852.11",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": 9614423403.4,
+                "rawValue": "9614423403.4",
+                "sourceField": "交易性金融资产",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 4488967031.2,
+                "rawValue": "4488967031.2",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 16099477117.56,
+                "rawValue": "16099477117.56",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 32579140028.7,
+                "rawValue": "32579140028.7",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 5631405741,
+                "rawValue": "5631405741.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2024,
+            "reportDate": "2024-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/000651/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 14,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 368031704522.86005,
+                "rawValue": "368031704522.86005",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 226518009574.88998,
+                "rawValue": "226518009574.88998",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 201125441381.86,
+                "rawValue": "201125441381.86",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 137416898946.39,
+                "rawValue": "137416898946.39",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 113900461797.94,
+                "rawValue": "113900461797.94",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 39009527273.22,
+                "rawValue": "39009527273.22",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 18229817922.13,
+                "rawValue": "18229817922.13",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 711291189.69,
+                "rawValue": "711291189.69",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 1367729072.13,
+                "rawValue": "1367729072.13",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": 16548258632.49,
+                "rawValue": "16548258632.49",
+                "sourceField": "交易性金融资产",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 4355712251.54,
+                "rawValue": "4355712251.54",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 16831887388.06,
+                "rawValue": "16831887388.06",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 27910910515.55,
+                "rawValue": "27910910515.55",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 5601405741,
+                "rawValue": "5601405741.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          },
+          {
+            "year": 2025,
+            "reportDate": "2025-12-31",
+            "currency": "CNY",
+            "reportedUnit": null,
+            "provider": "Sina Finance via AKShare",
+            "sourceUrl": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_FinanceSummary/stockid/000651/displaytype/4.phtml",
+            "sourceVerification": "pending",
+            "fieldCount": 17,
+            "presentFieldCount": 14,
+            "fields": {
+              "totalAssets": {
+                "label": "资产总计",
+                "value": 391371999819.49,
+                "rawValue": "391371999819.49",
+                "sourceField": "资产总计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "totalLiabilities": {
+                "label": "负债合计",
+                "value": 241580719144.79,
+                "rawValue": "241580719144.79",
+                "sourceField": "负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "currentLiabilities": {
+                "label": "流动负债合计",
+                "value": 231569831196.26,
+                "rawValue": "231569831196.26",
+                "sourceField": "流动负债合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "parentEquity": {
+                "label": "归母股东权益",
+                "value": 145929297804.02,
+                "rawValue": "145929297804.02",
+                "sourceField": "归属于母公司股东权益合计",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cash": {
+                "label": "货币资金",
+                "value": 110553006650.89,
+                "rawValue": "110553006650.89",
+                "sourceField": "货币资金",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "cashAndCashEquivalents": {
+                "label": "现金及现金等价物",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "restrictedCash": {
+                "label": "受限资金",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "shortBorrowings": {
+                "label": "短期借款",
+                "value": 67956629538.51,
+                "rawValue": "67956629538.51",
+                "sourceField": "短期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longBorrowings": {
+                "label": "长期借款",
+                "value": 3134980571.73,
+                "rawValue": "3134980571.73",
+                "sourceField": "长期借款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "bondsPayable": {
+                "label": "应付债券",
+                "value": null,
+                "rawValue": null,
+                "sourceField": null,
+                "sourceVerification": "pending",
+                "mappingStatus": "pending"
+              },
+              "leaseLiabilities": {
+                "label": "租赁负债",
+                "value": 652797306.31,
+                "rawValue": "652797306.31",
+                "sourceField": "租赁负债",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "goodwill": {
+                "label": "商誉",
+                "value": 1324117904.09,
+                "rawValue": "1324117904.09",
+                "sourceField": "商誉",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shortTermInvestments": {
+                "label": "交易性金融资产/短期投资映射",
+                "value": 31336448103.06,
+                "rawValue": "31336448103.06",
+                "sourceField": "交易性金融资产",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "longTermInvestments": {
+                "label": "长期股权投资",
+                "value": 4235017009.65,
+                "rawValue": "4235017009.65",
+                "sourceField": "长期股权投资",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "accountsReceivable": {
+                "label": "应收账款",
+                "value": 15987180598.76,
+                "rawValue": "15987180598.76",
+                "sourceField": "应收账款",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "inventory": {
+                "label": "存货",
+                "value": 28183464259.53,
+                "rawValue": "28183464259.53",
+                "sourceField": "存货",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              },
+              "shareCapital": {
+                "label": "股本",
+                "value": 5601405741,
+                "rawValue": "5601405741.0",
+                "sourceField": "实收资本(或股本)",
+                "sourceVerification": "pending",
+                "mappingStatus": "mapped"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "coverageAudit": [
+      {
+        "company": "美的集团",
+        "years": 5,
+        "fieldsPerYear": 17,
+        "availableCells": 74,
+        "totalCells": 85,
+        "verifiedCells": 0,
+        "missingByField": {
+          "totalAssets": 0,
+          "totalLiabilities": 0,
+          "currentLiabilities": 0,
+          "parentEquity": 0,
+          "cash": 0,
+          "cashAndCashEquivalents": 5,
+          "restrictedCash": 5,
+          "shortBorrowings": 0,
+          "longBorrowings": 0,
+          "bondsPayable": 1,
+          "leaseLiabilities": 0,
+          "goodwill": 0,
+          "shortTermInvestments": 0,
+          "longTermInvestments": 0,
+          "accountsReceivable": 0,
+          "inventory": 0,
+          "shareCapital": 0
+        }
+      },
+      {
+        "company": "海尔智家",
+        "years": 5,
+        "fieldsPerYear": 17,
+        "availableCells": 72,
+        "totalCells": 85,
+        "verifiedCells": 0,
+        "missingByField": {
+          "totalAssets": 0,
+          "totalLiabilities": 0,
+          "currentLiabilities": 0,
+          "parentEquity": 0,
+          "cash": 0,
+          "cashAndCashEquivalents": 5,
+          "restrictedCash": 5,
+          "shortBorrowings": 0,
+          "longBorrowings": 0,
+          "bondsPayable": 3,
+          "leaseLiabilities": 0,
+          "goodwill": 0,
+          "shortTermInvestments": 0,
+          "longTermInvestments": 0,
+          "accountsReceivable": 0,
+          "inventory": 0,
+          "shareCapital": 0
+        }
+      },
+      {
+        "company": "长江电力",
+        "years": 5,
+        "fieldsPerYear": 17,
+        "availableCells": 70,
+        "totalCells": 85,
+        "verifiedCells": 0,
+        "missingByField": {
+          "totalAssets": 0,
+          "totalLiabilities": 0,
+          "currentLiabilities": 0,
+          "parentEquity": 0,
+          "cash": 0,
+          "cashAndCashEquivalents": 5,
+          "restrictedCash": 5,
+          "shortBorrowings": 0,
+          "longBorrowings": 0,
+          "bondsPayable": 0,
+          "leaseLiabilities": 0,
+          "goodwill": 0,
+          "shortTermInvestments": 5,
+          "longTermInvestments": 0,
+          "accountsReceivable": 0,
+          "inventory": 0,
+          "shareCapital": 0
+        }
+      },
+      {
+        "company": "格力电器",
+        "years": 5,
+        "fieldsPerYear": 17,
+        "availableCells": 69,
+        "totalCells": 85,
+        "verifiedCells": 0,
+        "missingByField": {
+          "totalAssets": 0,
+          "totalLiabilities": 0,
+          "currentLiabilities": 0,
+          "parentEquity": 0,
+          "cash": 0,
+          "cashAndCashEquivalents": 5,
+          "restrictedCash": 5,
+          "shortBorrowings": 0,
+          "longBorrowings": 0,
+          "bondsPayable": 5,
+          "leaseLiabilities": 0,
+          "goodwill": 0,
+          "shortTermInvestments": 1,
+          "longTermInvestments": 0,
+          "accountsReceivable": 0,
+          "inventory": 0,
+          "shareCapital": 0
+        }
+      }
+    ],
+    "nextActions": [
+      "逐年将17项映射字段与原始年报合并资产负债表逐项核对，并记录报告页码/附注号",
+      "补充其他应收款、应收票据及应收款项融资、预付款、合同资产、应付票据及应付账款、合同负债、应付职工薪酬、应交税费、预计负债、在建工程、使用权资产、少数股东权益",
+      "对现金拆分受限资金、境外资金、财务公司资金及最低经营现金",
+      "对格力单独建立财务公司与金融资产负债穿透表",
+      "完成口径审计后再计算投入资本、含商誉/剔除商誉ROIC、增量ROIC与EVA"
+    ]
   }
 }
