@@ -193,11 +193,12 @@
     }
   ],
   "nextSteps": [
-    "补齐美的、海尔、长江电力2023、2022、2021年年报资产负债表与比较期，逐项核验追溯调整、并购并表和会计政策变化。",
-    "对2025/2024余额逐项查附注：现金受限、金融资产用途、应收票据属性、其他资产、其他应付款、其他流动负债及债务到期结构。",
-    "格力按财务公司单体资产负债表及集团抵销口径拆分金融业务资产负债，之后才确定可扣除的非经营金融资产与对应负债。",
-    "口径锁定后重建四家非金融企业2021—2025期末投入资本，以期初期末平均投入资本计算NOPAT/ROIC、增量ROIC和EVA，并给出含商誉/剔除商誉两种口径。",
-    "招商银行独立补齐2021—2025 ROAE、RAROC、核心一级资本充足率、资本充足率、风险加权资产、资本净额、信用成本及分红留存历史序列。"
+    "从已验证的2024/2022/2021年报提取美的2021—2024、海尔2021—2024、长江电力2023—2024完整合并资产负债表项目，统一原始单位与合并范围。",
+    "解决海尔和长江电力跨年度报告比较数差异，保留原始报告数、后续重述数和选用口径，不覆盖历史值。",
+    "补齐长江电力2021—2023年报、格力2024—2025年财务公司分部与抵销附注。",
+    "逐项分类金融资产、受限现金、经营性无息负债、计息债务和租赁负债；确认后再计算投入资本。",
+    "计算四家非金融企业NOPAT、平均投入资本、ROIC、增量ROIC及含商誉/剔除商誉EVA；WACC做区间敏感性。",
+    "招商银行独立补齐2021—2025 ROAE、RAROC、核心一级资本充足率、资本净额和风险加权资产，并将高级法/权重法及集团/本公司口径分开。"
   ],
   "derivedMetricsFY2025": {
     "unit": "亿元人民币",
@@ -616,5 +617,142 @@
       },
       "note": "不能仅凭合并报表科目将全部金融资产归为非经营性资产；须核对财务公司单体报表、附注及集团抵销表，避免金融业务资产与对应负债不对称扣除。"
     }
+  },
+  "historicalReportSourceRegister": {
+    "status": "source_collection_in_progress; source URLs below verified from report cover or official annual-report archive",
+    "companies": [
+      {
+        "name": "美的集团",
+        "code": "000333.SZ",
+        "reports": [
+          {
+            "year": 2024,
+            "url": "https://static.cninfo.com.cn/finalpage/2025-03-29/1222951181.PDF",
+            "coverage": "2024 and 2023 consolidated balance sheets",
+            "verified": true
+          },
+          {
+            "year": 2022,
+            "url": "https://static.cninfo.com.cn/finalpage/2023-04-29/1216695045.PDF",
+            "coverage": "2022 and 2021 consolidated balance sheets",
+            "verified": true
+          },
+          {
+            "year": 2021,
+            "url": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213264815.PDF",
+            "coverage": "2021 and 2020 consolidated balance sheets",
+            "verified": true
+          },
+          {
+            "year": 2023,
+            "url": null,
+            "coverage": "2023 values available as comparative in 2024 report; separate 2023 annual report URL not yet archived in this dataset",
+            "verified": false
+          }
+        ]
+      },
+      {
+        "name": "海尔智家",
+        "code": "600690.SH",
+        "reports": [
+          {
+            "year": 2024,
+            "url": "https://smart-home.haier.com/cn/gpxx/yjbg/P020250409506977469534.pdf",
+            "coverage": "2024 and 2023 consolidated balance sheets",
+            "verified": true
+          },
+          {
+            "year": 2023,
+            "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9905878&stockid=600690",
+            "coverage": "2023, 2022 adjusted and unadjusted, 2021 key financial summaries; annual-report filing text",
+            "verified": true
+          },
+          {
+            "year": 2021,
+            "url": "https://static.cninfo.com.cn/finalpage/2022-03-31/1212758373.PDF",
+            "coverage": "2021 annual report",
+            "verified": true
+          },
+          {
+            "year": 2022,
+            "url": null,
+            "coverage": "2022 values available as comparative in 2023 report; separate full report URL not yet archived in this dataset",
+            "verified": false
+          }
+        ]
+      },
+      {
+        "name": "长江电力",
+        "code": "600900.SH",
+        "reports": [
+          {
+            "year": 2024,
+            "url": "https://static.sse.com.cn/disclosure/bond/announcement/company/c/new/2025-04-30/185241_20250430_YVDL.pdf",
+            "coverage": "2024 and 2023 consolidated balance sheets",
+            "verified": true
+          },
+          {
+            "year": 2025,
+            "url": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225262036.PDF",
+            "coverage": "2025 and comparative balance sheet; comparison reconciliation required",
+            "verified": true
+          },
+          {
+            "year": 2021,
+            "url": "https://www.cypc.com.cn/eportal/fileDir/cypcweb/cypc/accessory/20220129110749.pdf",
+            "coverage": "2021 preliminary earnings flash only, not audited annual report",
+            "verified": false
+          }
+        ]
+      }
+    ],
+    "comparativeRestatementAudit": [
+      {
+        "company": "海尔智家",
+        "period": "2023-12-31",
+        "report2024ValueTotalAssets": 261067684897.49,
+        "source": "2024 annual report balance sheet",
+        "note": "Compare with later 2025 report comparative figures before fixing the standardized series; any differences must be logged as restatement or presentation changes."
+      },
+      {
+        "company": "长江电力",
+        "period": "2024-12-31",
+        "report2024ValueTotalAssets": 566071979792.34,
+        "period2023ComparativeTotalAssets": 572938869543.08,
+        "source": "2024 annual report balance sheet",
+        "note": "2025 annual report comparative value previously recorded in this project differs; resolve same-control merger and retrospective adjustment before selecting canonical series."
+      }
+    ]
+  },
+  "cmbHistoricalCapitalEfficiency": {
+    "status": "partial_historical_series; group and company scope kept separate",
+    "capitalAdequacyAdvancedGroupCoreTier1Pct": {
+      "2021": 12.66,
+      "2022": 13.68,
+      "2023": 13.73,
+      "2024": 14.86,
+      "2025": 14.16
+    },
+    "verifiedSourceNotes": [
+      "2021—2023 values appear together in the 2023 annual report summary; 2024 value appears in the 2024 annual report summary.",
+      "Do not splice company-only capital adequacy ratios with group ratios.",
+      "Capital rules changed in 2024; advanced-method and risk-weighted-method series should be kept separate."
+    ],
+    "rarocPreTaxCompanyPct": {
+      "2022": 29.62,
+      "2024": 24.12,
+      "2025": 23.64
+    },
+    "rarocNotes": [
+      "2022 and 2024/2025 values are company-level tax-before RAROC disclosed in annual reporting materials; full 2021 and 2023 observations still require extraction.",
+      "Do not treat RAROC as ROE or ROAE; denominator is risk-adjusted allocated capital and must follow the bank's own definition."
+    ],
+    "missingForFullSeries": [
+      "2021—2025 annual ROAE with consistent group/company scope",
+      "2021—2025 company-level RAROC and calculation definition",
+      "2021—2025 core Tier 1, Tier 1 and total capital ratios under both advanced and standardized approaches",
+      "2021—2025 capital net amount, core Tier 1 capital net amount and RWA",
+      "2021—2025 credit cost, NPL, provision coverage and dividend retention"
+    ]
   }
 }
