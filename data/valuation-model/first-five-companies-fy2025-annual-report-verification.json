@@ -1,0 +1,152 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-11-12",
+  "title": "首批公司2025年年报原始财报核验底稿",
+  "scope": {
+    "companies": [
+      "美的集团",
+      "海尔智家",
+      "长江电力",
+      "格力电器",
+      "招商银行"
+    ],
+    "period": "FY2025",
+    "currency": "CNY",
+    "consolidation": "合并口径优先"
+  },
+  "conventions": {
+    "amountUnit": "亿元人民币；原始年报金额按元或千元读取后除以100,000,000或1,000,000转换",
+    "simpleFcf": "经营活动现金流量净额-购建固定资产、无形资产和其他长期资产支付的现金",
+    "fcfCaution": "简化FCF不等于股权自由现金流；不扣并购支出、租赁本金和股息，且需结合维持性/扩张性资本开支判断",
+    "cashDistributionCaution": "现金流量表中‘分配股利、利润或偿付利息支付的现金’为合并科目，未拆分前不得记作现金股息"
+  },
+  "companies": [
+    {
+      "name": "美的集团",
+      "code": "000333.SZ",
+      "reportDate": "2026-03-31",
+      "sourceUnit": "人民币千元",
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12048854&stockid=000333",
+      "values": {
+        "revenueFY2025": 4564.51731,
+        "netProfitParentFY2025": 439.45411,
+        "operatingCashFlowFY2025": 533.4593,
+        "capexFY2025": 111.41889,
+        "simpleFcfFY2025": 422.04041,
+        "acquisitionCashPaidFY2025": 61.55136,
+        "dividendProfitInterestCombinedPaidFY2025": 330.80135,
+        "yearEndCashEquivalents": 685.0867,
+        "goodwill": 342.56859
+      },
+      "sourceNotes": [
+        "2025年合并利润表营业收入456,451,731千元、归母净利润43,945,411千元。",
+        "2025年合并现金流量表经营现金流53,345,930千元，购建长期资产支出11,141,889千元，取得子公司支付6,155,136千元。",
+        "筹资现金流‘分配股利、利润或偿付利息’33,080,135千元，不能直接等同股息。",
+        "年末商誉约34,256,859千元，其中KUKA及TLSC商誉占较大部分。"
+      ],
+      "verification": "2025核心损益及现金流科目已在年报文本中定位；资产负债表投入资本拆分、税后经营利润调整和股息拆分仍待逐项核验"
+    },
+    {
+      "name": "海尔智家",
+      "code": "600690.SH",
+      "reportDate": "2026-03-27",
+      "sourceUnit": "人民币元",
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12024960&stockid=600690",
+      "values": {
+        "revenueFY2025": 3023.467839183,
+        "netProfitParentFY2025": 195.5279822285,
+        "operatingCashFlowFY2025": 260.0294196992,
+        "capexFY2025": 88.5156394089,
+        "simpleFcfFY2025": 171.5137802903,
+        "acquisitionCashPaidFY2025": 44.0933629158,
+        "dividendProfitInterestCombinedPaidFY2025": 138.7342869071
+      },
+      "sourceNotes": [
+        "2025年营业收入302,346,783,918.30元、归母净利润19,552,798,222.85元。",
+        "经营现金流26,002,941,969.92元；购建长期资产支出8,851,563,940.89元；取得子公司支付4,409,336,291.58元。",
+        "筹资现金流分配股利、利润或偿付利息13,873,428,690.71元，不能直接等同股息。",
+        "年报披露2025年度拟派每10股8.867元，且中期已派红利；须与实际现金支付年份分开。"
+      ],
+      "verification": "2025损益和现金流科目已在年报文本中定位；需进一步核验资产负债表、商誉及回购现金流"
+    },
+    {
+      "name": "长江电力",
+      "code": "600900.SH",
+      "reportDate": "2026-05-18",
+      "sourceUnit": "人民币元",
+      "sourceUrl": "https://www.cypc.com.cn/cypc/attachDir/2026/05/2026051815345898336.pdf",
+      "values": {
+        "revenueFY2025": 862.419402222,
+        "netProfitParentFY2025": 345.03,
+        "operatingCashFlowFY2025": 605.6292557041,
+        "capexFY2025": null,
+        "simpleFcfFY2025": null
+      },
+      "sourceNotes": [
+        "2025年营业收入86,241,940,222.20元；归母净利润约345.03亿元。",
+        "经营现金流60,562,925,570.41元。",
+        "年报披露2025年总发电量3,097.35亿千瓦时，同比增长3.97%；水电业务收入约756.62亿元。",
+        "资本开支现金流项目尚未从该年报现金流量表中定位，不以投资活动现金流净额替代资本开支。",
+        "2025年度拟每10股派10元，全年现金分红约244.68亿元，其中中期每10股2.10元已派发。"
+      ],
+      "verification": "收入、归母净利润、经营现金流、发电量和分红方案已核验；资本开支、债务和投入资本待补"
+    },
+    {
+      "name": "格力电器",
+      "code": "000651.SZ",
+      "reportDate": "2026-04-29",
+      "sourceUnit": "人民币元",
+      "sourceUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12270401&stockid=000651",
+      "values": {
+        "revenueFY2025": 1704.4705853357,
+        "netProfitParentFY2025": 290.0310341166,
+        "operatingCashFlowFY2025": 463.8311475402,
+        "capexFY2025": 17.173110681,
+        "simpleFcfFY2025": 446.6580368592,
+        "acquisitionCashPaidFY2025": 2.0944484548,
+        "dividendProfitInterestCombinedPaidFY2025": 181.7124107996,
+        "yearEndCashEquivalents": 275.6646094951
+      },
+      "sourceNotes": [
+        "2025年营业收入170,447,058,533.57元、归母净利润29,003,103,411.66元。",
+        "经营现金流46,383,114,754.02元；购建长期资产支出1,717,311,068.10元；取得子公司支付209,444,845.48元。",
+        "筹资现金流分配股利、利润或偿付利息18,171,241,079.96元，不能直接等同股息。",
+        "投资支付现金规模远高于固定资产资本开支，必须区分金融资产配置和经营性资本开支。"
+      ],
+      "verification": "2025损益、经营现金流、资本开支和并购现金流已定位；需进一步拆分金融投资现金流与资本配置"
+    },
+    {
+      "name": "招商银行",
+      "code": "600036.SH / 03968.HK",
+      "reportDate": "2026-03-27",
+      "sourceUnit": "人民币亿元（业绩摘要）",
+      "sourceUrl": "https://s3gw.cmbimg.com/lb5001-cmbweb-prd-1255000097/cmbir/20260408/84edf174-c5e6-4eb2-a60c-34715531016a.pdf",
+      "values": {
+        "revenueFY2025": 3375.32,
+        "netProfitParentFY2025": 1501.81,
+        "roaaPct": 1.19,
+        "roaePct": 13.44,
+        "nimPct": 1.87,
+        "nonInterestIncomePct": 36.13,
+        "nplPct": 0.94,
+        "coveragePct": 391.79,
+        "coreTier1CapitalAdvancedPct": 14.16,
+        "totalCapitalAdvancedPct": 18.24,
+        "dividendPayoutRatioPct": 35
+      },
+      "sourceNotes": [
+        "2025年营业收入3,375.32亿元、归母净利润1,501.81亿元。",
+        "ROAA 1.19%、ROAE 13.44%、净息差1.87%、不良贷款率0.94%、拨备覆盖率391.79%。",
+        "高级法核心一级资本充足率14.16%、资本充足率18.24%；权重法核心一级资本充足率11.92%。",
+        "银行经营现金流受存贷款及金融资产负债变化影响，不适用普通工商企业FCF/工业ROIC公式。"
+      ],
+      "verification": "2025年银行经营和监管资本指标已从公司业绩摘要核验；下一步用完整年报补齐股东权益、风险加权资产、分红及资本留存"
+    }
+  ],
+  "nextSteps": [
+    "补齐四家非金融企业2025年资产负债表：经营现金、交易性金融资产、应收、存货、应付、计息债务、租赁负债、商誉、少数股东权益。",
+    "将2021—2024年数据逐年回溯至原始年报，处理单位、币种、合并范围和追溯调整。",
+    "分别拆出实际现金股息、回购、并购、资本开支、金融资产配置和债务偿还。",
+    "计算NOPAT、平均投入资本、ROIC、增量ROIC和EVA；招商银行改用ROE、RAROC、核心一级资本和超额资本框架。"
+  ]
+}
