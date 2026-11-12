@@ -1,0 +1,20 @@
+{
+  "status": "SUCCESS",
+  "index_code": "CBA00201",
+  "index_name": "ChinaBond Composite Wealth Total Value Index",
+  "index_id": "2c90818811afed8d0111c0c672b31578",
+  "indicator": "CFZS",
+  "frequency": "daily source, month-end last observation",
+  "daily_observations": 6216,
+  "daily_start": "2002-01-04",
+  "daily_end": "2026-11-11",
+  "monthly_observations": 299,
+  "monthly_start": "2002-01",
+  "monthly_end": "2026-11",
+  "raw_monthly_file": "data/sources/chinabond-cba00201-monthly.csv",
+  "matrix_fields": [
+    "china_bond_wealth_index_cny",
+    "china_bond_wealth_return_cny_pct"
+  ],
+  "limitation": "Verify index identity/code and permitted use with ChinaBond before redistribution or benchmark/product use."
+}
