@@ -33,5 +33,6 @@ jobs:
             echo "No research output changes."
           else
             git commit -m "Publish Investment Lab research backtests"
+            git pull --rebase origin main
             git push
           fi
