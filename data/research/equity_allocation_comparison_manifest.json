@@ -3,7 +3,7 @@
   "sample_start": "2006-01",
   "sample_end": "2026-07",
   "common_months": 241,
-  "paths_per_case": 1000,
+  "paths_per_case": 500,
   "allocations": {
     "equity_52": {
       "A_shares_CSI300": 0.2,
@@ -29,6 +29,51 @@
       "Developed_exUS_EFA": 0.08076923076923077,
       "Emerging_EEM": 0.08076923076923077,
       "US_aggregate_bonds_AGG": 0.3800000000000001,
+      "Gold_proxy": 0.1,
+      "CNY_cash_H11025": 0.1
+    },
+    "equity_38": {
+      "A_shares_CSI300": 0.14615384615384616,
+      "US_equity_SP500": 0.0876923076923077,
+      "Developed_exUS_EFA": 0.07307692307692308,
+      "Emerging_EEM": 0.07307692307692308,
+      "US_aggregate_bonds_AGG": 0.42000000000000004,
+      "Gold_proxy": 0.1,
+      "CNY_cash_H11025": 0.1
+    },
+    "equity_35": {
+      "A_shares_CSI300": 0.1346153846153846,
+      "US_equity_SP500": 0.08076923076923076,
+      "Developed_exUS_EFA": 0.0673076923076923,
+      "Emerging_EEM": 0.0673076923076923,
+      "US_aggregate_bonds_AGG": 0.45000000000000007,
+      "Gold_proxy": 0.1,
+      "CNY_cash_H11025": 0.1
+    },
+    "equity_30": {
+      "A_shares_CSI300": 0.11538461538461538,
+      "US_equity_SP500": 0.06923076923076922,
+      "Developed_exUS_EFA": 0.05769230769230769,
+      "Emerging_EEM": 0.05769230769230769,
+      "US_aggregate_bonds_AGG": 0.5,
+      "Gold_proxy": 0.1,
+      "CNY_cash_H11025": 0.1
+    },
+    "equity_25": {
+      "A_shares_CSI300": 0.09615384615384616,
+      "US_equity_SP500": 0.05769230769230769,
+      "Developed_exUS_EFA": 0.04807692307692308,
+      "Emerging_EEM": 0.04807692307692308,
+      "US_aggregate_bonds_AGG": 0.55,
+      "Gold_proxy": 0.1,
+      "CNY_cash_H11025": 0.1
+    },
+    "equity_20": {
+      "A_shares_CSI300": 0.07692307692307694,
+      "US_equity_SP500": 0.046153846153846156,
+      "Developed_exUS_EFA": 0.03846153846153847,
+      "Emerging_EEM": 0.03846153846153847,
+      "US_aggregate_bonds_AGG": 0.6000000000000001,
       "Gold_proxy": 0.1,
       "CNY_cash_H11025": 0.1
     }
