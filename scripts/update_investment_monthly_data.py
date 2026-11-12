@@ -50,7 +50,7 @@ HEADERS = [
 # EXCHUS is the Federal Reserve's monthly-average Chinese yuan per U.S. dollar rate.
 # Daily FRED macro series are represented by the final available observation in each month.
 FRED_MAP = {
-    "DEXHKUS":"hkd_per_usd",
+    "EXHKUS":"hkd_per_usd",
     "DGS10":"dgs10_pct","DFII10":"dfii10_pct","DTWEXBGS":"dxy_index",
     "VIXCLS":"vix_index","CPIAUCSL":"us_cpi_index","FEDFUNDS":"fedfunds_pct",
     "DCOILBRENTEU":"brent_usd_bbl"
@@ -329,9 +329,9 @@ def load_hsi_2800_proxy(rows):
 def load_chinabond_wealth(rows):
     """Official ChinaBond Aggregate Wealth (Total Value) index CBA00201 via ChinaBond public index endpoint."""
     params={"indexid":"2c90818811afed8d0111c0c672b31578","qxlxt":"00","ltcslx":"","zslxt":"CFZS","zslxt1":"CFZS","lx":"1","locale":"zh_CN"}
-    url="https://yield.chinabond.com.cn/cbweb-mn/indices/singleIndexQueryResult?"+urlencode(params)
-    headers={"User-Agent":USER_AGENT,"Referer":"https://yield.chinabond.com.cn/cbweb-mn/indices/single_index_query?locale=zh_CN","Accept":"application/json, text/plain, */*"}
-    req=Request(url,headers=headers)
+    url="https://yield.chinabond.com.cn/cbweb-mn/indices/singleIndexQueryResult"
+    headers={"User-Agent":USER_AGENT,"Referer":"https://yield.chinabond.com.cn/cbweb-mn/indices/single_index_query?locale=zh_CN","Accept":"application/json, text/plain, */*","Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"}
+    req=Request(url,data=urlencode(params).encode("utf-8"),headers=headers,method="POST")
     payload=json.loads(urlopen(req,timeout=120).read().decode("utf-8-sig"))
     key="CFZS_00";series=payload.get(key)
     if not isinstance(series,dict) or not series:raise RuntimeError(f"ChinaBond CBA00201 endpoint missing {key}; keys={list(payload)[:10]}")
@@ -356,7 +356,12 @@ def load_fred(rows):
     for sid,field in FRED_MAP.items():
         url=f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}"
         parsed={}
-        for r in csv.DictReader(io.StringIO(fetch(url))):
+        try:
+            fred_csv=fetch(url,timeout=25)
+        except Exception as exc:
+            results[sid]={"months":0,"error":f"{type(exc).__name__}: {exc}"}
+            continue
+        for r in csv.DictReader(io.StringIO(fred_csv)):
             dt=r.get("observation_date") or r.get("DATE") or r.get("date") or ""
             value=num(r.get(sid))
             if len(dt)<7 or value is None:continue
@@ -423,7 +428,7 @@ def build_manifest(rows,source_stats,errors):
             "EFA is a developed-markets ex-US/Canada ETF proxy; EEM is an emerging-markets ETF proxy. Both are Yahoo auto-adjusted ETF total-return proxies, not official MSCI net/gross index returns.",
             "EEM country holdings include China and Taiwan; do not add EEM to A-share/HK exposures without country/issuer overlap review.",
             "USD/CNY uses the Federal Reserve G.5 monthly average EXCHUS series via the archived datasets/exchange-rates monthly panel.",
-            "HKD/CNY conversion uses monthly-average DEXHKUS (HKD per USD) and USD/CNY: (1+rHKD)*(USD/CNY_t/USD/CNY_prev)*(HKDUSD_prev/HKDUSD_t)-1.",
+            "HKD/CNY conversion uses Federal Reserve G.5 monthly-average EXHKUS (HKD per USD) and USD/CNY: (1+rHKD)*(USD/CNY_t/USD/CNY_prev)*(HKDUSD_prev/HKDUSD_t)-1.",
             "CNY cash proxy uses official CSIndex H11025 money-market fund total-return index; base date 2005-12-30, publication date 2016-08-31; pre-publication history is backfilled.",
             "China government-bond investable proxy uses Yahoo auto-adjusted 511010.SS ETF close; CNY denominated, starts 2013; separate from official ChinaBond wealth index.",
             "USD asset CNY return=(1+rUSD)*(FX_t/FX_t-1)-1.",
