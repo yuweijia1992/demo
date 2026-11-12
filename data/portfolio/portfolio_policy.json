@@ -40,12 +40,12 @@
     {
       "id": "EQ_REGION_WEIGHTS",
       "description": "52%股票内部地区与市场权重（A股、港股、美国、发达市场其他地区、新兴市场）",
-      "status": "REQUIRES_USER_APPROVAL"
+      "status": "DRAFT_DESIGNED_PENDING_USER_APPROVAL"
     },
     {
       "id": "FI_COUNTRY_DURATION_WEIGHTS",
       "description": "28%债券内部国家/币种、主权/信用、久期与汇率对冲权重",
-      "status": "REQUIRES_USER_APPROVAL"
+      "status": "DRAFT_DESIGNED_PENDING_USER_APPROVAL"
     },
     {
       "id": "IMPLEMENTATION_VEHICLES",
@@ -61,6 +61,11 @@
       "id": "EXECUTION_COSTS",
       "description": "佣金、印花税、基金费率、申赎费、汇兑点差、托管与税务",
       "status": "REQUIRES_ACCOUNT_AND_PRODUCT_DATA"
+    },
+    {
+      "id": "FINAL_WEIGHT_APPROVAL",
+      "description": "确认DRAFT-1.0股票与债券内部配置；确认后才可写入approved_weight_pct并启用正式组合回测",
+      "status": "REQUIRES_EXPLICIT_USER_APPROVAL"
     }
   ],
   "non_negotiable_controls": [
@@ -122,5 +127,134 @@
     "正式产品必须有交易代码、交易场所、费用、规模、价差、跟踪误差、分红与税务信息。",
     "正式组合回测仅使用成分资产同月完整的人民币总回报序列。",
     "正式组合收益必须由已批准的权重版本计算，并保存版本号和计算时间。"
-  ]
+  ],
+  "proposed_allocation_version": {
+    "version": "DRAFT-1.0",
+    "created_at": "2026-11-12",
+    "status": "USER_AUTHORIZED_DRAFT_PENDING_EXPLICIT_APPROVAL",
+    "design_principles": [
+      "全球分散",
+      "控制中国与港股交叉持仓重复",
+      "人民币生活负债由人民币现金与债券承担主要匹配功能",
+      "股票外币敞口保留长期分散价值",
+      "债券优先承担组合稳定器职责，境外债券采用人民币汇率对冲"
+    ],
+    "equity_sleeves": [
+      {
+        "id": "EQ_CN_BROAD",
+        "name": "A股宽基",
+        "weight_pct": 8,
+        "portfolio_weight": 0.08,
+        "amount_cny": 320000,
+        "share_of_equity_pct": 15.3846,
+        "benchmark": "中证全指/全A全收益；以可核验总回报指数为准"
+      },
+      {
+        "id": "EQ_HK",
+        "name": "港股宽基",
+        "weight_pct": 2,
+        "portfolio_weight": 0.02,
+        "amount_cny": 80000,
+        "share_of_equity_pct": 3.8462,
+        "benchmark": "恒生综合/恒生全收益；官方总回报系列优先"
+      },
+      {
+        "id": "EQ_US",
+        "name": "美国宽基",
+        "weight_pct": 25,
+        "portfolio_weight": 0.25,
+        "amount_cny": 1000000,
+        "share_of_equity_pct": 48.0769,
+        "benchmark": "MSCI USA或S&P 500总回报；产品选择需考虑覆盖面与费用"
+      },
+      {
+        "id": "EQ_DEV_EX_US",
+        "name": "美国以外发达市场",
+        "weight_pct": 11,
+        "portfolio_weight": 0.11,
+        "amount_cny": 440000,
+        "share_of_equity_pct": 21.1538,
+        "benchmark": "MSCI World ex USA总回报"
+      },
+      {
+        "id": "EQ_EM_EX_CHINA",
+        "name": "新兴市场（剔除中国）",
+        "weight_pct": 6,
+        "portfolio_weight": 0.06,
+        "amount_cny": 240000,
+        "share_of_equity_pct": 11.5385,
+        "benchmark": "MSCI Emerging Markets ex China总回报；核验国家分类与台湾/韩国处理"
+      }
+    ],
+    "fixed_income_sleeves": [
+      {
+        "id": "FI_CN_GOV",
+        "name": "中国国债",
+        "weight_pct": 16,
+        "portfolio_weight": 0.16,
+        "amount_cny": 640000,
+        "duration_design": "短久期约6%、中久期约7%、较长久期约3%（均为组合净资产百分点）",
+        "benchmark": "中债国债总财富指数分期限系列"
+      },
+      {
+        "id": "FI_CN_POLICY",
+        "name": "中国政策性金融债",
+        "weight_pct": 5,
+        "portfolio_weight": 0.05,
+        "amount_cny": 200000,
+        "duration_design": "以中短久期为主",
+        "benchmark": "中债政策性金融债总财富指数"
+      },
+      {
+        "id": "FI_CN_CREDIT",
+        "name": "中国高等级信用债",
+        "weight_pct": 2,
+        "portfolio_weight": 0.02,
+        "amount_cny": 80000,
+        "duration_design": "短至中久期；高等级、分散发行人，严控信用下沉",
+        "benchmark": "中债高等级信用债财富指数"
+      },
+      {
+        "id": "FI_US_TREASURY",
+        "name": "美国国债（人民币对冲）",
+        "weight_pct": 3,
+        "portfolio_weight": 0.03,
+        "amount_cny": 120000,
+        "duration_design": "短至中久期为主",
+        "benchmark": "Bloomberg US Treasury总回报人民币对冲"
+      },
+      {
+        "id": "FI_GLOBAL_HEDGED",
+        "name": "全球投资级债券（人民币对冲）",
+        "weight_pct": 2,
+        "portfolio_weight": 0.02,
+        "amount_cny": 80000,
+        "duration_design": "投资级、广泛分散；人民币对冲",
+        "benchmark": "Bloomberg Global Aggregate总回报人民币对冲"
+      }
+    ],
+    "totals": {
+      "equity_weight_pct": 52,
+      "fixed_income_weight_pct": 28,
+      "grand_total_weight_pct": 100
+    },
+    "portfolio_characteristics": {
+      "equity_home_listed_weight_pct": 10,
+      "equity_us_weight_pct": 25,
+      "equity_developed_ex_us_weight_pct": 11,
+      "equity_em_ex_china_weight_pct": 6,
+      "cny_fixed_income_weight_pct": 23,
+      "foreign_currency_bonds_hedged_to_cny_weight_pct": 5,
+      "foreign_equity_currency_policy": "原则上不主动对冲；将汇率视为长期分散来源，具体对冲仅在成本、税务或风险约束明确时另行审批",
+      "bond_currency_policy": "境外债券全部以人民币对冲为基准方案；未能核实对冲成本、跟踪误差和产品结构前不选产品"
+    },
+    "caveats": [
+      "这是经用户授权设计的建议草案，不等于已批准的正式战略权重。",
+      "A股与港股按上市地划分不等于经济风险完全独立；需穿透检查两地上市公司、互联网平台、金融和产业链重叠。",
+      "新兴市场使用剔除中国版本，避免与A股及港股中国企业重复；产品若不能剔除中国，须量化重复敞口并重新审批。",
+      "美国以外发达市场与新兴市场基准分类需统一指数供应商口径，避免韩国、台湾等国家分类变化造成重复或遗漏。",
+      "股票地区配置是战略分散方案，不是对各地区未来收益的预测。",
+      "债券内部期限比例是初始风险预算，须结合实际可购买指数/产品久期、收益率、信用质量和历史回撤再细化。"
+    ]
+  }
 }
