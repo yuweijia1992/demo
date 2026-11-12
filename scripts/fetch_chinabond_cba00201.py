@@ -78,6 +78,43 @@ def main():
                 prior_month=month
         with MATRIX.open("w",encoding="utf-8-sig",newline="") as f:
             w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(rows)
+
+        # Keep machine-readable coverage metadata in sync with the matrix.
+        manifest_path=ROOT/"data"/"investment-monthly-manifest.json"
+        audit_path=ROOT/"data"/"research"/"monthly_coverage_audit.csv"
+        with MATRIX.open("r",encoding="utf-8-sig",newline="") as f:
+            matrix_rows=list(csv.DictReader(f))
+        all_months=[r["date"] for r in matrix_rows]
+        stats={}
+        for field in ("china_bond_wealth_index_cny","china_bond_wealth_return_cny_pct"):
+            observed=[r["date"] for r in matrix_rows if r.get(field)]
+            missing=[r["date"] for r in matrix_rows if not r.get(field)]
+            stats[field]={"count":len(observed),"start":observed[0] if observed else None,
+                          "end":observed[-1] if observed else None,"missing":missing}
+        if manifest_path.exists():
+            manifest=json.loads(manifest_path.read_text(encoding="utf-8"))
+            manifest["dataset_version"]="2.7.0"
+            manifest["generated_at"]=datetime.now(timezone.utc).isoformat()
+            manifest.setdefault("coverage_audit",{}).update({
+                k:{"count":v["count"],"start":v["start"],"end":v["end"]} for k,v in stats.items()})
+            for item in manifest.get("series",[]):
+                if item.get("field") in stats:
+                    v=stats[item["field"]]
+                    item.update({"count":v["count"],"start":v["start"],"end":v["end"]})
+            manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+        if audit_path.exists():
+            with audit_path.open("r",encoding="utf-8-sig",newline="") as f:
+                audit_rows=list(csv.DictReader(f))
+                audit_fields=list(audit_rows[0].keys()) if audit_rows else ["field","observations","missing_months","first","last","missing_dates"]
+            for item in audit_rows:
+                if item.get("field") in stats:
+                    v=stats[item["field"]]
+                    item.update({"observations":str(v["count"]),"missing_months":str(len(v["missing"])),
+                                 "first":v["start"] or "","last":v["end"] or "",
+                                 "missing_dates":";".join(v["missing"])})
+            with audit_path.open("w",encoding="utf-8-sig",newline="") as f:
+                writer=csv.DictWriter(f,fieldnames=audit_fields);writer.writeheader();writer.writerows(audit_rows)
+
         status={"status":"SUCCESS","index_code":"CBA00201","index_name":"ChinaBond Composite Wealth Total Value Index",
           "index_id":"2c90818811afed8d0111c0c672b31578","indicator":"CFZS","frequency":"daily source, month-end last observation",
           "daily_observations":n_daily,"daily_start":start,"daily_end":end,"monthly_observations":len(monthly),
