@@ -1,0 +1,13 @@
+{
+  "generated_by": "scripts/run_investment_research.py",
+  "status": "PROVISIONAL_RESEARCH_PROXY",
+  "monthly_matrix_rows": 250,
+  "common_complete_months": 241,
+  "common_start": "2006-01",
+  "common_end": "2026-07",
+  "coverage_audit": "monthly_coverage_audit.csv",
+  "strategy_summary": "strategy_backtest_summary.json",
+  "bootstrap_results": "withdrawal_bootstrap_results.csv",
+  "deterministic_scenarios": "deterministic_withdrawal_scenarios.csv",
+  "notes": "Do not represent this proxy as the final approved 52/28/10/10 allocation."
+}
