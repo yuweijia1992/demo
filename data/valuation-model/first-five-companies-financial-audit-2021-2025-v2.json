@@ -428,7 +428,10 @@
             "fcfToParentNetProfit": 1.212871,
             "netMargin": 0.057589,
             "totalInterestBearingDebtKnown": 16560410989.21
-          }
+          },
+          "verifiedUnitFromAnnualReport": null,
+          "annualReportSource": null,
+          "verificationStatus": "pending"
         },
         {
           "year": 2022,
@@ -785,7 +788,10 @@
             "fcfToParentNetProfit": 0.818837,
             "netMargin": 0.0604,
             "totalInterestBearingDebtKnown": null
-          }
+          },
+          "verifiedUnitFromAnnualReport": null,
+          "annualReportSource": null,
+          "verificationStatus": "pending"
         },
         {
           "year": 2023,
@@ -1142,7 +1148,10 @@
             "fcfToParentNetProfit": 0.963704,
             "netMargin": 0.060526,
             "totalInterestBearingDebtKnown": null
-          }
+          },
+          "verifiedUnitFromAnnualReport": null,
+          "annualReportSource": null,
+          "verificationStatus": "pending"
         },
         {
           "year": 2024,
@@ -1185,9 +1194,9 @@
                 "value": 286015294936.52,
                 "rawValue": "286015294936.52",
                 "sourceField": "营业收入",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "operatingProfit": {
                 "value": 22901640821.04,
@@ -1209,9 +1218,9 @@
                 "value": 18731046273.17,
                 "rawValue": "18731046273.17",
                 "sourceField": "归属于母公司所有者的净利润",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "netProfit": {
                 "value": 19565538651.92,
@@ -1397,17 +1406,17 @@
                 "value": 26318091311.95,
                 "rawValue": "26318091311.95",
                 "sourceField": "经营活动产生的现金流量净额",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "capex": {
                 "value": 10080067313.04,
                 "rawValue": "10080067313.04",
                 "sourceField": "购建固定资产、无形资产和其他长期资产所支付的现金",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "dividendsPaid": {
                 "value": 10091640214.86,
@@ -1499,7 +1508,10 @@
             "fcfToParentNetProfit": 0.866904,
             "netMargin": 0.06549,
             "totalInterestBearingDebtKnown": null
-          }
+          },
+          "verifiedUnitFromAnnualReport": "人民币元",
+          "annualReportSource": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038336.PDF",
+          "verificationStatus": "partial_annual_report_content_verified"
         },
         {
           "year": 2025,
@@ -1542,9 +1554,9 @@
                 "value": 302346783918.30005,
                 "rawValue": "302346783918.30005",
                 "sourceField": "营业收入",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "operatingProfit": {
                 "value": 23725492973.35,
@@ -1566,9 +1578,9 @@
                 "value": 19552798222.85,
                 "rawValue": "19552798222.85",
                 "sourceField": "归属于母公司所有者的净利润",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "netProfit": {
                 "value": 20163093546.51,
@@ -1754,17 +1766,17 @@
                 "value": 26002941969.92,
                 "rawValue": "26002941969.92",
                 "sourceField": "经营活动产生的现金流量净额",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "capex": {
                 "value": 8851563940.89,
                 "rawValue": "8851563940.89",
                 "sourceField": "购建固定资产、无形资产和其他长期资产所支付的现金",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "dividendsPaid": {
                 "value": 13873428690.71,
@@ -1786,9 +1798,9 @@
                 "value": null,
                 "rawValue": null,
                 "sourceField": null,
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "pending",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "investmentsPurchased": {
                 "value": null,
@@ -1856,7 +1868,10 @@
             "fcfToParentNetProfit": 0.877183,
             "netMargin": 0.06467,
             "totalInterestBearingDebtKnown": 36638081157.79
-          }
+          },
+          "verifiedUnitFromAnnualReport": "人民币元",
+          "annualReportSource": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038336.PDF",
+          "verificationStatus": "partial_annual_report_content_verified"
         }
       ],
       "fiveYearSummary": {
@@ -1959,6 +1974,48 @@
         "title": "2025年年度报告",
         "url": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038336.PDF",
         "sourceType": "official_cninfo"
+      },
+      "reportVerification": {
+        "status": "partial_content_verified",
+        "reportUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038336.PDF",
+        "reportYear": 2025,
+        "verifiedUnit": "人民币元",
+        "verifiedMetrics": {
+          "income": [
+            "revenue",
+            "netProfitParent"
+          ],
+          "cashflow": [
+            "operatingCashFlow"
+          ],
+          "capex": [
+            "capex"
+          ],
+          "acquisitionsPaid": [
+            "acquisitionsPaid"
+          ]
+        },
+        "years": {
+          "income": [
+            2024,
+            2025
+          ],
+          "cashflow": [
+            2024,
+            2025
+          ],
+          "capex": [
+            2024,
+            2025
+          ],
+          "acquisitionsPaid": [
+            2025
+          ]
+        },
+        "notes": [
+          "仅对列明年度和列明字段标记为年报原文核验；未列字段仍为pending。",
+          "2025年报比较数据可覆盖部分2023/2024年度，但不代表五年所有资产负债表及现金流字段均已核验。"
+        ]
       }
     },
     {
@@ -2357,7 +2414,10 @@
             "fcfToParentNetProfit": 0.989245,
             "netMargin": 0.083736,
             "totalInterestBearingDebtKnown": null
-          }
+          },
+          "verifiedUnitFromAnnualReport": null,
+          "annualReportSource": null,
+          "verificationStatus": "pending"
         },
         {
           "year": 2022,
@@ -2714,7 +2774,10 @@
             "fcfToParentNetProfit": 0.923942,
             "netMargin": 0.085932,
             "totalInterestBearingDebtKnown": 60526524000
-          }
+          },
+          "verifiedUnitFromAnnualReport": null,
+          "annualReportSource": null,
+          "verificationStatus": "pending"
         },
         {
           "year": 2023,
@@ -2757,9 +2820,9 @@
                 "value": 372037280000,
                 "rawValue": "372037280000.0",
                 "sourceField": "营业收入",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "operatingProfit": {
                 "value": 40317441000,
@@ -2781,9 +2844,9 @@
                 "value": 33719935000,
                 "rawValue": "33719935000.0",
                 "sourceField": "归属于母公司所有者的净利润",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "netProfit": {
                 "value": 33745352000,
@@ -2969,17 +3032,17 @@
                 "value": 57902611000,
                 "rawValue": "57902611000.0",
                 "sourceField": "经营活动产生的现金流量净额",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "capex": {
                 "value": 6314051000,
                 "rawValue": "6314051000.0",
                 "sourceField": "购建固定资产、无形资产和其他长期资产所支付的现金",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "dividendsPaid": {
                 "value": 19643828000,
@@ -3071,7 +3134,10 @@
             "fcfToParentNetProfit": 1.529913,
             "netMargin": 0.090636,
             "totalInterestBearingDebtKnown": 60223200000
-          }
+          },
+          "verifiedUnitFromAnnualReport": "人民币千元",
+          "annualReportSource": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225058110.PDF",
+          "verificationStatus": "partial_annual_report_content_verified"
         },
         {
           "year": 2024,
@@ -3114,9 +3180,9 @@
                 "value": 407149600000,
                 "rawValue": "407149600000.0",
                 "sourceField": "营业收入",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "operatingProfit": {
                 "value": 46393752000,
@@ -3138,9 +3204,9 @@
                 "value": 38537237000,
                 "rawValue": "38537237000.0",
                 "sourceField": "归属于母公司所有者的净利润",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "netProfit": {
                 "value": 38757214000,
@@ -3326,17 +3392,17 @@
                 "value": 60511572000,
                 "rawValue": "60511572000.0",
                 "sourceField": "经营活动产生的现金流量净额",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "capex": {
                 "value": 7839636000,
                 "rawValue": "7839636000.0",
                 "sourceField": "购建固定资产、无形资产和其他长期资产所支付的现金",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "dividendsPaid": {
                 "value": 22821861000,
@@ -3428,7 +3494,10 @@
             "fcfToParentNetProfit": 1.36678,
             "netMargin": 0.094651,
             "totalInterestBearingDebtKnown": 46592339000
-          }
+          },
+          "verifiedUnitFromAnnualReport": "人民币千元",
+          "annualReportSource": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225058110.PDF",
+          "verificationStatus": "partial_annual_report_content_verified"
         },
         {
           "year": 2025,
@@ -3471,9 +3540,9 @@
                 "value": 456451731000,
                 "rawValue": "456451731000.0",
                 "sourceField": "营业收入",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "operatingProfit": {
                 "value": 52978773000,
@@ -3495,9 +3564,9 @@
                 "value": 43945411000,
                 "rawValue": "43945411000.0",
                 "sourceField": "归属于母公司所有者的净利润",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "netProfit": {
                 "value": 44520196000,
@@ -3683,17 +3752,17 @@
                 "value": 53345930000,
                 "rawValue": "53345930000.0",
                 "sourceField": "经营活动产生的现金流量净额",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "capex": {
                 "value": 11141889000,
                 "rawValue": "11141889000.0",
                 "sourceField": "购建固定资产、无形资产和其他长期资产所支付的现金",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "dividendsPaid": {
                 "value": 33080135000,
@@ -3715,9 +3784,9 @@
                 "value": 6155136000,
                 "rawValue": "6155136000.0",
                 "sourceField": "取得子公司及其他营业单位支付的现金净额",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "investmentsPurchased": {
                 "value": null,
@@ -3785,7 +3854,10 @@
             "fcfToParentNetProfit": 0.960374,
             "netMargin": 0.096276,
             "totalInterestBearingDebtKnown": 61659220000
-          }
+          },
+          "verifiedUnitFromAnnualReport": "人民币千元",
+          "annualReportSource": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225058110.PDF",
+          "verificationStatus": "partial_annual_report_content_verified"
         }
       ],
       "fiveYearSummary": {
@@ -3888,6 +3960,51 @@
         "title": "2025年年度报告全文",
         "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225058110.PDF",
         "sourceType": "official_cninfo"
+      },
+      "reportVerification": {
+        "status": "partial_content_verified",
+        "reportUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225058110.PDF",
+        "reportYear": 2025,
+        "verifiedUnit": "人民币千元",
+        "verifiedMetrics": {
+          "income": [
+            "revenue",
+            "netProfitParent"
+          ],
+          "cashflow": [
+            "operatingCashFlow"
+          ],
+          "capex": [
+            "capex"
+          ],
+          "acquisitionsPaid": [
+            "acquisitionsPaid"
+          ]
+        },
+        "years": {
+          "income": [
+            2023,
+            2024,
+            2025
+          ],
+          "cashflow": [
+            2023,
+            2024,
+            2025
+          ],
+          "capex": [
+            2023,
+            2024,
+            2025
+          ],
+          "acquisitionsPaid": [
+            2025
+          ]
+        },
+        "notes": [
+          "仅对列明年度和列明字段标记为年报原文核验；未列字段仍为pending。",
+          "2025年报比较数据可覆盖部分2023/2024年度，但不代表五年所有资产负债表及现金流字段均已核验。"
+        ]
       }
     },
     {
@@ -4286,7 +4403,10 @@
             "fcfToParentNetProfit": -0.166179,
             "netMargin": 0.122765,
             "totalInterestBearingDebtKnown": null
-          }
+          },
+          "verifiedUnitFromAnnualReport": null,
+          "annualReportSource": null,
+          "verificationStatus": "pending"
         },
         {
           "year": 2022,
@@ -4643,7 +4763,10 @@
             "fcfToParentNetProfit": 0.923518,
             "netMargin": 0.129673,
             "totalInterestBearingDebtKnown": null
-          }
+          },
+          "verifiedUnitFromAnnualReport": null,
+          "annualReportSource": null,
+          "verificationStatus": "pending"
         },
         {
           "year": 2023,
@@ -4686,9 +4809,9 @@
                 "value": 203979266387.09,
                 "rawValue": "203979266387.09",
                 "sourceField": "营业收入",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "operatingProfit": {
                 "value": 32864780357.76,
@@ -4710,9 +4833,9 @@
                 "value": 29017387604.18,
                 "rawValue": "29017387604.18",
                 "sourceField": "归属于母公司所有者的净利润",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "netProfit": {
                 "value": 27719022913.59,
@@ -4898,9 +5021,9 @@
                 "value": 56398426354.17,
                 "rawValue": "56398426354.17",
                 "sourceField": "经营活动产生的现金流量净额",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "capex": {
                 "value": 5425734302.92,
@@ -5000,7 +5123,10 @@
             "fcfToParentNetProfit": 1.756626,
             "netMargin": 0.142257,
             "totalInterestBearingDebtKnown": null
-          }
+          },
+          "verifiedUnitFromAnnualReport": "人民币元",
+          "annualReportSource": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225250396.PDF",
+          "verificationStatus": "partial_annual_report_content_verified"
         },
         {
           "year": 2024,
@@ -5043,9 +5169,9 @@
                 "value": 189163654064.64,
                 "rawValue": "189163654064.64",
                 "sourceField": "营业收入",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "operatingProfit": {
                 "value": 36988437925.6,
@@ -5067,9 +5193,9 @@
                 "value": 32184570372.28,
                 "rawValue": "32184570372.28",
                 "sourceField": "归属于母公司所有者的净利润",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "netProfit": {
                 "value": 32371069287.35,
@@ -5255,17 +5381,17 @@
                 "value": 29369250570.66,
                 "rawValue": "29369250570.66",
                 "sourceField": "经营活动产生的现金流量净额",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "capex": {
                 "value": 3299787341.22,
                 "rawValue": "3299787341.22",
                 "sourceField": "购建固定资产、无形资产和其他长期资产所支付的现金",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "dividendsPaid": {
                 "value": 15133493514.47,
@@ -5357,7 +5483,10 @@
             "fcfToParentNetProfit": 0.809999,
             "netMargin": 0.170141,
             "totalInterestBearingDebtKnown": null
-          }
+          },
+          "verifiedUnitFromAnnualReport": "人民币元",
+          "annualReportSource": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225250396.PDF",
+          "verificationStatus": "partial_annual_report_content_verified"
         },
         {
           "year": 2025,
@@ -5400,9 +5529,9 @@
                 "value": 170447058533.56998,
                 "rawValue": "170447058533.56998",
                 "sourceField": "营业收入",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "operatingProfit": {
                 "value": 34681293552.28,
@@ -5424,9 +5553,9 @@
                 "value": 29003103411.66,
                 "rawValue": "29003103411.66",
                 "sourceField": "归属于母公司所有者的净利润",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "netProfit": {
                 "value": 28862746016.16,
@@ -5612,17 +5741,17 @@
                 "value": 46383114754.02,
                 "rawValue": "46383114754.02",
                 "sourceField": "经营活动产生的现金流量净额",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "capex": {
                 "value": 1717311068.1,
                 "rawValue": "1717311068.1",
                 "sourceField": "购建固定资产、无形资产和其他长期资产所支付的现金",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "dividendsPaid": {
                 "value": 18171241079.96,
@@ -5644,9 +5773,9 @@
                 "value": null,
                 "rawValue": null,
                 "sourceField": null,
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "pending",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "investmentsPurchased": {
                 "value": null,
@@ -5714,7 +5843,10 @@
             "fcfToParentNetProfit": 1.540035,
             "netMargin": 0.170159,
             "totalInterestBearingDebtKnown": null
-          }
+          },
+          "verifiedUnitFromAnnualReport": "人民币元",
+          "annualReportSource": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225250396.PDF",
+          "verificationStatus": "partial_annual_report_content_verified"
         }
       ],
       "fiveYearSummary": {
@@ -5817,6 +5949,50 @@
         "title": "2025年年度报告全文",
         "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225250396.PDF",
         "sourceType": "official_cninfo"
+      },
+      "reportVerification": {
+        "status": "partial_content_verified",
+        "reportUrl": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225250396.PDF",
+        "reportYear": 2025,
+        "verifiedUnit": "人民币元",
+        "verifiedMetrics": {
+          "income": [
+            "revenue",
+            "netProfitParent"
+          ],
+          "cashflow": [
+            "operatingCashFlow"
+          ],
+          "capex": [
+            "capex"
+          ],
+          "acquisitionsPaid": [
+            "acquisitionsPaid"
+          ]
+        },
+        "years": {
+          "income": [
+            2023,
+            2024,
+            2025
+          ],
+          "cashflow": [
+            2023,
+            2024,
+            2025
+          ],
+          "capex": [
+            2024,
+            2025
+          ],
+          "acquisitionsPaid": [
+            2025
+          ]
+        },
+        "notes": [
+          "仅对列明年度和列明字段标记为年报原文核验；未列字段仍为pending。",
+          "2025年报比较数据可覆盖部分2023/2024年度，但不代表五年所有资产负债表及现金流字段均已核验。"
+        ]
       }
     },
     {
@@ -6215,7 +6391,10 @@
             "fcfToParentNetProfit": 1.227823,
             "netMargin": 0.472143,
             "totalInterestBearingDebtKnown": 83373259778.77
-          }
+          },
+          "verifiedUnitFromAnnualReport": null,
+          "annualReportSource": null,
+          "verificationStatus": "pending"
         },
         {
           "year": 2022,
@@ -6572,7 +6751,10 @@
             "fcfToParentNetProfit": 1.306874,
             "netMargin": 0.344537,
             "totalInterestBearingDebtKnown": 255240295157.56
-          }
+          },
+          "verifiedUnitFromAnnualReport": null,
+          "annualReportSource": null,
+          "verificationStatus": "pending"
         },
         {
           "year": 2023,
@@ -6615,9 +6797,9 @@
                 "value": 78143535736.1,
                 "rawValue": "78143535736.1",
                 "sourceField": "营业收入",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "operatingProfit": {
                 "value": 33231355746.56,
@@ -6639,9 +6821,9 @@
                 "value": 27244616815.27,
                 "rawValue": "27244616815.27",
                 "sourceField": "归属于母公司所有者的净利润",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "netProfit": {
                 "value": 27967470767.28,
@@ -6929,7 +7111,10 @@
             "fcfToParentNetProfit": 1.920832,
             "netMargin": 0.348648,
             "totalInterestBearingDebtKnown": 267420743308.37
-          }
+          },
+          "verifiedUnitFromAnnualReport": "人民币元",
+          "annualReportSource": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225262036.PDF",
+          "verificationStatus": "partial_annual_report_content_verified"
         },
         {
           "year": 2024,
@@ -6972,9 +7157,9 @@
                 "value": 84491870566.52,
                 "rawValue": "84491870566.52",
                 "sourceField": "营业收入",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "operatingProfit": {
                 "value": 39645363016.09,
@@ -6996,9 +7181,9 @@
                 "value": 32496172808.65,
                 "rawValue": "32496172808.65",
                 "sourceField": "归属于母公司所有者的净利润",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "netProfit": {
                 "value": 32930199395.19,
@@ -7184,17 +7369,17 @@
                 "value": 59648468284.22,
                 "rawValue": "59648468284.22",
                 "sourceField": "经营活动产生的现金流量净额",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "capex": {
                 "value": 14634075051.41,
                 "rawValue": "14634075051.41",
                 "sourceField": "购建固定资产、无形资产和其他长期资产所支付的现金",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "dividendsPaid": {
                 "value": 31633479332.54,
@@ -7286,7 +7471,10 @@
             "fcfToParentNetProfit": 1.385221,
             "netMargin": 0.384607,
             "totalInterestBearingDebtKnown": 250831890979.59
-          }
+          },
+          "verifiedUnitFromAnnualReport": "人民币元",
+          "annualReportSource": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225262036.PDF",
+          "verificationStatus": "partial_annual_report_content_verified"
         },
         {
           "year": 2025,
@@ -7329,9 +7517,9 @@
                 "value": 86241940222.2,
                 "rawValue": "86241940222.2",
                 "sourceField": "营业收入",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "operatingProfit": {
                 "value": 42599375047.39,
@@ -7353,9 +7541,9 @@
                 "value": 34502809176.39,
                 "rawValue": "34502809176.39",
                 "sourceField": "归属于母公司所有者的净利润",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "netProfit": {
                 "value": 34949270887.55,
@@ -7541,17 +7729,17 @@
                 "value": 60562925570.41,
                 "rawValue": "60562925570.41",
                 "sourceField": "经营活动产生的现金流量净额",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "capex": {
                 "value": 18488466859.29,
                 "rawValue": "18488466859.29",
                 "sourceField": "购建固定资产、无形资产和其他长期资产所支付的现金",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "dividendsPaid": {
                 "value": 34191120693.3,
@@ -7573,9 +7761,9 @@
                 "value": 1621226977.84,
                 "rawValue": "1621226977.84",
                 "sourceField": "取得子公司及其他营业单位支付的现金净额",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "investmentsPurchased": {
                 "value": null,
@@ -7643,7 +7831,10 @@
             "fcfToParentNetProfit": 1.21945,
             "netMargin": 0.40007,
             "totalInterestBearingDebtKnown": 217781705074.95
-          }
+          },
+          "verifiedUnitFromAnnualReport": "人民币元",
+          "annualReportSource": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225262036.PDF",
+          "verificationStatus": "partial_annual_report_content_verified"
         }
       ],
       "fiveYearSummary": {
@@ -7746,6 +7937,49 @@
         "title": "2025年年度报告",
         "url": "https://www.cypc.com.cn/cypc/attachDir/2026/05/2026051815345898336.pdf",
         "sourceType": "company_official"
+      },
+      "reportVerification": {
+        "status": "partial_content_verified",
+        "reportUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225262036.PDF",
+        "reportYear": 2025,
+        "verifiedUnit": "人民币元",
+        "verifiedMetrics": {
+          "income": [
+            "revenue",
+            "netProfitParent"
+          ],
+          "cashflow": [
+            "operatingCashFlow"
+          ],
+          "capex": [
+            "capex"
+          ],
+          "acquisitionsPaid": [
+            "acquisitionsPaid"
+          ]
+        },
+        "years": {
+          "income": [
+            2023,
+            2024,
+            2025
+          ],
+          "cashflow": [
+            2024,
+            2025
+          ],
+          "capex": [
+            2024,
+            2025
+          ],
+          "acquisitionsPaid": [
+            2025
+          ]
+        },
+        "notes": [
+          "仅对列明年度和列明字段标记为年报原文核验；未列字段仍为pending。",
+          "2025年报比较数据可覆盖部分2023/2024年度，但不代表五年所有资产负债表及现金流字段均已核验。"
+        ]
       }
     },
     {
@@ -8144,7 +8378,10 @@
             "fcfToParentNetProfit": null,
             "netMargin": 0.362025,
             "totalInterestBearingDebtKnown": null
-          }
+          },
+          "verifiedUnitFromAnnualReport": null,
+          "annualReportSource": null,
+          "verificationStatus": "pending"
         },
         {
           "year": 2022,
@@ -8501,7 +8738,10 @@
             "fcfToParentNetProfit": null,
             "netMargin": 0.400287,
             "totalInterestBearingDebtKnown": null
-          }
+          },
+          "verifiedUnitFromAnnualReport": null,
+          "annualReportSource": null,
+          "verificationStatus": "pending"
         },
         {
           "year": 2023,
@@ -8858,7 +9098,10 @@
             "fcfToParentNetProfit": null,
             "netMargin": 0.432297,
             "totalInterestBearingDebtKnown": null
-          }
+          },
+          "verifiedUnitFromAnnualReport": null,
+          "annualReportSource": null,
+          "verificationStatus": "pending"
         },
         {
           "year": 2024,
@@ -8901,9 +9144,9 @@
                 "value": 337488000000,
                 "rawValue": "337488000000.0",
                 "sourceField": "营业收入",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "operatingProfit": {
                 "value": 179019000000,
@@ -8925,9 +9168,9 @@
                 "value": 148391000000,
                 "rawValue": "148391000000.0",
                 "sourceField": "归属于母公司的净利润",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "netProfit": {
                 "value": 149559000000,
@@ -9215,7 +9458,10 @@
             "fcfToParentNetProfit": null,
             "netMargin": 0.439693,
             "totalInterestBearingDebtKnown": null
-          }
+          },
+          "verifiedUnitFromAnnualReport": "人民币元（不同摘要表可能以亿元列示）",
+          "annualReportSource": "https://s3gw.cmbimg.com/lb5001-cmbweb-prd-1255000097/cmbir/20260408/84edf174-c5e6-4eb2-a60c-34715531016a.pdf",
+          "verificationStatus": "partial_annual_report_content_verified"
         },
         {
           "year": 2025,
@@ -9258,9 +9504,9 @@
                 "value": 337532000000,
                 "rawValue": "337532000000.0",
                 "sourceField": "营业收入",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "operatingProfit": {
                 "value": 179252000000,
@@ -9282,9 +9528,9 @@
                 "value": 150181000000,
                 "rawValue": "150181000000.0",
                 "sourceField": "归属于母公司的净利润",
-                "status": "pending",
+                "status": "verified_against_annual_report",
                 "mappingStatus": "mapped",
-                "sourceVerification": "pending"
+                "sourceVerification": "verified_against_annual_report"
               },
               "netProfit": {
                 "value": 151126000000,
@@ -9572,7 +9818,10 @@
             "fcfToParentNetProfit": null,
             "netMargin": 0.444939,
             "totalInterestBearingDebtKnown": null
-          }
+          },
+          "verifiedUnitFromAnnualReport": "人民币元（不同摘要表可能以亿元列示）",
+          "annualReportSource": "https://s3gw.cmbimg.com/lb5001-cmbweb-prd-1255000097/cmbir/20260408/84edf174-c5e6-4eb2-a60c-34715531016a.pdf",
+          "verificationStatus": "partial_annual_report_content_verified"
         }
       ],
       "fiveYearSummary": {
@@ -9675,8 +9924,45 @@
         "title": "2025年度报告",
         "url": "https://www.chinamoney.com.cn/chinese/cwbg/20260401/3308334.html",
         "sourceType": "official_report_host"
+      },
+      "reportVerification": {
+        "status": "partial_content_verified",
+        "reportUrl": "https://s3gw.cmbimg.com/lb5001-cmbweb-prd-1255000097/cmbir/20260408/84edf174-c5e6-4eb2-a60c-34715531016a.pdf",
+        "reportYear": 2025,
+        "verifiedUnit": "人民币元（不同摘要表可能以亿元列示）",
+        "verifiedMetrics": {
+          "income": [
+            "revenue",
+            "netProfitParent"
+          ],
+          "cashflow": [
+            "operatingCashFlow"
+          ],
+          "capex": [],
+          "acquisitionsPaid": []
+        },
+        "years": {
+          "income": [
+            2024,
+            2025
+          ],
+          "cashflow": [],
+          "capex": [],
+          "acquisitionsPaid": []
+        },
+        "notes": [
+          "仅对列明年度和列明字段标记为年报原文核验；未列字段仍为pending。",
+          "2025年报比较数据可覆盖部分2023/2024年度，但不代表五年所有资产负债表及现金流字段均已核验。"
+        ]
       }
     }
   ],
-  "officialSourceStatus": "已为五家公司补充2025年度报告公开入口；本次尚未完成2021—2025每一年度每一字段逐项与年报原文勾稽。"
+  "officialSourceStatus": "已为五家公司补充2025年度报告公开入口；本次尚未完成2021—2025每一年度每一字段逐项与年报原文勾稽。",
+  "verificationSummary": {
+    "asOf": "2026-11-12",
+    "companies": 5,
+    "annualReportYear": 2025,
+    "status": "partial",
+    "note": "2025年报已经核验各公司部分关键指标。2021—2025全序列尚未全部核验；特别是资产负债表投入资本构成、分红拆分、债务和非经营资产仍未完成。招商银行不套用工业企业FCF/ROIC。"
+  }
 }
