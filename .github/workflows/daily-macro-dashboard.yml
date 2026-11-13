@@ -1,5 +1,9 @@
 name: Daily macro dashboard
 on:
+  push:
+    paths:
+      - "scripts/update_macro_dashboard.py"
+      - ".github/workflows/daily-macro-dashboard.yml"
   schedule:
     - cron: "25 0 * * 1-5"
   workflow_dispatch:
@@ -16,6 +20,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Validate updater syntax
+        run: python -m py_compile scripts/update_macro_dashboard.py
       - name: Fetch public FRED observations
         run: python scripts/update_macro_dashboard.py
       - name: Commit changed snapshot
