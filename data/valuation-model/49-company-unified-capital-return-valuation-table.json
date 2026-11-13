@@ -256,10 +256,10 @@
         "goodwill": 342.56859,
         "link": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12048854&stockid=000333",
         "status": "FY2025_income_statement_page_verified; balance_sheet_and_cashflow_page_audit_pending",
-        "note": "FY2025合并利润表营业收入底稿值4564.52亿元；美的官方IR摘要显示Total Revenue 4585亿元，两者存在约20.48亿元差异，可能涉及营业收入/营业总收入展示口径，必须回到年报主表与附注调节后定稿。并购现金支出61.55亿元，不能混入有机增量回报。",
+        "note": "FY2025合并利润表已核实：营业总收入4585.02407亿元，营业收入4564.51731亿元；差额20.50676亿元由利息收入20.50168亿元及手续费佣金收入0.00508亿元构成。后续经营NOPAT须剥离金融性收入/财务收益。并购现金支出61.55136亿元，必须与有机增量回报分开。",
         "fcfMarginPct": 9.25,
         "fcfToParentProfitPct": 96.04,
-        "reconciliationFlag": "已解释：官方年报合并利润表营业总收入4585.02407亿元与营业收入4564.51731亿元不是数据冲突；差额主要为利息收入20.50168亿元及手续费及佣金收入0.00508亿元。后续NOPAT剥离金融性收入/财务收益。",
+        "reconciliationFlag": "官方年报已完成精确勾稽：4585.02407=4564.51731+20.50168+0.00508（亿元）；不存在数据冲突。",
         "totalRevenue": 4585.02407,
         "revenueDefinition": "营业收入；2025合并利润表营业总收入4585.02407亿元，其中营业收入4564.51731亿元、利息收入20.50168亿元、手续费及佣金收入0.00508亿元。统一经营企业ROIC分母以营业收入作业务规模指标；财务/利息收入单独剥离。",
         "source": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF"
