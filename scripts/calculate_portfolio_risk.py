@@ -27,11 +27,11 @@ ASSETS={
 COST=0.001
 THRESHOLD=0.05
 SCENARIOS={
- "Global recession":{"A_sharesCSI300":-0.35,"HK_2800_proxy":-0.40,"US_equity_SP500":-0.30,"Developed_exUS_EFA":-0.32,"Emerging_EEM":-0.38,"ChinaBond_CBA00201_candidate":0.03,"US_AGG_proxy":0.04,"Gold_CNY":0.08,"Cash_H11025":0.0},
- "Inflation and rate shock":{"A_sharesCSI300":-0.20,"HK_2800_proxy":-0.22,"US_equity_SP500":-0.25,"Developed_exUS_EFA":-0.22,"Emerging_EEM":-0.25,"ChinaBond_CBA00201_candidate":-0.05,"US_AGG_proxy":-0.08,"Gold_CNY":0.05,"Cash_H11025":0.01},
- "Taiwan Strait / limited US-China conflict":{"A_sharesCSI300":-0.35,"HK_2800_proxy":-0.45,"US_equity_SP500":-0.20,"Developed_exUS_EFA":-0.18,"Emerging_EEM":-0.35,"ChinaBond_CBA00201_candidate":-0.03,"US_AGG_proxy":0.02,"Gold_CNY":0.15,"Cash_H11025":0.0},
- "Liquidity selloff":{"A_sharesCSI300":-0.30,"HK_2800_proxy":-0.35,"US_equity_SP500":-0.30,"Developed_exUS_EFA":-0.30,"Emerging_EEM":-0.35,"ChinaBond_CBA00201_candidate":-0.04,"US_AGG_proxy":-0.06,"Gold_CNY":-0.08,"Cash_H11025":0.0},
- "Stagflation":{"A_sharesCSI300":-0.25,"HK_2800_proxy":-0.30,"US_equity_SP500":-0.25,"Developed_exUS_EFA":-0.25,"Emerging_EEM":-0.30,"ChinaBond_CBA00201_candidate":-0.06,"US_AGG_proxy":-0.08,"Gold_CNY":0.10,"Cash_H11025":0.01},
+ "Global recession":{"A_shares_CSI300":-0.35,"HK_2800_proxy":-0.40,"US_equity_SP500":-0.30,"Developed_exUS_EFA":-0.32,"Emerging_EEM":-0.38,"ChinaBond_CBA00201_candidate":0.03,"US_AGG_proxy":0.04,"Gold_CNY":0.08,"Cash_H11025":0.0},
+ "Inflation and rate shock":{"A_shares_CSI300":-0.20,"HK_2800_proxy":-0.22,"US_equity_SP500":-0.25,"Developed_exUS_EFA":-0.22,"Emerging_EEM":-0.25,"ChinaBond_CBA00201_candidate":-0.05,"US_AGG_proxy":-0.08,"Gold_CNY":0.05,"Cash_H11025":0.01},
+ "Taiwan Strait / limited US-China conflict":{"A_shares_CSI300":-0.35,"HK_2800_proxy":-0.45,"US_equity_SP500":-0.20,"Developed_exUS_EFA":-0.18,"Emerging_EEM":-0.35,"ChinaBond_CBA00201_candidate":-0.03,"US_AGG_proxy":0.02,"Gold_CNY":0.15,"Cash_H11025":0.0},
+ "Liquidity selloff":{"A_shares_CSI300":-0.30,"HK_2800_proxy":-0.35,"US_equity_SP500":-0.30,"Developed_exUS_EFA":-0.30,"Emerging_EEM":-0.35,"ChinaBond_CBA00201_candidate":-0.04,"US_AGG_proxy":-0.06,"Gold_CNY":-0.08,"Cash_H11025":0.0},
+ "Stagflation":{"A_shares_CSI300":-0.25,"HK_2800_proxy":-0.30,"US_equity_SP500":-0.25,"Developed_exUS_EFA":-0.25,"Emerging_EEM":-0.30,"ChinaBond_CBA00201_candidate":-0.06,"US_AGG_proxy":-0.08,"Gold_CNY":0.10,"Cash_H11025":0.01},
 }
 def num(x):
  try:
