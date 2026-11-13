@@ -142,9 +142,9 @@ async function loadMacro(){
  $('macroUpdateStatus').textContent='正在读取…';
  try{
   const res=await fetch('../data/macro-dashboard.json?ts='+Date.now(),{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status);const d=await res.json();
-  const defs=[['us10y_nominal','美国10年期国债','%'],['us10y_real','美国10年期实际利率','%'],['vix','VIX波动率','点'],['dxy_broad','美元广义指数','点'],['usdcny','美元兑人民币','元'],['brent','布伦特原油','美元/桶'],['fed_funds','联邦基金利率','%'],['us_cpi_yoy','美国CPI指数水平','指数']];
+  const defs=[['us10y_nominal','美国10年期国债','%'],['us10y_real','美国10年期实际利率','%'],['vix','VIX波动率','点'],['dxy_broad','美元广义指数','点'],['usdcny','美元兑人民币','元'],['brent','布伦特原油','美元/桶'],['fed_funds','联邦基金利率','%'],['us_cpi_index','美国CPI指数水平','指数']];
   $('macroCards').innerHTML=defs.map(([k,label,unit])=>{const s=d.series?.[k];const v=s?.value;return '<article class="panel"><small class="note">'+label+'</small><strong style="display:block;font-size:24px;margin:8px 0">'+(v==null?'暂无':Number(v).toFixed(2)+' '+unit)+'</strong><p class="note">'+(s?.date?'观测日：'+s.date:'尚无观测')+' · '+(s?.series_id||'等待首次更新')+'</p></article>'}).join('');
-  const alerts=d.alerts||[];$('macroAlerts').innerHTML=alerts.length?alerts.map(a=>'<div class="status '+(a.level==='high'?'bad':'warn')+'">'+a.message+'（当前 '+a.value+'；阈值 '+a.threshold+'）</div>').join(''):'<span class="good">当前已发布数据未触发预设阈值。缺失指标不视为正常。</span>';
+  const alerts=d.alerts||[];$('macroAlerts').innerHTML=alerts.length?alerts.map(a=>'<div class="status '+(a.level==='high'?'bad':'warn')+'">'+a.message+'（当前 '+a.value+'；阈值 '+a.threshold+'）</div>').join(''):'<span class="good">当前已发布数据未触发预设阈值。缺失指标不视为正常。</span>';if(d.status==='error')$('macroAlerts').innerHTML='<span class="bad">全部宏观序列抓取失败；不能据此判断市场风险正常。</span>';else if(d.status==='partial')$('macroAlerts').innerHTML+='<p class="warn">部分宏观序列抓取失败，未抓到的数据不视为正常。</p>';
   $('macroUpdateStatus').textContent=d.generated_at?'数据生成：'+new Date(d.generated_at).toLocaleString('zh-CN'):'等待首次自动抓取';
   if(d.errors&&Object.keys(d.errors).length)$('macroUpdateStatus').textContent+=' · '+Object.keys(d.errors).length+'项抓取失败';
  }catch(e){$('macroUpdateStatus').textContent='读取失败：'+e.message;$('macroCards').innerHTML='<div class="status warn">宏观数据文件尚未生成或暂时不可用。自动更新任务首次成功后会显示指标。</div>'}
