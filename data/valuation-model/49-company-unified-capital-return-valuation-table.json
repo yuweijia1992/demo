@@ -270,7 +270,7 @@
       "modelType": "operating_company",
       "fiscalYearBasis": "calendar_year",
       "sourceFY2025": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225250396.PDF",
-      "sourceStatus": "official_link_only_not_content_verified",
+      "sourceStatus": "FY2025_official_annual_report_page_verified_for_balance_sheet_income_statement_cashflow",
       "capitalReturn": null,
       "capitalCost": null,
       "incrementalReturn": null,
@@ -288,7 +288,7 @@
         "priceDate": null
       },
       "marginOfSafety": null,
-      "auditStatus": "FY2025_core_snapshot_partially_located; FY2021-2024_and_ROIC_valuation_pending",
+      "auditStatus": "FY2025_full_statement_line_items_page_verified; financial_subsidiary_and_mixed_items_classification_pending; FY2021-2024_and_ROIC_valuation_pending",
       "notes": "ROIC / incremental ROIC / WACC / FCF / DCF+relative valuation FY2025已补录初步损益/现金流快照；不是完整五年资本效率审计。",
       "fy2025PreliminarySnapshot": {
         "unit": "亿元人民币",
@@ -303,6 +303,21 @@
         "note": "集团有财务公司和大量金融资产配置，不能把全部现金、交易性金融资产视为超额现金；不能据此直接计算净债务和ROIC。",
         "fcfMarginPct": 26.21,
         "fcfToParentProfitPct": 154
+      },
+      "fy2025ReportAudit": {
+        "file": "data/valuation-model/gree-fy2025-balance-sheet-classification-audit.json",
+        "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-29/f9937e4b-3994-4100-8200-7fd8a000ecfa.PDF",
+        "verifiedPages": "85-88",
+        "verifiedLineItems": {
+          "balanceSheetAssets": 28,
+          "balanceSheetLiabilities": 16,
+          "incomeStatement": true,
+          "cashFlow": true
+        },
+        "balanceSheetReconciles": true,
+        "normalizedNopat": null,
+        "roic": null,
+        "note": "资产负债表逐项已录入并与总资产/总负债勾稽；金融公司业务及混合科目尚未剥离，故不计算ROIC。"
       }
     },
     {
@@ -1333,9 +1348,12 @@
     "broker": 2,
     "FY2025OfficialSourceLinksRegistered": 49,
     "auditedComparativeRows": 0,
-    "warning": "First-batch FY2025 core values are located in annual-report text/results materials, but page/note-level verification, full balance-sheet classification, normalized NOPAT, WACC and valuation are still pending. Do not treat these snapshots as completed ROIC rankings.",
+    "warning": "格力FY2025三张主表已完成页级核验并单独存档；仍未完成五年比较、金融业务剥离、正常化NOPAT、WACC及ROIC。其余公司快照不得视为已审计。",
     "FY2025CoreSnapshotPopulated": 5,
     "FY2025SimplifiedFCFPopulated": 4,
-    "FY2025BankSectorMetricsPopulated": 1
+    "FY2025BankSectorMetricsPopulated": 1,
+    "FY2025BalanceSheetPageVerifiedRows": 1,
+    "FY2025IncomeStatementPageVerifiedRows": 1,
+    "FY2025CashFlowPageVerifiedRows": 1
   }
 }
