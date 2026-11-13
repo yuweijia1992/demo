@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "status": "PROVISIONAL_PROXY_RESEARCH",
+  "generated_at": "2026-11-13T06:17:56+00:00",
+  "sample": {
+    "start": "2008-02",
+    "end": "2026-07",
+    "months": 216,
+    "complete_case_rule": "All nine return fields present; no forward-fill or missing-as-zero."
+  },
+  "target_weights": {
+    "A_shares_CSI300": 0.08,
+    "HK_2800_proxy": 0.02,
+    "US_equity_SP500": 0.25,
+    "Developed_exUS_EFA": 0.11,
+    "Emerging_EEM": 0.06,
+    "ChinaBond_CBA00201_candidate": 0.23,
+    "US_AGG_proxy": 0.05,
+    "Gold_CNY": 0.1,
+    "Cash_H11025": 0.1
+  },
+  "asset_fields": {
+    "A_shares_CSI300": "csi300_total_return_pct",
+    "HK_2800_proxy": "hang_seng_etf_2800_total_return_cny_pct",
+    "US_equity_SP500": "sp500_total_return_cny_pct",
+    "Developed_exUS_EFA": "efa_developed_markets_etf_total_return_cny_pct",
+    "Emerging_EEM": "eem_emerging_markets_etf_total_return_cny_pct",
+    "ChinaBond_CBA00201_candidate": "china_bond_wealth_return_cny_pct",
+    "US_AGG_proxy": "us_agg_etf_total_return_cny_pct",
+    "Gold_CNY": "gold_cny_return_pct",
+    "Cash_H11025": "cny_cash_return_pct"
+  },
+  "strategies": {
+    "buy_hold": {
+      "months": 216,
+      "annualized_return": 0.0680298825076795,
+      "annualized_volatility": 0.07878944486259276,
+      "max_drawdown": -0.24004421580098168,
+      "drawdown_peak_to_trough_months": 13,
+      "months_to_recover_old_peak": 22,
+      "ongoing_drawdown_months": 0,
+      "worst_month": -0.08341875727470838,
+      "best_month": 0.06738123252552053,
+      "terminal_wealth_multiple": 3.2696500486088924,
+      "average_annual_turnover": 0.0,
+      "one_way_transaction_cost": 0.001
+    },
+    "annual": {
+      "months": 216,
+      "annualized_return": 0.06738965450477119,
+      "annualized_volatility": 0.07931238601465329,
+      "max_drawdown": -0.2497165994320596,
+      "drawdown_peak_to_trough_months": 13,
+      "months_to_recover_old_peak": 10,
+      "ongoing_drawdown_months": 0,
+      "worst_month": -0.08341875727470838,
+      "best_month": 0.058944924510782926,
+      "terminal_wealth_multiple": 3.234549523423182,
+      "average_annual_turnover": 0.0469230777644313,
+      "one_way_transaction_cost": 0.001
+    },
+    "threshold": {
+      "months": 216,
+      "annualized_return": 0.06771851063536816,
+      "annualized_volatility": 0.08169180939870228,
+      "max_drawdown": -0.2570535156836159,
+      "drawdown_peak_to_trough_months": 13,
+      "months_to_recover_old_peak": 10,
+      "ongoing_drawdown_months": 0,
+      "worst_month": -0.10232173358184293,
+      "best_month": 0.06024644838531179,
+      "terminal_wealth_multiple": 3.2525343797173236,
+      "average_annual_turnover": 0.037646840318264936,
+      "one_way_transaction_cost": 0.001
+    }
+  },
+  "foreign_currency_gross_weight": 0.49,
+  "correlation_file": "asset_correlation_matrix.csv",
+  "nav_file": "portfolio_nav_monthly.csv",
+  "stress_file": "portfolio_stress_scenarios.csv",
+  "stress_scenarios": [
+    {
+      "scenario": "Global recession",
+      "portfolio_return": -0.15209999999999999,
+      "loss_cny_at_400w": 608399.9999999999,
+      "assumptions": "{\"A_shares_CSI300\": -0.35, \"HK_2800_proxy\": -0.4, \"US_equity_SP500\": -0.3, \"Developed_exUS_EFA\": -0.32, \"Emerging_EEM\": -0.38, \"ChinaBond_CBA00201_candidate\": 0.03, \"US_AGG_proxy\": 0.04, \"Gold_CNY\": 0.08, \"Cash_H11025\": 0.0}"
+    },
+    {
+      "scenario": "Inflation and rate shock",
+      "portfolio_return": -0.1316,
+      "loss_cny_at_400w": 526400.0,
+      "assumptions": "{\"A_shares_CSI300\": -0.2, \"HK_2800_proxy\": -0.22, \"US_equity_SP500\": -0.25, \"Developed_exUS_EFA\": -0.22, \"Emerging_EEM\": -0.25, \"ChinaBond_CBA00201_candidate\": -0.05, \"US_AGG_proxy\": -0.08, \"Gold_CNY\": 0.05, \"Cash_H11025\": 0.01}"
+    },
+    {
+      "scenario": "Taiwan Strait / limited US-China conflict",
+      "portfolio_return": -0.1187,
+      "loss_cny_at_400w": 474800.0,
+      "assumptions": "{\"A_shares_CSI300\": -0.35, \"HK_2800_proxy\": -0.45, \"US_equity_SP500\": -0.2, \"Developed_exUS_EFA\": -0.18, \"Emerging_EEM\": -0.35, \"ChinaBond_CBA00201_candidate\": -0.03, \"US_AGG_proxy\": 0.02, \"Gold_CNY\": 0.15, \"Cash_H11025\": 0.0}"
+    },
+    {
+      "scenario": "Liquidity selloff",
+      "portfolio_return": -0.1802,
+      "loss_cny_at_400w": 720800.0,
+      "assumptions": "{\"A_shares_CSI300\": -0.3, \"HK_2800_proxy\": -0.35, \"US_equity_SP500\": -0.3, \"Developed_exUS_EFA\": -0.3, \"Emerging_EEM\": -0.35, \"ChinaBond_CBA00201_candidate\": -0.04, \"US_AGG_proxy\": -0.06, \"Gold_CNY\": -0.08, \"Cash_H11025\": 0.0}"
+    },
+    {
+      "scenario": "Stagflation",
+      "portfolio_return": -0.1408,
+      "loss_cny_at_400w": 563200.0,
+      "assumptions": "{\"A_shares_CSI300\": -0.25, \"HK_2800_proxy\": -0.3, \"US_equity_SP500\": -0.25, \"Developed_exUS_EFA\": -0.25, \"Emerging_EEM\": -0.3, \"ChinaBond_CBA00201_candidate\": -0.06, \"US_AGG_proxy\": -0.08, \"Gold_CNY\": 0.1, \"Cash_H11025\": 0.01}"
+    },
+    {
+      "scenario": "Foreign-currency basket moves -20% vs CNY (simplified)",
+      "portfolio_return": -0.098,
+      "loss_cny_at_400w": 392000.0,
+      "assumptions": "Gross foreign-currency-denominated sleeve 49.0%; assumes uniform currency move and unchanged local asset prices"
+    },
+    {
+      "scenario": "Foreign-currency basket moves -10% vs CNY (simplified)",
+      "portfolio_return": -0.049,
+      "loss_cny_at_400w": 196000.0,
+      "assumptions": "Gross foreign-currency-denominated sleeve 49.0%; assumes uniform currency move and unchanged local asset prices"
+    },
+    {
+      "scenario": "Foreign-currency basket moves +10% vs CNY (simplified)",
+      "portfolio_return": 0.049,
+      "loss_cny_at_400w": -196000.0,
+      "assumptions": "Gross foreign-currency-denominated sleeve 49.0%; assumes uniform currency move and unchanged local asset prices"
+    },
+    {
+      "scenario": "Foreign-currency basket moves +20% vs CNY (simplified)",
+      "portfolio_return": 0.098,
+      "loss_cny_at_400w": -392000.0,
+      "assumptions": "Gross foreign-currency-denominated sleeve 49.0%; assumes uniform currency move and unchanged local asset prices"
+    }
+  ],
+  "limitations": [
+    "2800.HK is an ETF proxy, not official Hang Seng Gross TRI.",
+    "CBA00201 series is a ChinaBond Composite Wealth candidate; index-code mapping and redistribution rights remain unverified.",
+    "AGG is unhedged USD-denominated US aggregate bond ETF proxy, not a RMB-hedged offshore bond mandate.",
+    "EEM contains China and Taiwan exposure; geographical overlap remains.",
+    "EFA/EEM are ETF proxies and their local-currency exposure is a basket; foreign-currency shock assumes uniform basket movement.",
+    "Historical returns and deterministic stress scenarios are not forecasts; sample begins only when all nine fields overlap.",
+    "Monthly average gold price is not an investable fund total-return series.",
+    "Costs assume 10bp per one-way traded notional and do not include tax, spread, FX conversion or fund tracking error."
+  ]
+}
