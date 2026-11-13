@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "scripts/fetch_public_index_valuations.py"
+      - "scripts/fetch_csi300_legu_valuation.py"
       - ".github/workflows/build-index-valuations.yml"
       - "data/investment-monthly.csv"
 permissions:
