@@ -1,0 +1,48 @@
+{
+  "status": "PILOT_ONLY_NOT_GLOBAL_POLICY",
+  "signal": "S&P 500 CAPE 10Y percentile observed at t-1",
+  "rules": {
+    "SP500_buy_hold": "100% S&P 500 total return",
+    "Fixed_60_40": "60% S&P 500 / 40% RMB cash, monthly weights restored",
+    "CAPE_tilt_100_75_50": "100% equity if lagged CAPE percentile <=20; 75% if >20 and <80; 50% if >=80; remaining weight RMB cash; 10bp one-way cost on equity-weight changes"
+  },
+  "sample": {
+    "start": "2016-01",
+    "end": "2026-07",
+    "months": 121
+  },
+  "strategies": {
+    "SP500_buy_hold": {
+      "months": 121,
+      "annualized_return": 0.14889183396611472,
+      "annualized_volatility": 0.1541795026758964,
+      "max_drawdown": -0.19520062893196843,
+      "terminal_wealth_multiple": 4.053355430553061,
+      "worst_month": -0.12053203809999999
+    },
+    "Fixed_60_40": {
+      "months": 121,
+      "annualized_return": 0.1006823254080107,
+      "annualized_volatility": 0.09246208100347199,
+      "max_drawdown": -0.11751269101109263,
+      "terminal_wealth_multiple": 2.6308237854087406,
+      "worst_month": -0.07150461645999999
+    },
+    "CAPE_tilt_100_75_50": {
+      "months": 121,
+      "annualized_return": 0.10727838280956026,
+      "annualized_volatility": 0.09454284214633871,
+      "max_drawdown": -0.09749430118699298,
+      "terminal_wealth_multiple": 2.7941922382003392,
+      "worst_month": -0.0634585302
+    }
+  },
+  "limitations": [
+    "Single S&P 500 + RMB cash pilot only; not a global 52/28/10/10 portfolio.",
+    "CAPE is a slow-moving valuation metric and may remain high for years; results are highly sample-dependent.",
+    "Signal is deliberately lagged by one full month; no look-ahead from same-month returns.",
+    "No taxes, bid-ask spread, ETF tracking difference, withholding tax or account-specific FX conversion cost.",
+    "No optimization on the test sample; thresholds are fixed ex ante at 20/80 percentile and 100/75/50% equity weights.",
+    "Must compare against alternative thresholds and rolling out-of-sample periods before any policy use."
+  ]
+}
