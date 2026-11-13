@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-11-13",
+  "title": "首批五家公司2021—2025原始字段覆盖与审计状态矩阵",
+  "purpose": "将字段抓取覆盖、字段非空、映射状态、年报原文核验和单位确认分开统计；本文件是审计覆盖报告，不代表已完成财务报表审计。",
+  "sourceFile": "data/valuation-model/first-five-companies-financial-audit-2021-2025-v2.json",
+  "sourceBlobSha": "dd2a408ab5cd47f0585fa15c93b4624bcfd57abb",
+  "scope": {
+    "companies": 5,
+    "years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "statementTypes": [
+      "income",
+      "balance",
+      "cashflow"
+    ],
+    "currency": "CNY字段标签；原始报告单位尚未确认"
+  },
+  "aggregate": {
+    "companyYearCells": 25,
+    "statementCells": 75,
+    "sourceRows": 1508,
+    "fieldSlots": {
+      "income": 225,
+      "balance": 425,
+      "cashflow": 300,
+      "total": 950
+    },
+    "populatedValues": {
+      "income": 220,
+      "balance": 330,
+      "cashflow": 168,
+      "total": 718
+    },
+    "emptyValues": {
+      "income": 5,
+      "balance": 95,
+      "cashflow": 132,
+      "total": 232
+    },
+    "mappedValues": 718,
+    "sourceReportVerifiedValues": 0,
+    "verifiedCompanyYearStatementGroups": 0,
+    "unitConfirmedCompanyYearGroups": 0,
+    "sourceProvider": "Sina Finance via AKShare",
+    "criticalInterpretation": "所有25个公司年度记录的sourceVerification均为pending；reportedUnit三个报表口径均为空。字段已抓取/映射不等于年报原文已核验。"
+  },
+  "companies": [
+    {
+      "name": "海尔智家",
+      "code": "600690.SH",
+      "sourceRows": 344,
+      "years": 5,
+      "unitMissingYears": 5,
+      "fieldSlots": {
+        "income": 45,
+        "balance": 85,
+        "cashflow": 60
+      },
+      "populated": {
+        "income": 45,
+        "balance": 72,
+        "cashflow": 33
+      },
+      "verified": {
+        "income": 0,
+        "balance": 0,
+        "cashflow": 0
+      }
+    },
+    {
+      "name": "美的集团",
+      "code": "000333.SZ",
+      "sourceRows": 240,
+      "years": 5,
+      "unitMissingYears": 5,
+      "fieldSlots": {
+        "income": 45,
+        "balance": 85,
+        "cashflow": 60
+      },
+      "populated": {
+        "income": 45,
+        "balance": 74,
+        "cashflow": 34
+      },
+      "verified": {
+        "income": 0,
+        "balance": 0,
+        "cashflow": 0
+      }
+    },
+    {
+      "name": "格力电器",
+      "code": "000651.SZ",
+      "sourceRows": 332,
+      "years": 5,
+      "unitMissingYears": 5,
+      "fieldSlots": {
+        "income": 45,
+        "balance": 85,
+        "cashflow": 60
+      },
+      "populated": {
+        "income": 45,
+        "balance": 69,
+        "cashflow": 33
+      },
+      "verified": {
+        "income": 0,
+        "balance": 0,
+        "cashflow": 0
+      }
+    },
+    {
+      "name": "长江电力",
+      "code": "600900.SH",
+      "sourceRows": 285,
+      "years": 5,
+      "unitMissingYears": 5,
+      "fieldSlots": {
+        "income": 45,
+        "balance": 85,
+        "cashflow": 60
+      },
+      "populated": {
+        "income": 45,
+        "balance": 70,
+        "cashflow": 33
+      },
+      "verified": {
+        "income": 0,
+        "balance": 0,
+        "cashflow": 0
+      }
+    },
+    {
+      "name": "招商银行",
+      "code": "600036.SH / 03968.HK",
+      "sourceRows": 307,
+      "years": 5,
+      "unitMissingYears": 5,
+      "fieldSlots": {
+        "income": 45,
+        "balance": 85,
+        "cashflow": 60
+      },
+      "populated": {
+        "income": 40,
+        "balance": 45,
+        "cashflow": 35
+      },
+      "verified": {
+        "income": 0,
+        "balance": 0,
+        "cashflow": 0
+      }
+    }
+  ],
+  "blockers": [
+    "reportedUnit中income、balance、cashflow均为空；必须从对应年度年报首页/报表标题确认元、千元或百万元后才可换算。",
+    "五家公司25个年度记录的sourceVerification均为pending；Sina/AKShare抓取值须逐年与发行人年报及附注勾稽。",
+    "空字段不能以0代替；需判断未披露、不适用、抓取遗漏或附注拆分。",
+    "股利现金流字段混合股利、利润分配和偿付利息，不能直接作为现金分红。",
+    "格力集团含财务公司业务，需分部和附注剥离；长江电力需处理同一控制下合并追溯；美的/海尔并购需分开有机与并购增量。",
+    "招商银行使用银行专用指标，不计算工业企业ROIC、净债务或简化FCF。"
+  ],
+  "nextAuditSequence": [
+    "确认五家公司各年度年报报表单位及合并口径，建立年度—报表—页码—附注索引。",
+    "逐年核对利润表、资产负债表、现金流量表关键字段并标记差异、追溯重述和来源页码。",
+    "补齐空值并区分not_applicable、not_disclosed、source_missing、not_yet_verified。",
+    "完成经营资产/负债、超额现金、金融资产、商誉、租赁负债及少数股东权益分类。",
+    "正常化NOPAT、投入资本、含商誉/剔除商誉ROIC、增量ROIC、EVA与WACC敏感性。",
+    "对招商银行建立ROE/ROAA/NIM/信用成本/资本充足率/剩余收益模型。"
+  ],
+  "formulas": {
+    "simplifiedFcf": "CFO - 购建固定资产、无形资产和其他长期资产支付的现金",
+    "roic": "正常化NOPAT / 平均投入资本",
+    "incrementalRoic": "Δ正常化NOPAT / Δ平均投入资本；重大并购或并表变化标记不可比",
+    "eva": "正常化NOPAT - WACC × 平均投入资本"
+  },
+  "status": "coverage_audit_created; annual_report_page_verification_pending; no_roic_or_valuation_claims"
+}
