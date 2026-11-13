@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "generatedAt": "2026-11-13",
   "title": "49家公司统一资本回报—资本成本—现金流—估值比较表",
-  "status": "comparison_schema_and_49_company_universe_ready; audited_metric_population_pending",
+  "status": "49_company_framework_with_first_batch_FY2025_core_snapshot_partially_populated",
   "purpose": "统一输出49家公司可比较的资本回报、资本成本、增量回报、自由现金流、估值区间和安全边际；未核验字段保持null。",
   "comparisonBasis": {
     "primaryPeriod": "FY2021-FY2025 five-year series; valuation uses explicitly dated latest market price and latest available financial statements",
@@ -186,7 +186,12 @@
       "capitalReturn": null,
       "capitalCost": null,
       "incrementalReturn": null,
-      "freeCashFlow": null,
+      "freeCashFlow": {
+        "fy2025": 171.5137802903,
+        "unit": "亿元人民币",
+        "definition": "CFO - 购建固定资产、无形资产和其他长期资产支付的现金",
+        "status": "preliminary_report_line_items_located; page/note audit and 5-year history pending"
+      },
       "valuationRange": {
         "bear": null,
         "base": null,
@@ -195,8 +200,22 @@
         "priceDate": null
       },
       "marginOfSafety": null,
-      "auditStatus": "not_yet_verified",
-      "notes": "ROIC / incremental ROIC / WACC / FCF / DCF+relative valuation"
+      "auditStatus": "FY2025_core_snapshot_partially_located; FY2021-2024_and_ROIC_valuation_pending",
+      "notes": "ROIC / incremental ROIC / WACC / FCF / DCF+relative valuation FY2025已补录初步损益/现金流快照；不是完整五年资本效率审计。",
+      "fy2025PreliminaryAuditedSnapshot": {
+        "unit": "亿元人民币",
+        "revenue": 3023.467839183,
+        "parentProfit": 195.5279822285,
+        "cfo": 260.0294196992,
+        "capex": 88.5156394089,
+        "fcf": 171.5137802903,
+        "acquisitionCash": 44.0933629158,
+        "link": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12024960&stockid=600690",
+        "status": "2025损益及现金流已定位；资产负债表投入资本待核验",
+        "note": "官方业绩发布列示FY2025收入302.35亿元?（单位为人民币十亿元：302.35），归母净利润195.5亿元；2024比较数为2860.2亿元收入、187.3亿元归母净利润。",
+        "fcfMarginPct": 5.67,
+        "fcfToParentProfitPct": 87.72
+      }
     },
     {
       "company": "美的集团",
@@ -210,7 +229,12 @@
       "capitalReturn": null,
       "capitalCost": null,
       "incrementalReturn": null,
-      "freeCashFlow": null,
+      "freeCashFlow": {
+        "fy2025": 422.04041,
+        "unit": "亿元人民币",
+        "definition": "CFO - 购建固定资产、无形资产和其他长期资产支付的现金",
+        "status": "preliminary_report_line_items_located; page/note audit and 5-year history pending"
+      },
       "valuationRange": {
         "bear": null,
         "base": null,
@@ -219,8 +243,23 @@
         "priceDate": null
       },
       "marginOfSafety": null,
-      "auditStatus": "not_yet_verified",
-      "notes": "ROIC / incremental ROIC / WACC / FCF / DCF+relative valuation"
+      "auditStatus": "FY2025_core_snapshot_partially_located; FY2021-2024_and_ROIC_valuation_pending",
+      "notes": "ROIC / incremental ROIC / WACC / FCF / DCF+relative valuation FY2025已补录初步损益/现金流快照；不是完整五年资本效率审计。",
+      "fy2025PreliminaryAuditedSnapshot": {
+        "unit": "亿元人民币",
+        "revenue": 4564.51731,
+        "parentProfit": 439.45411,
+        "cfo": 533.4593,
+        "capex": 111.41889,
+        "fcf": 422.04041,
+        "acquisitionCash": 61.55136,
+        "goodwill": 342.56859,
+        "link": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12048854&stockid=000333",
+        "status": "2025核心损益及现金流已定位；投入资本与NOPAT待审计",
+        "note": "FY2025完成Arbonia、东芝电梯中国业务及Carestream Health国际业务收购；并购现金支出61.55亿元，不能并入有机增量回报。",
+        "fcfMarginPct": 9.25,
+        "fcfToParentProfitPct": 96.04
+      }
     },
     {
       "company": "格力电器",
@@ -234,7 +273,12 @@
       "capitalReturn": null,
       "capitalCost": null,
       "incrementalReturn": null,
-      "freeCashFlow": null,
+      "freeCashFlow": {
+        "fy2025": 446.6580368592,
+        "unit": "亿元人民币",
+        "definition": "CFO - 购建固定资产、无形资产和其他长期资产支付的现金",
+        "status": "preliminary_report_line_items_located; page/note audit and 5-year history pending"
+      },
       "valuationRange": {
         "bear": null,
         "base": null,
@@ -243,8 +287,22 @@
         "priceDate": null
       },
       "marginOfSafety": null,
-      "auditStatus": "not_yet_verified",
-      "notes": "ROIC / incremental ROIC / WACC / FCF / DCF+relative valuation"
+      "auditStatus": "FY2025_core_snapshot_partially_located; FY2021-2024_and_ROIC_valuation_pending",
+      "notes": "ROIC / incremental ROIC / WACC / FCF / DCF+relative valuation FY2025已补录初步损益/现金流快照；不是完整五年资本效率审计。",
+      "fy2025PreliminaryAuditedSnapshot": {
+        "unit": "亿元人民币",
+        "revenue": 1704.4705853357,
+        "parentProfit": 290.0310341166,
+        "cfo": 463.8311475402,
+        "capex": 17.173110681,
+        "fcf": 446.6580368592,
+        "acquisitionCash": 2.0944484548,
+        "link": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12270401&stockid=000651",
+        "status": "2025损益、CFO及资本开支已定位；金融资产/金融负债分类待核验",
+        "note": "集团有财务公司和大量金融资产配置，不能把全部现金、交易性金融资产视为超额现金；不能据此直接计算净债务和ROIC。",
+        "fcfMarginPct": 26.21,
+        "fcfToParentProfitPct": 154
+      }
     },
     {
       "company": "比亚迪",
@@ -498,7 +556,12 @@
       "capitalReturn": null,
       "capitalCost": null,
       "incrementalReturn": null,
-      "freeCashFlow": null,
+      "freeCashFlow": {
+        "fy2025": 420.7445871112,
+        "unit": "亿元人民币",
+        "definition": "CFO - 购建固定资产、无形资产和其他长期资产支付的现金",
+        "status": "preliminary_report_line_items_located; page/note audit and 5-year history pending"
+      },
       "valuationRange": {
         "bear": null,
         "base": null,
@@ -507,8 +570,22 @@
         "priceDate": null
       },
       "marginOfSafety": null,
-      "auditStatus": "not_yet_verified",
-      "notes": "ROIC / incremental ROIC / WACC / FCF / DCF+relative valuation"
+      "auditStatus": "FY2025_core_snapshot_partially_located; FY2021-2024_and_ROIC_valuation_pending",
+      "notes": "ROIC / incremental ROIC / WACC / FCF / DCF+relative valuation FY2025已补录初步损益/现金流快照；不是完整五年资本效率审计。",
+      "fy2025PreliminaryAuditedSnapshot": {
+        "unit": "亿元人民币",
+        "revenue": 862.419402222,
+        "parentProfit": 345.0280917639,
+        "cfo": 605.6292557041,
+        "capex": 184.8846685929,
+        "fcf": 420.7445871112,
+        "acquisitionCash": 16.2122697784,
+        "link": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225262036.PDF",
+        "status": "2025损益、CFO、资本开支及并购现金流已定位；投入资本分类待核验",
+        "note": "FY2022存在重大同一控制下合并导致比较口径变化；FY2025需继续拆分维护性与扩张性资本开支。",
+        "fcfMarginPct": 48.79,
+        "fcfToParentProfitPct": 121.95
+      }
     },
     {
       "company": "川投能源",
@@ -915,8 +992,24 @@
         "priceDate": null
       },
       "marginOfSafety": null,
-      "auditStatus": "not_yet_verified",
-      "notes": "ROAE/RAROC / equity cost / RWA-adjusted growth / distributable cash / PB-residual income"
+      "auditStatus": "FY2025_core_snapshot_partially_located; FY2021-2024_and_ROIC_valuation_pending",
+      "notes": "ROAE/RAROC / equity cost / RWA-adjusted growth / distributable cash / PB-residual income FY2025已补录初步损益/现金流快照；不是完整五年资本效率审计。",
+      "fy2025PreliminaryAuditedSnapshot": {
+        "unit": "亿元人民币",
+        "revenue": 3375.32,
+        "parentProfit": 1501.81,
+        "roaePct": 13.44,
+        "roaaPct": 1.19,
+        "nimPct": 1.87,
+        "nplPct": 0.94,
+        "coveragePct": 391.79,
+        "coreTier1AdvancedPct": 14.16,
+        "totalCapitalAdvancedPct": 18.24,
+        "coreTier1WeightedPct": 11.92,
+        "link": "https://s3gw.cmbimg.com/lb5001-cmbweb-prd-1255000097/cmbir/20260408/84edf174-c5e6-4eb2-a60c-34715531016a.pdf",
+        "status": "2025银行经营与监管资本指标已核验；风险加权资产/资本桥接待补",
+        "note": "银行不计算工业企业ROIC或普通企业简化FCF；高级法与权重法资本充足率分列。"
+      }
     },
     {
       "company": "工商银行",
@@ -1239,6 +1332,9 @@
     "broker": 2,
     "FY2025OfficialSourceLinksRegistered": 49,
     "auditedComparativeRows": 0,
-    "warning": "Official report link registration is not report-content verification. All numeric comparison outputs remain null until report page/note-level audit and calculation."
+    "warning": "First-batch FY2025 core values are located in annual-report text/results materials, but page/note-level verification, full balance-sheet classification, normalized NOPAT, WACC and valuation are still pending. Do not treat these snapshots as completed ROIC rankings.",
+    "FY2025CoreSnapshotPopulated": 5,
+    "FY2025SimplifiedFCFPopulated": 4,
+    "FY2025BankSectorMetricsPopulated": 1
   }
 }
