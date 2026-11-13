@@ -1,0 +1,40 @@
+date,frequency,asset,metric,value,source,source_url,method,included_in_unified_monthly_matrix
+2025-12,monthly,S&P 500,PB,4.98,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Aggregate market cap / aggregate shareholders equity; negative book equity constituents excluded",NO
+2026-01,monthly,S&P 500,PB,5.06,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Aggregate market cap / aggregate shareholders equity; negative book equity constituents excluded",NO
+2026-02,monthly,S&P 500,PB,5.00,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Aggregate market cap / aggregate shareholders equity; negative book equity constituents excluded",NO
+2026-03,monthly,S&P 500,PB,4.63,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Aggregate market cap / aggregate shareholders equity; negative book equity constituents excluded",NO
+2026-04,monthly,S&P 500,PB,5.13,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Aggregate market cap / aggregate shareholders equity; negative book equity constituents excluded",NO
+2026-05,monthly,S&P 500,PB,5.41,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Aggregate market cap / aggregate shareholders equity; negative book equity constituents excluded",NO
+2026-06,monthly,S&P 500,PB,5.13,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Aggregate market cap / aggregate shareholders equity; negative book equity constituents excluded",NO
+2026-07,monthly,S&P 500,PB,5.10,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Aggregate market cap / aggregate shareholders equity; negative book equity constituents excluded",NO
+2026-08,monthly,S&P 500,PB,5.23,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Aggregate market cap / aggregate shareholders equity; negative book equity constituents excluded",NO
+2026-09,monthly,S&P 500,PB,5.14,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Aggregate market cap / aggregate shareholders equity; negative book equity constituents excluded",NO
+2026-10,monthly,S&P 500,PB,5.01,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Aggregate market cap / aggregate shareholders equity; negative book equity constituents excluded",NO
+2026-11,monthly,S&P 500,PB,5.04,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Aggregate market cap / aggregate shareholders equity; negative book equity constituents excluded",NO
+1999,annual,S&P 500,PB,4.97,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2000,annual,S&P 500,PB,4.15,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2001,annual,S&P 500,PB,3.27,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2002,annual,S&P 500,PB,2.68,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2003,annual,S&P 500,PB,3.00,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2004,annual,S&P 500,PB,2.89,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2005,annual,S&P 500,PB,2.79,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2006,annual,S&P 500,PB,2.86,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2007,annual,S&P 500,PB,2.72,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2008,annual,S&P 500,PB,1.81,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2009,annual,S&P 500,PB,2.06,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2010,annual,S&P 500,PB,2.09,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2011,annual,S&P 500,PB,1.98,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2012,annual,S&P 500,PB,2.08,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2013,annual,S&P 500,PB,2.51,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2014,annual,S&P 500,PB,2.73,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2015,annual,S&P 500,PB,2.66,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2016,annual,S&P 500,PB,2.73,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2017,annual,S&P 500,PB,3.12,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2018,annual,S&P 500,PB,2.74,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2019,annual,S&P 500,PB,3.27,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2020,annual,S&P 500,PB,3.85,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2021,annual,S&P 500,PB,4.38,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2022,annual,S&P 500,PB,3.52,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2023,annual,S&P 500,PB,4.16,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2024,annual,S&P 500,PB,4.71,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
+2025,annual,S&P 500,PB,5.07,LENSE Analytics,https://lense-analytics.com/fundamentals/sp500-pb-ratio,"Published annual observation; not converted to monthly",NO
