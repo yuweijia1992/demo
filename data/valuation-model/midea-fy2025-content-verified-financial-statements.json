@@ -1,0 +1,195 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAtUtc": "2026-11-13",
+  "company": {
+    "name": "美的集团",
+    "code": "000333.SZ",
+    "industry": "家电、工业技术与自动化",
+    "modelType": "operating_company"
+  },
+  "fiscalYear": 2025,
+  "source": {
+    "title": "美的集团股份有限公司2025年年度报告全文",
+    "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF",
+    "publisher": "巨潮资讯网/公司法定披露",
+    "reportingPeriod": "2025-01-01至2025-12-31",
+    "consolidation": "合并口径为主；同时披露母公司口径",
+    "currency": "人民币",
+    "unit": "人民币千元（除另有说明）",
+    "verifiedFromPdf": true
+  },
+  "auditStatus": {
+    "reportLink": "verified",
+    "incomeStatement": "content_verified",
+    "balanceSheet": "content_verified",
+    "cashFlowStatement": "content_verified",
+    "notes": "partially_verified",
+    "capitalEfficiency": "not_finalized",
+    "valuation": "not_finalized",
+    "reason": "本次已核对三张主表的核心行及单位；投入资本需剔除类金融资产/负债、区分经营性与非经营性金融资产及投资收益，并补充附注后才能形成可审计ROIC。"
+  },
+  "incomeStatement": {
+    "sourcePages": "年报印刷页134-135",
+    "valuesRmbThousand": {
+      "operatingRevenue": 456451731,
+      "totalOperatingRevenue": 458502407,
+      "interestIncome": 2050168,
+      "commissionIncome": 508,
+      "costOfRevenue": -335989528,
+      "taxAndSurcharges": -2217289,
+      "sellingExpenses": -42891490,
+      "adminExpenses": -16092311,
+      "rdExpenses": -17787624,
+      "financeIncome": 5903546,
+      "interestExpense": 2211331,
+      "interestIncomeWithinFinanceIncome": 8444301,
+      "otherIncome": 2664313,
+      "investmentIncome": 1694661,
+      "fairValueChange": 782358,
+      "creditImpairment": -355860,
+      "assetImpairment": -1156469,
+      "assetDisposal": -76024,
+      "operatingProfit": 52978773,
+      "totalProfit": 53085343,
+      "incomeTaxExpense": -8565147,
+      "netProfit": 44520196,
+      "parentNetProfit": 43945411,
+      "noncontrollingProfit": 574785
+    },
+    "keyDisclosure": "营业总收入458,502,407千元由营业收入456,451,731千元、利息收入2,050,168千元及手续费佣金收入508千元构成。不得将营业总收入误写为营业收入。"
+  },
+  "balanceSheet": {
+    "sourcePages": "年报印刷页131-133",
+    "valuesRmbThousand": {
+      "cashAndBank": 85247150,
+      "tradingFinancialAssets": 710717,
+      "derivativeFinancialAssets": 2223159,
+      "notesReceivable": 5246763,
+      "accountsReceivable": 40450097,
+      "receivablesFinancing": 14935344,
+      "prepayments": 2987292,
+      "contractAssets": 4268501,
+      "loansCurrent": 11779217,
+      "otherReceivables": 3190591,
+      "inventories": 64628834,
+      "currentMaturityNoncurrentAssets": 155618201,
+      "otherCurrentAssets": 25376475,
+      "currentAssets": 416662341,
+      "longTermReceivables": 139663,
+      "loansNoncurrent": 622248,
+      "longTermEquityInvestments": 4775044,
+      "otherEquityInvestments": 29901,
+      "otherNoncurrentFinancialAssets": 4786089,
+      "investmentProperty": 1142213,
+      "propertyPlantEquipment": 44983394,
+      "constructionInProgress": 3054828,
+      "rightOfUseAssets": 3170163,
+      "intangibleAssets": 21618860,
+      "goodwill": 34256859,
+      "otherNoncurrentAssets": 56058664,
+      "noncurrentAssets": 192129425,
+      "totalAssets": 608791766,
+      "shortTermBorrowings": 43904550,
+      "customerDepositsAndInterbank": 134110,
+      "financialLiabilitiesTrading": 706439,
+      "derivativeFinancialLiabilities": 850959,
+      "notesPayable": 27121881,
+      "accountsPayable": 103680491,
+      "contractLiabilities": 46993060,
+      "currentMaturitiesOfNoncurrentLiabilities": 5821777,
+      "currentLiabilities": 343383700,
+      "longTermBorrowings": 12658843,
+      "bondsPayable": 3194774,
+      "leaseLiabilities": 1901053,
+      "totalLiabilities": 372367543,
+      "parentEquity": 223221305,
+      "minorityInterest": 13202918,
+      "totalEquity": 236424223
+    },
+    "comparatives2024": {
+      "cashAndBank": 140410308,
+      "accountsReceivable": 35798974,
+      "inventories": 63339188,
+      "totalAssets": 604351853,
+      "totalLiabilities": 376684462,
+      "totalEquity": 227667391
+    },
+    "reconciliation": {
+      "assets": 608791766,
+      "liabilitiesPlusEquity": 608791766,
+      "difference": 0
+    }
+  },
+  "cashFlow": {
+    "sourcePages": "年报印刷页136-137",
+    "valuesRmbThousand": {
+      "cashFromOperations": 53345930,
+      "purchasePpeIntangibleAndOtherLongTermAssets": -11141889,
+      "acquisitionOfSubsidiariesNetCash": -6155136,
+      "netCashFromInvesting": 25340273,
+      "netCashFromFinancing": -64957779,
+      "fxEffect": -338482,
+      "netIncreaseCash": 13389942,
+      "beginningCash": 55118728,
+      "endingCash": 68508670
+    },
+    "calculations": {
+      "simplifiedFreeCashFlow": 42204041,
+      "formula": "经营活动现金流量净额 53,345,930 + 购建固定资产、无形资产和其他长期资产支付的现金 -11,141,889 = 42,204,041（人民币千元）",
+      "unit": "人民币千元"
+    },
+    "caveat": "简化FCF未扣除并购现金支出6,155,136千元；并购现金流应单列，不能混入有机资本开支。"
+  },
+  "capitalEfficiency": {
+    "status": "not_finalized",
+    "blockers": [
+      "合并资产中包含发放贷款和垫款、巨额一年内到期非流动资产、交易性金融资产及其他金融资产，需判断经营/金融属性",
+      "营业利润含财务收入、投资收益、公允价值变动等非核心项目，需按附注拆分正常化经营EBIT",
+      "需确认现金超额部分、短期/长期借款、债券、租赁负债及经营性负债的处理口径",
+      "并购资产与商誉增加需分拆有机ROIC和并购ROIC"
+    ],
+    "formula": "NOPAT = 正常化经营EBIT × (1-正常化税率); ROIC = NOPAT / 平均投入资本",
+    "noFabricatedROIC": true
+  },
+  "valuation": {
+    "status": "not_finalized",
+    "reason": "缺少经审计的正常化NOPAT、平均投入资本、WACC和有机/并购增长拆分；暂不发布看似精确的三情景价格区间。"
+  },
+  "auditTrail": [
+    {
+      "check": "报告主体及期间",
+      "result": "通过",
+      "evidence": "年报首页、释义及财务报表标题"
+    },
+    {
+      "check": "单位",
+      "result": "通过",
+      "evidence": "资产负债表、利润表、现金流量表均注明人民币千元"
+    },
+    {
+      "check": "资产负债表勾稽",
+      "result": "通过",
+      "evidence": "608,791,766 = 372,367,543 + 236,424,223"
+    },
+    {
+      "check": "营业总收入拆分",
+      "result": "通过",
+      "evidence": "456,451,731 + 2,050,168 + 508 = 458,502,407"
+    },
+    {
+      "check": "经营现金流及简化FCF",
+      "result": "通过",
+      "evidence": "53,345,930 - 11,141,889 = 42,204,041"
+    },
+    {
+      "check": "ROIC/WACC/估值",
+      "result": "未完成",
+      "evidence": "待完成金融业务剥离、投入资本分类及资本成本估算"
+    }
+  ],
+  "notes": [
+    "2025年末货币资金85,247,150千元与现金及现金等价物68,508,670千元不是同一口径；不可混用。",
+    "2025年末一年内到期的非流动资产155,618,201千元显著高于上年55,471,712千元，是投入资本分析必须穿透的重点。",
+    "本次录入的是年报原值，尚未把千元统一换算为亿元；统一换算公式为亿元=人民币千元/100000。"
+  ]
+}
