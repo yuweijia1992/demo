@@ -255,11 +255,14 @@
         "acquisitionCash": 61.55136,
         "goodwill": 342.56859,
         "link": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12048854&stockid=000333",
-        "status": "2025核心损益及现金流已定位；投入资本与NOPAT待审计",
+        "status": "FY2025_income_statement_page_verified; balance_sheet_and_cashflow_page_audit_pending",
         "note": "FY2025合并利润表营业收入底稿值4564.52亿元；美的官方IR摘要显示Total Revenue 4585亿元，两者存在约20.48亿元差异，可能涉及营业收入/营业总收入展示口径，必须回到年报主表与附注调节后定稿。并购现金支出61.55亿元，不能混入有机增量回报。",
         "fcfMarginPct": 9.25,
         "fcfToParentProfitPct": 96.04,
-        "reconciliationFlag": "revenue_metric_mismatch_annual_report_line_item_vs_IR_total_revenue"
+        "reconciliationFlag": "已解释：官方年报合并利润表营业总收入4585.02407亿元与营业收入4564.51731亿元不是数据冲突；差额主要为利息收入20.50168亿元及手续费及佣金收入0.00508亿元。后续NOPAT剥离金融性收入/财务收益。",
+        "totalRevenue": 4585.02407,
+        "revenueDefinition": "营业收入；2025合并利润表营业总收入4585.02407亿元，其中营业收入4564.51731亿元、利息收入20.50168亿元、手续费及佣金收入0.00508亿元。统一经营企业ROIC分母以营业收入作业务规模指标；财务/利息收入单独剥离。",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF"
       }
     },
     {
@@ -1348,12 +1351,13 @@
     "broker": 2,
     "FY2025OfficialSourceLinksRegistered": 49,
     "auditedComparativeRows": 0,
-    "warning": "格力FY2025三张主表已完成页级核验并单独存档；仍未完成五年比较、金融业务剥离、正常化NOPAT、WACC及ROIC。其余公司快照不得视为已审计。",
+    "warning": "Midea FY2025 revenue difference is reconciled from the official consolidated income statement: total operating revenue includes interest income and fee income; use operating revenue for operating-company revenue series. Gree FY2025 balance sheet/income/cashflow statement page-level verified; mixed financial-company items still pending. No company ROIC/WACC/valuation ranking is complete.",
     "FY2025CoreSnapshotPopulated": 5,
     "FY2025SimplifiedFCFPopulated": 4,
     "FY2025BankSectorMetricsPopulated": 1,
     "FY2025BalanceSheetPageVerifiedRows": 1,
     "FY2025IncomeStatementPageVerifiedRows": 1,
-    "FY2025CashFlowPageVerifiedRows": 1
+    "FY2025CashFlowPageVerifiedRows": 1,
+    "MideaFY2025RevenueReconciliationVerified": true
   }
 }
