@@ -1,12 +1,83 @@
 {
   "schema_version": "1.0",
-  "generated_at": null,
-  "source": "FRED public CSV",
-  "series": {},
+  "generated_at": "2026-11-13T06:03:26+00:00",
+  "timezone": "UTC",
+  "source": "Federal Reserve Bank of St. Louis FRED public CSV graph endpoint",
+  "source_url": "https://fred.stlouisfed.org/",
+  "series": {
+    "us10y_nominal": {
+      "series_id": "DGS10",
+      "label": "US 10Y Treasury yield",
+      "unit": "%",
+      "value": null,
+      "date": null
+    },
+    "us10y_real": {
+      "series_id": "DFII10",
+      "label": "US 10Y real yield",
+      "unit": "%",
+      "value": null,
+      "date": null
+    },
+    "vix": {
+      "series_id": "VIXCLS",
+      "label": "VIX",
+      "unit": "index",
+      "value": null,
+      "date": null
+    },
+    "dxy_broad": {
+      "series_id": "DTWEXBGS",
+      "label": "US dollar broad index",
+      "unit": "index",
+      "value": null,
+      "date": null
+    },
+    "usdcny": {
+      "series_id": "DEXCHUS",
+      "label": "USD/CNY",
+      "unit": "CNY per USD",
+      "value": null,
+      "date": null
+    },
+    "brent": {
+      "series_id": "DCOILBRENTEU",
+      "label": "Brent crude",
+      "unit": "USD/barrel",
+      "value": null,
+      "date": null
+    },
+    "fed_funds": {
+      "series_id": "FEDFUNDS",
+      "label": "Federal funds effective rate",
+      "unit": "%",
+      "value": null,
+      "date": null
+    },
+    "us_cpi_yoy": {
+      "series_id": "CPIAUCSL",
+      "label": "US CPI index (level; not YoY)",
+      "unit": "index",
+      "value": null,
+      "date": null
+    }
+  },
   "alerts": [],
-  "errors": {},
-  "status": "pending_first_workflow_run",
+  "errors": {
+    "us10y_nominal": "The read operation timed out",
+    "us10y_real": "The read operation timed out",
+    "vix": "The read operation timed out",
+    "dxy_broad": "The read operation timed out",
+    "usdcny": "The read operation timed out",
+    "brent": "The read operation timed out",
+    "fed_funds": "The read operation timed out",
+    "us_cpi_yoy": "The read operation timed out"
+  },
   "limitations": [
-    "等待首次GitHub Actions自动抓取。"
+    "FRED series update frequencies differ; latest observation dates are shown per series.",
+    "VIX and Treasury yields may be delayed or have no observation on weekends/holidays.",
+    "DXY uses the broad trade-weighted dollar index DTWEXBGS, not ICE DXY.",
+    "CPIAUCSL is a seasonally adjusted index level; YoY inflation is not calculated in this snapshot.",
+    "This dashboard is monitoring only, not a trading signal or investment recommendation."
   ]
 }
