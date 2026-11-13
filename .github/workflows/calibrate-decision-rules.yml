@@ -1,0 +1,38 @@
+name: Calibrate valuation decision rules
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/calibrate_sp500_cape_rule.py"
+      - ".github/workflows/calibrate-decision-rules.yml"
+      - "data/index-valuation/valuation-monthly-partial.csv"
+      - "data/investment-monthly.csv"
+permissions:
+  contents: write
+concurrency:
+  group: valuation-decision-calibration
+  cancel-in-progress: true
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile and run lagged CAPE pilot
+        run: |
+          python -m py_compile scripts/calibrate_sp500_cape_rule.py
+          python scripts/calibrate_sp500_cape_rule.py
+      - name: Commit calibration outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/research/cape_rule_calibration.json data/research/cape_rule_calibration_monthly.csv
+          if git diff --cached --quiet; then echo "No calibration changes."; else
+            git commit -m "Calibrate lagged S&P 500 CAPE rule"
+            git pull --rebase origin main
+            git push origin main
+          fi
