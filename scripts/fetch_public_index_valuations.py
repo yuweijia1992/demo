@@ -65,7 +65,7 @@ def collect_dqydj(html):
   if v:out[month]=(month+"-01",v)
  return out
 def build():
- observations=[];errors={};source_counts={}
+ observations=[];errors={};source_counts={}\n now=datetime.now()\n cutoff=f"{now.year-1:04d}-12" if now.month==1 else f"{now.year:04d}-{now.month-1:02d}"
  for key,meta in SOURCES.items():
   try:
    html=fetch(meta["url"])
@@ -73,10 +73,10 @@ def build():
    data=collect_multpl(html) if key=="sp500_cape" else collect_dqydj(html)
    if len(data)<120:raise RuntimeError(f"Only {len(data)} monthly observations parsed; expected at least 120")
    for month,(day,value) in sorted(data.items()):
-    if month>="2006-01":
+    if "2006-01"<=month<=cutoff:
      observations.append({"date":month,"asset":meta["asset"],"metric":meta["metric"],"value":value,
       "observed_date":day,"source":key,"source_url":meta["url"],"method":meta["method"],"frequency":"monthly"})
-   source_counts[key]={"parsed_months":len(data),"used_months":sum(m>="2006-01" for m in data),"first_month":min(data),"last_month":max(data),"status":"OK"}
+   source_counts[key]={"parsed_months":len(data),"used_months":sum("2006-01"<=m<=cutoff for m in data),"first_month":min(data),"last_month":max(data),"status":"OK"}
   except Exception as exc:
    errors[key]=str(exc)[:400];source_counts[key]={"status":"ERROR","error":str(exc)[:400]}
   time.sleep(.5)
@@ -109,7 +109,7 @@ def build():
  latest={}
  for key,items in groups.items():
   x=items[-1];latest[x["asset"]+"|"+x["metric"]]={k:x.get(k) for k in ("date","value","5Y_n","5Y_percentile","5Y_min","5Y_max","10Y_n","10Y_percentile","10Y_min","10Y_max","source","source_url")}
- audit={"schema_version":"0.1","status":"PARTIAL" if errors or len(groups)<5 else "OK","generated_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),
+ audit={"schema_version":"0.1","status":"PARTIAL" if errors or len(groups)<5 else "OK","generated_at":datetime.now(timezone.utc).isoformat(timespec="seconds"),"completed_month_cutoff":cutoff,
  "coverage":{"assets_metrics":len(groups),"observations":len(observations),"start":min(x["date"] for x in observations) if observations else None,"end":max(x["date"] for x in observations) if observations else None},
  "sources":source_counts,"latest":latest,"errors":errors,
  "limitations":["Only S&P 500 CAPE, S&P 500 trailing PE and RMB gold spot-price valuation are included in this tranche.",
@@ -117,7 +117,7 @@ def build():
  "Nasdaq-100 complete monthly valuation history is not available in Siblis free tier; full historical database is subscription data. Public page snapshots are not treated as a continuous monthly series.",
  "CAPE and trailing PE are different metrics and must not be compared as if identical.",
  "Gold has no PE/PB; monthly CNY spot price percentile is a price-history indicator, not intrinsic-value valuation.",
- "No interpolation, forward filling, or extrapolation is applied; rolling percentile is blank until a full 60/120-month window exists."]}
+ "No interpolation, forward filling, or extrapolation is applied; rolling percentile is blank until a full 60/120-month window exists.",\n "Only completed calendar months are included; the in-progress current month is excluded. The Multpl CAPE source labels monthly observations on the first calendar day of the month; the month label is retained and not misrepresented as a month-end close."]}
  (OUT/"valuation-source-audit.json").write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding="utf-8")
  print(json.dumps({"coverage":audit["coverage"],"sources":source_counts,"latest":latest,"errors":errors},ensure_ascii=False,indent=2))
 if __name__=="__main__":build()
