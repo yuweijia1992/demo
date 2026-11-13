@@ -1,0 +1,395 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-11-13",
+  "title": "格力电器FY2025合并报表逐项分类审计底稿",
+  "company": {
+    "name": "格力电器",
+    "code": "000651.SZ",
+    "period": "FY2025",
+    "currency": "CNY",
+    "unit": "RMB"
+  },
+  "source": {
+    "title": "珠海格力电器股份有限公司2025年年度报告全文",
+    "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-29/f9937e4b-3994-4100-8200-7fd8a000ecfa.PDF",
+    "issuer": "深圳证券交易所披露文件",
+    "balanceSheetPrintedPages": "85-86",
+    "incomeStatementPrintedPage": "87",
+    "cashFlowPrintedPage": "88",
+    "verifiedSections": [
+      "合并资产负债表",
+      "合并利润表",
+      "合并现金流量表"
+    ],
+    "sourceVerification": "report_page_verified"
+  },
+  "balanceSheet": {
+    "assets": [
+      [
+        "cash",
+        "货币资金",
+        110553006650.89,
+        "financial_cash_and_operating_restricted_cash_split_pending"
+      ],
+      [
+        "tradingFinancialAssets",
+        "交易性金融资产",
+        31336448103.06,
+        "financial_asset"
+      ],
+      [
+        "notesReceivable",
+        "应收票据",
+        883500,
+        "operating_asset"
+      ],
+      [
+        "accountsReceivable",
+        "应收账款",
+        15987180598.76,
+        "operating_asset"
+      ],
+      [
+        "receivablesFinancing",
+        "应收款项融资",
+        6496151873.03,
+        "operating_or_financial_split_pending"
+      ],
+      [
+        "prepayments",
+        "预付款项",
+        1211213034.38,
+        "operating_asset"
+      ],
+      [
+        "otherReceivables",
+        "其他应收款",
+        327529462.48,
+        "split_by_note_pending"
+      ],
+      [
+        "reverseRepo",
+        "买入返售金融资产",
+        4800560684.94,
+        "financial_asset"
+      ],
+      [
+        "inventory",
+        "存货",
+        28183464259.53,
+        "operating_asset"
+      ],
+      [
+        "contractAssets",
+        "合同资产",
+        399828954.57,
+        "operating_asset"
+      ],
+      [
+        "currentMaturitiesNoncurrentAssets",
+        "一年内到期的非流动资产",
+        33339455877.1,
+        "financial_or_operating_split_by_note_pending"
+      ],
+      [
+        "otherCurrentAssets",
+        "其他流动资产",
+        18307828898.69,
+        "split_by_note_pending"
+      ],
+      [
+        "loansAndAdvances",
+        "发放贷款和垫款",
+        2298410033.8,
+        "financial_business_asset"
+      ],
+      [
+        "debtInvestments",
+        "债权投资",
+        0,
+        "financial_asset"
+      ],
+      [
+        "otherDebtInvestments",
+        "其他债权投资",
+        24062391354.36,
+        "financial_asset"
+      ],
+      [
+        "longTermReceivables",
+        "长期应收款",
+        4834731.36,
+        "operating_or_financial_split_pending"
+      ],
+      [
+        "longTermEquityInvestments",
+        "长期股权投资",
+        4235017009.65,
+        "nonoperating_investment_candidate"
+      ],
+      [
+        "otherEquityInvestments",
+        "其他权益工具投资",
+        2419998043.64,
+        "nonoperating_financial_asset"
+      ],
+      [
+        "otherNoncurrentFinancialAssets",
+        "其他非流动金融资产",
+        89060694.31,
+        "financial_asset"
+      ],
+      [
+        "investmentProperty",
+        "投资性房地产",
+        360503333.85,
+        "operating_or_nonoperating_split_pending"
+      ],
+      [
+        "fixedAssets",
+        "固定资产",
+        34396429584.38,
+        "operating_asset"
+      ],
+      [
+        "constructionInProgress",
+        "在建工程",
+        1337977987.35,
+        "operating_asset"
+      ],
+      [
+        "rightOfUseAssets",
+        "使用权资产",
+        675889598.7,
+        "operating_asset_with_lease_liability"
+      ],
+      [
+        "intangibleAssets",
+        "无形资产",
+        9864783740,
+        "operating_asset"
+      ],
+      [
+        "goodwill",
+        "商誉",
+        1324117904.09,
+        "operating_asset_included_in_gross_roic"
+      ],
+      [
+        "longTermDeferredExpenses",
+        "长期待摊费用",
+        36863120.95,
+        "operating_asset"
+      ],
+      [
+        "deferredTaxAssets",
+        "递延所得税资产",
+        16712029148.34,
+        "exclude_or_normalize_pending"
+      ],
+      [
+        "otherNoncurrentAssets",
+        "其他非流动资产",
+        42610141637.28,
+        "split_by_note_pending"
+      ]
+    ],
+    "liabilities": [
+      [
+        "shortBorrowings",
+        "短期借款",
+        67956629538.51,
+        "interestBearing_debt"
+      ],
+      [
+        "derivativeLiabilities",
+        "衍生金融负债",
+        65094952.36,
+        "financial_liability"
+      ],
+      [
+        "notesPayable",
+        "应付票据",
+        15544348535.69,
+        "operating_liability"
+      ],
+      [
+        "accountsPayable",
+        "应付账款",
+        42103940920.24,
+        "operating_liability"
+      ],
+      [
+        "contractLiabilities",
+        "合同负债",
+        15206576385.44,
+        "operating_liability"
+      ],
+      [
+        "depositsReceived",
+        "吸收存款及同业存放",
+        208923102.8,
+        "financial_business_liability"
+      ],
+      [
+        "employeePayables",
+        "应付职工薪酬",
+        3428525529.34,
+        "operating_liability"
+      ],
+      [
+        "taxPayables",
+        "应交税费",
+        1931908540.48,
+        "operating_liability"
+      ],
+      [
+        "otherPayables",
+        "其他应付款",
+        11240989639.29,
+        "split_by_note_pending"
+      ],
+      [
+        "currentMaturitiesDebt",
+        "一年内到期的非流动负债",
+        13668113331.54,
+        "interestBearing_debt_split_by_note"
+      ],
+      [
+        "otherCurrentLiabilities",
+        "其他流动负债",
+        60214780720.57,
+        "split_by_note_pending"
+      ],
+      [
+        "longBorrowings",
+        "长期借款",
+        3134980571.73,
+        "interestBearing_debt"
+      ],
+      [
+        "leaseLiabilities",
+        "租赁负债",
+        652797306.31,
+        "lease_debt"
+      ],
+      [
+        "longTermEmployeeBenefits",
+        "长期应付职工薪酬",
+        211772286.06,
+        "operating_or_financing_split_pending"
+      ],
+      [
+        "deferredIncome",
+        "递延收益",
+        3324936573.2,
+        "operating_or_grant_liability_review_pending"
+      ],
+      [
+        "deferredTaxLiabilities",
+        "递延所得税负债",
+        2686401211.23,
+        "exclude_or_normalize_pending"
+      ]
+    ],
+    "reportedTotalAssets": 391371999819.49,
+    "calculatedAssetTotal": 391371999819.4901,
+    "reportedTotalLiabilities": 241580719144.79,
+    "calculatedLiabilityTotal": 241580719144.79004,
+    "reportedTotalEquity": 149791280674.7,
+    "checkAssetsEqualLiabilitiesPlusEquity": 0,
+    "openingDate": "2025-01-01",
+    "openingTotalAssets": 368031704522.86,
+    "openingTotalLiabilities": 226518009574.89,
+    "openingTotalEquity": 141513694947.97,
+    "classificationPolicy": "资产负债表原始项目逐项保留；只有性质明确的项目才先行归类，混合项目标记待附注拆分，不将不确定项目强行纳入经营资本或超额现金。"
+  },
+  "incomeStatement": {
+    "revenue": 170447058533.57,
+    "operatingProfit": 34681293552.28,
+    "profitBeforeTax": 34644658951.12,
+    "incomeTaxExpense": 5781912934.96,
+    "netProfit": 28862746016.16,
+    "parentNetProfit": 29003103411.66,
+    "interestExpense": 1964864912.15,
+    "interestIncome": 5885051089.4,
+    "investmentIncome": 402248047.83,
+    "fairValueGain": 164255550.24,
+    "otherIncome": 1338729614.54,
+    "assetDisposalGain": 52212257.62,
+    "nonRecurringProfitAfterTax": 1296810974.72,
+    "reportedTaxRate": 0.1668918993579263,
+    "statutoryTaxRateImplied": 0.15000000000005773,
+    "normalisedNopat": null,
+    "normalisedNopatStatus": "pending_financial_company_segment_and_interest_income_separation; one-off gains and tax normalization must be reconciled"
+  },
+  "cashFlow": {
+    "cfo": 46383114754.02,
+    "capex": 1717311068.1,
+    "simplifiedFcf": 44665803685.92,
+    "investmentPurchases": 61670145246.69,
+    "acquisitionCash": 0,
+    "period": "FY2025",
+    "status": "cash_flow_statement_page_verified"
+  },
+  "capitalClassification": {
+    "interestBearingDebtCandidates": [
+      "shortBorrowings",
+      "currentMaturitiesDebt",
+      "longBorrowings"
+    ],
+    "leaseDebt": [
+      "leaseLiabilities"
+    ],
+    "financialAssets": [
+      "cash",
+      "tradingFinancialAssets",
+      "reverseRepo",
+      "loansAndAdvances",
+      "debtInvestments",
+      "otherDebtInvestments",
+      "otherEquityInvestments",
+      "otherNoncurrentFinancialAssets"
+    ],
+    "mixedAssetsPending": [
+      "receivablesFinancing",
+      "otherReceivables",
+      "currentMaturitiesNoncurrentAssets",
+      "otherCurrentAssets",
+      "longTermReceivables",
+      "investmentProperty",
+      "deferredTaxAssets",
+      "otherNoncurrentAssets"
+    ],
+    "mixedLiabilitiesPending": [
+      "otherPayables",
+      "otherCurrentLiabilities",
+      "longTermEmployeeBenefits",
+      "deferredIncome"
+    ],
+    "financialSubsidiaryWarning": "合并报表包含财务公司/贷款及同业业务，金融资产与金融负债需结合附注和分部资料剥离；当前不计算单一ROIC。"
+  },
+  "calculationStatus": {
+    "investedCapitalIncludingGoodwill": null,
+    "investedCapitalExcludingGoodwill": null,
+    "roicIncludingGoodwill": null,
+    "roicExcludingGoodwill": null,
+    "incrementalRoic": null,
+    "eva": null,
+    "wacc": null,
+    "waccSensitivity": null,
+    "reason": "FY2025 balance sheet line items verified, but financial-company perimeter, mixed balance sheet items and normalized operating NOPAT are not yet fully reconciled."
+  },
+  "qualityChecks": {
+    "balanceSheetBalances": true,
+    "allAssetLinesSumToReportedTotal": true,
+    "allLiabilityLinesSumToReportedTotal": true,
+    "reportedAndDerivedUnits": "RMB yuan, no scaling"
+  },
+  "nextRequired": [
+    "逐条核对附注五、1-53，拆分其他流动资产、其他非流动资产、一年内到期非流动资产及其他应付款/其他流动负债",
+    "剥离格力财务公司及贷款、存款、买入返售等金融业务资产负债",
+    "构造经营性EBIT，剔除利息收入、投资收益、公允价值变动和非经营性收益，并正常化税率",
+    "补齐FY2021-FY2024相同口径后再计算平均投入资本、五年ROIC与增量ROIC"
+  ]
+}
