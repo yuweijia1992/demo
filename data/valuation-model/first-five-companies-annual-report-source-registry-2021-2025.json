@@ -1,0 +1,222 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-11-13",
+  "title": "首批五家公司2021—2025年报来源逐年映射审计",
+  "purpose": "纠正把同一份FY2025年报链接重复挂到2023—2025年度的来源归属问题。来源登记不等于报表数值已经逐项核验；仅将可定位的正式年报作为相应年度候选证据。",
+  "sourcePolicy": {
+    "annualReportPeriodRule": "FY2025年报通常至少提供FY2025及FY2024比较数据；不能仅凭FY2025年报链接声称FY2023数据已核验。FY2024年报通常提供FY2024及FY2023比较数据。逐项核验仍需定位三张主表及附注页码。",
+    "sourcePriority": [
+      "发行人官网/投资者关系",
+      "巨潮资讯网/交易所",
+      "其他转载仅作交叉检索，不作为最终审计依据"
+    ],
+    "statusDefinitions": {
+      "officialFullReportLocated": "已定位官方或法定披露平台的年报全文入口，尚未完成页码与科目逐项核验",
+      "officialReportCandidate": "已定位发行人/披露平台年报入口，但需确认全文与适用报表期间",
+      "officialFullReportNotLocated": "本轮未定位可确认的官方年报全文；不能以摘要替代全文",
+      "pending": "尚未建立该年度的正式年报来源映射"
+    }
+  },
+  "companies": [
+    {
+      "name": "海尔智家",
+      "code": "600690.SH",
+      "reports": {
+        "2021": {
+          "status": "pending",
+          "fullReportUrl": null,
+          "sourceType": null,
+          "note": "需补FY2021年报全文；Sina/AKShare摘要源不能替代原始年报。"
+        },
+        "2022": {
+          "status": "pending",
+          "fullReportUrl": null,
+          "sourceType": null,
+          "note": "需补FY2022年报全文。"
+        },
+        "2023": {
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2025-03-28/1222926246.PDF",
+          "sourceType": "CNINFO FY2024 annual report",
+          "note": "FY2024报告可作为FY2023比较数据来源；仍需页码定位及核对重述。"
+        },
+        "2024": {
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2025-03-28/1222926246.PDF",
+          "sourceType": "CNINFO FY2024 annual report",
+          "note": "FY2024年报全文。"
+        },
+        "2025": {
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038336.PDF",
+          "sourceType": "CNINFO FY2025 annual report",
+          "note": "FY2025年报全文；可核FY2025及比较期。"
+        }
+      }
+    },
+    {
+      "name": "美的集团",
+      "code": "000333.SZ",
+      "reports": {
+        "2021": {
+          "status": "pending",
+          "fullReportUrl": null,
+          "sourceType": null,
+          "note": "需补FY2021年报全文。"
+        },
+        "2022": {
+          "status": "pending",
+          "fullReportUrl": null,
+          "sourceType": null,
+          "note": "需补FY2022年报全文。"
+        },
+        "2023": {
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://www.midea.com.cn/content/dam/mideacn-aem/投资者关系/投资者关系文件总览/2024文件/美的集团-2024年年度报告.PDF.coredownload.inline.pdf",
+          "sourceType": "Midea issuer IR FY2024 annual report",
+          "note": "FY2024年报含FY2023比较数据；需页码核验。"
+        },
+        "2024": {
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://www.midea.com.cn/content/dam/mideacn-aem/投资者关系/投资者关系文件总览/2024文件/美的集团-2024年年度报告.PDF.coredownload.inline.pdf",
+          "sourceType": "Midea issuer IR FY2024 annual report",
+          "note": "FY2024年报全文；可核FY2024及FY2023比较数据。"
+        },
+        "2025": {
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF",
+          "sourceType": "CNINFO FY2025 annual report",
+          "note": "FY2025年报全文；需区分营业收入与营业总收入。"
+        }
+      }
+    },
+    {
+      "name": "格力电器",
+      "code": "000651.SZ",
+      "reports": {
+        "2021": {
+          "status": "pending",
+          "fullReportUrl": null,
+          "sourceType": null,
+          "note": "需补FY2021年报全文。"
+        },
+        "2022": {
+          "status": "pending",
+          "fullReportUrl": null,
+          "sourceType": null,
+          "note": "需补FY2022年报全文。"
+        },
+        "2023": {
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2025-04-28/1223330631.PDF",
+          "sourceType": "CNINFO FY2024 annual report",
+          "note": "FY2024年报含FY2023比较数据；需页码核验。"
+        },
+        "2024": {
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2025-04-28/1223330631.PDF",
+          "sourceType": "CNINFO FY2024 annual report",
+          "note": "FY2024年报全文。"
+        },
+        "2025": {
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225250396.PDF",
+          "sourceType": "CNINFO FY2025 annual report",
+          "note": "FY2025年报全文；格力财务公司相关金融项目必须与工业经营业务分拆。"
+        }
+      }
+    },
+    {
+      "name": "长江电力",
+      "code": "600900.SH",
+      "reports": {
+        "2021": {
+          "status": "pending",
+          "fullReportUrl": null,
+          "sourceType": null,
+          "note": "需补FY2021年报全文。"
+        },
+        "2022": {
+          "status": "pending",
+          "fullReportUrl": null,
+          "sourceType": null,
+          "note": "需补FY2022年报全文，并核对同一控制下企业合并追溯调整。"
+        },
+        "2023": {
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://www.ctg.com.cn/uiFramework/js/pdfjs/web/viewer.html?file=%2Fcypc%2FattachDir%2F2025%2F05%2F2025050612554995408.pdf",
+          "sourceType": "CTG issuer FY2024 annual report viewer",
+          "note": "FY2024年报含FY2023比较数据；需定位三张主表。"
+        },
+        "2024": {
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://www.ctg.com.cn/uiFramework/js/pdfjs/web/viewer.html?file=%2Fcypc%2FattachDir%2F2025%2F05%2F2025050612554995408.pdf",
+          "sourceType": "CTG issuer FY2024 annual report viewer",
+          "note": "FY2024年报全文。"
+        },
+        "2025": {
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://www.ctg.com.cn/uiFramework/js/pdfjs/web/viewer.html?file=%2Fcypc%2FattachDir%2F2026%2F05%2F2026051815345898336.pdf",
+          "sourceType": "CTG issuer FY2025 annual report viewer",
+          "note": "FY2025年报全文；需处理同一控制下合并追溯比较口径。"
+        }
+      }
+    },
+    {
+      "name": "招商银行",
+      "code": "600036.SH",
+      "reports": {
+        "2021": {
+          "status": "pending",
+          "fullReportUrl": null,
+          "sourceType": null,
+          "note": "需补FY2021年报全文。"
+        },
+        "2022": {
+          "status": "pending",
+          "fullReportUrl": null,
+          "sourceType": null,
+          "note": "需补FY2022年报全文。"
+        },
+        "2023": {
+          "status": "pending",
+          "fullReportUrl": null,
+          "sourceType": null,
+          "note": "需补FY2023年报全文；不能将FY2025报告直接作为FY2023完整审计来源。"
+        },
+        "2024": {
+          "status": "officialFullReportNotLocated",
+          "fullReportUrl": null,
+          "sourceType": "CNINFO FY2024 annual report abstract located only",
+          "note": "已定位官方年报摘要https://static.cninfo.com.cn/finalpage/2025-03-26/1222895153.PDF；全文待定位，摘要不能替代三张主表及附注。"
+        },
+        "2025": {
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225047590.PDF",
+          "sourceType": "CNINFO FY2025 annual report",
+          "note": "FY2025年报全文；招商银行采用银行专用指标和估值模型，不计算工业ROIC/FCF。"
+        }
+      }
+    }
+  ],
+  "currentAuditConclusion": {
+    "annualReportLinksAreNotEquivalentToLineItemVerification": true,
+    "yearsWithLocatedOfficialFullReportForAtLeastFourCompanies": [
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "earliestYearStillMissingForAllFive": 2021,
+    "financialStatementPageVerificationCompletedByThisRegistry": 0,
+    "normalizedNopatCompleted": 0,
+    "roicCompleted": 0,
+    "waccCompleted": 0,
+    "fairValueScenariosCompleted": 0,
+    "nextRequiredActions": [
+      "补齐2021—2023年报全文入口，尤其FY2021、FY2022",
+      "为每个年度定位利润表、资产负债表、现金流量表页码和附注",
+      "将原始摘要字段逐项与年报核对，并保留重述差异",
+      "确认每份报表的原始单位后，另行生成统一人民币元及亿元视图"
+    ]
+  }
+}
