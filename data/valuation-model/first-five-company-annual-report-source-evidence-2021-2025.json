@@ -1,0 +1,173 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-11-13",
+  "title": "首批五家公司2021—2025年报来源证据补录（已定位版本）",
+  "scope": {
+    "companies": [
+      "美的集团",
+      "海尔智家",
+      "格力电器",
+      "长江电力",
+      "招商银行"
+    ],
+    "years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ]
+  },
+  "policy": "仅登记本轮能够明确定位到的年报文件。未检索到可靠直链的年份保留missing，不用推测URL补齐。链接定位不等于逐页数据审计完成。",
+  "reports": [
+    {
+      "company": "美的集团",
+      "code": "000333.SZ",
+      "year": 2021,
+      "reportTitle": "美的集团股份有限公司2021年年度报告全文",
+      "url": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213264815.PDF",
+      "source": "巨潮资讯官方PDF",
+      "status": "official_pdf_located",
+      "unitEvidence": "报告关键财务摘要以人民币千元列示；总资产387,946,104千元。",
+      "auditNote": "报告摘要显示总资产、净资产以千元计；具体三张主表和附注仍须逐页核验。"
+    },
+    {
+      "company": "美的集团",
+      "code": "000333.SZ",
+      "year": 2022,
+      "reportTitle": "美的集团股份有限公司2022年年度报告全文",
+      "url": "https://static.cninfo.com.cn/finalpage/2023-04-29/1216695045.PDF",
+      "source": "巨潮资讯官方PDF",
+      "status": "official_pdf_located",
+      "unitEvidence": null,
+      "auditNote": "本轮定位到官方PDF；报表单位和主表字段尚未逐页提取。"
+    },
+    {
+      "company": "美的集团",
+      "code": "000333.SZ",
+      "year": 2023,
+      "reportTitle": null,
+      "url": null,
+      "source": null,
+      "status": "missing_official_direct_link",
+      "unitEvidence": null,
+      "auditNote": "本轮未定位到可确认的官方直链；不推测公告编号。"
+    },
+    {
+      "company": "美的集团",
+      "code": "000333.SZ",
+      "year": 2024,
+      "reportTitle": null,
+      "url": null,
+      "source": null,
+      "status": "missing_official_direct_link",
+      "unitEvidence": null,
+      "auditNote": "本轮未定位到可确认的官方直链；不推测公告编号。"
+    },
+    {
+      "company": "美的集团",
+      "code": "000333.SZ",
+      "year": 2025,
+      "reportTitle": "美的集团2025年年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF",
+      "source": "巨潮资讯官方PDF",
+      "status": "official_pdf_located_and_key_income_rows_crosschecked",
+      "unitEvidence": "人民币千元",
+      "auditNote": "营业收入456,451,731千元、营业总收入458,502,407千元；两者差额由利息收入及手续费佣金收入构成。"
+    },
+    {
+      "company": "海尔智家",
+      "code": "600690.SH",
+      "year": 2021,
+      "reportTitle": "海尔智家股份有限公司2021年年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2022-03-31/1212758373.PDF",
+      "source": "巨潮资讯官方PDF",
+      "status": "official_pdf_located",
+      "unitEvidence": "资产负债情况分析表明确标示单位为万元。",
+      "auditNote": "2021年报可见存货、其他权益工具投资、开发支出、短期借款等项目；三张主表及附注需逐页录入。"
+    },
+    {
+      "company": "海尔智家",
+      "code": "600690.SH",
+      "year": 2022,
+      "reportTitle": "海尔智家股份有限公司2022年年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2023-03-31/1216279243.PDF",
+      "source": "巨潮资讯官方PDF",
+      "status": "official_pdf_located",
+      "unitEvidence": null,
+      "auditNote": "报告披露2022年营业收入2,435.14亿元、归母净利润147.11亿元；本轮尚未完成全套主表提取。"
+    },
+    {
+      "company": "海尔智家",
+      "code": "600690.SH",
+      "year": 2023,
+      "reportTitle": null,
+      "url": null,
+      "source": null,
+      "status": "missing_official_direct_link",
+      "unitEvidence": null,
+      "auditNote": "本轮未定位到可确认的官方直链；不推测公告编号。"
+    },
+    {
+      "company": "海尔智家",
+      "code": "600690.SH",
+      "year": 2024,
+      "reportTitle": "海尔智家股份有限公司2024年年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2025-03-28/1222926246.PDF",
+      "source": "巨潮资讯官方PDF",
+      "status": "official_pdf_located",
+      "unitEvidence": null,
+      "auditNote": "年报官方PDF已定位；此前底稿已有2024/2023比较资产负债表候选字段，仍需逐项核验。"
+    },
+    {
+      "company": "海尔智家",
+      "code": "600690.SH",
+      "year": 2025,
+      "reportTitle": "海尔智家股份有限公司2025年年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038336.PDF",
+      "source": "巨潮资讯官方PDF",
+      "status": "official_pdf_located_and_key_income_rows_crosschecked",
+      "unitEvidence": "人民币元",
+      "auditNote": "营业收入302,346,783,918.30元、归母净利润19,552,798,222.85元。"
+    },
+    {
+      "company": "格力电器",
+      "code": "000651.SZ",
+      "year": 2025,
+      "reportTitle": "珠海格力电器股份有限公司2025年年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225250396.PDF",
+      "source": "巨潮资讯官方PDF",
+      "status": "official_pdf_located_and_balance_sheet_pages_crosschecked",
+      "unitEvidence": "人民币元",
+      "auditNote": "合并资产负债表第85—88页已完成专项分类底稿；金融公司业务剥离尚未完成。"
+    },
+    {
+      "company": "长江电力",
+      "code": "600900.SH",
+      "year": 2025,
+      "reportTitle": "中国长江电力股份有限公司2025年年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225262036.PDF",
+      "source": "巨潮资讯官方PDF",
+      "status": "official_pdf_located_and_core_rows_crosschecked",
+      "unitEvidence": "人民币元",
+      "auditNote": "已核验收入、归母净利润、CFO、资本开支等核心数据；同一控制下企业合并追溯调整须单独处理。"
+    },
+    {
+      "company": "招商银行",
+      "code": "600036.SH / 03968.HK",
+      "year": 2025,
+      "reportTitle": "招商银行股份有限公司2025年年度报告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225047590.PDF",
+      "source": "巨潮资讯官方PDF",
+      "status": "official_pdf_located_and_bank_metrics_crosschecked",
+      "unitEvidence": "人民币元/亿元，视具体表格",
+      "auditNote": "银行专用指标需按高级法/权重法口径区分，不适用普通企业ROIC/FCF。"
+    }
+  ],
+  "summary": {
+    "officialPdfLocated": 10,
+    "officialPdfLocatedAndKeyRowsCrosschecked": 5,
+    "explicitMissingYears": 3,
+    "note": "此处是本轮新增/确认的可定位年报记录，不代表首批五家公司全部25份年报均已齐备。"
+  }
+}
