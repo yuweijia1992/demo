@@ -11,7 +11,7 @@
   },
   "source": {
     "title": "珠海格力电器股份有限公司2025年年度报告全文",
-    "url": "https://disc.static.szse.cn/disc/disk03/finalpage/2026-04-29/f9937e4b-3994-4100-8200-7fd8a000ecfa.PDF",
+    "url": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225250396.PDF",
     "issuer": "深圳证券交易所披露文件",
     "balanceSheetPrintedPages": "85-86",
     "incomeStatementPrintedPage": "87",
@@ -21,7 +21,7 @@
       "合并利润表",
       "合并现金流量表"
     ],
-    "sourceVerification": "report_page_verified"
+    "sourceVerification": "CNINFO_PDF_page_level_verified"
   },
   "balanceSheet": {
     "assets": [
@@ -107,7 +107,7 @@
         "debtInvestments",
         "债权投资",
         0,
-        "financial_asset"
+        "FY2025-12-31 blank; FY2025-01-01 comparative value RMB 1,001,466,666.64"
       ],
       [
         "otherDebtInvestments",
@@ -302,7 +302,9 @@
     "openingTotalAssets": 368031704522.86,
     "openingTotalLiabilities": 226518009574.89,
     "openingTotalEquity": 141513694947.97,
-    "classificationPolicy": "资产负债表原始项目逐项保留；只有性质明确的项目才先行归类，混合项目标记待附注拆分，不将不确定项目强行纳入经营资本或超额现金。"
+    "classificationPolicy": "资产负债表原始项目逐项保留；只有性质明确的项目才先行归类，混合项目标记待附注拆分，不将不确定项目强行纳入经营资本或超额现金。",
+    "openingDebtInvestments": 1001466666.64,
+    "comparativeColumnPolicy": "报告中债权投资仅列一个比较数1,001,466,666.64元，位于2025年1月1日列；2025年12月31日该行空白，故FY2025期末值按0/未列示处理，不能把比较数误放到期末。"
   },
   "incomeStatement": {
     "revenue": 170447058533.57,
@@ -384,7 +386,8 @@
     "balanceSheetBalances": true,
     "allAssetLinesSumToReportedTotal": true,
     "allLiabilityLinesSumToReportedTotal": true,
-    "reportedAndDerivedUnits": "RMB yuan, no scaling"
+    "reportedAndDerivedUnits": "RMB yuan, no scaling",
+    "debtInvestmentComparativeColumnClarified": true
   },
   "nextRequired": [
     "逐条核对附注五、1-53，拆分其他流动资产、其他非流动资产、一年内到期非流动资产及其他应付款/其他流动负债",
