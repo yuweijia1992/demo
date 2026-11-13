@@ -499,7 +499,6 @@
 2026-08,S&P 500,CAPE,41.0,2026-08-01,sp500_cape,https://www.multpl.com/shiller-pe/table/by-month,Shiller cyclically adjusted P/E; monthly series; first-of-month observations,monthly,60,99.1667,27.08,41.0,120,99.5833,24.82,41.0
 2026-09,S&P 500,CAPE,40.42,2026-09-01,sp500_cape,https://www.multpl.com/shiller-pe/table/by-month,Shiller cyclically adjusted P/E; monthly series; first-of-month observations,monthly,60,97.5,27.08,41.0,120,98.75,24.82,41.0
 2026-10,S&P 500,CAPE,40.6,2026-10-01,sp500_cape,https://www.multpl.com/shiller-pe/table/by-month,Shiller cyclically adjusted P/E; monthly series; first-of-month observations,monthly,60,97.5,27.08,41.0,120,98.75,24.82,41.0
-2026-11,S&P 500,CAPE,39.82,2026-11-01,sp500_cape,https://www.multpl.com/shiller-pe/table/by-month,Shiller cyclically adjusted P/E; monthly series; first-of-month observations,monthly,60,89.1667,27.08,41.0,120,94.5833,24.82,41.0
 2006-01,S&P 500,PE_TTM,18.07,2006-01-01,sp500_pe_ttm,https://dqydj.com/sp-500-pe-ratio/,Monthly average index level divided by trailing 12-month earnings per share,monthly,1,,,,1,,,
 2006-02,S&P 500,PE_TTM,17.8,2006-02-01,sp500_pe_ttm,https://dqydj.com/sp-500-pe-ratio/,Monthly average index level divided by trailing 12-month earnings per share,monthly,2,,,,2,,,
 2006-03,S&P 500,PE_TTM,17.8,2006-03-01,sp500_pe_ttm,https://dqydj.com/sp-500-pe-ratio/,Monthly average index level divided by trailing 12-month earnings per share,monthly,3,,,,3,,,
