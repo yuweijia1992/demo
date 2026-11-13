@@ -65,7 +65,9 @@ def collect_dqydj(html):
   if v:out[month]=(month+"-01",v)
  return out
 def build():
- observations=[];errors={};source_counts={}\n now=datetime.now()\n cutoff=f"{now.year-1:04d}-12" if now.month==1 else f"{now.year:04d}-{now.month-1:02d}"
+ observations=[];errors={};source_counts={}
+ now=datetime.now()
+ cutoff=f"{now.year-1:04d}-12" if now.month==1 else f"{now.year:04d}-{now.month-1:02d}"
  for key,meta in SOURCES.items():
   try:
    html=fetch(meta["url"])
@@ -117,7 +119,8 @@ def build():
  "Nasdaq-100 complete monthly valuation history is not available in Siblis free tier; full historical database is subscription data. Public page snapshots are not treated as a continuous monthly series.",
  "CAPE and trailing PE are different metrics and must not be compared as if identical.",
  "Gold has no PE/PB; monthly CNY spot price percentile is a price-history indicator, not intrinsic-value valuation.",
- "No interpolation, forward filling, or extrapolation is applied; rolling percentile is blank until a full 60/120-month window exists.",\n "Only completed calendar months are included; the in-progress current month is excluded. The Multpl CAPE source labels monthly observations on the first calendar day of the month; the month label is retained and not misrepresented as a month-end close."]}
+ "No interpolation, forward filling, or extrapolation is applied; rolling percentile is blank until a full 60/120-month window exists.",
+ "Only completed calendar months are included; the in-progress current month is excluded. The Multpl CAPE source labels monthly observations on the first calendar day of the month; the month label is retained and not misrepresented as a month-end close."]}
  (OUT/"valuation-source-audit.json").write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding="utf-8")
  print(json.dumps({"coverage":audit["coverage"],"sources":source_counts,"latest":latest,"errors":errors},ensure_ascii=False,indent=2))
 if __name__=="__main__":build()
