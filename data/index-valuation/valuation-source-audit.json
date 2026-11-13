@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "status": "PARTIAL",
   "generated_at": "2026-11-13T06:20:46+00:00",
   "completed_month_cutoff": "2026-10",
@@ -46,11 +46,11 @@
       "5Y_n": 60,
       "5Y_percentile": 97.5,
       "5Y_min": 27.08,
-      "5Y_max": 41.0,
+      "5Y_max": 41,
       "10Y_n": 120,
       "10Y_percentile": 98.75,
       "10Y_min": 24.82,
-      "10Y_max": 41.0,
+      "10Y_max": 41,
       "source": "sp500_cape",
       "source_url": "https://www.multpl.com/shiller-pe/table/by-month"
     },
@@ -77,6 +77,31 @@
     "CAPE and trailing PE are different metrics and must not be compared as if identical.",
     "Gold has no PE/PB; monthly CNY spot price percentile is a price-history indicator, not intrinsic-value valuation.",
     "No interpolation, forward filling, or extrapolation is applied; rolling percentile is blank until a full 60/120-month window exists.",
-    "Only completed calendar months are included; the in-progress current month is excluded. The Multpl CAPE source labels monthly observations on the first calendar day of the month; the month label is retained and not misrepresented as a month-end close."
-  ]
+    "Only completed calendar months are included; the in-progress current month is excluded. The Multpl CAPE source labels monthly observations on the first calendar day of the month; the month label is retained and not misrepresented as a month-end close.",
+    "Additional public Nasdaq-100 annual PE observations (1990-2025) have been archived separately; they are not monthly and are excluded from 5Y/10Y monthly percentile calculations.",
+    "CSI300, HSI and NDX public point-in-time snapshots have been archived separately for audit; snapshots are not a substitute for historical monthly observations.",
+    "CSI300 source Index Lab reports 258 valuation samples since 2005-04-29, but the underlying raw monthly observations were not exposed in the accessible page text during this retrieval; current PE/PB values are retained as point-in-time snapshots only.",
+    "HSI official website exposes a historical PE download entry and daily index reports, but a bulk historical file with monthly raw observations was not retrievable from the accessible public page in this pass."
+  ],
+  "public_research_additions": {
+    "nasdaq100_annual_pe": {
+      "file": "data/index-valuation/nasdaq100-annual-pe-public.csv",
+      "coverage": "1990-2025 annual year-end values plus 2026-11 partial current-month observation",
+      "observations": 38,
+      "source": "https://investjoe.com/valuation/",
+      "status": "PUBLIC_ANNUAL_SERIES_ONLY",
+      "note": "Annual values are not monthly observations and are excluded from monthly rolling percentile calculations."
+    },
+    "public_snapshots": {
+      "file": "data/index-valuation/public-valuation-snapshots.csv",
+      "observations": 9,
+      "sources": [
+        "https://www.yixinkaoyan.cn/",
+        "https://guchacha.com/",
+        "https://worldperatio.com/index/nasdaq-100/"
+      ],
+      "status": "POINT_IN_TIME_ONLY",
+      "note": "Snapshots are retained separately and never merged into monthly history; reported percentile labels may differ by source methodology."
+    }
+  }
 }
