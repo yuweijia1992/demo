@@ -26,7 +26,7 @@ footer{padding:30px 0;color:var(--muted);font-size:11px}
 @media(max-width:800px){.grid,.grid3,.fields,.audit{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.wrap{padding:0 18px}.grid,.grid3,.fields,.audit{grid-template-columns:1fr}.top{padding-top:38px}.section{padding:30px 0}}
 </style></head>
 <body>
-<header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html">余暮<span> / Y.M.</span></a><nav><a href="#holdings">持仓</a><a href="#allocation">配置</a><a href="#risk">风险</a><a href="#simulator">提款模拟</a><a href="#audit">数据审计</a><a href="investment-lab.html">投资实验室</a></nav><button id="themeToggle" class="theme-btn" aria-label="切换深色模式">◐</button></div></header>
+<header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html">余暮<span> / Y.M.</span></a><nav><a href="#holdings">持仓</a><a href="#allocation">全球配置</a><a href="#rebalance">年度再平衡</a><a href="#macro">宏观监控</a><a href="#risk">风险</a><a href="#simulator">提款模拟</a><a href="#audit">数据审计</a><a href="investment-lab.html">投资实验室</a></nav><button id="themeToggle" class="theme-btn" aria-label="切换深色模式">◐</button></div></header>
 <main class="wrap">
 <section class="top"><div class="eyebrow">Y.M. INVESTMENT CONTROL CENTER · V1.0</div><h1>让投资决策，<br>有数据、有边界、有记录。</h1><p class="lead">这是400万元长期投资系统的日常控制台。录入真实持仓后，自动计算目标金额、配置偏离和再平衡参考；提款模拟使用明确的假设参数。它不会读取券商账户，不提供实时行情，也不会自动下单。</p><div class="nav"><a href="#holdings">01 持仓与配置</a><a href="#risk">02 风险检查</a><a href="#simulator">03 50年提款</a><a href="#audit">04 数据审计</a><a href="equity-allocation-sensitivity.html">历史配置回测</a></div><div class="status warn"><b>状态：研究与执行工具，不是已批准投资指令。</b> 52/28/10/10仅作为当前研究基准；正式比例须以完整回测、产品尽调和风险审查为准。</div></section>
 <section class="section" id="holdings"><h2>01 / 录入实际持仓</h2><p class="sub">金额按人民币计。数据仅保存在当前浏览器本地；建议定期导出备份。</p>
@@ -45,12 +45,32 @@ footer{padding:30px 0;color:var(--muted);font-size:11px}
 <div class="grid" style="margin-top:18px"><div class="kpi"><small>实际录入总额</small><strong id="actualTotal">¥0</strong></div><div class="kpi"><small>未分配 / 差额</small><strong id="unallocated">¥4,000,000</strong></div><div class="kpi"><small>现金可覆盖支出</small><strong id="cashYears">0.0年</strong></div><div class="kpi"><small>目标权重合计</small><strong id="targetSum">100%</strong></div></div>
 <div class="panel" style="margin-top:16px"><h3 style="margin:0 0 8px">目标金额与偏离</h3><div class="tablewrap"><table><thead><tr><th>资产类别</th><th>目标权重</th><th>目标金额</th><th>实际金额</th><th>实际权重</th><th>偏离</th><th>交易参考</th><th>状态</th></tr></thead><tbody id="allocationRows"></tbody></table></div><p class="note">交易参考 = 目标金额 − 实际金额。正数表示需要增加，负数表示需要减少；未考虑税费、产品最小交易单位、账户限制和资金到账时间。只有在目标权重合计100%且实际持仓录入完整时才适合参考。</p></div>
 </section>
+<section class="section" id="allocation"><h2>02 / 全球股票地区配置</h2><p class="sub">地区目标采用研究基准袖套：A股8%、港股2%、美国25%、其他发达市场11%、新兴市场6%，合计股票52%。当股票总目标改变时，地区比例按原结构缩放。地区实际持仓可选填，填入后会核对是否与股票总额一致。</p>
+<div class="grid3"><div class="panel"><h3>全球股票目标</h3><strong id="regionalTargetTotal">—</strong><p class="note">股票资产内部的地区分布</p></div><div class="panel"><h3>地区持仓核对</h3><strong id="regionalActualTotal">未录入</strong><p class="note">需与上方实际股票市值核对</p></div><div class="panel"><h3>地区目标完整性</h3><strong id="regionalCheck">—</strong><p class="note">地区目标占股票目标100%</p></div></div>
+<div class="panel" style="margin-top:14px"><h3 style="margin:0 0 12px">地区目标结构</h3><div id="regionalBar" class="bar" style="height:18px;display:flex"></div><div class="tablewrap"><table><thead><tr><th>地区</th><th>股票内部权重</th><th>组合目标权重</th><th>目标金额</th><th>实际地区金额（选填）</th></tr></thead><tbody id="regionalRows"></tbody></table></div></div>
+<div class="fields" style="margin-top:14px">
+<div><label for="regionCN">A股实际金额（元）</label><input id="regionCN" type="number" min="0" step="1000" placeholder="可选填"></div>
+<div><label for="regionHK">港股实际金额（元）</label><input id="regionHK" type="number" min="0" step="1000" placeholder="可选填"></div>
+<div><label for="regionUS">美国股票实际金额（元）</label><input id="regionUS" type="number" min="0" step="1000" placeholder="可选填"></div>
+<div><label for="regionDev">其他发达市场实际金额（元）</label><input id="regionDev" type="number" min="0" step="1000" placeholder="可选填"></div>
+<div><label for="regionEM">新兴市场实际金额（元）</label><input id="regionEM" type="number" min="0" step="1000" placeholder="可选填"></div>
+</div><p class="note">“新兴市场”代理可能包含中国与台湾市场，不能直接理解为完全剔除中国的海外新兴市场；实际地区划分应按持有产品的指数成分核验。</p></section>
+<section class="section" id="rebalance"><h2>03 / 年度再平衡记录</h2><p class="sub">每次年度检查后，记录当时的组合资产、偏离与处理结论。记录保存在本机浏览器，不会自动同步到云端。</p>
+<div class="fields"><div><label for="rebDate">记录日期</label><input id="rebDate" type="date"></div><div><label for="rebAction">本次结论</label><select id="rebAction"><option>不操作</option><option>使用新增资金调整</option><option>执行再平衡</option><option>仅风险复核</option><option>暂缓并说明原因</option></select></div><div style="grid-column:span 2"><label for="rebNote">理由 / 交易摘要</label><input id="rebNote" type="text" placeholder="例如：股票偏离目标+6个百分点，使用现金流修正"></div></div>
+<div class="actions"><button id="addRebBtn">保存本次年度记录</button><button class="secondary" id="exportRebBtn">导出再平衡记录CSV</button></div>
+<div class="panel" style="margin-top:14px"><div class="tablewrap"><table><thead><tr><th>日期</th><th>结论</th><th>组合总资产</th><th>股票</th><th>债券</th><th>黄金</th><th>现金</th><th>说明</th></tr></thead><tbody id="rebRows"><tr><td colspan="8">尚无记录</td></tr></tbody></table></div></div></section>
+<section class="section" id="macro"><h2>04 / 全球宏观自动监控</h2><p class="sub">由GitHub Actions工作日定时抓取FRED公开序列，网页每15分钟尝试刷新一次。各指标显示自己的最新观测日期；周末、节假日或源站更新延迟时不会伪造“今日值”。</p>
+<div class="actions"><button id="macroRefreshBtn">立即刷新数据</button><span class="pill" id="macroUpdateStatus">等待数据</span></div>
+<div class="grid" id="macroCards" style="margin-top:14px"><div class="panel">正在读取宏观数据…</div></div>
+<div class="panel" style="margin-top:14px"><h3 style="margin:0 0 8px">自动警报</h3><div id="macroAlerts" class="note">读取中…</div></div>
+<p class="note" id="macroFootnote">数据源：Federal Reserve Bank of St. Louis FRED。DXY使用广义贸易加权美元指数DTWEXBGS，不是ICE DXY；CPI当前展示指数水平，不冒充同比通胀。宏观警报仅提示复核，不触发买卖操作。</p>
+</section>
 <section class="section" id="risk"><h2>02 / 风险检查</h2><p class="sub">用透明的静态冲击假设检查组合承受力。它不是预测，也不是历史最大回撤。</p><div class="grid3">
 <div class="panel"><span class="pill">温和压力</span><h3>股票 -20%</h3><p class="note">债券 -3% · 黄金 -5% · 现金 0%</p><strong id="stress1">—</strong></div>
 <div class="panel"><span class="pill">严重压力</span><h3>股票 -40%</h3><p class="note">债券 -5% · 黄金 -10% · 现金 0%</p><strong id="stress2">—</strong></div>
 <div class="panel"><span class="pill">极端压力</span><h3>股票 -50%</h3><p class="note">债券 -10% · 黄金 -15% · 现金 0%</p><strong id="stress3">—</strong></div>
 </div><div class="status" id="riskStatus">先录入持仓，再运行风险检查。</div><p class="note">当前压力测试按目标配置权重计算，不代表资产相关性在危机中保持稳定。股债可能同时下跌，汇率、流动性、产品跟踪误差和租金上涨也会改变真实结果。</p></section>
-<section class="section" id="simulator"><h2>03 / 50年提款模拟</h2><p class="sub">确定性情景计算：先施加初始冲击，再于每年年初提款，最后按年度收益率增长。结果不是成功概率；不包含税务、临时大额支出或未来收入。</p>
+<section class="section" id="simulator"><h2>06 / 50年提款模拟</h2><p class="sub">确定性情景计算：先施加初始冲击，再于每年年初提款，最后按年度收益率增长。结果不是成功概率；不包含税务、临时大额支出或未来收入。</p>
 <div class="fields">
 <div><label for="simCapital">起始资产（元）</label><input id="simCapital" type="number" value="4000000" step="10000"></div>
 <div><label for="simSpend">首年支出（元）</label><input id="simSpend" type="number" value="90000" step="1000"></div>
@@ -59,7 +79,7 @@ footer{padding:30px 0;color:var(--muted);font-size:11px}
 <div><label for="simCrash">初始一次性冲击（%）</label><input id="simCrash" type="number" value="0" step="1"></div>
 <div><label for="simYears">模拟年数</label><input id="simYears" type="number" value="50" min="1" max="80"></div>
 </div><div class="actions"><button id="simBtn">运行提款模拟</button></div><div class="grid3" style="margin:18px 0"><div class="kpi"><small>期末资产</small><strong id="simEnd">—</strong></div><div class="kpi"><small>资产耗尽年份</small><strong id="simDeplete">未耗尽</strong></div><div class="kpi"><small>首年提款率</small><strong id="simRate">—</strong></div></div><svg id="simChart" class="chart" viewBox="0 0 900 260" role="img" aria-label="50年资产余额变化图"></svg><div class="tablewrap" style="margin-top:14px"><table><thead><tr><th>年份</th><th>年初资产</th><th>当年提款</th><th>收益率</th><th>年末资产</th></tr></thead><tbody id="simRows"></tbody></table></div><p class="note">当年提款按年初通胀调整。若资产不足以覆盖提款，则当年末余额记为0并记录耗尽年份。名义收益和通胀是假设输入，建议分别测试低收益、高通胀和早期暴跌情景。</p></section>
-<section class="section" id="audit"><h2>04 / 数据质量与研究状态</h2><p class="sub">以下状态来自网站现有数据清单，不等同于全部资产已完成正式回测。</p><div class="audit">
+<section class="section" id="audit"><h2>07 / 数据质量与研究状态</h2><p class="sub">以下状态来自网站现有数据清单，不等同于全部资产已完成正式回测。</p><div class="audit">
 <article><span class="pill">月度矩阵</span><h3>2006-01 至 2026-10</h3><p class="note">250个统一月份；字段覆盖情况因资产而异，不能把矩阵行数理解为每条序列均完整。</p></article>
 <article><span class="pill">债券</span><h3>中债财富候选序列</h3><p class="note">主矩阵250个月；产品代码公开交叉核验，接口映射与数据授权仍待书面确认。</p></article>
 <article><span class="pill">港股</span><h3>2800.HK代理</h3><p class="note">人民币总回报代理225个月（2008-02至2026-10）；非恒生官方Gross TRI。</p></article>
@@ -68,8 +88,8 @@ footer{padding:30px 0;color:var(--muted);font-size:11px}
 <article><span class="pill">正式回测</span><h3>仍待复核</h3><p class="note">旧版100路径结果已降级；年度再平衡和初始冲击时序已修正，500路径运行结果需以新manifest核验后方可发布。</p></article>
 </div><div class="panel" style="margin-top:14px"><h3 style="margin:0 0 8px">当前关键缺口</h3><ul class="note"><li>恒生官方全收益指数历史序列及再分发许可。</li><li>人民币对冲海外债券的长期可比序列。</li><li>中国全市场、红利、港股等统一口径的完整总回报与估值历史。</li><li>宏观指标实时接入、来源时间戳与失败告警。</li><li>可投资产品费用、税务和账户可买性核验。</li></ul><div class="actions"><a class="btn" href="../data/investment-monthly-manifest.json">查看月度矩阵Manifest</a><a class="btn" href="../data/research/monthly_coverage_audit.csv">查看月份覆盖审计</a><a class="btn" href="../data/research/index_data_acquisition_status.csv">查看数据获取状态</a><a class="btn" href="equity-allocation-sensitivity.html">查看配置回测研究</a><a class="btn" href="portfolio-final-plan.html">查看组合政策方案</a></div></div>
 </section>
-<section class="section"><h2>05 / 执行纪律</h2><div class="grid3"><div class="panel"><h3>每月</h3><p class="note">更新资产市值、支出、现金覆盖年限；检查数据更新时间与异常值。</p></div><div class="panel"><h3>每季度</h3><p class="note">检查地区与行业集中度、汇率敞口、利率风险、产品跟踪误差与流动性。</p></div><div class="panel"><h3>每年</h3><p class="note">按批准的政策权重再平衡；复核支出预算、通胀假设、风险承受力和数据质量。</p></div></div><p class="note" style="margin-top:14px">纪律建议：先用新增现金流和分红修正偏离，再考虑卖出；不要因单一宏观指标或短期涨跌改变长期配置。若组合回撤达到10%/15%/20%，触发风险复核而非机械止损。</p></section>
-</main><footer class="wrap">余暮投资实验室 · 投资控制台 V1.0 · 研究工具，不构成投资建议。</footer>
+<section class="section"><h2>08 / 执行纪律</h2><div class="grid3"><div class="panel"><h3>每月</h3><p class="note">更新资产市值、支出、现金覆盖年限；检查数据更新时间与异常值。</p></div><div class="panel"><h3>每季度</h3><p class="note">检查地区与行业集中度、汇率敞口、利率风险、产品跟踪误差与流动性。</p></div><div class="panel"><h3>每年</h3><p class="note">按批准的政策权重再平衡；复核支出预算、通胀假设、风险承受力和数据质量。</p></div></div><p class="note" style="margin-top:14px">纪律建议：先用新增现金流和分红修正偏离，再考虑卖出；不要因单一宏观指标或短期涨跌改变长期配置。若组合回撤达到10%/15%/20%，触发风险复核而非机械止损。</p></section>
+</main><footer class="wrap">余暮投资实验室 · 投资控制台 V1.1 · 研究工具，不构成投资建议。</footer>
 <script src="../script.js"></script>
 <script>
 const $=id=>document.getElementById(id), money=n=>'¥'+Math.round(n).toLocaleString('zh-CN'), pct=n=>(n*100).toFixed(2)+'%', ids=['equity','bond','gold','cash'], names=['股票','债券','黄金','现金'];
@@ -99,5 +119,38 @@ function simulate(){
  let max=Math.max(...data.map(d=>d.start),1), pts=data.map((d,i)=>[35+i*830/Math.max(1,years-1),220-d.end/max*190]), line=pts.map(p=>p.join(',')).join(' ');
  $('simChart').innerHTML='<line x1="35" y1="220" x2="865" y2="220" stroke="currentColor" opacity=".25"/><line x1="35" y1="25" x2="35" y2="220" stroke="currentColor" opacity=".25"/><polyline points="'+line+'" fill="none" stroke="currentColor" stroke-width="3"/><text x="40" y="18" fill="currentColor" font-size="12">资产余额（相对起始峰值）</text><text x="40" y="245" fill="currentColor" font-size="11">第1年</text><text x="820" y="245" fill="currentColor" font-size="11">第'+years+'年</text>';
 }
+
+const regionDefs=[['A股','regionCN',8/52],['港股','regionHK',2/52],['美国','regionUS',25/52],['其他发达市场','regionDev',11/52],['新兴市场','regionEM',6/52]];
+function renderRegions(){
+ const eq=val('equityTarget')/100, cap=val('capital'), total=regionDefs.reduce((s,x)=>s+x[2],0);
+ $('regionalTargetTotal').textContent=money(cap*eq);
+ const sumActual=regionDefs.reduce((s,x)=>s+val(x[1]),0), entered=regionDefs.some(x=>$(x[1]).value!=='');
+ $('regionalActualTotal').textContent=entered?money(sumActual):'未录入';
+ $('regionalCheck').textContent=Math.abs(total-1)<1e-8?'100%':'异常';
+ const shades=['#557c9b','#8b789f','#b17d50','#638d78','#a2a36b'];
+ $('regionalBar').innerHTML=regionDefs.map((x,i)=>'<span title="'+x[0]+'" style="width:'+(x[2]*100)+'%;background:'+shades[i]+'"></span>').join('');
+ $('regionalRows').innerHTML=regionDefs.map((x,i)=>'<tr><td>'+x[0]+'</td><td>'+pct(x[2])+'</td><td>'+pct(eq*x[2])+'</td><td>'+money(cap*eq*x[2])+'</td><td>'+(entered?money(val(x[1])):'—')+'</td></tr>').join('');
+ if(entered){$('regionalActualTotal').className=Math.abs(sumActual-val('equityNow'))<=Math.max(1000,val('equityNow')*.005)?'good':'warn';$('regionalActualTotal').title='地区录入合计与股票总额差额：'+money(sumActual-val('equityNow'))}
+}
+function readRebalances(){try{return JSON.parse(localStorage.getItem('ym-rebalance-log-v1')||'[]')}catch(e){return []}}
+function renderRebalances(){
+ const rows=readRebalances();$('rebRows').innerHTML=rows.length?rows.slice().reverse().map(x=>'<tr><td>'+x.date+'</td><td>'+x.action+'</td><td>'+money(x.total)+'</td><td>'+money(x.equity)+'</td><td>'+money(x.bond)+'</td><td>'+money(x.gold)+'</td><td>'+money(x.cash)+'</td><td>'+String(x.note||'').replace(/[<>&"]/g,'')+'</td></tr>').join(''):'<tr><td colspan="8">尚无记录</td></tr>';
+}
+$('addRebBtn').onclick=()=>{const row={date:$('rebDate').value||new Date().toISOString().slice(0,10),action:$('rebAction').value,total:val('capital'),equity:val('equityNow'),bond:val('bondNow'),gold:val('goldNow'),cash:val('cashNow'),note:$('rebNote').value};const rows=readRebalances();rows.push(row);localStorage.setItem('ym-rebalance-log-v1',JSON.stringify(rows));$('rebNote').value='';renderRebalances()};
+$('exportRebBtn').onclick=()=>{const rows=[['日期','结论','总资产','股票','债券','黄金','现金','说明'],...readRebalances().map(x=>[x.date,x.action,x.total,x.equity,x.bond,x.gold,x.cash,x.note])];const csv='\ufeff'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='年度再平衡记录.csv';a.click();URL.revokeObjectURL(a.href)};
+async function loadMacro(){
+ $('macroUpdateStatus').textContent='正在读取…';
+ try{
+  const res=await fetch('../data/macro-dashboard.json?ts='+Date.now(),{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status);const d=await res.json();
+  const defs=[['us10y_nominal','美国10年期国债','%'],['us10y_real','美国10年期实际利率','%'],['vix','VIX波动率','点'],['dxy_broad','美元广义指数','点'],['usdcny','美元兑人民币','元'],['brent','布伦特原油','美元/桶'],['fed_funds','联邦基金利率','%'],['us_cpi_yoy','美国CPI指数水平','指数']];
+  $('macroCards').innerHTML=defs.map(([k,label,unit])=>{const s=d.series?.[k];const v=s?.value;return '<article class="panel"><small class="note">'+label+'</small><strong style="display:block;font-size:24px;margin:8px 0">'+(v==null?'暂无':Number(v).toFixed(2)+' '+unit)+'</strong><p class="note">'+(s?.date?'观测日：'+s.date:'尚无观测')+' · '+(s?.series_id||'等待首次更新')+'</p></article>'}).join('');
+  const alerts=d.alerts||[];$('macroAlerts').innerHTML=alerts.length?alerts.map(a=>'<div class="status '+(a.level==='high'?'bad':'warn')+'">'+a.message+'（当前 '+a.value+'；阈值 '+a.threshold+'）</div>').join(''):'<span class="good">当前已发布数据未触发预设阈值。缺失指标不视为正常。</span>';
+  $('macroUpdateStatus').textContent=d.generated_at?'数据生成：'+new Date(d.generated_at).toLocaleString('zh-CN'):'等待首次自动抓取';
+  if(d.errors&&Object.keys(d.errors).length)$('macroUpdateStatus').textContent+=' · '+Object.keys(d.errors).length+'项抓取失败';
+ }catch(e){$('macroUpdateStatus').textContent='读取失败：'+e.message;$('macroCards').innerHTML='<div class="status warn">宏观数据文件尚未生成或暂时不可用。自动更新任务首次成功后会显示指标。</div>'}
+}
+$('macroRefreshBtn').onclick=loadMacro;
+['equityTarget','capital','regionCN','regionHK','regionUS','regionDev','regionEM','equityNow'].forEach(id=>$(id).addEventListener('input',renderRegions));
+$('rebDate').value=new Date().toISOString().slice(0,10);renderRegions();renderRebalances();loadMacro();setInterval(loadMacro,15*60*1000);
 $('simBtn').onclick=simulate;load();calculate();simulate();
 </script></body></html>
