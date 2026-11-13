@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-11-13T08:44:22.547109+00:00",
+  "cutoff_month": "2026-10",
+  "source": "Legu Legulegu public valuation pages via AkShare; no user API token",
+  "series": {
+    "PE_TTM": {
+      "raw_file": "data/index-valuation/raw/csi300_legu_pe_ttm_daily.csv",
+      "source_rows": 260,
+      "monthly_rows": 259,
+      "first_month": "2005-04",
+      "last_month": "2026-10",
+      "source_field": "滚动市盈率",
+      "status": "OK"
+    },
+    "PB": {
+      "raw_file": "data/index-valuation/raw/csi300_legu_pb_daily.csv",
+      "source_rows": 260,
+      "monthly_rows": 259,
+      "first_month": "2005-04",
+      "last_month": "2026-10",
+      "source_field": "市净率",
+      "status": "OK"
+    }
+  },
+  "errors": {},
+  "status": "OK"
+}
