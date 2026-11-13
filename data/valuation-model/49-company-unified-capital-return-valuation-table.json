@@ -256,9 +256,10 @@
         "goodwill": 342.56859,
         "link": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12048854&stockid=000333",
         "status": "2025核心损益及现金流已定位；投入资本与NOPAT待审计",
-        "note": "FY2025完成Arbonia、东芝电梯中国业务及Carestream Health国际业务收购；并购现金支出61.55亿元，不能并入有机增量回报。",
+        "note": "FY2025合并利润表营业收入底稿值4564.52亿元；美的官方IR摘要显示Total Revenue 4585亿元，两者存在约20.48亿元差异，可能涉及营业收入/营业总收入展示口径，必须回到年报主表与附注调节后定稿。并购现金支出61.55亿元，不能混入有机增量回报。",
         "fcfMarginPct": 9.25,
-        "fcfToParentProfitPct": 96.04
+        "fcfToParentProfitPct": 96.04,
+        "reconciliationFlag": "revenue_metric_mismatch_annual_report_line_item_vs_IR_total_revenue"
       }
     },
     {
