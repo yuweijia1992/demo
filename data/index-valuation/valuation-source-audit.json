@@ -1,12 +1,12 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.4",
   "status": "PARTIAL",
-  "generated_at": "2026-11-13T08:44:21+00:00",
+  "generated_at": "2026-11-13T08:46:22+00:00",
   "completed_month_cutoff": "2026-10",
   "coverage": {
-    "assets_metrics": 3,
-    "observations": 750,
-    "start": "2006-01",
+    "assets_metrics": 5,
+    "observations": 1268,
+    "start": "2005-04",
     "end": "2026-10"
   },
   "sources": {
@@ -23,48 +23,82 @@
       "first_month": "1871-01",
       "last_month": "2026-10",
       "status": "OK"
+    },
+    "csi300_legu": {
+      "PE_TTM": "data/index-valuation/raw/csi300_legu_pe_ttm_daily.csv",
+      "PB": "data/index-valuation/raw/csi300_legu_pb_daily.csv",
+      "monthly_file": "data/index-valuation/csi300-legu-monthly.csv",
+      "status": "OK"
     }
   },
   "latest": {
+    "CSI 300|PB": {
+      "date": "2026-10",
+      "value": "1.33",
+      "5Y_n": "60",
+      "5Y_percentile": "43.3333",
+      "5Y_min": "1.16",
+      "5Y_max": "1.69",
+      "10Y_n": "120",
+      "10Y_percentile": "26.25",
+      "10Y_min": "1.16",
+      "10Y_max": "1.79",
+      "source": "Legu via AkShare",
+      "source_url": "https://legulegu.com/stockdata/sz50-pb"
+    },
+    "CSI 300|PE_TTM": {
+      "date": "2026-10",
+      "value": "12.17",
+      "5Y_n": "60",
+      "5Y_percentile": "60.8333",
+      "5Y_min": "9.61",
+      "5Y_max": "13.85",
+      "10Y_n": "120",
+      "10Y_percentile": "47.0833",
+      "10Y_min": "9.61",
+      "10Y_max": "15.95",
+      "source": "Legu via AkShare",
+      "source_url": "https://legulegu.com/stockdata/sz50-ttm-lyr"
+    },
     "Gold (CNY)|CNY_per_troy_ounce": {
       "date": "2026-10",
-      "value": 27439.462,
-      "5Y_n": 60,
-      "5Y_percentile": 79.1667,
-      "5Y_min": 11401.047,
-      "5Y_max": 34670.128,
-      "10Y_n": 120,
-      "10Y_percentile": 89.5833,
-      "10Y_min": 8006.2086,
-      "10Y_max": 34670.128,
+      "value": "27439.462",
+      "5Y_n": "60",
+      "5Y_percentile": "79.1667",
+      "5Y_min": "11401.047",
+      "5Y_max": "34670.128",
+      "10Y_n": "120",
+      "10Y_percentile": "89.5833",
+      "10Y_min": "8006.2086",
+      "10Y_max": "34670.128",
       "source": "World Bank Pink Sheet gold monthly average × monthly USD/CNY",
       "source_url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/world-bank-commodities-price-data-the-pink-sheet"
     },
     "S&P 500|CAPE": {
       "date": "2026-10",
-      "value": 40.6,
-      "5Y_n": 60,
-      "5Y_percentile": 97.5,
-      "5Y_min": 27.08,
-      "5Y_max": 41.0,
-      "10Y_n": 120,
-      "10Y_percentile": 98.75,
-      "10Y_min": 24.82,
-      "10Y_max": 41.0,
+      "value": "40.6",
+      "5Y_n": "60",
+      "5Y_percentile": "97.5",
+      "5Y_min": "27.08",
+      "5Y_max": "41.0",
+      "10Y_n": "120",
+      "10Y_percentile": "98.75",
+      "10Y_min": "24.82",
+      "10Y_max": "41.0",
       "source": "sp500_cape",
       "source_url": "https://www.multpl.com/shiller-pe/table/by-month"
     },
     "S&P 500|PE_TTM": {
       "date": "2026-10",
-      "value": 27.33,
-      "5Y_n": 60,
-      "5Y_percentile": 72.5,
-      "5Y_min": 20.28,
-      "5Y_max": 28.66,
-      "10Y_n": 120,
-      "10Y_percentile": 75.4167,
-      "10Y_min": 19.39,
-      "10Y_max": 39.26,
+      "value": "27.33",
+      "5Y_n": "60",
+      "5Y_percentile": "72.5",
+      "5Y_min": "20.28",
+      "5Y_max": "28.66",
+      "10Y_n": "120",
+      "10Y_percentile": "75.4167",
+      "10Y_min": "19.39",
+      "10Y_max": "39.26",
       "source": "sp500_pe_ttm",
       "source_url": "https://dqydj.com/sp-500-pe-ratio/"
     }
@@ -77,6 +111,22 @@
     "CAPE and trailing PE are different metrics and must not be compared as if identical.",
     "Gold has no PE/PB; monthly CNY spot price percentile is a price-history indicator, not intrinsic-value valuation.",
     "No interpolation, forward filling, or extrapolation is applied; rolling percentile is blank until a full 60/120-month window exists.",
-    "Only completed calendar months are included; the in-progress current month is excluded. The Multpl CAPE source labels monthly observations on the first calendar day of the month; the month label is retained and not misrepresented as a month-end close."
+    "Only completed calendar months are included; the in-progress current month is excluded. The Multpl CAPE source labels monthly observations on the first calendar day of the month; the month label is retained and not misrepresented as a month-end close.",
+    "CSI 300 PE/PB are Legu aggregate historical series retrieved through AkShare public endpoints; daily raw source files are retained, and monthly values are the last real source observation in each month.",
+    "HSI and Nasdaq-100 continuous monthly PE/PB series remain unavailable in the public raw-data archive; annual values and snapshots are separate and are not interpolated.",
+    "S&P 500 PB sources located in this pass provide annual history and only a short recent monthly panel, not a full monthly raw series."
+  ],
+  "index_metrics_collected": [
+    "CSI 300|PB",
+    "CSI 300|PE_TTM",
+    "S&P 500|PE_TTM"
+  ],
+  "expected_index_metrics": 8,
+  "missing_index_metrics": [
+    "Hang Seng|PB",
+    "Hang Seng|PE_TTM",
+    "NASDAQ 100|PB",
+    "NASDAQ 100|PE_TTM",
+    "S&P 500|PB"
   ]
 }
