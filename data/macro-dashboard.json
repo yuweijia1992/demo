@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "generated_at": null,
+  "source": "FRED public CSV",
+  "series": {},
+  "alerts": [],
+  "errors": {},
+  "status": "pending_first_workflow_run",
+  "limitations": [
+    "等待首次GitHub Actions自动抓取。"
+  ]
+}
