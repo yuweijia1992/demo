@@ -3,7 +3,7 @@
   "signal": "S&P 500 CAPE 10Y percentile observed at t-1",
   "rules": {
     "SP500_buy_hold": "100% S&P 500 total return",
-    "Fixed_60_40": "60% S&P 500 / 40% RMB cash, monthly weights restored",
+    "Fixed_60_40": "60% S&P 500 / 40% RMB cash, monthly rebalance with 10bp one-way cost",
     "CAPE_tilt_100_75_50": "100% equity if lagged CAPE percentile <=20; 75% if >20 and <80; 50% if >=80; remaining weight RMB cash; 10bp one-way cost on equity-weight changes"
   },
   "sample": {
@@ -22,19 +22,19 @@
     },
     "Fixed_60_40": {
       "months": 121,
-      "annualized_return": 0.1006823254080107,
-      "annualized_volatility": 0.09246208100347199,
-      "max_drawdown": -0.11751269101109263,
-      "terminal_wealth_multiple": 2.6308237854087406,
-      "worst_month": -0.07150461645999999
+      "annualized_return": 0.1005687842071914,
+      "annualized_volatility": 0.09245695488870605,
+      "max_drawdown": -0.1175380985534592,
+      "terminal_wealth_multiple": 2.6280886179708136,
+      "worst_month": -0.07152193131991813
     },
     "CAPE_tilt_100_75_50": {
       "months": 121,
-      "annualized_return": 0.10727838280956026,
-      "annualized_volatility": 0.09454284214633871,
-      "max_drawdown": -0.09749430118699298,
-      "terminal_wealth_multiple": 2.7941922382003392,
-      "worst_month": -0.0634585302
+      "annualized_return": 0.10716948753522115,
+      "annualized_volatility": 0.09453194864713924,
+      "max_drawdown": -0.09752124282649233,
+      "terminal_wealth_multiple": 2.791422628009107,
+      "worst_month": -0.06346751466772904
     }
   },
   "limitations": [
