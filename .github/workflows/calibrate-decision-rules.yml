@@ -12,6 +12,9 @@ permissions:
   contents: write
 concurrency:
   group: valuation-decision-calibration
+  cancel-in-progress: false
+concurrency:
+  group: valuation-decision-calibration
   cancel-in-progress: true
 jobs:
   calibrate:
