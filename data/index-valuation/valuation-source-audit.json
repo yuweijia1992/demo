@@ -1,0 +1,80 @@
+{
+  "schema_version": "0.1",
+  "status": "PARTIAL",
+  "generated_at": "2026-11-13T06:18:29+00:00",
+  "coverage": {
+    "assets_metrics": 3,
+    "observations": 751,
+    "start": "2006-01",
+    "end": "2026-11"
+  },
+  "sources": {
+    "sp500_cape": {
+      "parsed_months": 1870,
+      "used_months": 251,
+      "first_month": "1871-02",
+      "last_month": "2026-11",
+      "status": "OK"
+    },
+    "sp500_pe_ttm": {
+      "parsed_months": 1870,
+      "used_months": 250,
+      "first_month": "1871-01",
+      "last_month": "2026-10",
+      "status": "OK"
+    }
+  },
+  "latest": {
+    "Gold (CNY)|CNY_per_troy_ounce": {
+      "date": "2026-10",
+      "value": 27439.462,
+      "5Y_n": 60,
+      "5Y_percentile": 79.1667,
+      "5Y_min": 11401.047,
+      "5Y_max": 34670.128,
+      "10Y_n": 120,
+      "10Y_percentile": 89.5833,
+      "10Y_min": 8006.2086,
+      "10Y_max": 34670.128,
+      "source": "World Bank Pink Sheet gold monthly average × monthly USD/CNY",
+      "source_url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/world-bank-commodities-price-data-the-pink-sheet"
+    },
+    "S&P 500|CAPE": {
+      "date": "2026-11",
+      "value": 39.82,
+      "5Y_n": 60,
+      "5Y_percentile": 89.1667,
+      "5Y_min": 27.08,
+      "5Y_max": 41.0,
+      "10Y_n": 120,
+      "10Y_percentile": 94.5833,
+      "10Y_min": 24.82,
+      "10Y_max": 41.0,
+      "source": "sp500_cape",
+      "source_url": "https://www.multpl.com/shiller-pe/table/by-month"
+    },
+    "S&P 500|PE_TTM": {
+      "date": "2026-10",
+      "value": 27.33,
+      "5Y_n": 60,
+      "5Y_percentile": 72.5,
+      "5Y_min": 20.28,
+      "5Y_max": 28.66,
+      "10Y_n": 120,
+      "10Y_percentile": 75.4167,
+      "10Y_min": 19.39,
+      "10Y_max": 39.26,
+      "source": "sp500_pe_ttm",
+      "source_url": "https://dqydj.com/sp-500-pe-ratio/"
+    }
+  },
+  "errors": {},
+  "limitations": [
+    "Only S&P 500 CAPE, S&P 500 trailing PE and RMB gold spot-price valuation are included in this tranche.",
+    "CSI 300 and Hang Seng monthly index valuation history require a verifiable public raw data feed or licensed provider; a Lixinger API token is required for its documented historical index fundamentals endpoint.",
+    "Nasdaq-100 complete monthly valuation history is not available in Siblis free tier; full historical database is subscription data. Public page snapshots are not treated as a continuous monthly series.",
+    "CAPE and trailing PE are different metrics and must not be compared as if identical.",
+    "Gold has no PE/PB; monthly CNY spot price percentile is a price-history indicator, not intrinsic-value valuation.",
+    "No interpolation, forward filling, or extrapolation is applied; rolling percentile is blank until a full 60/120-month window exists."
+  ]
+}
