@@ -98,6 +98,13 @@ for rel in pages:
         if re.search(r"\bsrc\s*=",attrs,re.I) or not body.strip(): continue
         node_check(body,f"{rel} inline script #{i}")
 
+decision_page=(ROOT/"articles/investment-decision-engine.html").read_text(encoding="utf-8")
+require("资产估值监控" in decision_page and "组合风险引擎" in decision_page and "每日决策日志" in decision_page,"investment decision engine sections missing")
+for i,match in enumerate(re.finditer(r"<script\\b([^>]*)>(.*?)</script\\s*>",decision_page,re.I|re.S),1):
+    attrs,body=match.group(1),match.group(2)
+    if re.search(r"\\bsrc\\s*=",attrs,re.I) or not body.strip(): continue
+    node_check(body,f"investment-decision-engine.html inline script #{i}")
+
 home=(ROOT/"articles/investment-lab.html").read_text(encoding="utf-8")
 require("financial-independence-simulator.html" in home,"homepage does not link to the 50-year simulator")
 risk=(ROOT/"articles/risk-monitor.html").read_text(encoding="utf-8")
