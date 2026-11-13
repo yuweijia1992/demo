@@ -88,8 +88,8 @@ function calculate(){
 }
 function persist(){let obj={};['capital','annualSpend','equityTarget','bondTarget','goldTarget','cashTarget','equityNow','bondNow','goldNow','cashNow'].forEach(id=>obj[id]=$(id).value);localStorage.setItem('ym-investment-control-v1',JSON.stringify(obj));}
 function load(){try{let o=JSON.parse(localStorage.getItem('ym-investment-control-v1')||'{}');Object.entries(o).forEach(([k,v])=>{if($(k))$(k).value=v})}catch(e){}}
-$('calcBtn').onclick=calculate;$('saveBtn').onclick=()=>{persist();alert('已保存到当前浏览器。')};
-$('resetBtn').onclick=()=>{ids.forEach(k=>$(k+'Now').value=0);calculate()};
+$('calcBtn').onclick=calculate;$('saveBtn').onclick=()=>{persist();alert('已保存到当前浏览器。')};['capital','annualSpend','equityTarget','bondTarget','goldTarget','cashTarget','equityNow','bondNow','goldNow','cashNow'].forEach(id=>$(id).addEventListener('input',calculate));
+$('resetBtn').onclick=()=>{ids.forEach(k=>$(k+'Now').value=0);localStorage.removeItem('ym-investment-control-v1');calculate()};
 $('exportBtn').onclick=()=>{let rows=[['资产','目标权重','目标金额','实际金额'],...ids.map((k,i)=>[names[i],targets()[i],val('capital')*targets()[i],val(k+'Now')])];let csv='\\ufeff'+rows.map(r=>r.join(',')).join('\\n');let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='投资持仓与目标配置.csv';a.click();URL.revokeObjectURL(a.href)};
 function simulate(){
  let balance=val('simCapital')*(1-val('simCrash')/100), spend=val('simSpend'), inf=val('simInflation')/100, ret=val('simReturn')/100, years=Math.max(1,Math.min(80,Math.floor(val('simYears'))||50)), depletion=null, data=[];
