@@ -1,0 +1,46 @@
+{
+  "report_date": "2026-11-13",
+  "purpose": "Public-source gap analysis for index valuation monthly PE/PB database",
+  "target_metrics": [
+    "Hang Seng PE_TTM",
+    "Hang Seng PB",
+    "NASDAQ 100 PE_TTM",
+    "NASDAQ 100 PB",
+    "S&P 500 PB"
+  ],
+  "findings": [
+    {
+      "source": "Siblis Research",
+      "url": "https://siblisresearch.com/data/nasdaq-100-pe-ratio/",
+      "metric": "NASDAQ 100 trailing PE and related ratios",
+      "public_page_frequency": "monthly month-end",
+      "public_history": "ten year-end values 2016-2025 plus latest month",
+      "latest_month": "2026-10",
+      "latest_trailing_pe": 32.76,
+      "free_api": "https://siblisresearch.com/api/v1/NDX/pe-trailing",
+      "free_api_access": "no key",
+      "free_tier_limitation": "subset of tickers and handful of period-end snapshots; complete history and full index coverage are paid",
+      "method": "aggregate index market capitalization / aggregate normalized trailing net income",
+      "decision": "Do not import annual rows or sparse free-tier snapshots as a monthly series."
+    },
+    {
+      "source": "LENSE Analytics",
+      "url": "https://lense-analytics.com/fundamentals/sp500-pb-ratio",
+      "metric": "S&P 500 PB",
+      "monthly_public_coverage": "2025-12—2026-11 (12 rows)",
+      "annual_public_coverage": "1999—2025 (27 rows)",
+      "latest_month": "2026-11",
+      "latest_value": 5.04,
+      "method": "aggregate market capitalization / aggregate shareholders equity; negative book equity constituents excluded; point-in-time index membership",
+      "decision": "Archive as candidate source observations; insufficient monthly coverage for rolling 5Y/10Y percentile."
+    },
+    {
+      "source": "Hang Seng Indexes",
+      "url": "https://origin-www.hsi.com.hk/eng/indexes/all-indexes/hsscr",
+      "metric": "Hang Seng PE/PB",
+      "public_access": "month-end constituent performance report download entry; wider data points to Index360 registration",
+      "decision": "No continuous auditable monthly PE/PB raw values verified; do not estimate."
+    }
+  ],
+  "data_policy": "Keep public annual and sparse monthly candidate observations outside the unified monthly matrix until continuous 60/120-month observations are verified. Never interpolate or forward-fill."
+}
