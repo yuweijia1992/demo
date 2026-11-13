@@ -52,7 +52,7 @@ for metric,func,candidates,url in SPECS:
  except Exception as e:
   audit["errors"][metric]=repr(e)
   audit["series"][metric]={"status":"ERROR","error":repr(e)}
-cols=["date","asset","metric","value","observed_date","source","source_url","source_field","method","frequency","5Y_n","5Y_percentile","10Y_n","10Y_percentile"]
+cols=["date","asset","metric","value","observed_date","source","source_url","source_field","method","frequency","5Y_n","5Y_percentile","5Y_min","5Y_max","10Y_n","10Y_percentile","10Y_min","10Y_max"]
 with (OUT/"csi300-legu-monthly.csv").open("w",encoding="utf-8-sig",newline="") as f:
  w=csv.DictWriter(f,fieldnames=cols);w.writeheader();w.writerows(allrows)
 audit["status"]="OK" if len(audit["series"])==2 and not audit["errors"] else "PARTIAL"
