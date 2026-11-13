@@ -1,0 +1,10 @@
+date,index,metric,value,unit,frequency,source,source_url,method,limitations
+2026-09-16,CSI300,PE_TTM,12.67,x,point_in_time,Index Lab,https://www.yixinkaoyan.cn/,index aggregate PE,Source page reports 258 valuation samples since 2005-04-29; raw observations not publicly exposed in page text
+2026-09-16,CSI300,PB,1.40,x,point_in_time,Index Lab,https://www.yixinkaoyan.cn/,index aggregate PB,Source page reports 258 valuation samples since 2005-04-29; raw observations not publicly exposed in page text
+2026-11-11,CSI300,PE_TTM,13.40,x,point_in_time,Guchacha,https://guchacha.com/index-valuation/000300,index aggregate PE-TTM,Site page has inconsistent displayed percentile labels; snapshot only, do not merge into historical series
+2026-11-11,CSI300,PB,1.33,x,point_in_time,Guchacha,https://guchacha.com/index-valuation/000300,index aggregate PB,Site page has inconsistent displayed percentile labels; snapshot only, do not merge into historical series
+2026-11-11,HSI,PE_TTM,10.93,x,point_in_time,Guchacha,https://guchacha.com/,reported index PE-TTM,Snapshot only; no raw monthly observations extracted
+2026-11-11,HSI,PB,1.15,x,point_in_time,Guchacha,https://guchacha.com/,reported index PB,Snapshot only; no raw monthly observations extracted
+2026-11-11,NDX,PE_TTM,27.00,x,point_in_time,Guchacha,https://guchacha.com/,reported index PE-TTM,Conflicts with QQQ-proxy PE series; keep separate
+2026-11-11,NDX,PB,8.43,x,point_in_time,Guchacha,https://guchacha.com/,reported index PB,Snapshot only; no raw monthly observations extracted
+2026-11-12,NDX,PE_TTM,29.83,x,point_in_time,WorldPEratio,https://worldperatio.com/index/nasdaq-100/,QQQ NAV-based estimate,Proxy methodology; do not merge with direct index PE
