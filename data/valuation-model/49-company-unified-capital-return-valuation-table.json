@@ -202,7 +202,7 @@
       "marginOfSafety": null,
       "auditStatus": "FY2025_core_snapshot_partially_located; FY2021-2024_and_ROIC_valuation_pending",
       "notes": "ROIC / incremental ROIC / WACC / FCF / DCF+relative valuation FY2025已补录初步损益/现金流快照；不是完整五年资本效率审计。",
-      "fy2025PreliminaryAuditedSnapshot": {
+      "fy2025PreliminarySnapshot": {
         "unit": "亿元人民币",
         "revenue": 3023.467839183,
         "parentProfit": 195.5279822285,
@@ -212,7 +212,7 @@
         "acquisitionCash": 44.0933629158,
         "link": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12024960&stockid=600690",
         "status": "2025损益及现金流已定位；资产负债表投入资本待核验",
-        "note": "官方业绩发布列示FY2025收入302.35亿元?（单位为人民币十亿元：302.35），归母净利润195.5亿元；2024比较数为2860.2亿元收入、187.3亿元归母净利润。",
+        "note": "FY2025官方业绩发布列示收入302.35十亿元人民币（即3023.5亿元）、归母净利润195.5亿元；FY2024比较数收入2860.2亿元、归母净利润187.3亿元。",
         "fcfMarginPct": 5.67,
         "fcfToParentProfitPct": 87.72
       }
@@ -245,7 +245,7 @@
       "marginOfSafety": null,
       "auditStatus": "FY2025_core_snapshot_partially_located; FY2021-2024_and_ROIC_valuation_pending",
       "notes": "ROIC / incremental ROIC / WACC / FCF / DCF+relative valuation FY2025已补录初步损益/现金流快照；不是完整五年资本效率审计。",
-      "fy2025PreliminaryAuditedSnapshot": {
+      "fy2025PreliminarySnapshot": {
         "unit": "亿元人民币",
         "revenue": 4564.51731,
         "parentProfit": 439.45411,
@@ -289,7 +289,7 @@
       "marginOfSafety": null,
       "auditStatus": "FY2025_core_snapshot_partially_located; FY2021-2024_and_ROIC_valuation_pending",
       "notes": "ROIC / incremental ROIC / WACC / FCF / DCF+relative valuation FY2025已补录初步损益/现金流快照；不是完整五年资本效率审计。",
-      "fy2025PreliminaryAuditedSnapshot": {
+      "fy2025PreliminarySnapshot": {
         "unit": "亿元人民币",
         "revenue": 1704.4705853357,
         "parentProfit": 290.0310341166,
@@ -572,7 +572,7 @@
       "marginOfSafety": null,
       "auditStatus": "FY2025_core_snapshot_partially_located; FY2021-2024_and_ROIC_valuation_pending",
       "notes": "ROIC / incremental ROIC / WACC / FCF / DCF+relative valuation FY2025已补录初步损益/现金流快照；不是完整五年资本效率审计。",
-      "fy2025PreliminaryAuditedSnapshot": {
+      "fy2025PreliminarySnapshot": {
         "unit": "亿元人民币",
         "revenue": 862.419402222,
         "parentProfit": 345.0280917639,
@@ -994,7 +994,7 @@
       "marginOfSafety": null,
       "auditStatus": "FY2025_core_snapshot_partially_located; FY2021-2024_and_ROIC_valuation_pending",
       "notes": "ROAE/RAROC / equity cost / RWA-adjusted growth / distributable cash / PB-residual income FY2025已补录初步损益/现金流快照；不是完整五年资本效率审计。",
-      "fy2025PreliminaryAuditedSnapshot": {
+      "fy2025PreliminarySnapshot": {
         "unit": "亿元人民币",
         "revenue": 3375.32,
         "parentProfit": 1501.81,
