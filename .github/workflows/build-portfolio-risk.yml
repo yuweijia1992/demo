@@ -1,0 +1,37 @@
+name: Build auditable portfolio risk dashboard
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/calculate_portfolio_risk.py"
+      - ".github/workflows/build-portfolio-risk.yml"
+      - "data/investment-monthly.csv"
+permissions:
+  contents: write
+concurrency:
+  group: portfolio-risk-dashboard
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile and calculate
+        run: |
+          python -m py_compile scripts/calculate_portfolio_risk.py
+          python scripts/calculate_portfolio_risk.py
+      - name: Commit risk outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/research/portfolio-risk-dashboard.json data/research/asset_correlation_matrix.csv data/research/portfolio_nav_monthly.csv data/research/portfolio_stress_scenarios.csv
+          if git diff --cached --quiet; then echo "No risk output changes."; else
+            git commit -m "Build portfolio risk dashboard"
+            git pull --rebase origin main
+            git push origin main
+          fi
