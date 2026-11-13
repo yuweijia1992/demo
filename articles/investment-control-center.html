@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="400万元长期投资控制台：持仓录入、目标配置、偏离度、压力测试、50年提款模拟与数据审计。">
+<title>400万元投资控制台｜余暮投资实验室</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+:root{--good:#39775b;--warn:#a66a25;--bad:#a4433b}
+body{background:var(--bg)}.wrap{max-width:1180px;margin:auto;padding:0 28px}
+.top{padding:58px 0 34px;border-bottom:1px solid var(--line)}.eyebrow{letter-spacing:.16em;font-size:10px;color:var(--muted)}
+h1{font:500 clamp(36px,5vw,60px)/1.15 Georgia,"Songti SC",serif;margin:12px 0}.lead{max-width:850px;color:var(--muted);line-height:1.9}
+.nav{display:flex;gap:9px;flex-wrap:wrap;margin:22px 0}.nav a,.btn{border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:12px}
+.section{padding:38px 0;border-bottom:1px solid var(--line)}.section h2{font:500 30px Georgia,"Songti SC",serif;margin:0 0 8px}.sub{color:var(--muted);font-size:13px;margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.panel,.kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}.kpi small{color:var(--muted);font-size:11px}.kpi strong{display:block;font-size:25px;margin-top:8px}
+label{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}input,select{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:10px;font:inherit}
+.fields{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.tablewrap{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:650px;font-size:13px}th,td{padding:11px 9px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}th{color:var(--muted);font-weight:500;font-size:11px}
+.note{font-size:12px;color:var(--muted);line-height:1.8}.status{border:1px solid var(--line);border-radius:9px;padding:13px;margin:14px 0;font-size:13px}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:3px 8px;font-size:10px;color:var(--muted)}
+.good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.actions button{border:1px solid var(--line);background:var(--text);color:var(--bg);border-radius:8px;padding:10px 14px;cursor:pointer}.actions button.secondary{background:transparent;color:var(--text)}
+.bar{height:10px;background:var(--soft);border-radius:20px;overflow:hidden;margin:8px 0 16px}.bar span{display:block;height:100%;background:var(--text)}
+.chart{width:100%;height:260px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.audit{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.audit article{border:1px solid var(--line);border-radius:10px;padding:15px;background:var(--surface)}
+footer{padding:30px 0;color:var(--muted);font-size:11px}
+@media(max-width:800px){.grid,.grid3,.fields,.audit{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.wrap{padding:0 18px}.grid,.grid3,.fields,.audit{grid-template-columns:1fr}.top{padding-top:38px}.section{padding:30px 0}}
+</style></head>
+<body>
+<header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html">余暮<span> / Y.M.</span></a><nav><a href="#holdings">持仓</a><a href="#allocation">配置</a><a href="#risk">风险</a><a href="#simulator">提款模拟</a><a href="#audit">数据审计</a><a href="investment-lab.html">投资实验室</a></nav><button id="themeToggle" class="theme-btn" aria-label="切换深色模式">◐</button></div></header>
+<main class="wrap">
+<section class="top"><div class="eyebrow">Y.M. INVESTMENT CONTROL CENTER · V1.0</div><h1>让投资决策，<br>有数据、有边界、有记录。</h1><p class="lead">这是400万元长期投资系统的日常控制台。录入真实持仓后，自动计算目标金额、配置偏离和再平衡参考；提款模拟使用明确的假设参数。它不会读取券商账户，不提供实时行情，也不会自动下单。</p><div class="nav"><a href="#holdings">01 持仓与配置</a><a href="#risk">02 风险检查</a><a href="#simulator">03 50年提款</a><a href="#audit">04 数据审计</a><a href="equity-allocation-sensitivity.html">历史配置回测</a></div><div class="status warn"><b>状态：研究与执行工具，不是已批准投资指令。</b> 52/28/10/10仅作为当前研究基准；正式比例须以完整回测、产品尽调和风险审查为准。</div></section>
+<section class="section" id="holdings"><h2>01 / 录入实际持仓</h2><p class="sub">金额按人民币计。数据仅保存在当前浏览器本地；建议定期导出备份。</p>
+<div class="fields">
+<div><label for="capital">组合总资产（元）</label><input id="capital" type="number" min="0" step="1000" value="4000000"></div>
+<div><label for="annualSpend">首年年度支出（元）</label><input id="annualSpend" type="number" min="0" step="1000" value="90000"></div>
+<div><label for="equityTarget">股票目标（%）</label><input id="equityTarget" type="number" min="0" max="100" step="1" value="52"></div>
+<div><label for="bondTarget">债券目标（%）</label><input id="bondTarget" type="number" min="0" max="100" step="1" value="28"></div>
+<div><label for="goldTarget">黄金目标（%）</label><input id="goldTarget" type="number" min="0" max="100" step="1" value="10"></div>
+<div><label for="cashTarget">现金目标（%）</label><input id="cashTarget" type="number" min="0" max="100" step="1" value="10"></div>
+<div><label for="equityNow">实际股票市值（元）</label><input id="equityNow" type="number" min="0" step="1000" value="0"></div>
+<div><label for="bondNow">实际债券市值（元）</label><input id="bondNow" type="number" min="0" step="1000" value="0"></div>
+<div><label for="goldNow">实际黄金市值（元）</label><input id="goldNow" type="number" min="0" step="1000" value="0"></div>
+<div><label for="cashNow">实际现金市值（元）</label><input id="cashNow" type="number" min="0" step="1000" value="0"></div>
+</div><div class="actions"><button id="calcBtn">计算配置与交易参考</button><button class="secondary" id="saveBtn">保存到本机</button><button class="secondary" id="exportBtn">导出持仓CSV</button><button class="secondary" id="resetBtn">清空实际持仓</button></div>
+<div class="grid" style="margin-top:18px"><div class="kpi"><small>实际录入总额</small><strong id="actualTotal">¥0</strong></div><div class="kpi"><small>未分配 / 差额</small><strong id="unallocated">¥4,000,000</strong></div><div class="kpi"><small>现金可覆盖支出</small><strong id="cashYears">0.0年</strong></div><div class="kpi"><small>目标权重合计</small><strong id="targetSum">100%</strong></div></div>
+<div class="panel" style="margin-top:16px"><h3 style="margin:0 0 8px">目标金额与偏离</h3><div class="tablewrap"><table><thead><tr><th>资产类别</th><th>目标权重</th><th>目标金额</th><th>实际金额</th><th>实际权重</th><th>偏离</th><th>交易参考</th><th>状态</th></tr></thead><tbody id="allocationRows"></tbody></table></div><p class="note">交易参考 = 目标金额 − 实际金额。正数表示需要增加，负数表示需要减少；未考虑税费、产品最小交易单位、账户限制和资金到账时间。只有在目标权重合计100%且实际持仓录入完整时才适合参考。</p></div>
+</section>
+<section class="section" id="risk"><h2>02 / 风险检查</h2><p class="sub">用透明的静态冲击假设检查组合承受力。它不是预测，也不是历史最大回撤。</p><div class="grid3">
+<div class="panel"><span class="pill">温和压力</span><h3>股票 -20%</h3><p class="note">债券 -3% · 黄金 -5% · 现金 0%</p><strong id="stress1">—</strong></div>
+<div class="panel"><span class="pill">严重压力</span><h3>股票 -40%</h3><p class="note">债券 -5% · 黄金 -10% · 现金 0%</p><strong id="stress2">—</strong></div>
+<div class="panel"><span class="pill">极端压力</span><h3>股票 -50%</h3><p class="note">债券 -10% · 黄金 -15% · 现金 0%</p><strong id="stress3">—</strong></div>
+</div><div class="status" id="riskStatus">先录入持仓，再运行风险检查。</div><p class="note">当前压力测试按目标配置权重计算，不代表资产相关性在危机中保持稳定。股债可能同时下跌，汇率、流动性、产品跟踪误差和租金上涨也会改变真实结果。</p></section>
+<section class="section" id="simulator"><h2>03 / 50年提款模拟</h2><p class="sub">确定性情景计算：先施加初始冲击，再于每年年初提款，最后按年度收益率增长。结果不是成功概率；不包含税务、临时大额支出或未来收入。</p>
+<div class="fields">
+<div><label for="simCapital">起始资产（元）</label><input id="simCapital" type="number" value="4000000" step="10000"></div>
+<div><label for="simSpend">首年支出（元）</label><input id="simSpend" type="number" value="90000" step="1000"></div>
+<div><label for="simInflation">年通胀（%）</label><input id="simInflation" type="number" value="2.5" step=".1"></div>
+<div><label for="simReturn">年名义组合收益（%）</label><input id="simReturn" type="number" value="4.5" step=".1"></div>
+<div><label for="simCrash">初始一次性冲击（%）</label><input id="simCrash" type="number" value="0" step="1"></div>
+<div><label for="simYears">模拟年数</label><input id="simYears" type="number" value="50" min="1" max="80"></div>
+</div><div class="actions"><button id="simBtn">运行提款模拟</button></div><div class="grid3" style="margin:18px 0"><div class="kpi"><small>期末资产</small><strong id="simEnd">—</strong></div><div class="kpi"><small>资产耗尽年份</small><strong id="simDeplete">未耗尽</strong></div><div class="kpi"><small>首年提款率</small><strong id="simRate">—</strong></div></div><svg id="simChart" class="chart" viewBox="0 0 900 260" role="img" aria-label="50年资产余额变化图"></svg><div class="tablewrap" style="margin-top:14px"><table><thead><tr><th>年份</th><th>年初资产</th><th>当年提款</th><th>收益率</th><th>年末资产</th></tr></thead><tbody id="simRows"></tbody></table></div><p class="note">当年提款按年初通胀调整。若资产不足以覆盖提款，则当年末余额记为0并记录耗尽年份。名义收益和通胀是假设输入，建议分别测试低收益、高通胀和早期暴跌情景。</p></section>
+<section class="section" id="audit"><h2>04 / 数据质量与研究状态</h2><p class="sub">以下状态来自网站现有数据清单，不等同于全部资产已完成正式回测。</p><div class="audit">
+<article><span class="pill">月度矩阵</span><h3>2006-01 至 2026-10</h3><p class="note">250个统一月份；字段覆盖情况因资产而异，不能把矩阵行数理解为每条序列均完整。</p></article>
+<article><span class="pill">债券</span><h3>中债财富候选序列</h3><p class="note">主矩阵250个月；产品代码公开交叉核验，接口映射与数据授权仍待书面确认。</p></article>
+<article><span class="pill">港股</span><h3>2800.HK代理</h3><p class="note">人民币总回报代理225个月（2008-02至2026-10）；非恒生官方Gross TRI。</p></article>
+<article><span class="pill">美国股票</span><h3>标普500总回报代理</h3><p class="note">人民币序列247个月（2006-01至2026-07）；需保留汇率转换口径。</p></article>
+<article><span class="pill">发达 / 新兴市场</span><h3>EFA / EEM ETF代理</h3><p class="note">各247个月至2026-07；EEM含中国与台湾市场敞口，存在重复暴露。</p></article>
+<article><span class="pill">正式回测</span><h3>仍待复核</h3><p class="note">旧版100路径结果已降级；年度再平衡和初始冲击时序已修正，500路径运行结果需以新manifest核验后方可发布。</p></article>
+</div><div class="panel" style="margin-top:14px"><h3 style="margin:0 0 8px">当前关键缺口</h3><ul class="note"><li>恒生官方全收益指数历史序列及再分发许可。</li><li>人民币对冲海外债券的长期可比序列。</li><li>中国全市场、红利、港股等统一口径的完整总回报与估值历史。</li><li>宏观指标实时接入、来源时间戳与失败告警。</li><li>可投资产品费用、税务和账户可买性核验。</li></ul><div class="actions"><a class="btn" href="../data/investment-monthly-manifest.json">查看月度矩阵Manifest</a><a class="btn" href="../data/research/monthly_coverage_audit.csv">查看月份覆盖审计</a><a class="btn" href="../data/research/index_data_acquisition_status.csv">查看数据获取状态</a><a class="btn" href="equity-allocation-sensitivity.html">查看配置回测研究</a><a class="btn" href="portfolio-final-plan.html">查看组合政策方案</a></div></div>
+</section>
+<section class="section"><h2>05 / 执行纪律</h2><div class="grid3"><div class="panel"><h3>每月</h3><p class="note">更新资产市值、支出、现金覆盖年限；检查数据更新时间与异常值。</p></div><div class="panel"><h3>每季度</h3><p class="note">检查地区与行业集中度、汇率敞口、利率风险、产品跟踪误差与流动性。</p></div><div class="panel"><h3>每年</h3><p class="note">按批准的政策权重再平衡；复核支出预算、通胀假设、风险承受力和数据质量。</p></div></div><p class="note" style="margin-top:14px">纪律建议：先用新增现金流和分红修正偏离，再考虑卖出；不要因单一宏观指标或短期涨跌改变长期配置。若组合回撤达到10%/15%/20%，触发风险复核而非机械止损。</p></section>
+</main><footer class="wrap">余暮投资实验室 · 投资控制台 V1.0 · 研究工具，不构成投资建议。</footer>
+<script src="../script.js"></script>
+<script>
+const $=id=>document.getElementById(id), money=n=>'¥'+Math.round(n).toLocaleString('zh-CN'), pct=n=>(n*100).toFixed(2)+'%', ids=['equity','bond','gold','cash'], names=['股票','债券','黄金','现金'];
+function val(id){return Number($(id).value)||0}
+function targets(){return [val('equityTarget'),val('bondTarget'),val('goldTarget'),val('cashTarget')].map(x=>x/100)}
+function holdings(){return ids.map(k=>val(k+'Now'))}
+function calculate(){
+ const cap=val('capital'), ts=targets(), hs=holdings(), sum=ts.reduce((a,b)=>a+b,0), actual=hs.reduce((a,b)=>a+b,0);
+ $('actualTotal').textContent=money(actual);$('unallocated').textContent=money(cap-actual);$('cashYears').textContent=(val('annualSpend')? (hs[3]/val('annualSpend')).toFixed(1):'—')+'年';$('targetSum').textContent=pct(sum);
+ $('targetSum').className=sum>0.999&&sum<1.001?'good':'bad';
+ $('allocationRows').innerHTML=ids.map((k,i)=>{let target=cap*ts[i], w=actual?hs[i]/actual:0, drift=w-ts[i], trade=target-hs[i], threshold=i<2?.05:.02, status=Math.abs(drift)>threshold?'触发复核':'阈值内';return '<tr><td>'+names[i]+'</td><td>'+pct(ts[i])+'</td><td>'+money(target)+'</td><td>'+money(hs[i])+'</td><td>'+pct(w)+'</td><td>'+((drift>=0?'+':'')+pct(drift))+'</td><td>'+(trade>=0?'增加 ':'减少 ')+money(Math.abs(trade))+'</td><td>'+status+'</td></tr>'}).join('');
+ const stress=[[-.20,-.03,-.05,0],[-.40,-.05,-.10,0],[-.50,-.10,-.15,0]];
+ stress.forEach((s,i)=>{$('stress'+(i+1)).textContent=pct(s.reduce((a,r,j)=>a+ts[j]*r,0))});
+ $('riskStatus').textContent='目标权重合计 '+pct(sum)+'。'+(Math.abs(sum-1)>.001?'权重合计不等于100%，请先修正。':'按当前目标权重完成静态压力测试；若实际持仓未录入，结果仅反映目标组合。');
+ $('homeDataStatus')?.textContent; 
+}
+function persist(){let obj={};['capital','annualSpend','equityTarget','bondTarget','goldTarget','cashTarget','equityNow','bondNow','goldNow','cashNow'].forEach(id=>obj[id]=$(id).value);localStorage.setItem('ym-investment-control-v1',JSON.stringify(obj));}
+function load(){try{let o=JSON.parse(localStorage.getItem('ym-investment-control-v1')||'{}');Object.entries(o).forEach(([k,v])=>{if($(k))$(k).value=v})}catch(e){}}
+$('calcBtn').onclick=calculate;$('saveBtn').onclick=()=>{persist();alert('已保存到当前浏览器。')};
+$('resetBtn').onclick=()=>{ids.forEach(k=>$(k+'Now').value=0);calculate()};
+$('exportBtn').onclick=()=>{let rows=[['资产','目标权重','目标金额','实际金额'],...ids.map((k,i)=>[names[i],targets()[i],val('capital')*targets()[i],val(k+'Now')])];let csv='\\ufeff'+rows.map(r=>r.join(',')).join('\\n');let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));a.download='投资持仓与目标配置.csv';a.click();URL.revokeObjectURL(a.href)};
+function simulate(){
+ let balance=val('simCapital')*(1-val('simCrash')/100), spend=val('simSpend'), inf=val('simInflation')/100, ret=val('simReturn')/100, years=Math.max(1,Math.min(80,Math.floor(val('simYears'))||50)), depletion=null, data=[];
+ for(let y=1;y<=years;y++){let start=balance, draw=spend*Math.pow(1+inf,y-1);if(balance<=0){depletion=depletion||y;data.push({y,start:0,draw,ret,end:0});continue}balance=Math.max(0,balance-draw);balance*=1+ret;if(balance<=0&&depletion===null)depletion=y;data.push({y,start,draw,ret,end:balance})}
+ $('simEnd').textContent=money(balance);$('simDeplete').textContent=depletion?'第'+depletion+'年':'未耗尽';$('simRate').textContent=val('simCapital')?pct(val('simSpend')/val('simCapital')):'—';
+ $('simRows').innerHTML=data.map(d=>'<tr><td>'+d.y+'</td><td>'+money(d.start)+'</td><td>'+money(d.draw)+'</td><td>'+pct(d.ret)+'</td><td>'+money(d.end)+'</td></tr>').join('');
+ let max=Math.max(...data.map(d=>d.start),1), pts=data.map((d,i)=>[35+i*830/Math.max(1,years-1),220-d.end/max*190]), line=pts.map(p=>p.join(',')).join(' ');
+ $('simChart').innerHTML='<line x1="35" y1="220" x2="865" y2="220" stroke="currentColor" opacity=".25"/><line x1="35" y1="25" x2="35" y2="220" stroke="currentColor" opacity=".25"/><polyline points="'+line+'" fill="none" stroke="currentColor" stroke-width="3"/><text x="40" y="18" fill="currentColor" font-size="12">资产余额（相对起始峰值）</text><text x="40" y="245" fill="currentColor" font-size="11">第1年</text><text x="820" y="245" fill="currentColor" font-size="11">第'+years+'年</text>';
+}
+$('simBtn').onclick=simulate;load();calculate();simulate();
+</script></body></html>
