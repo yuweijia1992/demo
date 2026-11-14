@@ -118,16 +118,16 @@
       "code": "000651.SZ",
       "reports": {
         "2021": {
-          "status": "pending",
-          "fullReportUrl": null,
-          "sourceType": null,
-          "note": "需补FY2021年报全文。"
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2022/2022-4/2022-04-30/8179894.PDF",
+          "sourceType": "Annual report PDF archive (Sina-hosted; issuer annual report)",
+          "note": "已定位2021年年度报告全文；报告印刷页约111页起为财务报告，摘要指标可由报告首页后部核对。"
         },
         "2022": {
-          "status": "pending",
-          "fullReportUrl": null,
-          "sourceType": null,
-          "note": "需补FY2022年报全文。"
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2023/2023-4/2023-04-29/9183913.PDF",
+          "sourceType": "Annual report PDF archive (Sina-hosted; issuer annual report)",
+          "note": "已定位2022年年度报告全文；报告印刷页约113页起为财务报告。"
         },
         "2023": {
           "status": "officialFullReportLocated",
@@ -160,10 +160,10 @@
           "note": "已定位官方年报全文；首页确认公司代码600900及FY2021；需逐项核对报表。"
         },
         "2022": {
-          "status": "pending",
-          "fullReportUrl": null,
-          "sourceType": null,
-          "note": "需补FY2022年报全文，并核对同一控制下企业合并追溯调整。"
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2023-04-28/1216664110.PDF",
+          "sourceType": "CNINFO FY2022 annual report",
+          "note": "已定位巨潮资讯官方FY2022年报全文；报告印刷页84页起为财务报告，含2021比较数据。"
         },
         "2023": {
           "status": "officialFullReportLocated",
@@ -243,34 +243,24 @@
     ]
   },
   "auditUpdate": {
-    "verifiedNewReportEntrypoints": 5,
+    "additionalFullTextReportsLocated": 3,
     "added": [
       {
-        "company": "海尔智家",
+        "company": "格力电器",
         "year": 2021,
-        "url": "https://static.cninfo.com.cn/finalpage/2022-03-31/1212752481.PDF"
+        "url": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2022/2022-4/2022-04-30/8179894.PDF"
       },
       {
-        "company": "海尔智家",
+        "company": "格力电器",
         "year": 2022,
-        "url": "https://static.cninfo.com.cn/finalpage/2023-03-31/1216279243.PDF"
-      },
-      {
-        "company": "美的集团",
-        "year": 2021,
-        "url": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213264815.PDF"
-      },
-      {
-        "company": "美的集团",
-        "year": 2022,
-        "url": "https://static.cninfo.com.cn/finalpage/2023-04-29/1216695045.PDF"
+        "url": "https://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESZ_STOCK/2023/2023-4/2023-04-29/9183913.PDF"
       },
       {
         "company": "长江电力",
-        "year": 2021,
-        "url": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213270599.PDF"
+        "year": 2022,
+        "url": "https://static.cninfo.com.cn/finalpage/2023-04-28/1216664110.PDF"
       }
     ],
-    "limits": "来源入口定位不等于三张主表逐项核验；格力2021—2022、长江电力2022、招商银行2021—2023仍待建立准确逐年全文映射。"
+    "caution": "定位报告全文不等于三张报表和附注已逐项核验。"
   }
 }
