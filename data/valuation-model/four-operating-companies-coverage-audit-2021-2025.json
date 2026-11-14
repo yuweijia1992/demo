@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-11-14",
+  "title": "四家经营企业2021—2025数据覆盖与审计状态",
+  "sourceFile": "data/valuation-model/four-operating-companies-standardized-statement-audit-2021-2025.json",
+  "scope": {
+    "companies": 4,
+    "companyYearRecords": 20,
+    "statementGroups": 60,
+    "fieldSlots": 760,
+    "consolidation": "合并口径",
+    "targetUnit": "人民币元（原始报告单位待逐份确认）"
+  },
+  "aggregate": {
+    "sourceReportsLocated": 20,
+    "legacyFieldSlots": 760,
+    "legacyStoredValues": 598,
+    "emptySlots": 162,
+    "mappedFields": 598,
+    "sourceVerifiedFields": 45,
+    "contentVerifiedYearGroups": 5,
+    "fullyAuditedYearGroups": 0,
+    "unitConfirmedYearGroups": 5,
+    "fullStatementsTranscribed": false,
+    "criticalInterpretation": "20个年度的旧底稿字段已归集到统一矩阵，但其中598个非空值仍有大量缺少原报告单位/页码核验；45个字段标记为已对照年报，5个年度有部分内容级核验细节。没有任何一个年度可认定三张报表及附注全部审计完成。"
+  },
+  "companies": [
+    {
+      "name": "海尔智家",
+      "years": 5,
+      "sourceReports": 5,
+      "fields": 190,
+      "populated": 150,
+      "verified": 9,
+      "detail": 2,
+      "unitConfirmedYearGroups": 2
+    },
+    {
+      "name": "美的集团",
+      "years": 5,
+      "sourceReports": 5,
+      "fields": 190,
+      "populated": 153,
+      "verified": 13,
+      "detail": 1,
+      "unitConfirmedYearGroups": 1
+    },
+    {
+      "name": "格力电器",
+      "years": 5,
+      "sourceReports": 5,
+      "fields": 190,
+      "populated": 147,
+      "verified": 12,
+      "detail": 2,
+      "unitConfirmedYearGroups": 2
+    },
+    {
+      "name": "长江电力",
+      "years": 5,
+      "sourceReports": 5,
+      "fields": 190,
+      "populated": 148,
+      "verified": 11,
+      "detail": 0,
+      "unitConfirmedYearGroups": 0
+    }
+  ],
+  "blockers": [
+    "旧底稿reportedUnit三个报表口径均为空，除5个已建专项底稿年度外，其余年度需从报告标题/页眉确认单位。",
+    "598个非空旧底稿值不是598个官方核验值；字段级sourceVerification仅45个通过。",
+    "仍有162个字段空缺，必须区分未披露、不适用、抓取遗漏和未核验。",
+    "利润表、资产负债表、现金流量表尚未逐项完整转录，不能声称20个年度均完成三表勾稽。",
+    "美的与格力的金融业务必须从工业经营资本和经营收益剥离。",
+    "长江电力2022年重大资产购买与并表范围变化需要重述可比口径。",
+    "现金、金融资产、受限资金、有息债务、租赁负债、商誉和并购支出均需附注核验。"
+  ],
+  "auditStatus": "20-year-field-matrix-assembled; partial-official-checks; full-statement-audit-pending"
+}
