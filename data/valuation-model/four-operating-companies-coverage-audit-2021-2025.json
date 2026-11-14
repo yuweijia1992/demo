@@ -22,7 +22,11 @@
     "fullyAuditedYearGroups": 0,
     "unitConfirmedYearGroups": 5,
     "fullStatementsTranscribed": false,
-    "criticalInterpretation": "20个年度的旧底稿字段已归集到统一矩阵，但其中598个非空值仍有大量缺少原报告单位/页码核验；45个字段标记为已对照年报，5个年度有部分内容级核验细节。没有任何一个年度可认定三张报表及附注全部审计完成。"
+    "criticalInterpretation": "20个年度的旧底稿字段已归集到统一矩阵，但其中598个非空值仍有大量缺少原报告单位/页码核验；45个字段标记为已对照年报，5个年度有部分内容级核验细节。没有任何一个年度可认定三张报表及附注全部审计完成。",
+    "detailedCompanyYearGroups": 2,
+    "detailedStatementGroups": 6,
+    "fullStatementArithmeticChecksPassed": 6,
+    "noteLevelClassificationCompleted": false
   },
   "companies": [
     {
@@ -75,5 +79,34 @@
     "长江电力2022年重大资产购买与并表范围变化需要重述可比口径。",
     "现金、金融资产、受限资金、有息债务、租赁负债、商誉和并购支出均需附注核验。"
   ],
-  "auditStatus": "20-year-field-matrix-assembled; partial-official-checks; full-statement-audit-pending"
+  "auditStatus": "20-year-field-matrix-assembled; partial-official-checks; full-statement-audit-pending",
+  "detailedStatementAudit": {
+    "companyYearGroupsWithDetailedTranscription": 2,
+    "statementGroupsTranscribed": 6,
+    "companies": [
+      "海尔智家",
+      "格力电器"
+    ],
+    "year": 2024,
+    "statementTypes": [
+      "合并资产负债表",
+      "合并利润表",
+      "合并现金流量表"
+    ],
+    "reconciliationChecks": 6,
+    "passed": 6,
+    "sourcePages": {
+      "海尔智家_FY2024": {
+        "balance": "117-119",
+        "income": "121-123",
+        "cashflow": "124-126"
+      },
+      "格力电器_FY2024": {
+        "balance": "111-112",
+        "income": "113-114",
+        "cashflow": "114-115"
+      }
+    },
+    "note": "两家FY2024报表主要有金额科目已转录并完成算术勾稽。仍需附注级金融/经营分类，且不能代表完整20年度审计完成。"
+  }
 }
