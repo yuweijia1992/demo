@@ -1964,7 +1964,7 @@
         "nonNullFields": 30,
         "sourceVerifiedFields": 4,
         "fullThreeStatementsVerified": false,
-        "auditLevel": "partial_content_verified"
+        "auditLevel": "full_primary_statement_line_items_transcribed; arithmetic_reconciled; note_classification_partial"
       },
       "statementChecks": [
         {
@@ -1998,7 +1998,13 @@
         "现金及现金等价物、受限资金与金融资产分类",
         "短期/长期借款、一年内到期债务、债券和租赁负债附注拆分",
         "商誉、并购支付、长期股权投资及非经常项目附注核验"
-      ]
+      ],
+      "detailedTranscription": true,
+      "detailedTranscriptionSourcePages": {
+        "balance": "117-119",
+        "income": "121-123",
+        "cashflow": "124-126"
+      }
     },
     {
       "company": "海尔智家",
@@ -6582,7 +6588,7 @@
         "nonNullFields": 30,
         "sourceVerifiedFields": 4,
         "fullThreeStatementsVerified": false,
-        "auditLevel": "partial_content_verified"
+        "auditLevel": "full_primary_statement_line_items_transcribed; arithmetic_reconciled; note_classification_partial"
       },
       "statementChecks": [
         {
@@ -6616,7 +6622,13 @@
         "现金及现金等价物、受限资金与金融资产分类",
         "短期/长期借款、一年内到期债务、债券和租赁负债附注拆分",
         "商誉、并购支付、长期股权投资及非经常项目附注核验"
-      ]
+      ],
+      "detailedTranscription": true,
+      "detailedTranscriptionSourcePages": {
+        "balance": "111-112",
+        "income": "113-114",
+        "cashflow": "114-115"
+      }
     },
     {
       "company": "格力电器",
@@ -9929,7 +9941,7 @@
         },
         "operatingCashFlow": {
           "formula": "经营现金流入小计-经营现金流出小计-经营现金流量净额",
-          "difference": 0.00002288818359375,
+          "difference": 0,
           "status": "passed"
         }
       },
@@ -10738,17 +10750,17 @@
       "reconciliations": {
         "balance": {
           "formula": "资产总计-负债合计-股东权益合计",
-          "difference": -0.000030517578125,
+          "difference": 0,
           "status": "passed"
         },
         "profitAttribution": {
           "formula": "净利润-归母净利润-少数股东损益",
-          "difference": -2.980232238769531e-7,
+          "difference": 0,
           "status": "passed"
         },
         "operatingCashFlow": {
           "formula": "经营现金流入小计-经营现金流出小计-经营现金流量净额",
-          "difference": 0.000003814697265625,
+          "difference": 0,
           "status": "passed"
         }
       },
@@ -10772,6 +10784,7 @@
     "statementsTranscribed": 6,
     "statementReconciliationsPassed": 6,
     "scopeNote": "两家公司FY2024合并报表的主要有金额科目已按年报原文逐项转录，附注索引、原报告单位和印刷页码保留。空白列报项目未强行填0；本记录仍不等于所有附注和经营/金融业务分类全部完成。",
-    "next": "将此结构复制到其余18个公司年度，并逐项核验单位、比较期重述、完整报表和附注。"
+    "next": "将此结构复制到其余18个公司年度，并逐项核验单位、比较期重述、完整报表和附注。",
+    "reconciliationTolerance": "人民币0.01元；二进制浮点展示误差按分位四舍五入"
   }
 }
