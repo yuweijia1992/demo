@@ -27,9 +27,9 @@
     "annualCompanyYearSlots": 20,
     "threeStatementSlots": 60,
     "officialReportSourceMappedSlots": 0,
-    "statementYearGroupsContentVerified": 3,
+    "statementYearGroupsContentVerified": 5,
     "fullyAuditedFiveYearCompanyGroups": 0,
-    "note": "3组代表下方已录入的部分报表内容级核验，不代表对应年度全部科目或整家公司五年报表已经完成。"
+    "note": "5组代表已录入并勾稽的关键科目摘录：美的FY2021、海尔FY2023/FY2024、格力FY2023/FY2024。均非完整报表逐行转录，也不代表四家公司五年报表完成。FY2023值来自FY2024年报比较列，优先保持同一报告内可比。"
   },
   "standardFields": {
     "income": [
@@ -393,6 +393,208 @@
         "notes": "pending",
         "financialCompanySegmentSplit": "pending",
         "capitalReclassification": "pending"
+      }
+    },
+    {
+      "company": "海尔智家",
+      "code": "600690.SH",
+      "year": 2023,
+      "sourceUnit": "RMB元",
+      "baseUnit": "RMB元",
+      "conversionFactor": 1,
+      "source": {
+        "url": "https://static.cninfo.com.cn/finalpage/2025-03-28/1222926246.PDF",
+        "report": "2024年年度报告中的2023比较数据（采用最新比较列）",
+        "pages": {
+          "balance": "117-119",
+          "income": "121-122",
+          "cashflow": "124-125"
+        },
+        "comparativeColumn": true
+      },
+      "income": {
+        "operatingRevenue": 274204520847.97,
+        "totalOperatingRevenue": 274204520847.97,
+        "operatingProfit": 20380991449.18,
+        "profitBeforeTax": 20211643792.71,
+        "incomeTaxExpense": 3123163218.75,
+        "netProfit": 17088480573.96,
+        "parentNetProfit": 16596615045.87,
+        "minorityNetProfit": 491865528.09,
+        "interestExpense": 2165467567.74,
+        "interestIncome": 1553163297.95,
+        "investmentIncome": 1698715871.28,
+        "creditImpairment": -253401373.48,
+        "assetImpairment": -1512214011.21
+      },
+      "balance": {
+        "cash": 57255962206.24,
+        "tradingFinancialAssets": 956995543.83,
+        "debtInvestments": 9117874328.66,
+        "longTermEquityInvestments": 20196199306.57,
+        "accountsReceivable": 22682921254.25,
+        "inventory": 39524006616.33,
+        "fixedAssets": 33425684876.9,
+        "constructionInProgress": 5951859455.98,
+        "rightOfUseAssets": 4776765275.9,
+        "intangibleAssets": 12454321237.18,
+        "goodwill": 24482559414.46,
+        "currentBorrowings": 10895076014.86,
+        "currentMaturitiesDebt": 4046582815.19,
+        "longTermBorrowings": 18365302925.77,
+        "leaseLiabilities": 3429765203.81,
+        "totalAssets": 261067684897.49,
+        "totalLiabilities": 153537344924.15,
+        "parentEquity": 101265984771.17,
+        "minorityEquity": 6264355202.17,
+        "totalEquity": 107530339973.34
+      },
+      "cashflow": {
+        "operatingCashFlow": 26535780568.36,
+        "capex": 10541562038.81,
+        "investmentPurchases": 17086481212.21,
+        "acquisitionsPaid": 156312111.87,
+        "debtProceeds": 20942089528.6,
+        "debtRepayments": 18853901331.62,
+        "dividendsAndInterestPaidCombined": 7256095863.08
+      },
+      "reconciliations": [
+        {
+          "name": "资产负债表",
+          "formula": "totalAssets = totalLiabilities + totalEquity",
+          "left": 261067684897.49,
+          "right": 261067684897.49,
+          "difference": 0,
+          "status": "passed"
+        },
+        {
+          "name": "利润归属",
+          "formula": "parentNetProfit + minorityNetProfit = netProfit",
+          "left": 17088480573.96,
+          "right": 17088480573.96,
+          "difference": 0,
+          "status": "passed"
+        },
+        {
+          "name": "经营现金流",
+          "formula": "cashInflows - cashOutflows = operatingCashFlow",
+          "left": 26535780568.36,
+          "right": 26535780568.36,
+          "difference": 0,
+          "status": "passed"
+        }
+      ],
+      "audit": {
+        "unit": "verified_RMB",
+        "keyStatementLines": "content_verified_from_FY2024_comparative_column",
+        "fullStatements": "partial_extract_only",
+        "notes": "pending",
+        "comparativeBasis": "FY2024 annual report comparative column"
+      }
+    },
+    {
+      "company": "格力电器",
+      "code": "000651.SZ",
+      "year": 2023,
+      "sourceUnit": "RMB元",
+      "baseUnit": "RMB元",
+      "conversionFactor": 1,
+      "source": {
+        "url": "https://static.cninfo.com.cn/finalpage/2025-04-28/1223330631.PDF",
+        "report": "2024年年度报告中的2023比较数据（采用最新比较列）",
+        "pages": {
+          "balance": "110-111",
+          "income": "112-113",
+          "cashflow": "113-114"
+        },
+        "comparativeColumn": true
+      },
+      "income": {
+        "operatingRevenue": 203979266387.09,
+        "totalOperatingRevenue": 205018123834.21,
+        "interestIncome": 1038856837.77,
+        "operatingProfit": 32864780357.76,
+        "profitBeforeTax": 32815703838.19,
+        "incomeTaxExpense": 5096680924.6,
+        "netProfit": 27719022913.59,
+        "parentNetProfit": 29017387604.18,
+        "minorityNetProfit": -1298364690.59,
+        "interestExpense": 2962205439.75,
+        "investmentIncome": 217156605.23,
+        "fairValueChange": 437583988.72,
+        "creditImpairment": -824045112.3,
+        "assetImpairment": -2493579694.08
+      },
+      "balance": {
+        "cash": 124104987289.62,
+        "tradingFinancialAssets": 9614423403.4,
+        "reverseRepo": 3932338954.49,
+        "loansAndAdvances": 543726609.23,
+        "debtInvestments": 1150744482.05,
+        "otherDebtInvestments": 16363841665.96,
+        "equityInvestments": 3864865509.37,
+        "accountsReceivable": 16099477117.56,
+        "inventory": 32579140028.7,
+        "fixedAssets": 34034829116.47,
+        "constructionInProgress": 6563911378.94,
+        "rightOfUseAssets": 842250508.12,
+        "intangibleAssets": 10827694521.82,
+        "goodwill": 1452496852.11,
+        "currentBorrowings": 26443476388.52,
+        "currentMaturitiesDebt": 20605521073.03,
+        "longTermBorrowings": 39035742535.09,
+        "leaseLiabilities": 767007951.92,
+        "customerDepositsAndInterbankFunding": 254616899.35,
+        "totalAssets": 368053902576.37,
+        "totalLiabilities": 247407749159.93,
+        "parentEquity": 116793716103.39,
+        "minorityEquity": 3852437313.05,
+        "totalEquity": 120646153416.44
+      },
+      "cashflow": {
+        "operatingCashFlow": 56398426354.17,
+        "capex": 5425734302.92,
+        "investmentPurchases": 84267244633.47,
+        "acquisitionsPaid": 239342398.39,
+        "debtProceeds": 68622584547.14,
+        "debtRepayments": 87009692089.6,
+        "dividendsAndInterestPaidCombined": 13811350664.09
+      },
+      "reconciliations": [
+        {
+          "name": "资产负债表",
+          "formula": "totalAssets = totalLiabilities + totalEquity",
+          "left": 368053902576.37,
+          "right": 368053902576.37,
+          "difference": 0,
+          "status": "passed"
+        },
+        {
+          "name": "利润归属",
+          "formula": "parentNetProfit + minorityNetProfit = netProfit",
+          "left": 27719022913.59,
+          "right": 27719022913.59,
+          "difference": 0,
+          "status": "passed"
+        },
+        {
+          "name": "经营现金流",
+          "formula": "cashInflows - cashOutflows = operatingCashFlow",
+          "left": 56398426354.17,
+          "right": 56398426354.17,
+          "difference": 0,
+          "status": "passed"
+        }
+      ],
+      "classification": {
+        "financialBusiness": "同一份年报显示2023比较列含格力财务公司相关金融资产负债与现金流，需单独剥离。"
+      },
+      "audit": {
+        "unit": "verified_RMB",
+        "keyStatementLines": "content_verified_from_FY2024_comparative_column",
+        "fullStatements": "partial_extract_only",
+        "notes": "pending",
+        "comparativeBasis": "FY2024 annual report comparative column"
       }
     }
   ],
