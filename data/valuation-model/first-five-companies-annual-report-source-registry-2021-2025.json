@@ -59,10 +59,33 @@
       "code": "000333.SZ",
       "reports": {
         "2021": {
-          "status": "officialFullReportLocated",
+          "status": "content_partially_verified",
           "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213264815.PDF",
           "sourceType": "CNINFO FY2021 annual report full text",
-          "note": "已定位官方年报全文；单位含千元披露，资产负债摘要可见总资产387,946,104千元、归母净资产124,868,124千元；需逐项转录三张主表。"
+          "note": "已定位官方年报全文；单位含千元披露，资产负债摘要可见总资产387,946,104千元、归母净资产124,868,124千元；需逐项转录三张主表。",
+          "contentAudit": {
+            "verifiedReportUrl": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213264815.PDF",
+            "verifiedSections": [
+              "FY2021关键财务指标",
+              "合并资产负债表关键科目",
+              "合并利润表关键科目",
+              "合并现金流量表关键科目"
+            ],
+            "financialStatementPages": [
+              "146-152"
+            ],
+            "extractedDataFile": "data/valuation-model/midea-fy2021-content-verified-financial-statements.json",
+            "reconciliations": [
+              "资产总计=负债合计+权益合计",
+              "营业总收入=营业收入+利息收入+手续费佣金收入",
+              "经营现金流入小计-经营现金流出小计=经营现金流净额"
+            ],
+            "limitations": [
+              "关键科目摘录并非全部报表逐行转录",
+              "类金融业务尚未分部剥离",
+              "投入资本、NOPAT、ROIC和估值未完成"
+            ]
+          }
         },
         "2022": {
           "status": "officialFullReportLocated",
