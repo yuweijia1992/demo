@@ -179,13 +179,31 @@
 <div class="ve-table-wrap"><table><thead><tr><th>公司</th><th>保存时间</th><th>研究状态</th><th>模型</th><th>基准价值</th><th>基准买入价</th><th>数据日期</th><th>操作</th></tr></thead><tbody id="decisionRows"><tr><td colspan="8">暂无本地保存记录。</td></tr></tbody></table></div>
 </section>
 <p class="ve-note">数据文件：<a href="../data/china-stocks-financial-valuation.json">china-stocks-financial-valuation.json</a> · <a href="china-stocks-six-layers.html">返回六层股票研究</a> · <a href="../index.html">首页</a></p>
-<section class="ve-panel" id="capital-efficiency-audit"><h2>04 / 49家公司五年资本效率审计</h2><p class="muted">统一审计主档扩展至研究池全部49家公司：43家经营企业、2家银行、2家保险公司、2家券商/互联网金融；其中5家以港股为主要上市地。2021—2025年按行业模型分别审计，银行、保险、券商不套用工业企业ROIC。逐项记录原始科目、单位、年报页码、附注号、版本差异与核验状态；未核验项目保留空值。</p><p class="ve-note"><b>当前状态：</b>已建立245个公司年度审计单元，逐年使用行业适配字段模板；已登记49家公司2025年年报官方链接，但仅为链接登记，尚未逐页核验。2021—2024年历史报告、页码、附注及报表数据仍待补齐。该主档是统一审计框架，不代表49家公司五年报表已经完成。</p><p class="ve-note"><a href="../data/valuation-model/five-company-capital-efficiency-audit-master.json" target="_blank" rel="noopener">打开五家公司五年资本效率统一审计主档（JSON）</a> · <a href="../data/valuation-model/first-five-companies-fy2025-annual-report-verification.json" target="_blank" rel="noopener">年报核验底稿</a> · <a href="../data/valuation-model/first-five-companies-financial-audit-2021-2025-v2.json" target="_blank" rel="noopener">五年财务审计底稿</a> · <a href="../data/valuation-model/issuer-report-index-49.json" target="_blank" rel="noopener">49家公司官方年报索引</a> · <a href="../data/valuation-model/49-company-annual-report-source-and-audit-registry-2021-2025.json" target="_blank" rel="noopener">49家公司2021—2025年报来源与审计状态总登记簿</a> · <a href="../data/valuation-model/midea-fy2025-content-verified-financial-statements.json" target="_blank" rel="noopener">美的FY2025三张主表原值与勾稽审计（已核验）</a></p><p class="ve-note">正式ROIC、增量ROIC、EVA及并购回报仍受逐项附注核验、NOPAT正常化和投入资本口径勾稽约束；招商银行按ROAE/RAROC/资本充足率/RWA单独分析。</p><p class="ve-note"><b>本轮进度（2026-11-13）：</b>已将首批5家公司FY2025核心财务快照写入统一比较表。美的FY2025三张主表已进一步完成内容级核验：原始单位、合并口径、资产负债表勾稽、营业总收入拆分及现金流计算均已记录；简化FCF为422.04亿元，并购现金支出61.55亿元单列。海尔、长江电力、格力的核心快照仍待逐项页码/附注复核；招商银行使用银行专属指标。全体公司的投入资本分类、正常化NOPAT、WACC、增量ROIC及合理价值尚未完成，不发布正式排名。</p><p class="ve-note"><b>美的FY2025收入勾稽：</b>已根据官方年报合并利润表解释营业总收入4,585.02亿元与营业收入4,564.52亿元的差异：其中利息收入20.50亿元、手续费及佣金收入约0.005亿元。经营业务收入序列采用营业收入，不将利息收入混入经营收入；后续NOPAT另行剥离金融收益。</p><section class="ve-panel" id="remaining-work-audit">
+<section class="ve-panel" id="capital-efficiency-audit"><h2>04 / 49家公司五年资本效率审计</h2><p class="muted">统一审计主档扩展至研究池全部49家公司：43家经营企业、2家银行、2家保险公司、2家券商/互联网金融；其中5家以港股为主要上市地。2021—2025年按行业模型分别审计，银行、保险、券商不套用工业企业ROIC。逐项记录原始科目、单位、年报页码、附注号、版本差异与核验状态；未核验项目保留空值。</p><p class="ve-note"><b>当前状态：</b>已建立245个公司年度审计单元，逐年使用行业适配字段模板；已登记49家公司2025年年报官方链接，但仅为链接登记，尚未逐页核验。2021—2024年历史报告、页码、附注及报表数据仍待补齐。该主档是统一审计框架，不代表49家公司五年报表已经完成。</p><p class="ve-note"><a href="../data/valuation-model/five-company-capital-efficiency-audit-master.json" target="_blank" rel="noopener">打开五家公司五年资本效率统一审计主档（JSON）</a> · <a href="../data/valuation-model/first-five-companies-fy2025-annual-report-verification.json" target="_blank" rel="noopener">年报核验底稿</a> · <a href="../data/valuation-model/first-five-companies-financial-audit-2021-2025-v2.json" target="_blank" rel="noopener">五年财务审计底稿</a> · <a href="../data/valuation-model/issuer-report-index-49.json" target="_blank" rel="noopener">49家公司官方年报索引</a> · <a href="../data/valuation-model/49-company-annual-report-source-and-audit-registry-2021-2025.json" target="_blank" rel="noopener">49家公司2021—2025年报来源与审计状态总登记簿</a> · <a href="../data/valuation-model/midea-fy2025-content-verified-financial-statements.json" target="_blank" rel="noopener">美的FY2025三张主表原值与勾稽审计（已核验）</a></p><p class="ve-note">正式ROIC、增量ROIC、EVA及并购回报仍受逐项附注核验、NOPAT正常化和投入资本口径勾稽约束；招商银行按ROAE/RAROC/资本充足率/RWA单独分析。</p><p class="ve-note"><b>本轮进度（2026-11-13）：</b>已将首批5家公司FY2025核心财务快照写入统一比较表。美的FY2025三张主表已进一步完成内容级核验：原始单位、合并口径、资产负债表勾稽、营业总收入拆分及现金流计算均已记录；简化FCF为422.04亿元，并购现金支出61.55亿元单列。海尔、长江电力、格力的核心快照仍待逐项页码/附注复核；招商银行使用银行专属指标。全体公司的投入资本分类、正常化NOPAT、WACC、增量ROIC及合理价值尚未完成，不发布正式排名。</p><p class="ve-note"><b>美的FY2025收入勾稽：</b>已根据官方年报合并利润表解释营业总收入4,585.02亿元与营业收入4,564.52亿元的差异：其中利息收入20.50亿元、手续费及佣金收入约0.005亿元。经营业务收入序列采用营业收入，不将利息收入混入经营收入；后续NOPAT另行剥离金融收益。</p><section class="ve-panel" id="cmb-fy2025-audit">
+<h3>招商银行（600036.SH / 03968.HK）｜FY2025银行专属指标核验</h3>
+<p class="ve-note"><span class="pill">官方年报关键指标已核验</span> 来源为招商银行2025年度报告（A股），人民币百万元口径。已从官方年报核对经营业绩、ROAA/ROAE、净息差、资产质量和资本充足率；尚未逐项转录三张主表与全部附注，亦未完成估值。</p>
+<div class="ve-table-wrap"><table><thead><tr><th>指标</th><th>FY2025</th><th>FY2024</th><th>变化/说明</th></tr></thead><tbody>
+<tr><td>营业收入</td><td>3,375.32亿元</td><td>3,374.88亿元</td><td>同比+0.01%</td></tr>
+<tr><td>归母净利润</td><td>1,501.81亿元</td><td>1,483.91亿元</td><td>同比+1.21%</td></tr>
+<tr><td>ROAA / ROAE</td><td>1.19% / 13.44%</td><td>1.28% / 14.49%</td><td>盈利回报率下降</td></tr>
+<tr><td>净息差 / 净利差</td><td>1.87% / 1.78%</td><td>1.98% / 1.86%</td><td>息差继续收窄</td></tr>
+<tr><td>不良贷款率</td><td>0.94%</td><td>0.95%</td><td>改善0.01个百分点</td></tr>
+<tr><td>拨备覆盖率 / 贷款拨备率</td><td>391.79% / 3.68%</td><td>411.98% / 3.92%</td><td>风险缓冲指标回落</td></tr>
+<tr><td>信用成本</td><td>0.60%</td><td>0.65%</td><td>下降0.05个百分点</td></tr>
+<tr><td>高级法核心一级 / 总资本充足率</td><td>14.16% / 18.24%</td><td>14.86% / 19.05%</td><td>均下降</td></tr>
+<tr><td>权重法核心一级 / 总资本充足率</td><td>11.92% / 15.00%</td><td>12.43% / 15.73%</td><td>与高级法口径分开</td></tr>
+</tbody></table></div>
+<p class="ve-note"><b>初步判断：</b>营收和归母利润小幅增长，但ROAE由14.49%降至13.44%，净息差由1.98%降至1.87%；不良率略有改善，拨备覆盖率和贷款拨备率下降。后续估值必须检验可持续ROE与股权资本成本，不能只看低不良率或单年利润增长。</p>
+<p class="ve-note"><b>模型边界：</b>银行不计算工业企业ROIC、净债务或“经营现金流减资本开支”的简化FCF；采用普通股股东权益、可持续ROE、股权资本成本和剩余收益/PB-ROE框架。FY2025经营现金流451,457百万元仅作为报告披露数据，不直接视为可分配自由现金流。</p>
+<p class="ve-note">原始底稿：<a href="../data/valuation-model/cmb-fy2025-content-verified-bank-metrics.json" target="_blank" rel="noopener">招商银行FY2025官方年报核验JSON</a> · <a href="https://static.cninfo.com.cn/finalpage/2026-03-28/1225047590.PDF" target="_blank" rel="noopener">官方年报全文PDF</a></p>
+</section>
+<section class="ve-panel" id="remaining-work-audit">
 <h2>全研究池验收总账｜2026-11-14</h2>
 <p class="ve-note"><b>先给出真实结论：</b>49家公司估值工程尚未完成，不能把“年报链接已登记”当作“五年财务数据已审计”。本页将来源定位、原值提取、主表勾稽、附注分类、资本效率和估值六个阶段分开统计；未过关的数据不参与排名、不输出虚假合理价。</p>
 <div class="ve-metrics">
 <div class="ve-metric"><small>研究公司</small><strong>49 / 49</strong><p>公司范围已登记</p></div>
 <div class="ve-metric"><small>FY2025官方入口</small><strong>49 / 49</strong><p>链接定位，不等于内容核验</p></div>
-<div class="ve-metric"><small>内容级核验</small><strong>1 / 49</strong><p>美的FY2025部分主表原值</p></div>
+<div class="ve-metric"><small>内容级核验</small><strong>2 / 49</strong><p>美的、招商银行部分内容级核验</p></div>
 <div class="ve-metric"><small>FY2021—2024入口</small><strong>0 / 196</strong><p>统一登记簿尚未映射</p></div>
 <div class="ve-metric"><small>审计ROIC / WACC</small><strong>0 / 49</strong><p>尚无公司通过完整资本分类</p></div>
 <div class="ve-metric"><small>三情景合理价值</small><strong>0 / 49</strong><p>尚无正式估值完成</p></div>
@@ -193,7 +211,7 @@
 <p class="ve-note"><b>已形成的内容级工作：</b>美的集团FY2025三张主表部分核心行、单位和勾稽已核对；格力电器FY2025三张主表及资产负债表主要项目已做专项页码核验，但类金融业务拆分未完成。海尔智家、长江电力等已有部分核心快照，不能视为完整审计。招商银行等金融机构必须使用行业专属模型。</p>
 <div class="ve-table-wrap"><table><thead><tr><th>验收阶段</th><th>当前状态</th><th>通过标准</th><th>未通过时的处理</th></tr></thead><tbody>
 <tr><td>来源定位</td><td>FY2025：49家已登记；FY2021—2024：未完成统一映射</td><td>每个公司年度有发行人/交易所原始报告、版本和披露日期</td><td>保持缺失，不以第三方摘要代替年报</td></tr>
-<tr><td>报表原值</td><td>仅美的FY2025部分主表达到内容级核验；格力有专项主表底稿</td><td>三张主表逐项记录原值、单位、页码、合并/母公司口径</td><td>不填入估值模型</td></tr>
+<tr><td>报表原值</td><td>美的FY2025部分主表、招商银行FY2025关键经营指标达到内容级核验；格力有专项主表底稿</td><td>三张主表逐项记录原值、单位、页码、合并/母公司口径</td><td>不填入估值模型</td></tr>
 <tr><td>附注与重分类</td><td>未完成全池</td><td>现金受限、金融资产、借款、租赁、商誉、少数股东、并购与资本开支穿透</td><td>不发布投入资本和净债务</td></tr>
 <tr><td>资本效率</td><td>审计ROIC、WACC：0家</td><td>NOPAT正常化；期初/期末投入资本勾稽；税率、资本成本有来源</td><td>不发布ROIC排名或EVA</td></tr>
 <tr><td>行业模型</td><td>框架已建立，逐家公司未完成</td><td>工业企业ROIC-DCF；银行PB-ROE；保险P/EV、P/NBV；券商周期化PB-ROE</td><td>不得跨行业套用同一公式</td></tr>
