@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-11-13",
+  "generatedAt": "2026-11-14",
   "title": "首批五家公司2021—2025年报来源逐年映射审计",
   "purpose": "纠正把同一份FY2025年报链接重复挂到2023—2025年度的来源归属问题。来源登记不等于报表数值已经逐项核验；仅将可定位的正式年报作为相应年度候选证据。",
   "sourcePolicy": {
@@ -23,16 +23,16 @@
       "code": "600690.SH",
       "reports": {
         "2021": {
-          "status": "pending",
-          "fullReportUrl": null,
-          "sourceType": null,
-          "note": "需补FY2021年报全文；Sina/AKShare摘要源不能替代原始年报。"
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2022-03-31/1212752481.PDF",
+          "sourceType": "CNINFO FY2021 annual report",
+          "note": "已定位官方年报全文；报告首页确认公司代码600690及FY2021；需逐项转录三张主表与附注。"
         },
         "2022": {
-          "status": "pending",
-          "fullReportUrl": null,
-          "sourceType": null,
-          "note": "需补FY2022年报全文。"
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2023-03-31/1216279243.PDF",
+          "sourceType": "CNINFO FY2022 annual report",
+          "note": "已定位官方年报全文；报告含FY2022及FY2021比较数据；需处理追溯及并表口径后逐项核验。"
         },
         "2023": {
           "status": "officialFullReportLocated",
@@ -59,16 +59,16 @@
       "code": "000333.SZ",
       "reports": {
         "2021": {
-          "status": "pending",
-          "fullReportUrl": null,
-          "sourceType": null,
-          "note": "需补FY2021年报全文。"
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213264815.PDF",
+          "sourceType": "CNINFO FY2021 annual report full text",
+          "note": "已定位官方年报全文；单位含千元披露，资产负债摘要可见总资产387,946,104千元、归母净资产124,868,124千元；需逐项转录三张主表。"
         },
         "2022": {
-          "status": "pending",
-          "fullReportUrl": null,
-          "sourceType": null,
-          "note": "需补FY2022年报全文。"
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2023-04-29/1216695045.PDF",
+          "sourceType": "CNINFO FY2022 annual report full text",
+          "note": "已定位官方年报全文；需逐项转录三张主表及附注。"
         },
         "2023": {
           "status": "officialFullReportLocated",
@@ -131,10 +131,10 @@
       "code": "600900.SH",
       "reports": {
         "2021": {
-          "status": "pending",
-          "fullReportUrl": null,
-          "sourceType": null,
-          "note": "需补FY2021年报全文。"
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213270599.PDF",
+          "sourceType": "CNINFO FY2021 annual report full text",
+          "note": "已定位官方年报全文；首页确认公司代码600900及FY2021；需逐项核对报表。"
         },
         "2022": {
           "status": "pending",
@@ -185,10 +185,10 @@
           "note": "需补FY2023年报全文；不能将FY2025报告直接作为FY2023完整审计来源。"
         },
         "2024": {
-          "status": "officialFullReportNotLocated",
-          "fullReportUrl": null,
-          "sourceType": "CNINFO FY2024 annual report abstract located only",
-          "note": "已定位官方年报摘要https://static.cninfo.com.cn/finalpage/2025-03-26/1222895153.PDF；全文待定位，摘要不能替代三张主表及附注。"
+          "status": "officialFullReportLocated",
+          "fullReportUrl": "https://static.cninfo.com.cn/finalpage/2025-03-26/1222895154.PDF",
+          "sourceType": "CNINFO FY2024 annual report A-share full report section",
+          "note": "已定位官方A股年报全文中的2.2补充财务比率章节；完整PDF主表和附注仍需逐项核验。"
         },
         "2025": {
           "status": "officialFullReportLocated",
@@ -218,5 +218,36 @@
       "将原始摘要字段逐项与年报核对，并保留重述差异",
       "确认每份报表的原始单位后，另行生成统一人民币元及亿元视图"
     ]
+  },
+  "auditUpdate": {
+    "verifiedNewReportEntrypoints": 5,
+    "added": [
+      {
+        "company": "海尔智家",
+        "year": 2021,
+        "url": "https://static.cninfo.com.cn/finalpage/2022-03-31/1212752481.PDF"
+      },
+      {
+        "company": "海尔智家",
+        "year": 2022,
+        "url": "https://static.cninfo.com.cn/finalpage/2023-03-31/1216279243.PDF"
+      },
+      {
+        "company": "美的集团",
+        "year": 2021,
+        "url": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213264815.PDF"
+      },
+      {
+        "company": "美的集团",
+        "year": 2022,
+        "url": "https://static.cninfo.com.cn/finalpage/2023-04-29/1216695045.PDF"
+      },
+      {
+        "company": "长江电力",
+        "year": 2021,
+        "url": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213270599.PDF"
+      }
+    ],
+    "limits": "来源入口定位不等于三张主表逐项核验；格力2021—2022、长江电力2022、招商银行2021—2023仍待建立准确逐年全文映射。"
   }
 }
