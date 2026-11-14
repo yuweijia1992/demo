@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-11-13",
+  "generatedAt": "2026-11-14",
   "title": "49家公司2021—2025年报来源与审计状态总登记簿",
   "purpose": "以发行人/交易所披露链接为入口，逐家公司区分来源定位与内容核验。仅登记已确认的2025年报入口；未映射年度明确留空，不把同一报告误当作五年历史来源。此登记簿不是已完成的财务审计或估值结果。",
   "sourceIndex": "data/valuation-model/issuer-report-index-49.json",
@@ -9,7 +9,7 @@
     "annual2025OfficialLinksLocated": 49,
     "annual2025NotResolved": 0,
     "annual2021To2024LinksMapped": 0,
-    "lineItemVerifiedCompanies": 0,
+    "lineItemVerifiedCompanies": 1,
     "auditedROICCompanies": 0,
     "auditedWACCCompanies": 0,
     "completedFairValueScenarios": 0
@@ -17,7 +17,8 @@
   "statusDefinitions": {
     "official_link_located_content_not_verified": "官方年报入口已定位，但尚未完成PDF全文页码、科目及附注核验",
     "not_resolved_in_index": "当前索引未解析到年报全文入口",
-    "not_yet_mapped": "该年度报告入口尚未登记，不代表报告不存在"
+    "not_yet_mapped": "该年度报告入口尚未登记，不代表报告不存在",
+    "content_partially_verified": "已核对三张主表部分核心行、单位和勾稽；附注、全部科目及资本效率仍未完成"
   },
   "records": [
     {
@@ -217,7 +218,16 @@
         "announcementId": "1225065145",
         "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF",
         "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000333&announcementId=1225065145&orgId=9900005965&announcementTime=2026-03-31",
-        "status": "official_link_located_content_not_verified"
+        "status": "content_partially_verified",
+        "contentVerification": {
+          "incomeStatement": "core_lines_verified",
+          "balanceSheet": "core_lines_and_balance_reconciliation_verified",
+          "cashFlowStatement": "core_lines_and_simplified_fcf_verified",
+          "notes": "partially_verified",
+          "roic": "not_finalized",
+          "valuation": "not_finalized",
+          "auditFile": "data/valuation-model/midea-fy2025-content-verified-financial-statements.json"
+        }
       },
       "annual2024": {
         "pdfUrl": null,
