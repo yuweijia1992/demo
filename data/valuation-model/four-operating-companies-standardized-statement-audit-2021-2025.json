@@ -26,7 +26,7 @@
   "statusSummary": {
     "annualCompanyYearSlots": 20,
     "threeStatementSlots": 60,
-    "officialReportSourceMappedSlots": 0,
+    "officialReportSourceMappedSlots": 5,
     "statementYearGroupsContentVerified": 5,
     "fullyAuditedFiveYearCompanyGroups": 0,
     "note": "5组代表已录入并勾稽的关键科目摘录：美的FY2021、海尔FY2023/FY2024、格力FY2023/FY2024。均非完整报表逐行转录，也不代表四家公司五年报表完成。FY2023值来自FY2024年报比较列，优先保持同一报告内可比。"
@@ -112,7 +112,8 @@
         "profitBeforeTax": 33717544000,
         "incomeTaxExpense": 4702168000,
         "netProfit": 29015376000,
-        "parentNetProfit": 28573650000
+        "parentNetProfit": 28573650000,
+        "minorityNetProfit": 441726000
       },
       "balance": {
         "cash": 71875556000,
