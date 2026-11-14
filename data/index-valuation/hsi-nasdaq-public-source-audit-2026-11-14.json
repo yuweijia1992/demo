@@ -1,0 +1,100 @@
+{
+  "report_date": "2026-11-14",
+  "objective": "Find legally reusable, continuous public monthly HSI and NASDAQ 100 PE/PB source observations; do not use token-gated APIs or redistribute unclear-rights datasets.",
+  "findings": [
+    {
+      "asset": "Hang Seng Index",
+      "metric": "PE_TTM",
+      "source": "Hang Seng Indexes Monthly Roundup",
+      "url": "https://www.hsi.com.hk/content/dam/wpb/hsil/en_hk/monthly_roundup/content/20251104T000000.pdf",
+      "frequency": "chart over rolling five-year window",
+      "raw_numeric_monthly_values": false,
+      "license_or_access": "official public PDF chart; no machine-readable month-by-month numeric table found",
+      "decision": "Not ingested; chart digitization would introduce visual estimation error."
+    },
+    {
+      "asset": "Hang Seng Index",
+      "metric": "PE_TTM",
+      "source": "Scribd-hosted historical month-end weighted average PE table",
+      "url": "https://www.scribd.com/document/873157480/28957578-16559728387111-HSI-202006-1",
+      "coverage": "1973-01 to 2016-07",
+      "frequency": "monthly",
+      "raw_numeric_monthly_values": true,
+      "license_or_access": "all-rights-reserved notice; uploader/provenance and redistribution permissions unclear",
+      "decision": "Do not ingest or redistribute."
+    },
+    {
+      "asset": "Hang Seng Index",
+      "metric": "PE_TTM and PB",
+      "source": "Guchacha",
+      "url": "https://guchacha.com/index-valuation/HSI",
+      "frequency": "weekly chart",
+      "public_history_window": "1 year shown; longer windows locked",
+      "method": "index aggregate mcw",
+      "snapshot_date": "2026-11-11",
+      "snapshot": {
+        "pe_ttm": 10.8,
+        "pb": 1.14
+      },
+      "decision": "Snapshot only; no continuous 5Y/10Y raw series publicly exposed."
+    },
+    {
+      "asset": "NASDAQ 100",
+      "metric": "PE_TTM",
+      "source": "Siblis Research",
+      "url": "https://siblisresearch.com/data/nasdaq-100-pe-ratio/",
+      "coverage": "1995—2026-10",
+      "frequency": "monthly on public page",
+      "public_raw_history": "latest monthly reading, chart and ten year-end rows; complete monthly numerical series is subscriber data",
+      "latest": {
+        "date": "2026-10-31",
+        "pe_ttm": 32.76,
+        "cape": 54.12
+      },
+      "method": "aggregate normalized trailing 12-month net income; point-in-time revisions",
+      "decision": "Public latest reading and chart may be cited; full month series not downloaded or reproduced."
+    },
+    {
+      "asset": "NASDAQ 100",
+      "metric": "PE_TTM and PB",
+      "source": "Siblis free API",
+      "url": "https://github.com/siblisresearch/global-equity-valuations-api",
+      "access": "no key",
+      "dates": [
+        "2024-06-30",
+        "2024-12-31",
+        "2025-06-30",
+        "2025-09-30",
+        "2025-12-31"
+      ],
+      "coverage": "sparse historical month-end snapshots",
+      "license": "returned data © Siblis Research, non-commercial use",
+      "decision": "Insufficient density for 60/120-month percentiles; retain only as source verification."
+    },
+    {
+      "asset": "NASDAQ 100",
+      "metric": "PE_TTM and PB",
+      "source": "Guchacha",
+      "url": "https://guchacha.com/",
+      "date": "2026-11-12",
+      "snapshot": {
+        "pe_ttm": 26.97,
+        "pb": 8.43
+      },
+      "decision": "Snapshot only; methodology differs from Siblis and cannot be spliced."
+    },
+    {
+      "asset": "NASDAQ 100",
+      "metric": "PE_TTM",
+      "source": "WorldPEratio",
+      "url": "https://worldperatio.com/index/nasdaq-100/",
+      "date": "2026-11-12",
+      "snapshot": {
+        "pe_ttm": 29.83
+      },
+      "method": "QQQ NAV-based proxy",
+      "decision": "ETF proxy only, not direct index PE."
+    }
+  ],
+  "conclusion": "No legal, continuous, machine-readable public monthly HSI PE/PB or NDX PE/PB raw history was verified in this pass. The database remains PARTIAL; no chart-digitized, annual-interpolated or sparse-snapshot series is inserted."
+}
