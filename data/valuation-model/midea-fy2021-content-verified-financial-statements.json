@@ -1,0 +1,197 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-11-14",
+  "title": "美的集团FY2021合并财务报表关键原值核验底稿",
+  "company": {
+    "name": "美的集团",
+    "code": "000333.SZ",
+    "period": "FY2021",
+    "consolidation": "合并口径",
+    "currency": "CNY",
+    "unit": "人民币千元"
+  },
+  "source": {
+    "url": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213264815.PDF",
+    "title": "美的集团股份有限公司2021年年度报告全文",
+    "publisher": "巨潮资讯",
+    "auditFirm": "普华永道中天",
+    "auditReportDate": "2022-04-28"
+  },
+  "pageMap": {
+    "keyFinancialSummary": {
+      "printedPages": "9-10",
+      "pdfLines": "260-290"
+    },
+    "balanceSheet": {
+      "printedPages": "146-148",
+      "pdfLines": "6117-6222"
+    },
+    "incomeStatement": {
+      "printedPages": "149-150",
+      "pdfLines": "6230-6421"
+    },
+    "cashFlowStatement": {
+      "printedPages": "151-152",
+      "pdfLines": "6427-6475"
+    }
+  },
+  "rawValues": {
+    "incomeStatement": {
+      "totalOperatingRevenue": 343360825,
+      "revenue": 341233208,
+      "interestIncome": 2127043,
+      "feeAndCommissionIncome": 574,
+      "operatingCost": -264525999,
+      "interestExpense": -87066,
+      "feeAndCommissionExpense": -13015,
+      "sellingExpense": -28647344,
+      "administrativeExpense": -10266283,
+      "researchExpense": -12014907,
+      "financeIncome": 4386111,
+      "investmentIncome": 2365773,
+      "fairValueChange": -166406,
+      "creditImpairmentLoss": -383451,
+      "assetImpairmentLoss": -483420,
+      "operatingProfit": 33281195,
+      "profitBeforeTax": 33717544,
+      "incomeTaxExpense": -4702168,
+      "netProfit": 29015376,
+      "netProfitParent": 28573650,
+      "minorityProfit": 441726,
+      "basicEPS": 4.17,
+      "dilutedEPS": 4.14
+    },
+    "balanceSheet": {
+      "cash": 71875556,
+      "tradingFinancialAssets": 5879202,
+      "derivativeFinancialAssets": 545865,
+      "notesReceivable": 4784914,
+      "accountsReceivable": 24636440,
+      "receivablesFinancing": 10273552,
+      "prepayments": 4352807,
+      "contractAssets": 3823476,
+      "loansAndAdvancesCurrent": 20656600,
+      "otherReceivables": 3104065,
+      "inventory": 45924439,
+      "currentPortionNonCurrentAssets": 19851577,
+      "otherCurrentAssets": 33156012,
+      "otherDebtInvestments": 7893935,
+      "longTermReceivables": 871356,
+      "loansAndAdvancesNonCurrent": 851927,
+      "longTermEquityInvestments": 3796705,
+      "otherEquityInstrumentInvestments": 45747,
+      "otherNonCurrentFinancialAssets": 5912873,
+      "investmentProperty": 859195,
+      "fixedAssets": 22852848,
+      "constructionInProgress": 2690930,
+      "rightOfUseAssets": 2297354,
+      "intangibleAssets": 17173072,
+      "goodwill": 27874752,
+      "deferredTaxAssets": 8192309,
+      "otherNonCurrentAssets": 36374356,
+      "currentAssetsTotal": 248864505,
+      "nonCurrentAssetsTotal": 139081599,
+      "totalAssets": 387946104,
+      "shortTermBorrowings": 5381623,
+      "centralBankBorrowings": 178878,
+      "depositsFromBanksAndOtherFinancialInstitutions": 78180,
+      "derivativeFinancialLiabilities": 157602,
+      "notesPayable": 32752007,
+      "accountsPayable": 65983559,
+      "contractLiabilities": 23916595,
+      "employeeBenefitsPayable": 7535168,
+      "taxesPayable": 5404267,
+      "otherPayables": 4288104,
+      "currentPortionNonCurrentLiabilities": 28947540,
+      "otherCurrentLiabilities": 48227953,
+      "currentLiabilitiesTotal": 222851476,
+      "longTermBorrowings": 19734020,
+      "leaseLiabilities": 1533552,
+      "longTermPayables": 0,
+      "provisions": 310571,
+      "deferredIncome": 1228459,
+      "longTermEmployeeBenefits": 1825016,
+      "deferredTaxLiabilities": 4950245,
+      "otherNonCurrentLiabilities": 687689,
+      "nonCurrentLiabilitiesTotal": 30269552,
+      "totalLiabilities": 253121028,
+      "parentEquity": 124868124,
+      "minorityEquity": 9956952,
+      "totalEquity": 134825076
+    },
+    "cashFlowStatement": {
+      "operatingCashInflows": 330415497,
+      "operatingCashOutflows": -295323793,
+      "operatingCashFlow": 35091704,
+      "investingCashInflows": 127801101,
+      "capex": -6825357,
+      "investmentPurchases": -105347246,
+      "acquisitionCashPaid": -2028912,
+      "investingCashOutflows": -114201515,
+      "investingCashFlow": 13599586,
+      "borrowingProceeds": 16033803,
+      "shortTermFinancingProceeds": 2999629,
+      "debtRepayment": -18225351,
+      "shortTermFinancingRepayment": -6000000,
+      "dividendsProfitInterestCombinedPaid": -12894125
+    }
+  },
+  "derived": {
+    "totalRevenueCheck": {
+      "formula": "revenue + interestIncome + feeAndCommissionIncome",
+      "calculated": 343360825,
+      "reported": 343360825,
+      "delta": 0
+    },
+    "balanceSheetCheck": {
+      "formula": "totalLiabilities + totalEquity",
+      "calculated": 387946104,
+      "reportedTotalAssets": 387946104,
+      "delta": 0
+    },
+    "operatingCashFlowCheck": {
+      "formula": "operatingCashInflows + operatingCashOutflows",
+      "calculated": 35091704,
+      "reportedOperatingCashFlow": 35091704,
+      "delta": 0
+    },
+    "simplifiedFcf": {
+      "formula": "operatingCashFlow - capex",
+      "value": 28266347,
+      "warning": "仅为初步简化FCF；公司合并现金流含贷款发放、存款及其他金融业务现金流，不能直接视为纯工业经营FCF。"
+    },
+    "acquisitions": {
+      "value": 2028912,
+      "warning": "取得子公司及其他营业单位支付的现金净额，单列，不与有机资本开支混合。"
+    },
+    "netDebtNotCalculated": {
+      "reason": "一年内到期非流动负债含多个性质科目；发放贷款、债权投资、交易性金融资产及财务业务需按附注逐项拆分，当前不得以短期借款+长期借款减货币资金简单计算。"
+    }
+  },
+  "classificationIssues": [
+    "合并报表包含发放贷款和垫款、吸收存款及同业存放、收取/支付利息手续费等金融业务项目；经营性NOPAT需先将类金融业务分部剥离。",
+    "交易性金融资产、其他债权投资、其他非流动金融资产不等同现金；需检查期限、用途、受限情况及经营资金属性。",
+    "一年内到期的非流动负债28,947,540千元尚未按借款、债券、租赁等附注拆分；不得全部归为有息债务。",
+    "商誉27,874,752千元需与并购资产组及减值测试附注关联；含商誉ROIC与剔除商誉ROIC应并列。",
+    "财务收入4,386,111千元中含利息收入5,181,658千元及利息费用1,357,564千元的列示，需结合金融业务分部处理，不能直接视为工业经营收益。"
+  ],
+  "auditStatus": {
+    "reportSource": "official_full_report_verified",
+    "units": "verified_RMB_thousand",
+    "balanceSheetKeyLines": "content_verified_and_balanced",
+    "incomeStatementKeyLines": "content_verified",
+    "cashFlowKeyLines": "content_verified",
+    "allStatementLines": "partial_not_full_transcription",
+    "notesAndReclassification": "pending",
+    "normalizedNOPAT": "pending",
+    "ROIC": "pending",
+    "WACC": "pending",
+    "valuation": "pending"
+  },
+  "auditNotes": [
+    "原始数据均为年报合并报表人民币千元；不得与A股年报摘要中不同口径的千元或元值混用。",
+    "营业总收入343,360,825千元不等于营业收入341,233,208千元；两者差额由利息收入和手续费佣金收入构成。",
+    "资产负债表勾稽通过；但这是关键科目摘录，不代表全部报表科目与附注已完整转录。",
+    "现金流量表简化FCF受到贷款和金融业务现金流影响，不能直接作为工业业务自由现金流。"
+  ]
+}
