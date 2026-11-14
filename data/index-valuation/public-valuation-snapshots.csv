@@ -8,3 +8,10 @@ date,index,metric,value,unit,frequency,source,source_url,method,limitations
 2026-11-11,NDX,PE_TTM,27.00,x,point_in_time,Guchacha,https://guchacha.com/,reported index PE-TTM,Conflicts with QQQ-proxy PE series; keep separate
 2026-11-11,NDX,PB,8.43,x,point_in_time,Guchacha,https://guchacha.com/,reported index PB,Snapshot only; no raw monthly observations extracted
 2026-11-12,NDX,PE_TTM,29.83,x,point_in_time,WorldPEratio,https://worldperatio.com/index/nasdaq-100/,QQQ NAV-based estimate,Proxy methodology; do not merge with direct index PE
+2026-11-11,HSI,PE_TTM,10.80,x,point_in_time,Guchacha,https://guchacha.com/index-valuation/HSI,index aggregate mcw weekly valuation snapshot,Snapshot only; no long-span raw weekly values exposed
+2026-11-11,HSI,PB,1.14,x,point_in_time,Guchacha,https://guchacha.com/index-valuation/HSI,index aggregate mcw weekly valuation snapshot,Snapshot only; no long-span raw weekly values exposed
+2026-11-12,NDX,PE_TTM,26.97,x,point_in_time,Guchacha,https://guchacha.com/,reported index PE-TTM snapshot,Method differs from Siblis; do not merge into monthly history
+2026-11-12,NDX,PB,8.43,x,point_in_time,Guchacha,https://guchacha.com/,reported index PB snapshot,Snapshot only; no long-span raw monthly observations extracted
+2026-10-31,NDX,PE_TTM,32.76,x,point_in_time,Siblis Research,https://siblisresearch.com/data/nasdaq-100-pe-ratio/,aggregate normalized trailing net income; point-in-time methodology,Public latest month-end snapshot; full monthly history subscription
+2026-10-31,NDX,CAPE,54.12,x,point_in_time,Siblis Research,https://siblisresearch.com/data/nasdaq-100-pe-ratio/,price divided by 10-year average inflation-adjusted aggregate earnings,Snapshot only; CAPE is not TTM PE
+2026-11-12,NDX,PE_TTM,29.83,x,point_in_time,WorldPEratio,https://worldperatio.com/index/nasdaq-100/,QQQ NAV-based estimate,ETF proxy; not direct index PE
