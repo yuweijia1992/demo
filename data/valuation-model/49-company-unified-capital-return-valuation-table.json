@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-11-13",
+  "generatedAt": "2026-11-14",
   "title": "49家公司统一资本回报—资本成本—现金流—估值比较表",
   "status": "49_company_framework_with_first_batch_FY2025_core_snapshot_partially_populated",
   "purpose": "统一输出49家公司可比较的资本回报、资本成本、增量回报、自由现金流、估值区间和安全边际；未核验字段保持null。",
@@ -998,7 +998,7 @@
       "modelType": "bank",
       "fiscalYearBasis": "calendar_year",
       "sourceFY2025": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225047590.PDF",
-      "sourceStatus": "official_link_only_not_content_verified",
+      "sourceStatus": "FY2025_official_annual_report_key_bank_metrics_content_verified",
       "capitalReturn": null,
       "capitalCost": null,
       "incrementalReturn": null,
@@ -1011,8 +1011,8 @@
         "priceDate": null
       },
       "marginOfSafety": null,
-      "auditStatus": "FY2025_core_snapshot_partially_located; FY2021-2024_and_ROIC_valuation_pending",
-      "notes": "ROAE/RAROC / equity cost / RWA-adjusted growth / distributable cash / PB-residual income FY2025已补录初步损益/现金流快照；不是完整五年资本效率审计。",
+      "auditStatus": "FY2025_key_bank_metrics_verified; full_statements_notes_and_residual_income_valuation_pending",
+      "notes": "FY2025官方年报已核验营收、归母净利润、ROAA、ROAE、NIM、NPL、拨备、信用成本及高级法/权重法资本充足率；银行采用PB-ROE/剩余收益模型，不计算工业ROIC/FCF。完整三张主表、历史五年序列及三情景估值待完成。",
       "fy2025PreliminarySnapshot": {
         "unit": "亿元人民币",
         "revenue": 3375.32,
