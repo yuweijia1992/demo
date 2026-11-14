@@ -115,7 +115,12 @@
     "No interpolation, forward filling, or extrapolation is applied; rolling percentile is blank until a full 60/120-month window exists.",
     "Only completed calendar months are included in the unified matrix. The Multpl CAPE source labels monthly observations on the first calendar day of the month; the source label is retained.",
     "CSI 300 PE/PB are Legu aggregate historical series retrieved through AkShare public endpoints; daily raw source files are retained, and monthly values are the last real source observation in each month.",
-    "S&P 500 DQYDJ PE-TTM uses monthly average index level divided by trailing twelve-month EPS; it is not the same sampling convention as month-end index ratios."
+    "S&P 500 DQYDJ PE-TTM uses monthly average index level divided by trailing twelve-month EPS; it is not the same sampling convention as month-end index ratios.",
+    "Hang Seng official Monthly Roundup PDFs show a five-year PE/dividend-yield chart but do not publish a machine-readable monthly numeric table on the accessible public page.",
+    "A public Guchacha HSI valuation page provides weekly valuation visualization and current PE/PB snapshot, but longer history windows are locked; it does not expose reusable long-span raw weekly observations in page text.",
+    "Scribd-hosted copies of historical HSI month-end weighted-average PE tables contain extensive historical rows, but carry all-rights-reserved notices and unclear provenance/redistribution rights; not ingested or redistributed.",
+    "Siblis NASDAQ 100 public page provides a monthly latest reading and chart but not the full monthly numeric history; its free API exposes sparse month-end snapshots, not a continuous monthly series. API data is © Siblis Research and non-commercial use only.",
+    "NASDAQ 100 current PE snapshots differ by source: Siblis 32.76 (2026-10, aggregate normalized earnings), Guchacha 26.97 (2026-11-12), and WorldPEratio 29.83 (QQQ NAV proxy). These are methodologically distinct and must not be spliced."
   ],
   "index_metrics_collected": [
     "CSI 300|PB",
@@ -130,18 +135,31 @@
     "NASDAQ 100|PE_TTM",
     "S&P 500|PB"
   ],
-  "source_research_updated_at": "2026-11-13",
+  "source_research_updated_at": "2026-11-14",
   "source_candidates": {
     "NASDAQ 100": {
-      "source": "Siblis Research",
-      "url": "https://siblisresearch.com/data/nasdaq-100-pe-ratio/",
-      "api_url": "https://siblisresearch.com/api/v1/NDX/pe-trailing",
-      "status": "PUBLIC_PAGE_AND_FREE_API_BUT_NOT_FULL_HISTORY",
-      "frequency": "page monthly; free API limited period-end snapshots",
-      "latest_public_page_month": "2026-10",
-      "latest_trailing_pe": "32.76",
-      "historical_page_values": "10 year-end observations 2016-2025 plus latest month",
-      "limitation": "Full monthly history and full index/ratio coverage are subscription data; free API is limited to selected indices and a handful of period-end snapshots. Do not interpolate or merge annual values into monthly matrix."
+      "source": "Siblis Research; Guchacha; WorldPEratio",
+      "status": "NO_CONTINUOUS_PUBLIC_MONTHLY_RAW_SERIES_VERIFIED",
+      "siblis_url": "https://siblisresearch.com/data/nasdaq-100-pe-ratio/",
+      "siblis_monthly_page": "Latest monthly index-level reading through 2026-10; chart and year-end table are public, complete monthly numeric history is in subscription database",
+      "siblis_method": "Trailing P/E uses aggregate normalized net income over previous twelve months; major purely accounting gains/losses removed; point-in-time revisions retained",
+      "siblis_2026_10": {
+        "pe_ttm": 32.76,
+        "cape": 54.12
+      },
+      "free_api_repo": "https://github.com/siblisresearch/global-equity-valuations-api",
+      "free_api_base": "https://siblisresearch.supabase.co/functions/v1/free-data-api",
+      "free_api_scope": "No key; only selected indices and a handful of historical month-end dates (documented examples include 2024-06-30, 2024-12-31, 2025-06-30, 2025-09-30, 2025-12-31); not monthly continuous",
+      "free_api_license": "Returned data © Siblis Research and permitted for non-commercial use; code samples MIT",
+      "guchacha_snapshot_2026_11_12": {
+        "pe_ttm": 26.97,
+        "pb": 8.43
+      },
+      "worldperatio_snapshot_2026_11_12": {
+        "pe_ttm": 29.83,
+        "proxy": "QQQ NAV-based estimate"
+      },
+      "decision": "Keep source-specific snapshots separate. Do not merge differing PE methodologies. Free API snapshots too sparse for rolling 60/120-month percentile; full Siblis series subscription."
     },
     "S&P 500|PB": {
       "source": "LENSE Analytics",
@@ -154,10 +172,20 @@
       "limitation": "Recent monthly panel has only 12 observations; annual history cannot be converted to monthly observations. Candidate observations are archived separately; no rolling 5Y/10Y percentile."
     },
     "Hang Seng": {
-      "source": "Hang Seng Indexes",
-      "url": "https://origin-www.hsi.com.hk/eng/indexes/all-indexes/hsscr",
-      "status": "PUBLIC_REPORT_DOWNLOAD_ENTRY_BUT_NO_AUDITABLE_LONG_MONTHLY_PE_PB_RAW_SERIES",
-      "limitation": "Page offers constituent month-end performance report and points to Index360 registration for wider data; no continuous historical monthly PE/PB raw series verified."
+      "source": "Hang Seng Indexes; Guchacha; public historical archive leads",
+      "status": "NO_REUSABLE_LONG_CONTINUOUS_MONTHLY_RAW_SERIES_VERIFIED",
+      "official_url": "https://www.hsi.com.hk/eng/indexes/all-indexes/hsi",
+      "official_monthly_roundup": "https://www.hsi.com.hk/content/dam/wpb/hsil/en_hk/monthly_roundup/content/20251104T000000.pdf",
+      "official_public_material": "Monthly Roundup includes a 5-year PE/dividend-yield chart; not downloadable numeric month-by-month values",
+      "public_chart_source": "https://guchacha.com/index-valuation/HSI",
+      "public_chart_frequency": "weekly",
+      "public_chart_method": "site describes index aggregate mcw valuation; page exposes 1Y view while longer history ranges are locked",
+      "snapshot_2026_11_11": {
+        "pe_ttm": 10.8,
+        "pb": 1.14
+      },
+      "historical_archive_lead": "Scribd-hosted HSI month-end weighted-average PE table reports 1973-07 through 2016-07 or 2020-01 depending on copy, but copy is all-rights-reserved, provenance and redistribution rights are not established; excluded from ingestion",
+      "decision": "Do not transcribe or redistribute Scribd copy; do not digitize values from chart images. Need official licensed/public downloadable numerical history or an explicitly permissive dataset."
     }
   }
 }
