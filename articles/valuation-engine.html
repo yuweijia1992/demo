@@ -61,6 +61,17 @@
 <div class="ve-table-wrap"><table><thead><tr><th>年度</th><th>收入</th><th>归母净利润</th><th>ROE</th><th>ROIC近似</th><th>经营现金流</th><th>资本开支</th><th>简化FCF</th><th>完整净债务</th><th>已识别债项净额</th><th>官方核验FY2025净债务</th><th>稀释股数代理*</th><th>纯现金股息字段</th></tr></thead><tbody id="integratedAnnualRows"><tr><td colspan="13">等待公司级模型数据……</td></tr></tbody></table></div>
 <h3>历史估值分位（连续完整窗口）</h3>
 <div class="ve-table-wrap"><table><thead><tr><th>指标</th><th>最新值</th><th>日期</th><th>5年分位</th><th>10年分位</th><th>有效月数（5Y/10Y）</th><th>状态</th></tr></thead><tbody id="integratedHistoryRows"><tr><td colspan="7">等待历史估值数据……</td></tr></tbody></table></div>
+<h3>标普500 PB：季度历史估值（独立频率）</h3>
+<p class="ve-note">本模块单独读取公开季度 PB 数据，不与月频 PE/PB 矩阵合并。5年/10年窗口分别按20/40个季度计算，必须具备完整窗口；分位采用 mid-rank。季度值不插值为月频，季度分位也不可与月频分位直接混比。</p>
+<div class="ve-metrics">
+<div class="ve-metric"><small>最新季度 PB</small><strong id="spPbLatest">—</strong><p id="spPbDate">等待数据</p></div>
+<div class="ve-metric"><small>季度5年分位</small><strong id="spPb5y">—</strong><p id="spPb5yN">20季度窗口</p></div>
+<div class="ve-metric"><small>季度10年分位</small><strong id="spPb10y">—</strong><p id="spPb10yN">40季度窗口</p></div>
+<div class="ve-metric"><small>完整历史分位</small><strong id="spPbAll">—</strong><p id="spPbRange">—</p></div>
+</div>
+<div class="ve-note" id="spPbStatus">正在读取季度 PB 数据……</div>
+<div class="ve-table-wrap"><table><thead><tr><th>日期</th><th>PB</th><th>5年滚动分位</th><th>10年滚动分位</th><th>频率</th></tr></thead><tbody id="spPbRows"><tr><td colspan="5">等待季度数据……</td></tr></tbody></table></div>
+<p class="ve-note"><a href="../data/index-valuation/sp500-pb-quarterly-public.csv" target="_blank" rel="noopener">下载91条季度原始观测 CSV</a> · <a href="../data/index-valuation/valuation-source-audit.json" target="_blank" rel="noopener">查看来源与口径审计</a></p>
 <h3>自动情景预测基准</h3>
 <div class="ve-note" id="integratedForecastNote">预测基准尚未载入。</div>
 <p class="ve-note"><a href="../data/valuation-model/valuation-model-49.json" target="_blank" rel="noopener">公司级估值模型JSON</a> · <a href="../data/valuation-model/valuation-model-audit.json" target="_blank" rel="noopener">公司级模型覆盖审计</a> · <a href="../scripts/build_valuation_model.py" target="_blank" rel="noopener">模型计算脚本</a> · <a href="../data/valuation-model/README.md" target="_blank" rel="noopener">模型方法与限制说明</a> · <a href="../data/valuation-model/issuer-report-index-49.json" target="_blank" rel="noopener">官方报告链接索引</a> · <a href="./company-verification.html">49家公司逐一核验台账</a></p>
@@ -545,7 +556,37 @@ function renderFirstBatchCards(){
  const missing=FIRST_BATCH.filter(x=>!x.code||!db.stocks.some(s=>primarySecurityCode(s.code)===primarySecurityCode(x.code))).map(x=>x.name);
  $('firstBatchAudit').textContent='首批目标 6 家；当前49家公司主表匹配 '+(6-missing.length)+'/6。'+(missing.length?'名单冲突：'+missing.join('、')+' 未在主证券JSON中找到。请核对原始49家清单后再决定是否纳入，不能静默改成50家或替换其他公司。':'六家公司均匹配主证券清单。')+' 数据库基准日：'+(db.asOf||'未标注')+'；价格快照按各公司priceDate单独展示。';
 }
-\nasync function init(){try{let res=await fetch(DB);if(!res.ok)throw Error('HTTP '+res.status);db=await res.json();updateAudit();$('loadStatus').textContent='数据库加载成功：'+db.stocks.length+' 家公司｜基准日期 '+db.asOf+'｜缺失字段保留空值';$('company').innerHTML=db.stocks.map(s=>'<option value="'+s.code+'">'+s.name+'（'+s.code+'）</option>').join('');render();loadSelected();await loadFinancialData();loadSiteHistory();loadSiteCoverageAudit();await loadValuationModel();renderFirstBatchCards()}catch(e){$('loadStatus').textContent='数据库加载失败：'+e.message+'。请通过 GitHub Pages 打开此页，勿直接 file:// 打开。'}}
+\n
+async function loadSp500QuarterlyPB(){
+ const ids=['spPbLatest','spPbDate','spPb5y','spPb5yN','spPb10y','spPb10yN','spPbAll','spPbRange','spPbStatus','spPbRows'];
+ try{
+  const res=await fetch('../data/index-valuation/sp500-pb-quarterly-public.csv',{cache:'no-cache'});
+  if(!res.ok)throw Error('CSV HTTP '+res.status);
+  const lines=(await res.text()).trim().split(/\\r?\\n/);
+  const data=lines.slice(1).map(line=>{
+   const c=line.split(',');
+   return {date:c[0],value:Number(c[4]),frequency:c[1],source:c[5]};
+  }).filter(x=>/^\\d{4}-\\d{2}-\\d{2}$/.test(x.date)&&Number.isFinite(x.value)).sort((a,b)=>a.date.localeCompare(b.date));
+  if(!data.length)throw Error('没有可用的季度观测');
+  const pct=(arr,v)=>100*(arr.filter(x=>x<v).length+.5*arr.filter(x=>x===v).length)/arr.length;
+  const rows=data.map((x,i)=>({...x,p5:i>=19?pct(data.slice(i-19,i+1).map(y=>y.value),x.value):null,p10:i>=39?pct(data.slice(i-39,i+1).map(y=>y.value),x.value):null}));
+  const last=rows[rows.length-1],vals=data.map(x=>x.value),min=Math.min(...vals),max=Math.max(...vals);
+  $('spPbLatest').textContent=last.value.toFixed(2);
+  $('spPbDate').textContent=last.date+' · 季度末观测';
+  $('spPb5y').textContent=last.p5===null?'样本不足':last.p5.toFixed(1)+'%';
+  $('spPb5yN').textContent=last.p5===null?'需20个连续季度':'20 / 20个季度';
+  $('spPb10y').textContent=last.p10===null?'样本不足':last.p10.toFixed(1)+'%';
+  $('spPb10yN').textContent=last.p10===null?'需40个连续季度':'40 / 40个季度';
+  $('spPbAll').textContent=pct(vals,last.value).toFixed(1)+'%';
+  $('spPbRange').textContent='全样本 '+data.length+' 季度 · '+min.toFixed(2)+'—'+max.toFixed(2);
+  $('spPbStatus').textContent='载入成功：'+data.length+'条季度观测，覆盖 '+data[0].date+' 至 '+last.date+'。5年/10年分位分别使用20/40个季度完整窗口；没有将季度数据转换为月度数据。';
+  $('spPbRows').innerHTML=rows.slice().reverse().map(x=>'<tr><td>'+x.date+'</td><td>'+x.value.toFixed(2)+'</td><td>'+(x.p5===null?'—':x.p5.toFixed(1)+'%')+'</td><td>'+(x.p10===null?'—':x.p10.toFixed(1)+'%')+'</td><td>季度</td></tr>').join('');
+ }catch(e){
+  $('spPbStatus').textContent='季度 PB 数据载入失败：'+e.message;
+  $('spPbRows').innerHTML='<tr><td colspan="5">数据不可用</td></tr>';
+ }
+}
+\nasync function init(){try{let res=await fetch(DB);if(!res.ok)throw Error('HTTP '+res.status);db=await res.json();updateAudit();$('loadStatus').textContent='数据库加载成功：'+db.stocks.length+' 家公司｜基准日期 '+db.asOf+'｜缺失字段保留空值';$('company').innerHTML=db.stocks.map(s=>'<option value="'+s.code+'">'+s.name+'（'+s.code+'）</option>').join('');render();loadSelected();await loadFinancialData();loadSiteHistory();loadSiteCoverageAudit();await loadValuationModel();renderFirstBatchCards();await loadSp500QuarterlyPB()}catch(e){$('loadStatus').textContent='数据库加载失败：'+e.message+'。请通过 GitHub Pages 打开此页，勿直接 file:// 打开。'}}
 $('saveDecision').onclick=saveDecisionRecord;$('loadDecision').onclick=()=>loadDecisionRecord(selected?.code);$('exportDecisions').onclick=exportDecisionRecords;$('printDecision').onclick=printDecisionReport;renderDecisionRows();
 ['search','modelFilter','statusFilter','sort'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));$('company').onchange=loadSelected;forecastInputIds.forEach(id=>$(id)?.addEventListener('input',()=>{saveForecastInputs();if(financialDb)renderForecast(financialByCode[selected?.code])}));$('loadSiteHistory').onclick=loadSiteHistory;$('loadCoverageAudit').onclick=loadSiteCoverageAudit;$('calc').onclick=calculate;$('calcHistory').onclick=calculateHistory;$('applyHistoryBand').onclick=applyHistoryBand;$('downloadHistory').onclick=exportHistory;$('historyMetric').onchange=()=>{historyResults=[];historyBands={};$('historyRows').innerHTML='<tr><td colspan="11">指标已更改，正在重新计算……</td></tr>';if(importedHistoryText)processHistoryText(importedHistoryText,historySourceLabel)};$('loadData').onclick=loadData;$('export').onclick=()=>db&&exportCSV();$('reset').onclick=()=>{let fs=forecastStore();if(selected)delete fs[selected.code];localStorage.setItem(FORECAST_STORE,JSON.stringify(fs));['eps','bvps','roe','embedded','dps','modelShares','investmentBudget','forecastNetMarginLow','forecastNetMarginBase','forecastNetMarginHigh','growthLow','growthBase','growthHigh','fcfMarginLow','fcfMarginBase','fcfMarginHigh','roeLow','roeBase','roeHigh','vnbPerShare','vnbMultiple','cycleEpsLow','cycleEpsBase','cycleEpsHigh'].forEach(id=>$(id).value='');$('lowMult').value=12;$('baseMult').value=16;$('highMult').value=20;$('margin').value=25;$('discount').value=10;$('growthRate').value=3;loadSelected()};init();
 </script></body></html>
