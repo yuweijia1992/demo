@@ -9,7 +9,7 @@
     "annual2025OfficialLinksLocated": 49,
     "annual2025NotResolved": 0,
     "annual2021To2024LinksMapped": 0,
-    "lineItemVerifiedCompanies": 1,
+    "lineItemVerifiedCompanies": 2,
     "auditedROICCompanies": 0,
     "auditedWACCCompanies": 0,
     "completedFairValueScenarios": 0
@@ -18,7 +18,7 @@
     "official_link_located_content_not_verified": "官方年报入口已定位，但尚未完成PDF全文页码、科目及附注核验",
     "not_resolved_in_index": "当前索引未解析到年报全文入口",
     "not_yet_mapped": "该年度报告入口尚未登记，不代表报告不存在",
-    "content_partially_verified": "已核对三张主表部分核心行、单位和勾稽；附注、全部科目及资本效率仍未完成"
+    "content_partially_verified": "已从官方年报核对部分核心报表/经营指标及单位；不代表全部三张主表、附注、资本效率或估值完成"
   },
   "records": [
     {
@@ -1126,7 +1126,23 @@
         "announcementId": "1225047590",
         "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225047590.PDF",
         "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1225047590&orgId=gssh0600036&announcementTime=2026-03-28",
-        "status": "official_link_located_content_not_verified"
+        "status": "content_partially_verified",
+        "contentAudit": {
+          "sourceUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225047590.PDF",
+          "sourceTitle": "招商银行股份有限公司2025年度报告（A股）",
+          "verifiedSections": [
+            "第二章2.1主要会计数据和财务指标",
+            "第二章2.2补充财务比率",
+            "第三章3.4资产质量关键指标",
+            "第三章3.5资本充足率"
+          ],
+          "verifiedMetricsFile": "data/valuation-model/cmb-fy2025-content-verified-bank-metrics.json",
+          "limitations": [
+            "三张主表及全部附注尚未逐项转录",
+            "2021—2024历史年报逐年映射待补",
+            "银行剩余收益估值尚未完成"
+          ]
+        }
       },
       "annual2024": {
         "pdfUrl": null,
