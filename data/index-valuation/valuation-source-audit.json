@@ -108,7 +108,6 @@
     "Unified monthly matrix contains 5 asset/metric series: CSI 300 PE-TTM, CSI 300 PB, S&P 500 PE-TTM, S&P 500 CAPE and CNY gold price. Only the first three are index PE/PB monthly series.",
     "Missing target index metrics: Hang Seng PE-TTM, Hang Seng PB, NASDAQ 100 PE-TTM, NASDAQ 100 PB and S&P 500 PB.",
     "NASDAQ 100 Siblis public page has month-end monthly updates but exposes only ten year-end history rows plus latest month; free API has selected index coverage and a handful of period-end snapshots. Full historical series is subscription data. Annual/public snapshots are not interpolated.",
-    "S&P 500 PB LENSE public page provides 12 recent monthly observations and annual values from 1999; this is insufficient for 60/120-month percentiles. Candidate observations are archived separately and excluded from the unified monthly matrix.",
     "Hang Seng official public page exposes a month-end constituent performance report download entry and references Index360 registration for wider data; a long auditable monthly PE/PB raw series has not been verified.",
     "CAPE and trailing PE are different metrics and must not be compared as if identical.",
     "Gold has no PE/PB; monthly CNY spot price percentile is a price-history indicator, not intrinsic-value valuation.",
@@ -120,7 +119,9 @@
     "A public Guchacha HSI valuation page provides weekly valuation visualization and current PE/PB snapshot, but longer history windows are locked; it does not expose reusable long-span raw weekly observations in page text.",
     "Scribd-hosted copies of historical HSI month-end weighted-average PE tables contain extensive historical rows, but carry all-rights-reserved notices and unclear provenance/redistribution rights; not ingested or redistributed.",
     "Siblis NASDAQ 100 public page provides a monthly latest reading and chart but not the full monthly numeric history; its free API exposes sparse month-end snapshots, not a continuous monthly series. API data is © Siblis Research and non-commercial use only.",
-    "NASDAQ 100 current PE snapshots differ by source: Siblis 32.76 (2026-10, aggregate normalized earnings), Guchacha 26.97 (2026-11-12), and WorldPEratio 29.83 (QQQ NAV proxy). These are methodologically distinct and must not be spliced."
+    "NASDAQ 100 current PE snapshots differ by source: Siblis 32.76 (2026-10, aggregate normalized earnings), Guchacha 26.97 (2026-11-12), and WorldPEratio 29.83 (QQQ NAV proxy). These are methodologically distinct and must not be spliced.",
+    "S&P 500 PB: archived 91 public quarterly observations from Multpl for 2003-03-31—2025-09-30, plus 12 recent monthly LENSE observations (2025-12—2026-11) in the separate candidate file. The quarterly and monthly sources have different methodologies and are not spliced; neither supplies a continuous 60/120-month series.",
+    "The S&P 500 PB quarterly file is not part of the unified monthly matrix and has no monthly 5Y/10Y percentile. Its 91 quarterly observations can support quarterly-frequency descriptive analysis only."
   ],
   "index_metrics_collected": [
     "CSI 300|PB",
@@ -164,12 +165,20 @@
     "S&P 500|PB": {
       "source": "LENSE Analytics",
       "url": "https://lense-analytics.com/fundamentals/sp500-pb-ratio",
-      "status": "PUBLIC_RECENT_MONTHLY_AND_ANNUAL_HISTORY",
+      "status": "PUBLIC_QUARTERLY_HISTORY_PLUS_RECENT_MONTHLY; MONTHLY_SERIES_INCOMPLETE",
       "monthly_coverage": "2025-12—2026-11",
       "annual_coverage": "1999—2025",
       "latest_monthly": "2026-11",
       "latest_value": "5.04",
-      "limitation": "Recent monthly panel has only 12 observations; annual history cannot be converted to monthly observations. Candidate observations are archived separately; no rolling 5Y/10Y percentile."
+      "limitation": "Recent monthly panel has only 12 observations; annual history cannot be converted to monthly observations. Candidate observations are archived separately; no rolling 5Y/10Y percentile.",
+      "quarterly_file": "data/index-valuation/sp500-pb-quarterly-public.csv",
+      "quarterly_source": "Multpl quarterly table; source attributed to Standard & Poor's",
+      "quarterly_coverage": "2003-03-31—2025-09-30",
+      "quarterly_observations": 91,
+      "monthly_observations": 12,
+      "current_latest": "2026-11 value 5.04 from LENSE; incomplete calendar month and excluded from completed-month matrix",
+      "methodology_note": "Quarterly observations remain quarterly; no monthly interpolation or forward-fill. LENSE recent monthly values are a separate provider/methodology series and are not spliced into Multpl quarterly history.",
+      "decision": "Use the quarterly file for quarterly-frequency valuation analysis only. Keep S&P 500 PB in monthly missing metrics until 60/120 continuous monthly observations from a consistent source and methodology are available."
     },
     "Hang Seng": {
       "source": "Hang Seng Indexes; Guchacha; public historical archive leads",
