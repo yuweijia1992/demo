@@ -10,7 +10,7 @@
 <div class="panel"><h2>数据覆盖与质量审计</h2><ul><li>完整五因子月度样本：2016-01 至 2026-07，共127个月。</li><li>综合分数滚动36个月分位：2018-12起，共92个月。</li><li>DFII10：日频转前一自然月均值并滞后一个月；原始镜像覆盖2003-01-02至2026-10-08。</li><li>NFCI：周频，取信号月末前至少5个日历日已观测到的最近周值；原始镜像覆盖2000-01-07至2026-09-11。</li><li>标普500总回报：项目现有月频序列，收益数据截至2026-07。</li></ul><p class="small">NFCI历史会被修订；本版没有ALFRED逐期vintage，不能称为严格实时点时回测。DFII10与NFCI原始载体来自第三方公开镜像，尚未逐行与官方源重新核验。ICE BofA高收益债OAS未纳入：其数据再分发限制不适合直接打包发布。</p><p><a href="../data/index-valuation/sp500-macro-factor-model-monthly.csv">下载月度因子与前瞻结果 CSV</a> · <a href="../data/index-valuation/sp500-macro-factor-model-summary.json">下载模型定义与统计 JSON</a> · <a href="../data/index-valuation/fred-nfci-weekly.csv">NFCI周度数据</a> · <a href="../data/index-valuation/fred-dfii10-daily.csv">DFII10日度数据</a></p></div>
 <div class="panel warning"><h2>研究结论边界</h2><p>这是一套可复算的研究框架，不是已经通过样本外检验的择时系统。现有样本较短、前瞻窗口重叠，36/60个月分组样本尤其少。五项权重是透明的研究设定，不能直接转化为仓位指令；必须进一步做滚动样本外检验、区块自助法置信区间、替代权重与替代阈值敏感性测试。</p></div>
 <p class="small">数据与模型说明：<a href="https://fred.stlouisfed.org/series/DFII10">FRED DFII10</a> · <a href="https://fred.stlouisfed.org/series/NFCI">FRED NFCI</a> · <a href="https://www.chicagofed.org/research/data/nfci/about">Chicago Fed NFCI方法</a> · <a href="https://fred.stlouisfed.org/series/FEDFUNDS">FRED FEDFUNDS</a></p>
-</main><script>
+<section class="panel" style="margin:18px 0;padding:18px;border:1px solid #dbeafe;border-radius:12px;background:#eff6ff"><h2>严格样本外验证</h2><p>固定权重、时间顺序训练与测试、滚动阈值、区块自助法置信区间和权重敏感性。</p><p><a href="./sp500-macro-model-oos-validation.html">打开样本外验证报告 →</a></p></section></main><script>
 const DATA_URL="../data/index-valuation/sp500-macro-factor-model-summary.json";
 const pct=x=>x==null?"—":(x*100).toFixed(1)+"%";
 const num=x=>x==null?"—":Number(x).toFixed(1);
