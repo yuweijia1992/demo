@@ -1,0 +1,348 @@
+{
+  "title": "S&P 500 Macro Composite Model - Strict Out-of-Sample Validation",
+  "version": "V1.0 validation study",
+  "created": "2026-11-17",
+  "protocol": {
+    "initial_training_period": "2018-12 to 2022-11",
+    "initial_training_months": 48,
+    "out_of_sample_period": "2022-12 to 2025-07",
+    "out_of_sample_months": 32,
+    "weights": "Pre-specified fixed weights; no optimization on the test set.",
+    "thresholds": "At each OOS month, classify score against the trailing 48 completed score observations only (rolling training window); 10/90, 20/80 and 30/70 sensitivity.",
+    "outcome": "Forward 12-month S&P 500 USD total return, maximum drawdown and recovery; starts the month after signal month.",
+    "bootstrap": "Circular moving-block bootstrap on paired monthly OOS observations; 10,000 replications; block lengths 3, 6, 12 months. Because only 32 OOS months exist, intervals are descriptive and not definitive."
+  },
+  "sample": {
+    "training_n": 48,
+    "test_n": 32,
+    "training_start": "2018-12",
+    "training_end": "2022-11",
+    "test_start": "2022-12",
+    "test_end": "2025-07",
+    "non_overlapping_12m_anchors": [
+      "2022-12",
+      "2023-12",
+      "2024-12"
+    ],
+    "available_oos_36m_n": 8,
+    "available_oos_60m_n": 0
+  },
+  "baseline": {
+    "weights": [
+      0.3,
+      0.25,
+      0.25,
+      0.1,
+      0.1
+    ],
+    "score_return_spearman": -0.1717532772312939,
+    "score_drawdown_spearman": -0.11657439506122595,
+    "bootstrap_block_3": {
+      "block_months": 3,
+      "replications": 10000,
+      "return_spearman_ci95": [
+        -0.5583467878758046,
+        0.3639713142157285
+      ],
+      "return_bootstrap_median": -0.19082688397119546,
+      "return_positive_fraction": 0.2485,
+      "drawdown_spearman_ci95": [
+        -0.6647979503736607,
+        0.36075975135670924
+      ],
+      "drawdown_bootstrap_median": -0.1128295726655901
+    },
+    "bootstrap_block_6": {
+      "block_months": 6,
+      "replications": 10000,
+      "return_spearman_ci95": [
+        -0.6273705437212621,
+        0.37484504069012625
+      ],
+      "return_bootstrap_median": -0.206738055036523,
+      "return_positive_fraction": 0.253,
+      "drawdown_spearman_ci95": [
+        -0.8328240715122806,
+        0.36676693953202216
+      ],
+      "drawdown_bootstrap_median": -0.13131327879334592
+    },
+    "bootstrap_block_12": {
+      "block_months": 12,
+      "replications": 10000,
+      "return_spearman_ci95": [
+        -0.6725119198919353,
+        0.283747920997133
+      ],
+      "return_bootstrap_median": -0.24681397371545574,
+      "return_positive_fraction": 0.1851,
+      "drawdown_spearman_ci95": [
+        -0.9033713935428316,
+        0.18383260326260892
+      ],
+      "drawdown_bootstrap_median": -0.13132017057216797
+    },
+    "rolling_48m_bands": {
+      "high": {
+        "n": 19,
+        "mean_return": 0.230284357368421,
+        "median_return": 0.24556083,
+        "negative_return_share": 0,
+        "mean_max_drawdown": -0.06846532263157894,
+        "unrecovered_share": 0.15789473684210525
+      },
+      "middle": {
+        "n": 13,
+        "mean_return": 0.21524451153846155,
+        "median_return": 0.17879972,
+        "negative_return_share": 0,
+        "mean_max_drawdown": -0.0645005376923077,
+        "unrecovered_share": 0.07692307692307693
+      },
+      "low": {
+        "n": 0,
+        "mean_return": null,
+        "median_return": null,
+        "negative_return_share": null,
+        "mean_max_drawdown": null,
+        "unrecovered_share": null
+      }
+    },
+    "mean_forward_12m_return": 0.22417441999999996,
+    "mean_forward_12m_mdd": -0.06685462874999999,
+    "mean_score": 79.91601562479688,
+    "test_score_range": [
+      68.958333334,
+      89.6249999995
+    ]
+  },
+  "weight_sensitivity": [
+    {
+      "model": "baseline",
+      "weights": [
+        0.3,
+        0.25,
+        0.25,
+        0.1,
+        0.1
+      ],
+      "train_n": 48,
+      "test_n": 32,
+      "train_score_min": 35.4999999985,
+      "train_score_max": 82.958333333,
+      "test_score_min": 68.958333334,
+      "test_score_max": 89.6249999995,
+      "spearman_return": -0.1717532772312939,
+      "spearman_drawdown": -0.11657439506122595,
+      "rolling_10_90": {
+        "high_n": 17,
+        "low_n": 0
+      },
+      "rolling_20_80": {
+        "high_n": 19,
+        "low_n": 0,
+        "high_return": 0.230284357368421,
+        "low_return": null,
+        "high_mdd": -0.06846532263157894,
+        "low_mdd": null
+      },
+      "rolling_30_70": {
+        "high_n": 20,
+        "low_n": 2
+      }
+    },
+    {
+      "model": "equal",
+      "weights": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "train_n": 48,
+      "test_n": 32,
+      "train_score_min": 24.916666666,
+      "train_score_max": 88.416666666,
+      "test_score_min": 60.75,
+      "test_score_max": 91.5,
+      "spearman_return": -0.04399230153202832,
+      "spearman_drawdown": -0.13638072431920123,
+      "rolling_10_90": {
+        "high_n": 16,
+        "low_n": 0
+      },
+      "rolling_20_80": {
+        "high_n": 19,
+        "low_n": 0,
+        "high_return": 0.230284357368421,
+        "low_return": null,
+        "high_mdd": -0.06846532263157894,
+        "low_mdd": null
+      },
+      "rolling_30_70": {
+        "high_n": 20,
+        "low_n": 4
+      }
+    },
+    {
+      "model": "valuation_heavy",
+      "weights": [
+        0.4,
+        0.2,
+        0.2,
+        0.1,
+        0.1
+      ],
+      "train_n": 48,
+      "test_n": 32,
+      "train_score_min": 39.208333333,
+      "train_score_max": 81.291666665,
+      "test_score_min": 68.458333335,
+      "test_score_max": 90.208333333,
+      "spearman_return": -0.3420401444115202,
+      "spearman_drawdown": -0.11034954872300515,
+      "rolling_10_90": {
+        "high_n": 17,
+        "low_n": 0
+      },
+      "rolling_20_80": {
+        "high_n": 20,
+        "low_n": 0,
+        "high_return": 0.22670995549999998,
+        "low_return": null,
+        "high_mdd": -0.06879068799999999,
+        "low_mdd": null
+      },
+      "rolling_30_70": {
+        "high_n": 22,
+        "low_n": 1
+      }
+    },
+    {
+      "model": "macro_heavy",
+      "weights": [
+        0.2,
+        0.3,
+        0.3,
+        0.1,
+        0.1
+      ],
+      "train_n": 48,
+      "test_n": 32,
+      "train_score_min": 26.583333332000002,
+      "train_score_max": 87.958333333,
+      "test_score_min": 65.916666667,
+      "test_score_max": 90.208333334,
+      "spearman_return": 0.15745577923338472,
+      "spearman_drawdown": -0.3066208400841793,
+      "rolling_10_90": {
+        "high_n": 10,
+        "low_n": 0
+      },
+      "rolling_20_80": {
+        "high_n": 14,
+        "low_n": 0,
+        "high_return": 0.2563469935714286,
+        "low_return": null,
+        "high_mdd": -0.07146778499999999,
+        "low_mdd": null
+      },
+      "rolling_30_70": {
+        "high_n": 19,
+        "low_n": 3
+      }
+    },
+    {
+      "model": "conditions_heavy",
+      "weights": [
+        0.2,
+        0.2,
+        0.4,
+        0.1,
+        0.1
+      ],
+      "train_n": 48,
+      "test_n": 32,
+      "train_score_min": 28.416666665,
+      "train_score_max": 87.625000001,
+      "test_score_min": 60.166666667,
+      "test_score_max": 89.125000001,
+      "spearman_return": 0.32441348973607037,
+      "spearman_drawdown": -0.4381512971874707,
+      "rolling_10_90": {
+        "high_n": 8,
+        "low_n": 0
+      },
+      "rolling_20_80": {
+        "high_n": 12,
+        "low_n": 2,
+        "high_return": 0.25614218250000004,
+        "low_return": 0.210065005,
+        "high_mdd": -0.07372760833333332,
+        "low_mdd": -0.0570165
+      },
+      "rolling_30_70": {
+        "high_n": 14,
+        "low_n": 4
+      }
+    },
+    {
+      "model": "policy_heavy",
+      "weights": [
+        0.25,
+        0.2,
+        0.2,
+        0.2,
+        0.15
+      ],
+      "train_n": 48,
+      "test_n": 32,
+      "train_score_min": 29.8958333325,
+      "train_score_max": 85.791666666,
+      "test_score_min": 65.4791666675,
+      "test_score_max": 91.0625,
+      "spearman_return": -0.12280058651026393,
+      "spearman_drawdown": -0.11448895281652809,
+      "rolling_10_90": {
+        "high_n": 17,
+        "low_n": 0
+      },
+      "rolling_20_80": {
+        "high_n": 19,
+        "low_n": 0,
+        "high_return": 0.230284357368421,
+        "low_return": null,
+        "high_mdd": -0.06846532263157894,
+        "low_mdd": null
+      },
+      "rolling_30_70": {
+        "high_n": 20,
+        "low_n": 5
+      }
+    }
+  ],
+  "conclusions": [
+    "No OOS month fell into the bottom 20% risk band under the baseline 48-month rolling calibration; 19 of 32 months were above the 80th percentile and 13 were middle. The low-risk reference group is absent, so a high-minus-low spread cannot be estimated.",
+    "The baseline Spearman correlation between score and forward 12-month return is weakly negative; block-bootstrap intervals are wide and should be read as inconclusive.",
+    "Across six fixed weight sets, the score-return rank correlation changes sign. The ranking is not robust to reasonable weight changes.",
+    "The score-drawdown correlation is negative for all six weight sets, but the sample is short, the forward windows overlap and the association is not established as statistically reliable.",
+    "Only eight OOS observations have complete 36-month forward outcomes, all overlapping; no 60-month OOS outcome is yet available.",
+    "There are only three non-overlapping annual test anchors. This is insufficient for strong inference or strategy deployment."
+  ],
+  "limitations": [
+    "The existing 120-month rolling factor percentiles and 36-month score history create a short effective sample despite a longer raw history.",
+    "Forward 12-month outcomes overlap month by month. Moving-block bootstrap partially preserves serial dependence but does not create additional independent history.",
+    "The test period begins after the 2022 rate-hiking cycle and is dominated by a particular macro regime; it does not include a broad set of independent cycles.",
+    "The five weights were selected as transparent hypotheses, not fitted; sensitivity is a robustness check, not a search for a winning weight vector.",
+    "Return series is the existing third-party Yahoo Finance-derived S&P 500 total-return proxy, USD; upstream redistribution rights are not independently verified.",
+    "No transaction costs, portfolio weights, volatility targeting or asset allocation returns are evaluated. This is a signal validation, not a backtested tradable strategy."
+  ],
+  "next_requirements": [
+    "Extend verified monthly total-return and macro histories while preserving point-in-time availability;",
+    "Obtain enough post-training data to accumulate at least 8-10 non-overlapping annual test windows;",
+    "Add ALFRED vintage data for revised macro series, particularly NFCI;",
+    "Pre-register one primary outcome and one primary score specification before adding new test observations;",
+    "Only then test portfolio overlays, turnover, costs, FX and drawdown constraints."
+  ]
+}
