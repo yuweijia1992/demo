@@ -17,10 +17,6 @@
 | `fred-fedfunds-current.csv` | 联邦基金有效利率当前历史序列 | 月度 | 研究用；不是点时vintage |
 | `fred-gs10-current.csv` | 10年期国债收益率当前历史序列 | 月度 | 名义利率对照；不是实际利率 |
 | `fred-cpiaucsl-current.csv` | CPI当前历史序列 | 月度 | 通胀对照；季调历史可能修订
-| `alfred-dfii10-vintages.csv.gz` | 10年期TIPS实际收益率历史快照 | 日度原始观测 × 月末vintage | 实际利率点时重建 |
-| `alfred-fedfunds-vintages.csv.gz` | 联邦基金有效利率历史快照 | 月度原始观测 × 月末vintage | 政策利率水平与方向 |
-| `alfred-gs10-vintages.csv.gz` | 10年期国债收益率历史快照 | 月度原始观测 × 月末vintage | 名义利率与利率周期 |
-| `alfred-cpiaucsl-vintages.csv.gz` | CPI历史时点快照 | 月度原始观测 × 月末vintage | 通胀环境分类 |
 
 ALFRED的NFCI快照从2003-01月末开始，按月末日期取值，分3个vintage一批抓取并重试。文件是宽表：首列为观测日期，后续每列代表一个vintage日期。其他宏观系列先抓取FRED当前历史CSV用于覆盖审计，不把它们冒充为点时版本。不能把宽表直接当成最终月频信号；必须在每个vintage列内按原始频率聚合，并遵循数据发布日期。
 
