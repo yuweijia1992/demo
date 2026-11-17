@@ -648,7 +648,7 @@ function renderFirstBatchCards(){
  const missing=FIRST_BATCH.filter(x=>!x.code||!db.stocks.some(s=>primarySecurityCode(s.code)===primarySecurityCode(x.code))).map(x=>x.name);
  $('firstBatchAudit').textContent='首批目标 6 家；当前49家公司主表匹配 '+(6-missing.length)+'/6。'+(missing.length?'名单冲突：'+missing.join('、')+' 未在主证券JSON中找到。请核对原始49家清单后再决定是否纳入，不能静默改成50家或替换其他公司。':'六家公司均匹配主证券清单。')+' 数据库基准日：'+(db.asOf||'未标注')+'；价格快照按各公司priceDate单独展示。';
 }
-\n
+
 async function loadSp500QuarterlyPB(){
  const ids=['spPbLatest','spPbDate','spPb5y','spPb5yN','spPb10y','spPb10yN','spPbAll','spPbRange','spPbStatus','spPbRows'];
  try{
@@ -678,7 +678,7 @@ async function loadSp500QuarterlyPB(){
   $('spPbRows').innerHTML='<tr><td colspan="5">数据不可用</td></tr>';
  }
 }
-\n
+
 async function loadSp500ValuationComparison(){
  const host=$('spValuationCompareChart'),status=$('spValuationCompareStatus');
  try{
