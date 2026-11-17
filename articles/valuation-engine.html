@@ -654,7 +654,7 @@ async function loadSp500QuarterlyPB(){
  try{
   const res=await fetch('../data/index-valuation/sp500-pb-quarterly-public.csv',{cache:'no-cache'});
   if(!res.ok)throw Error('CSV HTTP '+res.status);
-  const lines=(await res.text()).trim().split(/\\r?\\n/);
+  const lines=(await res.text()).trim().split(/\r?\n/);
   const data=lines.slice(1).map(line=>{
    const c=line.split(',');
    return {date:c[0],value:Number(c[4]),frequency:c[1],source:c[5]};
