@@ -18,6 +18,8 @@
 .first-batch-card .fb-cell{border:1px solid var(--line);border-radius:9px;padding:9px;font-size:11px;line-height:1.6}
 .first-batch-card .fb-cell b{display:block;font-size:10px;color:var(--muted);font-weight:500}
 @media(max-width:760px){.first-batch-grid{grid-template-columns:1fr}}
+
+.ve-chart-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:22px 0 4px}.ve-chart-head h4{margin:0;font-size:16px;font-weight:600}.ve-chart-unit{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 10px}.ve-chart{width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--bg);padding:12px 8px;margin:12px 0}.ve-chart svg{display:block;width:100%;min-width:640px;height:auto}.ve-chart-legend{display:flex;flex-wrap:wrap;gap:16px;margin:8px 0 2px;font-size:12px;color:var(--muted)}.ve-chart-legend span{display:inline-flex;align-items:center;gap:6px}.ve-chart-legend i{display:inline-block;width:18px;height:3px;border-radius:4px}
 </style></head><body><main class="container">
 <header class="ve-hero"><span class="eyebrow">YUMU · INVESTMENT LAB / 2026</span><h1>49 家公司<br>估值决策引擎</h1><p>从可追溯财务数据到行业适配估值，再到安全边际与分批买入。缺失的市场数据不会被伪造；模型假设由使用者显式输入，所有结果可复算、可导出。</p><div class="ve-status" id="loadStatus">正在读取财务数据库……</div></header>
 <section class="ve-panel"><h2>实时数据覆盖审计</h2><div class="ve-metrics"><div class="ve-metric"><small>公司数</small><strong id="auditCompanies">—</strong><p>研究池规模</p></div><div class="ve-metric"><small>有价格</small><strong id="auditPrices">—</strong><p id="auditPricePct">覆盖率 —</p></div><div class="ve-metric"><small>有 PE / PB / PS</small><strong id="auditMultiples">—</strong><p>分别统计字段非空数量</p></div><div class="ve-metric"><small>历史分位</small><strong id="auditPercentiles">—</strong><p>5年 / 10年已入库数量</p></div></div><p class="ve-note" id="auditWarnings">正在审计数据质量……</p></section><section class="ve-panel"><h2>01 / 公司筛选与数据状态</h2><div class="ve-controls">
@@ -63,6 +65,10 @@
 <div class="ve-table-wrap"><table><thead><tr><th>指标</th><th>最新值</th><th>日期</th><th>5年分位</th><th>10年分位</th><th>有效月数（5Y/10Y）</th><th>状态</th></tr></thead><tbody id="integratedHistoryRows"><tr><td colspan="7">等待历史估值数据……</td></tr></tbody></table></div>
 <h3>标普500 PB：季度历史估值（独立频率）</h3>
 <p class="ve-note">本模块单独读取公开季度 PB 数据，不与月频 PE/PB 矩阵合并。5年/10年窗口分别按20/40个季度计算，必须具备完整窗口；分位采用 mid-rank。季度值不插值为月频，季度分位也不可与月频分位直接混比。</p>
+<div class="ve-chart-head"><h4>标普500长期估值变化对比（共同起点指数）</h4><span class="ve-chart-unit">2006Q1 = 100</span></div>
+<p class="ve-note">为避免 PE、CAPE、PB 的量纲不同造成误读，图中将三项指标分别以共同起点归一化为100，比较长期相对变化而非绝对估值高低。PB为季度末值；PE-TTM和CAPE取季度末所在月份的月频观测（该来源为月初/月份观测），不插值。比较区间截至季度PB最新可用期。</p>
+<div id="spValuationCompareChart" class="ve-chart" role="img" aria-label="标普500 PB、PE-TTM和CAPE长期相对变化对比图"><div class="ve-note">正在载入长期估值对比图……</div></div>
+<div id="spValuationCompareStatus" class="ve-note">等待估值序列载入……</div>
 <div class="ve-metrics">
 <div class="ve-metric"><small>最新季度 PB</small><strong id="spPbLatest">—</strong><p id="spPbDate">等待数据</p></div>
 <div class="ve-metric"><small>季度5年分位</small><strong id="spPb5y">—</strong><p id="spPb5yN">20季度窗口</p></div>
@@ -672,7 +678,55 @@ async function loadSp500QuarterlyPB(){
   $('spPbRows').innerHTML='<tr><td colspan="5">数据不可用</td></tr>';
  }
 }
-\nasync function init(){try{let res=await fetch(DB);if(!res.ok)throw Error('HTTP '+res.status);db=await res.json();updateAudit();$('loadStatus').textContent='数据库加载成功：'+db.stocks.length+' 家公司｜基准日期 '+db.asOf+'｜缺失字段保留空值';$('company').innerHTML=db.stocks.map(s=>'<option value="'+s.code+'">'+s.name+'（'+s.code+'）</option>').join('');render();loadSelected();await loadFinancialData();loadSiteHistory();loadSiteCoverageAudit();await loadValuationModel();renderFirstBatchCards();await loadSp500QuarterlyPB()}catch(e){$('loadStatus').textContent='数据库加载失败：'+e.message+'。请通过 GitHub Pages 打开此页，勿直接 file:// 打开。'}}
+\n
+async function loadSp500ValuationComparison(){
+ const host=$('spValuationCompareChart'),status=$('spValuationCompareStatus');
+ try{
+  const [qr,mr]=await Promise.all([
+   fetch('../data/index-valuation/sp500-pb-quarterly-public.csv',{cache:'no-cache'}),
+   fetch('../data/index-valuation/valuation-monthly-partial.csv',{cache:'no-cache'})
+  ]);
+  if(!qr.ok||!mr.ok)throw Error('数据文件读取失败：PB '+qr.status+'，月频估值 '+mr.status);
+  const qlines=(await qr.text()).trim().split(/\r?\n/);
+  const qdata=qlines.slice(1).map(line=>{const c=line.split(',');return {date:c[0],value:Number(c[4])};})
+   .filter(x=>/^\d{4}-\d{2}-\d{2}$/.test(x.date)&&Number.isFinite(x.value)).sort((a,b)=>a.date.localeCompare(b.date));
+  const mlines=(await mr.text()).replace(/^\uFEFF/,'').trim().split(/\r?\n/);
+  const monthly=new Map();
+  mlines.slice(1).forEach(line=>{
+   const c=line.split(',');
+   if(c[1]==='S&P 500'&&(c[2]==='PE_TTM'||c[2]==='CAPE')){
+    if(!monthly.has(c[0]))monthly.set(c[0],{});
+    monthly.get(c[0])[c[2]]=Number(c[3]);
+   }
+  });
+  const common=qdata.map(q=>{
+   const m=monthly.get(q.date.slice(0,7));
+   return m&&Number.isFinite(m.PE_TTM)&&Number.isFinite(m.CAPE)?{date:q.date,pb:q.value,pe:m.PE_TTM,cape:m.CAPE}:null;
+  }).filter(Boolean);
+  if(common.length<2)throw Error('共同有效季度不足，无法绘图');
+  const base=common[0],series=[
+   {key:'pb',name:'PB（季度）',color:'#b77945'},
+   {key:'pe',name:'PE-TTM（月频取季度末月）',color:'#3978a8'},
+   {key:'cape',name:'CAPE（月频取季度末月）',color:'#56866a'}
+  ];
+  series.forEach(z=>z.points=common.map(d=>({date:d.date,value:d[z.key]/base[z.key]*100})));
+  const all=series.flatMap(z=>z.points.map(p=>p.value));
+  const ymin=Math.max(0,Math.floor(Math.min(...all)/20)*20),ymax=Math.ceil(Math.max(...all)/20)*20||100;
+  const W=920,H=390,L=66,R=22,T=24,B=54,PW=W-L-R,PH=H-T-B;
+  const x=i=>L+i/(common.length-1)*PW,y=v=>T+(ymax-v)/(ymax-ymin||1)*PH;
+  const ticks=[];for(let v=ymin;v<=ymax;v+=20)ticks.push(v);
+  const grid=ticks.map(v=>'<line x1="'+L+'" y1="'+y(v)+'" x2="'+(W-R)+'" y2="'+y(v)+'" stroke="currentColor" opacity=".12"/><text x="'+(L-12)+'" y="'+(y(v)+4)+'" text-anchor="end" font-size="11" fill="currentColor" opacity=".72">'+v+'</text>').join('');
+  const yearTicks=common.map((d,i)=>({year:d.date.slice(0,4),i})).filter((d,i,a)=>i===0||d.year!==a[i-1].year).filter(d=>Number(d.year)%4===2||d.i===0);
+  const xlabels=yearTicks.map(t=>'<text x="'+x(t.i)+'" y="'+(H-20)+'" text-anchor="middle" font-size="11" fill="currentColor" opacity=".72">'+t.year+'</text>').join('');
+  const paths=series.map(z=>'<path d="'+z.points.map((p,i)=>(i?'L':'M')+x(i).toFixed(1)+','+y(p.value).toFixed(1)).join(' ')+'" fill="none" stroke="'+z.color+'" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>').join('');
+  const legend=series.map(z=>'<span><i style="background:'+z.color+'"></i>'+z.name+'</span>').join('');
+  const last=common[common.length-1];
+  host.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三项标普500估值指标以2006年第一季度为100的长期变化">'+grid+'<line x1="'+L+'" y1="'+T+'" x2="'+L+'" y2="'+(H-B)+'" stroke="currentColor" opacity=".35"/><line x1="'+L+'" y1="'+(H-B)+'" x2="'+(W-R)+'" y2="'+(H-B)+'" stroke="currentColor" opacity=".35"/>'+paths+xlabels+'<text x="'+(L+PW/2)+'" y="'+(H-2)+'" text-anchor="middle" font-size="10" fill="currentColor" opacity=".6">季度（PE-TTM / CAPE取该季度末所在月份的月频值）</text></svg><div class="ve-chart-legend">'+legend+'</div>';
+  status.textContent='绘图成功：共同样本 '+common.length+' 个季度，覆盖 '+base.date+' 至 '+last.date+'。共同起点原始值：PB '+base.pb.toFixed(2)+'、PE-TTM '+base.pe.toFixed(2)+'、CAPE '+base.cape.toFixed(2)+'；最新共同期原始值：PB '+last.pb.toFixed(2)+'、PE-TTM '+last.pe.toFixed(2)+'、CAPE '+last.cape.toFixed(2)+'。指数化仅比较相对变化，不表示三种估值倍数可以直接比较。';
+ }catch(e){host.innerHTML='<div class="ve-note">对比图载入失败：'+String(e.message).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</div>';status.textContent='请检查季度PB与月频估值CSV。';}
+}
+
+async function init(){try{let res=await fetch(DB);if(!res.ok)throw Error('HTTP '+res.status);db=await res.json();updateAudit();$('loadStatus').textContent='数据库加载成功：'+db.stocks.length+' 家公司｜基准日期 '+db.asOf+'｜缺失字段保留空值';$('company').innerHTML=db.stocks.map(s=>'<option value="'+s.code+'">'+s.name+'（'+s.code+'）</option>').join('');render();loadSelected();await loadFinancialData();loadSiteHistory();loadSiteCoverageAudit();await loadValuationModel();renderFirstBatchCards();await loadSp500QuarterlyPB();await loadSp500ValuationComparison()}catch(e){$('loadStatus').textContent='数据库加载失败：'+e.message+'。请通过 GitHub Pages 打开此页，勿直接 file:// 打开。'}}
 $('saveDecision').onclick=saveDecisionRecord;$('loadDecision').onclick=()=>loadDecisionRecord(selected?.code);$('exportDecisions').onclick=exportDecisionRecords;$('printDecision').onclick=printDecisionReport;renderDecisionRows();
 ['search','modelFilter','statusFilter','sort'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));$('company').onchange=loadSelected;forecastInputIds.forEach(id=>$(id)?.addEventListener('input',()=>{saveForecastInputs();if(financialDb)renderForecast(financialByCode[selected?.code])}));$('loadSiteHistory').onclick=loadSiteHistory;$('loadCoverageAudit').onclick=loadSiteCoverageAudit;$('calc').onclick=calculate;$('calcHistory').onclick=calculateHistory;$('applyHistoryBand').onclick=applyHistoryBand;$('downloadHistory').onclick=exportHistory;$('historyMetric').onchange=()=>{historyResults=[];historyBands={};$('historyRows').innerHTML='<tr><td colspan="11">指标已更改，正在重新计算……</td></tr>';if(importedHistoryText)processHistoryText(importedHistoryText,historySourceLabel)};$('loadData').onclick=loadData;$('export').onclick=()=>db&&exportCSV();$('reset').onclick=()=>{let fs=forecastStore();if(selected)delete fs[selected.code];localStorage.setItem(FORECAST_STORE,JSON.stringify(fs));['eps','bvps','roe','embedded','dps','modelShares','investmentBudget','forecastNetMarginLow','forecastNetMarginBase','forecastNetMarginHigh','growthLow','growthBase','growthHigh','fcfMarginLow','fcfMarginBase','fcfMarginHigh','roeLow','roeBase','roeHigh','vnbPerShare','vnbMultiple','cycleEpsLow','cycleEpsBase','cycleEpsHigh'].forEach(id=>$(id).value='');$('lowMult').value=12;$('baseMult').value=16;$('highMult').value=20;$('margin').value=25;$('discount').value=10;$('growthRate').value=3;loadSelected()};init();
 </script></body></html>
