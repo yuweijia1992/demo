@@ -1,0 +1,48 @@
+name: Extend Macro History V1.2
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/extend_macro_history_v12.py"
+      - ".github/workflows/extend-macro-history-v12.yml"
+permissions:
+  contents: write
+jobs:
+  download-and-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Download public monthly total returns and ALFRED vintages
+        run: python scripts/extend_macro_history_v12.py
+      - name: Validate outputs
+        run: |
+          python - <<'PY'
+          import csv, gzip, json
+          from pathlib import Path
+          root = Path("data/index-valuation")
+          audit = json.loads((root / "v12-historical-data-audit.json").read_text())
+          assert audit["sp500_total_return"]["rows"] >= 1800
+          assert audit["vintage_dates"]["count"] >= 200
+          assert set(audit["series"]) == {"NFCI", "DFII10", "FEDFUNDS", "GS10", "CPIAUCSL"}
+          for sid, meta in audit["series"].items():
+              with gzip.open(root / meta["file"], "rt", encoding="utf-8") as f:
+                  header = next(csv.reader(f))
+              assert len(header) == meta["vintage_columns"] + 1, sid
+              assert header[1].startswith(sid + "_"), sid
+          print("V1.2 historical source files passed coverage and schema checks.")
+          PY
+      - name: Commit refreshed public data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/index-valuation/sp500-long-run-total-return-monthly.csv data/index-valuation/alfred-*-vintages.csv.gz data/index-valuation/v12-historical-data-audit.json
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "Add V1.2 long-run S&P total returns and ALFRED vintages"
+            git push
+          fi
