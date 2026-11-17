@@ -23,14 +23,24 @@ OUT = ROOT / "data" / "index-valuation"
 USER_AGENT = "InvestmentLab-V12-research/1.0 (public-data; contact via repository)"
 SHILLER_CSV = "https://firenum.com/data/shiller-monthly.csv"
 ALFRED_CSV = "https://alfred.stlouisfed.org/graph/alfredgraph.csv"
-SERIES = ("NFCI", "DFII10", "FEDFUNDS", "GS10", "CPIAUCSL")
+SERIES = ("NFCI",)
+CURRENT_SERIES = ("DFII10", "FEDFUNDS", "GS10", "CPIAUCSL")
+FRED_CSV = "https://fred.stlouisfed.org/graph/fredgraph.csv"
 START = dt.date(2003, 1, 1)
 
 
-def get(url: str) -> bytes:
+def get(url: str, attempts: int = 3) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=90) as response:
-        return response.read()
+    last_error = None
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as response:
+                return response.read()
+        except Exception as exc:
+            last_error = exc
+            if attempt + 1 < attempts:
+                time.sleep(2 ** attempt)
+    raise RuntimeError(f"Download failed after {attempts} attempts: {url}") from last_error
 
 
 def sha256(path: Path) -> str:
@@ -92,7 +102,7 @@ def build_sp500_total_return() -> dict:
     }
 
 
-def fetch_alfred_series(series_id: str, vintages: list[str], batch_size: int = 12) -> dict:
+def fetch_alfred_series(series_id: str, vintages: list[str], batch_size: int = 3) -> dict:
     matrix: dict[str, dict[str, str]] = {}
     columns = []
     for offset in range(0, len(vintages), batch_size):
@@ -120,7 +130,7 @@ def fetch_alfred_series(series_id: str, vintages: list[str], batch_size: int = 1
             target = matrix.setdefault(obs_date, {})
             for col, value in zip(header[1:], row[1:]):
                 target[col] = value.strip()
-        time.sleep(1.0)
+        time.sleep(0.25)
     if len(matrix) < 100:
         raise RuntimeError(f"{series_id}: too few ALFRED observations: {len(matrix)}")
     path = OUT / f"alfred-{series_id.lower()}-vintages.csv.gz"
@@ -138,6 +148,27 @@ def fetch_alfred_series(series_id: str, vintages: list[str], batch_size: int = 1
         "sha256": sha256(path),
         "source": f"https://alfred.stlouisfed.org/series?seid={series_id}",
         "method": "Monthly month-end as-of vintages from ALFRED graph CSV; each column is the full series as known on that vintage date."
+    }
+
+
+def fetch_fred_current(series_id: str) -> dict:
+    url = FRED_CSV + "?" + urllib.parse.urlencode({"id": series_id})
+    raw = get(url).decode("utf-8-sig")
+    rows = list(csv.reader(io.StringIO(raw)))
+    if len(rows) < 100 or not rows[0] or rows[0][1:] != [series_id]:
+        raise RuntimeError(f"{series_id}: unexpected FRED CSV response/header {rows[:2]}")
+    path = OUT / f"fred-{series_id.lower()}-current.csv"
+    with path.open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerows(rows)
+    valid_dates = [r[0] for r in rows[1:] if len(r) > 1 and r[1] not in ("", ".")]
+    if not valid_dates:
+        raise RuntimeError(f"{series_id}: no valid observations")
+    return {
+        "file": path.name, "rows": len(valid_dates), "start": min(valid_dates),
+        "end": max(valid_dates), "sha256": sha256(path),
+        "source": f"https://fred.stlouisfed.org/series/{series_id}",
+        "method": "Current FRED graph CSV download; latest revised history, not an ALFRED point-in-time vintage."
     }
 
 
@@ -159,6 +190,7 @@ def main():
         "vintage_policy": "Calendar month-end as-of snapshots; no API key; ALFRED header is validated for every requested vintage.",
         "vintage_dates": {"count": len(vintages), "first": vintages[0], "last": vintages[-1]},
         "series": {},
+        "current_fred_series": {},
         "sp500_total_return": build_sp500_total_return(),
         "limitations": [
             "ALFRED graph CSV is a public download endpoint, not the documented FRED API; endpoint changes will fail header validation rather than silently mislabel vintages.",
@@ -168,10 +200,13 @@ def main():
             "This long-run S&P series is USD nominal total return, not RMB return; FX conversion is a separate step."
         ]
     }
+    for series_id in CURRENT_SERIES:
+        print(f"Downloading current FRED series {series_id}", flush=True)
+        audit["current_fred_series"][series_id] = fetch_fred_current(series_id)
     for series_id in [x.strip().upper() for x in args.series.split(",") if x.strip()]:
         if series_id not in SERIES:
-            raise RuntimeError(f"Series not on approved allowlist: {series_id}")
-        print(f"Downloading {series_id}: {len(vintages)} monthly vintages", flush=True)
+            raise RuntimeError(f"Series not on approved ALFRED allowlist: {series_id}")
+        print(f"Downloading ALFRED {series_id}: {len(vintages)} monthly vintages in batches of 3", flush=True)
         audit["series"][series_id] = fetch_alfred_series(series_id, vintages)
     audit_path = OUT / "v12-historical-data-audit.json"
     audit_path.write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
