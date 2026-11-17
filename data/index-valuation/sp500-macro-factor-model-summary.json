@@ -3,11 +3,11 @@
   "generated_at": "2026-11-17",
   "model_version": "V1.0 exploratory",
   "period": {
-    "monthly_factor_panel_start": "2015-12",
+    "monthly_factor_panel_start": "2016-01",
     "monthly_factor_panel_end": "2026-07",
-    "factor_observations": 128,
-    "score_percentile_start": "2018-11",
-    "score_percentile_observations": 93,
+    "factor_observations": 127,
+    "score_percentile_start": "2018-12",
+    "score_percentile_observations": 92,
     "sp500_forward_return_source_end": "2026-07"
   },
   "inputs": [
@@ -15,137 +15,137 @@
       "name": "CAPE valuation",
       "series": "S&P 500 Shiller CAPE",
       "weight": 0.3,
-      "transformation": "120-month rolling midrank percentile; >=80 high, <70 low"
+      "transformation": "120-month rolling midrank percentile; >=80 high, <70 low; same signal month"
     },
     {
       "name": "10-year real yield",
       "series": "DFII10",
       "weight": 0.25,
-      "transformation": "daily observations averaged within month; 120-month rolling midrank percentile"
+      "transformation": "daily observations averaged within prior calendar month; one-month lag; 120-month rolling midrank percentile"
     },
     {
       "name": "Financial conditions",
       "series": "NFCI",
       "weight": 0.25,
-      "transformation": "latest weekly observation known by month-end using conservative 5-calendar-day publication lag; 120-month rolling midrank percentile"
+      "transformation": "latest weekly observation published by signal month-end using 5-calendar-day lag; 120-month rolling midrank percentile"
     },
     {
       "name": "Policy rate level",
       "series": "FEDFUNDS",
       "weight": 0.1,
-      "transformation": "monthly average; 120-month rolling midrank percentile"
+      "transformation": "monthly average lagged one month; 120-month rolling midrank percentile"
     },
     {
       "name": "Policy direction",
       "series": "FEDFUNDS",
       "weight": 0.1,
-      "transformation": "current month minus 12 months earlier; tightening >= +0.25pp score 100, easing <= -0.25pp score 0, otherwise 50"
+      "transformation": "lagged monthly average change versus 12 months earlier; tightening >= +0.25pp score 100, easing <= -0.25pp score 0, otherwise 50"
     }
   ],
   "formula": "Composite risk score = 0.30*CAPE_percentile + 0.25*DFII10_percentile + 0.25*NFCI_percentile + 0.10*FEDFUNDS_level_percentile + 0.10*policy_direction_score.",
-  "risk_percentile": "Rolling 36-month midrank percentile of composite score, including current month. Quintiles Q1-Q5 are relative to the prior 36 months and therefore use no future score observations.",
-  "forward_method": "Forward return starts the month after the signal month. Total return is compounded monthly in USD. Max drawdown is peak-to-trough on the compounded forward wealth path. Recovery is months from the max-drawdown trough to first regain the pre-drawdown peak; null means not recovered by horizon.",
+  "risk_percentile": "Rolling 36-month midrank percentile of composite score, including current month. Q1-Q5 are relative to the trailing 36-month score history, not full-sample cutoffs.",
+  "forward_method": "Forward return starts the month after signal month. Monthly total return is compounded in USD. Max drawdown is peak-to-trough on compounded forward wealth. Recovery is months from max-drawdown trough to first regain of pre-drawdown peak; null means not recovered within horizon.",
   "summary_by_horizon": {
     "12": [
       {
         "band": "Q1_low",
-        "n": 33,
-        "avg_return": 0.2195815910835602,
-        "median_return": 0.19688016670351005,
-        "negative_return_share": 0.09090909090909091,
-        "avg_max_drawdown": -0.107603533774591,
-        "unrecovered_share": 0.30303030303030304,
+        "n": 31,
+        "avg_return": 0.2314545262310865,
+        "median_return": 0.2193674881036891,
+        "negative_return_share": 0.06451612903225806,
+        "avg_max_drawdown": -0.10304596762431854,
+        "unrecovered_share": 0.25806451612903225,
         "median_recovery_months": 1
       },
       {
         "band": "Q2",
-        "n": 9,
-        "avg_return": 0.08380223420472012,
+        "n": 8,
+        "avg_return": 0.038544676681537104,
         "median_return": 0.14999547994873308,
-        "negative_return_share": 0.2222222222222222,
-        "avg_max_drawdown": -0.13389881828723504,
-        "unrecovered_share": 0.4444444444444444,
+        "negative_return_share": 0.5,
+        "avg_max_drawdown": -0.14216766707271014,
+        "unrecovered_share": 0.5,
         "median_recovery_months": 2
       },
       {
         "band": "Q3",
-        "n": 3,
-        "avg_return": -0.10266350959646849,
-        "median_return": -0.09210082636668138,
-        "negative_return_share": 1,
-        "avg_max_drawdown": -0.22444234436126378,
-        "unrecovered_share": 1,
-        "median_recovery_months": null
-      },
-      {
-        "band": "Q4",
         "n": 5,
-        "avg_return": 0.07243097035491494,
-        "median_return": 0.08192938044648868,
-        "negative_return_share": 0.4,
-        "avg_max_drawdown": -0.12782917533891597,
-        "unrecovered_share": 0.6,
+        "avg_return": 0.06021503691225327,
+        "median_return": 0.07505097098776314,
+        "negative_return_share": 0.2,
+        "avg_max_drawdown": -0.17177864767355505,
+        "unrecovered_share": 0.8,
         "median_recovery_months": 2
       },
       {
+        "band": "Q4",
+        "n": 6,
+        "avg_return": 0.06476639938093898,
+        "median_return": 0.08192938044648868,
+        "negative_return_share": 0.5,
+        "avg_max_drawdown": -0.14756540588911207,
+        "unrecovered_share": 0.6666666666666666,
+        "median_recovery_months": 1
+      },
+      {
         "band": "Q5_high",
-        "n": 31,
-        "avg_return": 0.18542199205437931,
+        "n": 30,
+        "avg_return": 0.18228126150288632,
         "median_return": 0.20818281218991896,
-        "negative_return_share": 0.06451612903225806,
-        "avg_max_drawdown": -0.08657218036110245,
-        "unrecovered_share": 0.22580645161290322,
+        "negative_return_share": 0.06666666666666667,
+        "avg_max_drawdown": -0.08619582066270542,
+        "unrecovered_share": 0.23333333333333334,
         "median_recovery_months": 1
       }
     ],
     "36": [
       {
         "band": "Q1_low",
-        "n": 26,
-        "avg_return": 0.3772889102093977,
-        "median_return": 0.35292687314042626,
+        "n": 24,
+        "avg_return": 0.3847210584434005,
+        "median_return": 0.36718741047777415,
         "negative_return_share": 0,
-        "avg_max_drawdown": -0.234164096276171,
-        "unrecovered_share": 0.6923076923076923,
+        "avg_max_drawdown": -0.23541669201253443,
+        "unrecovered_share": 0.7083333333333334,
         "median_recovery_months": 15
       },
       {
         "band": "Q2",
         "n": 4,
-        "avg_return": 0.44682966792410794,
-        "median_return": 0.47555660094371355,
+        "avg_return": 0.31362787668940045,
+        "median_return": 0.31641871669101995,
         "negative_return_share": 0,
-        "avg_max_drawdown": -0.21732679607835587,
+        "avg_max_drawdown": -0.23867344092707968,
         "unrecovered_share": 0,
         "median_recovery_months": 15
       },
       {
         "band": "Q3",
-        "n": 3,
-        "avg_return": 0.45461748842005295,
-        "median_return": 0.3838327156533703,
+        "n": 4,
+        "avg_return": 0.5222582943370859,
+        "median_return": 0.5785782536568,
         "negative_return_share": 0,
-        "avg_max_drawdown": -0.22444234436126378,
-        "unrecovered_share": 0,
-        "median_recovery_months": 15
+        "avg_max_drawdown": -0.19688322691035864,
+        "unrecovered_share": 0.25,
+        "median_recovery_months": 4
       },
       {
         "band": "Q4",
-        "n": 3,
-        "avg_return": 0.4491982557661467,
+        "n": 5,
+        "avg_return": 0.5240048463649959,
         "median_return": 0.4014247257668999,
         "negative_return_share": 0,
-        "avg_max_drawdown": -0.212209921392158,
+        "avg_max_drawdown": -0.19156979125316267,
         "unrecovered_share": 0,
         "median_recovery_months": 9
       },
       {
         "band": "Q5_high",
-        "n": 21,
-        "avg_return": 0.7126444818431671,
+        "n": 19,
+        "avg_return": 0.7017036636348141,
         "median_return": 0.7528393176501438,
         "negative_return_share": 0,
-        "avg_max_drawdown": -0.11945215276392267,
+        "avg_max_drawdown": -0.11736680556055179,
         "unrecovered_share": 0,
         "median_recovery_months": 1
       }
@@ -153,31 +153,31 @@
     "60": [
       {
         "band": "Q1_low",
-        "n": 25,
-        "avg_return": 1.0395082918546004,
-        "median_return": 1.0352320751934605,
+        "n": 23,
+        "avg_return": 1.0495408513664035,
+        "median_return": 1.0357357129679672,
         "negative_return_share": 0,
-        "avg_max_drawdown": -0.23867344092707954,
+        "avg_max_drawdown": -0.23867344092707957,
         "unrecovered_share": 0,
         "median_recovery_months": 15
       },
       {
         "band": "Q2",
-        "n": 3,
-        "avg_return": 0.938840861167181,
+        "n": 2,
+        "avg_return": 0.8543177870777456,
         "median_return": 0.8757108790129813,
         "negative_return_share": 0,
-        "avg_max_drawdown": -0.2386734409270795,
+        "avg_max_drawdown": -0.23867344092707965,
         "unrecovered_share": 0,
         "median_recovery_months": 15
       },
       {
         "band": "Q3",
-        "n": 1,
-        "avg_return": 1.0157314725152031,
+        "n": 4,
+        "avg_return": 0.9929715491997456,
         "median_return": 1.0157314725152031,
         "negative_return_share": 0,
-        "avg_max_drawdown": -0.23867344092707965,
+        "avg_max_drawdown": -0.23867344092707954,
         "unrecovered_share": 0,
         "median_recovery_months": 15
       },
@@ -193,59 +193,61 @@
       },
       {
         "band": "Q5_high",
-        "n": 3,
-        "avg_return": 0.941939377086149,
-        "median_return": 0.9506132652131569,
+        "n": 2,
+        "avg_return": 1.011359383491277,
+        "median_return": 1.0721055017693972,
         "negative_return_share": 0,
         "avg_max_drawdown": -0.23867344092707965,
-        "unrecovered_share": 0.3333333333333333,
+        "unrecovered_share": 0,
         "median_recovery_months": 15
       }
     ]
   },
   "latest_signal": {
     "date": "2026-07",
+    "macro_source_month": "2026-06",
     "cape": 40.02,
     "cape_pctl_120m": 97.91666666666667,
     "fedfunds_pct": 3.63,
-    "fedfunds_pctl_120m": 63.75,
+    "fedfunds_pctl_120m": 64.16666666666667,
     "fedfunds_change_12m_pp": -0.7000000000000002,
-    "dfii10_monthly_avg": 2.353181818181818,
-    "real_yield_pctl_120m": 98.75,
+    "dfii10_monthly_avg": 2.1790476190476187,
+    "real_yield_pctl_120m": 97.08333333333333,
     "nfci_available_value": -0.533,
     "nfci_pctl_120m": 37.083333333333336,
     "policy_direction": "easing",
-    "composite_risk_score": 69.70833333333334,
-    "risk_score_percentile_36m": 31.944444444444443,
+    "composite_risk_score": 69.33333333333333,
+    "risk_score_percentile_36m": 37.5,
     "risk_band_36m": "Q2"
   },
   "data_audit": {
     "valuation": {
-      "source": "Multpl monthly Shiller CAPE, already in project valuation-monthly-partial.csv",
+      "source": "Multpl monthly Shiller CAPE in project valuation-monthly-partial.csv",
       "coverage": "2006-01 to 2026-07 used"
     },
     "fedfunds": {
       "source": "Board of Governors of the Federal Reserve System via FRED",
       "url": "https://fred.stlouisfed.org/series/FEDFUNDS",
-      "coverage": "2006-01 to 2026-10"
+      "coverage": "2006-01 to 2026-10",
+      "alignment": "one-month lag"
     },
     "dfii10": {
       "source": "Board of Governors of the Federal Reserve System via FRED",
       "url": "https://fred.stlouisfed.org/series/DFII10",
-      "frequency": "daily, averaged to monthly mean",
+      "frequency": "daily, averaged within prior month",
       "raw_coverage": "2003-01-02 to 2026-10-08",
       "mirror": "kj2741-kj/Risk-Premia Analysis/_v4_build/dfii10.csv",
       "mirror_blob_sha": "568e77b307524091d781bf62d1c5aa7377a8f875",
-      "note": "The raw carrier file is a third-party FRED mirror downloaded 2026-10-12; this project has not independently re-downloaded every observation from FRED."
+      "note": "Third-party FRED mirror downloaded 2026-10-12; not independently re-downloaded observation-by-observation in this run."
     },
     "nfci": {
       "source": "Federal Reserve Bank of Chicago via FRED",
       "url": "https://fred.stlouisfed.org/series/NFCI",
-      "frequency": "weekly, Friday-ending",
+      "frequency": "weekly Friday-ending; latest observation available by month-end after conservative 5-calendar-day release lag",
       "raw_coverage": "2000-01-07 to 2026-09-11",
       "mirror": "nirajneupane17/conditional-tail-episode-risk data/stress_nfci.csv",
       "mirror_blob_sha": "47de0737e343ca056d2649cc9b9cf4b5f8571802",
-      "note": "The raw carrier file is a third-party mirror; FRED current data page reports weekly observations and positive values as tighter-than-average. NFCI is revised historically, so this is ex-post analysis, not a fully point-in-time vintage backtest."
+      "note": "Third-party mirror. Chicago Fed/FRED historical NFCI values are revised; without ALFRED vintage data this is ex-post, not fully point-in-time. The latest mirror is not a live feed."
     },
     "sp500_returns": {
       "source": "Project data/investment-monthly.csv",
@@ -255,13 +257,13 @@
     }
   },
   "limitations": [
-    "Only 128 complete monthly factor observations (2015-12 to 2026-07) because all rolling percentiles require 120 complete monthly observations.",
-    "Risk score percentile needs 36 prior/current monthly scores; only 93 score-ranked observations remain.",
-    "Forward windows overlap and are not independent samples; group averages are descriptive, not causal estimates.",
-    "NFCI is revised historically; without ALFRED vintage observations, historical point-in-time availability is not fully reconstructed. A conservative 5-calendar-day release lag is applied to weekly dates, but revisions remain.",
+    "127 complete monthly factor observations from 2016-01 to 2026-07; 92 score-percentile observations from 2018-12 after the 36-month score warm-up.",
+    "FEDFUNDS and DFII10 are lagged one month to avoid using a monthly average before it would normally be published; NFCI uses a conservative five-calendar-day publication lag.",
+    "NFCI is revised historically; without ALFRED vintage observations, historical point-in-time information is not fully reconstructed.",
     "DFII10 and NFCI raw carrier files are third-party mirrors of official series and have not been independently re-downloaded observation-by-observation in this run.",
-    "ICE BofA high-yield OAS is not included: FRED notes that from April 2026 only three years of history are provided and ICE prohibits redistribution of its top-level data without written permission.",
-    "Composite weights are transparent research assumptions, not optimized parameters; no allocation rule should be deployed before out-of-sample validation and block-bootstrap uncertainty analysis."
+    "Forward windows overlap and are not independent; horizon groups with small n are descriptive only.",
+    "ICE BofA high-yield OAS is excluded: FRED notes that from April 2026 only three years of history are provided and ICE prohibits redistribution of its top-level data without prior written permission.",
+    "Weights are transparent research assumptions, not fitted or optimized parameters. The present results do not establish a reliable monotonic risk-prediction relationship; no allocation rule should be deployed before rolling out-of-sample and block-bootstrap tests."
   ],
   "references": [
     {
@@ -281,7 +283,7 @@
       "url": "https://www.chicagofed.org/research/data/nfci/about"
     },
     {
-      "series": "ICE BofA HY OAS data terms",
+      "series": "ICE BofA HY OAS terms",
       "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
     }
   ]
