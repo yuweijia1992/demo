@@ -27,12 +27,17 @@ jobs:
           audit = json.loads((root / "v12-historical-data-audit.json").read_text())
           assert audit["sp500_total_return"]["rows"] >= 1800
           assert audit["vintage_dates"]["count"] >= 200
-          assert set(audit["series"]) == {"NFCI", "DFII10", "FEDFUNDS", "GS10", "CPIAUCSL"}
+          assert set(audit["series"]) == {"NFCI"}
+          assert set(audit["current_fred_series"]) == {"DFII10", "FEDFUNDS", "GS10", "CPIAUCSL"}
           for sid, meta in audit["series"].items():
               with gzip.open(root / meta["file"], "rt", encoding="utf-8") as f:
                   header = next(csv.reader(f))
               assert len(header) == meta["vintage_columns"] + 1, sid
               assert header[1].startswith(sid + "_"), sid
+          for sid, meta in audit["current_fred_series"].items():
+              with (root / meta["file"]).open(encoding="utf-8") as f:
+                  header = next(csv.reader(f))
+              assert header[1] == sid, sid
           print("V1.2 historical source files passed coverage and schema checks.")
           PY
       - name: Commit refreshed public data
