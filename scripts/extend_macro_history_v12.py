@@ -124,11 +124,13 @@ def fetch_alfred_series(series_id: str, vintages: list[str], batch_size: int = 1
     if len(matrix) < 100:
         raise RuntimeError(f"{series_id}: too few ALFRED observations: {len(matrix)}")
     path = OUT / f"alfred-{series_id.lower()}-vintages.csv.gz"
-    with gzip.open(path, "wt", newline="", encoding="utf-8", compresslevel=9, mtime=0) as f:
-        w = csv.writer(f)
-        w.writerow(["observation_date", *columns])
-        for obs_date in sorted(matrix):
-            w.writerow([obs_date, *[matrix[obs_date].get(c, ".") for c in columns]])
+    with path.open("wb") as raw_file:
+        with gzip.GzipFile(fileobj=raw_file, mode="wb", compresslevel=9, mtime=0) as zipped:
+            with io.TextIOWrapper(zipped, encoding="utf-8", newline="") as f:
+                w = csv.writer(f)
+                w.writerow(["observation_date", *columns])
+                for obs_date in sorted(matrix):
+                    w.writerow([obs_date, *[matrix[obs_date].get(c, ".") for c in columns]])
     return {
         "file": path.name, "observation_rows": len(matrix), "vintage_columns": len(columns),
         "first_observation": min(matrix), "last_observation": max(matrix),
