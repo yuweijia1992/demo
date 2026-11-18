@@ -16,7 +16,14 @@
       "price_series": "present_in_existing_monthly_matrix",
       "total_return_series": "present_in_existing_monthly_matrix_derived_from_official_series_reference",
       "coverage": "2006-01 to 2026-08 monthly returns; Sep-2026 level partial",
-      "coverage_verified": false
+      "coverage_verified": false,
+      "cross_check": {
+        "repository": "YellowPancake/quant-autoresearch",
+        "coverage": "2020-02 to 2026-08",
+        "common_months": 79,
+        "max_absolute_monthly_return_difference_percentage_points": 1.730361643970113e-7,
+        "result": "matches to rounding precision; same official H00300 source, independent collector"
+      }
     },
     {
       "name": "中证500",
@@ -24,7 +31,15 @@
       "total_return_code": "H00905",
       "price_series": "not_in_matrix",
       "total_return_series": "not_in_matrix",
-      "coverage_verified": false
+      "coverage_verified": false,
+      "external_sample": {
+        "repository": "YellowPancake/quant-autoresearch",
+        "file": "examples/studies/total_return/data/china_total_return.csv",
+        "coverage": "2020-01-02 to 2026-09-11",
+        "frequency": "daily",
+        "status": "candidate_only_not_ingested",
+        "reason": "market-data redistribution rights not cleared; does not cover 2005-2019"
+      }
     },
     {
       "name": "中证1000",
@@ -32,7 +47,15 @@
       "total_return_code": "H00852",
       "price_series": "not_in_matrix",
       "total_return_series": "not_in_matrix",
-      "coverage_verified": false
+      "coverage_verified": false,
+      "external_sample": {
+        "repository": "YellowPancake/quant-autoresearch",
+        "file": "examples/studies/total_return/data/china_total_return.csv",
+        "coverage": "2020-01-02 to 2026-09-11",
+        "frequency": "daily",
+        "status": "candidate_only_not_ingested",
+        "reason": "market-data redistribution rights not cleared; does not cover 2005-2019"
+      }
     },
     {
       "name": "中证全指（全A代表）",
@@ -41,7 +64,15 @@
       "price_series": "not_in_matrix",
       "total_return_series": "not_in_matrix",
       "coverage_verified": false,
-      "definition": "Use CSI All Share 000985. Do not silently substitute 930903."
+      "definition": "Use CSI All Share 000985. Do not silently substitute 930903.",
+      "external_sample": {
+        "repository": "YellowPancake/quant-autoresearch",
+        "file": "examples/studies/total_return/data/china_total_return.csv",
+        "coverage": "2020-01-02 to 2026-09-11",
+        "frequency": "daily",
+        "status": "candidate_only_not_ingested",
+        "reason": "market-data redistribution rights not cleared; does not cover 2005-2019"
+      }
     }
   ],
   "valuation": {
