@@ -1,0 +1,171 @@
+{
+  "generated_at": "2026-11-18",
+  "repository": "yuweijia1992/demo",
+  "evidence_files": {
+    "monthly_multi_asset_matrix": "data/investment-monthly.csv",
+    "monthly_multi_asset_manifest": "data/investment-monthly-manifest.json",
+    "company_database": "data/china-stocks-financial-valuation.json",
+    "company_universe": "data/valuation-history/universe.json",
+    "valuation_monthly_csv": "data/valuation-history/generated/valuation-monthly.csv",
+    "valuation_coverage_audit": "data/valuation-history/generated/coverage-audit.json",
+    "valuation_source_gap_audit": "data/valuation-history/source-gap-assessment.md",
+    "financial_statement_retrieval_audit": "data/raw-financials/coverage_audit.json",
+    "financial_statement_archive": "data/raw-financials/company_statements_20261105T094248Z.json"
+  },
+  "index_data": {
+    "matrix_period": [
+      "2006-01",
+      "2026-10"
+    ],
+    "matrix_rows": 250,
+    "csi300": {
+      "price_index_levels": {
+        "count": 249,
+        "start": "2006-01",
+        "end": "2026-09"
+      },
+      "price_monthly_returns": {
+        "count": 248,
+        "start": "2006-01",
+        "end": "2026-08"
+      },
+      "total_return_index_levels": {
+        "count": 249,
+        "start": "2006-01",
+        "end": "2026-09"
+      },
+      "total_return_monthly_returns": {
+        "count": 248,
+        "start": "2006-01",
+        "end": "2026-08"
+      },
+      "source_character": "Third-party archived/derived monthly data referencing official H00300; not a direct raw download from CSIndex in this repository",
+      "verification": "Needs official direct series cross-check; 2026-09 is a partial level and does not have a complete return"
+    },
+    "csi500": {
+      "price_monthly_returns": 0,
+      "total_return_monthly_returns": 0,
+      "official_total_return_code": "H00905",
+      "status": "not_in_matrix"
+    },
+    "csi1000": {
+      "price_monthly_returns": 0,
+      "total_return_monthly_returns": 0,
+      "official_total_return_code": "H00852",
+      "status": "not_in_matrix"
+    },
+    "csi_all_share": {
+      "index_code": "000985",
+      "official_total_return_code": "H00985",
+      "price_monthly_returns": 0,
+      "total_return_monthly_returns": 0,
+      "status": "not_in_matrix",
+      "note": "Use CSI All Share 000985; do not substitute 930903 without explicitly redefining the universe."
+    }
+  },
+  "company_universe": {
+    "issuers": 49,
+    "primary_a_shares": 44,
+    "primary_hk_shares": 5,
+    "unique_listing_codes_in_financial_archive": 57,
+    "alternate_hk_listings": 8,
+    "adr_references": 3,
+    "universe_file": "data/valuation-history/universe.json",
+    "company_financial_valuation_database": "data/china-stocks-financial-valuation.json"
+  },
+  "historical_valuation": {
+    "daily_rows_read": 100724,
+    "monthly_rows_written": 8942,
+    "companies_with_any_history": 49,
+    "companies_in_universe": 49,
+    "period": [
+      "2006-01",
+      "2026-10"
+    ],
+    "latest_observed_percentile_5y": {
+      "pe_ttm": 41,
+      "pb": 46,
+      "ps_ttm": 42
+    },
+    "latest_observed_percentile_10y": {
+      "pe_ttm": 20,
+      "pb": 23,
+      "ps_ttm": 0
+    },
+    "within_5_trading_sessions_percentile_5y": {
+      "pe_ttm": 40,
+      "pb": 45,
+      "ps_ttm": 42
+    },
+    "within_5_trading_sessions_percentile_10y": {
+      "pe_ttm": 2,
+      "pb": 3,
+      "ps_ttm": 0
+    },
+    "exact_month_end_percentile_10y": {
+      "pe_ttm": 0,
+      "pb": 0,
+      "ps_ttm": 0
+    },
+    "month_end_lag": {
+      "observations": 8942,
+      "exact_month_end": 5010,
+      "lag_1_to_2_sessions": 869,
+      "lag_3_to_5_sessions": 1137,
+      "lag_6_plus_sessions": 1926,
+      "lag_6_plus_share_pct": 21.5,
+      "p90_lag_sessions": 10,
+      "max_lag_sessions": 21
+    },
+    "sources": {
+      "a_share_2018_plus": "Eastmoney RPT_VALUEANALYSIS_DET via public AKShare stock_value_em interface",
+      "a_share_pre_2018": "Baidu Stock Tong PE-TTM/PB backfill; BaoStock login error 10002007 yielded zero rows",
+      "hk": "Baidu Stock Tong PE-TTM/PB; five primary HK securities; no verified PS-TTM"
+    },
+    "important_limit": "8,942 monthly observations means 49/49 securities have at least one historical observation; it does not mean every security has a continuous 2006-2026 panel or all three valuation metrics. Main company database percentile fields have not been populated from this independent history audit."
+  },
+  "financial_statement_archive": {
+    "run_id": "20261105T094248Z",
+    "requested_records": 210,
+    "retrieved_records": 210,
+    "issuers": 49,
+    "companies_with_all_requested_statements": 49,
+    "statements": [
+      "balance_sheet",
+      "income_statement",
+      "cash_flow_statement"
+    ],
+    "unique_listing_codes": 57,
+    "status": "raw retrieval audit complete; standardized annual and point-in-time financial panel not complete"
+  },
+  "financial_snapshot_coverage": {
+    "as_of": "2026-10-27",
+    "revenue": 49,
+    "net_profit": 49,
+    "revenue_growth": 48,
+    "eps": 48,
+    "roe": 43,
+    "operating_cash_flow": 49,
+    "capex": 49,
+    "free_cash_flow": 43,
+    "book_value_per_share": 45,
+    "pe_ttm": 14,
+    "pb": 11,
+    "ps_ttm": 1,
+    "net_debt": 2,
+    "dividend_yield": 0,
+    "roic": 0,
+    "latest_price_date_range": [
+      "2026-10-16",
+      "2026-10-22"
+    ],
+    "note": "Snapshot is not a five-year standardized financial panel; TTM, report-period and currency distinctions still require normalization."
+  },
+  "release_gates": {
+    "four_index_monthly_matrix": false,
+    "complete_index_valuation_panel": false,
+    "49_company_standardized_point_in_time_panel": false,
+    "six_strategy_out_of_sample_validation": false,
+    "live_investment_signal": false
+  }
+}
