@@ -40,7 +40,24 @@
         "end": "2026-08"
       },
       "source_character": "Third-party archived/derived monthly data referencing official H00300; not a direct raw download from CSIndex in this repository",
-      "verification": "Needs official direct series cross-check; 2026-09 is a partial level and does not have a complete return"
+      "verification": "Needs official direct series cross-check; 2026-09 is a partial level and does not have a complete return",
+      "baseline_2006_01_to_2026_08": {
+        "observations": 248,
+        "price_index": {
+          "ending_multiple": 5.0084899229760875,
+          "cagr": 0.0810773810024541,
+          "annualized_monthly_volatility": 0.27239468573454173,
+          "max_month_end_drawdown": -0.7075418298282214
+        },
+        "total_return_index": {
+          "ending_multiple": 7.510098016864529,
+          "cagr": 0.10247804259042259,
+          "annualized_monthly_volatility": 0.2722921065387588,
+          "max_month_end_drawdown": -0.7047252795831205
+        },
+        "calculation": "Compounded 248 monthly returns; CAGR=(ending NAV)^(12/248)-1; volatility=sample monthly standard deviation*sqrt(12); drawdown computed from month-end NAV",
+        "limitations": "Benchmark arithmetic only, no costs/taxes/tracking error; monthly max drawdown misses intramonth lows; not a six-strategy backtest; total-return source is third-party archived/derived and still requires official cross-check."
+      }
     },
     "csi500": {
       "price_monthly_returns": 0,
