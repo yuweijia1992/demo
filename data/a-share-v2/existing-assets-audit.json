@@ -57,6 +57,25 @@
         },
         "calculation": "Compounded 248 monthly returns; CAGR=(ending NAV)^(12/248)-1; volatility=sample monthly standard deviation*sqrt(12); drawdown computed from month-end NAV",
         "limitations": "Benchmark arithmetic only, no costs/taxes/tracking error; monthly max drawdown misses intramonth lows; not a six-strategy backtest; total-return source is third-party archived/derived and still requires official cross-check."
+      },
+      "independent_crosscheck": {
+        "source_repository": "YellowPancake/quant-autoresearch",
+        "file": "examples/studies/total_return/data/china_total_return.csv",
+        "source_series": "H00300 / 沪深300全收益",
+        "daily_coverage": [
+          "2020-01-02",
+          "2026-09-11"
+        ],
+        "daily_rows": 1624,
+        "monthly_overlap": 79,
+        "compared_months": [
+          "2020-02",
+          "2026-08"
+        ],
+        "mean_absolute_monthly_return_difference_percentage_points": 6.408849767442007e-8,
+        "maximum_absolute_difference_percentage_points": 1.730361643970113e-7,
+        "result": "Monthly return series match to rounding precision across 79 common months.",
+        "limitation": "This is a separate public collector of the same official CSIndex H00300 source, not an independent market-data provider. Its repository states market-data redistribution rights are not cleared; data were not copied into this repository."
       }
     },
     "csi500": {
@@ -78,6 +97,37 @@
       "total_return_monthly_returns": 0,
       "status": "not_in_matrix",
       "note": "Use CSI All Share 000985; do not substitute 930903 without explicitly redefining the universe."
+    },
+    "other_index_public_sample": {
+      "source_repository": "YellowPancake/quant-autoresearch",
+      "file": "examples/studies/total_return/data/china_total_return.csv",
+      "series": {
+        "csi500": {
+          "code": "H00905",
+          "daily_rows": 1624,
+          "coverage": [
+            "2020-01-02",
+            "2026-09-11"
+          ]
+        },
+        "csi1000": {
+          "code": "H00852",
+          "daily_rows": 1624,
+          "coverage": [
+            "2020-01-02",
+            "2026-09-11"
+          ]
+        },
+        "csi_all": {
+          "code": "H00985",
+          "daily_rows": 1624,
+          "coverage": [
+            "2020-01-02",
+            "2026-09-11"
+          ]
+        }
+      },
+      "status": "Candidate for cross-check and source acquisition only; not copied into project due unresolved redistribution rights and insufficient 2005-2019 coverage."
     }
   },
   "company_universe": {
