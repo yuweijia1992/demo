@@ -1,20 +1,65 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAtUtc": "2026-11-09T08:23:56.776Z",
+  "generatedAtUtc": "2026-11-18T10:22:28.102398+00:00",
   "companyCount": 49,
   "aShareCompanies": 44,
-  "annual2025Resolved": 48,
+  "annual2025Resolved": 42,
+  "annualReportLinksByYear": {
+    "2021": 41,
+    "2022": 42,
+    "2023": 42,
+    "2024": 43,
+    "2025": 42
+  },
+  "annualReportLinksTotal2021To2025": 210,
   "interim2026Resolved": 43,
   "quarterly2026Q3Resolved": 43,
   "bothPeriodsResolved": 41,
   "allThreePeriodsResolved": 40,
-  "hkexManualLookup": 0,
+  "hkexManualLookup": 5,
   "records": [
     {
       "code": "600887.SH",
       "name": "伊利股份",
       "industry": "乳制品与营养",
       "primaryListing": "600887.SH",
+      "annualReports": {
+        "2021": {
+          "title": "内蒙古伊利实业集团股份有限公司2021年年度报告",
+          "announcementDate": "2022-04-28",
+          "announcementId": "1213169501",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-28/1213169501.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600887&announcementId=1213169501&orgId=gssh0600887&announcementTime=2022-04-28"
+        },
+        "2022": {
+          "title": "内蒙古伊利实业集团股份有限公司2022年年度报告",
+          "announcementDate": "2023-04-28",
+          "announcementId": "1216664083",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-28/1216664083.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600887&announcementId=1216664083&orgId=gssh0600887&announcementTime=2023-04-28"
+        },
+        "2023": {
+          "title": "内蒙古伊利实业集团股份有限公司2023年年度报告",
+          "announcementDate": "2024-04-30",
+          "announcementId": "1219916433",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-30/1219916433.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600887&announcementId=1219916433&orgId=gssh0600887&announcementTime=2024-04-30"
+        },
+        "2024": {
+          "title": "内蒙古伊利实业集团股份有限公司2024年年度报告",
+          "announcementDate": "2025-04-30",
+          "announcementId": "1223421123",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-30/1223421123.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600887&announcementId=1223421123&orgId=gssh0600887&announcementTime=2025-04-30"
+        },
+        "2025": {
+          "title": "内蒙古伊利实业集团股份有限公司2025年年度报告",
+          "announcementDate": "2026-04-30",
+          "announcementId": "1225259562",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225259562.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600887&announcementId=1225259562&orgId=gssh0600887&announcementTime=2026-04-30"
+        }
+      },
       "annual2025": {
         "title": "内蒙古伊利实业集团股份有限公司2025年年度报告",
         "announcementDate": "2026-04-30",
@@ -45,6 +90,43 @@
       "name": "牧原股份",
       "industry": "生猪养殖",
       "primaryListing": "002714.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-04-30",
+          "announcementId": "1213254727",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213254727.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002714&announcementId=1213254727&orgId=9900022995&announcementTime=2022-04-30"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-04-28",
+          "announcementId": "1216647248",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-28/1216647248.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002714&announcementId=1216647248&orgId=9900022995&announcementTime=2023-04-28"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-04-27",
+          "announcementId": "1219861302",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-27/1219861302.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002714&announcementId=1219861302&orgId=9900022995&announcementTime=2024-04-27"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-03-20",
+          "announcementId": "1222845025",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-20/1222845025.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002714&announcementId=1222845025&orgId=9900022995&announcementTime=2025-03-20"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-28",
+          "announcementId": "1225042507",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042507.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002714&announcementId=1225042507&orgId=9900022995&announcementTime=2026-03-28"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-03-28",
@@ -75,6 +157,43 @@
       "name": "海天味业",
       "industry": "调味品",
       "primaryListing": "603288.SH",
+      "annualReports": {
+        "2021": {
+          "title": "海天味业2021年年度报告",
+          "announcementDate": "2022-03-25",
+          "announcementId": "1212671753",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-25/1212671753.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603288&announcementId=1212671753&orgId=9900023228&announcementTime=2022-03-25"
+        },
+        "2022": {
+          "title": "海天味业2022年年度报告",
+          "announcementDate": "2023-04-26",
+          "announcementId": "1216595423",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-26/1216595423.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603288&announcementId=1216595423&orgId=9900023228&announcementTime=2023-04-26"
+        },
+        "2023": {
+          "title": "海天味业2023年年度报告",
+          "announcementDate": "2024-04-27",
+          "announcementId": "1219879610",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-27/1219879610.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603288&announcementId=1219879610&orgId=9900023228&announcementTime=2024-04-27"
+        },
+        "2024": {
+          "title": "海天味业2024年年度报告",
+          "announcementDate": "2025-04-03",
+          "announcementId": "1222994233",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-03/1222994233.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603288&announcementId=1222994233&orgId=9900023228&announcementTime=2025-04-03"
+        },
+        "2025": {
+          "title": "海天味业2025年年度报告",
+          "announcementDate": "2026-03-27",
+          "announcementId": "1225038237",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038237.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603288&announcementId=1225038237&orgId=9900023228&announcementTime=2026-03-27"
+        }
+      },
       "annual2025": {
         "title": "海天味业2025年年度报告",
         "announcementDate": "2026-03-27",
@@ -105,6 +224,43 @@
       "name": "海澜之家",
       "industry": "大众服装",
       "primaryListing": "600398.SH",
+      "annualReports": {
+        "2021": {
+          "title": "海澜之家集团股份有限公司2021年年度报告",
+          "announcementDate": "2022-04-28",
+          "announcementId": "1213168062",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-28/1213168062.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600398&announcementId=1213168062&orgId=gssh0600398&announcementTime=2022-04-28"
+        },
+        "2022": {
+          "title": "海澜之家集团股份有限公司2022年年度报告",
+          "announcementDate": "2023-04-28",
+          "announcementId": "1216662854",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-28/1216662854.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600398&announcementId=1216662854&orgId=gssh0600398&announcementTime=2023-04-28"
+        },
+        "2023": {
+          "title": "海澜之家集团股份有限公司2023年年度报告",
+          "announcementDate": "2024-04-30",
+          "announcementId": "1219915007",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-30/1219915007.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600398&announcementId=1219915007&orgId=gssh0600398&announcementTime=2024-04-30"
+        },
+        "2024": {
+          "title": "海澜之家集团股份有限公司2024年年度报告",
+          "announcementDate": "2025-04-30",
+          "announcementId": "1223413043",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-30/1223413043.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600398&announcementId=1223413043&orgId=gssh0600398&announcementTime=2025-04-30"
+        },
+        "2025": {
+          "title": "海澜之家集团股份有限公司2025年年度报告",
+          "announcementDate": "2026-03-28",
+          "announcementId": "1225042739",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225042739.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600398&announcementId=1225042739&orgId=gssh0600398&announcementTime=2026-03-28"
+        }
+      },
       "annual2025": {
         "title": "海澜之家集团股份有限公司2025年年度报告",
         "announcementDate": "2026-03-28",
@@ -135,17 +291,18 @@
       "name": "申洲国际",
       "industry": "纺织制造与运动服装供应链",
       "primaryListing": "02313.HK",
-      "annual2025": {
-        "title": "Annual Report 2025",
-        "announcementDate": "2026-04-23",
-        "announcementId": "2026042300646",
-        "pdfUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf",
-        "detailUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0423/2026042300646.pdf"
+      "annualReports": {
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null
       },
+      "annual2025": null,
       "interim2026": null,
       "quarterly2026Q3": null,
-      "status": "partial",
-      "verificationStatus": "official_annual_report_pdf_content_partially_crosschecked",
+      "status": "hkex_manual_lookup_required",
+      "verificationStatus": "official_hkex_search_link_only_not_content_verified",
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
     },
     {
@@ -153,6 +310,43 @@
       "name": "海尔智家",
       "industry": "家电与全球品牌",
       "primaryListing": "600690.SH",
+      "annualReports": {
+        "2021": {
+          "title": "海尔智家股份有限公司2021年年度报告",
+          "announcementDate": "2022-03-31",
+          "announcementId": "1212752481",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-31/1212752481.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600690&announcementId=1212752481&orgId=gssh0600690&announcementTime=2022-03-31"
+        },
+        "2022": {
+          "title": "海尔智家股份有限公司2022年年度报告",
+          "announcementDate": "2023-03-31",
+          "announcementId": "1216279243",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-31/1216279243.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600690&announcementId=1216279243&orgId=gssh0600690&announcementTime=2023-03-31"
+        },
+        "2023": {
+          "title": "海尔智家股份有限公司2023年年度报告",
+          "announcementDate": "2024-03-28",
+          "announcementId": "1219427279",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-28/1219427279.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600690&announcementId=1219427279&orgId=gssh0600690&announcementTime=2024-03-28"
+        },
+        "2024": {
+          "title": "海尔智家股份有限公司2024年年度报告",
+          "announcementDate": "2025-03-28",
+          "announcementId": "1222926246",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-28/1222926246.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600690&announcementId=1222926246&orgId=gssh0600690&announcementTime=2025-03-28"
+        },
+        "2025": {
+          "title": "海尔智家股份有限公司2025年年度报告",
+          "announcementDate": "2026-03-27",
+          "announcementId": "1225038336",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038336.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600690&announcementId=1225038336&orgId=gssh0600690&announcementTime=2026-03-27"
+        }
+      },
       "annual2025": {
         "title": "海尔智家股份有限公司2025年年度报告",
         "announcementDate": "2026-03-27",
@@ -183,6 +377,43 @@
       "name": "美的集团",
       "industry": "家电、工业技术与自动化",
       "primaryListing": "000333.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-04-30",
+          "announcementId": "1213264815",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213264815.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000333&announcementId=1213264815&orgId=9900005965&announcementTime=2022-04-30"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-04-29",
+          "announcementId": "1216695045",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-29/1216695045.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000333&announcementId=1216695045&orgId=9900005965&announcementTime=2023-04-29"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-03-28",
+          "announcementId": "1219429374",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-28/1219429374.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000333&announcementId=1219429374&orgId=9900005965&announcementTime=2024-03-28"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-03-29",
+          "announcementId": "1222951181",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-29/1222951181.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000333&announcementId=1222951181&orgId=9900005965&announcementTime=2025-03-29"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225065145",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225065145.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000333&announcementId=1225065145&orgId=9900005965&announcementTime=2026-03-31"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-03-31",
@@ -213,6 +444,43 @@
       "name": "格力电器",
       "industry": "空调与家电",
       "primaryListing": "000651.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-04-30",
+          "announcementId": "1213262535",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213262535.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000651&announcementId=1213262535&orgId=gssz0000651&announcementTime=2022-04-30"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-04-29",
+          "announcementId": "1216702261",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-29/1216702261.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000651&announcementId=1216702261&orgId=gssz0000651&announcementTime=2023-04-29"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-04-30",
+          "announcementId": "1219928418",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-30/1219928418.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000651&announcementId=1219928418&orgId=gssz0000651&announcementTime=2024-04-30"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-04-28",
+          "announcementId": "1223330631",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-28/1223330631.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000651&announcementId=1223330631&orgId=gssz0000651&announcementTime=2025-04-28"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-29",
+          "announcementId": "1225250396",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225250396.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000651&announcementId=1225250396&orgId=gssz0000651&announcementTime=2026-04-29"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-04-29",
@@ -243,6 +511,43 @@
       "name": "比亚迪",
       "industry": "新能源汽车与汽车产业链",
       "primaryListing": "002594.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-03-30",
+          "announcementId": "1212730520",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-30/1212730520.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002594&announcementId=1212730520&orgId=gshk0001211&announcementTime=2022-03-30"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-03-29",
+          "announcementId": "1216246589",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-29/1216246589.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002594&announcementId=1216246589&orgId=gshk0001211&announcementTime=2023-03-29"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-03-27",
+          "announcementId": "1219412018",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-27/1219412018.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002594&announcementId=1219412018&orgId=gshk0001211&announcementTime=2024-03-27"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-03-25",
+          "announcementId": "1222881496",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-25/1222881496.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002594&announcementId=1222881496&orgId=gshk0001211&announcementTime=2025-03-25"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-28",
+          "announcementId": "1225045351",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045351.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002594&announcementId=1225045351&orgId=gshk0001211&announcementTime=2026-03-28"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-03-28",
@@ -273,6 +578,43 @@
       "name": "宇通客车",
       "industry": "客车与商用交通",
       "primaryListing": "600066.SH",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-03-29",
+          "announcementId": "1212711340",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-29/1212711340.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600066&announcementId=1212711340&orgId=gssh0600066&announcementTime=2022-03-29"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-03-28",
+          "announcementId": "1216236735",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-28/1216236735.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600066&announcementId=1216236735&orgId=gssh0600066&announcementTime=2023-03-28"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-04-02",
+          "announcementId": "1219492560",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-02/1219492560.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600066&announcementId=1219492560&orgId=gssh0600066&announcementTime=2024-04-02"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-04-01",
+          "announcementId": "1222974533",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-01/1222974533.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600066&announcementId=1222974533&orgId=gssh0600066&announcementTime=2025-04-01"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225050742",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225050742.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600066&announcementId=1225050742&orgId=gssh0600066&announcementTime=2026-03-31"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-03-31",
@@ -303,13 +645,38 @@
       "name": "京沪高铁",
       "industry": "铁路客运基础设施",
       "primaryListing": "601816.SH",
-      "annual2025": {
-        "title": "京沪高速铁路股份有限公司2025年年度报告",
-        "announcementDate": "2026-04-21",
-        "announcementId": "1225132016",
-        "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-21/1225132016.PDF",
-        "detailUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12124321&stockid=601816"
+      "annualReports": {
+        "2021": {
+          "title": "京沪高速铁路股份有限公司2021年年度报告",
+          "announcementDate": "2022-04-23",
+          "announcementId": "1213042764",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-23/1213042764.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601816&announcementId=1213042764&orgId=9900041360&announcementTime=2022-04-23"
+        },
+        "2022": {
+          "title": "京沪高速铁路股份有限公司2022年年度报告",
+          "announcementDate": "2023-06-09",
+          "announcementId": "1217020961",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-06-09/1217020961.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601816&announcementId=1217020961&orgId=9900041360&announcementTime=2023-06-09"
+        },
+        "2023": {
+          "title": "京沪高速铁路股份有限公司2023年年度报告",
+          "announcementDate": "2024-04-30",
+          "announcementId": "1219911290",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-30/1219911290.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601816&announcementId=1219911290&orgId=9900041360&announcementTime=2024-04-30"
+        },
+        "2024": {
+          "title": "京沪高速铁路股份有限公司2024年年度报告",
+          "announcementDate": "2025-04-30",
+          "announcementId": "1223415927",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-30/1223415927.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601816&announcementId=1223415927&orgId=9900041360&announcementTime=2025-04-30"
+        },
+        "2025": null
       },
+      "annual2025": null,
       "interim2026": {
         "title": "京沪高速铁路股份有限公司2026年半年度报告",
         "announcementDate": "2026-08-31",
@@ -325,7 +692,7 @@
         "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601816&announcementId=1225646489&orgId=9900041360&announcementTime=2026-10-31"
       },
       "status": "partial",
-      "verificationStatus": "official_annual_report_pdf_link_resolved_content_not_crosschecked",
+      "verificationStatus": "official_link_only_not_content_verified",
       "orgId": "9900041360"
     },
     {
@@ -333,6 +700,43 @@
       "name": "顺丰控股",
       "industry": "快递与综合物流",
       "primaryListing": "002352.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-03-31",
+          "announcementId": "1212744421",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-31/1212744421.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002352&announcementId=1212744421&orgId=9900010448&announcementTime=2022-03-31"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-03-29",
+          "announcementId": "1216245203",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-29/1216245203.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002352&announcementId=1216245203&orgId=9900010448&announcementTime=2023-03-29"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-03-27",
+          "announcementId": "1219410699",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-27/1219410699.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002352&announcementId=1219410699&orgId=9900010448&announcementTime=2024-03-27"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-03-29",
+          "announcementId": "1222943385",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-29/1222943385.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002352&announcementId=1222943385&orgId=9900010448&announcementTime=2025-03-29"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225057387",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225057387.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002352&announcementId=1225057387&orgId=9900010448&announcementTime=2026-03-31"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-03-31",
@@ -363,6 +767,43 @@
       "name": "中远海控",
       "industry": "集装箱航运",
       "primaryListing": "601919.SH",
+      "annualReports": {
+        "2021": {
+          "title": "中远海控2021年年度报告",
+          "announcementDate": "2022-03-31",
+          "announcementId": "1212754831",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-31/1212754831.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601919&announcementId=1212754831&orgId=9900003201&announcementTime=2022-03-31"
+        },
+        "2022": {
+          "title": "中远海控2022年年度报告",
+          "announcementDate": "2023-03-31",
+          "announcementId": "1216282413",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-31/1216282413.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601919&announcementId=1216282413&orgId=9900003201&announcementTime=2023-03-31"
+        },
+        "2023": {
+          "title": "中远海控2023年年度报告",
+          "announcementDate": "2024-03-29",
+          "announcementId": "1219449961",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-29/1219449961.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601919&announcementId=1219449961&orgId=9900003201&announcementTime=2024-03-29"
+        },
+        "2024": {
+          "title": "中远海控2024年年度报告",
+          "announcementDate": "2025-03-22",
+          "announcementId": "1222870528",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-22/1222870528.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601919&announcementId=1222870528&orgId=9900003201&announcementTime=2025-03-22"
+        },
+        "2025": {
+          "title": "中远海控2025年年度报告",
+          "announcementDate": "2026-03-20",
+          "announcementId": "1225019947",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-20/1225019947.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601919&announcementId=1225019947&orgId=9900003201&announcementTime=2026-03-20"
+        }
+      },
       "annual2025": {
         "title": "中远海控2025年年度报告",
         "announcementDate": "2026-03-20",
@@ -393,6 +834,43 @@
       "name": "迈瑞医疗",
       "industry": "医疗器械",
       "primaryListing": "300760.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-04-20",
+          "announcementId": "1212976151",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-20/1212976151.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300760&announcementId=1212976151&orgId=9900035304&announcementTime=2022-04-20"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-04-28",
+          "announcementId": "1216645583",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-28/1216645583.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300760&announcementId=1216645583&orgId=9900035304&announcementTime=2023-04-28"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-04-27",
+          "announcementId": "1219856065",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-27/1219856065.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300760&announcementId=1219856065&orgId=9900035304&announcementTime=2024-04-27"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-04-29",
+          "announcementId": "1223371173",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-29/1223371173.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300760&announcementId=1223371173&orgId=9900035304&announcementTime=2025-04-29"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225059012",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225059012.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300760&announcementId=1225059012&orgId=9900035304&announcementTime=2026-03-31"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-03-31",
@@ -423,6 +901,43 @@
       "name": "恒瑞医药",
       "industry": "创新药与制药",
       "primaryListing": "600276.SH",
+      "annualReports": {
+        "2021": {
+          "title": "恒瑞医药2021年年度报告",
+          "announcementDate": "2022-04-23",
+          "announcementId": "1213053755",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-23/1213053755.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600276&announcementId=1213053755&orgId=gssh0600276&announcementTime=2022-04-23"
+        },
+        "2022": {
+          "title": "恒瑞医药2022年年度报告",
+          "announcementDate": "2023-04-22",
+          "announcementId": "1216518776",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-22/1216518776.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600276&announcementId=1216518776&orgId=gssh0600276&announcementTime=2023-04-22"
+        },
+        "2023": {
+          "title": "恒瑞医药2023年年度报告",
+          "announcementDate": "2024-04-18",
+          "announcementId": "1219650115",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-18/1219650115.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600276&announcementId=1219650115&orgId=gssh0600276&announcementTime=2024-04-18"
+        },
+        "2024": {
+          "title": "恒瑞医药2024年年度报告",
+          "announcementDate": "2025-03-31",
+          "announcementId": "1222961962",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-31/1222961962.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600276&announcementId=1222961962&orgId=gssh0600276&announcementTime=2025-03-31"
+        },
+        "2025": {
+          "title": "恒瑞医药2025年年度报告",
+          "announcementDate": "2026-03-26",
+          "announcementId": "1225032585",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-26/1225032585.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600276&announcementId=1225032585&orgId=gssh0600276&announcementTime=2026-03-26"
+        }
+      },
       "annual2025": {
         "title": "恒瑞医药2025年年度报告",
         "announcementDate": "2026-03-26",
@@ -453,6 +968,43 @@
       "name": "药明康德",
       "industry": "医药研发与生产服务",
       "primaryListing": "603259.SH",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-03-24",
+          "announcementId": "1212651601",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-24/1212651601.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603259&announcementId=1212651601&orgId=9900035584&announcementTime=2022-03-24"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-03-21",
+          "announcementId": "1216167817",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-21/1216167817.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603259&announcementId=1216167817&orgId=9900035584&announcementTime=2023-03-21"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-03-19",
+          "announcementId": "1219331349",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-19/1219331349.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603259&announcementId=1219331349&orgId=9900035584&announcementTime=2024-03-19"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-03-18",
+          "announcementId": "1222822835",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-18/1222822835.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603259&announcementId=1222822835&orgId=9900035584&announcementTime=2025-03-18"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-24",
+          "announcementId": "1225025225",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-24/1225025225.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=603259&announcementId=1225025225&orgId=9900035584&announcementTime=2026-03-24"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-03-24",
@@ -483,6 +1035,43 @@
       "name": "爱尔眼科",
       "industry": "眼科医疗服务",
       "primaryListing": "300015.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-04-26",
+          "announcementId": "1213101423",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-26/1213101423.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300015&announcementId=1213101423&orgId=9900008390&announcementTime=2022-04-26"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-04-26",
+          "announcementId": "1216585639",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-26/1216585639.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300015&announcementId=1216585639&orgId=9900008390&announcementTime=2023-04-26"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-04-26",
+          "announcementId": "1219826392",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-26/1219826392.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300015&announcementId=1219826392&orgId=9900008390&announcementTime=2024-04-26"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-04-25",
+          "announcementId": "1223271221",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-25/1223271221.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300015&announcementId=1223271221&orgId=9900008390&announcementTime=2025-04-25"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-24",
+          "announcementId": "1225174505",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225174505.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300015&announcementId=1225174505&orgId=9900008390&announcementTime=2026-04-24"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-04-24",
@@ -513,6 +1102,31 @@
       "name": "国药股份",
       "industry": "医药流通",
       "primaryListing": "600511.SH",
+      "annualReports": {
+        "2021": {
+          "title": "国药股份2021年年度报告",
+          "announcementDate": "2022-03-17",
+          "announcementId": "1212593867",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-17/1212593867.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600511&announcementId=1212593867&orgId=gssh0600511&announcementTime=2022-03-17"
+        },
+        "2022": null,
+        "2023": null,
+        "2024": {
+          "title": "国药股份2024年年度报告",
+          "announcementDate": "2025-03-20",
+          "announcementId": "1222847076",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-20/1222847076.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600511&announcementId=1222847076&orgId=gssh0600511&announcementTime=2025-03-20"
+        },
+        "2025": {
+          "title": "国药股份2025年年度报告",
+          "announcementDate": "2026-03-20",
+          "announcementId": "1225018998",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-20/1225018998.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600511&announcementId=1225018998&orgId=gssh0600511&announcementTime=2026-03-20"
+        }
+      },
       "annual2025": {
         "title": "国药股份2025年年度报告",
         "announcementDate": "2026-03-20",
@@ -543,6 +1157,43 @@
       "name": "长江电力",
       "industry": "大型水电运营",
       "primaryListing": "600900.SH",
+      "annualReports": {
+        "2021": {
+          "title": "长江电力2021年年度报告",
+          "announcementDate": "2022-04-30",
+          "announcementId": "1213270599",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-30/1213270599.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600900&announcementId=1213270599&orgId=gssh0600900&announcementTime=2022-04-30"
+        },
+        "2022": {
+          "title": "长江电力2022年年度报告",
+          "announcementDate": "2023-04-28",
+          "announcementId": "1216664110",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-28/1216664110.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600900&announcementId=1216664110&orgId=gssh0600900&announcementTime=2023-04-28"
+        },
+        "2023": {
+          "title": "长江电力2023年年度报告",
+          "announcementDate": "2024-04-30",
+          "announcementId": "1219922588",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-30/1219922588.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600900&announcementId=1219922588&orgId=gssh0600900&announcementTime=2024-04-30"
+        },
+        "2024": {
+          "title": "长江电力2024年年度报告",
+          "announcementDate": "2025-04-30",
+          "announcementId": "1223421172",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-30/1223421172.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600900&announcementId=1223421172&orgId=gssh0600900&announcementTime=2025-04-30"
+        },
+        "2025": {
+          "title": "长江电力2025年年度报告",
+          "announcementDate": "2026-04-30",
+          "announcementId": "1225262036",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225262036.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600900&announcementId=1225262036&orgId=gssh0600900&announcementTime=2026-04-30"
+        }
+      },
       "annual2025": {
         "title": "长江电力2025年年度报告",
         "announcementDate": "2026-04-30",
@@ -573,6 +1224,37 @@
       "name": "川投能源",
       "industry": "水电投资与电力资产",
       "primaryListing": "600674.SH",
+      "annualReports": {
+        "2021": null,
+        "2022": {
+          "title": "四川川投能源股份有限公司2022年年度报告",
+          "announcementDate": "2023-04-21",
+          "announcementId": "1216496879",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-21/1216496879.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600674&announcementId=1216496879&orgId=gssh0600674&announcementTime=2023-04-21"
+        },
+        "2023": {
+          "title": "四川川投能源股份有限公司2023年年度报告",
+          "announcementDate": "2024-04-12",
+          "announcementId": "1219580265",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-12/1219580265.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600674&announcementId=1219580265&orgId=gssh0600674&announcementTime=2024-04-12"
+        },
+        "2024": {
+          "title": "四川川投能源股份有限公司2024年年度报告",
+          "announcementDate": "2025-04-12",
+          "announcementId": "1223072843",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-12/1223072843.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600674&announcementId=1223072843&orgId=gssh0600674&announcementTime=2025-04-12"
+        },
+        "2025": {
+          "title": "四川川投能源股份有限公司2025年年度报告",
+          "announcementDate": "2026-04-18",
+          "announcementId": "1225117474",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-18/1225117474.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600674&announcementId=1225117474&orgId=gssh0600674&announcementTime=2026-04-18"
+        }
+      },
       "annual2025": {
         "title": "四川川投能源股份有限公司2025年年度报告",
         "announcementDate": "2026-04-18",
@@ -603,6 +1285,43 @@
       "name": "中国核电",
       "industry": "核电运营",
       "primaryListing": "601985.SH",
+      "annualReports": {
+        "2021": {
+          "title": "中国核能电力股份有限公司2021年年度报告",
+          "announcementDate": "2022-04-28",
+          "announcementId": "1213177370",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-28/1213177370.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601985&announcementId=1213177370&orgId=9900022188&announcementTime=2022-04-28"
+        },
+        "2022": {
+          "title": "国核能电力股份有限公司2022年年度报告",
+          "announcementDate": "2023-04-27",
+          "announcementId": "1216626987",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-27/1216626987.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601985&announcementId=1216626987&orgId=9900022188&announcementTime=2023-04-27"
+        },
+        "2023": {
+          "title": "中国核电2023年年度报告",
+          "announcementDate": "2024-04-27",
+          "announcementId": "1219878447",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-27/1219878447.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601985&announcementId=1219878447&orgId=9900022188&announcementTime=2024-04-27"
+        },
+        "2024": {
+          "title": "中国核能电力股份有限公司2024年年度报告",
+          "announcementDate": "2025-04-29",
+          "announcementId": "1223364592",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-29/1223364592.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601985&announcementId=1223364592&orgId=9900022188&announcementTime=2025-04-29"
+        },
+        "2025": {
+          "title": "中国核电2025年年度报告",
+          "announcementDate": "2026-04-30",
+          "announcementId": "1225257680",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225257680.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601985&announcementId=1225257680&orgId=9900022188&announcementTime=2026-04-30"
+        }
+      },
       "annual2025": {
         "title": "中国核电2025年年度报告",
         "announcementDate": "2026-04-30",
@@ -633,6 +1352,43 @@
       "name": "中国神华",
       "industry": "煤炭、电力、铁路与港口",
       "primaryListing": "601088.SH",
+      "annualReports": {
+        "2021": {
+          "title": "中国神华2021年度报告",
+          "announcementDate": "2022-03-26",
+          "announcementId": "1212687181",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-26/1212687181.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601088&announcementId=1212687181&orgId=9900003701&announcementTime=2022-03-26"
+        },
+        "2022": {
+          "title": "中国神华2022年度报告",
+          "announcementDate": "2023-03-25",
+          "announcementId": "1216223000",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-25/1216223000.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601088&announcementId=1216223000&orgId=9900003701&announcementTime=2023-03-25"
+        },
+        "2023": {
+          "title": "中国神华2023年度报告",
+          "announcementDate": "2024-03-23",
+          "announcementId": "1219390021",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-23/1219390021.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601088&announcementId=1219390021&orgId=9900003701&announcementTime=2024-03-23"
+        },
+        "2024": {
+          "title": "中国神华2024年度报告",
+          "announcementDate": "2025-03-22",
+          "announcementId": "1222870380",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-22/1222870380.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601088&announcementId=1222870380&orgId=9900003701&announcementTime=2025-03-22"
+        },
+        "2025": {
+          "title": "中国神华2025年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225064293",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225064293.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601088&announcementId=1225064293&orgId=9900003701&announcementTime=2026-03-31"
+        }
+      },
       "annual2025": {
         "title": "中国神华2025年度报告",
         "announcementDate": "2026-03-31",
@@ -663,6 +1419,43 @@
       "name": "国电南瑞",
       "industry": "电网自动化与电力设备",
       "primaryListing": "600406.SH",
+      "annualReports": {
+        "2021": {
+          "title": "国电南瑞2021年年度报告",
+          "announcementDate": "2022-04-29",
+          "announcementId": "1213223374",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-29/1213223374.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600406&announcementId=1213223374&orgId=gssh0600406&announcementTime=2022-04-29"
+        },
+        "2022": {
+          "title": "国电南瑞2022年年度报告",
+          "announcementDate": "2023-04-28",
+          "announcementId": "1216662905",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-28/1216662905.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600406&announcementId=1216662905&orgId=gssh0600406&announcementTime=2023-04-28"
+        },
+        "2023": {
+          "title": "国电南瑞2023年年度报告",
+          "announcementDate": "2024-04-26",
+          "announcementId": "1219832725",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-26/1219832725.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600406&announcementId=1219832725&orgId=gssh0600406&announcementTime=2024-04-26"
+        },
+        "2024": {
+          "title": "国电南瑞2024年年度报告",
+          "announcementDate": "2025-04-29",
+          "announcementId": "1223374352",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-29/1223374352.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600406&announcementId=1223374352&orgId=gssh0600406&announcementTime=2025-04-29"
+        },
+        "2025": {
+          "title": "国电南瑞2025年年度报告",
+          "announcementDate": "2026-04-30",
+          "announcementId": "1225257886",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225257886.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600406&announcementId=1225257886&orgId=gssh0600406&announcementTime=2026-04-30"
+        }
+      },
       "annual2025": {
         "title": "国电南瑞2025年年度报告",
         "announcementDate": "2026-04-30",
@@ -693,6 +1486,43 @@
       "name": "中国移动",
       "industry": "通信网络、云与算力",
       "primaryListing": "600941.SH",
+      "annualReports": {
+        "2021": {
+          "title": "中国移动：2021年年度报告",
+          "announcementDate": "2022-03-24",
+          "announcementId": "1212651458",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-24/1212651458.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600941&announcementId=1212651458&orgId=gshk0000941&announcementTime=2022-03-24"
+        },
+        "2022": {
+          "title": "中国移动：2022年年度报告",
+          "announcementDate": "2023-03-24",
+          "announcementId": "1216200838",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-24/1216200838.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600941&announcementId=1216200838&orgId=gshk0000941&announcementTime=2023-03-24"
+        },
+        "2023": {
+          "title": "中国移动：2023年年度报告",
+          "announcementDate": "2024-03-22",
+          "announcementId": "1219372942",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-22/1219372942.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600941&announcementId=1219372942&orgId=gshk0000941&announcementTime=2024-03-22"
+        },
+        "2024": {
+          "title": "中国移动：2024年年度报告",
+          "announcementDate": "2025-03-21",
+          "announcementId": "1222856315",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-21/1222856315.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600941&announcementId=1222856315&orgId=gshk0000941&announcementTime=2025-03-21"
+        },
+        "2025": {
+          "title": "中国移动：2025年年度报告",
+          "announcementDate": "2026-03-27",
+          "announcementId": "1225036280",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225036280.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600941&announcementId=1225036280&orgId=gshk0000941&announcementTime=2026-03-27"
+        }
+      },
       "annual2025": {
         "title": "中国移动：2025年年度报告",
         "announcementDate": "2026-03-27",
@@ -723,6 +1553,43 @@
       "name": "中国电信",
       "industry": "通信、云与政企数字化",
       "primaryListing": "601728.SH",
+      "annualReports": {
+        "2021": {
+          "title": "中国电信股份有限公司2021年年度报告",
+          "announcementDate": "2022-03-18",
+          "announcementId": "1212606576",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-18/1212606576.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601728&announcementId=1212606576&orgId=gshk0000728&announcementTime=2022-03-18"
+        },
+        "2022": {
+          "title": "中国电信股份有限公司2022年年度报告",
+          "announcementDate": "2023-03-23",
+          "announcementId": "1216189211",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-23/1216189211.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601728&announcementId=1216189211&orgId=gshk0000728&announcementTime=2023-03-23"
+        },
+        "2023": {
+          "title": "中国电信股份有限公司2023年年度报告",
+          "announcementDate": "2024-03-27",
+          "announcementId": "1219408348",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-27/1219408348.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601728&announcementId=1219408348&orgId=gshk0000728&announcementTime=2024-03-27"
+        },
+        "2024": {
+          "title": "中国电信股份有限公司2024年年度报告",
+          "announcementDate": "2025-03-26",
+          "announcementId": "1222894586",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-26/1222894586.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601728&announcementId=1222894586&orgId=gshk0000728&announcementTime=2025-03-26"
+        },
+        "2025": {
+          "title": "中国电信股份有限公司2025年年度报告",
+          "announcementDate": "2026-03-25",
+          "announcementId": "1225027302",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-25/1225027302.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601728&announcementId=1225027302&orgId=gshk0000728&announcementTime=2026-03-25"
+        }
+      },
       "annual2025": {
         "title": "中国电信股份有限公司2025年年度报告",
         "announcementDate": "2026-03-25",
@@ -753,6 +1620,43 @@
       "name": "中国建筑",
       "industry": "建筑工程与基础设施",
       "primaryListing": "601668.SH",
+      "annualReports": {
+        "2021": {
+          "title": "中国建筑股份有限公司2021年年度报告",
+          "announcementDate": "2022-04-16",
+          "announcementId": "1212944652",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-16/1212944652.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601668&announcementId=1212944652&orgId=9900005970&announcementTime=2022-04-16"
+        },
+        "2022": {
+          "title": "中国建筑股份有限公司2022年年度报告",
+          "announcementDate": "2023-04-18",
+          "announcementId": "1216444055",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-18/1216444055.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601668&announcementId=1216444055&orgId=9900005970&announcementTime=2023-04-18"
+        },
+        "2023": {
+          "title": "中国建筑股份有限公司2023年年度报告",
+          "announcementDate": "2024-04-19",
+          "announcementId": "1219674825",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-19/1219674825.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601668&announcementId=1219674825&orgId=9900005970&announcementTime=2024-04-19"
+        },
+        "2024": {
+          "title": "中国建筑股份有限公司2024年年度报告",
+          "announcementDate": "2025-04-16",
+          "announcementId": "1223102350",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-16/1223102350.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601668&announcementId=1223102350&orgId=9900005970&announcementTime=2025-04-16"
+        },
+        "2025": {
+          "title": "中国建筑股份有限公司2025年年度报告",
+          "announcementDate": "2026-04-18",
+          "announcementId": "1225123321",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-18/1225123321.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601668&announcementId=1225123321&orgId=9900005970&announcementTime=2026-04-18"
+        }
+      },
       "annual2025": {
         "title": "中国建筑股份有限公司2025年年度报告",
         "announcementDate": "2026-04-18",
@@ -783,16 +1687,18 @@
       "name": "腾讯控股",
       "industry": "社交、游戏、广告与云",
       "primaryListing": "00700.HK",
-      "annual2025": {
-        "title": "2025 Annual Report",
-        "announcementDate": "2026-04-09",
-        "pdfUrl": "https://static.www.tencent.com/uploads/2026/04/09/62d786fcf3d3c8cb7e54791ee95439ac.pdf",
-        "detailUrl": "https://www.tencent.com/investors/financial-reports/"
+      "annualReports": {
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null
       },
+      "annual2025": null,
       "interim2026": null,
       "quarterly2026Q3": null,
-      "status": "partial",
-      "verificationStatus": "official_annual_report_pdf_link_resolved_content_not_crosschecked",
+      "status": "hkex_manual_lookup_required",
+      "verificationStatus": "official_hkex_search_link_only_not_content_verified",
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
     },
     {
@@ -800,32 +1706,62 @@
       "name": "阿里巴巴",
       "industry": "电商、云与数字平台",
       "primaryListing": "09988.HK",
-      "annual2025": {
-        "title": "FY2025 Annual Report (fiscal year ended March 31, 2025)",
-        "announcementDate": "2025-06-26",
-        "announcementId": null,
-        "pdfUrl": "https://home.alibabagroup.com/en-US/ir-financial-reports-financial-results",
-        "detailUrl": "https://home.alibabagroup.com/en-US/ir-financial-reports-financial-results",
-        "sourceNote": "Alibaba official investor-relations financial reports page lists FY2025 Annual Report; this is a report-index page, not a direct PDF URL."
+      "annualReports": {
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null
       },
+      "annual2025": null,
       "interim2026": null,
       "quarterly2026Q3": null,
-      "status": "partial",
-      "verificationStatus": "official_ir_report_index_link_only_not_content_verified",
-      "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en",
-      "annualLatest": {
-        "title": "Fiscal Year 2026 Annual Report",
-        "fiscalYear": "FY2026",
-        "announcementDate": "2026-06-18",
-        "pdfUrl": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0618/2026061800844.pdf",
-        "detailUrl": "https://home.alibabagroup.com/zh-HK/document-2003564382071554048"
-      }
+      "status": "hkex_manual_lookup_required",
+      "verificationStatus": "official_hkex_search_link_only_not_content_verified",
+      "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
     },
     {
       "code": "688981.SH / 00981.HK",
       "name": "中芯国际",
       "industry": "晶圆代工",
       "primaryListing": "688981.SH",
+      "annualReports": {
+        "2021": {
+          "title": "中芯国际2021年年度报告",
+          "announcementDate": "2022-03-31",
+          "announcementId": "1212750692",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-31/1212750692.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688981&announcementId=1212750692&orgId=gshk0000981&announcementTime=2022-03-31"
+        },
+        "2022": {
+          "title": "中芯国际2022年年度报告",
+          "announcementDate": "2023-03-29",
+          "announcementId": "1216245933",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-29/1216245933.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688981&announcementId=1216245933&orgId=gshk0000981&announcementTime=2023-03-29"
+        },
+        "2023": {
+          "title": "中芯国际2023年年度报告",
+          "announcementDate": "2024-03-29",
+          "announcementId": "1219447098",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-29/1219447098.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688981&announcementId=1219447098&orgId=gshk0000981&announcementTime=2024-03-29"
+        },
+        "2024": {
+          "title": "中芯国际2024年年度报告",
+          "announcementDate": "2025-03-28",
+          "announcementId": "1222924320",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-28/1222924320.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688981&announcementId=1222924320&orgId=gshk0000981&announcementTime=2025-03-28"
+        },
+        "2025": {
+          "title": "港股公告：2025年年报",
+          "announcementDate": "2026-04-09",
+          "announcementId": "1225084819",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-09/1225084819.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688981&announcementId=1225084819&orgId=gshk0000981&announcementTime=2026-04-09"
+        }
+      },
       "annual2025": {
         "title": "港股公告：2025年年报",
         "announcementDate": "2026-04-09",
@@ -850,6 +1786,43 @@
       "name": "北方华创",
       "industry": "半导体设备",
       "primaryListing": "002371.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-04-28",
+          "announcementId": "1213168473",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-28/1213168473.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002371&announcementId=1213168473&orgId=9900006137&announcementTime=2022-04-28"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-04-29",
+          "announcementId": "1216690486",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-29/1216690486.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002371&announcementId=1216690486&orgId=9900006137&announcementTime=2023-04-29"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-04-30",
+          "announcementId": "1219908921",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-30/1219908921.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002371&announcementId=1219908921&orgId=9900006137&announcementTime=2024-04-30"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-04-26",
+          "announcementId": "1223309278",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-26/1223309278.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002371&announcementId=1223309278&orgId=9900006137&announcementTime=2025-04-26"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-18",
+          "announcementId": "1225122918",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-18/1225122918.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002371&announcementId=1225122918&orgId=9900006137&announcementTime=2026-04-18"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-04-18",
@@ -880,6 +1853,37 @@
       "name": "海光信息",
       "industry": "CPU与加速计算芯片",
       "primaryListing": "688041.SH",
+      "annualReports": {
+        "2021": null,
+        "2022": {
+          "title": "海光信息技术股份有限公司2022年年度报告",
+          "announcementDate": "2023-04-18",
+          "announcementId": "1216442414",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-18/1216442414.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688041&announcementId=1216442414&orgId=9900048365&announcementTime=2023-04-18"
+        },
+        "2023": {
+          "title": "海光信息技术股份有限公司2023年年度报告",
+          "announcementDate": "2024-04-12",
+          "announcementId": "1219582015",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-12/1219582015.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688041&announcementId=1219582015&orgId=9900048365&announcementTime=2024-04-12"
+        },
+        "2024": {
+          "title": "海光信息技术股份有限公司2024年年度报告",
+          "announcementDate": "2025-03-01",
+          "announcementId": "1222675682",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-01/1222675682.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688041&announcementId=1222675682&orgId=9900048365&announcementTime=2025-03-01"
+        },
+        "2025": {
+          "title": "海光信息技术股份有限公司2025年年度报告",
+          "announcementDate": "2026-04-08",
+          "announcementId": "1225083088",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-08/1225083088.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=688041&announcementId=1225083088&orgId=9900048365&announcementTime=2026-04-08"
+        }
+      },
       "annual2025": {
         "title": "海光信息技术股份有限公司2025年年度报告",
         "announcementDate": "2026-04-08",
@@ -910,6 +1914,43 @@
       "name": "中际旭创",
       "industry": "光通信与高速光模块",
       "primaryListing": "300308.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-04-25",
+          "announcementId": "1213057723",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-25/1213057723.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1213057723&orgId=9900022016&announcementTime=2022-04-25"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-04-24",
+          "announcementId": "1216523562",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-24/1216523562.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1216523562&orgId=9900022016&announcementTime=2023-04-24"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-04-22",
+          "announcementId": "1219703026",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-22/1219703026.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1219703026&orgId=9900022016&announcementTime=2024-04-22"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-04-21",
+          "announcementId": "1223155483",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-21/1223155483.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1223155483&orgId=9900022016&announcementTime=2025-04-21"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225056459",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225056459.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300308&announcementId=1225056459&orgId=9900022016&announcementTime=2026-03-31"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-03-31",
@@ -940,6 +1981,43 @@
       "name": "宁德时代",
       "industry": "动力电池与储能",
       "primaryListing": "300750.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-04-22",
+          "announcementId": "1213027750",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-22/1213027750.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300750&announcementId=1213027750&orgId=GD165627&announcementTime=2022-04-22"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-03-10",
+          "announcementId": "1216084559",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-10/1216084559.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300750&announcementId=1216084559&orgId=GD165627&announcementTime=2023-03-10"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-03-16",
+          "announcementId": "1219313047",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-16/1219313047.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300750&announcementId=1219313047&orgId=GD165627&announcementTime=2024-03-16"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-03-15",
+          "announcementId": "1222806982",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-15/1222806982.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300750&announcementId=1222806982&orgId=GD165627&announcementTime=2025-03-15"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-10",
+          "announcementId": "1225002214",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-10/1225002214.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300750&announcementId=1225002214&orgId=GD165627&announcementTime=2026-03-10"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-03-10",
@@ -970,6 +2048,43 @@
       "name": "阳光电源",
       "industry": "逆变器与储能系统",
       "primaryListing": "300274.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-04-20",
+          "announcementId": "1212975100",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-20/1212975100.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300274&announcementId=1212975100&orgId=9900021300&announcementTime=2022-04-20"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-04-25",
+          "announcementId": "1216556651",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-25/1216556651.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300274&announcementId=1216556651&orgId=9900021300&announcementTime=2023-04-25"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-04-23",
+          "announcementId": "1219740063",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-23/1219740063.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300274&announcementId=1219740063&orgId=9900021300&announcementTime=2024-04-23"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-04-26",
+          "announcementId": "1223308299",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-26/1223308299.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300274&announcementId=1223308299&orgId=9900021300&announcementTime=2025-04-26"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-01",
+          "announcementId": "1225066678",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-01/1225066678.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300274&announcementId=1225066678&orgId=9900021300&announcementTime=2026-04-01"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-04-01",
@@ -1000,6 +2115,43 @@
       "name": "汇川技术",
       "industry": "工业自动化与电驱",
       "primaryListing": "300124.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-04-26",
+          "announcementId": "1213108076",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-26/1213108076.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300124&announcementId=1213108076&orgId=9900012527&announcementTime=2022-04-26"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-04-25",
+          "announcementId": "1216560890",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-25/1216560890.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300124&announcementId=1216560890&orgId=9900012527&announcementTime=2023-04-25"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-04-23",
+          "announcementId": "1219748593",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-23/1219748593.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300124&announcementId=1219748593&orgId=9900012527&announcementTime=2024-04-23"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-04-29",
+          "announcementId": "1223371383",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-29/1223371383.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300124&announcementId=1223371383&orgId=9900012527&announcementTime=2025-04-29"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-28",
+          "announcementId": "1225208488",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225208488.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300124&announcementId=1225208488&orgId=9900012527&announcementTime=2026-04-28"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-04-28",
@@ -1030,6 +2182,43 @@
       "name": "招商银行",
       "industry": "零售银行与财富管理",
       "primaryListing": "600036.SH",
+      "annualReports": {
+        "2021": {
+          "title": "招商银行股份有限公司2021年度报告",
+          "announcementDate": "2022-03-19",
+          "announcementId": "1212626208",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-19/1212626208.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1212626208&orgId=gssh0600036&announcementTime=2022-03-19"
+        },
+        "2022": {
+          "title": "招商银行股份有限公司2022年度报告",
+          "announcementDate": "2023-03-25",
+          "announcementId": "1216221326",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-25/1216221326.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1216221326&orgId=gssh0600036&announcementTime=2023-03-25"
+        },
+        "2023": {
+          "title": "招商银行股份有限公司2023年度报告",
+          "announcementDate": "2024-03-26",
+          "announcementId": "1219403503",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-26/1219403503.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1219403503&orgId=gssh0600036&announcementTime=2024-03-26"
+        },
+        "2024": {
+          "title": "招商银行股份有限公司2024年度报告",
+          "announcementDate": "2025-03-26",
+          "announcementId": "1222895154",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-26/1222895154.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1222895154&orgId=gssh0600036&announcementTime=2025-03-26"
+        },
+        "2025": {
+          "title": "招商银行股份有限公司2025年度报告",
+          "announcementDate": "2026-03-28",
+          "announcementId": "1225047590",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225047590.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600036&announcementId=1225047590&orgId=gssh0600036&announcementTime=2026-03-28"
+        }
+      },
       "annual2025": {
         "title": "招商银行股份有限公司2025年度报告",
         "announcementDate": "2026-03-28",
@@ -1060,6 +2249,43 @@
       "name": "工商银行",
       "industry": "大型商业银行",
       "primaryListing": "601398.SH",
+      "annualReports": {
+        "2021": {
+          "title": "工商银行H股公告-2021年度报告",
+          "announcementDate": "2022-04-28",
+          "announcementId": "1213169697",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-28/1213169697.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601398&announcementId=1213169697&orgId=jjxt0000019&announcementTime=2022-04-28"
+        },
+        "2022": {
+          "title": "工商银行H股公告-2022年度报告",
+          "announcementDate": "2023-04-27",
+          "announcementId": "1216613647",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-27/1216613647.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601398&announcementId=1216613647&orgId=jjxt0000019&announcementTime=2023-04-27"
+        },
+        "2023": {
+          "title": "工商银行2023年度报告",
+          "announcementDate": "2024-03-28",
+          "announcementId": "1219429144",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-28/1219429144.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601398&announcementId=1219429144&orgId=jjxt0000019&announcementTime=2024-03-28"
+        },
+        "2024": {
+          "title": "工商银行2024年度报告",
+          "announcementDate": "2025-03-29",
+          "announcementId": "1222948914",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-29/1222948914.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601398&announcementId=1222948914&orgId=jjxt0000019&announcementTime=2025-03-29"
+        },
+        "2025": {
+          "title": "工商银行2025年度报告",
+          "announcementDate": "2026-03-28",
+          "announcementId": "1225047240",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225047240.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601398&announcementId=1225047240&orgId=jjxt0000019&announcementTime=2026-03-28"
+        }
+      },
       "annual2025": {
         "title": "工商银行2025年度报告",
         "announcementDate": "2026-03-28",
@@ -1090,6 +2316,43 @@
       "name": "中国平安",
       "industry": "保险与综合金融",
       "primaryListing": "601318.SH",
+      "annualReports": {
+        "2021": {
+          "title": "中国平安2021年年度报告",
+          "announcementDate": "2022-03-18",
+          "announcementId": "1212609975",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-18/1212609975.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1212609975&orgId=9900002221&announcementTime=2022-03-18"
+        },
+        "2022": {
+          "title": "中国平安2022年年度报告",
+          "announcementDate": "2023-03-16",
+          "announcementId": "1216129433",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-16/1216129433.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1216129433&orgId=9900002221&announcementTime=2023-03-16"
+        },
+        "2023": {
+          "title": "中国平安2023年年度报告",
+          "announcementDate": "2024-03-22",
+          "announcementId": "1219376072",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-22/1219376072.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1219376072&orgId=9900002221&announcementTime=2024-03-22"
+        },
+        "2024": {
+          "title": "中国平安2024年年度报告",
+          "announcementDate": "2025-03-20",
+          "announcementId": "1222847447",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-20/1222847447.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1222847447&orgId=9900002221&announcementTime=2025-03-20"
+        },
+        "2025": {
+          "title": "中国平安2025年年度报告",
+          "announcementDate": "2026-03-27",
+          "announcementId": "1225038263",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225038263.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601318&announcementId=1225038263&orgId=9900002221&announcementTime=2026-03-27"
+        }
+      },
       "annual2025": {
         "title": "中国平安2025年年度报告",
         "announcementDate": "2026-03-27",
@@ -1114,6 +2377,43 @@
       "name": "中国太保",
       "industry": "寿险与财险",
       "primaryListing": "601601.SH",
+      "annualReports": {
+        "2021": {
+          "title": "中国太保2021年年度报告",
+          "announcementDate": "2022-03-28",
+          "announcementId": "1212698832",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-28/1212698832.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601601&announcementId=1212698832&orgId=9900004003&announcementTime=2022-03-28"
+        },
+        "2022": {
+          "title": "中国太保2022年年度报告",
+          "announcementDate": "2023-03-27",
+          "announcementId": "1216226291",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-27/1216226291.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601601&announcementId=1216226291&orgId=9900004003&announcementTime=2023-03-27"
+        },
+        "2023": {
+          "title": "中国太保2023年年度报告",
+          "announcementDate": "2024-03-29",
+          "announcementId": "1219443217",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-29/1219443217.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601601&announcementId=1219443217&orgId=9900004003&announcementTime=2024-03-29"
+        },
+        "2024": {
+          "title": "中国太保2024年年度报告",
+          "announcementDate": "2025-03-27",
+          "announcementId": "1222910802",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-27/1222910802.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601601&announcementId=1222910802&orgId=9900004003&announcementTime=2025-03-27"
+        },
+        "2025": {
+          "title": "中国太保2025年年度报告",
+          "announcementDate": "2026-03-27",
+          "announcementId": "1225035569",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225035569.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601601&announcementId=1225035569&orgId=9900004003&announcementTime=2026-03-27"
+        }
+      },
       "annual2025": {
         "title": "中国太保2025年年度报告",
         "announcementDate": "2026-03-27",
@@ -1144,6 +2444,43 @@
       "name": "中信证券",
       "industry": "证券与资本市场",
       "primaryListing": "600030.SH",
+      "annualReports": {
+        "2021": {
+          "title": "中信证券股份有限公司2021年年度报告",
+          "announcementDate": "2022-03-29",
+          "announcementId": "1212709852",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-29/1212709852.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600030&announcementId=1212709852&orgId=gssh0600030&announcementTime=2022-03-29"
+        },
+        "2022": {
+          "title": "中信证券股份有限公司2022年年度报告",
+          "announcementDate": "2023-03-31",
+          "announcementId": "1216282870",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-31/1216282870.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600030&announcementId=1216282870&orgId=gssh0600030&announcementTime=2023-03-31"
+        },
+        "2023": {
+          "title": "中信证券股份有限公司2023年年度报告",
+          "announcementDate": "2024-03-27",
+          "announcementId": "1219411922",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-27/1219411922.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600030&announcementId=1219411922&orgId=gssh0600030&announcementTime=2024-03-27"
+        },
+        "2024": {
+          "title": "中信证券股份有限公司2024年年度报告",
+          "announcementDate": "2025-03-27",
+          "announcementId": "1222912838",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-27/1222912838.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600030&announcementId=1222912838&orgId=gssh0600030&announcementTime=2025-03-27"
+        },
+        "2025": {
+          "title": "中信证券股份有限公司2025年年度报告",
+          "announcementDate": "2026-03-27",
+          "announcementId": "1225036081",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-27/1225036081.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600030&announcementId=1225036081&orgId=gssh0600030&announcementTime=2026-03-27"
+        }
+      },
       "annual2025": {
         "title": "中信证券股份有限公司2025年年度报告",
         "announcementDate": "2026-03-27",
@@ -1174,6 +2511,43 @@
       "name": "东方财富",
       "industry": "互联网证券与金融信息",
       "primaryListing": "300059.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-03-19",
+          "announcementId": "1212623862",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-19/1212623862.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300059&announcementId=1212623862&orgId=9900010488&announcementTime=2022-03-19"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-03-18",
+          "announcementId": "1216145341",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-18/1216145341.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300059&announcementId=1216145341&orgId=9900010488&announcementTime=2023-03-18"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-03-15",
+          "announcementId": "1219307793",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-15/1219307793.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300059&announcementId=1219307793&orgId=9900010488&announcementTime=2024-03-15"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-03-15",
+          "announcementId": "1222806709",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-15/1222806709.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300059&announcementId=1222806709&orgId=9900010488&announcementTime=2025-03-15"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-03-20",
+          "announcementId": "1225019509",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-20/1225019509.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300059&announcementId=1225019509&orgId=9900010488&announcementTime=2026-03-20"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-03-20",
@@ -1204,16 +2578,18 @@
       "name": "京东集团",
       "industry": "电商、零售与物流",
       "primaryListing": "09618.HK",
-      "annual2025": {
-        "title": "2025 Annual Report / Form 20-F",
-        "announcementDate": "2026-04-16",
-        "pdfUrl": "https://ir.jd.com/system/files-encrypted/nasdaq_kms/assets/2026/04/17/11-33-24/Form%2020-F%20for%20JD%20filed%2004162026.pdf",
-        "detailUrl": "https://ir.jd.com/annual-reports"
+      "annualReports": {
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null
       },
+      "annual2025": null,
       "interim2026": null,
       "quarterly2026Q3": null,
-      "status": "partial",
-      "verificationStatus": "official_annual_report_pdf_link_resolved_content_not_crosschecked",
+      "status": "hkex_manual_lookup_required",
+      "verificationStatus": "official_hkex_search_link_only_not_content_verified",
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
     },
     {
@@ -1221,6 +2597,43 @@
       "name": "中国中免",
       "industry": "免税零售与旅游消费",
       "primaryListing": "601888.SH",
+      "annualReports": {
+        "2021": {
+          "title": "中国旅游集团中免股份有限公司2021年年度报告",
+          "announcementDate": "2022-04-23",
+          "announcementId": "1213052580",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-23/1213052580.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601888&announcementId=1213052580&orgId=9900008313&announcementTime=2022-04-23"
+        },
+        "2022": {
+          "title": "中国旅游集团中免股份有限公司2022年年度报告",
+          "announcementDate": "2023-03-31",
+          "announcementId": "1216276286",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-03-31/1216276286.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601888&announcementId=1216276286&orgId=9900008313&announcementTime=2023-03-31"
+        },
+        "2023": {
+          "title": "中国旅游集团中免股份有限公司2023年年度报告",
+          "announcementDate": "2024-03-28",
+          "announcementId": "1219426653",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-03-28/1219426653.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601888&announcementId=1219426653&orgId=9900008313&announcementTime=2024-03-28"
+        },
+        "2024": {
+          "title": "中国旅游集团中免股份有限公司2024年年度报告",
+          "announcementDate": "2025-03-29",
+          "announcementId": "1222944381",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-03-29/1222944381.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601888&announcementId=1222944381&orgId=9900008313&announcementTime=2025-03-29"
+        },
+        "2025": {
+          "title": "中国旅游集团中免股份有限公司2025年年度报告",
+          "announcementDate": "2026-03-31",
+          "announcementId": "1225063442",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225063442.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601888&announcementId=1225063442&orgId=9900008313&announcementTime=2026-03-31"
+        }
+      },
       "annual2025": {
         "title": "中国旅游集团中免股份有限公司2025年年度报告",
         "announcementDate": "2026-03-31",
@@ -1251,13 +2664,14 @@
       "name": "锦江酒店",
       "industry": "酒店运营与管理",
       "primaryListing": "600754.SH",
-      "annual2025": {
-        "title": "上海锦江国际酒店股份有限公司2025年年度报告",
-        "announcementDate": "2026-03-28",
-        "announcementId": "1225048147",
-        "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225048147.PDF",
-        "detailUrl": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12031019&stockid=600754"
+      "annualReports": {
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null
       },
+      "annual2025": null,
       "interim2026": {
         "title": "锦江酒店2026年半年度报告",
         "announcementDate": "2026-08-29",
@@ -1273,7 +2687,7 @@
         "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600754&announcementId=1225648607&orgId=gssh0600754&announcementTime=2026-10-31"
       },
       "status": "partial",
-      "verificationStatus": "official_annual_report_pdf_link_resolved_content_not_crosschecked",
+      "verificationStatus": "official_link_only_not_content_verified",
       "orgId": "gssh0600754"
     },
     {
@@ -1281,6 +2695,43 @@
       "name": "分众传媒",
       "industry": "楼宇广告",
       "primaryListing": "002027.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-04-29",
+          "announcementId": "1213205440",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-29/1213205440.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002027&announcementId=1213205440&orgId=gssz0002027&announcementTime=2022-04-29"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-04-29",
+          "announcementId": "1216687846",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-29/1216687846.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002027&announcementId=1216687846&orgId=gssz0002027&announcementTime=2023-04-29"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-04-30",
+          "announcementId": "1219912683",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-30/1219912683.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002027&announcementId=1219912683&orgId=gssz0002027&announcementTime=2024-04-30"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-04-29",
+          "announcementId": "1223365040",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-29/1223365040.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002027&announcementId=1223365040&orgId=gssz0002027&announcementTime=2025-04-29"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-29",
+          "announcementId": "1225251512",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225251512.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002027&announcementId=1225251512&orgId=gssz0002027&announcementTime=2026-04-29"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-04-29",
@@ -1311,17 +2762,18 @@
       "name": "哔哩哔哩",
       "industry": "视频社区与内容",
       "primaryListing": "09626.HK",
-      "annual2025": {
-        "title": "2025 Annual Report",
-        "announcementDate": "2026-04-16",
-        "announcementId": "2026041601346",
-        "pdfUrl": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0416/2026041601346.pdf",
-        "detailUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?category=0&lang=EN&market=SEHK&stockId=1000087784"
+      "annualReports": {
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null
       },
+      "annual2025": null,
       "interim2026": null,
       "quarterly2026Q3": null,
-      "status": "partial",
-      "verificationStatus": "official_annual_report_pdf_link_resolved_content_not_crosschecked",
+      "status": "hkex_manual_lookup_required",
+      "verificationStatus": "official_hkex_search_link_only_not_content_verified",
       "officialSearchUrl": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=en"
     },
     {
@@ -1329,6 +2781,43 @@
       "name": "中公教育",
       "industry": "职业培训与考试服务",
       "primaryListing": "002607.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-04-29",
+          "announcementId": "1213212116",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-29/1213212116.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002607&announcementId=1213212116&orgId=9900021221&announcementTime=2022-04-29"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-04-28",
+          "announcementId": "1216649550",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-28/1216649550.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002607&announcementId=1216649550&orgId=9900021221&announcementTime=2023-04-28"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-04-30",
+          "announcementId": "1219926621",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-30/1219926621.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002607&announcementId=1219926621&orgId=9900021221&announcementTime=2024-04-30"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-04-26",
+          "announcementId": "1223325491",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-26/1223325491.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002607&announcementId=1223325491&orgId=9900021221&announcementTime=2025-04-26"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-29",
+          "announcementId": "1225251198",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-29/1225251198.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002607&announcementId=1225251198&orgId=9900021221&announcementTime=2026-04-29"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-04-29",
@@ -1359,6 +2848,43 @@
       "name": "兴蓉环境",
       "industry": "水务与环保运营",
       "primaryListing": "000598.SZ",
+      "annualReports": {
+        "2021": {
+          "title": "2021年年度报告",
+          "announcementDate": "2022-04-22",
+          "announcementId": "1213023599",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-04-22/1213023599.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000598&announcementId=1213023599&orgId=gssz0000598&announcementTime=2022-04-22"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-04-26",
+          "announcementId": "1216582330",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-26/1216582330.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000598&announcementId=1216582330&orgId=gssz0000598&announcementTime=2023-04-26"
+        },
+        "2023": {
+          "title": "2023年年度报告",
+          "announcementDate": "2024-04-19",
+          "announcementId": "1219663834",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-19/1219663834.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000598&announcementId=1219663834&orgId=gssz0000598&announcementTime=2024-04-19"
+        },
+        "2024": {
+          "title": "2024年年度报告",
+          "announcementDate": "2025-04-18",
+          "announcementId": "1223128111",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-18/1223128111.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000598&announcementId=1223128111&orgId=gssz0000598&announcementTime=2025-04-18"
+        },
+        "2025": {
+          "title": "2025年年度报告",
+          "announcementDate": "2026-04-28",
+          "announcementId": "1225212058",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-28/1225212058.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000598&announcementId=1225212058&orgId=gssz0000598&announcementTime=2026-04-28"
+        }
+      },
       "annual2025": {
         "title": "2025年年度报告",
         "announcementDate": "2026-04-28",
@@ -1389,6 +2915,43 @@
       "name": "瀚蓝环境",
       "industry": "固废处理与环保运营",
       "primaryListing": "600323.SH",
+      "annualReports": {
+        "2021": {
+          "title": "瀚蓝环境股份有限公司2021年年度报告",
+          "announcementDate": "2022-03-31",
+          "announcementId": "1212748312",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2022-03-31/1212748312.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600323&announcementId=1212748312&orgId=gssh0600323&announcementTime=2022-03-31"
+        },
+        "2022": {
+          "title": "2022年年度报告",
+          "announcementDate": "2023-04-07",
+          "announcementId": "1216345869",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2023-04-07/1216345869.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600323&announcementId=1216345869&orgId=gssh0600323&announcementTime=2023-04-07"
+        },
+        "2023": {
+          "title": "瀚蓝环境股份有限公司2023年年度报告",
+          "announcementDate": "2024-04-12",
+          "announcementId": "1219580559",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2024-04-12/1219580559.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600323&announcementId=1219580559&orgId=gssh0600323&announcementTime=2024-04-12"
+        },
+        "2024": {
+          "title": "瀚蓝环境股份有限公司2024年年度报告",
+          "announcementDate": "2025-04-11",
+          "announcementId": "1223057340",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2025-04-11/1223057340.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600323&announcementId=1223057340&orgId=gssh0600323&announcementTime=2025-04-11"
+        },
+        "2025": {
+          "title": "瀚蓝环境股份有限公司2025年年度报告",
+          "announcementDate": "2026-04-24",
+          "announcementId": "1225167256",
+          "pdfUrl": "https://static.cninfo.com.cn/finalpage/2026-04-24/1225167256.PDF",
+          "detailUrl": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600323&announcementId=1225167256&orgId=gssh0600323&announcementTime=2026-04-24"
+        }
+      },
       "annual2025": {
         "title": "瀚蓝环境股份有限公司2025年年度报告",
         "announcementDate": "2026-04-24",
@@ -1415,7 +2978,5 @@
       "orgId": "gssh0600323"
     }
   ],
-  "warning": "Official filing URLs are locators only. Values remain unverified until the actual report, audit opinion, reporting currency/unit, consolidation scope and line items are cross-checked.",
-  "annualLatestResolved": 1,
-  "annualAndLatestResolved": 49
+  "warning": "Official filing URLs are locators only. Values remain unverified until the actual report, audit opinion, reporting currency/unit, consolidation scope and line items are cross-checked."
 }
