@@ -49,13 +49,34 @@ jobs:
           name: standardized-company-financials
           path: data/financial-standardized/
           retention-days: 30
-      - name: Commit standardized dataset
+      - name: Commit standardized dataset with race-safe regeneration
+        env:
+          PUBLIC_DATA_REPUBLISH_LICENSE_APPROVED: ${{ vars.PUBLIC_DATA_REPUBLISH_LICENSE_APPROVED }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/financial-standardized/
-          if ! git diff --cached --quiet; then
-            git commit -m "Standardize 2021-2025 company financial statements"
-            git pull --rebase origin main
-            git push
-          fi
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            python scripts/standardize_financial_statements.py
+            python scripts/build_financial_pit_panel.py
+            python - <<'PY'
+            import json
+            p=json.load(open("data/financial-standardized/pit-panel-coverage-audit.json",encoding="utf-8"))
+            assert p["companyCount"] == 49
+            assert p["valuationMonthlyObservations"] == 8942
+            print("Rebuilt current-main PIT audit for", p["companyCount"], "companies;",
+                  "annual report link coverage:", p.get("companiesWithAtLeastOneOfficialAnnualReportLink2021To2025"))
+            PY
+            git add data/financial-standardized/
+            if git diff --cached --quiet; then
+              echo "No generated data changes."
+              exit 0
+            fi
+            git commit -m "Standardize financials and rebuild PIT audit"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Concurrent main update; regenerate from new main (attempt $attempt)"
+          done
+          exit 1
