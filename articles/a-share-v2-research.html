@@ -19,10 +19,10 @@
 <div class="v2card"><small>策略比较</small><strong>6 类</strong><span class="state">样本外验证待完成</span></div>
 </div>
 <section class="v2section" id="datasets"><h2>01 / 已有真实数据与覆盖缺口</h2><p class="muted">以下数字来自仓库中已存在的CSV、JSON与逐项覆盖审计；“有历史记录”不等于完整连续覆盖，也不等于已获准再分发。</p><div class="v2table"><table><thead><tr><th>数据组</th><th>实际已有数据</th><th>关键缺口</th><th>驾驶舱</th></tr></thead><tbody>
-<tr><td>沪深300 / 000300</td><td>价格与H00300全收益引用序列；月收益248条，2006-01至2026-08</td><td>来源为第三方归档/派生数据，需与中证官方逐点交叉核验；2026-09只有不完整月末点位</td><td><span class="state">研究中</span></td></tr>
-<tr><td>中证500 / 000905</td><td>已确认官方全收益代码H00905</td><td>月度价格、全收益原始点位尚未入库</td><td><span class="state">未接入</span></td></tr>
+<tr><td>沪深300 / 000300</td><td>价格与H00300全收益引用序列；月收益248条，2006-01至2026-08</td><td>2020-02至2026-08共79个月，已与另一独立采集器的H00300序列逐月核对至舍入精度；2006-2019仍需第二来源核验，2026-09只有不完整月末点位</td><td><span class="state">研究中</span></td></tr>
+<tr><td>中证500 / 000905</td><td>已确认官方全收益代码H00905</td><td>公开样本库有2020-01至2026-09日频序列候选，但未入库（再分发许可未确认）；2005-2019仍缺</td><td><span class="state">未接入</span></td></tr>
 <tr><td>中证1000 / 000852</td><td>已确认官方全收益代码H00852</td><td>月度价格、全收益原始点位尚未入库</td><td><span class="state">未接入</span></td></tr>
-<tr><td>中证全指 / 000985</td><td>已确认官方全收益代码H00985</td><td>月度价格、全收益原始点位尚未入库；不以930903替代</td><td><span class="state">未接入</span></td></tr>
+<tr><td>中证全指 / 000985</td><td>已确认官方全收益代码H00985</td><td>公开样本库有2020-01至2026-09日频序列候选，但未入库（再分发许可未确认）；2005-2019仍缺；不以930903替代</td><td><span class="state">未接入</span></td></tr>
 <tr><td>49家公司历史估值</td><td>100,724条日频输入，8,942条月度观测；49/49家公司至少有记录</td><td>21.5%月度观测滞后月末6个以上交易日；港股PS缺失；严格10年分位覆盖极低</td><td><span class="state">研究中</span></td></tr>
 <tr><td>49家公司财报</td><td>210/210项请求返回；49家公司三大报表档案；57个上市代码</td><td>尚未完成逐年科目标准化、公告时点面板、ROIC、净债务、分红及稀释股数重建</td><td><span class="state">研究中</span></td></tr>
 </tbody></table></div>
