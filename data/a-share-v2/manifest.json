@@ -39,7 +39,11 @@
         "frequency": "daily",
         "status": "candidate_only_not_ingested",
         "reason": "market-data redistribution rights not cleared; does not cover 2005-2019"
-      }
+      },
+      "official_launch_date": "2007-01-15",
+      "base_date": "2004-12-31",
+      "pre_launch_history": "backcast_only; not contemporaneously published",
+      "redistribution_license_status": "not_cleared_for_public_redistribution"
     },
     {
       "name": "中证1000",
@@ -55,7 +59,11 @@
         "frequency": "daily",
         "status": "candidate_only_not_ingested",
         "reason": "market-data redistribution rights not cleared; does not cover 2005-2019"
-      }
+      },
+      "official_launch_date": "2014-10-17",
+      "base_date": "2004-12-31",
+      "pre_launch_history": "backcast_only; not contemporaneously published",
+      "redistribution_license_status": "not_cleared_for_public_redistribution"
     },
     {
       "name": "中证全指（全A代表）",
@@ -72,7 +80,11 @@
         "frequency": "daily",
         "status": "candidate_only_not_ingested",
         "reason": "market-data redistribution rights not cleared; does not cover 2005-2019"
-      }
+      },
+      "official_launch_date": "2011-08-02",
+      "base_date": "2004-12-31",
+      "pre_launch_history": "backcast_only; not contemporaneously published",
+      "redistribution_license_status": "not_cleared_for_public_redistribution"
     }
   ],
   "valuation": {
@@ -100,7 +112,22 @@
     "company_database": "data/china-stocks-financial-valuation.json",
     "raw_financial_archive": "data/raw-financials/company_statements_20261105T094248Z.json",
     "financial_retrieval_audit": "data/raw-financials/coverage_audit.json",
-    "financial_archive_status": "210/210 statement requests retrieved across 49 issuers; standardization and point-in-time panel remain incomplete"
+    "financial_archive_status": "210/210 statement requests retrieved across 49 issuers; standardization and point-in-time panel remain incomplete",
+    "financial_standardization": {
+      "standardized_file": "data/financial-standardized/company-financials-2021-2025.json",
+      "standardization_audit": "data/financial-standardized/standardization-audit.json",
+      "coverage": {
+        "five_year_income": 49,
+        "five_year_balance": 49,
+        "five_year_cashflow": 48,
+        "ttm_derived": 44,
+        "ttm_pending": 5
+      },
+      "point_in_time_builder": "scripts/build_financial_pit_panel.py",
+      "point_in_time_spec": "data/financial-standardized/PIT_PANEL_SPEC.md",
+      "point_in_time_audit": "data/financial-standardized/pit-panel-coverage-audit.json",
+      "public_panel_release_gate": "blocked_until_explicit_data_redistribution_license_approval"
+    }
   },
   "strategy_set": [
     "buy_and_hold",
@@ -137,7 +164,8 @@
     "complete_index_valuation_panel": false,
     "standardized_49_company_pit_financial_panel": false,
     "six_strategy_out_of_sample_validation": false,
-    "live_investment_signal": false
+    "live_investment_signal": false,
+    "index_public_redistribution_license": false
   },
   "existing_assets_audit": "data/a-share-v2/existing-assets-audit.json",
   "historical_valuation": {
@@ -172,5 +200,8 @@
       "ps_ttm": 0
     },
     "warning": "49/49 have at least one observation, not a complete continuous 20-year panel. 21.5% observations lag month-end by 6+ trading sessions. Formal percentiles have not been written into the company master database."
-  }
+  },
+  "index_licensing_register": "data/a-share-v2/index-data-licensing-register.json",
+  "index_licensing_status": "written_public_redistribution_permission_required",
+  "index_licensing_notes": "CIIS official CSI historical data product is subscription-based. Public GitHub CSV download and website display require explicit written permission; ordinary/internal-use subscription is not assumed to permit public redistribution."
 }
