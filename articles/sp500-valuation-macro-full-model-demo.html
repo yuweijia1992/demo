@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>标普500估值与宏观风险模型｜完整示意版</title>
+<style>
+:root{--bg:#f4f6fa;--card:#fff;--ink:#172033;--muted:#65728a;--line:#e1e7f0;--blue:#315bd6;--orange:#b96b13;--red:#b83b45;--green:#16815d}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:1220px;margin:auto;padding:28px 20px 70px}h1{font-size:clamp(27px,4vw,39px);line-height:1.2;margin:8px 0}h2{font-size:21px;margin:0 0 14px}h3{font-size:16px;margin:0 0 8px}.muted,.small{color:var(--muted)}.small{font-size:12px}.tag{display:inline-block;border:1px solid var(--line);border-radius:20px;padding:3px 10px;font-size:12px;color:var(--muted);margin-right:5px}.tag.warn{color:#92520c;background:#fff7e9;border-color:#f1d7ae}.tag.blue{color:#284ebc;background:#eef3ff;border-color:#d5e0ff}.panel{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:20px;margin:16px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.metric{border:1px solid var(--line);border-radius:11px;padding:13px}.metric span{display:block;color:var(--muted);font-size:12px}.metric strong{font-size:25px;display:block;margin-top:3px;font-variant-numeric:tabular-nums}.metric em{font-size:12px;color:var(--muted);font-style:normal}.cols{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.factor{display:grid;grid-template-columns:145px 1fr 58px;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}.track{height:10px;border-radius:20px;background:#e9edf4;overflow:hidden}.fill{height:100%;background:var(--blue);border-radius:20px}.factor b:last-child{text-align:right;font-variant-numeric:tabular-nums}.score{font-size:54px;font-weight:750;line-height:1.1}.gauge{height:15px;border-radius:30px;background:linear-gradient(90deg,#16815d 0 20%,#8cae70 20% 40%,#d6b34e 40% 60%,#d58b43 60% 80%,#b83b45 80%);position:relative;margin:22px 0 8px}.needle{position:absolute;top:-7px;width:3px;height:29px;background:#172033;left:50%;box-shadow:0 0 0 3px #fff;border-radius:3px}.scale{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:10px}table{width:100%;border-collapse:collapse;min-width:680px}th,td{text-align:right;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}th{background:#f7f9fc;color:#536078;font-size:12px}td:first-child,th:first-child{text-align:left}.status{font-weight:650}.good{color:var(--green)}.bad{color:var(--red)}.warn{color:var(--orange)}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.controls label{display:block;font-size:13px;color:var(--muted)}input[type=range]{width:100%;accent-color:var(--blue)}select{width:100%;padding:8px;border:1px solid var(--line);border-radius:8px;background:white;color:var(--ink)}.callout{padding:13px 15px;background:#fff8eb;border:1px solid #f0dbb7;border-radius:10px}.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}.step{border:1px solid var(--line);border-radius:10px;padding:12px}.step strong{display:block;font-size:13px}.step span{font-size:12px;color:var(--muted)}a{color:var(--blue)}footer{font-size:12px;color:var(--muted);margin-top:24px}@media(max-width:760px){.cols{grid-template-columns:1fr}main{padding:18px 12px 50px}.panel{padding:15px}.factor{grid-template-columns:115px 1fr 50px}.score{font-size:44px}}
+</style></head><body><main>
+<p class="muted"><a href="../index.html">← 项目首页</a>　/　研究模型</p>
+<h1>标普500估值 × 宏观金融条件风险模型</h1>
+<p class="muted">完整模型示意版 · 五因子 · 月频 · 历史数据、交互试算与验证审计一体化</p>
+<p><span class="tag blue">模型结构完整示意</span><span class="tag warn">非实时行情 / 非投资指令</span><span class="tag">现有研究信号截至 2026-07</span></p>
+
+<section class="panel"><h2>01｜模型总览：从数据到风险判断</h2>
+<div class="steps">
+<div class="step"><strong>① 原始数据层</strong><span>标普总回报、CAPE、DFII10、NFCI、FEDFUNDS、CPI</span></div>
+<div class="step"><strong>② 数据审计层</strong><span>来源、频率、覆盖、缺失、异常、SHA256、PIT</span></div>
+<div class="step"><strong>③ 因子处理层</strong><span>月度对齐、滞后规则、120个月滚动分位</span></div>
+<div class="step"><strong>④ 风险评分层</strong><span>五因子加权，生成综合分数</span></div>
+<div class="step"><strong>⑤ 风险分档层</strong><span>36个月滚动分位，划分Q1—Q5</span></div>
+<div class="step"><strong>⑥ 验证与决策层</strong><span>前瞻收益、回撤、样本外、区块自助法</span></div>
+</div></section>
+
+<section class="panel"><h2>02｜历史研究信号快照</h2><p class="small">以下数字来自项目已保存的 V1.0 研究汇总，信号月份为 2026-07，宏观数据月份为 2026-06。它不是 2026-11-18 的最新市场状态。</p>
+<div class="grid">
+<div class="metric"><span>信号月份</span><strong>2026-07</strong><em>历史快照</em></div>
+<div class="metric"><span>综合风险分数</span><strong>69.3</strong><em>0—100</em></div>
+<div class="metric"><span>过去36个月风险分位</span><strong>37.5%</strong><em>Q2 · 相对偏低档</em></div>
+<div class="metric"><span>CAPE</span><strong>40.02</strong><em>120个月分位 97.9%</em></div>
+<div class="metric"><span>10年实际利率</span><strong>2.18%</strong><em>120个月分位 97.1%</em></div>
+<div class="metric"><span>NFCI</span><strong>-0.533</strong><em>120个月分位 37.1%</em></div>
+<div class="metric"><span>联邦基金利率</span><strong>3.63%</strong><em>12个月变化 -0.70个百分点</em></div>
+<div class="metric"><span>政策方向</span><strong>宽松</strong><em>方向因子得分 0</em></div>
+</div>
+<div class="cols" style="margin-top:18px">
+<div><h3>综合风险分数位置</h3><div class="score" id="histScore">69.3<span style="font-size:17px"> / 100</span></div><div class="gauge"><div class="needle" style="left:69.3%"></div></div><div class="scale"><span>低风险</span><span>中性</span><span>高风险</span></div><p class="small">注意：综合分数与36个月历史分位是两个不同概念。69.3是加权因子分数，37.5%是该分数在过去36个月中的相对位置。</p></div>
+<div><h3>研究解释</h3><p>估值与实际利率因子处于各自历史高分位，代表估值压力和贴现率压力偏高；金融条件分位不高，政策方向为宽松。不同因子相互抵消后，综合分数为69.3，但在短期历史分布中仅处于Q2。</p><div class="callout"><b>模型不能只看一个总分。</b><br><span class="small">高估值不等于马上下跌；宽松金融条件也不保证估值风险消失。必须同时观察因子构成和验证证据。</span></div></div></div>
+</section>
+
+<section class="panel"><h2>03｜五因子模型结构与权重</h2>
+<div id="factorRows">
+<div class="factor"><b>CAPE估值 · 30%</b><div class="track"><div class="fill" style="width:97.92%"></div></div><b>97.9</b></div>
+<div class="factor"><b>10年实际利率 · 25%</b><div class="track"><div class="fill" style="width:97.08%"></div></div><b>97.1</b></div>
+<div class="factor"><b>NFCI金融条件 · 25%</b><div class="track"><div class="fill" style="width:37.08%"></div></div><b>37.1</b></div>
+<div class="factor"><b>政策利率水平 · 10%</b><div class="track"><div class="fill" style="width:64.17%"></div></div><b>64.2</b></div>
+<div class="factor"><b>政策方向 · 10%</b><div class="track"><div class="fill" style="width:0%"></div></div><b>0.0</b></div></div>
+<p><b>综合分数公式</b></p><p><code>Risk = 0.30 × CAPE分位 + 0.25 × 实际利率分位 + 0.25 × NFCI分位 + 0.10 × 政策利率分位 + 0.10 × 政策方向分数</code></p>
+<div class="tablewrap"><table><thead><tr><th>因子</th><th>数据源</th><th>处理方法</th><th>滞后 / PIT</th></tr></thead><tbody>
+<tr><td>CAPE估值</td><td>Shiller CAPE</td><td>120个月滚动 midrank 分位</td><td>信号月；需核对历史发布日期</td></tr>
+<tr><td>10年实际利率</td><td>FRED DFII10</td><td>日值转月均值，再算120个月分位</td><td>旧版滞后1个月；当前修订值非严格PIT</td></tr>
+<tr><td>金融条件</td><td>Chicago Fed NFCI</td><td>月末前可得周值，120个月滚动分位</td><td>旧版5日缓冲；V1.2目标改为ALFRED vintage</td></tr>
+<tr><td>政策利率水平</td><td>FRED FEDFUNDS</td><td>月均值，120个月滚动分位</td><td>滞后1个月；当前修订值非严格PIT</td></tr>
+<tr><td>政策方向</td><td>FRED FEDFUNDS</td><td>同比变化；加息100、中性50、降息0</td><td>滞后1个月；阈值±0.25个百分点</td></tr>
+</tbody></table></div>
+<p class="small">滚动因子分位要求120个完整月度观测；综合分数再用含当月的过去36个月历史分布计算滚动分位。分位数使用 midrank。</p></section>
+
+<section class="panel"><h2>04｜交互试算：修改五个因子，观察风险分数</h2>
+<p class="small">这是模型公式演示器，不是实时数据。滑块改变的是输入分位假设，不能解释为市场真实变化。</p>
+<div class="controls">
+<label>CAPE估值分位：<b id="v1">97.9</b><input id="f1" type="range" min="0" max="100" value="97.9" step="0.1"></label>
+<label>实际利率分位：<b id="v2">97.1</b><input id="f2" type="range" min="0" max="100" value="97.1" step="0.1"></label>
+<label>NFCI分位：<b id="v3">37.1</b><input id="f3" type="range" min="0" max="100" value="37.1" step="0.1"></label>
+<label>政策利率分位：<b id="v4">64.2</b><input id="f4" type="range" min="0" max="100" value="64.2" step="0.1"></label>
+<label>政策方向分数：<b id="v5">0</b><select id="f5"><option value="0" selected>宽松 / 降息（0）</option><option value="50">中性（50）</option><option value="100">紧缩 / 加息（100）</option></select></label>
+</div>
+<div class="cols" style="margin-top:18px"><div><div class="small">试算综合分数</div><div class="score" id="demoScore">69.3</div><div class="gauge"><div class="needle" id="demoNeedle" style="left:69.3%"></div></div><div class="scale"><span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span></div></div><div><h3>当前权重贡献</h3><div id="contrib"></div><button id="reset" style="padding:9px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;margin-top:12px">恢复历史快照输入</button></div></div>
+</section>
+
+<section class="panel"><h2>05｜历史前瞻表现：风险分档后发生了什么？</h2>
+<p class="small">以下为旧版模型保存的历史统计。收益为美元标普500总回报；前瞻窗口从信号月之后开始。窗口逐月重叠，样本并非独立。</p>
+<label style="max-width:240px">前瞻期限<select id="horizon"><option value="12">未来12个月</option><option value="36">未来36个月</option><option value="60">未来60个月</option></select></label>
+<div class="tablewrap" style="margin-top:12px"><table><thead><tr><th>风险分位组</th><th>样本数</th><th>平均累计收益</th><th>中位收益</th><th>负收益比例</th><th>平均最大回撤</th><th>期限内未修复</th></tr></thead><tbody id="histTable"></tbody></table></div>
+<p class="small">36个月与60个月的样本尤其少，不能将组间差异理解为稳定规律。历史结果不是未来收益预测。</p></section>
+
+<section class="panel"><h2>06｜样本外检验：目前模型是否真的有预测力？</h2>
+<div class="grid">
+<div class="metric"><span>训练区间</span><strong style="font-size:19px">2018-12—2022-11</strong><em>48个月</em></div>
+<div class="metric"><span>测试区间</span><strong style="font-size:19px">2022-12—2025-07</strong><em>32个月</em></div>
+<div class="metric"><span>分数与未来12月收益 Spearman</span><strong>-0.172</strong><em>弱负相关</em></div>
+<div class="metric"><span>3个月区块自助法95%区间</span><strong style="font-size:19px">[-0.558, 0.364]</strong><em>包含0</em></div>
+</div>
+<div class="callout" style="margin-top:14px"><b>结论：尚无充分证据证明模型具有稳定的样本外择时能力。</b><br><span class="small">测试期32个月没有进入基准模型的最低20%风险档；高风险档19个月、中间档13个月。只有3个不重叠的年度测试锚点。更换权重后，分数与收益的相关方向会改变。</span></div>
+<h3 style="margin-top:18px">V1.1校准试验结果摘要</h3>
+<div class="tablewrap"><table><thead><tr><th>模型设定</th><th>收益相关系数</th><th>回撤相关系数</th><th>解释</th></tr></thead><tbody>
+<tr><td>固定基准权重</td><td>-0.172</td><td>-0.117</td><td>收益关系弱且不确定</td></tr>
+<tr><td>等权</td><td>-0.044</td><td>-0.136</td><td>收益关系接近零</td></tr>
+<tr><td>估值加权</td><td>-0.342</td><td>-0.110</td><td>小样本下方向偏负</td></tr>
+<tr><td>宏观加权</td><td>+0.157</td><td>-0.307</td><td>权重变化导致方向反转</td></tr>
+<tr><td>金融条件加权</td><td>+0.324</td><td>-0.438</td><td>结果仍需置信区间验证</td></tr>
+</tbody></table></div>
+<p class="small">以上为既有研究输出摘要，不是本页面重新回测。区块自助法区间宽，且跨越零；不支持据此部署自动择时。</p></section>
+
+<section class="panel"><h2>07｜数据覆盖与审计总表</h2>
+<div class="tablewrap"><table><thead><tr><th>数据</th><th>频率</th><th>当前可用状态</th><th>主要缺口 / 风险</th></tr></thead><tbody>
+<tr><td>标普500长期总回报</td><td>月度</td><td class="warn">V1.2待审计</td><td>完整原始文件、行数、异常值、来源与哈希需核验</td></tr>
+<tr><td>NFCI历史版本</td><td>周度 vintage</td><td class="warn">V1.2待审计</td><td>ALFRED vintage 列与日期需逐项验证</td></tr>
+<tr><td>DFII10实际利率</td><td>日度</td><td class="warn">当前修订序列</td><td>历史发布时点与修订版本尚未完整重建</td></tr>
+<tr><td>FEDFUNDS政策利率</td><td>月度</td><td class="warn">当前修订序列</td><td>需要发布日对齐才能严格PIT</td></tr>
+<tr><td>GS10十年期名义利率</td><td>月度</td><td class="warn">V1.2待审计</td><td>纳入辅助分析，不属于当前五因子权重</td></tr>
+<tr><td>CPIAUCSL通胀</td><td>月度</td><td class="warn">V1.2待审计</td><td>当前修订值与首次发布日期需区分</td></tr>
+</tbody></table></div>
+<p class="small">严格PIT要求使用当时投资者实际可获得的数据版本及发布时间。仅按观测月份滞后，不等同于完整的发布日期回测。</p></section>
+
+<section class="panel"><h2>08｜最终决策输出应当是什么</h2>
+<div class="steps">
+<div class="step"><strong>市场状态</strong><span>估值贵 / 便宜；金融条件紧 / 松；政策紧缩 / 宽松</span></div>
+<div class="step"><strong>风险等级</strong><span>综合分数 + 历史滚动分位 + 因子贡献</span></div>
+<div class="step"><strong>证据质量</strong><span>数据完整度、PIT等级、样本外置信区间</span></div>
+<div class="step"><strong>策略约束</strong><span>仅在验证通过后研究仓位映射；不由单一分数直接触发</span></div>
+</div>
+<p>当前建议的研究流程：先完成 V1.2 原始数据、SHA256、覆盖审计和历史 vintage 核验；再重建严格点时月度面板；随后重新跑 V1.1 阈值与权重校准；最后进行滚动样本外、区块自助法、交易成本与基准策略比较。</p>
+<div class="callout"><b>当前结论不是“买入”或“卖出”。</b> 这套模型目前适合用作风险监控和研究框架，尚不适合自动改变股票仓位。</div>
+</section>
+<section class="panel"><h2>09｜数据文件与研究报告</h2>
+<ul>
+<li><a href="../data/index-valuation/sp500-macro-factor-model-summary.json">五因子模型定义与历史统计 JSON</a></li>
+<li><a href="../data/index-valuation/sp500-macro-factor-model-monthly.csv">月度因子与前瞻结果 CSV</a></li>
+<li><a href="./sp500-macro-model-oos-validation.html">样本外验证报告</a></li>
+<li><a href="./sp500-macro-model-v11-calibration.html">V1.1模型校准报告</a></li>
+<li><a href="./sp500-macro-model-v12-history-extension.html">V1.2历史数据扩展与审计进度</a></li>
+<li><a href="../data/index-valuation/v12-demo/">V1.2示意数据与审计模板</a></li>
+</ul></section>
+<footer>说明：本页面是完整模型流程示意，部分历史统计取自项目既有 V1.0/V1.1 研究文件；数据覆盖和 V1.2 审计状态按待核验处理。交互滑块仅用于公式演示。不得将示意输入、历史修订数据或未通过审计的结果作为实时投资建议。</footer>
+</main>
+<script>
+const weights=[.30,.25,.25,.10,.10],ids=["f1","f2","f3","f4","f5"];
+const fmt=x=>(+x).toFixed(1);
+function calc(){let vals=ids.map(id=>+document.getElementById(id).value),score=vals.reduce((s,v,i)=>s+v*weights[i],0);document.getElementById("demoScore").textContent=fmt(score);document.getElementById("demoNeedle").style.left=score+"%";vals.forEach((v,i)=>{let el=document.getElementById("v"+(i+1));if(el)el.textContent=fmt(v)});document.getElementById("contrib").innerHTML=vals.map((v,i)=>'<div class="factor"><span>因子'+(i+1)+'贡献</span><div class="track"><div class="fill" style="width:'+Math.min(100,v*weights[i])+'%"></div></div><b>'+fmt(v*weights[i])+'</b></div>').join("")}
+ids.forEach(id=>document.getElementById(id).addEventListener("input",calc));
+document.getElementById("reset").onclick=()=>{[97.9,97.1,37.1,64.2].forEach((v,i)=>document.getElementById(ids[i]).value=v);document.getElementById("f5").value="0";calc()};calc();
+const hist={
+"12":[["Q1低风险",31,23.1,21.9,6.5,-10.3,25.8],["Q2",8,3.9,15.0,50,-14.2,50],["Q3",5,6.0,7.5,20,-17.2,80],["Q4",6,6.5,8.2,50,-14.8,66.7],["Q5高风险",30,18.2,20.8,6.7,-8.6,23.3]],
+"36":[["Q1低风险",24,38.5,36.7,0,-23.5,70.8],["Q2",4,31.4,31.6,0,-23.9,0],["Q3",4,52.2,57.9,0,-19.7,25],["Q4",5,52.4,40.1,0,-19.2,0],["Q5高风险",19,70.2,75.3,0,-11.7,0]],
+"60":[["Q1低风险",23,105.0,103.6,0,-23.9,0],["Q2",2,85.4,87.6,0,-23.9,0],["Q3",4,99.3,101.6,0,-23.9,0],["Q4",1,99.1,99.1,0,-23.9,0],["Q5高风险",2,101.1,107.2,0,-23.9,0]]};
+function renderHist(){let rows=hist[document.getElementById("horizon").value];document.getElementById("histTable").innerHTML=rows.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2].toFixed(1)+'%</td><td>'+r[3].toFixed(1)+'%</td><td>'+r[4].toFixed(1)+'%</td><td>'+r[5].toFixed(1)+'%</td><td>'+r[6].toFixed(1)+'%</td></tr>').join("")}
+document.getElementById("horizon").addEventListener("change",renderHist);renderHist();
+</script></body></html>
