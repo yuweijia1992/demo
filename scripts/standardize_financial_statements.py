@@ -161,7 +161,21 @@ def listing_dataset(listing_code, sections, financial=False):
     ttm["fields"][out_key]={"value":result,"formula":"FY2025 + 2026 YTD - 2025 same-period YTD","inputs":{"FY2025":fyv,"currentYTD":cyv,"priorYTD":pyv},
       "sourceDates":{"FY2025":fy.get(section,{}).get("reportDate"),"currentYTD":current.get(section,{}).get("reportDate"),"priorYTD":previous.get(section,{}).get("reportDate")},"status":"derived" if result is not None else "pending"}
     if result is None:ok=False
-   ttm.update({"status":"derived" if ok else "partial","method":"FY2025 + 2026 YTD - 2025 same-period YTD","asOf":latest,"warning":"Confirm matching accounting scope, currency and cumulative-period basis before using TTM." if not financial else "Financial institution: TTM revenue and net profit only; ordinary-company FCF/EV cash-flow treatment is not applied."})
+   source_announcements={}
+   source_urls={}
+   source_report_dates={}
+   for out_key,(section,key) in formulas.items():
+    for label,source_rows in (("FY2025",fy),("currentYTD",current),("priorYTD",previous)):
+     statement_item=source_rows.get(section) or {}
+     source_announcements[f"{out_key}:{label}"]=statement_item.get("announcementDate")
+     source_urls[f"{out_key}:{label}"]=statement_item.get("sourceUrl")
+     source_report_dates[f"{out_key}:{label}"]=statement_item.get("reportDate")
+   normalized_announcement_dates=[str(x)[:10] for x in source_announcements.values() if x]
+   known_at=max(normalized_announcement_dates) if len(normalized_announcement_dates)==len(source_announcements) and source_announcements else None
+   ttm.update({"status":"derived" if ok else "partial","method":"FY2025 + 2026 YTD - 2025 same-period YTD","asOf":latest,
+    "knownAt":known_at,"sourceAnnouncements":source_announcements,"sourceUrls":source_urls,"sourceReportDates":source_report_dates,
+    "knownAtStatus":"complete" if known_at else "pending_source_announcement_dates",
+    "warning":"Confirm matching accounting scope, currency and cumulative-period basis before using TTM." if not financial else "Financial institution: TTM revenue and net profit only; ordinary-company FCF/EV cash-flow treatment is not applied."})
  else:ttm["warning"]="HK fiscal-year alignment not standardized; TTM left pending."
  all_items=[x for sec in sections.values() for x in sec]
  currencies=sorted({x["currency"] for x in all_items if x.get("currency")})
