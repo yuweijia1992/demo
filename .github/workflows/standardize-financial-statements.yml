@@ -60,14 +60,7 @@ jobs:
             git reset --hard origin/main
             python scripts/standardize_financial_statements.py
             python scripts/build_financial_pit_panel.py
-            python - <<'PY'
-            import json
-            p=json.load(open("data/financial-standardized/pit-panel-coverage-audit.json",encoding="utf-8"))
-            assert p["companyCount"] == 49
-            assert p["valuationMonthlyObservations"] == 8942
-            print("Rebuilt current-main PIT audit for", p["companyCount"], "companies;",
-                  "annual report link coverage:", p.get("companiesWithAtLeastOneOfficialAnnualReportLink2021To2025"))
-            PY
+            python -c 'import json; p=json.load(open("data/financial-standardized/pit-panel-coverage-audit.json",encoding="utf-8")); assert p["companyCount"] == 49; assert p["valuationMonthlyObservations"] == 8942; print("Rebuilt PIT audit:", p["companyCount"], "companies,", p["valuationMonthlyObservations"], "observations")'
             git add data/financial-standardized/
             if git diff --cached --quiet; then
               echo "No generated data changes."
