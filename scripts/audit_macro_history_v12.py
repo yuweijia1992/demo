@@ -66,6 +66,12 @@ def main():
     if any(len(x)!=8 or not x.isdigit() for x in labels): raise ValueError("invalid vintage date label")
     obs=[r[0] for r in rows[1:] if r and r[0]]
     if len(obs)<100: raise ValueError("insufficient observation history")
+    if len(cols)<200: raise ValueError(f"only {len(cols)} vintage columns; expected at least 200")
+    import datetime as dt
+    for label in labels:
+     d=dt.date(int(label[:4]),int(label[4:6]),int(label[6:8]))
+     if d.day != __import__("calendar").monthrange(d.year,d.month)[1]:
+      raise ValueError(f"vintage label is not calendar month-end: {label}")
     parsed[key]=rows
     audit["files"][key]={"file":name,"status":"PASS","observation_rows":len(obs),"vintage_columns":len(cols),"first_vintage":labels[0],"last_vintage":labels[-1],"vintage_labels_valid":True,"sha256":sha(p),"source":SOURCES[key],"frequency":"weekly observations × monthly vintage snapshots","point_in_time":True}
    else:
@@ -74,6 +80,9 @@ def main():
     vals=[r for r in rows[1:] if len(r)>1 and r[1] not in ("",".","nan","NaN")]
     dates=[r[0] for r in vals]
     if not vals: raise ValueError("no observations")
+    minimum={"DFII10":3000,"FEDFUNDS":200,"GS10":200,"CPIAUCSL":200}[sid]
+    if len(vals)<minimum: raise ValueError(f"coverage too short: {len(vals)} < {minimum}")
+    if len(dates)!=len(set(dates)): raise ValueError("duplicate observation dates")
     for r in vals: float(r[1])
     diffs=[]
     import datetime as dt
@@ -83,7 +92,7 @@ def main():
     else:
      freq="monthly" if sid in ("FEDFUNDS","GS10","CPIAUCSL") else "unknown"
     parsed[key]=rows
-    audit["files"][key]={"file":name,"status":"PASS","rows":len(vals),"start":min(dates),"end":max(dates),"missing_observations":sum(1 for r in rows[1:] if len(r)>1 and r[1] in ("",".","nan","NaN")),"sha256":sha(p),"source":SOURCES[key],"frequency":freq,"point_in_time":False,"note":"Current revised FRED history; not suitable as historical vintage inputs."}
+    audit["files"][key]={"file":name,"status":"PASS","rows":len(vals),"start":min(dates),"end":max(dates),"missing_observations":sum(1 for r in rows[1:] if len(r)>1 and r[1] in ("",".","nan","NaN")),"sha256":sha(p),"source":SOURCES[key],"frequency":freq,"point_in_time":False,"date_order_checked":dates==sorted(dates),"duplicate_dates":0,"note":"Current revised FRED history; not suitable as historical vintage inputs."}
   except Exception as e:
    audit["files"][key]={"file":name,"status":"FAIL","error":str(e),"source":SOURCES[key]}
  # Monthly panel only created if every required source exists and parses.
