@@ -20,11 +20,11 @@
 </div>
 <section class="v2section" id="datasets"><h2>01 / 已有真实数据与覆盖缺口</h2><p class="muted">以下数字来自仓库中已存在的CSV、JSON与逐项覆盖审计；“有历史记录”不等于完整连续覆盖，也不等于已获准再分发。</p><div class="v2table"><table><thead><tr><th>数据组</th><th>实际已有数据</th><th>关键缺口</th><th>驾驶舱</th></tr></thead><tbody>
 <tr><td>沪深300 / 000300</td><td>价格与H00300全收益引用序列；月收益248条，2006-01至2026-08</td><td>2020-02至2026-08共79个月，已与另一独立采集器的H00300序列逐月核对至舍入精度；2006-2019仍需第二来源核验，2026-09只有不完整月末点位</td><td><span class="state">研究中</span></td></tr>
-<tr><td>中证500 / 000905</td><td>已确认官方全收益代码H00905</td><td>公开样本库有2020-01至2026-09日频序列候选，但未入库（再分发许可未确认）；2005-2019仍缺</td><td><span class="state">未接入</span></td></tr>
-<tr><td>中证1000 / 000852</td><td>已确认官方全收益代码H00852</td><td>月度价格、全收益原始点位尚未入库</td><td><span class="state">未接入</span></td></tr>
-<tr><td>中证全指 / 000985</td><td>已确认官方全收益代码H00985</td><td>公开样本库有2020-01至2026-09日频序列候选，但未入库（再分发许可未确认）；2005-2019仍缺；不以930903替代</td><td><span class="state">未接入</span></td></tr>
+<tr><td>中证500 / 000905</td><td>价格指数000905；全收益H00905；基日2004-12-31</td><td>正式发布2007-01-15；此前为回溯值。完整原始历史未入库，公开展示/CSV再分发许可待书面确认</td><td><span class="state">授权待确认</span></td></tr>
+<tr><td>中证1000 / 000852</td><td>价格指数000852；全收益H00852；基日2004-12-31</td><td>正式发布2014-10-17；此前为回溯值。完整原始历史未入库，公开展示/CSV再分发许可待书面确认</td><td><span class="state">授权待确认</span></td></tr>
+<tr><td>中证全指 / 000985</td><td>价格指数000985；全收益H00985；基日2004-12-31</td><td>正式发布2011-08-02；此前为回溯值。完整原始历史未入库；不以930903替代</td><td><span class="state">授权待确认</span></td></tr>
 <tr><td>49家公司历史估值</td><td>100,724条日频输入，8,942条月度观测；49/49家公司至少有记录</td><td>21.5%月度观测滞后月末6个以上交易日；港股PS缺失；严格10年分位覆盖极低</td><td><span class="state">研究中</span></td></tr>
-<tr><td>49家公司财报</td><td>210/210项请求返回；49家公司三大报表档案；57个上市代码</td><td>尚未完成逐年科目标准化、公告时点面板、ROIC、净债务、分红及稀释股数重建</td><td><span class="state">研究中</span></td></tr>
+<tr><td>49家公司财报</td><td>已有2021—2025标准化数据；收入/净利润、资产/归母权益49家五年完整，现金流/资本开支48家</td><td>财务字段需逐项对官方年报；公告时点连接脚本已加入，待自动审计运行；港股TTM仍待财年对齐</td><td><span class="state">审计中</span></td></tr>
 </tbody></table></div>
 <div class="v2note" style="margin-top:16px">估值分位覆盖（按月内最后可得观测）：PE/PB/PS五年为41/46/42家，十年为20/23/0家；若要求距月末不超过5个交易日，五年为40/45/42家，十年仅2/3/0家。它们是独立审计结果，尚未回填正式公司主表。数据细节见逐项审计文件。</div><div class="v2note" style="margin-top:16px">已有沪深300基准初算（2006-01至2026-08，248个月）：价格指数累计约5.01倍、年化8.11%、年化波动27.24%、月末最大回撤-70.75%；全收益序列累计约7.51倍、年化10.25%、年化波动27.23%、月末最大回撤-70.47%。这是单一指数历史基准复算，不是择时策略回测；回撤只按月末计算，且全收益序列仍需与中证官方逐点交叉核验。</div></section>
 <section class="v2section"><h2>02 / 已有数据资产与审计文件</h2><div class="links">
@@ -36,10 +36,16 @@
 <a href="../data/valuation-history/source-gap-assessment.md">估值数据源与缺口报告</a>
 <a href="../data/raw-financials/coverage_audit.json">210项财报请求覆盖审计</a>
 <a href="../data/a-share-v2/existing-assets-audit.json">本轮已有资产复核报告 JSON</a>
+<a href="../data/a-share-v2/index-data-licensing-register.json">三组指数数据授权登记</a>
+<a href="../research/a-share-v2/INDEX_DATA_LICENSE_REQUEST.md">中证指数历史数据授权申请范围</a>
+<a href="../data/financial-standardized/PIT_PANEL_SPEC.md">49家公司公告时点面板规范</a>
+<a href="../scripts/build_financial_pit_panel.py">公告时点面板构建脚本</a>
 <a href="../research/a-share-v2/README.md">数据与回测审计规范</a>
 <a href="../data/a-share-v2/manifest.json">V2数据集清单 JSON</a>
 <a href="../scripts/a_share_v2_audit.py">CSV覆盖与SHA256审计脚本</a>
-</div><p class="muted" style="margin-top:14px">公司主表快照字段覆盖：收入/归母净利润49/49、ROE43、经营现金流49、资本开支49、FCF43、BVPS45；ROIC0、净债务2、股息率0、PE14、PB11、PS1。历史估值分位独立审计尚未写回正式主表。历史估值月表与财报原始档案较大，GitHub网页可能需要等待加载。数据审计脚本只检查结构，不替代来源真实性、收益口径和财务准确性的人工核验。</p></section>
+</div><p class="muted" style="margin-top:14px">公司主表快照字段覆盖：收入/归母净利润49/49、ROE43、经营现金流49、资本开支49、FCF43、BVPS45；ROIC0、净债务2、股息率0、PE14、PB11、PS1。历史估值月度覆盖不等于连续面板，也尚未全部回填正式主表。数据审计脚本只检查结构，不替代来源真实性、收益口径和财务准确性的人工核验。</p>
+<div class="v2note" style="margin-top:16px">指数发布日与基日必须区分：中证500于2007-01-15发布、中证1000于2014-10-17发布、中证全指于2011-08-02发布，三者基日均为2004-12-31；发布前数值只标记为回溯值。当前没有取得允许公开GitHub CSV下载和网页展示的书面再分发许可，因此未导入任何未授权第三方样本。</div>
+<div class="v2note" style="margin-top:16px">49家公司公告时点面板已加入构建脚本：对每个估值观察日，只能使用公告日不晚于该日的财务值；缺公告日就排除。TTM需以所有组成报告的最晚公告日为可用日。自动审计会统计公告日期覆盖。现有估值历史的供应商修订/vintage尚未证明，所以该财务前视过滤本身不能被解释为全链路无前视验证；未取得公开再分发授权时，完整数值CSV默认不写出。</p></section>
 <section class="v2section" id="validation"><h2>03 / 六策略验证路线</h2><div class="v2table"><table><thead><tr><th>策略</th><th>核心规则</th><th>当前状态</th></tr></thead><tbody>
 <tr><td>1. 一次性买入</td><td>价格指数与全收益指数分别作为基准</td><td>待真实序列</td></tr>
 <tr><td>2. 月度定投</td><td>固定现金流，独立披露投入本金与期末资产</td><td>待统一现金流定义</td></tr>
