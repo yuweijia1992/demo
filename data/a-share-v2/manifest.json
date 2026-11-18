@@ -3,16 +3,58 @@
   "as_of": "2026-11-18",
   "status": "research_specification",
   "policy": "No dataset is marked verified until raw source files, coverage audit, provenance, checksum and reproducible transformations are committed.",
-  "target_period": {"start": "2005-01", "end": "2026-11", "frequency": "monthly"},
+  "target_period": {
+    "start": "2005-01",
+    "end": "2026-11",
+    "frequency": "monthly"
+  },
   "index_series": [
-    {"name": "CSI 300", "code": "000300", "price_series": "pending_acquisition", "total_return_series": "pending_official_series", "valuation": ["PE_TTM", "PB", "dividend_yield"], "coverage_verified": false},
-    {"name": "CSI 500", "code": "000905", "price_series": "pending_acquisition", "total_return_series": "pending_official_series", "valuation": ["PE_TTM", "PB", "dividend_yield"], "coverage_verified": false},
-    {"name": "CSI 1000", "code": "000852", "price_series": "pending_acquisition", "total_return_series": "pending_official_series", "valuation": ["PE_TTM", "PB", "dividend_yield"], "coverage_verified": false},
-    {"name": "CSI A Share candidate", "code": "930903", "definition": "Confirm equivalence to the project's all-A definition before use", "price_series": "candidate_source_found", "total_return_series": "pending_official_series", "valuation": ["PE_TTM", "PB", "dividend_yield"], "coverage_verified": false}
+    {
+      "name": "沪深300",
+      "code": "000300",
+      "total_return_code": "H00300",
+      "price_series": "present_in_existing_monthly_matrix",
+      "total_return_series": "present_in_existing_monthly_matrix_derived_from_official_series_reference",
+      "coverage": "2006-01 to 2026-08 monthly returns; Sep-2026 level partial",
+      "coverage_verified": false
+    },
+    {
+      "name": "中证500",
+      "code": "000905",
+      "total_return_code": "H00905",
+      "price_series": "not_in_matrix",
+      "total_return_series": "not_in_matrix",
+      "coverage_verified": false
+    },
+    {
+      "name": "中证1000",
+      "code": "000852",
+      "total_return_code": "H00852",
+      "price_series": "not_in_matrix",
+      "total_return_series": "not_in_matrix",
+      "coverage_verified": false
+    },
+    {
+      "name": "中证全指（全A代表）",
+      "code": "000985",
+      "total_return_code": "H00985",
+      "price_series": "not_in_matrix",
+      "total_return_series": "not_in_matrix",
+      "coverage_verified": false,
+      "definition": "Use CSI All Share 000985. Do not silently substitute 930903."
+    }
   ],
   "valuation": {
-    "metrics": ["PE_TTM", "PB", "dividend_yield"],
-    "required_windows_months": [60, 120, "since_inception"],
+    "metrics": [
+      "PE_TTM",
+      "PB",
+      "dividend_yield"
+    ],
+    "required_windows_months": [
+      60,
+      120,
+      "since_inception"
+    ],
     "pit_required": true,
     "frequency_policy": "Preserve source frequency; do not interpolate quarterly or annual values into monthly observations.",
     "provider_candidate": "Lixinger index fundamental API",
@@ -22,10 +64,12 @@
     "expected_companies": 49,
     "expected_a_share_companies": 44,
     "expected_hk_companies": 5,
-    "historical_listing_codes_reference_count": 57,
-    "exact_universe_file": "must be recovered from existing valuation database; do not recreate from memory",
-    "financial_availability_date": "announcement_date",
-    "point_in_time_required": true
+    "historical_listing_codes": 57,
+    "universe_file": "data/valuation-history/universe.json",
+    "company_database": "data/china-stocks-financial-valuation.json",
+    "raw_financial_archive": "data/raw-financials/company_statements_20261105T094248Z.json",
+    "financial_retrieval_audit": "data/raw-financials/coverage_audit.json",
+    "financial_archive_status": "210/210 statement requests retrieved across 49 issuers; standardization and point-in-time panel remain incomplete"
   },
   "strategy_set": [
     "buy_and_hold",
@@ -36,18 +80,66 @@
     "valuation_quality_rebalance"
   ],
   "validation": {
-    "development": ["2005-01", "2014-12"],
-    "validation": ["2015-01", "2020-12"],
-    "out_of_sample": ["2021-01", "2026-11"],
-    "block_bootstrap_months": [12, 24, 36],
+    "development": [
+      "2005-01",
+      "2014-12"
+    ],
+    "validation": [
+      "2015-01",
+      "2020-12"
+    ],
+    "out_of_sample": [
+      "2021-01",
+      "2026-11"
+    ],
+    "block_bootstrap_months": [
+      12,
+      24,
+      36
+    ],
     "costs_required": true,
     "survivorship_bias_control_required": true,
     "lookahead_bias_control_required": true
   },
   "release_gates": {
-    "market_signal": false,
-    "company_quality_ranking": false,
-    "strategy_validated": false,
-    "live_cockpit_activation": false
+    "four_index_monthly_matrix": false,
+    "complete_index_valuation_panel": false,
+    "standardized_49_company_pit_financial_panel": false,
+    "six_strategy_out_of_sample_validation": false,
+    "live_investment_signal": false
+  },
+  "existing_assets_audit": "data/a-share-v2/existing-assets-audit.json",
+  "historical_valuation": {
+    "monthly_rows": 8942,
+    "daily_rows_read": 100724,
+    "issuers_with_any_history": 49,
+    "period": [
+      "2006-01",
+      "2026-10"
+    ],
+    "monthly_file": "data/valuation-history/generated/valuation-monthly.csv",
+    "coverage_audit": "data/valuation-history/generated/coverage-audit.json",
+    "source_gap_assessment": "data/valuation-history/source-gap-assessment.md",
+    "percentile_5y_latest_observed": {
+      "pe_ttm": 41,
+      "pb": 46,
+      "ps_ttm": 42
+    },
+    "percentile_10y_latest_observed": {
+      "pe_ttm": 20,
+      "pb": 23,
+      "ps_ttm": 0
+    },
+    "within_5_sessions_5y": {
+      "pe_ttm": 40,
+      "pb": 45,
+      "ps_ttm": 42
+    },
+    "within_5_sessions_10y": {
+      "pe_ttm": 2,
+      "pb": 3,
+      "ps_ttm": 0
+    },
+    "warning": "49/49 have at least one observation, not a complete continuous 20-year panel. 21.5% observations lag month-end by 6+ trading sessions. Formal percentiles have not been written into the company master database."
   }
 }
