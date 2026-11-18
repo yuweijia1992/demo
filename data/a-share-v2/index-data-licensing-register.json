@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-11-18",
+  "project": "A股长期投资系统 V2.0",
+  "status": "blocked_pending_written_public_redistribution_permission",
+  "targetPeriod": {
+    "backcastStart": "2004-12-31",
+    "researchStart": "2005-01-01",
+    "end": "latest_available_trading_day",
+    "frequency": [
+      "daily_raw",
+      "monthly_derived"
+    ]
+  },
+  "series": [
+    {
+      "name": "中证500",
+      "priceCode": "000905",
+      "totalReturnCode": "H00905",
+      "baseDate": "2004-12-31",
+      "officialLaunchDate": "2007-01-15",
+      "preLaunchTreatment": "backcast_only",
+      "licenseStatus": "not_cleared_for_public_redistribution"
+    },
+    {
+      "name": "中证1000",
+      "priceCode": "000852",
+      "totalReturnCode": "H00852",
+      "baseDate": "2004-12-31",
+      "officialLaunchDate": "2014-10-17",
+      "preLaunchTreatment": "backcast_only",
+      "licenseStatus": "not_cleared_for_public_redistribution"
+    },
+    {
+      "name": "中证全指",
+      "priceCode": "000985",
+      "totalReturnCode": "H00985",
+      "baseDate": "2004-12-31",
+      "officialLaunchDate": "2011-08-02",
+      "preLaunchTreatment": "backcast_only",
+      "licenseStatus": "not_cleared_for_public_redistribution"
+    }
+  ],
+  "officialSources": {
+    "historicalDataProduct": "https://www.ciis.com.hk/hongkong/en/historicaldata1/his_introduction/index.shtml",
+    "licensing": "https://www.ciis.com.hk/hongkong/sc/productsandservices/index.shtml",
+    "policyDownloads": "https://www.ciis.com.hk/hongkong/en/productsandservices/documentdownloads/index.shtml",
+    "contacts": {
+      "historicalData": "hd@ciis.com.hk",
+      "marketDataLicensing": "marketing@ciis.com.hk"
+    }
+  },
+  "redistributionPolicy": {
+    "internalSubscriptionDoesNotImplyPublicRedistribution": true,
+    "requiresWrittenPermissionForPublicGitHubCSV": true,
+    "requiresWrittenPermissionForPublicWebsiteDisplay": true,
+    "requiresWrittenPermissionForDerivedDataScope": true,
+    "currentApprovalEvidence": null
+  },
+  "currentProjectCoverage": {
+    "csi300PriceAndTotalReturn": "existing monthly matrix; source/redistribution rights still require separate review",
+    "csi500PriceAndTotalReturn": "not connected",
+    "csi1000PriceAndTotalReturn": "not connected",
+    "csiAllSharePriceAndTotalReturn": "not connected"
+  },
+  "acceptance": {
+    "rawDailyFiles": true,
+    "sha256Manifest": true,
+    "sourceRequestAudit": true,
+    "backcastFlag": true,
+    "monthlyLastTradingDayTransformation": true,
+    "priceAndTotalReturnSeparated": true,
+    "independentCrossCheck": true,
+    "publicReleaseGate": "written_licence_explicitly_permits_public_website_display_and_public_download"
+  },
+  "references": {
+    "csi500Launch": "https://www.110.com/fagui/law_195737.html",
+    "csi1000Factsheet": "https://oss-ch.csindex.com.cn/static/html/csindex/public/uploads/indices/detail/files/zh_CN/000852factsheet.pdf",
+    "csiAllShareFactsheet": "https://oss-ch.csindex.com.cn/static/html/csindex/public/uploads/indices/detail/files/zh_CN/000985factsheet.pdf"
+  }
+}
