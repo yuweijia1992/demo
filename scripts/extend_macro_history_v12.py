@@ -29,18 +29,18 @@ FRED_CSV = "https://fred.stlouisfed.org/graph/fredgraph.csv"
 START = dt.date(2003, 1, 1)
 
 
-def get(url: str, attempts: int = 3) -> bytes:
+def get(url: str, attempts: int = 5, timeout: int = 180) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     last_error = None
     for attempt in range(attempts):
         try:
-            with urllib.request.urlopen(req, timeout=60) as response:
+            with urllib.request.urlopen(req, timeout=timeout) as response:
                 return response.read()
         except Exception as exc:
             last_error = exc
             if attempt + 1 < attempts:
-                time.sleep(2 ** attempt)
-    raise RuntimeError(f"Download failed after {attempts} attempts: {url}") from last_error
+                time.sleep(min(30, 3 ** attempt))
+    raise RuntimeError(f"Download failed after {attempts} attempts (timeout={timeout}s): {url}") from last_error
 
 
 def sha256(path: Path) -> str:
@@ -67,7 +67,7 @@ def month_ends(start: dt.date, end: dt.date) -> list[str]:
 
 
 def build_sp500_total_return() -> dict:
-    raw = get(SHILLER_CSV).decode("utf-8-sig")
+    raw = get(SHILLER_CSV, attempts=5, timeout=180).decode("utf-8-sig")
     reader = csv.DictReader(io.StringIO(raw))
     required = {"year", "month", "nominalReturn", "cpi"}
     if not reader.fieldnames or not required.issubset(reader.fieldnames):
@@ -112,7 +112,7 @@ def fetch_alfred_series(series_id: str, vintages: list[str], batch_size: int = 3
             "vintage_date": ",".join(batch),
         }
         url = ALFRED_CSV + "?" + urllib.parse.urlencode(params)
-        content = get(url).decode("utf-8-sig")
+        content = get(url, attempts=5, timeout=180).decode("utf-8-sig")
         reader = csv.reader(io.StringIO(content))
         header = next(reader, [])
         expected = [f"{series_id}_{d.replace('-', '')}" for d in batch]
