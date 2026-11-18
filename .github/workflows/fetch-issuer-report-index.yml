@@ -33,7 +33,10 @@ jobs:
           assert p["annual2025Resolved"] <= p["aShareCompanies"]
           assert p["interim2026Resolved"] <= p["aShareCompanies"]
           assert p["quarterly2026Q3Resolved"] <= p["aShareCompanies"]
-          print("Source locator index:", p["annual2025Resolved"], "annual reports;", p["interim2026Resolved"], "interim reports;", p["quarterly2026Q3Resolved"], "Q3 reports;", p["hkexManualLookup"], "HKEX manual lookups")
+          assert set(p["annualReportLinksByYear"]) == {"2021","2022","2023","2024","2025"}
+          assert all(isinstance(x.get("annualReports"), dict) for x in p["records"])
+          print("Annual report links by fiscal year:", p["annualReportLinksByYear"])
+          print("Source locator index:", p["annual2025Resolved"], "2025 annual reports;", p["interim2026Resolved"], "interim reports;", p["quarterly2026Q3Resolved"], "Q3 reports;", p["hkexManualLookup"], "HKEX manual lookups")
           PY
       - name: Commit official report locator index
         run: |
