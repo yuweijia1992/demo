@@ -1,0 +1,7 @@
+source_id,series_or_file,provider,frequency_expected,expected_start,expected_end,download_status,format_audit,coverage_audit,missing_audit,sha256,pit_class,notes
+SP500_TR,sp500-long-run-total-return-monthly.csv,Firenum/Shiller-derived,Monthly,1871-02,latest_available,NOT_VERIFIED,NOT_RUN,NOT_RUN,NOT_RUN,null,HISTORICAL_RECONSTRUCTION,"须核对原始字段、日期行数、重复月份、收益率异常值；早期数据为历史重建"
+NFCI_ALFRED,alfred-nfci-vintages.csv.gz,ALFRED/Chicago Fed,Weekly vintages,1971-01-08,latest_available,NOT_VERIFIED,NOT_RUN,NOT_RUN,NOT_RUN,null,HISTORICAL_VINTAGE_REQUIRED,"逐列核对 vintage 日期与观测值；月度面板仅使用当时可得版本"
+DFII10,fred-dfii10-current.csv,FRED,Daily,2003-01,latest_available,NOT_VERIFIED,NOT_RUN,NOT_RUN,NOT_RUN,null,CURRENT_REVISED_NON_PIT,"当前修订序列；不可直接视为历史发布日期可得值"
+FEDFUNDS,fred-fedfunds-current.csv,FRED,Monthly,1954-07,latest_available,NOT_VERIFIED,NOT_RUN,NOT_RUN,NOT_RUN,null,CURRENT_REVISED_NON_PIT,"当前修订序列；须核对频率、日期、缺失值"
+GS10,fred-gs10-current.csv,FRED,Monthly,1962-01,latest_available,NOT_VERIFIED,NOT_RUN,NOT_RUN,NOT_RUN,null,CURRENT_REVISED_NON_PIT,"当前修订序列；须核对频率、日期、缺失值"
+CPIAUCSL,fred-cpiaucsl-current.csv,FRED,Monthly,1947-01,latest_available,NOT_VERIFIED,NOT_RUN,NOT_RUN,NOT_RUN,null,CURRENT_REVISED_NON_PIT,"当前修订序列；须核对频率、日期、缺失值与季调属性"
