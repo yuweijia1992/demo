@@ -6,6 +6,7 @@ on:
     paths:
       - 'scripts/standardize_financial_statements.py'
       - 'scripts/build_financial_pit_panel.py'
+      - 'data/valuation-model/issuer-report-index-49.json'
       - '.github/workflows/standardize-financial-statements.yml'
 
 permissions:
