@@ -82,23 +82,33 @@ def main():
         full=str(stock.get("code") or "")
         primary=full.split("/")[0].strip()
         row={"code":full,"name":stock.get("name"),"industry":stock.get("industry"),
-             "primaryListing":primary,"annual2025":None,"interim2026":None,"quarterly2026Q3":None,
+             "primaryListing":primary,"annualReports":{str(y):None for y in range(2021,2026)},
+             "annual2025":None,"interim2026":None,"quarterly2026Q3":None,
              "status":"pending","verificationStatus":"official_link_only_not_content_verified"}
         if primary.endswith((".SH",".SZ")):
             code=primary.split(".")[0]
             column="sse" if primary.endswith(".SH") else "szse"
             try:
                 org=client.org(code)
-                annual_rows=client.announcements(code,org,column,"category_ndbg_szsh","2026-01-01","2026-07-31")
+                annual_rows=client.announcements(code,org,column,"category_ndbg_szsh","2022-01-01","2026-07-31")
                 interim_rows=client.announcements(code,org,column,"category_bndbg_szsh","2026-07-01","2026-11-09")
                 q3_rows=client.announcements(code,org,column,"category_sjdbg_szsh","2026-10-01","2026-11-09")
                 row["orgId"]=org
-                row["annual2025"]=choose(annual_rows,r"2025年年度报告|2025年度报告|2025年年报")
+                for fy in range(2021,2026):
+                    row["annualReports"][str(fy)]=choose(annual_rows,rf"{fy}年年度报告|{fy}年度报告|{fy}年年报")
+                row["annual2025"]=row["annualReports"]["2025"]
                 row["interim2026"]=choose(interim_rows,r"2026年半年度报告|2026年半年报|2026半年度报告")
                 row["quarterly2026Q3"]=choose(q3_rows,r"2026年第三季度报告|2026年三季度报告|2026年三季报")
-                for key in ("annual2025","interim2026","quarterly2026Q3"):
+                for fy in range(2021,2026):
+                    key=str(fy)
+                    if row["annualReports"][key]:
+                        ann_id=row["annualReports"][key]["announcementId"]
+                        a=next((z for z in annual_rows if str(z.get("announcementId") or "")==ann_id),None)
+                        if a: row["annualReports"][key]=normalize_announcement(a,code,org)
+                row["annual2025"]=row["annualReports"]["2025"]
+                for key in ("interim2026","quarterly2026Q3"):
                     if row[key]:
-                        source_rows=annual_rows if key=="annual2025" else interim_rows if key=="interim2026" else q3_rows
+                        source_rows=interim_rows if key=="interim2026" else q3_rows
                         a=next((z for z in source_rows
                                 if str(z.get("announcementId") or "")==row[key]["announcementId"]),None)
                         if a: row[key]=normalize_announcement(a,code,org)
@@ -114,6 +124,8 @@ def main():
     out={"schemaVersion":"1.0.0","generatedAtUtc":datetime.now(timezone.utc).isoformat(),
          "companyCount":len(records),"aShareCompanies":sum(x["primaryListing"].endswith((".SH",".SZ")) for x in records),
          "annual2025Resolved":sum(bool(x["annual2025"]) for x in records),
+         "annualReportLinksByYear":{str(y):sum(bool((x.get("annualReports") or {}).get(str(y))) for x in records) for y in range(2021,2026)},
+         "annualReportLinksTotal2021To2025":sum(sum(bool(v) for v in (x.get("annualReports") or {}).values()) for x in records),
          "interim2026Resolved":sum(bool(x["interim2026"]) for x in records),
          "quarterly2026Q3Resolved":sum(bool(x["quarterly2026Q3"]) for x in records),
          "bothPeriodsResolved":sum(bool(x["annual2025"] and x["interim2026"]) for x in records),
