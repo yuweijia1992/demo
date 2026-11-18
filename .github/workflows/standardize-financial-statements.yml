@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'scripts/standardize_financial_statements.py'
+      - 'scripts/build_financial_pit_panel.py'
       - '.github/workflows/standardize-financial-statements.yml'
 
 permissions:
@@ -12,7 +13,7 @@ permissions:
 
 concurrency:
   group: standardize-company-financials
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   standardize:
@@ -27,6 +28,20 @@ jobs:
           python-version: '3.11'
       - name: Normalize archived statements
         run: python scripts/standardize_financial_statements.py
+      - name: Build announcement-date point-in-time panel audit
+        env:
+          PUBLIC_DATA_REPUBLISH_LICENSE_APPROVED: ${{ vars.PUBLIC_DATA_REPUBLISH_LICENSE_APPROVED }}
+        run: python scripts/build_financial_pit_panel.py
+      - name: Validate point-in-time audit
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open("data/financial-standardized/pit-panel-coverage-audit.json",encoding="utf-8"))
+          assert p["companyCount"] == 49, p["companyCount"]
+          assert p["financialPointInTimeRule"].startswith("Only values with a parsed announcement date")
+          assert p["publicPanelExport"] in ("written","blocked_pending_explicit_redistribution_license_approval")
+          print("PASS: announcement-date PIT panel audit generated for 49 companies")
+          PY
       - name: Upload normalized dataset and audit
         uses: actions/upload-artifact@v4
         with:
