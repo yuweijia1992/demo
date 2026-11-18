@@ -29,7 +29,7 @@ FRED_CSV = "https://fred.stlouisfed.org/graph/fredgraph.csv"
 START = dt.date(2003, 1, 1)
 
 
-def get(url: str, attempts: int = 5, timeout: int = 180) -> bytes:
+def get(url: str, attempts: int = 3, timeout: int = 60) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     last_error = None
     for attempt in range(attempts):
@@ -67,7 +67,7 @@ def month_ends(start: dt.date, end: dt.date) -> list[str]:
 
 
 def build_sp500_total_return() -> dict:
-    raw = get(SHILLER_CSV, attempts=5, timeout=180).decode("utf-8-sig")
+    raw = get(SHILLER_CSV, attempts=3, timeout=90).decode("utf-8-sig")
     reader = csv.DictReader(io.StringIO(raw))
     required = {"year", "month", "nominalReturn", "cpi"}
     if not reader.fieldnames or not required.issubset(reader.fieldnames):
@@ -112,7 +112,7 @@ def fetch_alfred_series(series_id: str, vintages: list[str], batch_size: int = 3
             "vintage_date": ",".join(batch),
         }
         url = ALFRED_CSV + "?" + urllib.parse.urlencode(params)
-        content = get(url, attempts=5, timeout=180).decode("utf-8-sig")
+        content = get(url, attempts=3, timeout=90).decode("utf-8-sig")
         reader = csv.reader(io.StringIO(content))
         header = next(reader, [])
         expected = [f"{series_id}_{d.replace('-', '')}" for d in batch]
@@ -200,15 +200,25 @@ def main():
             "This long-run S&P series is USD nominal total return, not RMB return; FX conversion is a separate step."
         ]
     }
+    audit["download_errors"] = []
     for series_id in CURRENT_SERIES:
         print(f"Downloading current FRED series {series_id}", flush=True)
-        audit["current_fred_series"][series_id] = fetch_fred_current(series_id)
+        try:
+            audit["current_fred_series"][series_id] = fetch_fred_current(series_id)
+        except Exception as exc:
+            audit["download_errors"].append({"series": series_id, "type": "FRED_CURRENT", "error": repr(exc)})
+            print(f"FAILED {series_id}; continuing with remaining sources: {exc}", flush=True)
     for series_id in [x.strip().upper() for x in args.series.split(",") if x.strip()]:
         if series_id not in SERIES:
-            raise RuntimeError(f"Series not on approved ALFRED allowlist: {series_id}")
+            audit["download_errors"].append({"series": series_id, "type": "ALFRED", "error": "not on approved allowlist"})
+            continue
         print(f"Downloading ALFRED {series_id}: {len(vintages)} monthly vintages in batches of 3", flush=True)
-        audit["series"][series_id] = fetch_alfred_series(series_id, vintages)
-    audit_path = OUT / "v12-historical-data-audit.json"
+        try:
+            audit["series"][series_id] = fetch_alfred_series(series_id, vintages)
+        except Exception as exc:
+            audit["download_errors"].append({"series": series_id, "type": "ALFRED", "error": repr(exc)})
+            print(f"FAILED ALFRED {series_id}; continuing: {exc}", flush=True)
+    audit_path = OUT / "v12-download-attempt-audit.json"
     audit_path.write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(audit, ensure_ascii=False, indent=2), flush=True)
 
