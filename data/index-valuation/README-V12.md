@@ -12,7 +12,7 @@
 | 文件 | 内容 | 频率 | 用途 |
 |---|---|---|---|
 | `sp500-long-run-total-return-monthly.csv` | Shiller派生标普500名义总回报、CPI | 月度 | 长期收益、回撤、区块抽样 |
-| `alfred-nfci-vintages.csv.gz` | NFCI历史时点快照 | 周度原始观测 × 月末vintage | 金融条件点时重建 |
+| `alfred-nfci-vintages.csv.gz` | NFCI历史时点快照 | 周度原始观测 × 月末vintage | 金融条件点时重建 |\n| `v12-monthly-panel.csv` | 统一月频面板 | 月度 | 对齐标普收益、NFCI历史vintage与FRED当前修订序列 |\n| `v12-historical-data-audit.json` | 逐文件审计结果 | 每次运行 | 行数、覆盖、频率、缺失、SHA256、时点属性及验收结论 |
 | `fred-dfii10-current.csv` | 10年期TIPS实际收益率当前历史序列 | 日度 | 研究用；不是点时vintage |
 | `fred-fedfunds-current.csv` | 联邦基金有效利率当前历史序列 | 月度 | 研究用；不是点时vintage |
 | `fred-gs10-current.csv` | 10年期国债收益率当前历史序列 | 月度 | 名义利率对照；不是实际利率 |
@@ -53,3 +53,16 @@ python scripts/extend_macro_history_v12.py
 4. 将点时宏观数据与标普总回报对齐，生成2003年以来的月频点时因子面板。
 5. 单独报告1971年以来NFCI可用的历史周期研究；不与2003年以来完整五因子模型混为一谈。
 6. 做至少8—10个非重叠年度样本外窗口，再进入V1.3策略回测。
+
+
+## V1.2严格验收与审计程序（2026-11-18更新）
+
+执行顺序：
+1. `python scripts/extend_macro_history_v12.py`：逐个下载来源；某一条FRED或ALFRED失败不会中止其余来源，成功文件即时落盘，并写入 `v12-download-attempt-audit.json`。
+2. `python scripts/audit_macro_history_v12.py`：检查所有已取得文件，逐文件计算SHA256，验证日期、重复值、覆盖阈值、NFCI vintage列标签；只有六类原始文件全部有效时才构建月频面板。
+3. 面板输出 `v12-monthly-panel.csv`，不插值、不前向填补缺失；NFCI只使用精确匹配的月末ALFRED vintage列，按该列截至月末最新观测取值。
+4. `DFII10/FEDFUNDS/GS10/CPIAUCSL` 在当前方案中仍是FRED当前修订历史。面板列名以 `_current_revised` 标识，`fred_fields_are_point_in_time=false`，不得用于严格点时五因子回测。
+5. GitHub Actions 即使下载失败，也会保存已取得文件和失败审计记录；最终验收门禁仍会失败，绝不把部分成功标为V1.2通过。
+
+审计程序：`scripts/audit_macro_history_v12.py`。
+严格通过条件：六类原始文件全部存在且有效、NFCI至少200个月末vintage列并通过日期标签核对、四条FRED序列覆盖与日期检查通过、SHA256齐全、统一月频面板成功生成。即使这六项技术验收通过，四条FRED当前修订序列仍不构成历史点时数据；要做完全无前视偏差的五因子回测，还需补齐它们的历史vintage/发布日期信息。
