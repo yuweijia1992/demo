@@ -75,7 +75,8 @@ def collect_financial_observations(companies, report_map):
     for company in companies:
         code = company.get("primaryListingCode") or str(company.get("code", "")).split("/")[0].strip()
         cstats = {"annualRows": 0, "annualMetricValues": 0, "annualMetricWithAnnouncementDate": 0,
-                  "annualMetricMissingAnnouncementDate": 0, "ttmFields": 0,
+                  "annualMetricMissingAnnouncementDate": 0, "annualMetricsWithOfficialReportDate": 0,
+                  "annualMetricsWithProviderAnnouncementDate": 0, "ttmFields": 0,
                   "ttmFieldsWithKnownAt": 0, "financialSourceStatusPending": 0}
         report = report_map.get(code, {})
         for annual in company.get("annual", []):
@@ -89,9 +90,12 @@ def collect_financial_observations(companies, report_map):
                     continue
                 cstats["annualMetricValues"] += 1
                 known_at = iso_date(item.get("announcementDate"))
-                official = report.get("annual2025") if period_year == 2025 else None
+                official = (report.get("annualReports") or {}).get(str(period_year)) or (report.get("annual2025") if period_year == 2025 else None)
                 if official and iso_date(official.get("announcementDate")):
                     known_at = iso_date(official.get("announcementDate"))
+                    cstats["annualMetricsWithOfficialReportDate"] += 1
+                elif known_at:
+                    cstats["annualMetricsWithProviderAnnouncementDate"] += 1
                 if known_at:
                     cstats["annualMetricWithAnnouncementDate"] += 1
                 else:
@@ -156,7 +160,7 @@ def main():
     valuation_rows.sort(key=lambda x: (x[0], x[1]))
 
     per_company = defaultdict(lambda: {"valuationRows": 0, "rowsWithAnyPointInTimeFinancials": 0,
-                                       "rowsWithFullSourceDates": 0, "lastValuationDate": None})
+                                       "rowsWithSixCoreMetricsAvailable": 0, "lastValuationDate": None})
     export_allowed = os.getenv("PUBLIC_DATA_REPUBLISH_LICENSE_APPROVED", "").strip().upper() == "YES"
     written = 0
     missing_ann = sum(x["annualMetricMissingAnnouncementDate"] for x in company_audit.values())
@@ -203,7 +207,7 @@ def main():
             if used:
                 stats["rowsWithAnyPointInTimeFinancials"] += 1
             if all_core_dated:
-                stats["rowsWithFullSourceDates"] += 1
+                stats["rowsWithSixCoreMetricsAvailable"] += 1
             if writer:
                 writer.writerow(row)
                 written += 1
@@ -222,7 +226,9 @@ def main():
         "annualFinancialMetricValues": total_ann_values,
         "annualFinancialValuesWithAnnouncementDate": total_ann_values - missing_ann,
         "annualFinancialValuesMissingAnnouncementDate": missing_ann,
-        "companiesWithAtLeastOneOfficial2025ReportLink": sum(bool((r.get("annual2025") or {}).get("pdfUrl")) for r in report_map.values()),
+        "companiesWithAtLeastOneOfficialAnnualReportLink2021To2025": sum(any(bool(v) for v in (r.get("annualReports") or {}).values()) or bool((r.get("annual2025") or {}).get("pdfUrl")) for r in report_map.values()),
+        "companiesWithAnyPointInTimePanelRows": sum(v["rowsWithAnyPointInTimeFinancials"] > 0 for v in per_company.values()),
+        "companiesWithNoPointInTimePanelRows": sum(v["valuationRows"] > 0 and v["rowsWithAnyPointInTimeFinancials"] == 0 for v in per_company.values()),
         "financialPointInTimeRule": "Only values with a parsed announcement date <= valuation observation date are eligible. Reporting period end is never used as availability date.",
         "valuationVintageLimitation": "Valuation observation dates are retained, but vendor backfill/revision vintage has not been independently proved; do not interpret as a complete historically-known valuation snapshot.",
         "financialVerificationLimitation": "Provider-mapped values remain pending until reconciled to official issuer/exchange report pages and notes. A report link alone is not item-level verification.",
