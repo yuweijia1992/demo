@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A股长期投资系统V2.0真实数据研究：数据源、覆盖审计、49家公司质量面板与六策略样本外验证。">
+<title>A股投资系统 V2.0｜真实数据研究</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+.v2hero{padding:68px 0 38px;border-bottom:1px solid var(--line)}.v2hero h1{font:500 clamp(38px,6vw,64px)/1.12 Georgia,"Songti SC",serif;margin:12px 0}.v2hero h1 em{font-style:normal;color:var(--muted)}.v2grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}.v2card{background:var(--surface);border:1px solid var(--line);padding:20px;box-shadow:var(--shadow)}.v2card small{display:block;color:var(--muted);font-size:11px}.v2card strong{display:block;font-size:22px;margin:9px 0}.v2section{padding:38px 0;border-bottom:1px solid var(--line)}.v2section h2{font:500 28px Georgia,"Songti SC",serif}.v2table{overflow:auto}.v2table table{width:100%;border-collapse:collapse;font-size:12px}.v2table td,.v2table th{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}.v2table th{color:var(--muted);font-weight:500}.state{font-size:10px;border:1px solid var(--line);border-radius:99px;padding:4px 8px;white-space:nowrap}.links{display:flex;gap:10px;flex-wrap:wrap}.links a{border:1px solid var(--line);padding:9px 13px;border-radius:99px;font-size:12px}.v2note{padding:14px 16px;background:var(--surface);border-left:3px solid #bd8b45;color:var(--muted);font-size:12px;line-height:1.8}.v2foot{padding:30px 0;color:var(--muted);font-size:11px}@media(max-width:800px){.v2grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.v2grid{grid-template-columns:1fr 1fr}.v2card{padding:14px}}
+</style></head>
+<body>
+<header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html">余暮<span> / Y.M.</span></a><nav><a href="investment-lab.html">投资实验室</a><a href="a-share-investment-system.html">A股投资系统</a><a href="#datasets">数据状态</a><a href="#validation">策略验证</a></nav><button id="themeToggle" class="theme-btn" aria-label="切换深色模式">◐</button></div></header>
+<main class="container">
+<section class="v2hero"><p class="eyebrow">Y.M. RESEARCH · A-SHARES · V2.0</p><h1>从数据到决策<br><em>先证明，再使用。</em></h1><p class="lead">本页是A股长期投资系统的真实数据研究与审计控制台。它区分“研究规范已建立”和“数据/策略已验证”，不会用演示数据生成投资信号。</p></section>
+<div class="v2grid">
+<div class="v2card"><small>目标研究区间</small><strong>2005—2026</strong><span class="state">月频目标</span></div>
+<div class="v2card"><small>指数研究对象</small><strong>4 组</strong><span class="state">价格/全收益分开</span></div>
+<div class="v2card"><small>企业研究池</small><strong>49 家</strong><span class="state">44 A股 + 5 港股</span></div>
+<div class="v2card"><small>策略比较</small><strong>6 类</strong><span class="state">样本外验证待完成</span></div>
+</div>
+<section class="v2section" id="datasets"><h2>01 / 数据覆盖与状态</h2><p class="muted">状态按实际已提交的原始数据文件和审计结果更新；候选来源不等于已取得数据。</p><div class="v2table"><table><thead><tr><th>数据组</th><th>目标字段</th><th>候选来源</th><th>当前状态</th><th>进入驾驶舱</th></tr></thead><tbody>
+<tr><td>沪深300 / 000300</td><td>价格、全收益、PE、PB、股息率</td><td>中证指数；AKShare行情封装；理杏仁估值API</td><td><span class="state">待获取与审计</span></td><td>否</td></tr>
+<tr><td>中证500 / 000905</td><td>价格、全收益、PE、PB、股息率</td><td>中证指数；AKShare；理杏仁</td><td><span class="state">待获取与审计</span></td><td>否</td></tr>
+<tr><td>中证1000 / 000852</td><td>价格、全收益、PE、PB、股息率</td><td>中证指数；AKShare；理杏仁</td><td><span class="state">待获取与审计</span></td><td>否</td></tr>
+<tr><td>全A候选 / 930903</td><td>价格、全收益、PE、PB、股息率</td><td>中证A股指数；中证官方资料</td><td><span class="state">定义待确认</span></td><td>否</td></tr>
+<tr><td>49家公司</td><td>公告时点财务、ROE/ROIC、FCF、净债务、股息、估值</td><td>巨潮资讯/交易所公告；既有估值数据库</td><td><span class="state">需恢复原始名单并逐份核验</span></td><td>否</td></tr>
+</tbody></table></div>
+<div class="v2note" style="margin-top:16px">重要：指数价格收益不含完整分红再投资；全收益序列必须单独取得。PE/PB/股息率若仅有季度或年度频率，不会插值成月频。公司财务可用日期按公告日处理，而非报告期末。</div></section>
+<section class="v2section"><h2>02 / 已建立的研究底座</h2><div class="links"><a href="../research/a-share-v2/README.md">数据与回测审计规范</a><a href="../data/a-share-v2/manifest.json">数据集清单 JSON</a><a href="../scripts/a_share_v2_audit.py">CSV覆盖与SHA256审计脚本</a></div><p class="muted" style="margin-top:14px">审计脚本检查月度日期重复、覆盖区间内缺月、行数与SHA-256。它是结构审计，不会替代来源真实性、收益口径和财务准确性的人工核验。</p></section>
+<section class="v2section" id="validation"><h2>03 / 六策略验证路线</h2><div class="v2table"><table><thead><tr><th>策略</th><th>核心规则</th><th>当前状态</th></tr></thead><tbody>
+<tr><td>1. 一次性买入</td><td>价格指数与全收益指数分别作为基准</td><td>待真实序列</td></tr>
+<tr><td>2. 月度定投</td><td>固定现金流，独立披露投入本金与期末资产</td><td>待统一现金流定义</td></tr>
+<tr><td>3. PE估值择时</td><td>历史滚动分位映射仓位</td><td>待PIT估值序列</td></tr>
+<tr><td>4. PE+PB+股息率</td><td>多指标综合评分与预设权重</td><td>待PIT估值序列</td></tr>
+<tr><td>5. 估值+企业质量</td><td>估值定风险预算，质量做横截面筛选</td><td>待49家公司公告时点面板</td></tr>
+<tr><td>6. 估值+质量+再平衡</td><td>组合配置、阈值再平衡、成本约束</td><td>待全资产矩阵及样本外验证</td></tr>
+</tbody></table></div><p class="muted">训练/开发：2005—2014；验证：2015—2020；最终样本外：2021—2026。另做12/24/36个月区块重抽样、交易成本、幸存者偏差、前视偏差和参数稳健性检查。</p></section>
+<section class="v2section"><h2>04 / 发布闸门</h2><div class="v2grid"><div class="v2card"><small>RESEARCH</small><strong>研究中</strong><p class="muted">数据或模型尚未通过审计</p></div><div class="v2card"><small>VALIDATED</small><strong>验证通过</strong><p class="muted">独立样本外与稳健性检验通过</p></div><div class="v2card"><small>ACTIVE</small><strong>正式启用</strong><p class="muted">用户确认并设置风险上限</p></div><div class="v2card"><small>SUSPENDED</small><strong>暂停使用</strong><p class="muted">数据失效、模型漂移或风险触发</p></div></div><p class="v2note">当前状态：RESEARCH。尚无足够证据宣称某个估值策略有效，也不向驾驶舱输出“现在应该买入/卖出”的自动结论。</p></section>
+<footer class="v2foot">余暮｜A股长期投资系统 V2.0 研究页。数据来源、授权、计算口径和完整性必须可追溯；研究结果不构成证券投资建议。</footer>
+</main><script src="../script.js"></script></body></html>
