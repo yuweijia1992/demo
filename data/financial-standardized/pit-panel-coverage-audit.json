@@ -11,7 +11,9 @@
   "annualFinancialMetricValues": 4612,
   "annualFinancialValuesWithAnnouncementDate": 4194,
   "annualFinancialValuesMissingAnnouncementDate": 418,
-  "companiesWithAtLeastOneOfficial2025ReportLink": 49,
+  "companiesWithAtLeastOneOfficialAnnualReportLink2021To2025": 49,
+  "companiesWithAnyPointInTimePanelRows": 46,
+  "companiesWithNoPointInTimePanelRows": 3,
   "financialPointInTimeRule": "Only values with a parsed announcement date <= valuation observation date are eligible. Reporting period end is never used as availability date.",
   "valuationVintageLimitation": "Valuation observation dates are retained, but vendor backfill/revision vintage has not been independently proved; do not interpret as a complete historically-known valuation snapshot.",
   "financialVerificationLimitation": "Provider-mapped values remain pending until reconciled to official issuer/exchange report pages and notes. A report link alone is not item-level verification.",
@@ -23,13 +25,15 @@
     "000333.SZ": {
       "valuationRows": 158,
       "rowsWithAnyPointInTimeFinancials": 42,
-      "rowsWithFullSourceDates": 42,
+      "rowsWithSixCoreMetricsAvailable": 42,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 103,
         "annualMetricWithAnnouncementDate": 103,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 21,
+        "annualMetricsWithProviderAnnouncementDate": 82,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 103
@@ -38,13 +42,15 @@
     "000598.SZ": {
       "valuationRows": 235,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 100,
         "annualMetricWithAnnouncementDate": 100,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 20,
+        "annualMetricsWithProviderAnnouncementDate": 80,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 100
@@ -53,13 +59,15 @@
     "000651.SZ": {
       "valuationRows": 235,
       "rowsWithAnyPointInTimeFinancials": 42,
-      "rowsWithFullSourceDates": 42,
+      "rowsWithSixCoreMetricsAvailable": 42,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 99,
         "annualMetricWithAnnouncementDate": 99,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 19,
+        "annualMetricsWithProviderAnnouncementDate": 80,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 99
@@ -68,13 +76,15 @@
     "002027.SZ": {
       "valuationRows": 238,
       "rowsWithAnyPointInTimeFinancials": 42,
-      "rowsWithFullSourceDates": 42,
+      "rowsWithSixCoreMetricsAvailable": 42,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 93,
         "annualMetricWithAnnouncementDate": 93,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 19,
+        "annualMetricsWithProviderAnnouncementDate": 74,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 93
@@ -83,13 +93,15 @@
     "002352.SZ": {
       "valuationRows": 201,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 105,
         "annualMetricWithAnnouncementDate": 105,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 21,
+        "annualMetricsWithProviderAnnouncementDate": 84,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 105
@@ -98,13 +110,15 @@
     "002371.SZ": {
       "valuationRows": 200,
       "rowsWithAnyPointInTimeFinancials": 42,
-      "rowsWithFullSourceDates": 42,
+      "rowsWithSixCoreMetricsAvailable": 42,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 96,
         "annualMetricWithAnnouncementDate": 96,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 20,
+        "annualMetricsWithProviderAnnouncementDate": 76,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 96
@@ -113,13 +127,15 @@
     "002594.SZ": {
       "valuationRows": 184,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 100,
         "annualMetricWithAnnouncementDate": 100,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 21,
+        "annualMetricsWithProviderAnnouncementDate": 79,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 100
@@ -128,13 +144,15 @@
     "002607.SZ": {
       "valuationRows": 183,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 92,
         "annualMetricWithAnnouncementDate": 92,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 19,
+        "annualMetricsWithProviderAnnouncementDate": 73,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 92
@@ -143,13 +161,15 @@
     "002714.SZ": {
       "valuationRows": 153,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 95,
         "annualMetricWithAnnouncementDate": 95,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 19,
+        "annualMetricsWithProviderAnnouncementDate": 76,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 95
@@ -158,13 +178,15 @@
     "00700.HK": {
       "valuationRows": 211,
       "rowsWithAnyPointInTimeFinancials": 6,
-      "rowsWithFullSourceDates": 6,
+      "rowsWithSixCoreMetricsAvailable": 6,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 90,
         "annualMetricWithAnnouncementDate": 18,
         "annualMetricMissingAnnouncementDate": 72,
+        "annualMetricsWithOfficialReportDate": 18,
+        "annualMetricsWithProviderAnnouncementDate": 0,
         "ttmFields": 0,
         "ttmFieldsWithKnownAt": 0,
         "financialSourceStatusPending": 90
@@ -173,13 +195,15 @@
     "02313.HK": {
       "valuationRows": 245,
       "rowsWithAnyPointInTimeFinancials": 6,
-      "rowsWithFullSourceDates": 6,
+      "rowsWithSixCoreMetricsAvailable": 6,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 89,
         "annualMetricWithAnnouncementDate": 18,
         "annualMetricMissingAnnouncementDate": 71,
+        "annualMetricsWithOfficialReportDate": 18,
+        "annualMetricsWithProviderAnnouncementDate": 0,
         "ttmFields": 0,
         "ttmFieldsWithKnownAt": 0,
         "financialSourceStatusPending": 89
@@ -188,13 +212,15 @@
     "09618.HK": {
       "valuationRows": 77,
       "rowsWithAnyPointInTimeFinancials": 0,
-      "rowsWithFullSourceDates": 0,
+      "rowsWithSixCoreMetricsAvailable": 0,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 94,
         "annualMetricWithAnnouncementDate": 0,
         "annualMetricMissingAnnouncementDate": 94,
+        "annualMetricsWithOfficialReportDate": 0,
+        "annualMetricsWithProviderAnnouncementDate": 0,
         "ttmFields": 0,
         "ttmFieldsWithKnownAt": 0,
         "financialSourceStatusPending": 94
@@ -203,13 +229,15 @@
     "09626.HK": {
       "valuationRows": 68,
       "rowsWithAnyPointInTimeFinancials": 0,
-      "rowsWithFullSourceDates": 0,
+      "rowsWithSixCoreMetricsAvailable": 0,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 90,
         "annualMetricWithAnnouncementDate": 0,
         "annualMetricMissingAnnouncementDate": 90,
+        "annualMetricsWithOfficialReportDate": 0,
+        "annualMetricsWithProviderAnnouncementDate": 0,
         "ttmFields": 0,
         "ttmFieldsWithKnownAt": 0,
         "financialSourceStatusPending": 90
@@ -218,13 +246,15 @@
     "09988.HK": {
       "valuationRows": 84,
       "rowsWithAnyPointInTimeFinancials": 0,
-      "rowsWithFullSourceDates": 0,
+      "rowsWithSixCoreMetricsAvailable": 0,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 91,
         "annualMetricWithAnnouncementDate": 0,
         "annualMetricMissingAnnouncementDate": 91,
+        "annualMetricsWithOfficialReportDate": 0,
+        "annualMetricsWithProviderAnnouncementDate": 0,
         "ttmFields": 0,
         "ttmFieldsWithKnownAt": 0,
         "financialSourceStatusPending": 91
@@ -233,13 +263,15 @@
     "300015.SZ": {
       "valuationRows": 203,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 100,
         "annualMetricWithAnnouncementDate": 100,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 20,
+        "annualMetricsWithProviderAnnouncementDate": 80,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 100
@@ -248,13 +280,15 @@
     "300059.SZ": {
       "valuationRows": 200,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 96,
         "annualMetricWithAnnouncementDate": 96,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 19,
+        "annualMetricsWithProviderAnnouncementDate": 77,
         "ttmFields": 2,
         "ttmFieldsWithKnownAt": 2,
         "financialSourceStatusPending": 96
@@ -263,13 +297,15 @@
     "300124.SZ": {
       "valuationRows": 193,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 100,
         "annualMetricWithAnnouncementDate": 100,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 20,
+        "annualMetricsWithProviderAnnouncementDate": 80,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 100
@@ -278,13 +314,15 @@
     "300274.SZ": {
       "valuationRows": 180,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 95,
         "annualMetricWithAnnouncementDate": 95,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 20,
+        "annualMetricsWithProviderAnnouncementDate": 75,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 95
@@ -293,13 +331,15 @@
     "300308.SZ": {
       "valuationRows": 174,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 97,
         "annualMetricWithAnnouncementDate": 97,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 19,
+        "annualMetricsWithProviderAnnouncementDate": 78,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 97
@@ -308,13 +348,15 @@
     "300750.SZ": {
       "valuationRows": 101,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 104,
         "annualMetricWithAnnouncementDate": 104,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 0,
+        "annualMetricsWithProviderAnnouncementDate": 104,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 104
@@ -323,13 +365,15 @@
     "300760.SZ": {
       "valuationRows": 97,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 93,
         "annualMetricWithAnnouncementDate": 93,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 19,
+        "annualMetricsWithProviderAnnouncementDate": 74,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 93
@@ -338,13 +382,15 @@
     "600030.SH": {
       "valuationRows": 250,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 90,
         "annualMetricWithAnnouncementDate": 90,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 0,
+        "annualMetricsWithProviderAnnouncementDate": 90,
         "ttmFields": 2,
         "ttmFieldsWithKnownAt": 2,
         "financialSourceStatusPending": 90
@@ -353,13 +399,15 @@
     "600036.SH": {
       "valuationRows": 226,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 85,
         "annualMetricWithAnnouncementDate": 85,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 0,
+        "annualMetricsWithProviderAnnouncementDate": 85,
         "ttmFields": 2,
         "ttmFieldsWithKnownAt": 2,
         "financialSourceStatusPending": 85
@@ -368,13 +416,15 @@
     "600066.SH": {
       "valuationRows": 235,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 79,
         "annualMetricWithAnnouncementDate": 79,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 15,
+        "annualMetricsWithProviderAnnouncementDate": 64,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 79
@@ -383,13 +433,15 @@
     "600276.SH": {
       "valuationRows": 226,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 79,
         "annualMetricWithAnnouncementDate": 79,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 16,
+        "annualMetricsWithProviderAnnouncementDate": 63,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 79
@@ -398,13 +450,15 @@
     "600323.SH": {
       "valuationRows": 226,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 104,
         "annualMetricWithAnnouncementDate": 104,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 21,
+        "annualMetricsWithProviderAnnouncementDate": 83,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 104
@@ -413,13 +467,15 @@
     "600398.SH": {
       "valuationRows": 226,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 84,
         "annualMetricWithAnnouncementDate": 84,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 16,
+        "annualMetricsWithProviderAnnouncementDate": 68,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 84
@@ -428,13 +484,15 @@
     "600406.SH": {
       "valuationRows": 250,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 95,
         "annualMetricWithAnnouncementDate": 95,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 19,
+        "annualMetricsWithProviderAnnouncementDate": 76,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 95
@@ -443,13 +501,15 @@
     "600511.SH": {
       "valuationRows": 250,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 92,
         "annualMetricWithAnnouncementDate": 92,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 18,
+        "annualMetricsWithProviderAnnouncementDate": 74,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 92
@@ -458,13 +518,15 @@
     "600674.SH": {
       "valuationRows": 217,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 98,
         "annualMetricWithAnnouncementDate": 98,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 20,
+        "annualMetricsWithProviderAnnouncementDate": 78,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 98
@@ -473,13 +535,15 @@
     "600690.SH": {
       "valuationRows": 217,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 100,
         "annualMetricWithAnnouncementDate": 100,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 20,
+        "annualMetricsWithProviderAnnouncementDate": 80,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 100
@@ -488,13 +552,15 @@
     "600754.SH": {
       "valuationRows": 235,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 94,
         "annualMetricWithAnnouncementDate": 94,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 19,
+        "annualMetricsWithProviderAnnouncementDate": 75,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 94
@@ -503,13 +569,15 @@
     "600887.SH": {
       "valuationRows": 235,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 103,
         "annualMetricWithAnnouncementDate": 103,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 20,
+        "annualMetricsWithProviderAnnouncementDate": 83,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 103
@@ -518,13 +586,15 @@
     "600900.SH": {
       "valuationRows": 238,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 103,
         "annualMetricWithAnnouncementDate": 103,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 21,
+        "annualMetricsWithProviderAnnouncementDate": 82,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 103
@@ -533,13 +603,15 @@
     "600941.SH": {
       "valuationRows": 58,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 83,
         "annualMetricWithAnnouncementDate": 83,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 0,
+        "annualMetricsWithProviderAnnouncementDate": 83,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 83
@@ -548,13 +620,15 @@
     "601088.SH": {
       "valuationRows": 228,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 93,
         "annualMetricWithAnnouncementDate": 93,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 18,
+        "annualMetricsWithProviderAnnouncementDate": 75,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 93
@@ -563,13 +637,15 @@
     "601318.SH": {
       "valuationRows": 235,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 90,
         "annualMetricWithAnnouncementDate": 90,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 0,
+        "annualMetricsWithProviderAnnouncementDate": 90,
         "ttmFields": 2,
         "ttmFieldsWithKnownAt": 2,
         "financialSourceStatusPending": 90
@@ -578,13 +654,15 @@
     "601398.SH": {
       "valuationRows": 239,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 75,
         "annualMetricWithAnnouncementDate": 75,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 15,
+        "annualMetricsWithProviderAnnouncementDate": 60,
         "ttmFields": 2,
         "ttmFieldsWithKnownAt": 2,
         "financialSourceStatusPending": 75
@@ -593,13 +671,15 @@
     "601601.SH": {
       "valuationRows": 225,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 81,
         "annualMetricWithAnnouncementDate": 81,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 0,
+        "annualMetricsWithProviderAnnouncementDate": 81,
         "ttmFields": 2,
         "ttmFieldsWithKnownAt": 2,
         "financialSourceStatusPending": 81
@@ -608,13 +688,15 @@
     "601668.SH": {
       "valuationRows": 207,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 105,
         "annualMetricWithAnnouncementDate": 105,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 21,
+        "annualMetricsWithProviderAnnouncementDate": 84,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 105
@@ -623,13 +705,15 @@
     "601728.SH": {
       "valuationRows": 63,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 96,
         "annualMetricWithAnnouncementDate": 96,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 0,
+        "annualMetricsWithProviderAnnouncementDate": 96,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 96
@@ -638,13 +722,15 @@
     "601816.SH": {
       "valuationRows": 82,
       "rowsWithAnyPointInTimeFinancials": 42,
-      "rowsWithFullSourceDates": 42,
+      "rowsWithSixCoreMetricsAvailable": 42,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 84,
         "annualMetricWithAnnouncementDate": 84,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 16,
+        "annualMetricsWithProviderAnnouncementDate": 68,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 84
@@ -653,13 +739,15 @@
     "601888.SH": {
       "valuationRows": 204,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 94,
         "annualMetricWithAnnouncementDate": 94,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 20,
+        "annualMetricsWithProviderAnnouncementDate": 74,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 94
@@ -668,13 +756,15 @@
     "601919.SH": {
       "valuationRows": 231,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 100,
         "annualMetricWithAnnouncementDate": 100,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 20,
+        "annualMetricsWithProviderAnnouncementDate": 80,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 100
@@ -683,13 +773,15 @@
     "601985.SH": {
       "valuationRows": 137,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 105,
         "annualMetricWithAnnouncementDate": 105,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 21,
+        "annualMetricsWithProviderAnnouncementDate": 84,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 105
@@ -698,13 +790,15 @@
     "603259.SH": {
       "valuationRows": 102,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 99,
         "annualMetricWithAnnouncementDate": 99,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 19,
+        "annualMetricsWithProviderAnnouncementDate": 80,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 99
@@ -713,13 +807,15 @@
     "603288.SH": {
       "valuationRows": 153,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 96,
         "annualMetricWithAnnouncementDate": 96,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 19,
+        "annualMetricsWithProviderAnnouncementDate": 77,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 96
@@ -728,13 +824,15 @@
     "688041.SH": {
       "valuationRows": 51,
       "rowsWithAnyPointInTimeFinancials": 43,
-      "rowsWithFullSourceDates": 43,
+      "rowsWithSixCoreMetricsAvailable": 43,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 90,
         "annualMetricWithAnnouncementDate": 90,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 18,
+        "annualMetricsWithProviderAnnouncementDate": 72,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 90
@@ -743,13 +841,15 @@
     "688981.SH": {
       "valuationRows": 76,
       "rowsWithAnyPointInTimeFinancials": 44,
-      "rowsWithFullSourceDates": 44,
+      "rowsWithSixCoreMetricsAvailable": 44,
       "lastValuationDate": "2026-10-30",
       "financialMetricAudit": {
         "annualRows": 5,
         "annualMetricValues": 93,
         "annualMetricWithAnnouncementDate": 93,
         "annualMetricMissingAnnouncementDate": 0,
+        "annualMetricsWithOfficialReportDate": 0,
+        "annualMetricsWithProviderAnnouncementDate": 93,
         "ttmFields": 4,
         "ttmFieldsWithKnownAt": 4,
         "financialSourceStatusPending": 93
@@ -762,6 +862,8 @@
       "annualMetricValues": 103,
       "annualMetricWithAnnouncementDate": 103,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 20,
+      "annualMetricsWithProviderAnnouncementDate": 83,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 103
@@ -771,6 +873,8 @@
       "annualMetricValues": 95,
       "annualMetricWithAnnouncementDate": 95,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 19,
+      "annualMetricsWithProviderAnnouncementDate": 76,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 95
@@ -780,6 +884,8 @@
       "annualMetricValues": 96,
       "annualMetricWithAnnouncementDate": 96,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 19,
+      "annualMetricsWithProviderAnnouncementDate": 77,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 96
@@ -789,6 +895,8 @@
       "annualMetricValues": 84,
       "annualMetricWithAnnouncementDate": 84,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 16,
+      "annualMetricsWithProviderAnnouncementDate": 68,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 84
@@ -798,6 +906,8 @@
       "annualMetricValues": 89,
       "annualMetricWithAnnouncementDate": 18,
       "annualMetricMissingAnnouncementDate": 71,
+      "annualMetricsWithOfficialReportDate": 18,
+      "annualMetricsWithProviderAnnouncementDate": 0,
       "ttmFields": 0,
       "ttmFieldsWithKnownAt": 0,
       "financialSourceStatusPending": 89
@@ -807,6 +917,8 @@
       "annualMetricValues": 100,
       "annualMetricWithAnnouncementDate": 100,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 20,
+      "annualMetricsWithProviderAnnouncementDate": 80,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 100
@@ -816,6 +928,8 @@
       "annualMetricValues": 103,
       "annualMetricWithAnnouncementDate": 103,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 21,
+      "annualMetricsWithProviderAnnouncementDate": 82,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 103
@@ -825,6 +939,8 @@
       "annualMetricValues": 99,
       "annualMetricWithAnnouncementDate": 99,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 19,
+      "annualMetricsWithProviderAnnouncementDate": 80,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 99
@@ -834,6 +950,8 @@
       "annualMetricValues": 100,
       "annualMetricWithAnnouncementDate": 100,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 21,
+      "annualMetricsWithProviderAnnouncementDate": 79,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 100
@@ -843,6 +961,8 @@
       "annualMetricValues": 79,
       "annualMetricWithAnnouncementDate": 79,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 15,
+      "annualMetricsWithProviderAnnouncementDate": 64,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 79
@@ -852,6 +972,8 @@
       "annualMetricValues": 84,
       "annualMetricWithAnnouncementDate": 84,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 16,
+      "annualMetricsWithProviderAnnouncementDate": 68,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 84
@@ -861,6 +983,8 @@
       "annualMetricValues": 105,
       "annualMetricWithAnnouncementDate": 105,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 21,
+      "annualMetricsWithProviderAnnouncementDate": 84,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 105
@@ -870,6 +994,8 @@
       "annualMetricValues": 100,
       "annualMetricWithAnnouncementDate": 100,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 20,
+      "annualMetricsWithProviderAnnouncementDate": 80,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 100
@@ -879,6 +1005,8 @@
       "annualMetricValues": 93,
       "annualMetricWithAnnouncementDate": 93,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 19,
+      "annualMetricsWithProviderAnnouncementDate": 74,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 93
@@ -888,6 +1016,8 @@
       "annualMetricValues": 79,
       "annualMetricWithAnnouncementDate": 79,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 16,
+      "annualMetricsWithProviderAnnouncementDate": 63,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 79
@@ -897,6 +1027,8 @@
       "annualMetricValues": 99,
       "annualMetricWithAnnouncementDate": 99,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 19,
+      "annualMetricsWithProviderAnnouncementDate": 80,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 99
@@ -906,6 +1038,8 @@
       "annualMetricValues": 100,
       "annualMetricWithAnnouncementDate": 100,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 20,
+      "annualMetricsWithProviderAnnouncementDate": 80,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 100
@@ -915,6 +1049,8 @@
       "annualMetricValues": 92,
       "annualMetricWithAnnouncementDate": 92,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 18,
+      "annualMetricsWithProviderAnnouncementDate": 74,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 92
@@ -924,6 +1060,8 @@
       "annualMetricValues": 103,
       "annualMetricWithAnnouncementDate": 103,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 21,
+      "annualMetricsWithProviderAnnouncementDate": 82,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 103
@@ -933,6 +1071,8 @@
       "annualMetricValues": 98,
       "annualMetricWithAnnouncementDate": 98,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 20,
+      "annualMetricsWithProviderAnnouncementDate": 78,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 98
@@ -942,6 +1082,8 @@
       "annualMetricValues": 105,
       "annualMetricWithAnnouncementDate": 105,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 21,
+      "annualMetricsWithProviderAnnouncementDate": 84,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 105
@@ -951,6 +1093,8 @@
       "annualMetricValues": 93,
       "annualMetricWithAnnouncementDate": 93,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 18,
+      "annualMetricsWithProviderAnnouncementDate": 75,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 93
@@ -960,6 +1104,8 @@
       "annualMetricValues": 95,
       "annualMetricWithAnnouncementDate": 95,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 19,
+      "annualMetricsWithProviderAnnouncementDate": 76,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 95
@@ -969,6 +1115,8 @@
       "annualMetricValues": 83,
       "annualMetricWithAnnouncementDate": 83,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 0,
+      "annualMetricsWithProviderAnnouncementDate": 83,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 83
@@ -978,6 +1126,8 @@
       "annualMetricValues": 96,
       "annualMetricWithAnnouncementDate": 96,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 0,
+      "annualMetricsWithProviderAnnouncementDate": 96,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 96
@@ -987,6 +1137,8 @@
       "annualMetricValues": 105,
       "annualMetricWithAnnouncementDate": 105,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 21,
+      "annualMetricsWithProviderAnnouncementDate": 84,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 105
@@ -996,6 +1148,8 @@
       "annualMetricValues": 90,
       "annualMetricWithAnnouncementDate": 18,
       "annualMetricMissingAnnouncementDate": 72,
+      "annualMetricsWithOfficialReportDate": 18,
+      "annualMetricsWithProviderAnnouncementDate": 0,
       "ttmFields": 0,
       "ttmFieldsWithKnownAt": 0,
       "financialSourceStatusPending": 90
@@ -1005,6 +1159,8 @@
       "annualMetricValues": 91,
       "annualMetricWithAnnouncementDate": 0,
       "annualMetricMissingAnnouncementDate": 91,
+      "annualMetricsWithOfficialReportDate": 0,
+      "annualMetricsWithProviderAnnouncementDate": 0,
       "ttmFields": 0,
       "ttmFieldsWithKnownAt": 0,
       "financialSourceStatusPending": 91
@@ -1014,6 +1170,8 @@
       "annualMetricValues": 93,
       "annualMetricWithAnnouncementDate": 93,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 0,
+      "annualMetricsWithProviderAnnouncementDate": 93,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 93
@@ -1023,6 +1181,8 @@
       "annualMetricValues": 96,
       "annualMetricWithAnnouncementDate": 96,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 20,
+      "annualMetricsWithProviderAnnouncementDate": 76,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 96
@@ -1032,6 +1192,8 @@
       "annualMetricValues": 90,
       "annualMetricWithAnnouncementDate": 90,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 18,
+      "annualMetricsWithProviderAnnouncementDate": 72,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 90
@@ -1041,6 +1203,8 @@
       "annualMetricValues": 97,
       "annualMetricWithAnnouncementDate": 97,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 19,
+      "annualMetricsWithProviderAnnouncementDate": 78,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 97
@@ -1050,6 +1214,8 @@
       "annualMetricValues": 104,
       "annualMetricWithAnnouncementDate": 104,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 0,
+      "annualMetricsWithProviderAnnouncementDate": 104,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 104
@@ -1059,6 +1225,8 @@
       "annualMetricValues": 95,
       "annualMetricWithAnnouncementDate": 95,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 20,
+      "annualMetricsWithProviderAnnouncementDate": 75,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 95
@@ -1068,6 +1236,8 @@
       "annualMetricValues": 100,
       "annualMetricWithAnnouncementDate": 100,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 20,
+      "annualMetricsWithProviderAnnouncementDate": 80,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 100
@@ -1077,6 +1247,8 @@
       "annualMetricValues": 85,
       "annualMetricWithAnnouncementDate": 85,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 0,
+      "annualMetricsWithProviderAnnouncementDate": 85,
       "ttmFields": 2,
       "ttmFieldsWithKnownAt": 2,
       "financialSourceStatusPending": 85
@@ -1086,6 +1258,8 @@
       "annualMetricValues": 75,
       "annualMetricWithAnnouncementDate": 75,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 15,
+      "annualMetricsWithProviderAnnouncementDate": 60,
       "ttmFields": 2,
       "ttmFieldsWithKnownAt": 2,
       "financialSourceStatusPending": 75
@@ -1095,6 +1269,8 @@
       "annualMetricValues": 90,
       "annualMetricWithAnnouncementDate": 90,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 0,
+      "annualMetricsWithProviderAnnouncementDate": 90,
       "ttmFields": 2,
       "ttmFieldsWithKnownAt": 2,
       "financialSourceStatusPending": 90
@@ -1104,6 +1280,8 @@
       "annualMetricValues": 81,
       "annualMetricWithAnnouncementDate": 81,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 0,
+      "annualMetricsWithProviderAnnouncementDate": 81,
       "ttmFields": 2,
       "ttmFieldsWithKnownAt": 2,
       "financialSourceStatusPending": 81
@@ -1113,6 +1291,8 @@
       "annualMetricValues": 90,
       "annualMetricWithAnnouncementDate": 90,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 0,
+      "annualMetricsWithProviderAnnouncementDate": 90,
       "ttmFields": 2,
       "ttmFieldsWithKnownAt": 2,
       "financialSourceStatusPending": 90
@@ -1122,6 +1302,8 @@
       "annualMetricValues": 96,
       "annualMetricWithAnnouncementDate": 96,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 19,
+      "annualMetricsWithProviderAnnouncementDate": 77,
       "ttmFields": 2,
       "ttmFieldsWithKnownAt": 2,
       "financialSourceStatusPending": 96
@@ -1131,6 +1313,8 @@
       "annualMetricValues": 94,
       "annualMetricWithAnnouncementDate": 0,
       "annualMetricMissingAnnouncementDate": 94,
+      "annualMetricsWithOfficialReportDate": 0,
+      "annualMetricsWithProviderAnnouncementDate": 0,
       "ttmFields": 0,
       "ttmFieldsWithKnownAt": 0,
       "financialSourceStatusPending": 94
@@ -1140,6 +1324,8 @@
       "annualMetricValues": 94,
       "annualMetricWithAnnouncementDate": 94,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 20,
+      "annualMetricsWithProviderAnnouncementDate": 74,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 94
@@ -1149,6 +1335,8 @@
       "annualMetricValues": 94,
       "annualMetricWithAnnouncementDate": 94,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 19,
+      "annualMetricsWithProviderAnnouncementDate": 75,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 94
@@ -1158,6 +1346,8 @@
       "annualMetricValues": 93,
       "annualMetricWithAnnouncementDate": 93,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 19,
+      "annualMetricsWithProviderAnnouncementDate": 74,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 93
@@ -1167,6 +1357,8 @@
       "annualMetricValues": 90,
       "annualMetricWithAnnouncementDate": 0,
       "annualMetricMissingAnnouncementDate": 90,
+      "annualMetricsWithOfficialReportDate": 0,
+      "annualMetricsWithProviderAnnouncementDate": 0,
       "ttmFields": 0,
       "ttmFieldsWithKnownAt": 0,
       "financialSourceStatusPending": 90
@@ -1176,6 +1368,8 @@
       "annualMetricValues": 92,
       "annualMetricWithAnnouncementDate": 92,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 19,
+      "annualMetricsWithProviderAnnouncementDate": 73,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 92
@@ -1185,6 +1379,8 @@
       "annualMetricValues": 100,
       "annualMetricWithAnnouncementDate": 100,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 20,
+      "annualMetricsWithProviderAnnouncementDate": 80,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 100
@@ -1194,6 +1390,8 @@
       "annualMetricValues": 104,
       "annualMetricWithAnnouncementDate": 104,
       "annualMetricMissingAnnouncementDate": 0,
+      "annualMetricsWithOfficialReportDate": 21,
+      "annualMetricsWithProviderAnnouncementDate": 83,
       "ttmFields": 4,
       "ttmFieldsWithKnownAt": 4,
       "financialSourceStatusPending": 104
