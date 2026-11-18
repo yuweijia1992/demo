@@ -133,7 +133,25 @@ def main():
  audit["checks"]={"all_six_source_files_present_and_valid":len(parsed)==len(FILES),"sha256_for_each_present_file":all("sha256" in v for v in audit["files"].values() if v["status"]=="PASS"),"nfci_vintage_dates_column_audited":audit["files"].get("nfci_vintages",{}).get("status")=="PASS","monthly_panel_built":audit["panel"].get("status","").startswith("BUILT"),"strict_v12_pass":False}
  audit["limitations"] += ["A panel containing current revised FRED histories is not a fully point-in-time five-factor panel.","The FRED current-history fields are marked non-PIT and must not be used in strict historical information-set backtests.","A publication-calendar/vintage history is still required for DFII10, FEDFUNDS, GS10 and CPIAUCSL before the full five-factor model can claim strict PIT validity.","No missing values are interpolated or silently filled."]
  # strict pass requires all six files, valid NFCI vintages, panel, and source metadata; PIT restrictions remain explicitly reported.
- audit["checks"]["strict_v12_pass"]=bool(audit["checks"]["all_six_source_files_present_and_valid"] and audit["checks"]["nfci_vintage_dates_column_audited"] and audit["checks"]["monthly_panel_built"] and audit["checks"]["sha256_for_each_present_file"])
+ # Strict PIT is deliberately stricter than file completeness. The current V1.2
+ # bundle has only NFCI vintage snapshots; DFII10/FEDFUNDS/GS10/CPI are
+ # revised-current histories, and Shiller CAPE vintage history is not yet
+ # supplied. Therefore a successful download/audit must NOT imply PIT pass.
+ pit_required = ("CAPE", "DFII10", "NFCI", "FEDFUNDS")
+ pit_status = {
+  "CAPE": False, "DFII10": False,
+  "NFCI": audit["files"].get("nfci_vintages", {}).get("point_in_time") is True,
+  "FEDFUNDS": False
+ }
+ audit["checks"]["factor_pit_eligibility"] = pit_status
+ audit["checks"]["all_five_factor_inputs_strict_pit"] = all(pit_status.values())
+ audit["checks"]["strict_v12_pass"] = bool(
+  audit["checks"]["all_six_source_files_present_and_valid"]
+  and audit["checks"]["nfci_vintage_dates_column_audited"]
+  and audit["checks"]["monthly_panel_built"]
+  and audit["checks"]["sha256_for_each_present_file"]
+  and audit["checks"]["all_five_factor_inputs_strict_pit"]
+ )
  p=ROOT/"v12-historical-data-audit.json"; p.write_text(json.dumps(audit,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
  print(json.dumps(audit,ensure_ascii=False,indent=2))
  if not audit["checks"]["strict_v12_pass"]: raise SystemExit(2)
