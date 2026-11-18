@@ -1,0 +1,72 @@
+{
+  "artifact": "Macro History V1.2 demo audit",
+  "artifact_type": "SCHEMA_AND_WORKFLOW_DEMONSTRATION_ONLY",
+  "is_real_historical_data": false,
+  "strict_v12_pass": false,
+  "audit_status": "DEMO_ONLY_NOT_ACCEPTED",
+  "generated_at": "not_generated_from_data",
+  "missing_value_policy": {
+    "numeric_value": "NA/null",
+    "no_interpolation": true,
+    "no_forward_fill": true,
+    "no_synthetic_observations": true
+  },
+  "sources": [
+    {
+      "id": "SP500_TR",
+      "file": "sp500-long-run-total-return-monthly.csv",
+      "status": "NOT_VERIFIED",
+      "sha256": null,
+      "pit": "historical reconstruction; verify source vintage/definition"
+    },
+    {
+      "id": "NFCI_ALFRED",
+      "file": "alfred-nfci-vintages.csv.gz",
+      "status": "NOT_VERIFIED",
+      "sha256": null,
+      "pit": "historical vintage required"
+    },
+    {
+      "id": "DFII10",
+      "file": "fred-dfii10-current.csv",
+      "status": "NOT_VERIFIED",
+      "sha256": null,
+      "pit": "current revised; non-PIT"
+    },
+    {
+      "id": "FEDFUNDS",
+      "file": "fred-fedfunds-current.csv",
+      "status": "NOT_VERIFIED",
+      "sha256": null,
+      "pit": "current revised; non-PIT"
+    },
+    {
+      "id": "GS10",
+      "file": "fred-gs10-current.csv",
+      "status": "NOT_VERIFIED",
+      "sha256": null,
+      "pit": "current revised; non-PIT"
+    },
+    {
+      "id": "CPIAUCSL",
+      "file": "fred-cpiaucsl-current.csv",
+      "status": "NOT_VERIFIED",
+      "sha256": null,
+      "pit": "current revised; non-PIT"
+    }
+  ],
+  "panel": {
+    "file": "v12-monthly-panel.csv",
+    "status": "DEMO_SCHEMA_ONLY",
+    "rows": 0,
+    "actual_observations": 0
+  },
+  "acceptance": {
+    "raw_files_verified": false,
+    "date_coverage_verified": false,
+    "anomalies_checked": false,
+    "sha256_verified": false,
+    "monthly_panel_reproducible": false,
+    "pit_classification_documented": true
+  }
+}
