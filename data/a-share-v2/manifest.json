@@ -1,0 +1,53 @@
+{
+  "project": "A-share Long-term Investment System V2.0",
+  "as_of": "2026-11-18",
+  "status": "research_specification",
+  "policy": "No dataset is marked verified until raw source files, coverage audit, provenance, checksum and reproducible transformations are committed.",
+  "target_period": {"start": "2005-01", "end": "2026-11", "frequency": "monthly"},
+  "index_series": [
+    {"name": "CSI 300", "code": "000300", "price_series": "pending_acquisition", "total_return_series": "pending_official_series", "valuation": ["PE_TTM", "PB", "dividend_yield"], "coverage_verified": false},
+    {"name": "CSI 500", "code": "000905", "price_series": "pending_acquisition", "total_return_series": "pending_official_series", "valuation": ["PE_TTM", "PB", "dividend_yield"], "coverage_verified": false},
+    {"name": "CSI 1000", "code": "000852", "price_series": "pending_acquisition", "total_return_series": "pending_official_series", "valuation": ["PE_TTM", "PB", "dividend_yield"], "coverage_verified": false},
+    {"name": "CSI A Share candidate", "code": "930903", "definition": "Confirm equivalence to the project's all-A definition before use", "price_series": "candidate_source_found", "total_return_series": "pending_official_series", "valuation": ["PE_TTM", "PB", "dividend_yield"], "coverage_verified": false}
+  ],
+  "valuation": {
+    "metrics": ["PE_TTM", "PB", "dividend_yield"],
+    "required_windows_months": [60, 120, "since_inception"],
+    "pit_required": true,
+    "frequency_policy": "Preserve source frequency; do not interpolate quarterly or annual values into monthly observations.",
+    "provider_candidate": "Lixinger index fundamental API",
+    "authorization_required": true
+  },
+  "company_universe": {
+    "expected_companies": 49,
+    "expected_a_share_companies": 44,
+    "expected_hk_companies": 5,
+    "historical_listing_codes_reference_count": 57,
+    "exact_universe_file": "must be recovered from existing valuation database; do not recreate from memory",
+    "financial_availability_date": "announcement_date",
+    "point_in_time_required": true
+  },
+  "strategy_set": [
+    "buy_and_hold",
+    "monthly_dca",
+    "pe_valuation_timing",
+    "pe_pb_dividend_composite",
+    "valuation_plus_quality",
+    "valuation_quality_rebalance"
+  ],
+  "validation": {
+    "development": ["2005-01", "2014-12"],
+    "validation": ["2015-01", "2020-12"],
+    "out_of_sample": ["2021-01", "2026-11"],
+    "block_bootstrap_months": [12, 24, 36],
+    "costs_required": true,
+    "survivorship_bias_control_required": true,
+    "lookahead_bias_control_required": true
+  },
+  "release_gates": {
+    "market_signal": false,
+    "company_quality_ranking": false,
+    "strategy_validated": false,
+    "live_cockpit_activation": false
+  }
+}
