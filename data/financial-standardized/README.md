@@ -30,3 +30,14 @@
 ## 更新
 
 手动触发 GitHub Actions：Standardize company financial statements。脚本读取仓库内最新的原始财报JSON并生成上述文件。
+
+
+## 公告时点面板（新增）
+
+- `PIT_PANEL_SPEC.md`：公告时点信息集的连接口径与未完成事项。
+- `../valuation-model/issuer-report-index-49.json`：已定位的官方报告URL和公告日期；报告链接定位不等于逐科目内容核验。
+- `../../scripts/build_financial_pit_panel.py`：将财务字段与估值月度观察日按公告日连接。只允许 `announcementDate <= valuation_observation_date` 的财务字段进入对应历史月份；报告期末不能代替公告日。
+- `pit-panel-coverage-audit.json`：运行后生成逐公司财务公告日期覆盖、可用时点和估值连接审计。
+- `company-valuation-financial-pit.csv`：只有在仓库变量 `PUBLIC_DATA_REPUBLISH_LICENSE_APPROVED=YES` 明确设置后才会生成。未取得公开再分发许可时，默认阻止批量数值CSV写出；先发布口径、来源索引和覆盖审计。
+
+特别限制：历史估值观测的交易日期和供应商可追溯性已保存，但尚未证明供应商历史估值计算版本在当时即已固定。因此，即使财务字段经过公告日过滤，也不能宣称整套历史估值-财务面板完全无前视。还须核对估值历史的计算vintage、重述政策、月末观测滞后，以及财务字段与发行人年报页码。
