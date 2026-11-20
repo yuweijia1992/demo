@@ -1,6 +1,6 @@
 {
-  "dataset_version": "2.7.0",
-  "generated_at": "2026-11-12T09:20:00Z",
+  "dataset_version": "2.5.0",
+  "generated_at": "2026-11-20T11:46:52Z",
   "dataset_file": "data/investment-monthly.csv",
   "frequency": "monthly",
   "row_count": 250,
@@ -78,11 +78,6 @@
       "count": 247,
       "start": "2006-01",
       "end": "2026-07"
-    },
-    "china_bond_wealth_index_cny": {
-      "count": 250,
-      "start": "2006-01",
-      "end": "2026-10"
     }
   },
   "series": [
@@ -352,15 +347,15 @@
     },
     {
       "field": "sp500_shiller_total_return_pct",
-      "count": 249,
+      "count": 250,
       "start": "2006-01",
-      "end": "2026-09"
+      "end": "2026-10"
     },
     {
       "field": "sp500_shiller_cpi_index",
-      "count": 249,
+      "count": 250,
       "start": "2006-01",
-      "end": "2026-09"
+      "end": "2026-10"
     },
     {
       "field": "us_agg_etf_total_return_usd_pct",
@@ -451,7 +446,7 @@
     "EFA is a developed-markets ex-US/Canada ETF proxy; EEM is an emerging-markets ETF proxy. Both are Yahoo auto-adjusted ETF total-return proxies, not official MSCI net/gross index returns.",
     "EEM country holdings include China and Taiwan; do not add EEM to A-share/HK exposures without country/issuer overlap review.",
     "USD/CNY uses the Federal Reserve G.5 monthly average EXCHUS series via the archived datasets/exchange-rates monthly panel.",
-    "HKD/CNY conversion uses monthly-average DEXHKUS (HKD per USD) and USD/CNY: (1+rHKD)*(USD/CNY_t/USD/CNY_prev)*(HKDUSD_prev/HKDUSD_t)-1.",
+    "HKD/CNY conversion uses Federal Reserve G.5 monthly-average EXHKUS (HKD per USD) and USD/CNY: (1+rHKD)*(USD/CNY_t/USD/CNY_prev)*(HKDUSD_prev/HKDUSD_t)-1.",
     "CNY cash proxy uses official CSIndex H11025 money-market fund total-return index; base date 2005-12-30, publication date 2016-08-31; pre-publication history is backfilled.",
     "China government-bond investable proxy uses Yahoo auto-adjusted 511010.SS ETF close; CNY denominated, starts 2013; separate from official ChinaBond wealth index.",
     "USD asset CNY return=(1+rUSD)*(FX_t/FX_t-1)-1.",
@@ -596,6 +591,17 @@
       "url": "https://finance.yahoo.com/quote/511010.SS/history/",
       "method": "Yahoo auto-adjusted daily close (dividends/splits adjusted), resampled to last trading day each month",
       "caveat": "2013年成立，单只5年期国债ETF代理；不等于中债综合财富指数，数据源可能修订。"
+    },
+    {
+      "series": [
+        "china_treasury_etf_511010_adj_total_return_index_cny",
+        "china_treasury_etf_511010_total_return_cny_pct"
+      ],
+      "name": "国泰上证5年期国债ETF 511010",
+      "source": "Yahoo Finance adjusted close",
+      "url": "https://finance.yahoo.com/quote/511010.SS/history/",
+      "method": "Yahoo auto-adjusted daily close (dividends/splits adjusted), resampled to last trading day each month",
+      "caveat": "2013年成立，单只5年期国债ETF代理；不等于中债综合财富指数，数据源可能修订。"
     }
   ],
   "coverage": {
@@ -690,24 +696,24 @@
       "end": "2026-10"
     },
     "hang_seng_etf_2800_total_return_cny_pct": {
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 225,
+      "start": "2008-02",
+      "end": "2026-10"
     },
     "hkd_per_usd": {
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     "china_bond_wealth_index_cny": {
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     "china_bond_wealth_return_cny_pct": {
-      "count": 0,
-      "start": null,
-      "end": null
+      "count": 250,
+      "start": "2006-01",
+      "end": "2026-10"
     },
     "cny_cash_index_h11025": {
       "count": 245,
@@ -820,14 +826,14 @@
       "end": null
     },
     "sp500_shiller_total_return_pct": {
-      "count": 249,
+      "count": 250,
       "start": "2006-01",
-      "end": "2026-09"
+      "end": "2026-10"
     },
     "sp500_shiller_cpi_index": {
-      "count": 249,
+      "count": 250,
       "start": "2006-01",
-      "end": "2026-09"
+      "end": "2026-10"
     },
     "us_agg_etf_total_return_usd_pct": {
       "count": 247,
@@ -897,11 +903,6 @@
       "reason": "官方恒生全收益历史数据未取得可复核的开放下载文件"
     },
     {
-      "field": "china_bond_wealth_index_cny",
-      "status": "missing",
-      "reason": "中债财富指数虽可在官方指数查询页选取财富口径，但历史数据POST接口和公开使用授权仍待核实"
-    },
-    {
       "field": "us_treasury_7_10y_total_return_pct",
       "status": "missing",
       "reason": "Safe Rate 7-10年美国国债总回报公开数据存在，但本矩阵尚未获得月度指数水平CSV"
@@ -914,10 +915,6 @@
     {
       "field": "hang_seng_total_return_pct",
       "reason": "Official Hang Seng TRI historical series is subscription data; FXI is a separately identified China large-cap ETF proxy, not a substitute."
-    },
-    {
-      "field": "china_bond_wealth_return_cny_pct",
-      "reason": "Official ChinaBond total wealth historical monthly data not yet obtained with usable provenance and permission."
     },
     {
       "field": "portfolio_return_cny_pct",
@@ -980,6 +977,40 @@
       "coverage_end": "2026-11",
       "source": "Yahoo Finance adjusted close; CNY-listed 5-year China government bond ETF; ETF proxy, not ChinaBond wealth index"
     },
+    "fred_macro_only": {
+      "EXHKUS": {
+        "months": 0,
+        "error": "TimeoutError: The read operation timed out"
+      },
+      "DGS10": {
+        "months": 0,
+        "error": "TimeoutError: The read operation timed out"
+      },
+      "DFII10": {
+        "months": 0,
+        "error": "TimeoutError: The read operation timed out"
+      },
+      "DTWEXBGS": {
+        "months": 0,
+        "error": "TimeoutError: The read operation timed out"
+      },
+      "VIXCLS": {
+        "months": 0,
+        "error": "TimeoutError: The read operation timed out"
+      },
+      "CPIAUCSL": {
+        "months": 0,
+        "error": "TimeoutError: The read operation timed out"
+      },
+      "FEDFUNDS": {
+        "months": 0,
+        "error": "TimeoutError: The read operation timed out"
+      },
+      "DCOILBRENTEU": {
+        "months": 0,
+        "error": "TimeoutError: The read operation timed out"
+      }
+    },
     "yahoo_2800_hk_total_return_proxy": {
       "ticker": "2800.HK",
       "months": 227,
@@ -999,13 +1030,12 @@
       "source": "Yahoo Finance monthly auto-adjusted ETF total returns via HerdingAI dataset"
     },
     "shiller_cross_check": {
-      "observations": 250,
+      "observations": 251,
       "role": "independent_cross_check_not_primary_series"
     }
   },
   "refresh_errors": {
-    "chinabond_aggregate_wealth": "HTTPError: HTTP Error 405: ",
-    "fred_macro_only": "TimeoutError: The read operation timed out"
+    "chinabond_aggregate_wealth": "HTTPError: HTTP Error 504: Gateway Time-out"
   },
   "portfolio_return_ready": false,
   "source_additions": {
