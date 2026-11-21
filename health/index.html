@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3f2eb">
+<meta name="description" content="个人健康监测仪表盘：体重、腰围、血压、心率、睡眠、运动与体能变化。数据仅保存在当前浏览器。">
+<title>个人健康监测｜余暮</title>
+<style>
+:root{--bg:#f3f2eb;--paper:#fffefa;--paper2:#ecece3;--ink:#26332e;--muted:#728078;--line:#dfe3d9;--green:#426b56;--green2:#e4eee5;--blue:#547487;--blue2:#e7eff1;--gold:#b1874e;--gold2:#f5eddd;--rust:#a9614e;--rust2:#f5e9e3;--shadow:0 12px 34px rgba(35,52,42,.055);--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:1180px;padding:0 22px;margin:auto}.top{position:sticky;top:0;z-index:30;background:rgba(243,242,235,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.topin{height:64px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:750;letter-spacing:.04em}.brand span{font-weight:400;color:var(--muted);font-size:12px;margin-left:8px}.links{display:flex;align-items:center;gap:18px}.links a{font-size:12px;color:var(--muted);text-decoration:none}.links a:hover{color:var(--green)}.back{border:1px solid var(--line);border-radius:999px;padding:7px 12px;background:var(--paper);font-size:12px;color:var(--ink);text-decoration:none}
+.hero{padding:40px 0 24px;display:grid;grid-template-columns:1.45fr .55fr;gap:22px;align-items:stretch}.eyebrow{font-size:10px;letter-spacing:.18em;font-weight:800;color:var(--green)}h1{font-size:clamp(30px,4.4vw,48px);line-height:1.15;letter-spacing:-.045em;margin:11px 0}.hero p{max-width:720px;margin:0;color:var(--muted);font-size:14px}.hero-side{background:var(--green);color:#f6f7f1;padding:23px 24px;border-radius:var(--radius);display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow)}.hero-side strong{font-size:18px;line-height:1.5}.hero-side span{font-size:11px;color:#dce8dc}.tabs{display:flex;gap:7px;overflow:auto;padding:5px 0 17px;border-bottom:1px solid var(--line)}.tab{border:0;background:transparent;color:var(--muted);padding:9px 15px;border-radius:999px;white-space:nowrap;font-size:12px}.tab.active{background:var(--ink);color:white}.view{display:none;padding:24px 0 62px}.view.active{display:block}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:17px}.sectionhead h2{font-size:22px;margin:0 0 4px;letter-spacing:-.02em}.sectionhead p{font-size:12px;color:var(--muted);margin:0}.muted{color:var(--muted)}.grid{display:grid;gap:14px}.stats{grid-template-columns:repeat(4,1fr);margin:18px 0}.stat,.panel,.metric,.record,.tip{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.stat{padding:16px 18px}.stat label{display:block;color:var(--muted);font-size:11px;margin-bottom:8px}.stat strong{font-size:27px;letter-spacing:-.04em;font-weight:700}.stat small{display:block;color:var(--muted);font-size:10px;margin-top:4px}.stat .unit{font-size:12px;font-weight:500;color:var(--muted);margin-left:4px}.two{grid-template-columns:1.1fr .9fr;align-items:start}.panel{padding:20px}.panel h3{font-size:16px;margin:0 0 4px}.sub{font-size:11px;color:var(--muted);margin:0 0 15px}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:5px}.field.full{grid-column:1/-1}.field label{font-size:11px;color:#58665e;font-weight:650}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:10px;background:#fff;padding:10px 11px;color:var(--ink);outline:none;min-width:0}.field input:focus,.field select:focus,.field textarea:focus{border-color:#86a38e;box-shadow:0 0 0 3px rgba(66,107,86,.09)}.field small{font-size:10px;color:var(--muted)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.btn{border:1px solid var(--green);border-radius:999px;background:var(--green);color:white;padding:9px 15px;font-size:12px;font-weight:650}.btn.secondary{background:transparent;color:var(--green)}.btn.danger{background:transparent;color:var(--rust);border-color:#d8b2a7}.btn:disabled{opacity:.5;cursor:not-allowed}.callout{padding:13px 15px;border-radius:13px;background:var(--green2);font-size:11px;color:#46604c;margin-top:12px}.callout.warn{background:var(--gold2);color:#755c34}.callout.alert{background:var(--rust2);color:#8d4939}.list{display:grid;gap:8px}.record{box-shadow:none;padding:11px 13px;display:flex;justify-content:space-between;gap:12px;align-items:center}.record strong{font-size:12px}.record small{display:block;font-size:10px;color:var(--muted)}.record button{border:0;background:none;color:var(--rust);font-size:11px}.empty{padding:18px;text-align:center;color:var(--muted);font-size:12px;border:1px dashed var(--line);border-radius:13px}.pill{display:inline-block;border-radius:999px;background:var(--green2);color:var(--green);padding:4px 9px;font-size:10px;font-weight:700}.metrics{grid-template-columns:repeat(3,1fr)}.metric{padding:15px;box-shadow:none}.metric b{font-size:13px}.metric p{margin:5px 0 0;color:var(--muted);font-size:10px}.chartbox{padding:16px 12px 10px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius)}.charthead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 6px 7px}.charthead h3{font-size:15px;margin:0}.charthead select{border:1px solid var(--line);border-radius:9px;background:white;padding:7px 9px;font-size:11px}.chart{width:100%;height:250px;display:block}.chart-empty{height:220px;display:grid;place-items:center;color:var(--muted);font-size:12px}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;min-width:640px;background:var(--paper)}th,td{padding:10px 11px;text-align:left;border-bottom:1px solid var(--line);font-size:11px;white-space:nowrap}th{color:var(--muted);font-weight:650;background:#f7f7f1}tr:last-child td{border-bottom:0}.tiny{font-size:10px;color:var(--muted)}.footer{padding:22px 0 36px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;color:var(--muted);font-size:10px}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,15px);opacity:0;pointer-events:none;background:#26332e;color:white;padding:10px 16px;border-radius:999px;font-size:12px;transition:.25s;z-index:60}.toast.show{opacity:1;transform:translate(-50%,0)}.inline-note{font-size:10px;color:var(--muted);margin:9px 0 0}.hr{height:1px;background:var(--line);margin:16px 0}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.hero-side{min-height:115px}.stats{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.links{gap:10px}.links a{display:none}.wrap{padding:0 15px}.panel{padding:16px}.sectionhead{align-items:start;flex-direction:column}.footer{flex-direction:column}}
+@media(max-width:430px){.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.stats{gap:8px}.stat{padding:13px}.stat strong{font-size:22px}.metrics{grid-template-columns:1fr 1fr}.brand span{display:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap topin"><div class="brand">余暮 <span>PERSONAL HEALTH</span></div><nav class="links"><a href="#overview" data-nav="overview">总览</a><a href="#daily" data-nav="daily">记录</a><a href="#fitness" data-nav="fitness">体能</a><a href="#trends" data-nav="trends">趋势</a><a class="back" href="../life-system/">生活实践 ↗</a></nav></div></header>
+<main class="wrap">
+<section class="hero">
+<div><div class="eyebrow">HEALTHSPAN · LONG-TERM TRACKING</div><h1>健康不是一次体检，<br>而是长期的身体数据。</h1><p>记录体重、腰围、血压、心率、睡眠、活动量与体能表现。关注自己的长期变化，不追逐单日波动，也不把消费级设备的估算值当成诊断。</p></div>
+<aside class="hero-side"><strong>把监测变成一种温和的生活习惯。<br>看趋势，做调整，定期复核。</strong><span>数据仅保存在当前浏览器 · 不会自动上传服务器</span></aside>
+</section>
+<div class="tabs" role="tablist">
+<button class="tab active" data-view="overview">总览</button><button class="tab" data-view="daily">日常记录</button><button class="tab" data-view="fitness">体能评估</button><button class="tab" data-view="trends">趋势与数据</button>
+</div>
+
+<section class="view active" id="overview">
+<div class="sectionhead"><div><h2>健康概览</h2><p>先建立个人基线，再观察连续变化。空白代表尚未记录，不代表正常。</p></div><span class="pill" id="todayLabel">今天</span></div>
+<div class="grid stats">
+<div class="stat"><label>最近体重</label><strong id="latestWeight">—</strong><span class="unit">kg</span><small id="weightDate">尚无记录</small></div>
+<div class="stat"><label>最近血压</label><strong id="latestBP">—</strong><span class="unit">mmHg</span><small id="bpDate">尚无记录</small></div>
+<div class="stat"><label>7天平均睡眠</label><strong id="avgSleep">—</strong><span class="unit">小时</span><small>按已记录日期计算</small></div>
+<div class="stat"><label>7天平均步数</label><strong id="avgSteps">—</strong><span class="unit">步/天</span><small>按已记录日期计算</small></div>
+</div>
+<div class="grid two">
+<div class="panel"><h3>最近状态</h3><p class="sub">根据近期已有数据自动汇总，不构成医学判断。</p><div class="grid metrics">
+<div class="metric"><b>静息心率</b><p id="restingCard">暂无记录</p></div>
+<div class="metric"><b>腰围 / 腰围身高比</b><p id="waistCard">暂无记录</p></div>
+<div class="metric"><b>BMI（可选）</b><p id="bmiCard">填写身高后计算</p></div>
+<div class="metric"><b>本周运动时长</b><p id="exerciseCard">暂无记录</p></div>
+<div class="metric"><b>本周力量训练</b><p id="strengthCard">请在备注或运动记录中记录</p></div>
+<div class="metric"><b>最近体能测试</b><p id="fitnessCard">暂无记录</p></div>
+</div><div class="callout">建议目标：每周累计150–300分钟中等强度有氧活动，并至少2天进行力量训练。按当前能力逐步增加，不必一开始追求满额。</div></div>
+<div class="panel"><h3>个人设置</h3><p class="sub">身高用于计算 BMI 和腰围身高比；目标值仅用于个人追踪。</p>
+<div class="formgrid"><div class="field"><label for="height">身高（cm）</label><input type="number" id="height" min="100" max="230" step="0.1" placeholder="例如 170"></div><div class="field"><label for="weeklyGoal">每周有氧目标（分钟）</label><input type="number" id="weeklyGoal" min="30" max="600" step="10" value="150"></div></div><div class="actions"><button class="btn" id="saveProfile">保存设置</button></div>
+<div class="hr"></div><h3>监测原则</h3><p class="sub">测量条件尽量固定；记录真实数据；出现异常趋势时复测并咨询专业人员，不根据单次结果自行诊断或停药。</p>
+</div>
+</div>
+<div class="panel" style="margin-top:14px"><h3>最近记录</h3><p class="sub">最近10条日常记录与血压数据。</p><div id="recentList" class="list"><div class="empty">还没有记录。进入「日常记录」添加第一条数据。</div></div></div>
+</section>
+
+<section class="view" id="daily">
+<div class="sectionhead"><div><h2>日常记录</h2><p>体重、静息心率、睡眠、步数与运动时长可重复记录；腰围建议每月测量。</p></div><span class="pill">每日 / 每周</span></div>
+<div class="grid two">
+<div class="panel"><h3>身体与活动记录</h3><p class="sub">选定日期，录入当天数据。再次保存同一天会更新该日记录。</p>
+<div class="formgrid">
+<div class="field"><label for="dailyDate">记录日期</label><input type="date" id="dailyDate"></div>
+<div class="field"><label for="weight">体重（kg）</label><input type="number" id="weight" min="20" max="300" step="0.1" placeholder="选填"></div>
+<div class="field"><label for="restingHR">静息心率（次/分钟）</label><input type="number" id="restingHR" min="25" max="220" step="1" placeholder="晨起安静时"></div>
+<div class="field"><label for="sleep">睡眠时长（小时）</label><input type="number" id="sleep" min="0" max="24" step="0.1" placeholder="例如 7.5"></div>
+<div class="field"><label for="steps">步数（步）</label><input type="number" id="steps" min="0" max="100000" step="100" placeholder="手机 / 手表"></div>
+<div class="field"><label for="exercise">中等强度运动（分钟）</label><input type="number" id="exercise" min="0" max="1440" step="5" placeholder="当天累计"></div>
+<div class="field full"><label for="dailyNote">备注（例如力量训练、身体感受）</label><textarea id="dailyNote" rows="2" placeholder="例如：快走40分钟；力量训练30分钟；今天精神状态……"></textarea></div>
+</div><div class="actions"><button class="btn" id="saveDaily">保存日常记录</button><button class="btn secondary" id="clearDailyForm">清空输入</button></div><p class="inline-note">建议：体重每周测3次并看平均值；心率在相似的晨起条件下测量；睡眠和运动记录按天汇总。</p></div>
+<div class="panel"><h3>家庭血压记录</h3><p class="sub">使用经验证的上臂式电子血压计。静坐5分钟后，连续测2次、间隔约1分钟。</p>
+<div class="formgrid">
+<div class="field"><label for="bpDate">测量日期</label><input type="date" id="bpDate"></div>
+<div class="field"><label for="bpPeriod">测量时段</label><select id="bpPeriod"><option value="早晨">早晨</option><option value="晚上">晚上</option><option value="其他">其他</option></select></div>
+<div class="field"><label for="systolic">收缩压（mmHg）</label><input type="number" id="systolic" min="50" max="280" placeholder="高压"></div>
+<div class="field"><label for="diastolic">舒张压（mmHg）</label><input type="number" id="diastolic" min="25" max="180" placeholder="低压"></div>
+<div class="field"><label for="bpPulse">测量时脉搏（次/分钟）</label><input type="number" id="bpPulse" min="25" max="220" placeholder="可选"></div>
+<div class="field"><label for="bpNote">备注</label><input type="text" id="bpNote" placeholder="例如第2次读数 / 测量前状态"></div>
+</div><div class="actions"><button class="btn" id="saveBP">添加血压记录</button></div><div id="bpAlert"></div>
+<div class="hr"></div><h3>最近血压记录</h3><div id="bpList" class="list"><div class="empty">尚无血压数据。</div></div>
+</div>
+</div>
+<div class="panel" style="margin-top:14px"><h3>腰围记录</h3><p class="sub">每月一次即可。使用软尺，在肋骨下缘与髋骨上缘之间的中点测量，自然呼气后读数。</p>
+<div class="formgrid">
+<div class="field"><label for="waistDate">记录日期</label><input type="date" id="waistDate"></div>
+<div class="field"><label for="waist">腰围（cm）</label><input type="number" id="waist" min="30" max="220" step="0.1" placeholder="选填"></div>
+<div class="field"><label for="waistNote">备注</label><input type="text" id="waistNote" placeholder="同一位置、同一方式测量"></div>
+</div><div class="actions"><button class="btn" id="saveWaist">保存腰围</button></div></div>
+</section>
+
+<section class="view" id="fitness">
+<div class="sectionhead"><div><h2>每月体能评估</h2><p>每月一次即可，重点是同条件比较趋势。不要在疼痛、头晕或身体不适时测试。</p></div><span class="pill">每月</span></div>
+<div class="grid two">
+<div class="panel"><h3>力量、平衡与步行</h3><p class="sub">测试前热身；使用稳固椅子和安全环境。平衡测试建议靠近墙面或扶手。</p>
+<div class="formgrid">
+<div class="field"><label for="fitnessMonth">评估月份</label><input type="month" id="fitnessMonth"></div>
+<div class="field"><label for="gripL">左手握力（kg）</label><input type="number" id="gripL" min="0" max="120" step="0.1" placeholder="可选"></div>
+<div class="field"><label for="gripR">右手握力（kg）</label><input type="number" id="gripR" min="0" max="120" step="0.1" placeholder="可选"></div>
+<div class="field"><label for="chair">30秒坐站次数</label><input type="number" id="chair" min="0" max="100" step="1" placeholder="完整站起次数"></div>
+<div class="field"><label for="balanceL">左腿单脚站立（秒）</label><input type="number" id="balanceL" min="0" max="300" step="0.1" placeholder="安全第一"></div>
+<div class="field"><label for="balanceR">右腿单脚站立（秒）</label><input type="number" id="balanceR" min="0" max="300" step="0.1" placeholder="安全第一"></div>
+<div class="field"><label for="walk1km">1公里步行用时（分钟）</label><input type="number" id="walk1km" min="1" max="120" step="0.1" placeholder="固定平坦路线"></div>
+<div class="field"><label for="walkHR">步行结束心率（次/分钟）</label><input type="number" id="walkHR" min="30" max="230" placeholder="可选"></div>
+<div class="field full"><label for="fitnessNote">测试条件 / 感受</label><textarea id="fitnessNote" rows="2" placeholder="例如路线、天气、鞋子、是否疲劳等，便于下次比较。"></textarea></div>
+</div><div class="actions"><button class="btn" id="saveFitness">保存本月评估</button></div>
+<div class="callout warn">安全提醒：如出现胸痛、明显气短、头晕、心悸或疼痛，立即停止。存在平衡障碍、近期跌倒或已知心血管疾病时，先向医生确认是否适合测试。</div>
+</div>
+<div class="panel"><h3>测试说明</h3>
+<div class="list">
+<div class="record"><div><strong>握力</strong><small>每只手测2–3次，记录最好成绩；每次保持相同姿势。</small></div></div>
+<div class="record"><div><strong>30秒坐站</strong><small>使用稳固椅子，双臂交叉于胸前，记录30秒内完整站起次数。</small></div></div>
+<div class="record"><div><strong>单腿站立</strong><small>靠近墙或稳固支撑物；左右腿分别测试，不追求极限时长。</small></div></div>
+<div class="record"><div><strong>1公里步行</strong><small>选择平坦固定路线，以舒适、可持续的速度完成，不做冲刺测试。</small></div></div>
+</div>
+<div class="hr"></div><h3>最近一次评估</h3><div id="latestFitness" class="empty">尚无体能评估。</div></div>
+</div>
+<div class="panel" style="margin-top:14px"><h3>体能历史</h3><div id="fitnessHistory" class="tablewrap"><div class="empty">保存评估后显示历史记录。</div></div></div>
+</section>
+
+<section class="view" id="trends">
+<div class="sectionhead"><div><h2>趋势与数据管理</h2><p>用连续数据观察方向；记录不足时，不做过度解释。</p></div><span class="pill">本机保存</span></div>
+<div class="chartbox"><div class="charthead"><h3>指标趋势</h3><select id="chartMetric"><option value="weight">体重（kg）</option><option value="waist">腰围（cm）</option><option value="systolic">收缩压（mmHg）</option><option value="diastolic">舒张压（mmHg）</option><option value="restingHR">静息心率（次/分钟）</option><option value="sleep">睡眠（小时）</option><option value="steps">步数</option></select></div><div id="chartArea"><div class="chart-empty">记录至少两次后显示趋势图。</div></div></div>
+<div class="panel" style="margin-top:14px"><h3>最近日常记录</h3><div id="dailyHistory" class="tablewrap"><div class="empty">尚无日常数据。</div></div></div>
+<div class="grid two" style="margin-top:14px">
+<div class="panel"><h3>导出与迁移</h3><p class="sub">所有数据保存在本机浏览器。建议定期导出 JSON 备份，换设备或清理浏览器前先备份。</p><div class="actions"><button class="btn" id="exportJSON">导出完整备份 JSON</button><button class="btn secondary" id="exportCSV">导出日常数据 CSV</button><label class="btn secondary" for="importJSON">导入 JSON 备份</label><input id="importJSON" type="file" accept="application/json" hidden></div><div class="callout">本工具不连接服务器、不上传健康数据。清除浏览器数据可能导致记录丢失；建议将备份保存在自己控制的位置。</div></div>
+<div class="panel"><h3>数据清理</h3><p class="sub">清空操作无法撤销。请先导出备份。</p><button class="btn danger" id="clearAll">清空本机全部健康记录</button><p class="inline-note">不需要天天测所有指标。以稳定、可重复的测量条件为先。</p></div>
+</div>
+</section>
+</main>
+<footer class="wrap footer"><span>个人健康监测 · 余暮</span><span>用于自我观察，不替代医疗诊断、治疗或医生建议。</span></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+"use strict";
+var KEY="ymHealthTracker.v1";
+function today(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function monthNow(){return today().slice(0,7)}
+function blank(){return {profile:{height:null,weeklyGoal:150},daily:{},bp:[],waist:[],fitness:{}}}
+function load(){try{var raw=localStorage.getItem(KEY);if(!raw)return blank();var v=JSON.parse(raw);return {profile:Object.assign(blank().profile,v.profile||{}),daily:v.daily||{},bp:Array.isArray(v.bp)?v.bp:[],waist:Array.isArray(v.waist)?v.waist:[],fitness:v.fitness||{}}}catch(e){return blank()}}
+var state=load();
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));return true}catch(e){toast("保存失败：浏览器存储空间可能不足");return false}}
+function el(id){return document.getElementById(id)}
+function val(id){var x=el(id);return x?x.value.trim():""}
+function num(id){var s=val(id);return s===""?null:Number(s)}
+function fmt(v,d){return v===null||v===undefined||v===""?"—":Number(v).toLocaleString("zh-CN",{maximumFractionDigits:d===undefined?1:d})}
+function esc(s){return String(s===null||s===undefined?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function toast(s){var n=el("toast");n.textContent=s;n.classList.add("show");clearTimeout(window.__ymToastTimer);window.__ymToastTimer=setTimeout(function(){n.classList.remove("show")},2200)}
+function setView(name){document.querySelectorAll(".tab").forEach(function(b){b.classList.toggle("active",b.dataset.view===name)});document.querySelectorAll(".view").forEach(function(v){v.classList.toggle("active",v.id===name)});history.replaceState(null,"","#"+name);if(name==="trends")renderChart();window.scrollTo({top:0,behavior:"smooth"})}
+document.querySelectorAll(".tab").forEach(function(b){b.addEventListener("click",function(){setView(b.dataset.view)})});
+document.querySelectorAll("[data-nav]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();setView(a.dataset.nav)})});
+function dateInputDefaults(){el("todayLabel").textContent="今天 · "+today();["dailyDate","bpDate","waistDate"].forEach(function(id){el(id).value=today()});el("fitnessMonth").value=monthNow()}
+function setField(id,v){el(id).value=v===null||v===undefined?"":v}
+function readDailyForm(){return {weight:num("weight"),restingHR:num("restingHR"),sleep:num("sleep"),steps:num("steps"),exercise:num("exercise"),note:val("dailyNote")}}
+function fillDaily(date){var d=state.daily[date]||{};el("dailyDate").value=date;["weight","restingHR","sleep","steps","exercise"].forEach(function(k){setField(k,d[k])});setField("dailyNote",d.note||"")}
+el("dailyDate").addEventListener("change",function(){if(this.value)fillDaily(this.value)});
+el("saveDaily").addEventListener("click",function(){var date=val("dailyDate"),data=readDailyForm();if(!date){toast("请先选择日期");return}if(Object.keys(data).every(function(k){return data[k]===null||data[k]===""})){toast("请至少填写一项数据");return}state.daily[date]=data;if(save()){renderAll();toast("日常记录已保存")}});
+el("clearDailyForm").addEventListener("click",function(){["weight","restingHR","sleep","steps","exercise","dailyNote"].forEach(function(k){setField(k,"")})});
+el("saveProfile").addEventListener("click",function(){var h=num("height"),g=num("weeklyGoal");if(h!==null&&(h<100||h>230)){toast("请检查身高数值");return}if(g===null||g<30||g>600){toast("每周目标请填写30–600分钟");return}state.profile.height=h;state.profile.weeklyGoal=g;if(save()){renderOverview();toast("个人设置已保存")}});
+el("saveBP").addEventListener("click",function(){var d=val("bpDate"),s=num("systolic"),dia=num("diastolic"),p=num("bpPulse");if(!d||s===null||dia===null){toast("请填写日期、收缩压和舒张压");return}if(s<50||s>280||dia<25||dia>180||s<=dia){toast("血压数值不合理，请检查输入");return}state.bp.push({id:Date.now(),date:d,period:val("bpPeriod"),sys:s,dia:dia,pulse:p,note:val("bpNote")});state.bp.sort(function(a,b){return (a.date+a.id).localeCompare(b.date+b.id)});save();setField("systolic","");setField("diastolic","");setField("bpPulse","");setField("bpNote","");renderAll();if(s>=180||dia>=120){el("bpAlert").innerHTML='<div class="callout alert">读数非常高：请安静休息约1分钟后复测；如复测仍达到收缩压≥180或舒张压≥120 mmHg，应尽快寻求医疗帮助。如伴胸痛、呼吸困难、明显头痛、视力变化或肢体无力等症状，请立即急诊。</div>'}else{el("bpAlert").innerHTML="";toast("血压记录已添加")}});
+el("saveWaist").addEventListener("click",function(){var d=val("waistDate"),w=num("waist");if(!d||w===null||w<30||w>220){toast("请填写有效日期和腰围");return}state.waist=state.waist.filter(function(x){return x.date!==d});state.waist.push({date:d,waist:w,note:val("waistNote")});state.waist.sort(function(a,b){return a.date.localeCompare(b.date)});save();setField("waist","");setField("waistNote","");renderAll();toast("腰围记录已保存")});
+el("saveFitness").addEventListener("click",function(){var m=val("fitnessMonth");if(!m){toast("请选择评估月份");return}var keys=["gripL","gripR","chair","balanceL","balanceR","walk1km","walkHR"],o={note:val("fitnessNote")};keys.forEach(function(k){o[k]=num(k)});if(keys.every(function(k){return o[k]===null})){toast("请至少填写一项测试结果");return}state.fitness[m]=o;save();renderFitness();toast("本月体能评估已保存")});
+function avg(arr,key){var a=arr.map(function(x){return Number(x[key])}).filter(function(x){return Number.isFinite(x)});return a.length?a.reduce(function(x,y){return x+y},0)/a.length:null}
+function latest(arr){return arr.length?arr.slice().sort(function(a,b){return (b.date||"").localeCompare(a.date||""))[0]:null}
+function renderOverview(){
+var days=Object.keys(state.daily).sort(),last=days.length?state.daily[days[days.length-1]]:null,date=days.length?days[days.length-1]:null;
+el("latestWeight").textContent=last&&last.weight!==null?fmt(last.weight,1):"—";el("weightDate").textContent=date||"尚无记录";
+var bp=state.bp.slice().sort(function(a,b){return (b.date+b.id).localeCompare(a.date+a.id)}),b=bp[0];el("latestBP").textContent=b?fmt(b.sys,0)+"/"+fmt(b.dia,0):"—";el("bpDate").textContent=b?b.date+" · "+b.period:"尚无记录";
+var cutoff=new Date();cutoff.setDate(cutoff.getDate()-6);var recent=days.filter(function(d){return new Date(d+"T12:00:00")>=cutoff}).map(function(d){return state.daily[d]});
+el("avgSleep").textContent=fmt(avg(recent,"sleep"),1);el("avgSteps").textContent=fmt(avg(recent,"steps"),0);
+el("restingCard").textContent=last&&last.restingHR!==null?fmt(last.restingHR,0)+" 次/分 · "+date:"暂无记录";
+var w=latest(state.waist),height=Number(state.profile.height);el("waistCard").textContent=w?fmt(w.waist,1)+" cm · "+(height>0?"腰围身高比 "+fmt(w.waist/height,2):"未设置身高"):"暂无记录";
+if(last&&last.weight!==null&&height>0){var bmi=last.weight/Math.pow(height/100,2);el("bmiCard").textContent=fmt(bmi,1)+" · 仅供追踪"}else{el("bmiCard").textContent=height>0?"补充体重记录":"填写身高后计算"}
+var weekMins=recent.reduce(function(a,x){return a+Number(x.exercise||0)},0);el("exerciseCard").textContent=weekMins+" 分钟 / "+Number(state.profile.weeklyGoal||150)+" 分钟目标";
+var fitKeys=Object.keys(state.fitness).sort(),f=fitKeys.length?state.fitness[fitKeys[fitKeys.length-1]]:null;el("fitnessCard").textContent=f?"最近评估 "+fitKeys[fitKeys.length-1]:"暂无记录";
+var strength=recent.filter(function(x){return /力量|抗阻|哑铃|器械/.test(x.note||"")}).length;el("strengthCard").textContent=strength?strength+" 天备注有力量训练":"请在日常备注中写明力量训练";
+var rows=[];days.slice().reverse().forEach(function(d){var x=state.daily[d];rows.push({date:d,label:"日常",detail:[x.weight!==null&&x.weight!==undefined?"体重 "+fmt(x.weight,1)+"kg":null,x.sleep!==null&&x.sleep!==undefined?"睡眠 "+fmt(x.sleep,1)+"h":null,x.steps!==null&&x.steps!==undefined?"步数 "+fmt(x.steps,0):null].filter(Boolean).join(" · ")})});bp.slice(0,10).forEach(function(x){rows.push({date:x.date,label:"血压",detail:x.period+" "+x.sys+"/"+x.dia+" mmHg"})});rows.sort(function(a,b){return b.date.localeCompare(a.date)});rows=rows.slice(0,10);
+el("recentList").innerHTML=rows.length?rows.map(function(x){return '<div class="record"><div><strong>'+esc(x.label)+' · '+esc(x.date)+'</strong><small>'+esc(x.detail||"已记录")+'</small></div></div>'}).join(""):'<div class="empty">还没有记录。进入「日常记录」添加第一条数据。</div>';
+el("height").value=state.profile.height||"";el("weeklyGoal").value=state.profile.weeklyGoal||150;
+}
+function renderBP(){var arr=state.bp.slice().sort(function(a,b){return (b.date+b.id).localeCompare(a.date+a.id)}).slice(0,8);el("bpList").innerHTML=arr.length?arr.map(function(x){return '<div class="record"><div><strong>'+esc(x.date)+' · '+esc(x.period)+' · '+x.sys+'/'+x.dia+' mmHg</strong><small>'+(x.pulse?"脉搏 "+x.pulse+" 次/分 · ":"")+esc(x.note||"")+'</small></div><button data-del-bp="'+x.id+'">删除</button></div>'}).join(""):'<div class="empty">尚无血压数据。</div>';document.querySelectorAll("[data-del-bp]").forEach(function(btn){btn.addEventListener("click",function(){if(!confirm("删除这条血压记录？"))return;state.bp=state.bp.filter(function(x){return String(x.id)!==btn.dataset.delBp});save();renderAll()})})}
+function renderFitness(){var keys=Object.keys(state.fitness).sort().reverse(),latestKey=keys[0],f=latestKey?state.fitness[latestKey]:null;el("latestFitness").innerHTML=f?'<strong>'+esc(latestKey)+'</strong><p class="tiny">握力 左 '+fmt(f.gripL,1)+' / 右 '+fmt(f.gripR,1)+' kg<br>30秒坐站 '+fmt(f.chair,0)+' 次 · 平衡 左 '+fmt(f.balanceL,1)+' / 右 '+fmt(f.balanceR,1)+' 秒<br>1公里 '+fmt(f.walk1km,1)+' 分钟 · 结束心率 '+fmt(f.walkHR,0)+'</p>':'尚无体能评估';el("fitnessHistory").innerHTML=keys.length?'<table><thead><tr><th>月份</th><th>左握力</th><th>右握力</th><th>坐站</th><th>左平衡</th><th>右平衡</th><th>1公里</th></tr></thead><tbody>'+keys.map(function(k){var x=state.fitness[k];return '<tr><td>'+esc(k)+'</td><td>'+fmt(x.gripL,1)+'</td><td>'+fmt(x.gripR,1)+'</td><td>'+fmt(x.chair,0)+'</td><td>'+fmt(x.balanceL,1)+'</td><td>'+fmt(x.balanceR,1)+'</td><td>'+fmt(x.walk1km,1)+'</td></tr>'}).join("")+'</tbody></table>':'<div class="empty">保存评估后显示历史记录。</div>';el("fitnessMonth").value=monthNow();if(f){["gripL","gripR","chair","balanceL","balanceR","walk1km","walkHR"].forEach(function(k){setField(k,"")});setField("fitnessNote","")}}
+function dailySeries(metric){var a=[];Object.keys(state.daily).sort().forEach(function(d){var x=state.daily[d],v=x[metric];if(v!==null&&v!==undefined&&v!=="")a.push({date:d,value:Number(v)})});if(metric==="waist"){a=state.waist.slice().sort(function(x,y){return x.date.localeCompare(y.date)}).map(function(x){return {date:x.date,value:Number(x.waist)}})}if(metric==="systolic"||metric==="diastolic"){a=state.bp.slice().sort(function(x,y){return x.date.localeCompare(y.date)}).map(function(x){return {date:x.date,value:Number(metric==="systolic"?x.sys:x.dia)}})}return a}
+function renderChart(){var metric=el("chartMetric").value,series=dailySeries(metric).slice(-24),labels={weight:"体重（kg）",waist:"腰围（cm）",systolic:"收缩压（mmHg）",diastolic:"舒张压（mmHg）",restingHR:"静息心率（次/分钟）",sleep:"睡眠（小时）",steps:"步数"};if(series.length<2){el("chartArea").innerHTML='<div class="chart-empty">记录至少两次后显示趋势图。</div>';return}var w=900,h=250,left=58,right=20,top=22,bottom=40,vals=series.map(function(x){return x.value}),min=Math.min.apply(null,vals),max=Math.max.apply(null,vals);if(min===max){min-=1;max+=1}var pad=(max-min)*.16;min-=pad;max+=pad;function X(i){return left+i*(w-left-right)/(series.length-1)}function Y(v){return top+(max-v)*(h-top-bottom)/(max-min)}var pts=series.map(function(x,i){return X(i)+","+Y(x.value)}).join(" ");var ticks=4,grid="";for(var i=0;i<=ticks;i++){var v=min+(max-min)*i/ticks,y=Y(v);grid+='<line x1="'+left+'" y1="'+y+'" x2="'+(w-right)+'" y2="'+y+'" stroke="#e5e8df" stroke-width="1"/><text x="'+(left-9)+'" y="'+(y+4)+'" text-anchor="end" fill="#829087" font-size="11">'+(metric==="steps"?Math.round(v).toLocaleString("zh-CN"):v.toFixed(1))+'</text>'}var dots=series.map(function(x,i){return '<circle cx="'+X(i)+'" cy="'+Y(x.value)+'" r="4" fill="#426b56"><title>'+esc(x.date)+'：'+fmt(x.value,1)+'</title></circle>'}).join("");var xlabels="";series.forEach(function(x,i){if(i===0||i===series.length-1||i%Math.ceil(series.length/5)===0)xlabels+='<text x="'+X(i)+'" y="'+(h-12)+'" text-anchor="middle" fill="#829087" font-size="10">'+esc(x.date.slice(5))+'</text>'});el("chartArea").innerHTML='<svg class="chart" viewBox="0 0 '+w+' '+h+'" role="img" aria-label="'+labels[metric]+'趋势图">'+grid+'<polyline points="'+pts+'" fill="none" stroke="#426b56" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>'+dots+xlabels+'</svg><p class="tiny" style="margin:0 8px 4px">'+labels[metric]+' · 最近'+series.length+'条记录（仅展示已录入数据）</p>'}
+el("chartMetric").addEventListener("change",renderChart);
+function renderDailyHistory(){var keys=Object.keys(state.daily).sort().reverse();el("dailyHistory").innerHTML=keys.length?'<table><thead><tr><th>日期</th><th>体重 kg</th><th>心率 次/分</th><th>睡眠 h</th><th>步数</th><th>运动 min</th><th>备注</th><th></th></tr></thead><tbody>'+keys.map(function(d){var x=state.daily[d];return '<tr><td>'+esc(d)+'</td><td>'+fmt(x.weight,1)+'</td><td>'+fmt(x.restingHR,0)+'</td><td>'+fmt(x.sleep,1)+'</td><td>'+fmt(x.steps,0)+'</td><td>'+fmt(x.exercise,0)+'</td><td>'+esc(x.note||"")+'</td><td><button data-del-day="'+esc(d)+'">删除</button></td></tr>'}).join("")+'</tbody></table>':'<div class="empty">尚无日常数据。</div>';document.querySelectorAll("[data-del-day]").forEach(function(btn){btn.addEventListener("click",function(){if(!confirm("删除 "+btn.dataset.delDay+" 的日常记录？"))return;delete state.daily[btn.dataset.delDay];save();renderAll()})})}
+function renderAll(){renderOverview();renderBP();renderFitness();renderDailyHistory();renderChart()}
+function download(name,content,type){var blob=new Blob([content],{type:type}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(function(){URL.revokeObjectURL(url)},500)}
+el("exportJSON").addEventListener("click",function(){download("个人健康记录备份_"+today()+".json",JSON.stringify(state,null,2),"application/json;charset=utf-8");toast("JSON备份已导出")});
+el("exportCSV").addEventListener("click",function(){var rows=[["日期","体重kg","静息心率","睡眠小时","步数","运动分钟","备注"]];Object.keys(state.daily).sort().forEach(function(d){var x=state.daily[d];rows.push([d,x.weight,x.restingHR,x.sleep,x.steps,x.exercise,x.note])});var csv="\ufeff"+rows.map(function(r){return r.map(function(v){return '"'+String(v===null||v===undefined?"":v).replace(/"/g,'""')+'"'}).join(",")}).join("\r\n");download("个人健康日常记录_"+today()+".csv",csv,"text/csv;charset=utf-8");toast("CSV已导出")});
+el("importJSON").addEventListener("change",function(e){var file=e.target.files[0];if(!file)return;var reader=new FileReader();reader.onload=function(){try{var v=JSON.parse(reader.result);if(!v||!v.profile||!v.daily||!Array.isArray(v.bp)||!Array.isArray(v.waist)||!v.fitness)throw new Error("bad");state={profile:Object.assign(blank().profile,v.profile),daily:v.daily,bp:v.bp,waist:v.waist,fitness:v.fitness};save();renderAll();toast("备份导入成功")}catch(err){alert("导入失败：请选择本工具导出的 JSON 备份文件。")}};reader.readAsText(file);e.target.value=""});
+el("clearAll").addEventListener("click",function(){if(!confirm("确定清空本机全部健康记录吗？该操作无法撤销。请先导出备份。"))return;state=blank();save();["weight","restingHR","sleep","steps","exercise","dailyNote","systolic","diastolic","bpPulse","bpNote","waist","waistNote","gripL","gripR","chair","balanceL","balanceR","walk1km","walkHR","fitnessNote"].forEach(function(k){setField(k,"")});renderAll();toast("本机记录已清空")});
+dateInputDefaults();fillDaily(today());var hash=location.hash.replace("#","");if(["overview","daily","fitness","trends"].indexOf(hash)>=0)setView(hash);renderAll();
+})();
+</script>
+</body>
+</html>
