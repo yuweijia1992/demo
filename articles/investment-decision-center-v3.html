@@ -14,7 +14,7 @@
 
 <section class="section" id="valuation"><div class="section-head"><h2>01 / 全球估值分位</h2><p>标普500、纳斯达克、A股、港股：当前PE/PB在自身历史中的位置。</p></div>
 <div class="panel"><p class="muted">系统自动读取仓库中的真实月度估值矩阵与来源审计；目前自动接入沪深300PE/PB、标普500PE-TTM/CAPE。纳指与恒生仅展示独立快照，不将不同来源或不同频率拼接为虚假的连续历史。仍可用下方CSV导入覆盖分析。</p><input type="file" id="valuationFile" accept=".csv,text/csv"><button class="action" id="valuationImport">导入估值历史并计算</button><span class="pill" id="valuationFileStatus">尚未导入</span><div class="table-wrap"><table><thead><tr><th>市场</th><th>估值指标</th><th>最新值</th><th>历史样本</th><th>历史分位</th><th>观察</th></tr></thead><tbody id="valuationRows"><tr><td colspan="6">需要导入有来源的月度估值数据。</td></tr></tbody></table></div><div class="section-head" style="margin-top:18px"><h3>低频观测与公开快照（不参与月频分位）</h3><p>用于交叉核对和补充观察；季度、年度和单日快照不插值、不拼接。</p></div><div class="table-wrap"><table><thead><tr><th>指数</th><th>指标</th><th>最新观测</th><th>频率</th><th>来源与限制</th></tr></thead><tbody id="valuationAuxRows"><tr><td colspan="5">正在读取低频补充数据……</td></tr></tbody></table></div><div class="section-head" style="margin-top:22px"><h3>模型估计层｜纳指100与恒生 PE / PB</h3><p>以公开估值快照为锚，结合指数价格路径和盈利/净资产增长假设，生成估计序列；不替代真实历史观测。</p></div>
-<div class="notice">此处展示的是模型估计值，不是指数公司或数据商发布的历史PE/PB。历史分位仅在估计序列内部计算。估计低/高区间是参数情景包络，不是统计置信区间。真实观测仍保留在上方独立面板。</div>
+<div class="notice">此处展示的是模型估计值，不是指数公司或数据商发布的历史PE/PB。历史分位仅在估计序列内部计算。Yahoo全历史行情对早期月份约每三个月返回一个点，缺失月份以价格对数线性插值补齐；逐月标明接口点或插值。估计低/高区间是参数情景包络，不是统计置信区间。真实观测仍保留在上方独立面板。</div>
 <div class="fields" style="margin-top:14px">
 <label>指数<select id="estimateIndex"><option value="NDX">纳斯达克100</option><option value="HSI">恒生指数</option></select></label>
 <label>代入决策的估值指标<select id="estimateMetric"><option value="PE_TTM">PE-TTM</option><option value="PB">PB</option></select></label>
@@ -23,7 +23,7 @@
 <div class="grid3" id="estimatedValuationCards" style="margin-top:14px">
 <div class="metric"><small>模型PE-TTM</small><strong>等待数据</strong></div><div class="metric"><small>模型PB</small><strong>等待数据</strong></div><div class="metric"><small>数据性质</small><strong>模型估计</strong></div>
 </div>
-<div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>月份</th><th>PE估计（区间）</th><th>PE 5年/10年估计分位</th><th>PB估计（区间）</th><th>PB 5年/10年估计分位</th></tr></thead><tbody id="estimatedHistoryRows"><tr><td colspan="5">首次生成估计文件后自动显示。</td></tr></tbody></table></div>
+<div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>月份</th><th>PE估计（区间）</th><th>PE 5年/10年估计分位</th><th>PB估计（区间）</th><th>PB 5年/10年估计分位</th><th>价格输入</th></tr></thead><tbody id="estimatedHistoryRows"><tr><td colspan="6">首次生成估计文件后自动显示。</td></tr></tbody></table></div>
 <div class="notice" id="estimatedInfo">模型估值文件尚未生成或正在加载。</div>
 <button class="action" id="useEstimatedValuation" disabled>将所选模型估计分位带入决策引擎</button>
 <div class="hint">注意：PE需统一TTM/Forward口径，PB需统一最新财报/滚动口径；不同口径不可拼接。纳指100可参考 <a href="https://historyofmarket.com/nasdaq/ndx-forward-pe/" target="_blank" rel="noopener">NDX Forward PE周频观察</a>（仅外链查看，不镜像受限终端数据）；恒生指数可查阅 <a href="https://www.hsi.com.hk/en-hk/index-resources/index-reports/" target="_blank" rel="noopener">恒生官方历史报告</a>。信用风险长历史采用NFCICREDIT、STLFSI4、KCFSI作为公开代理，不把它们称作公司债OAS。百分位不是合理价值，也不直接等于买卖信号。</div></div></section>
@@ -107,7 +107,7 @@ function refreshEstimatePanel(){
  const rows=estimatedValuation.filter(r=>r.index===index&&num(r.PE_TTM)!==null&&num(r.PB)!==null).sort((a,b)=>a.date.localeCompare(b.date));
  if(!rows.length){
   $("estimatedValuationCards").innerHTML="<div class='metric'><small>模型PE-TTM</small><strong>暂无</strong></div><div class='metric'><small>模型PB</small><strong>暂无</strong></div><div class='metric'><small>模型覆盖</small><strong>待生成</strong></div>";
-  $("estimatedHistoryRows").innerHTML="<tr><td colspan='5'>估计文件尚未生成，或该指数没有可用价格代理。</td></tr>";
+  $("estimatedHistoryRows").innerHTML="<tr><td colspan='6'>估计文件尚未生成，或该指数没有可用价格代理。</td></tr>";
   $("estimatedInfo").textContent="等待GitHub Actions首次运行 build_estimated_index_valuation.py。真实估值面板不会被估计值覆盖。";
   $("useEstimatedValuation").disabled=true;
   return;
@@ -116,7 +116,7 @@ function refreshEstimatePanel(){
  const card=(label,key)=>"<div class='metric'><small>"+label+"（模型估计）</small><strong>"+fmt(num(latest[key]),2)+"x</strong><span class='muted'>情景区间 "+fmt(num(latest[key+"_low"]),2)+"–"+fmt(num(latest[key+"_high"]),2)+"x</span></div>";
  $("estimatedValuationCards").innerHTML=card("PE-TTM","PE_TTM")+card("PB","PB")+"<div class='metric'><small>模型覆盖</small><strong>"+rows.length+"个月</strong><span class='muted'>"+rows[0].date+" — "+latest.date+"</span></div>";
  const hist=rows.slice(-12).reverse();
- $("estimatedHistoryRows").innerHTML=hist.map(r=>"<tr><td>"+r.date+"</td><td>"+fmt(num(r.PE_TTM),2)+"x ("+fmt(num(r.PE_TTM_low),2)+"–"+fmt(num(r.PE_TTM_high),2)+")</td><td>"+(num(r.PE_TTM_5Y_estimated_percentile)===null?"—":fmt(num(r.PE_TTM_5Y_estimated_percentile),0)+"%")+" / "+(num(r.PE_TTM_10Y_estimated_percentile)===null?"—":fmt(num(r.PE_TTM_10Y_estimated_percentile),0)+"%")+"</td><td>"+fmt(num(r.PB),2)+"x ("+fmt(num(r.PB_low),2)+"–"+fmt(num(r.PB_high),2)+")</td><td>"+(num(r.PB_5Y_estimated_percentile)===null?"—":fmt(num(r.PB_5Y_estimated_percentile),0)+"%")+" / "+(num(r.PB_10Y_estimated_percentile)===null?"—":fmt(num(r.PB_10Y_estimated_percentile),0)+"%")+"</td></tr>").join("");
+ $("estimatedHistoryRows").innerHTML=hist.map(r=>"<tr><td>"+r.date+"</td><td>"+fmt(num(r.PE_TTM),2)+"x ("+fmt(num(r.PE_TTM_low),2)+"–"+fmt(num(r.PE_TTM_high),2)+")</td><td>"+(num(r.PE_TTM_5Y_estimated_percentile)===null?"—":fmt(num(r.PE_TTM_5Y_estimated_percentile),0)+"%")+" / "+(num(r.PE_TTM_10Y_estimated_percentile)===null?"—":fmt(num(r.PE_TTM_10Y_estimated_percentile),0)+"%")+"</td><td>"+fmt(num(r.PB),2)+"x ("+fmt(num(r.PB_low),2)+"–"+fmt(num(r.PB_high),2)+")</td><td>"+(num(r.PB_5Y_estimated_percentile)===null?"—":fmt(num(r.PB_5Y_estimated_percentile),0)+"%")+" / "+(num(r.PB_10Y_estimated_percentile)===null?"—":fmt(num(r.PB_10Y_estimated_percentile),0)+"%")+"</td><td>"+(r.price_proxy_status==="provider_observation"?"Yahoo接口返回点":"对数线性插值")+"</td></tr>").join("");
  const metric=$("estimateMetric").value,windowKey=$("estimateWindow").value,pct=num(latest[metric+"_"+windowKey+"_estimated_percentile"]);
  $("useEstimatedValuation").disabled=pct===null;
  $("estimatedInfo").textContent="最新模型月份 "+latest.date+"；锚点估值日期 "+latest.anchor_date+"；价格代理 "+latest.price_proxy_ticker+"（"+latest.price_proxy_source+"）；PE基准EPS增长假设 "+fmt(num(latest.PE_TTM_growth_base)*100,1)+"%，PB基准净资产增长假设 "+fmt(num(latest.PB_growth_base)*100,1)+"%。数据置信度："+latest.confidence+"。所选 "+$("estimateIndex").selectedOptions[0].text+" / "+(metric==="PE_TTM"?"PE-TTM":"PB")+" / "+(windowKey==="5Y"?"5年":"10年")+"估计分位："+(pct===null?"样本不足":fmt(pct,1)+"%")+"。";
