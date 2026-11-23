@@ -20,9 +20,9 @@ def latest(series_id):
     url = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=" + series_id + "&cosd=2018-01-01"
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 ym-investment-dashboard/1.1"})
     last_error = None
-    for attempt in range(2):
+    for attempt in range(4):
         try:
-            with urllib.request.urlopen(req, timeout=18) as response:
+            with urllib.request.urlopen(req, timeout=45) as response:
                 raw = response.read().decode("utf-8-sig")
             rows = list(csv.DictReader(io.StringIO(raw)))
             for row in reversed(rows):
@@ -32,8 +32,8 @@ def latest(series_id):
             raise ValueError("No numeric observations in response")
         except Exception as exc:
             last_error = exc
-            if attempt == 0:
-                time.sleep(1)
+            if attempt < 3:
+                time.sleep(2 ** attempt)
     raise last_error
 
 data, errors = {}, {}
@@ -44,7 +44,7 @@ def fetch_one(item):
     except Exception as exc:
         return key, {"series_id": sid, "label": label, "unit": unit, "value": None, "date": None}, str(exc)[:240]
 
-with ThreadPoolExecutor(max_workers=8) as pool:
+with ThreadPoolExecutor(max_workers=4) as pool:
     futures = [pool.submit(fetch_one, item) for item in SERIES.items()]
     for future in as_completed(futures):
         key, observation, error = future.result()
