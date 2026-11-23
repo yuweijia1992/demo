@@ -131,6 +131,38 @@ def month_no(s):
     y, m = map(int, s.split("-"))
     return y * 12 + m
 
+def month_label(n):
+    y = (n - 1) // 12
+    m = (n - 1) % 12 + 1
+    return f"{y:04d}-{m:02d}"
+
+def complete_month_grid(observed):
+    """Create a monthly price-proxy grid; intervening values are explicitly interpolated."""
+    keys = sorted(observed)
+    if len(keys) < 2:
+        raise RuntimeError("At least two provider price observations are required")
+    first, last = month_no(keys[0]), month_no(keys[-1])
+    obs_nums = [month_no(k) for k in keys]
+    grid, quality = {}, {}
+    for n in range(first, last + 1):
+        month = month_label(n)
+        if month in observed:
+            grid[month] = float(observed[month])
+            quality[month] = "provider_observation"
+            continue
+        lefts = [x for x in obs_nums if x < n]
+        rights = [x for x in obs_nums if x > n]
+        if not lefts or not rights:
+            continue
+        left, right = max(lefts), min(rights)
+        m0, m1 = month_label(left), month_label(right)
+        weight = (n - left) / (right - left)
+        # Log-linear interpolation maintains positive prices and smooth compound growth.
+        grid[month] = math.exp(math.log(float(observed[m0])) * (1-weight) +
+                               math.log(float(observed[m1])) * weight)
+        quality[month] = "log_linear_interpolation_between_sparse_provider_points"
+    return grid, quality, max((b-a for a,b in zip(obs_nums, obs_nums[1:])), default=0)
+
 def main():
     snapshots = read_snapshots()
     price_rows, estimates, audit = [], [], {
@@ -165,6 +197,8 @@ def main():
                     failures.append(f"{candidate}: {exc}")
             if not closes:
                 raise RuntimeError(" ; ".join(failures))
+            observed_closes = closes
+            closes, price_quality, max_source_gap = complete_month_grid(observed_closes)
             anchor_pe = get_anchor(snapshots, index, "PE_TTM")
             anchor_pb = get_anchor(snapshots, index, "PB")
             anchor_month = anchor_pe["date"][:7]
@@ -193,6 +227,7 @@ def main():
                     "date": month, "index": index, "index_name": cfg["label"],
                     "price_proxy": round(price, 6), "price_proxy_ticker": ticker,
                     "price_proxy_source": f"Yahoo Finance ({host})",
+                    "price_proxy_status": price_quality.get(month, "unknown"),
                     "anchor_date": anchor_pe["date"], "anchor_price_month": price_anchor_month,
                     "status": "MODELLED_ESTIMATE", "confidence": cfg["confidence"]
                 }
@@ -240,23 +275,29 @@ def main():
                         row["PB_" + years + "_estimated_percentile"] = ""
             for month, close in ordered:
                 price_rows.append({"date": month, "index": index, "ticker": ticker,
-                                   "close": round(close, 6), "frequency": "monthly",
+                                   "close": round(close, 6), "frequency": "monthly_grid",
                                    "source": f"Yahoo Finance ({host})",
+                                   "source_observation_status": price_quality.get(month, "unknown"),
                                    "status": "price_proxy_not_valuation"})
             audit["coverage"][index] = {
                 "ticker_used": ticker, "first_month": ordered[0][0], "last_month": ordered[-1][0],
-                "monthly_price_observations": len(ordered), "estimated_valuation_rows": len(valid_months),
+                "provider_price_observations": len(observed_closes),
+                "monthly_grid_observations": len(ordered),
+                "interpolated_months": sum(1 for v in price_quality.values() if v != "provider_observation"),
+                "max_gap_between_provider_points_months": max_source_gap,
+                "price_grid_method": "log-linear interpolation between sparse Yahoo historical points; observed points retained",
+                "estimated_valuation_rows": len(valid_months),
                 "price_anchor_month": price_anchor_month, "anchor_date": anchor_pe["date"],
-                "status": "OK", "confidence": cfg["confidence"]
+                "status": "OK_MODELLED_GRID", "confidence": cfg["confidence"]
             }
         except Exception as exc:
             audit["errors"][index] = str(exc)[:600]
             audit["coverage"][index] = {"status": "ERROR", "error": str(exc)[:600]}
-    price_cols = ["date", "index", "ticker", "close", "frequency", "source", "status"]
+    price_cols = ["date", "index", "ticker", "close", "frequency", "source", "source_observation_status", "status"]
     with PRICE_OUT.open("w", encoding="utf-8-sig", newline="") as f:
         w = csv.DictWriter(f, fieldnames=price_cols); w.writeheader(); w.writerows(price_rows)
     cols = [
-        "date", "index", "index_name", "price_proxy", "price_proxy_ticker", "price_proxy_source",
+        "date", "index", "index_name", "price_proxy", "price_proxy_ticker", "price_proxy_source", "price_proxy_status",
         "anchor_date", "anchor_price_month", "status", "confidence",
         "PE_TTM", "PE_TTM_low", "PE_TTM_high", "PE_TTM_anchor", "PE_TTM_growth_base", "PE_TTM_growth_low", "PE_TTM_growth_high", "PE_TTM_anchor_sources", "PE_TTM_5Y_estimated_percentile", "PE_TTM_10Y_estimated_percentile",
         "PB", "PB_low", "PB_high", "PB_anchor", "PB_growth_base", "PB_growth_low", "PB_growth_high", "PB_anchor_sources", "PB_5Y_estimated_percentile", "PB_10Y_estimated_percentile", "5Y_sample_n", "10Y_sample_n"
