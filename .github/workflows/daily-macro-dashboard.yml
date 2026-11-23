@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - "scripts/update_macro_dashboard.py"
+      - "scripts/fetch_credit_stress_history.py"
       - ".github/workflows/daily-macro-dashboard.yml"
   schedule:
     - cron: "25 0 * * 1-5"
@@ -22,18 +23,20 @@ jobs:
         with:
           python-version: "3.12"
       - name: Validate updater syntax
-        run: python -m py_compile scripts/update_macro_dashboard.py
+        run: python -m py_compile scripts/update_macro_dashboard.py scripts/fetch_credit_stress_history.py
       - name: Fetch public FRED observations
         run: python scripts/update_macro_dashboard.py
+      - name: Archive public credit-stress proxies
+        run: python scripts/fetch_credit_stress_history.py
       - name: Commit changed snapshot
         run: |
-          if git diff --quiet -- data/macro-dashboard.json; then
+          if git diff --quiet -- data/macro-dashboard.json data/macro; then
             echo "No macro data changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/macro-dashboard.json
+          git add data/macro-dashboard.json data/macro
           git commit -m "Refresh daily macro dashboard"
           git pull --rebase origin main
           git push
