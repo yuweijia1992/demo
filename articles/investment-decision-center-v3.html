@@ -91,13 +91,15 @@ async function loadPublicValuation(){
 async function loadMacroHistory(){
  try{
   const paths=["sp500-macro-factor-model-monthly.csv","fred-dfii10-daily.csv","fred-fedfunds-monthly.csv","fred-nfci-weekly.csv"];
-  const texts=await Promise.all(paths.map(p=>fetch("../data/index-valuation/"+p,{cache:"no-store"}).then(r=>{if(!r.ok)throw Error(p+" "+r.status);return r.text();})));
+  const texts=await Promise.all(paths.map(p=>fetch("../data/index-valuation/"+p,{cache:"no-store"}).then(r=>{if(!r.ok)throw Error(p+" "+r.status);return r.text();})));\n  let live={};try{live=await fetch("../data/macro-dashboard.json",{cache:"no-store"}).then(r=>r.ok?r.json():{});}catch(e){}
   const model=parseCSV(texts[0]),real=parseCSV(texts[1]),funds=parseCSV(texts[2]),nfci=parseCSV(texts[3]);
   const lastValid=(arr,key)=>arr.filter(r=>num(r[key])!==null).at(-1);
   const mr=lastValid(model,"composite_risk_score"),rr=lastValid(real,"dfii10_pct"),fr=lastValid(funds,"fedfunds_pct"),nr=lastValid(nfci,"nfci");
   const stale=mr?Math.floor((Date.now()-new Date(mr.date+"-01T00:00:00").getTime())/86400000):999;
   $("macroState").textContent=mr?"历史 "+fmt(num(mr.composite_risk_score),0)+"/100":"待核验";
-  $("macroResult").innerHTML="<b>已自动读取历史宏观数据</b><br>宏观模型最新月份："+(mr?mr.date:"—")+"；风险分数 "+(mr?fmt(num(mr.composite_risk_score),1)+"/100（"+(mr.risk_band_36m||"未分档")+"）":"—")+"。<br>10年期实际利率最新观测："+(rr?fmt(num(rr.dfii10_pct),2)+"%（"+rr.observation_date+"）":"—")+"；联邦基金利率："+(fr?fmt(num(fr.fedfunds_pct),2)+"%（"+fr.date+"）":"—")+"；芝加哥联储金融状况指数NFCI："+(nr?fmt(num(nr.nfci),3)+"（"+nr.date+"）":"—")+".<br><b>"+(stale>90?"历史模型已超过90天，不能当作当前交易信号。":"历史模型日期较新，但仍需核对实时性。")+"</b><br>尚缺：DXY原始美元指数、VIX可公开再分发的历史数据、可公开再分发的ICE信用利差。NFCI是综合金融状况指标，不等于信用利差。";
+  const ls=live.series||{}, liveRows=[["10年期实际利率",ls.us10y_real],["10年期名义利率",ls.us10y_nominal],["VIX",ls.vix],["美元广义指数（非ICE DXY）",ls.dxy_broad],["USD/CNY",ls.usdcny],["布伦特原油",ls.brent],["联邦基金利率",ls.fed_funds],["美国CPI指数",ls.us_cpi_index]];
+  const liveText=liveRows.map(([label,x])=>label+"："+(x&&x.value!==null?fmt(num(x.value),2)+"（"+x.date+"）":"暂无成功观测")).join("；");
+  $("macroResult").innerHTML="<b>自动接入宏观数据</b><br>最新自动快照："+(live.generated_at||"尚无成功更新")+"；状态 "+(live.status||"未知")+"。<br>"+liveText+"<br><br><b>历史模型参考：</b>最新月份 "+(mr?mr.date:"—")+"；风险分数 "+(mr?fmt(num(mr.composite_risk_score),1)+"/100（"+(mr.risk_band_36m||"未分档")+"）":"—")+"。10年期实际利率历史最新值："+(rr?fmt(num(rr.dfii10_pct),2)+"%（"+rr.observation_date+"）":"—")+"；联邦基金利率："+(fr?fmt(num(fr.fedfunds_pct),2)+"%（"+fr.date+"）":"—")+"；NFCI："+(nr?fmt(num(nr.nfci),3)+"（"+nr.date+"）":"—")+".<br><b>"+(stale>90?"历史模型已超过90天，只作研究参考，不作为当前交易信号。":"历史模型日期较新，但仍需核对实时性。")+"</b><br>信用利差暂未接入可公开再分发的连续数据；NFCI是综合金融状况指标，不等于信用利差。";
   $("macroSource").value="自动来源：FRED DFII10 / FEDFUNDS；Chicago Fed NFCI；模型文件 sp500-macro-factor-model-monthly.csv";
  }catch(e){$("macroResult").textContent="宏观历史数据自动读取失败："+e.message;}
 }
