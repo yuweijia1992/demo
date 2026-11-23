@@ -124,6 +124,7 @@ def get_anchor(snapshots, index, metric):
         "low": min(values),
         "high": max(values),
         "sources": [{"date": r["date"], "value": r["value_num"], "source": r.get("source", "")} for r in recent],
+        "unique_source_count": len({str(r.get("source", "")).strip() for r in recent if str(r.get("source", "")).strip()}),
         "n": len(values)
     }
 
@@ -238,7 +239,7 @@ def main():
                     base = anchor["anchor_value"] * ratio / ((1 + g["base"]) ** month_year_gap)
                     # Explicitly envelope anchor source dispersion and growth scenarios.
                     anchor_low, anchor_high = anchor["low"], anchor["high"]
-                    if kind == "PB" and anchor["n"] == 1:
+                    if kind == "PB" and anchor["unique_source_count"] <= 1:
                         # One PB snapshot cannot identify source dispersion; apply a disclosed model band.
                         anchor_low = anchor["anchor_value"] * (1 - cfg["pb_band_pct"])
                         anchor_high = anchor["anchor_value"] * (1 + cfg["pb_band_pct"])
