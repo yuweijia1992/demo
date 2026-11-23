@@ -25,8 +25,8 @@ MODELS = {
         "label": "Nasdaq-100",
         "ticker_candidates": ["^NDX", "QQQ"],
         "price_proxy_note": "Yahoo Finance ^NDX index monthly close; QQQ unadjusted close fallback",
-        "growth": {"PE": {"base": 0.08, "low": 0.05, "high": 0.11},
-                   "PB": {"base": 0.09, "low": 0.06, "high": 0.12}},
+        "growth": {"PE": {"base": 0.12, "low": 0.09, "high": 0.15},
+                   "PB": {"base": 0.10, "low": 0.07, "high": 0.13}},
         "pb_band_pct": 0.15,
         "confidence": "低：PE来源之间存在明显差异；PB只有单个独立快照"
     },
@@ -34,7 +34,7 @@ MODELS = {
         "label": "恒生指数",
         "ticker_candidates": ["^HSI", "2800.HK"],
         "price_proxy_note": "Yahoo Finance ^HSI index monthly close; 2800.HK unadjusted close fallback",
-        "growth": {"PE": {"base": 0.04, "low": 0.02, "high": 0.06},
+        "growth": {"PE": {"base": 0.05, "low": 0.03, "high": 0.07},
                    "PB": {"base": 0.05, "low": 0.03, "high": 0.07}},
         "pb_band_pct": 0.10,
         "confidence": "低：估值锚点来自公开页面快照，缺少完整历史财报聚合"
