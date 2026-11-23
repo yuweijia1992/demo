@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-11-23T07:54:53+00:00",
+  "generated_at": "2026-11-23T08:47:19+00:00",
   "timezone": "UTC",
   "status": "ok",
   "source": "Federal Reserve Bank of St. Louis FRED public CSV graph endpoint",
@@ -89,6 +89,27 @@
       "unit": "index",
       "date": "2026-11-13",
       "value": -0.478
+    },
+    "credit_conditions_subindex": {
+      "series_id": "NFCICREDIT",
+      "label": "Chicago Fed NFCI Credit Subindex (not a spread)",
+      "unit": "index",
+      "date": "2026-11-13",
+      "value": -0.013
+    },
+    "financial_stress_stl": {
+      "series_id": "STLFSI4",
+      "label": "St. Louis Fed Financial Stress Index",
+      "unit": "index",
+      "date": "2026-11-13",
+      "value": -0.8655
+    },
+    "financial_stress_kc": {
+      "series_id": "KCFSI",
+      "label": "Kansas City Financial Stress Index",
+      "unit": "index",
+      "date": "2026-10-01",
+      "value": -0.8850476769
     }
   },
   "alerts": [
@@ -120,7 +141,8 @@
     "The snapshot fetches recent observations only; use separately archived history files for backtests.",
     "VIX and some market series may have licensing or redistribution restrictions; this file is a minimal latest-value monitor, not a bulk historical redistribution.",
     "DXY uses the broad trade-weighted dollar index DTWEXBGS, not ICE DXY.",
-    "NFCI is a broad financial-conditions index, not a corporate credit spread.",
+    "NFCI and NFCICREDIT are financial-conditions indices, not quoted corporate credit spreads or OAS.",
+    "STLFSI4 and KCFSI are composite financial-stress indices, not standalone credit spreads.",
     "T10YIE and T5YIFR are market-based breakeven/forward inflation expectations, not direct CPI forecasts.",
     "CPIAUCSL is a seasonally adjusted index level; it is not year-over-year inflation.",
     "This dashboard is monitoring only, not a trading signal or investment recommendation."
