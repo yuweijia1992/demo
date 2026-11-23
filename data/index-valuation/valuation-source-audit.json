@@ -1,7 +1,7 @@
 {
   "schema_version": "0.4",
   "status": "PARTIAL",
-  "generated_at": "2026-11-23T07:51:59+00:00",
+  "generated_at": "2026-11-23T09:10:21+00:00",
   "completed_month_cutoff": "2026-10",
   "coverage": {
     "assets_metrics": 5,

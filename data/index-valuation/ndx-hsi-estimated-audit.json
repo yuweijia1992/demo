@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-23T09:10:21+00:00",
+  "status": "OK",
+  "classification": "MODELLED_ESTIMATE_NOT_OBSERVED_HISTORY",
+  "method": "Anchor valuation × (monthly index price proxy / anchor-month price proxy) ÷ assumed earnings/book growth factor; no actual historical index EPS/BVPS reconstruction.",
+  "assumptions": {
+    "NDX": {
+      "label": "Nasdaq-100",
+      "ticker_used": "^NDX",
+      "price_source": "Yahoo Finance (query1.finance.yahoo.com)",
+      "price_proxy_note": "Yahoo Finance ^NDX index monthly close; QQQ unadjusted close fallback",
+      "anchor_pe": {
+        "date": "2026-11-12",
+        "anchor_value": 29.83,
+        "low": 26.97,
+        "high": 32.76,
+        "sources": [
+          {
+            "date": "2026-11-11",
+            "value": 27.0,
+            "source": "Guchacha"
+          },
+          {
+            "date": "2026-11-12",
+            "value": 29.83,
+            "source": "WorldPEratio"
+          },
+          {
+            "date": "2026-11-12",
+            "value": 26.97,
+            "source": "Guchacha"
+          },
+          {
+            "date": "2026-10-31",
+            "value": 32.76,
+            "source": "Siblis Research"
+          },
+          {
+            "date": "2026-11-12",
+            "value": 29.83,
+            "source": "WorldPEratio"
+          }
+        ],
+        "n": 5
+      },
+      "anchor_pb": {
+        "date": "2026-11-12",
+        "anchor_value": 8.43,
+        "low": 8.43,
+        "high": 8.43,
+        "sources": [
+          {
+            "date": "2026-11-11",
+            "value": 8.43,
+            "source": "Guchacha"
+          },
+          {
+            "date": "2026-11-12",
+            "value": 8.43,
+            "source": "Guchacha"
+          }
+        ],
+        "n": 2
+      },
+      "price_anchor_month": "2026-11",
+      "price_anchor": 25028.982421875,
+      "annual_growth_assumptions": {
+        "PE": {
+          "base": 0.08,
+          "low": 0.05,
+          "high": 0.11
+        },
+        "PB": {
+          "base": 0.09,
+          "low": 0.06,
+          "high": 0.12
+        }
+      },
+      "confidence": "低：PE来源之间存在明显差异；PB只有单个独立快照"
+    },
+    "HSI": {
+      "label": "恒生指数",
+      "ticker_used": "^HSI",
+      "price_source": "Yahoo Finance (query1.finance.yahoo.com)",
+      "price_proxy_note": "Yahoo Finance ^HSI index monthly close; 2800.HK unadjusted close fallback",
+      "anchor_pe": {
+        "date": "2026-11-11",
+        "anchor_value": 10.865,
+        "low": 10.8,
+        "high": 10.93,
+        "sources": [
+          {
+            "date": "2026-11-11",
+            "value": 10.93,
+            "source": "Guchacha"
+          },
+          {
+            "date": "2026-11-11",
+            "value": 10.8,
+            "source": "Guchacha"
+          }
+        ],
+        "n": 2
+      },
+      "anchor_pb": {
+        "date": "2026-11-11",
+        "anchor_value": 1.145,
+        "low": 1.14,
+        "high": 1.15,
+        "sources": [
+          {
+            "date": "2026-11-11",
+            "value": 1.15,
+            "source": "Guchacha"
+          },
+          {
+            "date": "2026-11-11",
+            "value": 1.14,
+            "source": "Guchacha"
+          }
+        ],
+        "n": 2
+      },
+      "price_anchor_month": "2026-11",
+      "price_anchor": 22383.740234375,
+      "annual_growth_assumptions": {
+        "PE": {
+          "base": 0.04,
+          "low": 0.02,
+          "high": 0.06
+        },
+        "PB": {
+          "base": 0.05,
+          "low": 0.03,
+          "high": 0.07
+        }
+      },
+      "confidence": "低：估值锚点来自公开页面快照，缺少完整历史财报聚合"
+    }
+  },
+  "coverage": {
+    "NDX": {
+      "ticker_used": "^NDX",
+      "first_month": "1985-10",
+      "last_month": "2026-11",
+      "monthly_price_observations": 166,
+      "estimated_valuation_rows": 166,
+      "price_anchor_month": "2026-11",
+      "anchor_date": "2026-11-12",
+      "status": "OK",
+      "confidence": "低：PE来源之间存在明显差异；PB只有单个独立快照"
+    },
+    "HSI": {
+      "ticker_used": "^HSI",
+      "first_month": "1986-11",
+      "last_month": "2026-11",
+      "monthly_price_observations": 161,
+      "estimated_valuation_rows": 161,
+      "price_anchor_month": "2026-11",
+      "anchor_date": "2026-11-11",
+      "status": "OK",
+      "confidence": "低：估值锚点来自公开页面快照，缺少完整历史财报聚合"
+    }
+  },
+  "errors": {},
+  "limitations": [
+    "所有估计月份均为模型估计，不是历史公布的PE/PB观测，不得称作真实历史估值。",
+    "PE估计依赖恒定年化EPS增长率；PB估计依赖恒定年化净资产增长率。实际增长存在周期、减值、回购、成分股变化和会计口径影响。",
+    "NDX/HSi指数成分及权重会变化；本模型未重建历史成分股与点时财务信息。",
+    "历史分位只表示模型路径内部的相对位置，不能与真实观测分位等同。",
+    "估值锚点来自公开页面快照，不同供应商计算口径并不完全一致；范围是情景包络，不是统计置信区间。",
+    "指数行情优先使用Yahoo Finance指数月收盘价；备选ETF价格只用于相对价格变化，仍会带来费用、跟踪误差和结构差异。"
+  ],
+  "outputs": {
+    "price_proxy_csv": "data/index-valuation/ndx-hsi-price-proxies-monthly.csv",
+    "estimated_valuation_csv": "data/index-valuation/ndx-hsi-estimated-monthly.csv",
+    "classification": "modelled estimate only; not observed history"
+  }
+}
