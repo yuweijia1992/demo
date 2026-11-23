@@ -199,12 +199,18 @@ def main():
                 for metric, anchor in (("PE_TTM", anchor_pe), ("PB", anchor_pb)):
                     kind = "PE" if metric == "PE_TTM" else "PB"
                     g = growth[kind]
-                    base = anchor["anchor_value"] * ratio / ((1 + g["base"]) ** (month_no(month) - month_no(anchor_month)) / 12.0)
+                    month_year_gap = (month_no(month) - month_no(anchor_month)) / 12.0
+                    base = anchor["anchor_value"] * ratio / ((1 + g["base"]) ** month_year_gap)
                     # Explicitly envelope anchor source dispersion and growth scenarios.
+                    anchor_low, anchor_high = anchor["low"], anchor["high"]
+                    if kind == "PB" and anchor["n"] == 1:
+                        # One PB snapshot cannot identify source dispersion; apply a disclosed model band.
+                        anchor_low = anchor["anchor_value"] * (1 - cfg["pb_band_pct"])
+                        anchor_high = anchor["anchor_value"] * (1 + cfg["pb_band_pct"])
                     scenario = []
-                    for a in (anchor["low"], anchor["high"]):
+                    for a in (anchor_low, anchor_high):
                         for rate in (g["low"], g["high"]):
-                            scenario.append(a * ratio / ((1 + rate) ** (month_no(month) - month_no(anchor_month)) / 12.0))
+                            scenario.append(a * ratio / ((1 + rate) ** month_year_gap))
                     low, high = min(scenario), max(scenario)
                     row[metric] = round(base, 4)
                     row[metric + "_low"] = round(low, 4)
