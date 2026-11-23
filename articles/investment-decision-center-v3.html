@@ -56,7 +56,7 @@
 (function(){
 const $=id=>document.getElementById(id), targets=[["全球股票",52,"equity"],["债券",28,"bond"],["黄金",10,"gold"],["现金",10,"cash"]];
 let monthly=[], valuation=[], estimatedValuation=[];
-window.autoMacroRiskScore=null;window.autoMacroRiskCount=0;
+window.autoMacroRiskScore=null;window.autoMacroRiskCount=0;window.valuationEstimateAudit=null;
 const parseCSV=s=>{const lines=s.trim().split(/\r?\n/);const parse=line=>{let a=[],v="",q=false;for(let i=0;i<line.length;i++){let c=line[i];if(c==='"'){if(q&&line[i+1]==='"'){v+='"';i++;}else q=!q;}else if(c===','&&!q){a.push(v);v="";}else v+=c;}a.push(v);return a;};const h=parse(lines.shift()).map(x=>x.trim());return lines.map(l=>{const a=parse(l),o={};h.forEach((k,i)=>o[k]=(a[i]??"").trim());return o;});};
 const num=x=>x===""||x==null?null:Number(x);
 const avg=a=>a.reduce((s,x)=>s+x,0)/a.length;
@@ -119,15 +119,20 @@ function refreshEstimatePanel(){
  $("estimatedHistoryRows").innerHTML=hist.map(r=>"<tr><td>"+r.date+"</td><td>"+fmt(num(r.PE_TTM),2)+"x ("+fmt(num(r.PE_TTM_low),2)+"–"+fmt(num(r.PE_TTM_high),2)+")</td><td>"+(num(r.PE_TTM_5Y_estimated_percentile)===null?"—":fmt(num(r.PE_TTM_5Y_estimated_percentile),0)+"%")+" / "+(num(r.PE_TTM_10Y_estimated_percentile)===null?"—":fmt(num(r.PE_TTM_10Y_estimated_percentile),0)+"%")+"</td><td>"+fmt(num(r.PB),2)+"x ("+fmt(num(r.PB_low),2)+"–"+fmt(num(r.PB_high),2)+")</td><td>"+(num(r.PB_5Y_estimated_percentile)===null?"—":fmt(num(r.PB_5Y_estimated_percentile),0)+"%")+" / "+(num(r.PB_10Y_estimated_percentile)===null?"—":fmt(num(r.PB_10Y_estimated_percentile),0)+"%")+"</td><td>"+(r.price_proxy_status==="provider_observation"?"Yahoo接口返回点":"对数线性插值")+"</td></tr>").join("");
  const metric=$("estimateMetric").value,windowKey=$("estimateWindow").value,pct=num(latest[metric+"_"+windowKey+"_estimated_percentile"]);
  $("useEstimatedValuation").disabled=pct===null;
- $("estimatedInfo").textContent="最新模型月份 "+latest.date+"；锚点估值日期 "+latest.anchor_date+"；价格代理 "+latest.price_proxy_ticker+"（"+latest.price_proxy_source+"）；PE基准EPS增长假设 "+fmt(num(latest.PE_TTM_growth_base)*100,1)+"%，PB基准净资产增长假设 "+fmt(num(latest.PB_growth_base)*100,1)+"%。数据置信度："+latest.confidence+"。所选 "+$("estimateIndex").selectedOptions[0].text+" / "+(metric==="PE_TTM"?"PE-TTM":"PB")+" / "+(windowKey==="5Y"?"5年":"10年")+"估计分位："+(pct===null?"样本不足":fmt(pct,1)+"%")+"。";
+ const coverage=window.valuationEstimateAudit&&window.valuationEstimateAudit.coverage?window.valuationEstimateAudit.coverage[index]:null;
+ $("estimatedInfo").textContent="最新模型月份 "+latest.date+"；锚点估值日期 "+latest.anchor_date+"；价格代理 "+latest.price_proxy_ticker+"（"+latest.price_proxy_source+"）；PE基准EPS增长假设 "+fmt(num(latest.PE_TTM_growth_base)*100,1)+"%，PB基准净资产增长假设 "+fmt(num(latest.PB_growth_base)*100,1)+"%。数据置信度："+latest.confidence+"。历史价格来源审计："+(coverage?(coverage.provider_price_observations+"个接口原始点，"+coverage.interpolated_months+"个月为对数线性插值；原始点最大间隔"+coverage.max_gap_between_provider_points_months+"个月。"):"审计文件未读取。")+"所选 "+$("estimateIndex").selectedOptions[0].text+" / "+(metric==="PE_TTM"?"PE-TTM":"PB")+" / "+(windowKey==="5Y"?"5年":"10年")+"估计分位："+(pct===null?"样本不足":fmt(pct,1)+"%")+"。";
 }
 async function loadEstimatedValuation(){
  try{
-  const raw=await fetch("../data/index-valuation/ndx-hsi-estimated-monthly.csv",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("模型估值文件 "+r.status);return r.text();});
+  const [raw,audit]=await Promise.all([
+   fetch("../data/index-valuation/ndx-hsi-estimated-monthly.csv",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("模型估值文件 "+r.status);return r.text();}),
+   fetch("../data/index-valuation/ndx-hsi-estimated-audit.json",{cache:"no-store"}).then(r=>r.ok?r.json():null)
+  ]);
   estimatedValuation=parseCSV(raw);
+  window.valuationEstimateAudit=audit;
   refreshEstimatePanel();
  }catch(e){
-  $("estimatedInfo").textContent="模型估值数据暂不可用："+e.message+"。新脚本和自动工作流已部署，首次成功生成后本页会自动读取。";
+  $("estimatedInfo").textContent="模型估值数据暂不可用："+e.message+"。自动脚本和工作流已部署，首次成功生成后本页会自动读取。";
  }
 }
 $("estimateIndex").onchange=refreshEstimatePanel;
