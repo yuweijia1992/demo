@@ -13,7 +13,20 @@
 <div class="notice" id="dataNotice">正在读取公开仓库月度矩阵与覆盖清单……</div></section>
 
 <section class="section" id="valuation"><div class="section-head"><h2>01 / 全球估值分位</h2><p>标普500、纳斯达克、A股、港股：当前PE/PB在自身历史中的位置。</p></div>
-<div class="panel"><p class="muted">系统自动读取仓库中的真实月度估值矩阵与来源审计；目前自动接入沪深300PE/PB、标普500PE-TTM/CAPE。纳指与恒生仅展示独立快照，不将不同来源或不同频率拼接为虚假的连续历史。仍可用下方CSV导入覆盖分析。</p><input type="file" id="valuationFile" accept=".csv,text/csv"><button class="action" id="valuationImport">导入估值历史并计算</button><span class="pill" id="valuationFileStatus">尚未导入</span><div class="table-wrap"><table><thead><tr><th>市场</th><th>估值指标</th><th>最新值</th><th>历史样本</th><th>历史分位</th><th>观察</th></tr></thead><tbody id="valuationRows"><tr><td colspan="6">需要导入有来源的月度估值数据。</td></tr></tbody></table></div><div class="section-head" style="margin-top:18px"><h3>低频观测与公开快照（不参与月频分位）</h3><p>用于交叉核对和补充观察；季度、年度和单日快照不插值、不拼接。</p></div><div class="table-wrap"><table><thead><tr><th>指数</th><th>指标</th><th>最新观测</th><th>频率</th><th>来源与限制</th></tr></thead><tbody id="valuationAuxRows"><tr><td colspan="5">正在读取低频补充数据……</td></tr></tbody></table></div><div class="hint">注意：PE需统一TTM/Forward口径，PB需统一最新财报/滚动口径；不同口径不可拼接。纳指100可参考 <a href="https://historyofmarket.com/nasdaq/ndx-forward-pe/" target="_blank" rel="noopener">NDX Forward PE周频观察</a>（仅外链查看，不镜像受限终端数据）；恒生指数可查阅 <a href="https://www.hsi.com.hk/en-hk/index-resources/index-reports/" target="_blank" rel="noopener">恒生官方历史报告</a>。信用风险长历史采用NFCICREDIT、STLFSI4、KCFSI作为公开代理，不把它们称作公司债OAS。百分位不是合理价值，也不直接等于买卖信号。</div></div></section>
+<div class="panel"><p class="muted">系统自动读取仓库中的真实月度估值矩阵与来源审计；目前自动接入沪深300PE/PB、标普500PE-TTM/CAPE。纳指与恒生仅展示独立快照，不将不同来源或不同频率拼接为虚假的连续历史。仍可用下方CSV导入覆盖分析。</p><input type="file" id="valuationFile" accept=".csv,text/csv"><button class="action" id="valuationImport">导入估值历史并计算</button><span class="pill" id="valuationFileStatus">尚未导入</span><div class="table-wrap"><table><thead><tr><th>市场</th><th>估值指标</th><th>最新值</th><th>历史样本</th><th>历史分位</th><th>观察</th></tr></thead><tbody id="valuationRows"><tr><td colspan="6">需要导入有来源的月度估值数据。</td></tr></tbody></table></div><div class="section-head" style="margin-top:18px"><h3>低频观测与公开快照（不参与月频分位）</h3><p>用于交叉核对和补充观察；季度、年度和单日快照不插值、不拼接。</p></div><div class="table-wrap"><table><thead><tr><th>指数</th><th>指标</th><th>最新观测</th><th>频率</th><th>来源与限制</th></tr></thead><tbody id="valuationAuxRows"><tr><td colspan="5">正在读取低频补充数据……</td></tr></tbody></table></div><div class="section-head" style="margin-top:22px"><h3>模型估计层｜纳指100与恒生 PE / PB</h3><p>以公开估值快照为锚，结合指数价格路径和盈利/净资产增长假设，生成估计序列；不替代真实历史观测。</p></div>
+<div class="notice">此处展示的是模型估计值，不是指数公司或数据商发布的历史PE/PB。历史分位仅在估计序列内部计算。估计低/高区间是参数情景包络，不是统计置信区间。真实观测仍保留在上方独立面板。</div>
+<div class="fields" style="margin-top:14px">
+<label>指数<select id="estimateIndex"><option value="NDX">纳斯达克100</option><option value="HSI">恒生指数</option></select></label>
+<label>代入决策的估值指标<select id="estimateMetric"><option value="PE_TTM">PE-TTM</option><option value="PB">PB</option></select></label>
+<label>代入决策的分位窗口<select id="estimateWindow"><option value="5Y">5年估计分位</option><option value="10Y">10年估计分位</option></select></label>
+</div>
+<div class="grid3" id="estimatedValuationCards" style="margin-top:14px">
+<div class="metric"><small>模型PE-TTM</small><strong>等待数据</strong></div><div class="metric"><small>模型PB</small><strong>等待数据</strong></div><div class="metric"><small>数据性质</small><strong>模型估计</strong></div>
+</div>
+<div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>月份</th><th>PE估计（区间）</th><th>PE 5年/10年估计分位</th><th>PB估计（区间）</th><th>PB 5年/10年估计分位</th></tr></thead><tbody id="estimatedHistoryRows"><tr><td colspan="5">首次生成估计文件后自动显示。</td></tr></tbody></table></div>
+<div class="notice" id="estimatedInfo">模型估值文件尚未生成或正在加载。</div>
+<button class="action" id="useEstimatedValuation" disabled>将所选模型估计分位带入决策引擎</button>
+<div class="hint">注意：PE需统一TTM/Forward口径，PB需统一最新财报/滚动口径；不同口径不可拼接。纳指100可参考 <a href="https://historyofmarket.com/nasdaq/ndx-forward-pe/" target="_blank" rel="noopener">NDX Forward PE周频观察</a>（仅外链查看，不镜像受限终端数据）；恒生指数可查阅 <a href="https://www.hsi.com.hk/en-hk/index-resources/index-reports/" target="_blank" rel="noopener">恒生官方历史报告</a>。信用风险长历史采用NFCICREDIT、STLFSI4、KCFSI作为公开代理，不把它们称作公司债OAS。百分位不是合理价值，也不直接等于买卖信号。</div></div></section>
 
 <section class="section" id="macro"><div class="section-head"><h2>02 / 宏观状态面板</h2><p>自动接入已有的实际利率、政策利率、NFCI及历史宏观风险模型；DXY、VIX和信用利差仍受数据覆盖或再分发许可限制。</p></div>
 <div class="panel"><div class="fields">
@@ -31,7 +44,7 @@
 <section class="section" id="decision"><div class="section-head"><h2>04 / 交易决策引擎</h2><p>估值 × 宏观 × 实际持仓偏离。先检查数据，再生成行动清单。</p></div><div class="panel"><div class="fields">
 <label>当前全球股票权重 (%)<input id="wEquity" type="number" step=".1" placeholder="真实持仓"></label><label>当前债券权重 (%)<input id="wBond" type="number" step=".1" placeholder="真实持仓"></label><label>当前黄金权重 (%)<input id="wGold" type="number" step=".1" placeholder="真实持仓"></label><label>当前现金权重 (%)<input id="wCash" type="number" step=".1" placeholder="真实持仓"></label>
 <label>股票估值历史分位 (%)<input id="equityPct" type="number" min="0" max="100" step="1" placeholder="由估值导入或手动填"></label><label>最大允许战术偏离 (百分点)<input id="tacticalBand" type="number" min="0" max="15" step=".5" value="5"></label><label>组合规模（元）<input id="capital" type="number" value="4000000" step="10000"></label>
-</div><button class="action" id="runDecision">生成条件性执行建议</button><div class="notice" id="decisionResult">持仓未完整录入时，只显示战略目标，不输出个性化买卖动作。</div><div class="table-wrap"><table><thead><tr><th>资产</th><th>战略目标</th><th>当前权重</th><th>目标金额</th><th>与当前差额</th><th>建议</th></tr></thead><tbody id="decisionRows"><tr><td colspan="6">等待完整持仓数据。</td></tr></tbody></table></div></div></section>
+</div><div class="notice" id="valuationSignal">估值信号：尚未导入真实估值或模型估计分位。</div><button class="action" id="runDecision">生成条件性执行建议</button><div class="notice" id="decisionResult">持仓未完整录入时，只显示战略目标，不输出个性化买卖动作。</div><div class="table-wrap"><table><thead><tr><th>资产</th><th>战略目标</th><th>当前权重</th><th>目标金额</th><th>与当前差额</th><th>建议</th></tr></thead><tbody id="decisionRows"><tr><td colspan="6">等待完整持仓数据。</td></tr></tbody></table></div></div></section>
 
 <section class="section" id="cashflow"><div class="section-head"><h2>05 / 50年现金流与极端压力测试</h2><p>比较正常路径、连续亏损、早期股灾与高通胀。收益率和通胀是情景假设，不是预测。</p></div><div class="panel"><div class="fields">
 <label>初始资产（元）<input id="cfCapital" type="number" value="4000000" step="10000"></label><label>首年支出（元）<input id="cfSpend" type="number" value="90000" step="1000"></label><label>基准名义年收益 (%)<input id="cfReturn" type="number" value="5" step=".1"></label><label>基准通胀 (%)<input id="cfInflation" type="number" value="2" step=".1"></label><label>模拟年限<input id="cfYears" type="number" min="1" max="70" value="50"></label><label>连续亏损年收益 (%)<input id="cfLoss" type="number" value="-15" step=".5"></label><label>连续亏损年数<input id="cfLossYears" type="number" min="1" max="10" value="3"></label><label>极端通胀 (%)<input id="cfHighInflation" type="number" value="6" step=".1"></label>
@@ -42,7 +55,8 @@
 <script>
 (function(){
 const $=id=>document.getElementById(id), targets=[["全球股票",52,"equity"],["债券",28,"bond"],["黄金",10,"gold"],["现金",10,"cash"]];
-let monthly=[], valuation=[];
+let monthly=[], valuation=[], estimatedValuation=[];
+window.autoMacroRiskScore=null;window.autoMacroRiskCount=0;
 const parseCSV=s=>{const lines=s.trim().split(/\r?\n/);const parse=line=>{let a=[],v="",q=false;for(let i=0;i<line.length;i++){let c=line[i];if(c==='"'){if(q&&line[i+1]==='"'){v+='"';i++;}else q=!q;}else if(c===','&&!q){a.push(v);v="";}else v+=c;}a.push(v);return a;};const h=parse(lines.shift()).map(x=>x.trim());return lines.map(l=>{const a=parse(l),o={};h.forEach((k,i)=>o[k]=(a[i]??"").trim());return o;});};
 const num=x=>x===""||x==null?null:Number(x);
 const avg=a=>a.reduce((s,x)=>s+x,0)/a.length;
@@ -88,6 +102,46 @@ async function loadPublicValuation(){
   $("valuationFileStatus").title="HSI snapshots "+hsi.length+"; NDX snapshots "+ndx.length;
  }catch(e){$("valuationFileStatus").textContent="自动读取失败";$("valuationRows").innerHTML="<tr><td colspan='6'>自动数据读取失败："+e.message+"</td></tr>";}
 }
+function refreshEstimatePanel(){
+ const index=$("estimateIndex").value;
+ const rows=estimatedValuation.filter(r=>r.index===index&&num(r.PE_TTM)!==null&&num(r.PB)!==null).sort((a,b)=>a.date.localeCompare(b.date));
+ if(!rows.length){
+  $("estimatedValuationCards").innerHTML="<div class='metric'><small>模型PE-TTM</small><strong>暂无</strong></div><div class='metric'><small>模型PB</small><strong>暂无</strong></div><div class='metric'><small>模型覆盖</small><strong>待生成</strong></div>";
+  $("estimatedHistoryRows").innerHTML="<tr><td colspan='5'>估计文件尚未生成，或该指数没有可用价格代理。</td></tr>";
+  $("estimatedInfo").textContent="等待GitHub Actions首次运行 build_estimated_index_valuation.py。真实估值面板不会被估计值覆盖。";
+  $("useEstimatedValuation").disabled=true;
+  return;
+ }
+ const latest=rows.at(-1);
+ const card=(label,key)=>"<div class='metric'><small>"+label+"（模型估计）</small><strong>"+fmt(num(latest[key]),2)+"x</strong><span class='muted'>情景区间 "+fmt(num(latest[key+"_low"]),2)+"–"+fmt(num(latest[key+"_high"]),2)+"x</span></div>";
+ $("estimatedValuationCards").innerHTML=card("PE-TTM","PE_TTM")+card("PB","PB")+"<div class='metric'><small>模型覆盖</small><strong>"+rows.length+"个月</strong><span class='muted'>"+rows[0].date+" — "+latest.date+"</span></div>";
+ const hist=rows.slice(-12).reverse();
+ $("estimatedHistoryRows").innerHTML=hist.map(r=>"<tr><td>"+r.date+"</td><td>"+fmt(num(r.PE_TTM),2)+"x ("+fmt(num(r.PE_TTM_low),2)+"–"+fmt(num(r.PE_TTM_high),2)+")</td><td>"+(num(r.PE_TTM_5Y_estimated_percentile)===null?"—":fmt(num(r.PE_TTM_5Y_estimated_percentile),0)+"%")+" / "+(num(r.PE_TTM_10Y_estimated_percentile)===null?"—":fmt(num(r.PE_TTM_10Y_estimated_percentile),0)+"%")+"</td><td>"+fmt(num(r.PB),2)+"x ("+fmt(num(r.PB_low),2)+"–"+fmt(num(r.PB_high),2)+")</td><td>"+(num(r.PB_5Y_estimated_percentile)===null?"—":fmt(num(r.PB_5Y_estimated_percentile),0)+"%")+" / "+(num(r.PB_10Y_estimated_percentile)===null?"—":fmt(num(r.PB_10Y_estimated_percentile),0)+"%")+"</td></tr>").join("");
+ const metric=$("estimateMetric").value,windowKey=$("estimateWindow").value,pct=num(latest[metric+"_"+windowKey+"_estimated_percentile"]);
+ $("useEstimatedValuation").disabled=pct===null;
+ $("estimatedInfo").textContent="最新模型月份 "+latest.date+"；锚点估值日期 "+latest.anchor_date+"；价格代理 "+latest.price_proxy_ticker+"（"+latest.price_proxy_source+"）；PE基准EPS增长假设 "+fmt(num(latest.PE_TTM_growth_base)*100,1)+"%，PB基准净资产增长假设 "+fmt(num(latest.PB_growth_base)*100,1)+"%。数据置信度："+latest.confidence+"。所选 "+$("estimateIndex").selectedOptions[0].text+" / "+(metric==="PE_TTM"?"PE-TTM":"PB")+" / "+(windowKey==="5Y"?"5年":"10年")+"估计分位："+(pct===null?"样本不足":fmt(pct,1)+"%")+"。";
+}
+async function loadEstimatedValuation(){
+ try{
+  const raw=await fetch("../data/index-valuation/ndx-hsi-estimated-monthly.csv",{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("模型估值文件 "+r.status);return r.text();});
+  estimatedValuation=parseCSV(raw);
+  refreshEstimatePanel();
+ }catch(e){
+  $("estimatedInfo").textContent="模型估值数据暂不可用："+e.message+"。新脚本和自动工作流已部署，首次成功生成后本页会自动读取。";
+ }
+}
+$("estimateIndex").onchange=refreshEstimatePanel;
+$("estimateMetric").onchange=refreshEstimatePanel;
+$("estimateWindow").onchange=refreshEstimatePanel;
+$("useEstimatedValuation").onclick=()=>{
+ const rows=estimatedValuation.filter(r=>r.index===$("estimateIndex").value).sort((a,b)=>a.date.localeCompare(b.date));
+ if(!rows.length)return;
+ const latest=rows.at(-1),metric=$("estimateMetric").value,windowKey=$("estimateWindow").value;
+ const pct=num(latest[metric+"_"+windowKey+"_estimated_percentile"]);
+ if(pct===null){alert("该估计序列尚不足"+(windowKey==="5Y"?"60":"120")+"个月，不能计算此窗口分位。");return;}
+ $("equityPct").value=fmt(pct,0);
+ $("valuationSignal").textContent="当前已带入 "+$("estimateIndex").selectedOptions[0].text+" "+(metric==="PE_TTM"?"PE-TTM":"PB")+" 的"+(windowKey==="5Y"?"5年":"10年")+"模型估计分位："+fmt(pct,1)+"%。此值是模型估计，不是实际历史观测分位。";
+};
 async function loadMacroHistory(){
  try{
   const paths=["sp500-macro-factor-model-monthly.csv","fred-dfii10-daily.csv","fred-fedfunds-monthly.csv","fred-nfci-weekly.csv"];
@@ -98,9 +152,21 @@ async function loadMacroHistory(){
   const mr=lastValid(model,"composite_risk_score"),rr=lastValid(real,"dfii10_pct"),fr=lastValid(funds,"fedfunds_pct"),nr=lastValid(nfci,"nfci");
   const stale=mr?Math.floor((Date.now()-new Date(mr.date+"-01T00:00:00").getTime())/86400000):999;
   $("macroState").textContent=mr?"历史 "+fmt(num(mr.composite_risk_score),0)+"/100":"待核验";
-  const ls=live.series||{}, liveRows=[["10年期实际利率",ls.us10y_real],["10年期名义利率",ls.us10y_nominal],["10Y-2Y收益率曲线",ls.yield_curve_10y2y],["10年期通胀预期",ls.inflation_breakeven_10y],["5Y5Y远期通胀预期",ls.inflation_forward_5y5y],["VIX",ls.vix],["美元广义指数（非ICE DXY）",ls.dxy_broad],["USD/CNY",ls.usdcny],["布伦特原油",ls.brent],["联邦基金利率",ls.fed_funds],["美国CPI指数",ls.us_cpi_index],["芝加哥联储NFCI（非信用利差）",ls.financial_conditions_nfci],["Chicago Fed信用条件子指数（非信用利差）",ls.credit_conditions_subindex],["St. Louis金融压力指数",ls.financial_stress_stl],["Kansas City金融压力指数",ls.financial_stress_kc]];
+  const ls=live.series||{};
+  const macroPoints=[
+   [ls.vix,v=>v>=30?90:v>=22?65:v>=17?40:20],
+   [ls.us10y_real,v=>v>=2.5?65:v>=1.5?55:v>=0?40:55],
+   [ls.credit_conditions_subindex,v=>v>=0?80:v>=-0.25?55:v>=-0.75?35:20],
+   [ls.financial_stress_stl,v=>v>=0?90:v>=-0.5?55:v>=-1?35:20],
+   [ls.financial_stress_kc,v=>v>=0?90:v>=-0.5?55:v>=-1?35:20],
+   [ls.financial_conditions_nfci,v=>v>=0?75:v>=-0.5?50:v>=-1?35:20]
+  ].filter(([item])=>item&&item.value!==null&&item.date);
+  const freshMacro=macroPoints.filter(([item])=>{const age=(Date.now()-new Date(item.date+"T00:00:00Z").getTime())/86400000;return age>=-1&&age<=45;});
+  window.autoMacroRiskScore=freshMacro.length>=3?freshMacro.reduce((sum,[item,fn])=>sum+fn(Number(item.value)),0)/freshMacro.length:null;
+  window.autoMacroRiskCount=freshMacro.length;
+  const liveRows=[["10年期实际利率",ls.us10y_real],["10年期名义利率",ls.us10y_nominal],["10Y-2Y收益率曲线",ls.yield_curve_10y2y],["10年期通胀预期",ls.inflation_breakeven_10y],["5Y5Y远期通胀预期",ls.inflation_forward_5y5y],["VIX",ls.vix],["美元广义指数（非ICE DXY）",ls.dxy_broad],["USD/CNY",ls.usdcny],["布伦特原油",ls.brent],["联邦基金利率",ls.fed_funds],["美国CPI指数",ls.us_cpi_index],["芝加哥联储NFCI（非信用利差）",ls.financial_conditions_nfci],["Chicago Fed信用条件子指数（非信用利差）",ls.credit_conditions_subindex],["St. Louis金融压力指数",ls.financial_stress_stl],["Kansas City金融压力指数",ls.financial_stress_kc]];
   const liveText=liveRows.map(([label,x])=>label+"："+(x&&x.value!==null?fmt(num(x.value),2)+"（"+x.date+"）":"暂无成功观测")).join("；");
-  $("macroResult").innerHTML="<b>自动接入宏观数据</b><br>最新自动快照："+(live.generated_at||"尚无成功更新")+"；状态 "+(live.status||"未知")+"。<br>"+liveText+"<br><br><b>历史模型参考：</b>最新月份 "+(mr?mr.date:"—")+"；风险分数 "+(mr?fmt(num(mr.composite_risk_score),1)+"/100（"+(mr.risk_band_36m||"未分档")+"）":"—")+"。10年期实际利率历史最新值："+(rr?fmt(num(rr.dfii10_pct),2)+"%（"+rr.observation_date+"）":"—")+"；联邦基金利率："+(fr?fmt(num(fr.fedfunds_pct),2)+"%（"+fr.date+"）":"—")+"；NFCI："+(nr?fmt(num(nr.nfci),3)+"（"+nr.date+"）":"—")+".<br><b>"+(stale>90?"历史模型已超过90天，只作研究参考，不作为当前交易信号。":"历史模型日期较新，但仍需核对实时性。")+"</b><br>信用利差暂未接入可公开再分发的连续数据；NFCI是综合金融状况指标，不等于信用利差。";
+  $("macroResult").innerHTML="<b>自动接入宏观数据</b><br>最新自动快照："+(live.generated_at||"尚无成功更新")+"；状态 "+(live.status||"未知")+"。<br>"+liveText+"<br><br><b>自动宏观风险评分：</b>"+(window.autoMacroRiskScore===null?"有效样本不足或数据超过45天。":fmt(window.autoMacroRiskScore,0)+"/100（"+window.autoMacroRiskCount+"项近期指标均值；属于规则模型）")+"<br><br><b>历史模型参考：</b>最新月份 "+(mr?mr.date:"—")+"；风险分数 "+(mr?fmt(num(mr.composite_risk_score),1)+"/100（"+(mr.risk_band_36m||"未分档")+"）":"—")+"。10年期实际利率历史最新值："+(rr?fmt(num(rr.dfii10_pct),2)+"%（"+rr.observation_date+"）":"—")+"；联邦基金利率："+(fr?fmt(num(fr.fedfunds_pct),2)+"%（"+fr.date+"）":"—")+"；NFCI："+(nr?fmt(num(nr.nfci),3)+"（"+nr.date+"）":"—")+".<br><b>"+(stale>90?"历史模型已超过90天，只作研究参考，不作为当前交易信号。":"历史模型日期较新，但仍需核对实时性。")+"</b><br>信用利差暂未接入可公开再分发的连续数据；NFCI是综合金融状况指标，不等于信用利差。";
   $("macroSource").value="自动来源：FRED DFII10 / FEDFUNDS；Chicago Fed NFCI；模型文件 sp500-macro-factor-model-monthly.csv";
  }catch(e){$("macroResult").textContent="宏观历史数据自动读取失败："+e.message;}
 }
@@ -112,11 +178,11 @@ $("clearMacro").onclick=()=>{["realRate","dxy","credit","vix","liquidity","macro
 const series=[["沪深300全收益","csi300_total_return_pct"],["标普500人民币总回报","sp500_total_return_cny_pct"],["黄金人民币收益","gold_cny_return_pct"],["中债综合财富","china_bond_wealth_return_cny_pct"],["人民币现金","cny_cash_return_pct"]];
 function buildCorr(){if(!monthly.length)return;const w=Number($("corrWindow").value);const pairs=[[0,1],[0,2],[0,3],[0,4],[1,2],[1,3],[2,3],[2,4],[3,4]];let latest=monthly.at(-1).date,html="";for(const [i,j] of pairs){let common=monthly.filter(r=>Number.isFinite(num(r[series[i][1]]))&&Number.isFinite(num(r[series[j][1]])));let use=common.slice(-w);if(use.length<w)continue;let c=corr(use.map(r=>num(r[series[i][1]])),use.map(r=>num(r[series[j][1]])));html+="<tr><td>"+series[i][0]+" × "+series[j][0]+"</td><td>"+use.length+"</td><td>"+fmt(c,3)+"</td><td>"+(c>.6?"较强正相关":c<-.3?"负相关":Math.abs(c)<.2?"弱相关":"中等相关")+"</td></tr>";} $("corrRows").innerHTML=html||"<tr><td colspan='4'>当前共同样本不足"+w+"个月，未计算。</td></tr>";$("corrMetrics").innerHTML="<div class='metric'><small>窗口</small><strong>"+w+"个月</strong></div><div class='metric'><small>矩阵末月</small><strong>"+latest+"</strong></div><div class='metric'><small>有效资产对</small><strong>"+(html.match(/<tr>/g)||[]).length+"</strong></div>";}
 $("corrWindow").onchange=buildCorr;$("corrEnd").onchange=buildCorr;
-$("runDecision").onclick=()=>{const vals=["wEquity","wBond","wGold","wCash"].map(k=>num($(k).value)),sum=vals.reduce((a,b)=>a+(b??0),0),pct=num($("equityPct").value),risk=macroEval(),band=num($("tacticalBand").value)||5,cap=num($("capital").value)||4000000;if(vals.some(v=>v===null)||Math.abs(sum-100)>.5){$("decisionResult").textContent="持仓数据不完整或合计不等于100%。请先录入四类资产真实权重，当前合计："+fmt(sum,1)+"%。";return;}const valid=pct!==null&&risk!==null;const rows=targets.map((t,i)=>{const diff=t[1]-vals[i],amount=cap*t[1]/100,delta=cap*diff/100;let action=Math.abs(diff)>=band?"再平衡复核": "维持";if(valid&&i===0&&pct>=85&&risk>=70&&diff>0)action="暂缓主动加仓，优先按偏离纪律复核";return "<tr><td>"+t[0]+"</td><td>"+t[1]+"%</td><td>"+fmt(vals[i],1)+"%</td><td>¥"+Math.round(amount).toLocaleString("zh-CN")+"</td><td class='"+(delta>=0?"positive":"negative")+"'>"+(delta>=0?"+":"")+"¥"+Math.round(delta).toLocaleString("zh-CN")+"</td><td>"+action+"</td></tr>";}).join("");$("decisionRows").innerHTML=rows;$("decisionResult").textContent=valid?"已结合估值分位与宏观风险评分形成条件性复核建议。估值分位 "+fmt(pct,0)+"%，宏观风险 "+fmt(risk,0)+"/100。": "估值历史分位或宏观状态缺失：只按战略权重偏离给出再平衡检查，不给择时方向。";}
+$("runDecision").onclick=()=>{const vals=["wEquity","wBond","wGold","wCash"].map(k=>num($(k).value)),sum=vals.reduce((a,b)=>a+(b??0),0),pct=num($("equityPct").value),manualRisk=macroEval(),risk=manualRisk!==null?manualRisk:window.autoMacroRiskScore,band=num($("tacticalBand").value)||5,cap=num($("capital").value)||4000000;if(vals.some(v=>v===null)||Math.abs(sum-100)>.5){$("decisionResult").textContent="持仓数据不完整或合计不等于100%。请录入真实持仓权重，当前合计："+fmt(sum,1)+"%。";return;}const rows=targets.map((t,i)=>{const diff=t[1]-vals[i],amount=cap*t[1]/100,delta=cap*diff/100;let action=Math.abs(diff)>=band?"再平衡复核":"维持";if(i===0&&Math.abs(diff)<band&&pct!==null&&pct<=20)action="估值偏低：按分批计划复核，不突破战术上限";if(i===0&&Math.abs(diff)<band&&pct!==null&&pct>=80)action="估值偏高：放慢主动新增，优先检查再平衡";if(i===0&&pct!==null&&pct>=85&&risk!==null&&risk>=70&&diff>0)action="估值偏高且宏观压力较高：暂缓主动加仓";return "<tr><td>"+t[0]+"</td><td>"+t[1]+"%</td><td>"+fmt(vals[i],1)+"%</td><td>¥"+Math.round(amount).toLocaleString("zh-CN")+"</td><td class='"+(delta>=0?"positive":"negative")+"'>"+(delta>=0?"+":"")+"¥"+Math.round(delta).toLocaleString("zh-CN")+"</td><td>"+action+"</td></tr>";}).join("");$("decisionRows").innerHTML=rows;const vText=pct===null?"估值分位未输入，使用战略配置与偏离纪律。":(pct<=20?"估值模型处于低分位区间，按原有分批计划检查，不自动增加战略股票权重。":pct>=80?"估值模型处于高分位区间，放慢主动新增，优先检查再平衡。":"估值模型处于中段，按战略目标与持仓偏离执行。");const rText=risk===null?"宏观自动/手动评分不可用，未将宏观作为择时依据。":(manualRisk!==null?"手动宏观风险 "+fmt(risk,0)+"/100。":"自动FRED规则风险评分 "+fmt(risk,0)+"/100（"+window.autoMacroRiskCount+"项近期指标）。");$("decisionResult").textContent="决策复核完成。"+vText+rText+"所有金额为目标差额计算，不自动交易。"};
 function simulate(){const cap=num($("cfCapital").value),spend=num($("cfSpend").value),ret=num($("cfReturn").value)/100,inf=num($("cfInflation").value)/100,years=Math.min(70,Math.max(1,num($("cfYears").value)||50)),loss=num($("cfLoss").value)/100,lossY=Math.max(1,num($("cfLossYears").value)||3),highInf=num($("cfHighInflation").value)/100;const cases=[["基准路径",y=>ret,inf],["早期连续亏损",y=>y<=lossY?loss:ret,inf],["早期亏损+高通胀",y=>y<=lossY?loss:ret,highInf],["先跌后恢复",y=>y===1?-0.35:y===2?-0.15:y<=5?0.02:ret,highInf]];const paths=[];let results=[];for(const [name,rf,pi] of cases){let b=cap,min=cap,spent=spend,empty=null,path=[b];for(let y=1;y<=years;y++){b-=spent;if(b<0)b=0;b*=1+rf(y);if(b<min)min=b;if(b<=0&&empty===null)empty=y;path.push(b);spent*=1+pi;}paths.push({name,path});results.push({name,end:b,min,empty});} $("cfRows").innerHTML=results.map(r=>"<tr><td>"+r.name+"</td><td>¥"+Math.round(r.end).toLocaleString("zh-CN")+"</td><td>¥"+Math.round(r.min).toLocaleString("zh-CN")+"</td><td>"+(r.empty||"未耗尽")+"</td><td>"+(r.end>0?"是":"否")+"</td></tr>").join("");$("cfSummary").innerHTML=results.slice(0,3).map(r=>"<div class='metric'><small>"+r.name+" · 期末资产</small><strong>¥"+Math.round(r.end/10000).toLocaleString("zh-CN")+"万</strong><span class='muted'>"+(r.empty?"第"+r.empty+"年耗尽":"全期未耗尽")+"</span></div>").join("");draw(paths,years);}
 function draw(paths,years){const c=$("cfChart"),ctx=c.getContext("2d"),W=c.width,H=c.height;ctx.clearRect(0,0,W,H);const max=Math.max(...paths.flatMap(p=>p.path),1),min=0;ctx.strokeStyle=getComputedStyle(document.body).getPropertyValue("--line")||"#888";ctx.lineWidth=1;for(let k=0;k<=4;k++){let y=20+(H-45)*k/4;ctx.beginPath();ctx.moveTo(48,y);ctx.lineTo(W-15,y);ctx.stroke();ctx.fillStyle=getComputedStyle(document.body).getPropertyValue("--muted")||"#888";ctx.fillText(Math.round(max*(1-k/4)/10000)+"万",5,y+4);}paths.forEach((p,i)=>{ctx.beginPath();p.path.forEach((v,j)=>{let x=48+(W-65)*j/years,y=20+(H-45)*(1-v/max);if(j===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});ctx.strokeStyle=["#2878c8","#c58b32","#b85c4b","#269c82"][i];ctx.lineWidth=2;ctx.stroke();});}
 $("runCashflow").onclick=simulate;
 const saved=localStorage.getItem("ym_v3_macro");if(saved){try{const o=JSON.parse(saved);for(const [k,v] of Object.entries({realRate:o.realRate,dxy:o.dxy,credit:o.credit,vix:o.vix,liquidity:o.liquidity,macroDate:o.date,macroSource:o.source}))if(v!==undefined)$(k).value=v;macroEval();}catch{}}
-load();loadPublicValuation();loadMacroHistory();simulate();
+load();loadPublicValuation();loadEstimatedValuation();loadMacroHistory();simulate();
 })();
 </script></body></html>
