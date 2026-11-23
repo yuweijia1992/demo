@@ -84,6 +84,39 @@ def yahoo_monthly(ticker: str):
             errors.append(f"{host}: {exc}")
     raise RuntimeError(" | ".join(errors))
 
+def yahoo_anchor_price(ticker: str, target_date: str):
+    """Fetch daily close at or immediately before the valuation anchor date."""
+    target = date.fromisoformat(target_date)
+    start_dt = datetime(target.year, target.month, target.day, tzinfo=timezone.utc)
+    period1 = int((start_dt - __import__("datetime").timedelta(days=10)).timestamp())
+    period2 = int((start_dt + __import__("datetime").timedelta(days=2)).timestamp())
+    encoded = urllib.parse.quote(ticker, safe="")
+    errors = []
+    for host in ("query1.finance.yahoo.com", "query2.finance.yahoo.com"):
+        url = f"https://{host}/v8/finance/chart/{encoded}?period1={period1}&period2={period2}&interval=1d"
+        try:
+            payload = json.loads(fetch(url).decode("utf-8"))
+            results = payload.get("chart", {}).get("result") or []
+            if not results:
+                raise RuntimeError(str(payload.get("chart", {}).get("error")))
+            result = results[0]
+            timestamps = result.get("timestamp") or []
+            closes = ((result.get("indicators", {}).get("quote") or [{}])[0]).get("close") or []
+            observations = []
+            for ts, close in zip(timestamps, closes):
+                if close is None or not math.isfinite(float(close)) or float(close) <= 0:
+                    continue
+                day = datetime.fromtimestamp(ts, tz=timezone.utc).date()
+                observations.append((day, float(close)))
+            prior = [x for x in observations if x[0] <= target]
+            chosen = max(prior, key=lambda x: x[0]) if prior else min(observations, key=lambda x: abs((x[0]-target).days))
+            if abs((chosen[0]-target).days) > 5:
+                raise RuntimeError("No nearby daily close within five calendar days")
+            return chosen[0].isoformat(), chosen[1], host
+        except Exception as exc:
+            errors.append(f"{host}: {exc}")
+    raise RuntimeError(" | ".join(errors))
+
 def read_snapshots():
     out = []
     if not SNAPSHOTS.exists():
@@ -209,12 +242,19 @@ def main():
             if not eligible:
                 raise RuntimeError("No price observations on/before valuation anchor month")
             price_anchor_month = max(eligible)
-            price_anchor = closes[price_anchor_month]
+            try:
+                price_anchor_date, price_anchor, anchor_price_host = yahoo_anchor_price(ticker, anchor_pe["date"])
+                anchor_price_method = f"daily close nearest on/before {anchor_pe['date']} via Yahoo Finance ({anchor_price_host})"
+            except Exception:
+                price_anchor_date = price_anchor_month + "-monthly"
+                price_anchor = closes[price_anchor_month]
+                anchor_price_method = "fallback: monthly grid point for anchor month"
             growth = cfg["growth"]
             audit["assumptions"][index] = {
                 "label": cfg["label"], "ticker_used": ticker, "price_source": f"Yahoo Finance ({host})",
                 "price_proxy_note": cfg["price_proxy_note"], "anchor_pe": anchor_pe, "anchor_pb": anchor_pb,
-                "price_anchor_month": price_anchor_month, "price_anchor": price_anchor,
+                "price_anchor_month": price_anchor_month, "price_anchor_date": price_anchor_date,
+                "price_anchor": price_anchor, "price_anchor_method": anchor_price_method,
                 "annual_growth_assumptions": growth, "confidence": cfg["confidence"]
             }
             ordered = sorted(closes.items())
@@ -230,6 +270,8 @@ def main():
                     "price_proxy_source": f"Yahoo Finance ({host})",
                     "price_proxy_status": price_quality.get(month, "unknown"),
                     "anchor_date": anchor_pe["date"], "anchor_price_month": price_anchor_month,
+                    "anchor_price_date": price_anchor_date,
+                    "period_status": "current_month_in_progress" if month == datetime.now(timezone.utc).strftime("%Y-%m") else "completed_month",
                     "status": "MODELLED_ESTIMATE", "confidence": cfg["confidence"]
                 }
                 for metric, anchor in (("PE_TTM", anchor_pe), ("PB", anchor_pb)):
@@ -279,6 +321,7 @@ def main():
                                    "close": round(close, 6), "frequency": "monthly_grid",
                                    "source": f"Yahoo Finance ({host})",
                                    "source_observation_status": price_quality.get(month, "unknown"),
+                                   "period_status": "current_month_in_progress" if month == datetime.now(timezone.utc).strftime("%Y-%m") else "completed_month",
                                    "status": "price_proxy_not_valuation"})
             audit["coverage"][index] = {
                 "ticker_used": ticker, "first_month": ordered[0][0], "last_month": ordered[-1][0],
@@ -289,17 +332,19 @@ def main():
                 "price_grid_method": "log-linear interpolation between sparse Yahoo historical points; observed points retained",
                 "estimated_valuation_rows": len(valid_months),
                 "price_anchor_month": price_anchor_month, "anchor_date": anchor_pe["date"],
+                "price_anchor_date": price_anchor_date, "price_anchor_method": anchor_price_method,
+                "current_month_is_partial": ordered[-1][0] == datetime.now(timezone.utc).strftime("%Y-%m"),
                 "status": "OK_MODELLED_GRID", "confidence": cfg["confidence"]
             }
         except Exception as exc:
             audit["errors"][index] = str(exc)[:600]
             audit["coverage"][index] = {"status": "ERROR", "error": str(exc)[:600]}
-    price_cols = ["date", "index", "ticker", "close", "frequency", "source", "source_observation_status", "status"]
+    price_cols = ["date", "index", "ticker", "close", "frequency", "source", "source_observation_status", "period_status", "status"]
     with PRICE_OUT.open("w", encoding="utf-8-sig", newline="") as f:
         w = csv.DictWriter(f, fieldnames=price_cols); w.writeheader(); w.writerows(price_rows)
     cols = [
-        "date", "index", "index_name", "price_proxy", "price_proxy_ticker", "price_proxy_source", "price_proxy_status",
-        "anchor_date", "anchor_price_month", "status", "confidence",
+        "date", "index", "index_name", "price_proxy", "price_proxy_ticker", "price_proxy_source", "price_proxy_status", "period_status",
+        "anchor_date", "anchor_price_month", "anchor_price_date", "status", "confidence",
         "PE_TTM", "PE_TTM_low", "PE_TTM_high", "PE_TTM_anchor", "PE_TTM_growth_base", "PE_TTM_growth_low", "PE_TTM_growth_high", "PE_TTM_anchor_sources", "PE_TTM_5Y_estimated_percentile", "PE_TTM_10Y_estimated_percentile",
         "PB", "PB_low", "PB_high", "PB_anchor", "PB_growth_base", "PB_growth_low", "PB_growth_high", "PB_anchor_sources", "PB_5Y_estimated_percentile", "PB_10Y_estimated_percentile", "5Y_sample_n", "10Y_sample_n"
     ]
