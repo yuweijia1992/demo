@@ -1,11 +1,11 @@
 {
   "schema_version": "0.4",
   "status": "PARTIAL",
-  "generated_at": "2026-11-23T09:18:32+00:00",
+  "generated_at": "2026-11-23T09:20:21+00:00",
   "completed_month_cutoff": "2026-10",
   "coverage": {
-    "assets_metrics": 5,
-    "observations": 1268,
+    "assets_metrics": 4,
+    "observations": 1009,
     "start": "2005-04",
     "end": "2026-10"
   },
@@ -28,7 +28,7 @@
       "PE_TTM": "data/index-valuation/raw/csi300_legu_pe_ttm_daily.csv",
       "PB": "data/index-valuation/raw/csi300_legu_pb_daily.csv",
       "monthly_file": "data/index-valuation/csi300-legu-monthly.csv",
-      "status": "OK"
+      "status": "PARTIAL"
     }
   },
   "latest": {
@@ -45,20 +45,6 @@
       "10Y_max": "1.79",
       "source": "Legu via AkShare",
       "source_url": "https://legulegu.com/stockdata/sz50-pb"
-    },
-    "CSI 300|PE_TTM": {
-      "date": "2026-10",
-      "value": "12.17",
-      "5Y_n": "60",
-      "5Y_percentile": "60.8333",
-      "5Y_min": "9.61",
-      "5Y_max": "13.85",
-      "10Y_n": "120",
-      "10Y_percentile": "47.0833",
-      "10Y_min": "9.61",
-      "10Y_max": "15.95",
-      "source": "Legu via AkShare",
-      "source_url": "https://legulegu.com/stockdata/sz50-ttm-lyr"
     },
     "Gold (CNY)|CNY_per_troy_ounce": {
       "date": "2026-10",
@@ -118,11 +104,11 @@
   ],
   "index_metrics_collected": [
     "CSI 300|PB",
-    "CSI 300|PE_TTM",
     "S&P 500|PE_TTM"
   ],
   "expected_index_metrics": 8,
   "missing_index_metrics": [
+    "CSI 300|PE_TTM",
     "Hang Seng|PB",
     "Hang Seng|PE_TTM",
     "NASDAQ 100|PB",

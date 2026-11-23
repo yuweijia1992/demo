@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-23T09:18:32+00:00",
+  "generated_at": "2026-11-23T09:20:21+00:00",
   "status": "OK",
   "classification": "MODELLED_ESTIMATE_NOT_OBSERVED_HISTORY",
   "method": "Anchor valuation × (monthly index price proxy / anchor-month price proxy) ÷ assumed earnings/book growth factor; no actual historical index EPS/BVPS reconstruction.",
@@ -66,7 +66,9 @@
         "n": 2
       },
       "price_anchor_month": "2026-11",
-      "price_anchor": 25028.982421875,
+      "price_anchor_date": "2026-11-12",
+      "price_anchor": 28289.189453125,
+      "price_anchor_method": "daily close nearest on/before 2026-11-12 via Yahoo Finance (query1.finance.yahoo.com)",
       "annual_growth_assumptions": {
         "PE": {
           "base": 0.12,
@@ -127,7 +129,9 @@
         "n": 2
       },
       "price_anchor_month": "2026-11",
-      "price_anchor": 22383.740234375,
+      "price_anchor_date": "2026-11-11",
+      "price_anchor": 24315.919921875,
+      "price_anchor_method": "daily close nearest on/before 2026-11-11 via Yahoo Finance (query1.finance.yahoo.com)",
       "annual_growth_assumptions": {
         "PE": {
           "base": 0.05,
@@ -156,6 +160,9 @@
       "estimated_valuation_rows": 494,
       "price_anchor_month": "2026-11",
       "anchor_date": "2026-11-12",
+      "price_anchor_date": "2026-11-12",
+      "price_anchor_method": "daily close nearest on/before 2026-11-12 via Yahoo Finance (query1.finance.yahoo.com)",
+      "current_month_is_partial": true,
       "status": "OK_MODELLED_GRID",
       "confidence": "低：PE来源之间存在明显差异；PB只有单个独立快照"
     },
@@ -171,6 +178,9 @@
       "estimated_valuation_rows": 481,
       "price_anchor_month": "2026-11",
       "anchor_date": "2026-11-11",
+      "price_anchor_date": "2026-11-11",
+      "price_anchor_method": "daily close nearest on/before 2026-11-11 via Yahoo Finance (query1.finance.yahoo.com)",
+      "current_month_is_partial": true,
       "status": "OK_MODELLED_GRID",
       "confidence": "低：估值锚点来自公开页面快照，缺少完整历史财报聚合"
     }
