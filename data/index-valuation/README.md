@@ -151,3 +151,48 @@ Siblis免费API文档明确：免费层仅提供部分指数的少量历史月�
 - VIX及部分信用数据存在来源授权和再分发限制；不得将受限的完整历史序列直接公开归档。
 
 当前宏观抓取任务需在GitHub Actions完成后，以 `macro-dashboard.json` 中的 `generated_at`、`status`、各序列日期和 `errors` 复核是否真正恢复。代码升级不等于抓取已经成功；失败时仍保留null，不伪造实时数据。
+
+
+## 2026-11-23：四项估值缺口与信用风险数据最终准入结论
+
+### 纳斯达克100 PE / PB
+
+本轮新增核验的来源与边界：
+
+1. Nasdaq 官方 NDX 扩展演示材料公开展示了2001—2022年度估值图（PE、P/CF、P/S、EV/EBITDA），但不是连续月频原始数据表；不从图像反推月度序列。[Nasdaq NDX Extended Presentation](https://indexes.nasdaq.com/docs/NDX_Extended%20Presentation_December%202022.pdf)
+2. Siblis Research 的完整全球估值数据库明确称覆盖NDX日频多年历史，但需要API Key/订阅；免费API仅暴露少量历史月末快照。未获得授权前，不把付费数据库数值复制进本仓库。[Siblis API说明](https://github.com/siblisresearch/global-equity-valuations-api)
+3. History of Market公开了NDX Forward PE周频历史的网页与JSON接口，数据可在其页面查看；其权利声明明确指出周频Forward PE属于授权终端序列，允许页面展示但不允许第三方再分发原始数值。因此本项目只链接原页面，不镜像JSON或导入估值矩阵。[NDX Forward PE历史页面](https://historyofmarket.com/nasdaq/ndx-forward-pe/) [使用权声明](https://historyofmarket.com/license/)
+4. 该Forward PE不是Trailing PE，不能用来填充本库NDX PE-TTM，更不能据此构造PB。
+
+**结论：** 截至本次核验，没有发现可合法公开再分发、口径明确、覆盖至少120个月的NDX PE-TTM和PB月频原始数值。该缺口不能靠把QQQ ETF估值、Siblis少量快照、Forward PE周频或Nasdaq年度图拼接解决。若要精确补齐，必须取得Siblis/FactSet/Bloomberg等有许可的历史数据授权，或自行建立带历史成分股权重与点时财报的指数级回溯数据库；后者需要完整历史成分股/权重及历史基本面数据，工作量和数据许可成本都显著更高。
+
+### 恒生指数 PE / PB
+
+1. 恒生指数公司官方 Index Reports 页面提供 Index Daily Bulletin（含每日关键财务比率）及月末成分股表现报告的历史查询入口；官方说明可下载报告，但公开网页没有给出可直接批量下载的完整月度PE/PB机器可读CSV。[恒生官方报告入口](https://www.hsi.com.hk/en-hk/index-resources/index-reports/)
+2. 理杏仁香港指数基本面API支持HSI日频PE-TTM、PB及多周期分位，但需要用户专属Token；未授权调用前不获取其私有API数据。[理杏仁API文档](https://www.lixinger.com/api/open-api/html-doc/hk/index/fundamental)
+3. 恒生指数官方历史数据订阅页显示，历史指数行情数据本身属于收费数据产品；估值数据权限需要另行确认。[恒生数据可用性说明](https://www.hsi.com.hk/static/uploads/contents/en/products/data_subscription/pdf_eng.pdf)
+
+**结论：** 本轮无法找到可公开、合法批量再分发的HSI长期PE/PB月频数值。官方报告可以逐日人工下载/逐页转录，但没有经过批量接口验证；不把报告图形数字化后冒充原始序列。要精确补齐需取得Index360/官方历史估值授权，或获得合法可用的理杏仁Token并核验其使用/再分发许可。
+
+### 信用利差：以可公开历史信用条件指标替代长历史OAS
+
+本轮将“信用利差”严格拆成两类：
+
+- **真正的市场信用利差/OAS**：ICE BofA高收益债OAS在FRED从2026年4月起只保留最近3年，并明确禁止未经许可公开再分发。Moody's Baa-Treasury spread（BAA10Y）也带有Moody's信息版权与再分发限制。因此本项目不归档、不公开复制这两类长历史原始值。
+- **可公开获取的信用/金融压力代理指标**：新增Chicago Fed NFCI Credit Subindex（NFCICREDIT，周频，1971年以来）、St. Louis Fed Financial Stress Index v4（STLFSI4，周频，1993年以来）和Kansas City Financial Stress Index（KCFSI，月频，1990年以来）。三者不是单一公司债信用利差，也不是OAS；它们是信用条件/综合金融压力指数，可作为长历史风险监控代理。
+
+自动数据文件由 `scripts/fetch_credit_stress_history.py` 更新：
+- `data/macro/credit-stress-proxies-weekly.csv`：真实观测长表，保留各指标原始频率和日期。
+- `data/macro/credit-stress-proxies-monthly.csv`：每个指标各取该月最后一个真实观测；日期独立保留，不做前值填充、不插值。
+- `data/macro/credit-stress-proxies-audit.txt`：覆盖、样本数和来源审计。
+
+官方数据说明：
+- [NFCICREDIT](https://fred.stlouisfed.org/series/NFCICREDIT)：Chicago Fed信用条件子指数，单位为指数点，不是利差百分比。
+- [STLFSI4](https://fred.stlouisfed.org/series/STLFSI4)：St. Louis Fed综合金融压力指数，1993年末起；高于0代表高于长期平均压力。
+- [KCFSI](https://fred.stlouisfed.org/series/KCFSI)：Kansas City Fed综合金融压力指数，1990年起；高于0代表高于长期平均压力。
+
+**最终状态：** 三个可公开的长历史信用/金融压力代理指标已纳入自动更新链路；传统高收益债OAS长历史仍因许可限制不能公开归档。页面和报告必须将“代理指标”与“信用利差”分开展示。
+
+### 结果纪律
+
+当前不能宣称四项估值缺口已全部以同口径月频原始数据解决。已解决的是：取得了权威官方数据入口、可公开使用的替代风险代理、自动采集与审计框架，并明确了必须授权的部分。NDX PE-TTM/PB和HSI PE/PB仍需正式数据许可或点时历史基本面重建；任何估值分位在取得连续同口径数据前继续显示为缺失。
