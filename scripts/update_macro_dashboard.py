@@ -16,6 +16,9 @@ SERIES = {
     "fed_funds": ("FEDFUNDS", "Federal funds effective rate", "%"),
     "us_cpi_index": ("CPIAUCSL", "US CPI index (level)", "index"),
     "financial_conditions_nfci": ("NFCI", "Chicago Fed National Financial Conditions Index", "index"),
+    "credit_conditions_subindex": ("NFCICREDIT", "Chicago Fed NFCI Credit Subindex (not a spread)", "index"),
+    "financial_stress_stl": ("STLFSI4", "St. Louis Fed Financial Stress Index", "index"),
+    "financial_stress_kc": ("KCFSI", "Kansas City Financial Stress Index", "index"),
 }
 
 def latest(series_id):
@@ -73,6 +76,9 @@ alerts = [
     alert("yield_curve_10y2y", 0, "medium", "10Y-2Y利差转正：收益率曲线已脱离倒挂，需结合经济数据判断。"),
     alert("usdcny", 7.3, "medium", "USD/CNY达到7.30：检查人民币计价组合的汇率敞口。"),
     alert("brent", 100, "medium", "布伦特原油达到100美元：关注能源成本与通胀传导。"),
+    alert("credit_conditions_subindex", 0, "medium", "Chicago Fed信用条件子指数转正：信用条件较长期均值偏紧（不是信用利差）。"),
+    alert("financial_stress_stl", 0, "medium", "St. Louis金融压力指数转正：综合金融市场压力高于长期均值。"),
+    alert("financial_stress_kc", 0, "medium", "Kansas City金融压力指数转正：综合金融系统压力高于长期均值。"),
 ]
 payload = {
     "schema_version": "2.0",
@@ -89,7 +95,8 @@ payload = {
         "The snapshot fetches recent observations only; use separately archived history files for backtests.",
         "VIX and some market series may have licensing or redistribution restrictions; this file is a minimal latest-value monitor, not a bulk historical redistribution.",
         "DXY uses the broad trade-weighted dollar index DTWEXBGS, not ICE DXY.",
-        "NFCI is a broad financial-conditions index, not a corporate credit spread.",
+        "NFCI and NFCICREDIT are financial-conditions indices, not quoted corporate credit spreads or OAS.",
+        "STLFSI4 and KCFSI are composite financial-stress indices, not standalone credit spreads.",
         "T10YIE and T5YIFR are market-based breakeven/forward inflation expectations, not direct CPI forecasts.",
         "CPIAUCSL is a seasonally adjusted index level; it is not year-over-year inflation.",
         "This dashboard is monitoring only, not a trading signal or investment recommendation."
