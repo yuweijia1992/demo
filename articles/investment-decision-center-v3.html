@@ -13,7 +13,7 @@
 <div class="notice" id="dataNotice">正在读取公开仓库月度矩阵与覆盖清单……</div></section>
 
 <section class="section" id="valuation"><div class="section-head"><h2>01 / 全球估值分位</h2><p>标普500、纳斯达克、A股、港股：当前PE/PB在自身历史中的位置。</p></div>
-<div class="panel"><p class="muted">系统自动读取仓库中的真实月度估值矩阵与来源审计；目前自动接入沪深300PE/PB、标普500PE-TTM/CAPE。纳指与恒生仅展示独立快照，不将不同来源或不同频率拼接为虚假的连续历史。仍可用下方CSV导入覆盖分析。</p><input type="file" id="valuationFile" accept=".csv,text/csv"><button class="action" id="valuationImport">导入估值历史并计算</button><span class="pill" id="valuationFileStatus">尚未导入</span><div class="table-wrap"><table><thead><tr><th>市场</th><th>估值指标</th><th>最新值</th><th>历史样本</th><th>历史分位</th><th>观察</th></tr></thead><tbody id="valuationRows"><tr><td colspan="6">需要导入有来源的月度估值数据。</td></tr></tbody></table></div><div class="hint">注意：PE需统一TTM/Forward口径，PB需统一最新财报/滚动口径；不同口径不可拼接。百分位不是合理价值，也不直接等于买卖信号。</div></div></section>
+<div class="panel"><p class="muted">系统自动读取仓库中的真实月度估值矩阵与来源审计；目前自动接入沪深300PE/PB、标普500PE-TTM/CAPE。纳指与恒生仅展示独立快照，不将不同来源或不同频率拼接为虚假的连续历史。仍可用下方CSV导入覆盖分析。</p><input type="file" id="valuationFile" accept=".csv,text/csv"><button class="action" id="valuationImport">导入估值历史并计算</button><span class="pill" id="valuationFileStatus">尚未导入</span><div class="table-wrap"><table><thead><tr><th>市场</th><th>估值指标</th><th>最新值</th><th>历史样本</th><th>历史分位</th><th>观察</th></tr></thead><tbody id="valuationRows"><tr><td colspan="6">需要导入有来源的月度估值数据。</td></tr></tbody></table></div><div class="section-head" style="margin-top:18px"><h3>低频观测与公开快照（不参与月频分位）</h3><p>用于交叉核对和补充观察；季度、年度和单日快照不插值、不拼接。</p></div><div class="table-wrap"><table><thead><tr><th>指数</th><th>指标</th><th>最新观测</th><th>频率</th><th>来源与限制</th></tr></thead><tbody id="valuationAuxRows"><tr><td colspan="5">正在读取低频补充数据……</td></tr></tbody></table></div><div class="hint">注意：PE需统一TTM/Forward口径，PB需统一最新财报/滚动口径；不同口径不可拼接。百分位不是合理价值，也不直接等于买卖信号。</div></div></section>
 
 <section class="section" id="macro"><div class="section-head"><h2>02 / 宏观状态面板</h2><p>自动接入已有的实际利率、政策利率、NFCI及历史宏观风险模型；DXY、VIX和信用利差仍受数据覆盖或再分发许可限制。</p></div>
 <div class="panel"><div class="fields">
@@ -71,6 +71,18 @@ async function loadPublicValuation(){
   $("valuationState").textContent=html.length+"条历史序列";
   $("valuationFileStatus").textContent="已自动接入 "+data.length+" 条";
   const snaps=snapshotText?parseCSV(snapshotText):[];
+  const aux=[];
+  const [pbText,ndxText,hsiText]=await Promise.all([
+   fetch("../data/index-valuation/sp500-pb-quarterly-public.csv",{cache:"no-store"}).then(r=>r.ok?r.text():""),
+   fetch("../data/index-valuation/nasdaq100-annual-pe-public.csv",{cache:"no-store"}).then(r=>r.ok?r.text():""),
+   fetch("../data/index-valuation/hang-seng-annual-pe-summary-public.csv",{cache:"no-store"}).then(r=>r.ok?r.text():"")
+  ]);
+  if(pbText){const a=parseCSV(pbText).filter(r=>num(r.value)!==null).sort((x,y)=>x.date.localeCompare(y.date));if(a.length){const x=a.at(-1);aux.push("<tr><td>标普500</td><td>PB</td><td>"+x.date+" · "+x.value+"x</td><td>季度</td><td>Multpl；未转成月频</td></tr>");}}
+  if(ndxText){const a=parseCSV(ndxText).filter(r=>num(r.value)!==null).sort((x,y)=>String(x.date).localeCompare(String(y.date)));if(a.length){const x=a.at(-1);aux.push("<tr><td>纳斯达克100</td><td>PE-TTM</td><td>"+x.date+" · "+x.value+"x</td><td>年度</td><td>"+x.source+"；年度年末值，不用于月频分位</td></tr>");}}
+  if(hsiText){const a=parseCSV(hsiText).filter(r=>num(r.annual_average_pe)!==null).sort((x,y)=>String(x.year).localeCompare(String(y.year)));if(a.length){const x=a.at(-1);aux.push("<tr><td>恒生指数</td><td>PE-TTM</td><td>"+x.year+" · 年均 "+fmt(num(x.annual_average_pe),2)+"x</td><td>年度汇总</td><td>"+x.source+"；年度均值/高低值，不用于月频分位</td></tr>");}}
+  const groups={};for(const x of snaps.filter(r=>["HSI","NDX"].includes(r.index))){const k=[x.index,x.metric,x.source].join("|");if(!groups[k]||x.date>groups[k].date)groups[k]=x;}
+  for(const x of Object.values(groups).sort((a,b)=>b.date.localeCompare(a.date)).slice(0,8)){aux.push("<tr><td>"+x.index+"</td><td>"+x.metric+"</td><td>"+x.date+" · "+x.value+" "+(x.unit||"")+"</td><td>单点快照</td><td>"+x.source+"；"+(x.limitations||"不同来源口径独立保留")+"</td></tr>");}
+  $("valuationAuxRows").innerHTML=aux.join("")||"<tr><td colspan='5'>暂无可用低频补充数据。</td></tr>";
   const hsi=snaps.filter(r=>r.index==="HSI"),ndx=snaps.filter(r=>r.index==="NDX");
   $("dataNotice").textContent="已接入真实数据：估值矩阵 "+data.length+" 条、覆盖2005-04至2026-10；其中沪深300PE/PB与标普500PE/CAPE可计算完整5年/10年历史分位。恒生与纳指仅保留独立快照，不拼接为连续历史序列。来源审计状态："+(audit.status||"未标注")+"。";
   $("valuationFileStatus").title="HSI snapshots "+hsi.length+"; NDX snapshots "+ndx.length;
