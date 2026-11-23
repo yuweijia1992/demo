@@ -9,6 +9,8 @@ on:
       - "scripts/fetch_public_index_valuations.py"
       - "scripts/fetch_csi300_legu_valuation.py"
       - "scripts/audit_siblis_free_tier.py"
+      - "scripts/build_estimated_index_valuation.py"
+      - "data/index-valuation/public-valuation-snapshots.csv"
       - ".github/workflows/build-index-valuations.yml"
       - "data/investment-monthly.csv"
 permissions:
@@ -28,10 +30,11 @@ jobs:
       - name: Compile and fetch public valuation series
         run: |
           python -m pip install --disable-pip-version-check akshare
-          python -m py_compile scripts/fetch_public_index_valuations.py scripts/fetch_csi300_legu_valuation.py scripts/audit_siblis_free_tier.py
+          python -m py_compile scripts/fetch_public_index_valuations.py scripts/fetch_csi300_legu_valuation.py scripts/audit_siblis_free_tier.py scripts/build_estimated_index_valuation.py
           python scripts/audit_siblis_free_tier.py
           python scripts/fetch_public_index_valuations.py
           python scripts/fetch_csi300_legu_valuation.py
+          python scripts/build_estimated_index_valuation.py
       - name: Commit raw source snapshots and audit
         run: |
           git config user.name "github-actions[bot]"
@@ -39,6 +42,6 @@ jobs:
           git add data/index-valuation
           if git diff --cached --quiet; then echo "No valuation data changes."; else
             git commit -m "Refresh public index valuation history"
-            git pull --rebase origin main
+            git pull --rebase -X theirs origin main
             git push origin main
           fi
