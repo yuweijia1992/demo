@@ -91,7 +91,8 @@ async function loadPublicValuation(){
 async function loadMacroHistory(){
  try{
   const paths=["sp500-macro-factor-model-monthly.csv","fred-dfii10-daily.csv","fred-fedfunds-monthly.csv","fred-nfci-weekly.csv"];
-  const texts=await Promise.all(paths.map(p=>fetch("../data/index-valuation/"+p,{cache:"no-store"}).then(r=>{if(!r.ok)throw Error(p+" "+r.status);return r.text();})));\n  let live={};try{live=await fetch("../data/macro-dashboard.json",{cache:"no-store"}).then(r=>r.ok?r.json():{});}catch(e){}
+  const texts=await Promise.all(paths.map(p=>fetch("../data/index-valuation/"+p,{cache:"no-store"}).then(r=>{if(!r.ok)throw Error(p+" "+r.status);return r.text();})));
+  let live={};try{live=await fetch("../data/macro-dashboard.json",{cache:"no-store"}).then(r=>r.ok?r.json():{});}catch(e){}
   const model=parseCSV(texts[0]),real=parseCSV(texts[1]),funds=parseCSV(texts[2]),nfci=parseCSV(texts[3]);
   const lastValid=(arr,key)=>arr.filter(r=>num(r[key])!==null).at(-1);
   const mr=lastValid(model,"composite_risk_score"),rr=lastValid(real,"dfii10_pct"),fr=lastValid(funds,"fedfunds_pct"),nr=lastValid(nfci,"nfci");
