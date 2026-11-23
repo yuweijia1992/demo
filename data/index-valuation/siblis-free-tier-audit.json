@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-23T07:51:48+00:00",
+  "provider": "Siblis Research",
+  "api_base": "https://siblisresearch.supabase.co/functions/v1/free-data-api",
+  "documentation": "https://github.com/siblisresearch/global-equity-valuations-api",
+  "license_note": "API data are © Siblis Research and provided for non-commercial use. This audit intentionally stores no valuation values.",
+  "tier": "free",
+  "coverage": {
+    "HSI": {
+      "pe-trailing": {
+        "status": "OK",
+        "observations": 9,
+        "first_date": "2023-12-29",
+        "last_date": "2026-09-30",
+        "dates": [
+          "2023-12-29",
+          "2024-06-28",
+          "2024-12-31",
+          "2025-03-31",
+          "2025-06-30",
+          "2025-09-30",
+          "2025-12-31",
+          "2026-06-30",
+          "2026-09-30"
+        ],
+        "continuous_monthly": false,
+        "percentile_5y_eligible": false,
+        "percentile_10y_eligible": false
+      },
+      "pe-forward": {
+        "status": "OK",
+        "observations": 9,
+        "first_date": "2023-12-29",
+        "last_date": "2026-09-30",
+        "dates": [
+          "2023-12-29",
+          "2024-06-28",
+          "2024-12-31",
+          "2025-03-31",
+          "2025-06-30",
+          "2025-09-30",
+          "2025-12-31",
+          "2026-06-30",
+          "2026-09-30"
+        ],
+        "continuous_monthly": false,
+        "percentile_5y_eligible": false,
+        "percentile_10y_eligible": false
+      },
+      "cape": {
+        "status": "OK",
+        "observations": 9,
+        "first_date": "2023-12-29",
+        "last_date": "2026-09-30",
+        "dates": [
+          "2023-12-29",
+          "2024-06-28",
+          "2024-12-31",
+          "2025-03-31",
+          "2025-06-30",
+          "2025-09-30",
+          "2025-12-31",
+          "2026-06-30",
+          "2026-09-30"
+        ],
+        "continuous_monthly": false,
+        "percentile_5y_eligible": false,
+        "percentile_10y_eligible": false
+      },
+      "pb": {
+        "status": "OK",
+        "observations": 9,
+        "first_date": "2023-12-29",
+        "last_date": "2026-09-30",
+        "dates": [
+          "2023-12-29",
+          "2024-06-28",
+          "2024-12-31",
+          "2025-03-31",
+          "2025-06-30",
+          "2025-09-30",
+          "2025-12-31",
+          "2026-06-30",
+          "2026-09-30"
+        ],
+        "continuous_monthly": false,
+        "percentile_5y_eligible": false,
+        "percentile_10y_eligible": false
+      }
+    },
+    "NDX": {
+      "pe-trailing": {
+        "status": "OK",
+        "observations": 9,
+        "first_date": "2023-12-29",
+        "last_date": "2026-09-30",
+        "dates": [
+          "2023-12-29",
+          "2024-06-28",
+          "2024-12-31",
+          "2025-03-31",
+          "2025-06-30",
+          "2025-09-30",
+          "2025-12-31",
+          "2026-06-30",
+          "2026-09-30"
+        ],
+        "continuous_monthly": false,
+        "percentile_5y_eligible": false,
+        "percentile_10y_eligible": false
+      },
+      "pe-forward": {
+        "status": "OK",
+        "observations": 9,
+        "first_date": "2023-12-29",
+        "last_date": "2026-09-30",
+        "dates": [
+          "2023-12-29",
+          "2024-06-28",
+          "2024-12-31",
+          "2025-03-31",
+          "2025-06-30",
+          "2025-09-30",
+          "2025-12-31",
+          "2026-06-30",
+          "2026-09-30"
+        ],
+        "continuous_monthly": false,
+        "percentile_5y_eligible": false,
+        "percentile_10y_eligible": false
+      },
+      "cape": {
+        "status": "OK",
+        "observations": 9,
+        "first_date": "2023-12-29",
+        "last_date": "2026-09-30",
+        "dates": [
+          "2023-12-29",
+          "2024-06-28",
+          "2024-12-31",
+          "2025-03-31",
+          "2025-06-30",
+          "2025-09-30",
+          "2025-12-31",
+          "2026-06-30",
+          "2026-09-30"
+        ],
+        "continuous_monthly": false,
+        "percentile_5y_eligible": false,
+        "percentile_10y_eligible": false
+      },
+      "pb": {
+        "status": "OK",
+        "observations": 9,
+        "first_date": "2023-12-29",
+        "last_date": "2026-09-30",
+        "dates": [
+          "2023-12-29",
+          "2024-06-28",
+          "2024-12-31",
+          "2025-03-31",
+          "2025-06-30",
+          "2025-09-30",
+          "2025-12-31",
+          "2026-06-30",
+          "2026-09-30"
+        ],
+        "continuous_monthly": false,
+        "percentile_5y_eligible": false,
+        "percentile_10y_eligible": false
+      }
+    }
+  },
+  "index_catalog": [
+    {
+      "ticker": "HSI",
+      "index_name": "Hang Seng Index"
+    },
+    {
+      "ticker": "NDX",
+      "index_name": "NASDAQ 100 Index"
+    }
+  ],
+  "errors": {},
+  "decision": "Sparse free-tier month-end snapshots are cross-checks only; they do not qualify for 60/120-month rolling percentiles."
+}
