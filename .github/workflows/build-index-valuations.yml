@@ -1,6 +1,8 @@
 name: Build public index valuation history
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "20 2 5 * *" # Monthly public valuation refresh
   push:
     branches: [main]
     paths:
