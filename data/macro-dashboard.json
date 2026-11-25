@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-11-24T10:08:01+00:00",
+  "generated_at": "2026-11-25T08:52:39+00:00",
   "timezone": "UTC",
   "status": "ok",
   "source": "Federal Reserve Bank of St. Louis FRED public CSV graph endpoint",
@@ -10,43 +10,43 @@
       "series_id": "DGS10",
       "label": "US 10Y Treasury yield",
       "unit": "%",
-      "date": "2026-11-20",
+      "date": "2026-11-23",
       "value": 4.92
     },
     "us10y_real": {
       "series_id": "DFII10",
       "label": "US 10Y real yield",
       "unit": "%",
-      "date": "2026-11-20",
-      "value": 2.77
+      "date": "2026-11-23",
+      "value": 2.79
     },
     "yield_curve_10y2y": {
       "series_id": "T10Y2Y",
       "label": "US 10Y minus 2Y Treasury spread",
       "unit": "%",
-      "date": "2026-11-23",
-      "value": 0.29
+      "date": "2026-11-24",
+      "value": 0.28
     },
     "inflation_breakeven_10y": {
       "series_id": "T10YIE",
       "label": "US 10Y breakeven inflation",
       "unit": "%",
-      "date": "2026-11-23",
-      "value": 2.13
+      "date": "2026-11-24",
+      "value": 2.12
     },
     "inflation_forward_5y5y": {
       "series_id": "T5YIFR",
       "label": "US 5Y5Y forward inflation expectation",
       "unit": "%",
-      "date": "2026-11-23",
-      "value": 2.11
+      "date": "2026-11-24",
+      "value": 2.13
     },
     "vix": {
       "series_id": "VIXCLS",
       "label": "VIX",
       "unit": "index",
-      "date": "2026-11-20",
-      "value": 35.89
+      "date": "2026-11-23",
+      "value": 26.62
     },
     "dxy_broad": {
       "series_id": "DTWEXBGS",
@@ -114,23 +114,16 @@
   },
   "alerts": [
     {
-      "level": "high",
-      "key": "vix",
-      "value": 35.89,
-      "threshold": 30,
-      "message": "VIX达到30：市场波动压力升高，检查组合风险与流动性。"
-    },
-    {
       "level": "medium",
       "key": "us10y_real",
-      "value": 2.77,
+      "value": 2.79,
       "threshold": 2.25,
       "message": "美国10年期实际利率达到2.25%：重新检查长久期资产估值敏感性。"
     },
     {
       "level": "medium",
       "key": "yield_curve_10y2y",
-      "value": 0.29,
+      "value": 0.28,
       "threshold": 0,
       "message": "10Y-2Y利差转正：收益率曲线已脱离倒挂，需结合经济数据判断。"
     }

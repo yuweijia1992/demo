@@ -1,5 +1,5 @@
 Public macro-financial stress proxy coverage audit
-Generated UTC: 2026-11-24T10:08:03Z
+Generated UTC: 2026-11-25T08:52:41Z
 Monthly value = last actual observation in month; no interpolation or forward-fill.
 These indices are not quoted corporate credit spreads / OAS.
 
