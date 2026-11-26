@@ -1,8 +1,8 @@
 Public macro-financial stress proxy coverage audit
-Generated UTC: 2026-11-25T08:52:41Z
+Generated UTC: 2026-11-26T08:39:08Z
 Monthly value = last actual observation in month; no interpolation or forward-fill.
 These indices are not quoted corporate credit spreads / OAS.
 
-NFCICREDIT: Chicago Fed NFCI Credit Subindex | weekly | 2915 rows | 1971-01-08 to 2026-11-13 | https://fred.stlouisfed.org/series/NFCICREDIT
-STLFSI4: St. Louis Fed Financial Stress Index v4 | weekly | 1716 rows | 1993-12-31 to 2026-11-13 | https://fred.stlouisfed.org/series/STLFSI4
+NFCICREDIT: Chicago Fed NFCI Credit Subindex | weekly | 2916 rows | 1971-01-08 to 2026-11-20 | https://fred.stlouisfed.org/series/NFCICREDIT
+STLFSI4: St. Louis Fed Financial Stress Index v4 | weekly | 1717 rows | 1993-12-31 to 2026-11-20 | https://fred.stlouisfed.org/series/STLFSI4
 KCFSI: Kansas City Financial Stress Index | monthly | 441 rows | 1990-02-01 to 2026-10-01 | https://fred.stlouisfed.org/series/KCFSI
