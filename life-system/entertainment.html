@@ -157,7 +157,7 @@ function renderAll(){renderSelectors();renderFilters();renderActivities();render
 document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.view)));
 document.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",()=>showView(b.dataset.goto)));
 document.getElementById("searchActivity").addEventListener("input",renderActivities);
-document.getElementById("modeFilter").addEventListener("change",renderActivities);
+document.getElementById("modeFilter").addEventListener("change",renderActivities);document.getElementById("weekTargetDay").addEventListener("change",e=>{document.getElementById("targetDay").value=e.target.value;toast("下一次安排将使用所选日期")});document.getElementById("targetDay").addEventListener("change",e=>{document.getElementById("weekTargetDay").value=e.target.value});
 document.getElementById("prevWeek").addEventListener("click",()=>setWeek(addDays(weekStart,-7)));
 document.getElementById("nextWeek").addEventListener("click",()=>setWeek(addDays(weekStart,7)));
 document.getElementById("thisWeek").addEventListener("click",()=>setWeek(new Date()));
